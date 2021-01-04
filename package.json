@@ -1,0 +1,24 @@
+{
+  "name": "hgrid.io",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahansson/hgrid.io.git"
+  },
+  "keywords": [],
+  "author": "Atle Hansson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ahansson/hgrid.io/issues"
+  },
+  "homepage": "https://hgrid.io",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.1"
+  }
+}

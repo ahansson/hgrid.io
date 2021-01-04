@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en-US" class="scroll-smooth">
+  <head>
+    {% include "layout/partials/head.njk" %}
+  </head>
+  <body>
+    {% include "layout/partials/header.njk" %}
+    <div class="container-max padding-top-100">
+      <div class="row">
+        {% include "layout/partials/sidebar-menu.njk" %}
+
+        {{ content | safe }}
+
+      </div><!-- End row -->
+    </div><!-- End container -->
+    {% include "layout/partials/footer.njk" %}
+    {% include "layout/partials/scripts.njk" %}
+  </body>
+</html>
