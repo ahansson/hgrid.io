@@ -379,14 +379,9 @@ q {
   margin-inline-start: 0;
   padding: 0;
   quotes: none; }
-  blockquote ::before,
-  blockquote ::after,
-  blockquote ::before,
-  blockquote ::after,
-  q ::before,
-  q ::after,
-  q ::before,
-  q ::after {
+  blockquote::before, blockquote::after,
+  q::before,
+  q::after {
     content: none; }
 
 /* End reset styles */
@@ -542,11 +537,11 @@ span a {
     text-decoration: none; }
 
 blockquote {
-  border-left: 2px solid #ccc;
-  font-size: 2.72rem;
+  border-left: 3px solid #ccc;
+  font-size: 2.4rem;
   margin-bottom: 2.2rem;
-  margin-left: 3vw;
-  padding-left: 1.2rem; }
+  padding-left: 1.2rem;
+  line-height: 3.4rem; }
 
 .lowercase {
   text-transform: lowercase; }
@@ -2868,3 +2863,10 @@ hr,
 
 .overflow-y-visible {
   overflow: visible; }
+
+.no-hover:hover {
+  text-decoration: none !important;
+  border-bottom: none !important; }
+
+.no-hover:before {
+  height: 0 !important; }

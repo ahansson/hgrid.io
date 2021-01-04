@@ -3,16 +3,15 @@
   <head>
     {% include "layout/partials/head.njk" %}
   </head>
-  <body>
+  <body class="flex flex-direction-column">
     {% include "layout/partials/header.njk" %}
-    <div class="container-max padding-top-100">
-      <div class="row">
-        {% include "layout/partials/sidebar-menu.njk" %}
 
-        {{ content | safe }}
+    {% if page.url == documentation %}
+    {% include "layout/partials/sidebar-menu.njk" %}
+    {% endif %}
+    
+    {{ content | safe }}
 
-      </div><!-- End row -->
-    </div><!-- End container -->
     {% include "layout/partials/footer.njk" %}
     {% include "layout/partials/scripts.njk" %}
   </body>

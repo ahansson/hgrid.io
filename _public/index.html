@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title></title>
+<title>hgrid | Lightweight CSS Utility Kit</title>
 <link rel="stylesheet" href="/assets/css/hgrid.1.3.css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/styles.css">
 <link rel="icon" type="image/png" href="/assets/img/icon.png">
   </head>
-  <body>
+  <body class="flex flex-direction-column">
     <header class="fixed border-bottom-lighter fullwidth z-index-9">
   <div class="container padding-top-10 padding-bottom-10 flex align-items-center justify-content-space-between">
     <div class="flex align-items-center identity">
@@ -21,13 +21,13 @@
       <!-- desktop nav -->
       <ul class="flex align-items-center desktop-menu" role="menu">
         <li role="menuitem">
-          <a class="border-bottom-none bold" href="/documentation/">Documentation</a>
+          <a class="border-bottom-none " href="/documentation/">Documentation</a>
         </li>
         <li role="menuitem" class="push20h">
           <a class="border-bottom-none" href="https://github.com/ahansson/hgrid-css" target="_blank">GitHub</a>
         </li>
         <li role="menuitem" class="push20h">
-          <a href="https://github.com/ahansson/hgrid-css" target="_blank">
+          <a href="https://github.com/ahansson/hgrid-css" target="_blank" class="no-hover">
             <img src="/assets/img/github.png" class="opacity-70 pointer github-icon" alt="github-icon">
           </a>
         </li>
@@ -47,53 +47,24 @@
   </div>
 </header>
 <!-- end header -->
-    <div class="container-max padding-top-100">
-      <div class="row">
-        <!-- start sidebar menu -->
-<nav class="column-5 fixed overflow-y-auto border-right-light-dotted sidebar" role="menu">
-  <span class="hide close-x pointer">&times;</span>
-  <h5 role="menuitem"><a href="#installation">Installation</a></h5>
-    <ul class="sub-links">
-      <li role="menuitem"><a href="#npm">NPM/Yarn</a></li>
-      <li role="menuitem"><a href="#cdn">CDN</a></li>
-      <li role="menuitem"><a href="#clone">Clone</a></li>
-    </ul>
-  <h5 role="menuitem"><a href="documentation.html#about-hgrid">About</a></h5>
-  <h5 role="menuitem"><a href="./documentation.html#layout">Layout</a></h5>
-    <ul class="sub-links">
-      <li role="menuitem"><a href="./documentation.html#containers">Containers</a></li>
-      <li role="menuitem"><a href="documentation.html#auto-columns">Automatic columns</a></li>
-      <li role="menuitem"><a href="documentation.html#accurate-columns">Accurate columns</a></li>
-      <li role="menuitem"><a href="documentation.html#flex">Flex</a></li>
-      <li role="menuitem"><a href="documentation.html#grid">Grid</a></li>
-    </ul>
-  <h5 role="menuitem"><a href="documentation.html#utility-classes">Utility classes</a></h5>
-  <h5 role="menuitem"><a href="documentation.html#typography">Typography</a></h5>
-  <h5 role="menuitem"><a href="documentation.html#utilities">Utilities</a></h5>
-  <h5 role="menuitem"><a href="documentation.html#typography">Typography</a></h5>
-  <h5 role="menuitem"><a href="documentation.html#utilities">Utilities</a></h5>
-  <ul class="sub-links">
-    <li role="menuitem"><a>Subheader</a></li>
-    <li role="menuitem"><a>Subheader</a></li>
-      <ul class="sub-links">
-        <li role="menuitem"><a tabindex="0">Sublink</a></li>
-        <li role="menuitem"><a tabindex="0">Sublink</a></li>
-        <li role="menuitem"><a tabindex="0">Sublink</a></li>
-        <li role="menuitem"><a tabindex="0">Sublink</a></li>
-        <li role="menuitem"><a tabindex="0">Sublink</a></li>
-      </ul>
-  </ul>
-  <h5 role="menuitem"><a href="documentation.html#typography">Typography</a></h5>
-  <h5><a href="documentation.html#utilities">Utilities</a></h5>
-</nav>
-<!-- End sidebar menu -->
 
-        <h1>Front Page</h1>
-<p>Content here</p>
+    
+    
+    <div class="container padding-top-100 flex-grow-1">
+  <div class="row">
+    <div class="column">
+      <h1>Faster CSS</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column">
+      <p>Content here</p>
+    </div>
+  </div>
+</div>
 
-      </div><!-- End row -->
-    </div><!-- End container -->
-      <footer>
+
+      <footer class="flex-shrink-0">
   <div class="buffer"></div>
     <div class="container-max padding-top-100">
       <div class="row">
