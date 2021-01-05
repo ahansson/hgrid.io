@@ -2,6 +2,7 @@
   if (!document.querySelector('.sidebar')) {
     return
   } else {
+    // Show docs sidebar
     const trigger = document.querySelector('.menu-trigger')
     const mobileMenu = document.querySelector('.sidebar')
     const close = document.querySelector('.close-x')

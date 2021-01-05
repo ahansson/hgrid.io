@@ -1,3 +1,25 @@
+.loader{
+  position:fixed;
+  z-index:999;
+  top:0;
+  left:0;
+  width:100vw;
+  height:100vh;
+  background:#fff;
+  }
+
+.loader.fadeout{
+  animation:fadeOut 0.6s;
+  animation-fill-mode:forwards
+}
+
+@keyframes fadeOut{
+  100%{
+    opacity:0;
+    visibility:hidden
+  }
+}
+
 body {
   background: #f6f6f6;
   font-family: 'Heebo', sans-serif;
