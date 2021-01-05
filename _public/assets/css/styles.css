@@ -13,8 +13,8 @@ main.container-max {
 }
 
 .masthead {
-background: rgb(44,0,79);
-background: linear-gradient(197deg, rgba(44,0,79,1) 0%, rgba(11,0,41,1) 100%);
+  background: rgb(44,0,79);
+  background: linear-gradient(197deg, rgba(44,0,79,1) 0%, rgba(11,0,41,1) 100%);
 }
 
 .signal {
@@ -260,7 +260,7 @@ footer {
 footer p a {
   color: #cfcfcf;
   font-size: 1.6rem;
-  border-bottom: none;
+  border-bottom: 1px solid transparent;
 }
 
 footer p a:hover {
@@ -433,5 +433,8 @@ footer .buffer {
 @media (max-width: 600px) {
   nav.sidebar {
     width: 70%;
+  }
+  footer p {
+    text-align: center;
   }
 }
