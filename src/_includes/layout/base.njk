@@ -6,8 +6,8 @@
   <body>
     {% include "layout/partials/header.njk" %}
 
-    {% if page.url == documentation %}
-    {% include "layout/partials/sidebar-menu.njk" %}
+    {% if title !== 'Home' %}
+    {% include "layout/partials/menus/sidebar-menu.njk" %}
     {% endif %}
     
     {{ content | safe }}

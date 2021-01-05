@@ -5,32 +5,8 @@
       <h4 class="mb-0 logo"><a href="/" role="menuitem">hgrid</a></h4>
     </div>
     <nav role="menu">
-      <!-- desktop nav -->
-      <ul class="flex align-items-center desktop-menu" role="menu">
-        <li role="menuitem">
-          <a class="border-bottom-none {% if entry.url == page.url %}bold{% endif %}" href="/documentation/">Documentation</a>
-        </li>
-        <li role="menuitem" class="push20h">
-          <a class="border-bottom-none" href="https://github.com/ahansson/hgrid-css" target="_blank">GitHub</a>
-        </li>
-        <li role="menuitem" class="push20h">
-          <a href="https://github.com/ahansson/hgrid-css" target="_blank" class="no-hover">
-            <img src="/assets/img/github.png" class="opacity-70 pointer github-icon" alt="github-icon">
-          </a>
-        </li>
-      </ul>
-      <!-- mobile nav -->
-      <ul class="flex align-items-center hide mobile-menu" role="menu">
-        <li role="menuitem" class="push20h">
-          <a class="border-bottom-none menu-trigger" >Menu</a>
-        </li>
-        <li role="menuitem" class="push20h">
-          <a href="https://github.com/ahansson/hgrid-css" target="_blank">
-            <img src="/assets/img/github.png" class="opacity-70 pointer github-icon ">
-          </a>
-        </li>
-      </ul>
+    {% include 'layout/partials/menus/topmenu-desktop.njk' %}
+    {% include 'layout/partials/menus/topmenu-mobile.njk' %}
     </nav>
   </div>
 </header>
-<!-- end header -->

@@ -1,3 +1,6 @@
+.gitignore
+.eleventyignore
+.editorconfig
 readme.md
 package-lock.json
 package.json

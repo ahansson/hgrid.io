@@ -7,6 +7,43 @@ a {
   text-decoration: none;
 }
 
+main.container,
+main.container-max {
+  min-height: calc(100vh - 447px)
+}
+
+.masthead {
+background: rgb(44,0,79);
+background: linear-gradient(197deg, rgba(44,0,79,1) 0%, rgba(11,0,41,1) 100%);
+}
+
+.signal {
+  color: #f7e0a8;
+}
+
+button.outline-l {
+  background: none;
+  border: 2px solid #fff;
+  font-weight: 600;
+  letter-spacing: 4px;
+  transition: all 0.4s ease;
+}
+
+button.outline-l a {
+  line-height: 6rem;
+  padding: 0 6rem;
+}
+
+button.outline-l:hover {
+  background: #ffffff38;
+  transform: scale(1.08)
+}
+
+button.outline-l:focus {
+  background: #ffffff38;
+  transform: scale(1.08)
+}
+
 article.demo a:before,
 article.demo ul li a:before,
 article.demo ol li a:before,
@@ -204,6 +241,7 @@ article.demo pre:not([class*='hljs'])::before {
 
 article.demo pre > code {
   border-radius: 1.4rem;
+  background-color: #23004b;
 }
 
 .sublink {
@@ -213,8 +251,8 @@ article.demo pre > code {
 }
 
 footer {
-  background: #000;
-  padding: 0 0 12rem;
+  background: #140024;
+  padding: 0 0 8rem;
   position: relative;
   flex-shrink: 0;
 }

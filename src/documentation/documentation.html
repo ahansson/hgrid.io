@@ -1,10 +1,12 @@
 ---
 layout: layout/base.njk
-page.url: documentation
-meta: { title: Documentation | hgrid }
+meta: { 
+  title: Documentation | hgrid,
+  description: How to integrate and use hgrid with your web projects.
+}
 title: Documentation
 ---
-<div class="container-max padding-top-100">
+<main class="container-max padding-top-100">
   <div class="row">
     <article class="column demo">
       <h1>{{ title }}</h1>
@@ -23,15 +25,14 @@ title: Documentation
           </pre>
         <p class="mt-40">Which <a href="https://www.npmjs.com/package/sass/v/1.30.0" target="_blank">additional</a> <a href="https://www.npmjs.com/package/sass-loader" target="_blank">packages</a> 
         you need in order to use <strong>hgrid</strong> as dynamic <code>sass/scss</code> in your project may depend on the framework you use.</p>
-        <pre class="language-bash">
-          <code><span class="hljs-comment">// React:</span>
-    $ <strong>npm</strong> <span class="hljs-built_in">install</span> sass --save-dev
+        <pre class="language-bash"><code><span class="hljs-comment">// React:</span>
+$ <strong>npm</strong> <span class="hljs-built_in">install</span> sass --save-dev
 
-    <span class="hljs-comment block">// Vue.js:</span>$ <strong>npm</strong> <span class="hljs-built_in">install</span> sass sass-loader --save-dev
+<span class="hljs-comment block">// Vue.js:</span>$ <strong>npm</strong> <span class="hljs-built_in">install</span> sass sass-loader --save-dev
 
-    <span class="hljs-comment">// Note that `node-sass` is deprecated as of october 2020. We use `sass` instead.</code>
+<span class="hljs-comment">// Note that `node-sass` is deprecated as of october 2020. We use `sass` instead.</code>
         </pre>
-        <p>There are multiple ways to integrate <strong>hgrid</strong> in your projects, both as <code>scss</code> or with the pre-built <code>css</code>. Read a <a href="#">detailed description</a> on how to set it up.</p>
+        <p>There are multiple ways to integrate <strong>hgrid</strong> in your projects, both as <code>scss</code> or with the pre-built <code>css</code>. Read a <a href="/documentation/integrate/">detailed description</a> on how to set it up.</p>
         <h3 class="mt-60">
           <span id="cdn" class="sublink"></span>
           CDN
@@ -52,7 +53,7 @@ title: Documentation
           <span id="clone" class="sublink"></span>
           Bake your own
         </h3>
-        <p><a href="#">Read more</a> about how to integrate hgrid as <code>sass</code> in your projects.</p>
+        <p><a href="/documentation/integrate/">Read more</a> about how to integrate hgrid as <code>sass</code> in your projects.</p>
         <pre class="language-bash mt-30">
           <code>$ <strong>git</strong> clone https://github.com/ahansson/hgrid-css.git</code>
         </pre>
@@ -675,4 +676,4 @@ title: Documentation
       </section><!-- End group "Typography" -->
     </article>
   </div><!-- End row -->
-</div><!-- End container -->
+</main><!-- End container -->

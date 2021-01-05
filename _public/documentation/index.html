@@ -2,8 +2,11 @@
 <html lang="en-US" class="scroll-smooth">
   <head>
     <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Documentation | hgrid</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="How to integrate and use hgrid with your web projects.">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Atle Hansson">
 <link rel="stylesheet" href="/assets/css/hgrid.1.3.css">
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&display=swap" rel="stylesheet">
@@ -18,35 +21,32 @@
       <h4 class="mb-0 logo"><a href="/" role="menuitem">hgrid</a></h4>
     </div>
     <nav role="menu">
-      <!-- desktop nav -->
-      <ul class="flex align-items-center desktop-menu" role="menu">
-        <li role="menuitem">
-          <a class="border-bottom-none bold" href="/documentation/">Documentation</a>
-        </li>
-        <li role="menuitem" class="push20h">
-          <a class="border-bottom-none" href="https://github.com/ahansson/hgrid-css" target="_blank">GitHub</a>
-        </li>
-        <li role="menuitem" class="push20h">
-          <a href="https://github.com/ahansson/hgrid-css" target="_blank" class="no-hover">
-            <img src="/assets/img/github.png" class="opacity-70 pointer github-icon" alt="github-icon">
-          </a>
-        </li>
-      </ul>
-      <!-- mobile nav -->
-      <ul class="flex align-items-center hide mobile-menu" role="menu">
-        <li role="menuitem" class="push20h">
-          <a class="border-bottom-none menu-trigger" >Menu</a>
-        </li>
-        <li role="menuitem" class="push20h">
-          <a href="https://github.com/ahansson/hgrid-css" target="_blank">
-            <img src="/assets/img/github.png" class="opacity-70 pointer github-icon ">
-          </a>
-        </li>
-      </ul>
+    <ul class="flex align-items-center desktop-menu" role="menu">
+  <li role="menuitem">
+    <a class="border-bottom-none bold" href="/documentation/">Documentation</a>
+  </li>
+  <li role="menuitem" class="push20h">
+    <a class="border-bottom-none" href="https://github.com/ahansson/hgrid-css" target="_blank">GitHub</a>
+  </li>
+  <li role="menuitem" class="push20h">
+    <a href="https://github.com/ahansson/hgrid-css" target="_blank" class="no-hover">
+      <img src="/assets/img/github.png" class="opacity-70 pointer github-icon" alt="github-icon">
+    </a>
+  </li>
+</ul>
+    <ul class="flex align-items-center hide mobile-menu" role="menu">
+  <li role="menuitem" class="push20h">
+    <a class="border-bottom-none menu-trigger" >Menu</a>
+  </li>
+  <li role="menuitem" class="push20h">
+    <a href="https://github.com/ahansson/hgrid-css" target="_blank">
+      <img src="/assets/img/github.png" class="opacity-70 pointer github-icon ">
+    </a>
+  </li>
+</ul>
     </nav>
   </div>
 </header>
-<!-- end header -->
 
     
     <nav class="column-5 fixed overflow-y-auto border-right-light-dotted sidebar" role="menu">
@@ -72,7 +72,7 @@
 <!-- End sidebar menu -->
     
     
-    <div class="container-max padding-top-100">
+    <main class="container-max padding-top-100">
   <div class="row">
     <article class="column demo">
       <h1>Documentation</h1>
@@ -91,15 +91,14 @@
           </pre>
         <p class="mt-40">Which <a href="https://www.npmjs.com/package/sass/v/1.30.0" target="_blank">additional</a> <a href="https://www.npmjs.com/package/sass-loader" target="_blank">packages</a> 
         you need in order to use <strong>hgrid</strong> as dynamic <code>sass/scss</code> in your project may depend on the framework you use.</p>
-        <pre class="language-bash">
-          <code><span class="hljs-comment">// React:</span>
-    $ <strong>npm</strong> <span class="hljs-built_in">install</span> sass --save-dev
+        <pre class="language-bash"><code><span class="hljs-comment">// React:</span>
+$ <strong>npm</strong> <span class="hljs-built_in">install</span> sass --save-dev
 
-    <span class="hljs-comment block">// Vue.js:</span>$ <strong>npm</strong> <span class="hljs-built_in">install</span> sass sass-loader --save-dev
+<span class="hljs-comment block">// Vue.js:</span>$ <strong>npm</strong> <span class="hljs-built_in">install</span> sass sass-loader --save-dev
 
-    <span class="hljs-comment">// Note that `node-sass` is deprecated as of october 2020. We use `sass` instead.</code>
+<span class="hljs-comment">// Note that `node-sass` is deprecated as of october 2020. We use `sass` instead.</code>
         </pre>
-        <p>There are multiple ways to integrate <strong>hgrid</strong> in your projects, both as <code>scss</code> or with the pre-built <code>css</code>. Read a <a href="#">detailed description</a> on how to set it up.</p>
+        <p>There are multiple ways to integrate <strong>hgrid</strong> in your projects, both as <code>scss</code> or with the pre-built <code>css</code>. Read a <a href="/documentation/integrate/">detailed description</a> on how to set it up.</p>
         <h3 class="mt-60">
           <span id="cdn" class="sublink"></span>
           CDN
@@ -120,7 +119,7 @@
           <span id="clone" class="sublink"></span>
           Bake your own
         </h3>
-        <p><a href="#">Read more</a> about how to integrate hgrid as <code>sass</code> in your projects.</p>
+        <p><a href="/documentation/integrate/">Read more</a> about how to integrate hgrid as <code>sass</code> in your projects.</p>
         <pre class="language-bash mt-30">
           <code>$ <strong>git</strong> clone https://github.com/ahansson/hgrid-css.git</code>
         </pre>
@@ -743,7 +742,7 @@
       </section><!-- End group "Typography" -->
     </article>
   </div><!-- End row -->
-</div><!-- End container -->
+</main><!-- End container -->
 
       <footer>
   <div class="buffer"></div>
