@@ -4,16 +4,15 @@
     {% include "layout/partials/head.njk" %}
   </head>
   <body>
-
-    <div class="loader"></div>
-
+    <div class="transition"></div>
+    <script type="text/javascript" src="/assets/js/transition.js"></script>
     {% include "layout/partials/header.njk" %}
 
     {% if title !== 'Home' %}
-    {% include "layout/partials/menus/sidebar-menu.njk" %}
+      {% include "layout/partials/menus/sidebar-menu.njk" %}
     {% endif %}
     
-    {{ content | safe }}
+      {{ content | safe }}
 
     {% include "layout/partials/footer.njk" %}
     {% include "layout/partials/scripts.njk" %}
