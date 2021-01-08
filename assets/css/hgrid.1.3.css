@@ -219,7 +219,9 @@ table {
   text-indent: 0;
   /* 1 */
   border-color: inherit;
-  /* 2 */ }
+  /* 2 */
+  width: 100%;
+  display: table; }
 
 /*
 Forms
@@ -248,7 +250,7 @@ a,
 button,
 [role=button],
 select,
-input {
+input:not([type=text]) {
   cursor: pointer; }
 
 input[type=text] {
@@ -487,15 +489,8 @@ article ol,
 section ol {
   list-style-type: decimal; }
 
-em {
-  font-style: italic; }
-
-small,
-.small {
-  font-size: 83%; }
-
 code {
-  background: #f1dbc7;
+  background: #ffe4c9;
   border-radius: 2px;
   color: #66018d;
   display: inline;
@@ -542,6 +537,14 @@ blockquote {
   padding-left: 1.2rem;
   line-height: 3.4rem; }
 
+i,
+em {
+  font-style: italic; }
+
+small,
+.small {
+  font-size: 83%; }
+
 .lowercase {
   text-transform: lowercase; }
 
@@ -554,11 +557,19 @@ blockquote {
 .no-transform {
   text-transform: none; }
 
+u,
 .underline {
   text-decoration: underline; }
 
+s,
+del,
 .strike {
   text-decoration: line-through; }
+
+mark,
+.highlight {
+  background: #ffe4c9;
+  padding: 0 .4rem; }
 
 .no-underline,
 .no-decoration,
@@ -707,6 +718,7 @@ blockquote {
   font-weight: 900; }
 
 strong,
+b
 .bold,
 p strong,
 a strong,
@@ -1100,15 +1112,48 @@ strong span {
 .grid {
   display: grid; }
 
-.video {
+table {
+  font-size: 90%;
+  margin-bottom: 4rem;
+  color: #555; }
+  table thead tr {
+    text-align: left;
+    border-bottom: 2px solid #e2c5a9; }
+  table thead tr th,
+  table tbody tr td {
+    border-bottom: 1px solid #ccc;
+    padding: 0.6rem 1rem; }
+  table thead tr th {
+    font-weight: bold;
+    padding: 0.4rem 1rem; }
+  table tfoot tr td {
+    font-size: 80%;
+    background: #ccc;
+    line-height: 1.6rem;
+    padding: 0.2rem 1rem; }
+  table.striped tbody tr td {
+    border: none; }
+  table.striped tbody tr:nth-child(even) {
+    background: #eee;
+    border-bottom: 1px dotted #ccc;
+    transition: background 0.4s ease; }
+  table.striped tbody tr:nth-child(even):hover {
+    background: #e1dae5;
+    cursor: pointer; }
+  table.striped tbody tr:nth-child(odd):hover {
+    background: #f5f0e3;
+    cursor: pointer;
+    border-bottom: 1px dotted #ccc; }
+
+.embed {
   position: relative;
   padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
   margin-bottom: 1%; }
-  .video iframe,
-  .video object,
-  .video embed {
+  .embed iframe,
+  .embed object,
+  .embed embed {
     position: absolute;
     top: 0;
     left: 0;
@@ -1120,12 +1165,22 @@ hr,
   border: 0.5px solid #ccc;
   margin-bottom: 3rem; }
 
+.horizontal-line-gray {
+  border: 0.5px solid #888;
+  margin-bottom: 3rem; }
+
 .horizontal-line-dark {
   border: 0.5px solid #555;
   margin-bottom: 3rem; }
 
+.border-lighter {
+  border: 1px solid #eee; }
+
 .border-light {
   border: 1px solid #ccc; }
+
+.border-gray {
+  border: 1px solid #888; }
 
 .border-dark {
   border: 1px solid #555; }
@@ -1133,17 +1188,29 @@ hr,
 .border-darker {
   border: 1px solid #333; }
 
+.border-lighter-dotted {
+  border: 1px dotted #eee; }
+
 .border-light-dotted {
   border: 1px dotted #ccc; }
+
+.border-gray-dotted {
+  border: 1px dotted #888; }
 
 .border-dark-dotted {
   border: 1px dotted #555; }
 
+.border-darker-dotted {
+  border: 1px dotted #333; }
+
 .border-transparent {
   border: 1px solid transparent; }
 
-.border-none {
-  border: none; }
+.border-top-lighter {
+  border-top: 1px solid #eee; }
+
+.border-top-lighter-dotted {
+  border-top: 1px dotted #eee; }
 
 .border-top-light {
   border-top: 1px solid #ccc; }
@@ -1151,19 +1218,43 @@ hr,
 .border-top-light-dotted {
   border-top: 1px dotted #ccc; }
 
+.border-top-gray {
+  border-top: 1px dotted #888; }
+
+.border-top-gray-dotted {
+  border-top: 1px dotted #888; }
+
 .border-top-dark {
   border-top: 1px solid #555; }
 
 .border-top-dark-dotted {
   border-top: 1px dotted #555; }
 
+.border-top-darker {
+  border-top: 1px solid #333; }
+
+.border-top-darker-dotted {
+  border-top: 1px dotted #333; }
+
 .border-top-none {
   border-top: 0; }
+
+.border-bottom-lighter {
+  border-bottom: 1px solid #eee; }
+
+.border-bottom-lighter-dotted {
+  border-bottom: 1px dotted #eee; }
 
 .border-bottom-light {
   border-bottom: 1px solid #ccc; }
 
 .border-bottom-light-dotted {
+  border-bottom: 1px dotted #ccc; }
+
+.border-bottom-gray {
+  border-bottom: 1px solid #888; }
+
+.border-bottom-gray-dotted {
   border-bottom: 1px dotted #ccc; }
 
 .border-bottom-dark {
@@ -1175,11 +1266,23 @@ hr,
 .border-bottom-none {
   border-bottom: 0; }
 
+.border-right-lighter {
+  border-right: 1px solid #eee; }
+
+.border-right-lighter-dotted {
+  border-right: 1px dotted #eee; }
+
 .border-right-light {
   border-right: 1px solid #ccc; }
 
 .border-right-light-dotted {
   border-right: 1px dotted #ccc; }
+
+.border-right-gray {
+  border-right: 1px dotted #888; }
+
+.border-right-gray-dotted {
+  border-right: 1px dotted #888; }
 
 .border-right-dark {
   border-right: 1px solid #555; }
@@ -1187,8 +1290,20 @@ hr,
 .border-right-dark-dotted {
   border-right: 1px dotted #555; }
 
+.border-right-darker {
+  border-right: 1px solid #333; }
+
+.border-right-darker-dotted {
+  border-right: 1px dotted #333; }
+
 .border-right-none {
-  border-right: 0; }
+  border-top: 0; }
+
+.border-left-lighter {
+  border-left: 1px solid #eee; }
+
+.border-left-lighter-dotted {
+  border-left: 1px dotted #eee; }
 
 .border-left-light {
   border-left: 1px solid #ccc; }
@@ -1196,14 +1311,29 @@ hr,
 .border-left-light-dotted {
   border-left: 1px dotted #ccc; }
 
+.border-left-gray {
+  border-left: 1px dotted #888; }
+
+.border-left-gray-dotted {
+  border-left: 1px dotted #888; }
+
 .border-left-dark {
   border-left: 1px solid #555; }
 
 .border-left-dark-dotted {
   border-left: 1px dotted #555; }
 
+.border-left-darker {
+  border-left: 1px solid #333; }
+
+.border-left-darker-dotted {
+  border-left: 1px dotted #333; }
+
 .border-left-none {
   border-left: 0; }
+
+.border-none {
+  border: none; }
 
 .padding-0 {
   padding: 0rem 0rem; }
@@ -2823,7 +2953,7 @@ hr,
   background: #fff; }
 
 .transition.vanish {
-  animation: vanish 0.4s;
+  animation: vanish 0.6s;
   animation-fill-mode: forwards; }
 
 @keyframes vanish {

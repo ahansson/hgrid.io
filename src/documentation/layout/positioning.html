@@ -8,25 +8,143 @@ title: Positioning
 ---
 <h3 class="mt-30">
   <span id="push-and-pull" class="sublink"></span>
-  Push and pull
+  Push and pull adjustment
 </h3>
 
-<p>Push and pull classes ...</p>
+<p>Raw file location: <code>sass/layout/helpers/_adjustment.scss</code></p>
 
-<pre class="language-css">
-  <code>code here</code>
-</pre>
+<p>
+  Push and pull classes can be used to fine tune the position of html
+  elements. We use two methods: <code>margin</code> or <code>transform</code>. The
+  first will also affect sibling element(s), while the latter will move the element independently 
+  of other elements.
+</p>
 
-<h3 class="mt-30">
+<div class="row mt-30">
+  <div class="column">
+    <h5>Push down &darr;</h5>
+    <div class="row push20v">
+      <div class="column">
+        <p class="bg-gray-lighter">No push</p>
+      </div>
+      <div class="column push20v">
+        <p>.push20v</p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <h5>Push right &rarr;</h5>
+    <div class="row push20v">
+      <div class="column">
+        <p>No transform</p>
+      </div>
+      <div class="column translate-push10h">
+        <p>.translate-push10h</p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <h5>Pull left &larr;</h5>
+    <div class="row push20v">
+      <div class="column">
+        <p class="border-transparent">No transform</p>
+      </div>
+      <div class="column translate-pull20h">
+        <p class="border-dark">.translate-pull20h</p>
+      </div>
+    </div>
+  </div>
+  <div class="column">
+    <h5>Pull up &uarr;</h5>
+    <div class="row mt-20">
+      <div class="column">
+        <p>No pull</p>
+      </div>
+      <div class="column translate-pull20v">
+        <p>.translate-pull20v</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<h3 class="mt-50">
   <span id="positioning" class="sublink"></span>
   Positioning
 </h3>
 
-<p>Positions ...</p>
+<p>The following utility classes are available in the prebuilt css file and in the <code>layout/helpers/_adjustments.scss</code> file if you import it separately.</p>
 
-<h3 class="mt-30">
+<table>
+  <thead>
+    <tr>
+      <th style="width: 40%;">Class Name</th>
+      <th>CSS Rule</th>
+    </tr>
+  </thead>
+	<tbody>
+		<tr>
+			<td>.static</td>
+			<td>position: static;</td>
+
+		</tr>
+		<tr>
+			<td>.absolute</td>
+			<td>position: absolute;</td>
+
+		</tr>
+		<tr>
+			<td>.fixed</td>
+			<td>position: fixed;</td>
+
+		</tr>
+		<tr>
+			<td>.relative</td>
+			<td>position: relative;</td>
+		</tr>
+		<tr>
+			<td>.sticky</td>
+			<td>position: sticky;</td>
+		</tr>
+		<tr>
+			<td>.position-initial</td>
+			<td>position: initial;</td>
+		</tr>
+		<tr>
+			<td>.position-inherit</td>
+			<td>position: inherit;</td>
+		</tr>
+		<tr>
+			<td>.absolute-center</td>
+			<td>left: 50%;<br>position: absolute;<br>top: 50%;<br>transform: translate(-50%, -50%);</td>
+		</tr>
+	</tbody>
+</table>
+
+
+<h3 class="mt-50">
   <span id="floats" class="sublink"></span>
   Floats
 </h3>
 
-<p>Floats ...</p>
+<table>
+  <thead>
+    <tr>
+      <th style="width: 40%;">Class Name</th>
+      <th>CSS Rule</th>
+    </tr>
+  </thead>
+	<tbody>
+		<tr>
+			<td>.fr</td>
+			<td>float: right;</td>
+		</tr>
+		<tr>
+			<td>.fl</td>
+			<td>float: left;</td>
+		</tr>
+		<tr>
+			<td>.fn</td>
+			<td>float: none;</td>
+		</tr>
+	</tbody>
+</table>
