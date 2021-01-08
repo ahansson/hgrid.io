@@ -2,9 +2,9 @@
 <html lang="en-US" class="scroll-smooth">
   <head>
     <meta charset="UTF-8">
-<title>Integrate hgrid in your projects | hgrid</title>
+<title>Installation | hgrid</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="How to integrate and use hgrid in your development projects.">
+<meta name="description" content="How to install and use hgrid with your web projects.">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Atle Hansson">
 <link rel="stylesheet" href="/assets/css/hgrid.1.3.css">
@@ -76,33 +76,73 @@
     <main class="container-max padding-top-100 padding-bottom-120">
       <div class="row">
         <article class="column demo">
-          <h1>Integrate hgrid with your projects</h1>
+          <h1>Installation</h1>
 
           <section class="group border-top-light padding-top-40">
 
-            
-<h3 class="mt-30">
+            <h3 class="mt-30">
   <span id="npm" class="sublink"></span>
-  Vue 3
+  NPM or Yarn
+</h3>
+<p>From the root of your project, install <code>hgrid-css</code> as a dependency:</p>
+
+<pre class="language-bash">
+  <code>$ <strong>npm</strong> <span class="hljs-built_in">install</span> hgrid-css --save-dev</code>
+</pre>
+
+<pre class="language-bash">
+  <code>$ <strong>yarn</strong> <span class="hljs-built_in">add</span> hgrid-css --dev</code>
+</pre>
+
+<p class="mt-40">Which <a href="https://www.npmjs.com/package/sass/v/1.30.0" target="_blank">additional</a>
+<a href="https://www.npmjs.com/package/sass-loader" target="_blank">packages</a> you need in order to integrate <strong>hgrid</strong> 
+as <code>.sass/.scss</code> in your project may depend on the framework you use.
+</p>
+
+<pre class="language-bash"><code><span class="hljs-comment">// React:
+</span>$ <strong>npm</strong> <span class="hljs-built_in">install</span> sass --save-dev
+
+<span class="hljs-comment block">// Vue.js:</span>$ <strong>npm</strong> <span class="hljs-built_in">install</span> sass sass-loader --save-dev
+
+<span class="hljs-comment">// Note that `node-sass` is deprecated as of October 2020. We use `sass` instead.</code>
+</pre>
+
+<p>There are multiple ways to integrate <strong>hgrid</strong> in your projects, both as <code>SCSS</code> or with the pre-built
+  <code>css</code>. Read a <a href="/documentation/integrate/">detailed description</a> on how to set it up.
+</p>
+
+<h3 class="mt-60">
+  <span id="cdn" class="sublink"></span>
+  CDN
 </h3>
 
-<p>
-  1. Install two dependencies: <code>npm i sass sass-loader --save-dev</code> <em>(node-sass is deprecated)</em>
-</p>
-<p>2. Install hgrid-css: <code>npm install hgrid-css</code></p>
-<p>3. Create <code>main.scss</code> example in <code>assets/scss</code></p>
-<p>
-  4. Initiate <code>main.scss</code> in your <code>main.js</code> file,
-  respecting your local folder structure:
-</p>
+<pre class="language-html push30v">
+  <code class="hljs-string">https://unpkg.com/hgrid@1.3.0/dist/hgrid.1.3.min.css</code>
+</pre>
+<p class="mt-40">Include the link to the <a href="https://unpkg.com/hgrid@1.3.0/dist/hgrid.1.3.min.css">prebuilt hgrid kit</a>
+  from the CDN, or a local copy, before any other stylesheets in your html. You can customize hgrid by overwriting the CSS
+  classes below the import in the code flow.</p>
 
-<pre class="language-js"><code>import './assets/scss/main.scss'
-</code></pre>
+<pre class="language-html">
+  <code>&lt;head&gt;<br>  &lt;link rel="stylesheet" href="https://unpkg.com/hgrid@1.3.0/dist/hgrid.1.3.min.css"&gt;<br><span class="hljs-comment">  &lt;-- more css --></span><br>&lt;/head&gt;</code>
+</pre>
 
-<p>
-  In main.scss, import hgrid as shown below, and modify any sass variables from hgrid that you want to change 
-  (see hgrid/_variables.scss for available variables). Note: use commas, not semicolons after your $variable declarations:
-</p>
+<p class="mt-40">You can also <code>@import</code> it at the top of your local stylesheet:</p>
+
+<pre class="language-css">
+  <code><span class="hljs-comment block">/* From node_modules */</span>@import './../etc./node_modules/hgrid-css/dist/hgrid.1.3.min.css';<br><br><span class="hljs-comment block">/* From CDN */</span>@import 'https://unpkg.com/hgrid@1.3.0/dist/hgrid.1.3.min.css';</code>
+</pre>
+
+<h3 class="mt-40">
+  <span id="clone" class="sublink"></span>
+  Bake your own
+</h3>
+
+<p><a href="/documentation/integrate/">Read more</a> about how to integrate hgrid as <code>sass</code> in your projects.</p>
+
+<pre class="language-bash mt-30">
+  <code>$ <strong>git</strong> clone https://github.com/ahansson/hgrid-css.git</code>
+</pre>
 
           </section>
         </article>

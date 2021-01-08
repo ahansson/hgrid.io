@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en-US" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8">
+<title>Typography | hgrid</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Typographic CSS styles in hgrid">
+<meta name="robots" content="index, follow">
+<meta name="author" content="Atle Hansson">
+<link rel="stylesheet" href="/assets/css/hgrid.1.3.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/styles.css">
+<link rel="icon" type="image/png" href="/assets/img/icon.png">
+
+  </head>
+  <body>
+    <div class="transition"></div>
+    <script type="text/javascript" src="/assets/js/transition.js"></script>
+    <header class="fixed border-bottom-lighter fullwidth z-index-9">
+  <div class="container padding-top-10 padding-bottom-10 flex align-items-center justify-content-space-between">
+    <div class="flex align-items-center identity">
+      <img src="/assets/img/icon.png" class="icon rotate-once" alt="hgrid-icon">
+      <h4 class="mb-0 logo"><a href="/" role="menuitem">hgrid</a></h4>
+    </div>
+    <nav role="menu">
+    <ul class="flex align-items-center desktop-menu" role="menu">
+  <li role="menuitem">
+    <a class="border-bottom-none " href="/documentation/installation">Documentation</a>
+  </li>
+  <li role="menuitem" class="push20h">
+    <a class="border-bottom-none" href="https://github.com/ahansson/hgrid-css" rel="noopener noreferrer" target="_blank">GitHub</a>
+  </li>
+  <li role="menuitem" class="push20h">
+    <a href="https://github.com/ahansson/hgrid-css" rel="noopener noreferrer" target="_blank" class="no-hover">
+      <img src="/assets/img/github.png" class="opacity-70 pointer github-icon" alt="github-icon">
+    </a>
+  </li>
+</ul>
+    <ul class="flex align-items-center hide mobile-top-menu" role="menu">
+  <li role="menuitem" class="push20h">
+    <a class="border-bottom-none menu-trigger" >Menu</a>
+  </li>
+  <li role="menuitem" class="push20h">
+    <a href="https://github.com/ahansson/hgrid-css" rel="noopener noreferrer" target="_blank">
+      <img src="/assets/img/github.png" class="opacity-70 pointer github-icon ">
+    </a>
+  </li>
+</ul>
+    </nav>
+  </div>
+</header>
+    <nav class="column-5 fixed overflow-y-auto border-right-light-dotted docs-menu sidebar" role="menu">
+  <span class="hide close-x pointer">&times;</span>
+  <h5 role="menuitem"><a href="/documentation/about-hgrid/">About</a></h5>
+  <h5 role="menuitem"><a href="/documentation/installation/">Installation</a></h5>
+    <ul class="sub-links">
+      <li role="menuitem"><a href="/documentation/installation#npm">NPM/Yarn</a></li>
+      <li role="menuitem"><a href="/documentation/installation#cdn">CDN</a></li>
+      <li role="menuitem"><a href="/documentation/installation#clone">Clone</a></li>
+    </ul>
+  <h5 role="menuitem"><a href="/documentation/integrate/">Integration</a></h5>
+  <h5 role="menuitem"><a href="/documentation/layout/">Layout</a></h5>
+    <ul class="sub-links">
+      <li role="menuitem"><a href="/documentation/layout#containers">Containers</a></li>
+      <li role="menuitem"><a href="/documentation/layout#auto-columns">Automatic columns</a></li>
+      <li role="menuitem"><a href="/documentation/layout#accurate-columns">Accurate columns</a></li>
+      <li role="menuitem"><a href="/documentation/layout#flex">Flex</a></li>
+      <li role="menuitem"><a href="/documentation/layout#grid">Grid</a></li>
+      <li role="menuitem"><a href="/documentation/layout/positioning/">Positioning</a></li>
+    </ul>
+  <h5 role="menuitem"><a href="/documentation/utilities/">Utility classes</a></h5>
+  <h5 role="menuitem"><a href="/documentation/typography/">Typography</a></h5>
+</nav>
+    
+    <main class="container-max padding-top-100 padding-bottom-120">
+      <div class="row">
+        <article class="column demo">
+          <h1>Typography</h1>
+
+          <section class="group border-top-light padding-top-40">
+
+              <div class="row mt-20">
+    <div class="column">
+      <h4 class="mt-50">1. Headlines</h4>
+      <h1 class="mt-30">Hello, this is h1</h1>
+      <h2>Hello, this is h2</h2>
+      <h3>Hello, this is h3</h3>
+      <h4>Hello, this is h4</h4>
+      <h5>Hello, this is h5</h5>
+      <h6>Hello, this is h6</h6>
+    </div>
+  </div>
+  <div class="row mt-50">
+    <div class="column">
+      <h4>2. Text columns</h4>
+      <code class="mt-20">.two-columns</code>
+      <div class="row mt-20">
+        <div class="column two-columns">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
+            odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
+            quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent
+            mauris. Fusce nec tellus sed augue semper porta. Mauris massa.
+            Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad
+            litora torquent per conubia nostra, per inceptos himenaeos.
+          </p>
+
+          <p>
+            Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.
+            Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem
+            at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut
+            ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel,
+            suscipit quis, luctus non, massa. Fusce ac turpis quis ligula
+            lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel,
+            tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit.
+          </p>
+
+          <p>
+            Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+            per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non
+            tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante
+            quis turpis. Nulla facilisi. Ut fringilla. Suspendisse potenti. Nunc
+            feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin
+            quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit.
+            Sed lectus. Integer euismod lacus luctus magna.
+          </p>
+        </div>
+      </div>
+      <div class="row mt-20">
+        <div class="column">
+          <code>.three-columns</code>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column three-columns">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
+            odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
+            quis sem at nibh elementum imperdiet.
+          </p>
+
+          <p>
+            Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.
+            Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem
+            at dolor. Maecenas mattis.
+          </p>
+
+          <p>
+            Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+            per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non
+            tincidunt.
+          </p>
+        </div>
+      </div>
+      <div class="row mt-20">
+        <div class="column">
+          <code>.four-columns</code>
+        </div>
+      </div>
+      <div class="row">
+        <div class="column four-columns">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
+            odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
+            quis sem at nibh elementum imperdiet. Pellentesque nibh.
+          </p>
+
+          <p>
+            Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.
+            Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem
+            at dolor. Maecenas mattis. Pellentesque nibh. Aenean quam.
+          </p>
+
+          <p>
+            Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+            per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non
+            tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante
+            quis turpis. Aenean quam. In scelerisque sem at dolor. Maecenas
+            mattis. Pellentesque nibh.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row-block">
+    <article>
+      <h4>3. Lists</h4>
+      <p>
+        Lists will get basic styling if they are located within an
+        <code>article</code> element.
+      </p>
+      <p>Unordered list <code>ul</code></p>
+      <ul>
+        <li>Unordered item number one</li>
+        <li>List item <a href="https://google.com/">number two</a></li>
+        <li>List item number three</li>
+        <li>List item number four</li>
+        <li>List item number five</li>
+        <li>List item number six</li>
+        <li>List item number seven</li>
+      </ul>
+
+      <p>Ordered list <code>ol</code></p>
+      <ol>
+        <li>Ordered list item number one</li>
+        <li>List item <a href="https://google.com/">number two</a></li>
+        <li>List item number three</li>
+        <li>List item number four</li>
+        <li>List item number five</li>
+        <li>List item number six</li>
+        <li>List item number seven</li>
+      </ol>
+    </article>
+  </div>
+  <div class="row-block mt-40">
+    <h4>4. Formatting</h4>
+    <code class="mt-20">&lt;blockquote&gt;</code>
+
+    <blockquote class="mt-40 mb-50">
+      Insanity is doing the same thing over and over again, but expecting
+      different results.
+    </blockquote>
+
+    <code class="mt-40 mb-20">.uppercase</code>
+    <p class="uppercase">Class aptent taciti sociosqu ad litora torquent.</p>
+
+    <p class="text-center">
+      This is centered text with <code>.text-center</code>
+    </p>
+
+    <code class="mt-20 mb-20">.capitalize</code>
+    <p class="capitalize">Curabitur sodales ligula in libero.</p>
+
+    <code class="mt-20 mb-20">.strike</code>
+
+    <p class="strike">Maecenas mattis. Pellentesque nibh.</p>
+
+    <code class="mt-20 mb-20">&lt;code&gt;</code>
+    <code>if ($lorem == 'ipsum') { do this }</code>
+  </div>
+
+          </section>
+        </article>
+      </div>
+    </main>
+
+      <footer>
+  <div class="buffer"></div>
+    <div class="container-max padding-top-100">
+      <div class="row">
+        <div class="column">
+          <p><a>Footer link A</a></p>
+          <p><a>Footer link B</a></p>
+        </div>
+        <div class="column">
+          <p><a>Footer link C</a></p>
+          <p><a>Footer link D</a></p>
+        </div>
+        <div class="column">
+          <p><a>Footer link E</a></p>
+          <p><a>Footer link F</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+      <script src="/assets/js/highlight.pack.js"></script>
+  <script src="/assets/js/scripts.js"></script>
+
+  </body>
+</html>

@@ -1,93 +1,31 @@
 ---
-layout: layout/base.njk
-meta: { 
-  title: Integrate hgrid in your projects | hgrid,
-  description: How to integrate and use hgrid with your web projects.
+layout: layout/docs.njk
+meta: {
+title: Integrate hgrid in your projects | hgrid,
+description: How to integrate and use hgrid in your development projects.
 }
-title: How to use hgrid in your projects
+title: Integrate hgrid with your projects
 ---
-<main class="container-max padding-top-100">
-  <div class="row">
-    <article class="column demo">
-      <h1>{{ title }}</h1>
-      <section class="group border-top-light">
-        <h2>JavaScript frameworks</h2>
-        <h3 class="mt-30">
-          <span id="npm" class="sublink"></span>
-          Vue 3
-        </h3>
 
-          <p>1. Install two dependencies: <code>npm install sass sass-loader</code> (node-sass is deprecated)</p>
-          <p>2. Install hgrid-css: <code>npm install hgrid-css</code></p>
-          <p>3. Create <code>main.scss</code> example in <code>assets/scss</code></p>
-          <p>4. Initiate <code>main.scss</code> in your <code>main.js</code> file, respecting your local folder structure:</p>
+<h3 class="mt-30">
+  <span id="npm" class="sublink"></span>
+  Vue 3
+</h3>
 
+<p>
+  1. Install two dependencies: <code>npm i sass sass-loader --save-dev</code> <em>(node-sass is deprecated)</em>
+</p>
+<p>2. Install hgrid-css: <code>npm install hgrid-css</code></p>
+<p>3. Create <code>main.scss</code> example in <code>assets/scss</code></p>
+<p>
+  4. Initiate <code>main.scss</code> in your <code>main.js</code> file,
+  respecting your local folder structure:
+</p>
 
 <pre class="language-js"><code>import './assets/scss/main.scss'
 </code></pre>
 
-          <p>In main.scss, import hgrid as shown below, and modify any sass variables from hgrid that you want to change (see hgrid/_variables.scss for available variables). Note: use commas, not semicolons after your $variable declarations:</p>
-<!-- @use './../../../node_modules/hgrid-css/hgrid/hgrid.1.3.scss' with (
- $link-color: blue,
- $link-color-hover: skyblue
-);
- 
-@import './partials/_general.scss';
-@import 'partials/_lightmode.scss';
-
-6. Import any other local or external sass or regular css files below the @use rule (will not work before the @use rule).
-
-More about the @use rule for sass: https://sass-lang.com/documentation/at-rules/use#configuration
-
-
-Access to $variables in style tags of your Vue files
-
-Add the following config to vue.config.js at the root of your project
-
-if (process.env.NODE_ENV === 'development') {
- module.exports = {
-   css: {
-     sourceMap: true,
-     loaderOptions: {
-       scss: {
-         additionalData: `
-           @import '@/styles/scss/variables/_variables.scss';
-         `
-       }
-     }
-   }
- }
-}
-
-in use <style lang=”scss”> or <style lang=”sass”> in the .vue files, depending on which paradigm you use. Stop and restart the compile process (npm run serve) and you will now have access to any of hgrid’s scss variables directly in your components.
-
-Important: Do not import the whole hgrid framework here. The CSS loader is supposed to only include code that doesn’t generate CSS directly (variables, mixins etc. that are compiled away by the sass compiler). Otherwise, every scoped style from your components will append a copy of the whole css framework to its output.
-
-Importing the prebuilt css file only
-
-https://headsigned.com/posts/importing-and-using-css-frameworks-with-vue/
-
-
-3 ways: 
-
-1. Import hgrid-css to App.vue
-
-@import ‘~hgrid-css/hgrid/hgrid.1.3.css or hgrid.1.3.min.css at the top of your <style> section. Do not use ‘scoped’ for this.
-
-The output is static but can be overwritten with individual css classes by using the same class names in any of your styles loaded after this point.
-
-Note that scoped styles will be included before hgrid in this case in the build. The html will still read and parse any hgrid classes correctly.
-
-2. Import hgrid-css to main.js
-
-import ‘./../node_modules/hgrid-css/dist/hgrid.1.3.css’
-
-
-3. Import hgrid-css to a local css file in your project
-
-In a file in for example public/assets/ called styles.css you could import hgrid like so: @import ‘./../etc./node_modules/hgrid-css/dist/hgrid.1.3.min.css’ -->
-
-      </section>
-    </article>
-  </div>
-</main>
+<p>
+  In main.scss, import hgrid as shown below, and modify any sass variables from hgrid that you want to change 
+  (see hgrid/_variables.scss for available variables). Note: use commas, not semicolons after your $variable declarations:
+</p>

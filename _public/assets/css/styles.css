@@ -9,7 +9,7 @@ a {
 
 main.container,
 main.container-max {
-  min-height: calc(100vh - 447px)
+  min-height: calc(100vh - 341px)
 }
 
 .masthead {
@@ -152,6 +152,15 @@ nav.sidebar ul.sub-links > ul.sub-links {
 nav.sidebar a.active-link {
   font-weight: bold;
   color: #66008d;
+}
+
+nav.mobile-menu {
+  left: -50rem
+}
+
+.transition.vanish {
+  animation: vanish 0.3s;
+  animation-fill-mode: forwards; 
 }
 
 a:visited.anchorjs-link,
@@ -364,6 +373,7 @@ footer .buffer {
     height: 100vh;
     width: 53%;
     z-index: 9;
+    border-right: 1px solid #aaa;
     background: #fff;
     padding: 6% 1% 1% 6%;
     left: -50rem;
@@ -385,7 +395,11 @@ footer .buffer {
   }
 
   nav.sidebar.show {
-    left: -0.4rem;
+    left: -0.6rem;
+  }
+
+  nav.mobile-menu {
+    padding-top: 7rem !important;
   }
 
   .sublink {
@@ -407,7 +421,7 @@ footer .buffer {
     display: none;
   }
 
-  .mobile-menu {
+  .mobile-top-menu {
     display: flex;
   }
 
@@ -417,6 +431,10 @@ footer .buffer {
 
   article.demo h2 {
     padding: 7rem 0 0;
+  }
+
+  footer p {
+    text-align: center;
   }
 }
 
@@ -433,8 +451,5 @@ footer .buffer {
 @media (max-width: 600px) {
   nav.sidebar {
     width: 70%;
-  }
-  footer p {
-    text-align: center;
   }
 }

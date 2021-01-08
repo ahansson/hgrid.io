@@ -7,14 +7,24 @@
     <div class="transition"></div>
     <script type="text/javascript" src="/assets/js/transition.js"></script>
     {% include "layout/partials/header.njk" %}
-
-    {% if title == 'Home' %}
-      {% include "layout/partials/menus/mobile-menu.njk" %}
-    {% endif %}
+    {% include "layout/partials/menus/docs-menu.njk" %}
     
-      {{ content | safe }}
+    <main class="container-max padding-top-100 padding-bottom-120">
+      <div class="row">
+        <article class="column demo">
+          <h1>{{ title }}</h1>
+
+          <section class="group border-top-light padding-top-40">
+
+            {{ content | safe }}
+
+          </section>
+        </article>
+      </div>
+    </main>
 
     {% include "layout/partials/footer.njk" %}
     {% include "layout/partials/scripts.njk" %}
+
   </body>
 </html>

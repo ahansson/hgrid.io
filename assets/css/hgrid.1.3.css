@@ -2823,7 +2823,7 @@ hr,
   background: #fff; }
 
 .transition.vanish {
-  animation: vanish 0.6s;
+  animation: vanish 0.4s;
   animation-fill-mode: forwards; }
 
 @keyframes vanish {
