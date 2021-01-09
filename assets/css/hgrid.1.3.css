@@ -210,18 +210,14 @@ a[href$=gif] {
   border: 0 none !important; }
 
 /*
-1) Remove text indentation from table contents in Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=999088, https://bugs.webkit.org/show_bug.cgi?id=201297)
-2) Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
+1) Correct table border color inheritance in all Chrome and Safari. (https://bugs.chromium.org/p/chromium/issues/detail?id=935729, https://bugs.webkit.org/show_bug.cgi?id=195016)
 */
 table {
   border-collapse: collapse;
   border-spacing: 0;
-  text-indent: 0;
-  /* 1 */
   border-color: inherit;
-  /* 2 */
-  width: 100%;
-  display: table; }
+  /* 1 */
+  width: 100%; }
 
 /*
 Forms
@@ -957,45 +953,45 @@ strong span {
 .flex {
   display: flex; }
 
-.flex-center {
+.f-center {
   display: flex;
   justify-content: center;
   align-items: center; }
 
-.flex-none {
+.f-none {
   flex: none; }
 
-.flex-grow-1 {
+.f-grow-1 {
   flex-grow: 1; }
 
-.flex-grow-0 {
+.f-grow-0 {
   flex-grow: 0; }
 
-.flex-shrink-1 {
+.f-shrink-1 {
   flex-shrink: 1; }
 
-.flex-shrink-0 {
+.f-shrink-0 {
   flex-shrink: 0; }
 
-.flex-direction-row {
+.f-direction-row {
   flex-direction: row; }
 
-.flex-direction-row-reverse {
+.f-direction-row-reverse {
   flex-direction: row-reverse; }
 
-.flex-direction-column {
+.f-direction-column {
   flex-direction: column; }
 
-.flex-direction-column-reverse {
+.f-direction-column-reverse {
   flex-direction: column-reverse; }
 
-.flex-wrap {
+.f-wrap {
   flex-wrap: wrap; }
 
-.flex-wrap-nowrap {
+.f-wrap-nowrap {
   flex-wrap: nowrap; }
 
-.flex-wrap-reverse {
+.f-wrap-reverse {
   flex-wrap: wrap-reverse; }
 
 .justify-content-flex-start {
@@ -1112,9 +1108,18 @@ strong span {
 .grid {
   display: grid; }
 
+.scrollable-x {
+  overflow: auto;
+  overflow-y: hidden; }
+
+.scrollable-y {
+  overflow: auto;
+  overflow-y: hidden;
+  max-width: 100%; }
+
 table {
   font-size: 90%;
-  margin-bottom: 4rem;
+  margin-bottom: 0.8rem;
   color: #555; }
   table thead tr {
     text-align: left;
@@ -1162,7 +1167,7 @@ table {
 
 hr,
 .horizontal-line {
-  border: 0.5px solid #ccc;
+  border: 1px solid #ccc;
   margin-bottom: 3rem; }
 
 .horizontal-line-gray {
@@ -1179,7 +1184,7 @@ hr,
 .border-light {
   border: 1px solid #ccc; }
 
-.border-gray {
+.border-medium {
   border: 1px solid #888; }
 
 .border-dark {
@@ -1194,7 +1199,7 @@ hr,
 .border-light-dotted {
   border: 1px dotted #ccc; }
 
-.border-gray-dotted {
+.border-medium-dotted {
   border: 1px dotted #888; }
 
 .border-dark-dotted {
@@ -1218,10 +1223,10 @@ hr,
 .border-top-light-dotted {
   border-top: 1px dotted #ccc; }
 
-.border-top-gray {
+.border-top-medium {
   border-top: 1px dotted #888; }
 
-.border-top-gray-dotted {
+.border-top-medium-dotted {
   border-top: 1px dotted #888; }
 
 .border-top-dark {
@@ -1251,10 +1256,10 @@ hr,
 .border-bottom-light-dotted {
   border-bottom: 1px dotted #ccc; }
 
-.border-bottom-gray {
+.border-bottom-medium {
   border-bottom: 1px solid #888; }
 
-.border-bottom-gray-dotted {
+.border-bottom-medium-dotted {
   border-bottom: 1px dotted #ccc; }
 
 .border-bottom-dark {
@@ -1262,6 +1267,12 @@ hr,
 
 .border-bottom-dark-dotted {
   border-bottom: 1px dotted #555; }
+
+.border-bottom-darker {
+  border-bottom: 1px solid #333; }
+
+.border-bottom-darker-dotted {
+  border-bottom: 1px dotted #333; }
 
 .border-bottom-none {
   border-bottom: 0; }
@@ -1278,10 +1289,10 @@ hr,
 .border-right-light-dotted {
   border-right: 1px dotted #ccc; }
 
-.border-right-gray {
+.border-right-medium {
   border-right: 1px dotted #888; }
 
-.border-right-gray-dotted {
+.border-right-medium-dotted {
   border-right: 1px dotted #888; }
 
 .border-right-dark {
@@ -1311,7 +1322,7 @@ hr,
 .border-left-light-dotted {
   border-left: 1px dotted #ccc; }
 
-.border-left-gray {
+.border-left-medium {
   border-left: 1px dotted #888; }
 
 .border-left-gray-dotted {

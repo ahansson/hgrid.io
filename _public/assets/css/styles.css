@@ -253,6 +253,11 @@ article.demo pre > code {
   background-color: #23004b;
 }
 
+code.loc {
+  background: #e3e3e3;
+  color: black;
+}
+
 .sublink {
   /* scroll-margin: 10rem; awaiting fix for Safari */
   position: relative;
@@ -283,40 +288,6 @@ footer .buffer {
   box-shadow: 0 -3rem 3rem #f6f6f6;
   margin-top: -1px;
 }
-
-table {
-  width: 100%;
-  font-size: 90%;
-  display: block;
-  margin-bottom: 3rem;
-  display: table;
-}
-
-thead tr {
-  text-align: left;
-  border-bottom: 2px solid #e2c5a9;
-}
-
-table thead tr th,
-table tbody tr td {
-  border-bottom: 1px solid #ddd;
-  padding: 0.6rem 1rem;
-}
-
-table thead tr th {
-  font-weight: bold;
-  padding: 0.4rem 1rem;
-}
-
-tfoot tr td {
-  font-size: 80%;
-  background: #ddd;
-  line-height: 1.6rem;
-  padding: 0.2rem 1rem;
-}
-
-
-
 
 /* Tomorrow Night Blue Theme for highlight.js */
 /* http://jmblog.github.com/color-themes-for-google-code-highlightjs */

@@ -12,7 +12,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/styles.css">
 <link rel="icon" type="image/png" href="/assets/img/icon.png">
+<link rel="canonical" href="https://hgrid.io/documentation/layout/" />
 
+<meta property="og:site_name" content="hgrid | Lightweight CSS Utility Kit" />
+<meta property="og:title" content="Layout | hgrid" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://hgrid.io/documentation/layout/" />
+
+<meta name="twitter:card" content="...." />
+<meta property="og:image" content="" />
+<meta name="twitter:image" content="" />
+<meta property="og:image:alt" content="Page image for " />
+<meta name="twitter:image:alt" content="Page image for " />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<meta name="description" content="" />
+<meta name="twitter:description" content="" />
+<meta property="og:description" content="" />
   </head>
   <body>
     <div class="transition"></div>
@@ -91,7 +108,7 @@
   Containers
 </h3>
 
-<p>Raw file location: <code>sass/layout/_containers.scss</code></p>
+<p>File location: <code class="loc">sass/layout/_containers.scss</code></p>
 
 <p>
   Keep your content from falling off to the sides by wrapping it in a
@@ -133,7 +150,7 @@
   Automatic content columns
 </h3>
 
-<p>Raw file location: <code>sass/layout/_auto_columns.scss</code></p>
+<p>File location: <code class="loc">sass/layout/_auto_columns.scss</code></p>
 
 <p>
   In order to quickly mark up a flexible layout grid, start by adding the
@@ -177,8 +194,11 @@
 <p>
   The columns will by default stack on viewports that are less than 769px
   wide. Breakpoints for responsiveness can be adjusted in
-  <code>_variables.scss</code>. In the example below each row has a different
-  number of columns.
+  <code>_variables.scss</code> or overwritten with your own values when you import 
+  <strong>hgrid</strong> as either CSS or Sass.
+</p> 
+
+  <p>In the example below each row has a different number of columns and this decides their individual width.</p>
 </p>
 <div class="row">
   <div class="column">
@@ -248,11 +268,11 @@
 </p>
 
 <pre><code>&lt;div class="row"&gt;
-&lt;div class="column border-dark padding-5 radius-8">&lt;/div&gt;
-&lt;div class="column border-dark padding-5 radius-8"&gt;
+&lt;div class="column border-medium padding-5 radius-8">&lt;/div&gt;
+&lt;div class="column border-medium padding-5 radius-8"&gt;
 &lt;div class="row margin-bottom-0"&gt;
-&lt;div class="column padding-10 bg-grey-light text-center">Bonjour&lt;/div&gt;
-&lt;div class="column padding-10 bg-grey-light text-center">Bom dia&lt;/div&gt;
+&lt;div class="column padding-10 bg-gray-light text-center">Bonjour&lt;/div&gt;
+&lt;div class="column padding-10 bg-gray-light text-center">Bom dia&lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 &lt;/div&gt;</code></pre>
@@ -262,11 +282,11 @@
   <div class="column text-center"><small>Column</small></div>
 </div>
 <div class="row pull8v">
-  <div class="column border-dark padding-5 radius-8"></div>
-  <div class="column border-dark padding-5 radius-8">
+  <div class="column border-medium padding-5 radius-8"></div>
+  <div class="column border-medium padding-5 radius-8">
     <div class="row margin-bottom-0">
-      <div class="column padding-10 bg-grey-light text-center">Bonjour</div>
-      <div class="column padding-10 bg-grey-light text-center">Bom dia</div>
+      <div class="column padding-10 bg-gray-light text-center">Bonjour</div>
+      <div class="column padding-10 bg-gray-light text-center">Bom dia</div>
     </div>
   </div>
 </div>
@@ -274,8 +294,7 @@
   As seen in this example, if we nest a <code>.column-2</code> inside of
   another <code>.column-2</code>, the width of the inner column will be half
   of the outer one. Regardless of column size, for each level we nest, the
-  parent element will act as the new "viewport" where its width holds a new
-  context divided into 24 parts.
+  parent element will act as the new "viewport" width.
 </p>
 
 <h3 class="mt-80">
@@ -283,7 +302,7 @@
   Accurate fractional columns
 </h3>
 
-<p>Raw file location: <code>sass/layout/_accurate_columns.scss</code></p>
+<p>File location: <code class="loc">sass/layout/_accurate_columns.scss</code></p>
 
 <p>
   The <code>.column-xx</code> classes provide precise control over each
@@ -311,8 +330,8 @@
 &lt;/div></code></pre>
 
 <p>
-  This results in one column spanning 2/4 and two columns spanning 1/4, for a
-  total of 4/4, or 100% of the parent container.
+  The code above results in one column spanning 2/4 and two columns spanning 1/4, for a
+  total of 4/4 or 100% of the parent container.
 </p>
 
 <div class="row">
@@ -328,19 +347,30 @@
 </div>
 
 <p>
-  Like their automatic counterparts, the fractional columns also stak
-  vertically on viewports less than 769px wide (default you can override).
+  Like their automatic counterparts, the accurate columns stack
+  vertically on viewports less than 769px wide. This is a default variable 
+  <a href="/documentation/integrate/">you can override</a>.
 </p>
 
 <p>
   Containers can be nested inside of each others as long as you wrap each
-  level in a new <code>.row</code>>. If you nest a
+  level in a new <code>.row</code>. If you nest a
   <code>.column-2</code> inside of another <code>.column-2</code>, the width
   of the inner column will be half of the outer. The parent element always
   acts as its children's new 'viewport' context and is fractionable into 24
   equal parts.
 </p>
-<p>Fill up the remainder of a row with <code>.column-fill</code>.</p>
+<p>
+  The accurate columns don't have to add up to 24 units. You can use 
+  <code>.column-fill</code> to fill the remaining horizontal space.
+</p>
+
+<p>
+  If you happen to fill a <code>.row</code>> with columns corresponding to more than 24 units, each will
+  be squeezed to fit while preserving their proportion in relation to their siblings. A squeezed 
+  <code>.column-3</code> is still twice as wide as a squeezed <code>.column-6</code>.
+</p>
+
 <div class="row mt-30">
   <div class="column-24">
     <p>1</p>
@@ -481,7 +511,7 @@
   Flex
 </h3>
 
-<p>Raw file location: <code>sass/layout/_flex.scss</code></p>
+<p>File location: <code class="loc">sass/layout/_flex.scss</code></p>
 
 <pre>
 <code>&lt;div class="flex">
@@ -495,7 +525,7 @@
   Grid
 </h3>
 
-<p>Raw file location: <code>sass/layout/_grid.scss</code></p>
+<p>File location: <code class="loc">sass/layout/_grid.scss</code></p>
 
           </section>
         </article>

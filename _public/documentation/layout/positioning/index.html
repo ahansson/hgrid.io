@@ -12,7 +12,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/styles.css">
 <link rel="icon" type="image/png" href="/assets/img/icon.png">
+<link rel="canonical" href="https://hgrid.io/documentation/layout/positioning/" />
 
+<meta property="og:site_name" content="hgrid | Lightweight CSS Utility Kit" />
+<meta property="og:title" content="Positioning | hgrid" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://hgrid.io/documentation/layout/positioning/" />
+
+<meta name="twitter:card" content="...." />
+<meta property="og:image" content="" />
+<meta name="twitter:image" content="" />
+<meta property="og:image:alt" content="Page image for " />
+<meta name="twitter:image:alt" content="Page image for " />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+
+<meta name="description" content="" />
+<meta name="twitter:description" content="" />
+<meta property="og:description" content="" />
   </head>
   <body>
     <div class="transition"></div>
@@ -82,10 +99,10 @@
 
             <h3 class="mt-30">
   <span id="push-and-pull" class="sublink"></span>
-  Push and pull adjustment
+  Push and pull
 </h3>
 
-<p>Raw file location: <code>sass/layout/helpers/_adjustment.scss</code></p>
+<p>File location: <code class="loc">sass/layout/helpers/_adjustment.scss</code></p>
 
 <p>
   Push and pull classes can be used to fine tune the position of html
@@ -110,7 +127,7 @@
     <h5>Push right &rarr;</h5>
     <div class="row push20v">
       <div class="column">
-        <p>No transform</p>
+        <p>No push</p>
       </div>
       <div class="column translate-push10h">
         <p>.translate-push10h</p>
@@ -143,11 +160,12 @@
 
 <h3 class="mt-50">
   <span id="positioning" class="sublink"></span>
-  Positioning
+  Positions
 </h3>
 
-<p>The following utility classes are available in the prebuilt css file and in the <code>layout/helpers/_adjustments.scss</code> file if you import it separately.</p>
+<p>The following utility classes are available in the prebuilt css file, as well as in <code>layout/helpers/_adjustments.scss</code> if you work with <code>sass</code> and import it directly.</p>
 
+<div class="mb-30 scrollable">
 <table>
   <thead>
     <tr>
@@ -193,7 +211,7 @@
 		</tr>
 	</tbody>
 </table>
-
+</div>
 
 <h3 class="mt-50">
   <span id="floats" class="sublink"></span>
