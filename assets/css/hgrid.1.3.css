@@ -562,15 +562,15 @@ del,
 .strike {
   text-decoration: line-through; }
 
-mark,
-.highlight {
-  background: #ffe4c9;
-  padding: 0 .4rem; }
-
 .no-underline,
 .no-decoration,
 .no-strike {
   text-decoration: none; }
+
+mark,
+.highlight {
+  background: #ffe4c9;
+  padding: 0 .4rem; }
 
 .shorten {
   overflow: hidden;
@@ -714,7 +714,7 @@ mark,
   font-weight: 900; }
 
 strong,
-b
+b,
 .bold,
 p strong,
 a strong,
@@ -1165,17 +1165,16 @@ table {
     width: 100%;
     height: 100%; }
 
-hr,
-.horizontal-line {
+hr {
   border: 1px solid #ccc;
   margin-bottom: 3rem; }
 
-.horizontal-line-gray {
-  border: 0.5px solid #888;
+.hairline {
+  border-top: 0.5px solid #ccc;
   margin-bottom: 3rem; }
 
-.horizontal-line-dark {
-  border: 0.5px solid #555;
+.hairline-darker {
+  border-top: 0.5px solid #888;
   margin-bottom: 3rem; }
 
 .border-lighter {
@@ -1210,6 +1209,9 @@ hr,
 
 .border-transparent {
   border: 1px solid transparent; }
+
+.border-none {
+  border: none; }
 
 .border-top-lighter {
   border-top: 1px solid #eee; }
@@ -1342,9 +1344,6 @@ hr,
 
 .border-left-none {
   border-left: 0; }
-
-.border-none {
-  border: none; }
 
 .padding-0 {
   padding: 0rem 0rem; }
@@ -2637,49 +2636,41 @@ hr,
 .rounded {
   border-radius: 100rem; }
 
-.radius,
-.border-radius {
+.radius {
   border-radius: 6px; }
 
-.radius-2,
-.border-radius-2 {
+.radius-2 {
   border-radius: 2px; }
 
-.radius-4,
-.border-radius-4 {
+.radius-4 {
   border-radius: 4px; }
 
-.radius-6,
-.border-radius-6 {
+.radius-6 {
   border-radius: 6px; }
 
-.radius-8,
-.border-radius-8 {
+.radius-8 {
   border-radius: 8px; }
 
-.radius-10,
-.border-radius-10 {
+.radius-10 {
   border-radius: 10px; }
 
-.radius-12,
-.border-radius-12 {
+.radius-12 {
   border-radius: 12px; }
 
-.radius-14,
-.border-radius-14 {
+.radius-14 {
   border-radius: 14px; }
 
-.radius-16,
-.border-radius-16 {
+.radius-16 {
   border-radius: 16px; }
 
-.radius-18,
-.border-radius-18 {
+.radius-18 {
   border-radius: 18px; }
 
-.radius-20,
-.border-radius-20 {
+.radius-20 {
   border-radius: 20px; }
+
+.no-radius {
+  border-radius: 0; }
 
 .clearfix::after {
   clear: both;

@@ -88,6 +88,7 @@
     </ul>
   <h5 role="menuitem"><a href="/documentation/utilities/">Utility classes</a></h5>
   <h5 role="menuitem"><a href="/documentation/typography/">Typography</a></h5>
+  <h5 role="menuitem"><a href="/documentation/animations/">Animations</a></h5>
 </nav>
     
     <main class="container-max padding-top-100 padding-bottom-120">
@@ -97,61 +98,94 @@
 
           <section class="group border-top-light padding-top-40">
 
-            <p>
-  Complete collection of utilities can be found in
-  <code>grid > _utilities.scss</code>. Margin-bottom classes are located in
-  <code>overrides > _overrides.scss</code>. Examples:
-</p>
-<ul>
-  <li>.padding-0, -10, -20, etc.</li>
-  <li>.padding-top-0, -10, -20, etc.</li>
-  <li>.padding-bottom-0, -10, -20, etc.</li>
-  <li>.padding-left-x, .padding-right-x</li>
-  <li>.hidden, .visible</li>
-  <li>.pointer, .inline-block,</li>
-  <li>.absolute-center, .align-items-center, .text-center</li>
-  <li>float right (.fr), float left (.fl), float none (.fn)</li>
-  <li>.align-items-center (creates flex element)</li>
-</ul>
+            <div class="group">
+  <h3 class="mt-30">Background colors</h3>
 
-<h3 class="mt-50">Layout elements</h3>
-<p>Decorative helper classes.</p>
+  <p>File location: <code class="loc">layout/helpers/_bg-colors.scss</code></p>
 
-<div class="row mt-30">
-  <div class="column">
-    <h5>Horizontal line</h5>
-    <code>.horizontal-line</code>
+  <div class="row mt-40 padding-bottom-10 border-bottom-light">
+    <div class="column-4 bold">CSS</div>
+    <div class="column-2 bold text-center">Background color</div>
+  </div>
+  <div class="row no-wrap">
+    <div class="column-4"><code>.bg-white</code></div>
+    <div class="column-2 bg-white text-center border-light">&nbsp;</div>
+    <div class="column"></div>
+  </div>
+  <div class="row">
+    <div class="column-4"><code>.bg-gray-lighter</code></div>
+    <div class="column-2 bg-gray-lighter text-center border-light">&nbsp;</div>
+    <div class="column"></div>
+  </div>
+  <div class="row">
+    <div class="column-4"><code>.bg-gray-light</code></div>
+    <div class="column-2 bg-gray-light text-center border-light">&nbsp;</div>
+    <div class="column"></div>
+  </div>
+  <div class="row">
+    <div class="column-4"><code>.bg-gray</code></div>
+    <div class="column-2 bg-gray text-center border-light">&nbsp;</div>
+    <div class="column"></div>
+  </div>
+  <div class="row">
+    <div class="column-4"><code>.bg-gray-dark</code></div>
+    <div class="column-2 bg-gray-dark text-center border-light">&nbsp;</div>
+    <div class="column"></div>
+  </div>
+  <div class="row">
+    <div class="column-4"><code>.bg-gray-darker</code></div>
+    <div class="column-2 bg-gray-darker text-center border-light">&nbsp;</div>
+    <div class="column"></div>
+  </div>
+  <div class="row">
+    <div class="column-4"><code>.bg-black</code></div>
+    <div class="column-2 bg-black text-center border-light">&nbsp;</div>
+    <div class="column"></div>
+  </div>
+  <div class="row mt-60">
+    <div class="column-4"><code>.bg-light</code></div>
+    <div class="column-2 bg-light text-center border-light">&nbsp;</div>
+    <div class="column"><small class="text-gray-dark">White default, customizable</small></div>
+  </div>
 
-    <div class="row mt-30">
-      <div class="column-2">
-        <div class="horizontal-line"></div>
-      </div>
+  <div class="row">
+    <div class="column-4"><code>.bg-dark</code></div>
+    <div class="column-2 bg-dark text-center border-light">&nbsp;</div>
+    <div class="column"><small class="text-gray-dark">Black default, customizable</small></div>
+  </div>
+</div>
+
+<h3 class="mt-30">Lines and borders</h3>
+
+<p>File location: <code class="loc">layout/helpers/_separation.scss</code></p>
+
+<div class="group">
+  <h5 class="mt-30">Rulers</h5>
+
+  <code>.hairline</code>
+  <div class="hairline push10v margin-right-150"></div>
+
+  <code>.hairline-darker</code>
+  <div class="hairline-darker push10v margin-right-150"></div>
+
+  <code>hr</code>
+  <hr class="horizontal-line push10v margin-right-150">
+</div>
+
+<div class="group">
+  <h5>Borders</h5>
+  <p><code>.border-light</code> <code>.border-dark</code> <code>.border-transparent</code></p>
+
+  <div class="row padding-right-150">
+    <div class="column-2 border-light">
+      <small class="block mb-0 text-center padding-20">.border-light</small>
     </div>
-
-    <h5>Border</h5>
-    <code>border-dark, border-light, border-transparent</code>
-    <div class="border-dark mt-20">
-      <p>.border-dark</p>
+    <div class="column-2 border-dark">
+      <small class="block mb-0 text-center padding-20">.border-dark</small>
     </div>
   </div>
 </div>
-<div class="row">
-  <div class="column">
-    <h5>Border top</h5>
-    <code>horizontal-line-top-dark</code>
-    <code class="mt-20">-light</code>
 
-    <p class="horizontal-line-top-dark mt-20">.horizontal-line-top-dark</p>
-  </div>
-  <div class="column">
-    <h5>Border bottom</h5>
-    <code>horizontal-line-bottom-dark</code>
-    <code class="push20h">-light</code>
-    <p class="horizontal-line-bottom-dark mt-20">
-      .horizontal-line-bottom-dark
-    </p>
-  </div>
-</div>
 <div class="row">
   <div class="column">
     <h5 class="mt-20">Circle shape</h5>
@@ -162,7 +196,7 @@
     <h5 class="mt-20">Rounded shape</h5>
     <code>.rounded</code>
     <button class="rounded block padding-20 mt-40 text-white" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
-      This button is clickable
+      Click all you want
     </button>
   </div>
 </div>
