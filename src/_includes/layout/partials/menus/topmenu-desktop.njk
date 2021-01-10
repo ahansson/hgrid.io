@@ -1,11 +1,11 @@
 <ul class="flex align-items-center desktop-menu" role="menu">
   <li role="menuitem">
-    <a class="border-bottom-none {% if page.url == '/documentation/*' %}bold{% endif %}" href="/documentation/installation">Documentation</a>
+    <a class="border-bottom-none {{ 'bold' if '/documentation' in page.url }}" href="/documentation/installation">Documentation</a>
   </li>
   <li role="menuitem" class="push20h">
     <a class="border-bottom-none" href="https://github.com/ahansson/hgrid-css" rel="noopener noreferrer" target="_blank">GitHub</a>
   </li>
-  <li role="menuitem" class="push20h">
+  <li role="menuitem" class="push20h translate-push3v">
     <a href="https://github.com/ahansson/hgrid-css" rel="noopener noreferrer" target="_blank" class="no-hover">
       <img src="/assets/img/github.png" class="opacity-70 pointer github-icon" alt="github-icon">
     </a>

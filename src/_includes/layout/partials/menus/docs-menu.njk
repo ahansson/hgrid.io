@@ -1,23 +1,23 @@
 <nav class="column-5 fixed overflow-y-auto border-right-light-dotted docs-menu sidebar" role="menu">
   <span class="hide close-x pointer">&times;</span>
-  <h5 role="menuitem"><a href="/documentation/about-hgrid/">About</a></h5>
-  <h5 role="menuitem"><a href="/documentation/installation/">Installation</a></h5>
+  <h5 role="menuitem"><a href="/documentation/about-hgrid/" class="{{ 'active-link' if 'about-hgrid' in page.url }}">About</a></h5>
+  <h5 role="menuitem"><a href="/documentation/installation/" {% if title == 'Installation' %}class="active-link"{% endif %}>Installation</a></h5>
     <ul class="sub-links">
-      <li role="menuitem"><a href="/documentation/installation#npm">NPM/Yarn</a></li>
-      <li role="menuitem"><a href="/documentation/installation#cdn">CDN</a></li>
-      <li role="menuitem"><a href="/documentation/installation#clone">Clone</a></li>
+      <li role="menuitem"><a href="/documentation/installation#npm" class="{{ 'active-link' if 'installation#npm' in page.url }}">NPM/Yarn</a></li>
+      <li role="menuitem"><a href="/documentation/installation#cdn" class="{{ 'active-link' if 'installation#cdn' in page.url }}">CDN</a></li>
+      <li role="menuitem"><a href="/documentation/installation#clone" class="{{ 'active-link' if 'installation#clone' in page.url }}">Clone</a></li>
     </ul>
-  <h5 role="menuitem"><a href="/documentation/integrate/">Integration</a></h5>
-  <h5 role="menuitem"><a href="/documentation/layout/">Layout</a></h5>
+  <h5 role="menuitem"><a href="/documentation/integrate/" class="{{ 'active-link' if 'integrate' in page.url }}">Integration</a></h5>
+  <h5 role="menuitem"><a href="/documentation/layout/" {% if title == 'Layout' %}class="active-link"{% endif %}>Layout</a></h5>
     <ul class="sub-links">
       <li role="menuitem"><a href="/documentation/layout#containers">Containers</a></li>
       <li role="menuitem"><a href="/documentation/layout#auto-columns">Automatic columns</a></li>
-      <li role="menuitem"><a href="/documentation/layout#accurate-columns">Accurate columns</a></li>
+      <li role="menuitem"><a href="/documentation/layout#accurate-columns" class="{{ 'active-link' if 'accurate-columns' in page.url }}">Accurate columns</a></li>
       <li role="menuitem"><a href="/documentation/layout#flex">Flex</a></li>
       <li role="menuitem"><a href="/documentation/layout#grid">Grid</a></li>
-      <li role="menuitem"><a href="/documentation/layout/positioning/">Positioning</a></li>
+      <li role="menuitem"><a href="/documentation/layout/positioning/" class="{{ 'active-link' if 'positioning' in page.url }}">Positioning</a></li>
     </ul>
-  <h5 role="menuitem"><a href="/documentation/utilities/">Utility classes</a></h5>
-  <h5 role="menuitem"><a href="/documentation/typography/">Typography</a></h5>
-  <h5 role="menuitem"><a href="/documentation/animations/">Animations</a></h5>
+  <h5 role="menuitem"><a href="/documentation/utilities/" class="{{ 'active-link' if 'utilities' in page.url }}">Utility classes</a></h5>
+  <h5 role="menuitem"><a href="/documentation/typography/" class="{{ 'active-link' if 'typography' in page.url }}">Typography</a></h5>
+  <h5 role="menuitem"><a href="/documentation/animations/" class="{{ 'active-link' if 'animations' in page.url }}">Animations</a></h5>
 </nav>

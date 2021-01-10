@@ -1,4 +1,7 @@
 (() => {
+  
+  // Documentation menu (handheld)
+
   if (!document.querySelector('.docs-menu')) {
     return
   } else {
@@ -21,6 +24,9 @@
 })();
   
 (() => {
+  
+  // Regular menu (handheld)
+
   if (!document.querySelector('.mobile-menu')) {
     return
   } else {
