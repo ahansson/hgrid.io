@@ -485,9 +485,21 @@ article ol,
 section ol {
   list-style-type: decimal; }
 
-code {
+p > code,
+em > code,
+i > code,
+span > code,
+small > code,
+strong > code,
+li > code,
+div > code,
+dd > code,
+figcaption > code,
+td > code
+th > code {
   background: #ffe4c9;
   border-radius: 2px;
+  box-decoration-break: clone;
   color: #66018d;
   display: inline;
   font-size: 83%;
@@ -495,7 +507,8 @@ code {
   padding: 0.1rem 0.6rem;
   position: relative;
   top: -1px;
-  white-space: pre-line; }
+  white-space: pre-line;
+  word-wrap: break-word; }
 
 pre {
   margin: 0 0 2rem; }
@@ -850,6 +863,10 @@ strong span {
   margin-left: 0;
   margin-right: 0;
   display: block; }
+
+@media (max-width: 56.25em) {
+  .row.no-stack {
+    display: flex; } }
 
 .column {
   margin-left: 0.8%;

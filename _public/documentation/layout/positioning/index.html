@@ -105,19 +105,68 @@
 
 <p>File location: <code class="loc">sass/layout/helpers/_adjustment.scss</code></p>
 
-<p>
-  Push and pull classes can be used to fine tune the position of html
-  elements. We use two methods: <code>margin</code> or <code>transform</code>. The
-  first will also affect sibling element(s), while the latter will move the element independently 
-  of other elements.
+<p>Push and pull classes are used to fine tune the position of html elements.</p>
+  
+<p>We use two methods: <code>push</code> and <code>pull</code> classes, or <code>translate-push</code> 
+  and <code>translate-pull</code> classes. The first will affect sibling element(s), while the latter will 
+  move the element independently of surrounding elements.
 </p>
 
+<div class="mb-30 scrollable-x">
+<table style="min-width: 40rem;">
+  <thead>
+    <tr>
+      <th style="width: 40%;">Class Name</th>
+      <th>Comment</th>
+    </tr>
+  </thead>
+	<tbody>
+		<tr>
+			<td>.push-1v (...) -20v</td>
+			<td>Push 1-20px vertically (down)</td>
+
+		</tr>
+		<tr>
+			<td>.pull-1v (...) -20v</td>
+			<td>Pull 1-20px vertically (up)</td>
+
+		</tr>
+		<tr>
+			<td>.push1h (...) -20h</td>
+			<td>Push 1-20px horizontally (right)</td>
+
+		</tr>
+		<tr>
+			<td>.pull1h (...) -20h</td>
+			<td>Pull 1-20px horizontally (left)</td>
+		</tr>
+		<tr>
+			<td>.translate-push-1v (...) -20v</td>
+			<td>Move 1-20px down</td>
+		</tr>
+		<tr>
+			<td>.translate-pull-1v (...) -20v</td>
+			<td>Move 1-20px up</td>
+		</tr>
+		<tr>
+			<td>.translate-push-1h (...) -20h</td>
+			<td>Move 1-20px right</td>
+		</tr>
+		<tr>
+			<td>.translate-pull-1h (...) -20h</td>
+			<td>Move 1-20px left</td>
+		</tr>
+	</tbody>
+</table>
+</div>
+
+<hr class="relative z-index-2 hide-phone-landscape" style="transform: translateY(7.6rem); border-color: #3800bb;">
 <div class="row mt-30">
   <div class="column">
     <h5>Push down &darr;</h5>
     <div class="row push20v">
       <div class="column">
-        <p class="bg-gray-lighter">No push</p>
+        <p class="bg-gray-lighter">Normal</p>
       </div>
       <div class="column push20v">
         <p>.push20v</p>
@@ -125,13 +174,26 @@
     </div>
   </div>
   <div class="column">
+    <h5>Pull up &uarr;</h5>
+    <div class="row mt-20">
+      <div class="column">
+        <p>Normal</p>
+      </div>
+      <div class="column pull20v">
+        <p>.pull20v</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row mt-40">
+  <div class="column">
     <h5>Push right &rarr;</h5>
     <div class="row push20v">
       <div class="column">
-        <p>No push</p>
+        <p>Normal</p>
       </div>
-      <div class="column translate-push10h">
-        <p>.translate-push10h</p>
+      <div class="column push10h">
+        <p>.push10h</p>
       </div>
     </div>
   </div>
@@ -139,35 +201,21 @@
     <h5>Pull left &larr;</h5>
     <div class="row push20v">
       <div class="column">
-        <p class="border-transparent">No transform</p>
+        <p class="border-transparent bg-black">Normal</p>
       </div>
-      <div class="column translate-pull20h">
-        <p class="border-dark">.translate-pull20h</p>
-      </div>
-    </div>
-  </div>
-  <div class="column">
-    <h5>Pull up &uarr;</h5>
-    <div class="row mt-20">
-      <div class="column">
-        <p>No pull</p>
-      </div>
-      <div class="column translate-pull20v">
-        <p>.translate-pull20v</p>
+      <div class="column pull20h">
+        <p class="border-darker">.pull20h</p>
       </div>
     </div>
   </div>
 </div>
 
-<h3 class="mt-50">
-  <span id="positioning" class="sublink"></span>
-  Positions
-</h3>
+<h3 class="mt-60">Positions</h3>
 
-<p>The following utility classes are available in the prebuilt css file, as well as in <code>layout/helpers/_adjustments.scss</code> if you work with <code>sass</code> and import it directly.</p>
+<p>File location <code class="loc">layout/helpers/_adjustments.scss</code></p>
 
-<div class="mb-30 scrollable">
-<table>
+<div class="mb-30 scrollable-x">
+<table style="min-width: 40rem;">
   <thead>
     <tr>
       <th style="width: 40%;">Class Name</th>
