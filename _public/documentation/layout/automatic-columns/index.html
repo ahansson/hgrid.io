@@ -2,9 +2,9 @@
 <html lang="en-US" class="scroll-smooth">
   <head>
     <meta charset="UTF-8">
-<title>Integrate hgrid in your projects | hgrid</title>
+<title>Automatic Content Columns | hgrid</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="How to integrate and use hgrid in your development projects.">
+<meta name="description" content="Set up the build-in automatic content column layout in hgrid.">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Atle Hansson">
 <link rel="stylesheet" href="/assets/css/hgrid.1.3.css">
@@ -12,12 +12,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/styles.css">
 <link rel="icon" type="image/png" href="/assets/img/icon.png">
-<link rel="canonical" href="https://hgrid.io/documentation/integrate/" />
+<link rel="canonical" href="https://hgrid.io/documentation/layout/automatic-columns/" />
 
 <meta property="og:site_name" content="hgrid | Lightweight CSS Utility Kit" />
-<meta property="og:title" content="Integrate hgrid with your projects | hgrid" />
+<meta property="og:title" content="Automatic Content Columns | hgrid" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://hgrid.io/documentation/integrate/" />
+<meta property="og:url" content="https://hgrid.io/documentation/layout/automatic-columns/" />
 
 <meta name="twitter:card" content="...." />
 <meta property="og:image" content="" />
@@ -76,11 +76,11 @@
       <li role="menuitem"><a href="/documentation/installation#cdn" class="">CDN</a></li>
       <li role="menuitem"><a href="/documentation/installation#clone" class="">Clone</a></li>
     </ul>
-  <h5 role="menuitem"><a href="/documentation/integrate/" class="active-link">Integration</a></h5>
+  <h5 role="menuitem"><a href="/documentation/integrate/" class="">Integration</a></h5>
   <h5 role="menuitem"><a href="/documentation/layout/" >Layout</a></h5>
     <ul class="sub-links">
       <li role="menuitem"><a href="/documentation/layout#containers" class="">Containers</a></li>
-      <li role="menuitem"><a href="/documentation/layout/automatic-columns" class="">Automatic Columns</a></li>
+      <li role="menuitem"><a href="/documentation/layout/automatic-columns" class="active-link">Automatic Columns</a></li>
       <li role="menuitem"><a href="/documentation/layout/accurate-columns" class="">Accurate Columns</a></li>
       <li role="menuitem"><a href="/documentation/layout/flex/" class="">Flex</a></li>
       <li role="menuitem"><a href="/documentation/layout/grid/" class="">Grid</a></li>
@@ -94,37 +94,150 @@
     <main class="container-max padding-top-100 padding-bottom-120">
       <div class="row">
         <article class="column demo">
-          <h1>Integrate hgrid with your projects</h1>
+          <h1>Automatic Content Columns</h1>
 
           <section class="group border-top-light padding-top-40">
 
-            
-<p class="intro">
-  Below we will look at some examples on how you can set up <strong>hgrid</strong> to work with your new or existing projects, 
-  and how to customize the default settings.
+            <p class="intro">
+  In order to quickly mark up a flexible layout grid, start by adding the
+  <code>.row</code> class to an HTML element. This creates a flex container with
+  special configuration for the column system to fit in.
 </p>
 
-<h3 class="mt-30">
-  <span id="npm" class="sublink"></span>
-  Vue 3
-</h3>
+<p>File location: <code class="loc">sass/layout/_auto_columns.scss</code></p>
 
 <p>
-  1. Install two dependencies: <code>npm i sass sass-loader --save-dev</code> <em>(node-sass is deprecated)</em>
-</p>
-<p>2. Install hgrid-css: <code>npm install hgrid-css</code></p>
-<p>3. Create <code>main.scss</code> example in <code>assets/scss</code></p>
-<p>
-  4. Initiate <code>main.scss</code> in your <code>main.js</code> file,
-  respecting your local folder structure:
+  Any number of elements with the class <code>.column</code> inside the
+  <code>.row</code> will divide its width equally:
 </p>
 
-<pre class="language-js"><code>import './assets/scss/main.scss'
-</code></pre>
+<pre><code>&lt;div class="container-max"&gt;
+
+&lt;div class="row"&gt;
+&lt;div class="column"&gt;
+&lt;p&gt;Column 1 (auto)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="column"&gt;
+&lt;p&gt;Column 2 (auto)&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="column"&gt;
+&lt;p&gt;Column 3 (auto)&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;</code></pre>
 
 <p>
-  In main.scss, import hgrid as shown below, and modify any sass variables from hgrid that you want to change 
-  (see hgrid/_variables.scss for available variables). Note: use commas, not semicolons after your $variable declarations:
+  The scss variable <code>$column-gutter-width</code> controls the distance
+  between columns. You can also overwrite the regular CSS for
+  <code>.column</code> and modify the default value of 0.8% on each side.
+</p>
+<p>
+  The columns will by default stack on viewports that are less than 769px
+  wide. Breakpoints for responsiveness can be adjusted in
+  <code>_variables.scss</code> or overwritten with your own values when you import 
+  <strong>hgrid</strong> as either CSS or Sass.
+</p>
+
+<p>Use <code>.no-stack</code> on the element that holds the <code>.row</code> class to prevent columns from stacking.</p>
+
+  <p>In the example below we <code>.no-stack</code> to make it comprehensible on phones and tables. The number of colunns in each
+  <code>.row</code> determines the column width.</p>
+</p>
+<div class="row no-stack">
+  <div class="column">
+    <p>Column 1 (auto)</p>
+  </div>
+  <div class="column">
+    <p>Column 2 (auto)</p>
+  </div>
+  <div class="column">
+    <p>Column 3 (auto)</p>
+  </div>
+  <div class="column">
+    <p>Column 4 (auto)</p>
+  </div>
+  <div class="column">
+    <p>Column 5 (auto)</p>
+  </div>
+  <div class="column">
+    <p>Column 6 (auto)</p>
+  </div>
+  <div class="column">
+    <p>Column 7 (auto)</p>
+  </div>
+  <div class="column">
+    <p>Column 8 (auto)</p>
+  </div>
+</div>
+
+<div class="row no-stack">
+  <div class="column">
+    <p>Column 1 (auto)</p>
+  </div>
+  <div class="column">
+    <p>Column 2 (auto)</p>
+  </div>
+  <div class="column">
+    <p>Column 3 (auto)</p>
+  </div>
+  <div class="column">
+    <p>Column 4 (auto)</p>
+  </div>
+  <div class="column">
+    <p>Column 5 (auto)</p>
+  </div>
+</div>
+
+<div class="row no-stack">
+  <div class="column">
+    <p>Column 1 (auto)</p>
+  </div>
+  <div class="column">
+    <p>Column 2 (auto)</p>
+  </div>
+  <div class="column">
+    <p>Column 3 (auto)</p>
+  </div>
+</div>
+<div class="row">
+  <div class="column">
+    <p>Full width (auto)</p>
+  </div>
+</div>
+
+<p>
+  Containers can be nested inside each other as long as you wrap each new
+  level in a new <code>.row</code>.
+</p>
+
+<pre><code>&lt;div class="row"&gt;
+&lt;div class="column border-medium padding-5 radius-8">&lt;/div&gt;
+&lt;div class="column border-medium padding-5 radius-8"&gt;
+&lt;div class="row margin-bottom-0"&gt;
+&lt;div class="column padding-10 bg-gray-light text-center">Bonjour&lt;/div&gt;
+&lt;div class="column padding-10 bg-gray-light text-center">Bom dia&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<div class="row mt-40 no-stack">
+  <div class="column text-center"><small>.column-2</small></div>
+  <div class="column text-center"><small>.column-2</small></div>
+</div>
+<div class="row pull8v no-stack">
+  <div class="column border-medium padding-5 radius-8"></div>
+  <div class="column border-medium padding-5 radius-8">
+    <div class="row mb-0 no-stack">
+      <div class="column mb-0 padding-10 bg-gray-light text-center"><small>.column-2</small></div>
+      <div class="column mb-0 padding-10 bg-gray-light text-center"><small>.column-2</small></div>
+    </div>
+  </div>
+</div>
+<p>
+  As seen here, if we nest two <code>.column-2</code> inside of another <code>.column-2</code>, 
+  the width of the inner columns will be half of the outer one. For each level we nest, the parent element 
+  act as the new "viewport" width to be split in 24 <strong>hgrid</strong> units.
 </p>
 
           </section>

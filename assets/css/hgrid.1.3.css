@@ -485,9 +485,21 @@ article ol,
 section ol {
   list-style-type: decimal; }
 
-code {
+p > code,
+em > code,
+i > code,
+span > code,
+small > code,
+strong > code,
+li > code,
+div > code,
+dd > code,
+figcaption > code,
+td > code
+th > code {
   background: #ffe4c9;
   border-radius: 2px;
+  box-decoration-break: clone;
   color: #66018d;
   display: inline;
   font-size: 83%;
@@ -495,7 +507,8 @@ code {
   padding: 0.1rem 0.6rem;
   position: relative;
   top: -1px;
-  white-space: pre-line; }
+  white-space: pre-line;
+  word-wrap: break-word; }
 
 pre {
   margin: 0 0 2rem; }
@@ -850,6 +863,58 @@ strong span {
   margin-left: 0;
   margin-right: 0;
   display: block; }
+
+@media (max-width: 56.25em) {
+  .row.no-stack {
+    display: flex; }
+    .row.no-stack .column-1 {
+      width: 98.4%; }
+    .row.no-stack .column-2 {
+      width: 48.4%; }
+    .row.no-stack .column-3 {
+      width: 31.73333%; }
+    .row.no-stack .column-4 {
+      width: 23.4%; }
+    .row.no-stack .column-5 {
+      width: 18.4%; }
+    .row.no-stack .column-6 {
+      width: 15.06667%; }
+    .row.no-stack .column-7 {
+      width: 12.68571%; }
+    .row.no-stack .column-8 {
+      width: 10.9%; }
+    .row.no-stack .column-9 {
+      width: 9.51111%; }
+    .row.no-stack .column-10 {
+      width: 8.4%; }
+    .row.no-stack .column-11 {
+      width: 7.49091%; }
+    .row.no-stack .column-12 {
+      width: 6.73333%; }
+    .row.no-stack .column-13 {
+      width: 6.09231%; }
+    .row.no-stack .column-14 {
+      width: 5.54286%; }
+    .row.no-stack .column-15 {
+      width: 5.06667%; }
+    .row.no-stack .column-16 {
+      width: 4.65%; }
+    .row.no-stack .column-17 {
+      width: 4.28235%; }
+    .row.no-stack .column-18 {
+      width: 3.95556%; }
+    .row.no-stack .column-19 {
+      width: 3.66316%; }
+    .row.no-stack .column-20 {
+      width: 3.4%; }
+    .row.no-stack .column-21 {
+      width: 3.1619%; }
+    .row.no-stack .column-22 {
+      width: 2.94545%; }
+    .row.no-stack .column-23 {
+      width: 2.74783%; }
+    .row.no-stack .column-24 {
+      width: 2.56667%; } }
 
 .column {
   margin-left: 0.8%;

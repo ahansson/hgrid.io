@@ -2,9 +2,9 @@
 <html lang="en-US" class="scroll-smooth">
   <head>
     <meta charset="UTF-8">
-<title>Utilities | hgrid</title>
+<title>Accurate Content Columns | hgrid</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Utility classes in hgrid">
+<meta name="description" content="Accurate Content Columns">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Atle Hansson">
 <link rel="stylesheet" href="/assets/css/hgrid.1.3.css">
@@ -12,12 +12,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/styles.css">
 <link rel="icon" type="image/png" href="/assets/img/icon.png">
-<link rel="canonical" href="https://hgrid.io/documentation/utilities/" />
+<link rel="canonical" href="https://hgrid.io/documentation/layout/accurate-columns/" />
 
 <meta property="og:site_name" content="hgrid | Lightweight CSS Utility Kit" />
-<meta property="og:title" content="Utility classes | hgrid" />
+<meta property="og:title" content="Accurate Content Columns | hgrid" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://hgrid.io/documentation/utilities/" />
+<meta property="og:url" content="https://hgrid.io/documentation/layout/accurate-columns/" />
 
 <meta name="twitter:card" content="...." />
 <meta property="og:image" content="" />
@@ -81,12 +81,12 @@
     <ul class="sub-links">
       <li role="menuitem"><a href="/documentation/layout#containers" class="">Containers</a></li>
       <li role="menuitem"><a href="/documentation/layout/automatic-columns" class="">Automatic Columns</a></li>
-      <li role="menuitem"><a href="/documentation/layout/accurate-columns" class="">Accurate Columns</a></li>
+      <li role="menuitem"><a href="/documentation/layout/accurate-columns" class="active-link">Accurate Columns</a></li>
       <li role="menuitem"><a href="/documentation/layout/flex/" class="">Flex</a></li>
       <li role="menuitem"><a href="/documentation/layout/grid/" class="">Grid</a></li>
       <li role="menuitem"><a href="/documentation/layout/positioning/" class="">Positioning</a></li>
     </ul>
-  <h5 role="menuitem"><a href="/documentation/utilities/" class="active-link">Utility Classes</a></h5>
+  <h5 role="menuitem"><a href="/documentation/utilities/" class="">Utility Classes</a></h5>
   <h5 role="menuitem"><a href="/documentation/typography/" class="">Typography</a></h5>
   <h5 role="menuitem"><a href="/documentation/animations/" class="">Animations</a></h5>
 </nav>
@@ -94,112 +94,218 @@
     <main class="container-max padding-top-100 padding-bottom-120">
       <div class="row">
         <article class="column demo">
-          <h1>Utility classes</h1>
+          <h1>Accurate Content Columns</h1>
 
           <section class="group border-top-light padding-top-40">
 
-            <div class="group">
-  <h3 class="mt-30">Background colors</h3>
+            <p class="intro">
+  The <code>.column-xx</code> classes provide precise control over each
+  column's span, with fractions based on the total container width. Remember
+  to always wrap them in a <code>.row</code>.
+</p>
 
-  <p>File location: <code class="loc">layout/helpers/_bg-colors.scss</code></p>
+<p>File location: <code class="loc">sass/layout/_accurate_columns.scss</code></p>
 
-  <div class="row mt-40 padding-bottom-10 border-bottom-light">
-    <div class="column-4 bold">CSS</div>
-    <div class="column-2 bold text-center">Background color</div>
-  </div>
-  <div class="row no-wrap">
-    <div class="column-4"><code>.bg-white</code></div>
-    <div class="column-2 bg-white text-center border-light">&nbsp;</div>
-    <div class="column"></div>
-  </div>
-  <div class="row">
-    <div class="column-4"><code>.bg-gray-lighter</code></div>
-    <div class="column-2 bg-gray-lighter text-center border-light">&nbsp;</div>
-    <div class="column"></div>
-  </div>
-  <div class="row">
-    <div class="column-4"><code>.bg-gray-light</code></div>
-    <div class="column-2 bg-gray-light text-center border-light">&nbsp;</div>
-    <div class="column"></div>
-  </div>
-  <div class="row">
-    <div class="column-4"><code>.bg-gray</code></div>
-    <div class="column-2 bg-gray text-center border-light">&nbsp;</div>
-    <div class="column"></div>
-  </div>
-  <div class="row">
-    <div class="column-4"><code>.bg-gray-dark</code></div>
-    <div class="column-2 bg-gray-dark text-center border-light">&nbsp;</div>
-    <div class="column"></div>
-  </div>
-  <div class="row">
-    <div class="column-4"><code>.bg-gray-darker</code></div>
-    <div class="column-2 bg-gray-darker text-center border-light">&nbsp;</div>
-    <div class="column"></div>
-  </div>
-  <div class="row">
-    <div class="column-4"><code>.bg-black</code></div>
-    <div class="column-2 bg-black text-center border-light">&nbsp;</div>
-    <div class="column"></div>
-  </div>
-  <div class="row mt-60">
-    <div class="column-4"><code>.bg-light</code></div>
-    <div class="column-2 bg-light text-center border-light">&nbsp;</div>
-    <div class="column"><small class="text-gray-dark">White default, customizable</small></div>
-  </div>
+<p>
+  <strong>hgrid</strong> divides the viewport in 24 fractional units of equal
+  width. A full width column is called <code>.column-1</code> and spans all 24
+  units. <code>.column-2</code> spans 12 units, or 50% of the viewport width.
+  <code>.column-3</code> spans 33,33%, and so on up to
+  <code>.column-24</code>. By combining fractional units we now get a
+  precisely controlled layout grid:
+</p>
+<pre><code>&lt;div class="row">
+&lt;div class="column-2">
+&lt;p>.column-2&lt;/p>
+&lt;/div>
+&lt;div class="column-4">
+&lt;p>.column-4&lt;/p>
+&lt;/div>
+&lt;div class="column-4">
+&lt;p>.column-4&lt;/p>
+&lt;/div>
+&lt;/div></code></pre>
 
-  <div class="row">
-    <div class="column-4"><code>.bg-dark</code></div>
-    <div class="column-2 bg-dark text-center border-light">&nbsp;</div>
-    <div class="column"><small class="text-gray-dark">Black default, customizable</small></div>
+<p>
+  The code above results in one column spanning 2/4 and two columns spanning 1/4, for a
+  total of 4/4 or 100% of the parent container.</p>
+<p class="note mb-40"><strong>Note:</strong> These columns would normally stack vertically on handheld devices 
+  (viewports < 769px wide). For the sake of the example we have applied <code>.no-stack</code> on the <code>row</code> 
+  so the example makes sense on all viewports.
+</p>
+
+<div class="row no-stack">
+  <div class="column-2">
+    <p>.column-2</p>
+  </div>
+  <div class="column-4">
+    <p>.column-4</p>
+  </div>
+  <div class="column-4">
+    <p>.column-4</p>
   </div>
 </div>
 
-<h3 class="mt-30">Lines and borders</h3>
+<p>
+  Like their automatic counterparts, the accurate columns stack
+  vertically on viewports less than 769px wide. This is a default variable 
+  <a href="/documentation/integrate/">you can override</a>.
+</p>
 
-<p>File location: <code class="loc">layout/helpers/_separation.scss</code></p>
+<p>
+  Containers can be nested inside of each others as long as you wrap each
+  level in a new <code>.row</code>. If you nest a
+  <code>.column-2</code> inside of another <code>.column-2</code>, the width
+  of the inner column will be half of the outer. The parent element always
+  acts as its children's new 'viewport' context and is fractionable into 24
+  equal parts.
+</p>
+<p>
+  The accurate columns don't have to add up to 24 units. You can use 
+  <code>.column-fill</code> to fill the remaining horizontal space.
+</p>
 
-<div class="group">
-  <h5 class="mt-30">Rulers</h5>
+<p>
+  If you happen to fill a <code>.row</code> with columns that add up to more than 24 units, each will
+  be squeezed to fit while preserving their proportion in relation to their siblings. A squeezed 
+  <code>.column-3</code> is still twice as wide as a squeezed <code>.column-6</code>.
+</p>
 
-  <code>.hairline</code>
-  <div class="hairline push10v margin-right-150"></div>
-
-  <code>.hairline-darker</code>
-  <div class="hairline-darker push10v margin-right-150"></div>
-
-  <code>hr</code>
-  <hr class="horizontal-line push10v margin-right-150">
-</div>
-
-<div class="group">
-  <h5>Borders</h5>
-  <p><code>.border-light</code> <code>.border-dark</code> <code>.border-transparent</code></p>
-
-  <div class="row padding-right-150">
-    <div class="column-2 border-light">
-      <small class="block mb-0 text-center padding-20">.border-light</small>
-    </div>
-    <div class="column-2 border-dark">
-      <small class="block mb-0 text-center padding-20">.border-dark</small>
-    </div>
+<div class="row mt-30">
+  <div class="column-24">
+    <p>1</p>
+  </div>
+  <div class="column-24">
+    <p>2</p>
+  </div>
+  <div class="column-24">
+    <p>3</p>
+  </div>
+  <div class="column-24">
+    <p>4</p>
+  </div>
+  <div class="column-24">
+    <p>5</p>
+  </div>
+  <div class="column-24">
+    <p>6</p>
+  </div>
+  <div class="column-24">
+    <p>7</p>
+  </div>
+  <div class="column-24">
+    <p>8</p>
+  </div>
+  <div class="column-24">
+    <p>9</p>
+  </div>
+  <div class="column-24">
+    <p>10</p>
+  </div>
+  <div class="column-24">
+    <p>11</p>
+  </div>
+  <div class="column-24">
+    <p>12</p>
+  </div>
+  <div class="column-24">
+    <p>13</p>
+  </div>
+  <div class="column-24">
+    <p>14</p>
+  </div>
+  <div class="column-24">
+    <p>15</p>
+  </div>
+  <div class="column-24">
+    <p>16</p>
+  </div>
+  <div class="column-24">
+    <p>17</p>
+  </div>
+  <div class="column-24">
+    <p>18</p>
+  </div>
+  <div class="column-24">
+    <p>19</p>
+  </div>
+  <div class="column-24">
+    <p>20</p>
+  </div>
+  <div class="column-24">
+    <p>21</p>
+  </div>
+  <div class="column-24">
+    <p>22</p>
+  </div>
+  <div class="column-24">
+    <p>23</p>
+  </div>
+  <div class="column-24">
+    <p>24</p>
   </div>
 </div>
 
 <div class="row">
-  <div class="column">
-    <h5 class="mt-20">Circle shape</h5>
-    <code>.circle</code>
-    <img class="circle demo mb-40" src="/assets/img/portrait.jpg" alt="portrait" />
+  <div class="column-2">
+    <p>.column-2</p>
   </div>
-  <div class="column">
-    <h5 class="mt-20">Rounded shape</h5>
-    <code>.rounded</code>
-    <button class="rounded block padding-20 mt-40 text-white" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank">
-      Click all you want
-    </button>
+  <div class="column-4">
+    <p>.column-4</p>
+  </div>
+  <div class="column-4">
+    <p>.column-4</p>
   </div>
 </div>
+
+<div class="row">
+  <div class="column-6">
+    <p>.column-6</p>
+  </div>
+  <div class="column-2">
+    <p>.column-2</p>
+  </div>
+  <div class="column-6">
+    <p>.column-6</p>
+  </div>
+  <div class="column-6">
+    <p>.column-6</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column-10">
+    <p>.column-10</p>
+  </div>
+  <div class="column-7">
+    <p>.column-7</p>
+  </div>
+  <div class="column-11">
+    <p>.column-11</p>
+  </div>
+  <div class="column-11">
+    <p>.column-11</p>
+  </div>
+  <div class="column-3">
+    <p>.column-3</p>
+  </div>
+  <div class="column-9">
+    <p>.column-9</p>
+  </div>
+  <div class="column-fill">
+    <p>.column-fill</p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column-12">
+    <p>.column-12</p>
+  </div>
+  <div class="column-fill">
+    <p>.column-fill</p>
+  </div>
+</div>
+
 
           </section>
         </article>

@@ -16,8 +16,8 @@ title: Positioning
 <p>Push and pull classes are used to fine tune the position of html elements.</p>
   
 <p>We use two methods: <code>push</code> and <code>pull</code> classes, or <code>translate-push</code> 
-  and <code>translate-pull</code> classes. The first will affect sibling element(s), while the latter will 
-  move the element independently of surrounding elements.
+  and <code>translate-pull</code> classes. Pushing/pulling will also influence sibling element(s), while translate push/pull will 
+  move the element independently of its surroundings.
 </p>
 
 <div class="mb-30 scrollable-x">
@@ -30,54 +30,54 @@ title: Positioning
   </thead>
 	<tbody>
 		<tr>
-			<td>.push-1v (...) -20v</td>
+			<td>.push1v (...) .push20v</td>
 			<td>Push 1-20px vertically (down)</td>
 
 		</tr>
 		<tr>
-			<td>.pull-1v (...) -20v</td>
+			<td>.pull1v (...) .pull20v</td>
 			<td>Pull 1-20px vertically (up)</td>
 
 		</tr>
 		<tr>
-			<td>.push1h (...) -20h</td>
+			<td>.push1h (...) .push20h</td>
 			<td>Push 1-20px horizontally (right)</td>
 
 		</tr>
 		<tr>
-			<td>.pull1h (...) -20h</td>
+			<td>.pull1h (...) pull20h</td>
 			<td>Pull 1-20px horizontally (left)</td>
 		</tr>
 		<tr>
-			<td>.translate-push-1v (...) -20v</td>
+			<td>.translate-push1v (...) -push20v</td>
 			<td>Move 1-20px down</td>
 		</tr>
 		<tr>
-			<td>.translate-pull-1v (...) -20v</td>
+			<td>.translate-pull1v (...) -pull20v</td>
 			<td>Move 1-20px up</td>
 		</tr>
 		<tr>
-			<td>.translate-push-1h (...) -20h</td>
+			<td>.translate-push1h (...) -push20h</td>
 			<td>Move 1-20px right</td>
 		</tr>
 		<tr>
-			<td>.translate-pull-1h (...) -20h</td>
+			<td>.translate-pull1h (...) -pull20h</td>
 			<td>Move 1-20px left</td>
 		</tr>
 	</tbody>
 </table>
 </div>
 
-<hr class="relative z-index-2 hide-phone-landscape" style="transform: translateY(7.6rem); border-color: #3800bb;">
-<div class="row mt-30">
+<hr class="relative z-index-2" style="transform: translateY(7.6rem); border-color: #3800bb;">
+<div class="row mt-30 no-stack">
   <div class="column">
     <h5>Push down &darr;</h5>
     <div class="row push20v">
       <div class="column">
-        <p class="bg-gray-lighter">Normal</p>
+        <p>Normal</p>
       </div>
       <div class="column push20v">
-        <p>.push20v</p>
+        <p class="border-darker">.push20v</p>
       </div>
     </div>
   </div>
@@ -88,12 +88,12 @@ title: Positioning
         <p>Normal</p>
       </div>
       <div class="column pull20v">
-        <p>.pull20v</p>
+        <p class="border-darker">.pull20v</p>
       </div>
     </div>
   </div>
 </div>
-<div class="row mt-40">
+<div class="row mt-40 flex">
   <div class="column">
     <h5>Push right &rarr;</h5>
     <div class="row push20v">
@@ -101,7 +101,7 @@ title: Positioning
         <p>Normal</p>
       </div>
       <div class="column push10h">
-        <p>.push10h</p>
+        <p class="border-darker">.push10h</p>
       </div>
     </div>
   </div>
@@ -109,7 +109,7 @@ title: Positioning
     <h5>Pull left &larr;</h5>
     <div class="row push20v">
       <div class="column">
-        <p class="border-transparent bg-black">Normal</p>
+        <p>Normal</p>
       </div>
       <div class="column pull20h">
         <p class="border-darker">.pull20h</p>

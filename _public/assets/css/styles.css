@@ -63,6 +63,17 @@ article.demo span a:hover:before {
   height: 0;
 }
 
+article.demo p {
+  line-height: 3.4rem;
+}
+
+article.demo p.note {
+  padding: 2rem;
+  background: #d7eeff;
+  border-radius: 1rem;
+  border-left: 4px solid #81aee2;
+}
+
 header {
   background: #fff;
   box-shadow: 0 0 0.3rem #52525242;
@@ -200,8 +211,8 @@ article.demo p.caption {
   border-bottom: 1px dotted #bbb;
 }
 
-article.demo .column p,
-article.demo [class*="column-"] p {
+article.demo .column > p,
+article.demo [class*="column-"] > p {
   border-radius: 6px;
   padding: 2.2rem 0.5rem;
   background-color: #79518b;
@@ -249,7 +260,7 @@ article.demo pre:not([class*='hljs'])::before {
 }
 
 article.demo pre > code {
-  border-radius: 1.4rem;
+  border-radius: 1rem;
   background-color: #23004b;
 }
 
