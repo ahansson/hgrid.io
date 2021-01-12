@@ -99,7 +99,7 @@
           <section class="group border-top-light padding-top-40">
 
             <p class="intro">
-  The <code>.column-xx</code> classes provide precise control over each
+  The <code>.column-*</code> classes provide precise control over each
   column's span, with fractions based on the total container width. Remember
   to always wrap them in a <code>.row</code>.
 </p>
@@ -107,31 +107,30 @@
 <p>File location: <code class="loc">sass/layout/_accurate_columns.scss</code></p>
 
 <p>
-  <strong>hgrid</strong> divides the viewport in 24 fractional units of equal
-  width. A full width column is called <code>.column-1</code> and spans all 24
-  units. <code>.column-2</code> spans 12 units, or 50% of the viewport width.
-  <code>.column-3</code> spans 33,33%, and so on up to
-  <code>.column-24</code>. By combining fractional units we now get a
-  precisely controlled layout grid:
+  <strong>hgrid</strong> splits the viewport into 24 equal fractional units. A full width column is called 
+  <code>.column-1</code> and spans all 24 units. <code>.column-2</code> spans 12 units, or 50% of the 
+  viewport width. <code>.column-3</code> spans 8 units (33,33%), and so on up to
+  <code>.column-24</code>. By combining fractional units we now get a precisely controlled layout grid:
 </p>
 <pre><code>&lt;div class="row">
-&lt;div class="column-2">
-&lt;p>.column-2&lt;/p>
-&lt;/div>
-&lt;div class="column-4">
-&lt;p>.column-4&lt;/p>
-&lt;/div>
-&lt;div class="column-4">
-&lt;p>.column-4&lt;/p>
-&lt;/div>
+  &lt;div class="column-2">
+    &lt;p>.column-2&lt;/p>
+  &lt;/div>
+  &lt;div class="column-4">
+    &lt;p>.column-4&lt;/p>
+  &lt;/div>
+  &lt;div class="column-4">
+    &lt;p>.column-4&lt;/p>
+  &lt;/div>
 &lt;/div></code></pre>
 
 <p>
   The code above results in one column spanning 2/4 and two columns spanning 1/4, for a
-  total of 4/4 or 100% of the parent container.</p>
+  total of 4/4, or 100%, of the parent container.</p>
+  
 <p class="note mb-40"><strong>Note:</strong> These columns would normally stack vertically on handheld devices 
-  (viewports < 769px wide). For the sake of the example we have applied <code>.no-stack</code> on the <code>row</code> 
-  so the example makes sense on all viewports.
+  (viewports < 769px). For the sake of the examples on this page, we have applied <code>.no-stack</code> 
+  after <code>.row</code> so they make sense for readers on any device.
 </p>
 
 <div class="row no-stack">
@@ -146,32 +145,58 @@
   </div>
 </div>
 
-<p>
-  Like their automatic counterparts, the accurate columns stack
-  vertically on viewports less than 769px wide. This is a default variable 
-  <a href="/documentation/integrate/">you can override</a>.
+<p>The default breakpoint where columns stack can be overridden by modifying hgrid's 
+  <code>$stack-point</code> variable (read more <a href="/documentation/integrate/">here</a>). You can also override it by 
+  adding an alternative breakpoint with <code>$custom-stack-point</code> and the class <code>.custom-stack</code> after the 
+  <code>.row</code> class.
 </p>
 
 <p>
-  Containers can be nested inside of each others as long as you wrap each
+  Containers can be nested inside of each other as long as you wrap each
   level in a new <code>.row</code>. If you nest a
   <code>.column-2</code> inside of another <code>.column-2</code>, the width
   of the inner column will be half of the outer. The parent element always
   acts as its children's new 'viewport' context and is fractionable into 24
   equal parts.
 </p>
-<p>
-  The accurate columns don't have to add up to 24 units. You can use 
-  <code>.column-fill</code> to fill the remaining horizontal space.
-</p>
 
 <p>
-  If you happen to fill a <code>.row</code> with columns that add up to more than 24 units, each will
-  be squeezed to fit while preserving their proportion in relation to their siblings. A squeezed 
-  <code>.column-3</code> is still twice as wide as a squeezed <code>.column-6</code>.
+  Containers can be nested inside each other as long as you wrap each new level in a new <code>.row</code>.
 </p>
 
-<div class="row mt-30">
+<pre><code>&lt;div class="row"&gt;
+  &lt;div class="column-2 border-medium padding-5 radius-8">&lt;/div&gt;
+  &lt;div class="column2 border-medium padding-5 radius-8">
+
+    &lt;div class="row margin-bottom-0"&gt;
+      &lt;div class="column-2 padding-10 bg-gray-light text-center">.column-2&lt;/div&gt;
+      &lt;div class="column-2 padding-10 bg-gray-light text-center">.column-2&lt;/div&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<div class="row mt-40 no-stack">
+  <div class="column-2 text-center"><small>.column-2</small></div>
+  <div class="column-2 text-center"><small>.column-2</small></div>
+</div>
+<div class="row pull8v no-stack">
+  <div class="column-2 border-medium padding-5 radius-8"></div>
+  <div class="column-2 border-medium padding-5 radius-8">
+    <div class="row mb-0 no-stack">
+      <div class="column-2 mb-0 padding-10 bg-gray-light text-center"><small>.column-2</small></div>
+      <div class="column-2 mb-0 padding-10 bg-gray-light text-center"><small>.column-2</small></div>
+    </div>
+  </div>
+</div>
+
+<p>
+  As seen here, if we nest two <code>.column-2</code> inside of another <code>.column-2</code>, 
+  the width of the inner columns will be half of the outer one. For each level we nest, the parent element 
+  act as the new "viewport" width to be split in 24 <strong>hgrid</strong> units.
+</p>
+
+<div class="row mt-60 no-stack">
   <div class="column-24">
     <p>1</p>
   </div>
@@ -246,7 +271,7 @@
   </div>
 </div>
 
-<div class="row">
+<div class="row no-stack">
   <div class="column-2">
     <p>.column-2</p>
   </div>
@@ -258,7 +283,7 @@
   </div>
 </div>
 
-<div class="row">
+<div class="row no-stack">
   <div class="column-6">
     <p>.column-6</p>
   </div>
@@ -273,7 +298,7 @@
   </div>
 </div>
 
-<div class="row">
+<div class="row no-stack">
   <div class="column-10">
     <p>.column-10</p>
   </div>
@@ -297,7 +322,7 @@
   </div>
 </div>
 
-<div class="row">
+<div class="row no-stack">
   <div class="column-12">
     <p>.column-12</p>
   </div>
@@ -305,6 +330,17 @@
     <p>.column-fill</p>
   </div>
 </div>
+
+<p>
+  The accurate columns don't have to add up to 24 units. You can use <code>.column-fill</code> to fill the 
+  remaining horizontal space.
+</p>
+
+<p>
+  If you happen to fill a <code>.row</code> with columns adding up to more than 24 units, each will
+  be squeezed to fit while preserving their proportions relative to their siblings. A squeezed 
+  <code>.column-3</code> is still twice as wide as a squeezed <code>.column-6</code>.
+</p>
 
 
           </section>

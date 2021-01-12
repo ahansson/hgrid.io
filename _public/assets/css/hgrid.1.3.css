@@ -392,7 +392,7 @@ body {
       line-height: 2.56rem; } }
 
 h1 {
-  font-size: 7.2rem;
+  font-size: 6.624rem;
   line-height: 8rem;
   margin-bottom: 2.8rem; }
   @media (max-width: 56.25em) {
@@ -422,7 +422,7 @@ h3 {
       margin-bottom: 1.2rem; } }
 
 h4 {
-  font-size: 2.88rem;
+  font-size: 2.992rem;
   line-height: 3.44rem;
   margin-bottom: 1.3rem; }
   @media (max-width: 56.25em) {
@@ -442,7 +442,7 @@ h5 {
       margin-bottom: 1.12rem; } }
 
 h6 {
-  font-size: 2rem;
+  font-size: 1.92rem;
   line-height: 2.88rem;
   margin-bottom: 1.056rem; }
   @media (max-width: 56.25em) {
@@ -500,7 +500,7 @@ th > code {
   background: #ffe4c9;
   border-radius: 2px;
   box-decoration-break: clone;
-  color: #66018d;
+  color: #620042;
   display: inline;
   font-size: 83%;
   letter-spacing: -0.4px;
@@ -864,7 +864,15 @@ strong span {
   margin-right: 0;
   display: block; }
 
-@media (max-width: 56.25em) {
+@media (max-width: 37.5em) {
+  .row.custom-stack {
+    display: block; }
+    .row.custom-stack .column,
+    .row.custom-stack [class^='column-'] {
+      margin-bottom: 1.6%;
+      width: 98.4%; } }
+
+@media (max-width: 48em) {
   .row.no-stack {
     display: flex; }
     .row.no-stack .column-1 {

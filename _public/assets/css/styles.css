@@ -63,15 +63,27 @@ article.demo span a:hover:before {
   height: 0;
 }
 
+article.demo h1,
+article.demo h2 {
+  letter-spacing: -1px;
+}
+
+article.demo h3,
+article.demo h4 {
+  letter-spacing: -0.5px;
+}
+
 article.demo p {
   line-height: 3.4rem;
 }
 
 article.demo p.note {
-  padding: 2rem;
+  padding: 1.6rem 1rem 1.6rem 2rem;
   background: #d7eeff;
   border-radius: 1rem;
-  border-left: 4px solid #81aee2;
+  border-left: 4px solid #9ccaff;
+  font-size: 1.6rem;
+  line-height: 2.6rem;
 }
 
 header {
@@ -191,10 +203,6 @@ a:link.anchorjs-link:hover {
 
 article.demo {
   padding-left: 20%;
-}
-
-article.demo h2{
-  padding: 10rem 0 1rem;
 }
 
 article.demo p.intro {
