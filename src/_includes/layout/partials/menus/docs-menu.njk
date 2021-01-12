@@ -7,17 +7,17 @@
       <li role="menuitem"><a href="/documentation/installation#cdn" class="{{ 'active-link' if 'installation#cdn' in page.url }}">CDN</a></li>
       <li role="menuitem"><a href="/documentation/installation#clone" class="{{ 'active-link' if 'installation#clone' in page.url }}">Clone</a></li>
     </ul>
-  <h5 role="menuitem"><a href="/documentation/integrate/" class="{{ 'active-link' if 'integrate' in page.url }}">Integration</a></h5>
+  <h5 role="menuitem"><a href="/documentation/integrate/" {% if title == 'Integrate hgrid With Your Projects' %}class="active-link"{% endif %}>Integration</a></h5>
   <h5 role="menuitem"><a href="/documentation/layout/" {% if title == 'Layout' %}class="active-link"{% endif %}>Layout</a></h5>
     <ul class="sub-links">
-      <li role="menuitem"><a href="/documentation/layout#containers" class="{{ 'active-link' if 'index.html#containers' in page.url }}">Containers</a></li>
-      <li role="menuitem"><a href="/documentation/layout/automatic-columns" class="{{ 'active-link' if 'automatic-columns' in page.url }}">Automatic Columns</a></li>
-      <li role="menuitem"><a href="/documentation/layout/accurate-columns" class="{{ 'active-link' if 'accurate-columns' in page.url }}">Accurate Columns</a></li>
-      <li role="menuitem"><a href="/documentation/layout/flex/" class="{{ 'active-link' if 'flex' in page.url }}">Flex</a></li>
-      <li role="menuitem"><a href="/documentation/layout/grid/" class="{{ 'active-link' if 'grid' in page.url }}">Grid</a></li>
+      <li role="menuitem"><a href="/documentation/layout#containers" class="{{ 'active-link' if 'layout/#' in page.url }}">Containers</a></li>
+      <li role="menuitem"><a href="/documentation/layout/automatic-columns" {% if title == 'Automatic Content Columns' %}class="active-link"{% endif %}>Automatic Columns</a></li>
+      <li role="menuitem"><a href="/documentation/layout/accurate-columns" {% if title == 'Accurate Content Columns' %}class="active-link"{% endif %}>Accurate Columns</a></li>
+      <li role="menuitem"><a href="/documentation/layout/flex/" {% if title == 'Flex' %}class="active-link"{% endif %}>Flex</a></li>
+      <li role="menuitem"><a href="/documentation/layout/grid/" {% if title == 'Grid' %}class="active-link"{% endif %}>Grid</a></li>
       <li role="menuitem"><a href="/documentation/layout/positioning/" class="{{ 'active-link' if 'positioning' in page.url }}">Positioning</a></li>
     </ul>
-  <h5 role="menuitem"><a href="/documentation/utilities/" class="{{ 'active-link' if 'utilities' in page.url }}">Utility Classes</a></h5>
-  <h5 role="menuitem"><a href="/documentation/typography/" class="{{ 'active-link' if 'typography' in page.url }}">Typography</a></h5>
-  <h5 role="menuitem"><a href="/documentation/animations/" class="{{ 'active-link' if 'animations' in page.url }}">Animations</a></h5>
+  <h5 role="menuitem"><a href="/documentation/utilities/" {% if title == 'Utility Classes' %}class="active-link"{% endif %}>Utility Classes</a></h5>
+  <h5 role="menuitem"><a href="/documentation/typography/" {% if title == 'Typography' %}class="active-link"{% endif %}>Typography</a></h5>
+  <h5 role="menuitem"><a href="/documentation/animations/" {% if title == 'Animations' %}class="active-link"{% endif %}>Animations</a></h5>
 </nav>
