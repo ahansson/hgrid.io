@@ -44,40 +44,40 @@ button.outline-l:focus {
   transform: scale(1.08)
 }
 
-article.demo a:before,
-article.demo ul li a:before,
-article.demo ol li a:before,
-article.demo span a:before {
+article a:before,
+article ul li a:before,
+article ol li a:before,
+article span a:before {
   content: "";
   width: 100%;
   height: 1px;
   background-color: #c788e0;
   position: absolute;
-  bottom: 3px;
+  bottom: 6px;
 }
 
-article.demo a:hover:before,
-article.demo ul li a:hover:before,
-article.demo ol li a:hover:before,
-article.demo span a:hover:before {
+article a:hover:before,
+article ul li a:hover:before,
+article ol li a:hover:before,
+article span a:hover:before {
   height: 0;
 }
 
-article.demo h1,
-article.demo h2 {
+article h1,
+article h2 {
   letter-spacing: -1px;
 }
 
-article.demo h3,
-article.demo h4 {
+article h3,
+article h4 {
   letter-spacing: -0.5px;
 }
 
-article.demo p {
+article p {
   line-height: 3.4rem;
 }
 
-article.demo p.note {
+article p.note {
   padding: 1.6rem 1rem 1.6rem 2rem;
   background: #d7eeff;
   border-radius: 1rem;
@@ -184,21 +184,6 @@ nav.mobile-menu {
 .transition.vanish {
   animation: vanish 0.3s;
   animation-fill-mode: forwards; 
-}
-
-a:visited.anchorjs-link,
-a:link.anchorjs-link {
-  color: #aaa;
-}
-
-a:visited.anchorjs-link:before,
-a:link.anchorjs-link:before {
-  height: 0;
-}
-
-a:visited.anchorjs-link:hover,
-a:link.anchorjs-link:hover {
-  color: initial;
 }
 
 article.demo {
