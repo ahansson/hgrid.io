@@ -1,10 +1,39 @@
+:root {
+  --bg-color: #f6f6f6;
+  --header-bg: #fff;
+  --header-shadow: #52525242;
+  --font-color: #000;
+  --link-color: #66008d;
+  --link-underline-color: #c788e0;
+  --menulink-color: #333;
+  --menulink-hover: #000;
+  --transition: #fff;
+  --code-bg: #23004b;
+}
+
+[data-theme="dark"] {
+  --bg-color: #060323;
+  --header-bg: #080725;
+  --header-shadow: #00000060;
+  --font-color: #fff;
+  --link-color: #66008d;
+  --link-underline-color: #c788e0;
+  --menulink-color: #837f7a;
+  --menulink-hover: #69635c;
+  --transition: #000;
+  --code-bg: #120831;
+}
+
 body {
-  background: #f6f6f6;
+  background: var(--bg-color);
   font-family: 'Heebo', sans-serif;
+  transition: all 0.4s ease;
+  color: var(--font-color);
 }
 
 a {
   text-decoration: none;
+  color: var(--link-color);
 }
 
 main.container,
@@ -13,8 +42,8 @@ main.container-max {
 }
 
 .masthead {
-  background: rgb(44,0,79);
-  background: linear-gradient(197deg, rgba(44,0,79,1) 0%, rgba(11,0,41,1) 100%);
+  background: #2c004f;
+  background: linear-gradient(197deg, #2c004f 0%, #0b0029 100%);
 }
 
 .signal {
@@ -87,8 +116,9 @@ article p.note {
 }
 
 header {
-  background: #fff;
-  box-shadow: 0 0 0.3rem #52525242;
+  background: var(--header-bg);
+  box-shadow: 0 0 0.3rem var(--header-shadow);
+  transition: all 0.4s ease;
 }
 
 header .icon {
@@ -110,8 +140,9 @@ header .github-icon:hover {
 }
 
 header ul li a,
-.sidebar ul li a {
-  color: #333;
+.sidebar ul li a,
+header .logo a {
+  color: var(--menulink-color);
 }
 
 header ul li a:before,
@@ -122,13 +153,37 @@ header ul li a:before,
 
 header ul li a:hover,
 .sidebar a:hover {
-  color: #000;
+  color: var(--menulink-hover);
 }
 
 header .logo a {
-  color: #000;
   font-size: 2.6rem;
   margin-top: -1px;
+}
+
+header li.theme-switch label {
+  width: 2rem;
+  height: 2rem;
+  cursor: pointer;
+  display: block;
+}
+
+header li.theme-switch label input {
+  width: 0;
+  height: 0;
+  position: relative;
+  top: -0.4rem;
+  left: 1rem;
+}
+
+header li.theme-switch span {
+  position: relative;
+  top: -2.7rem;
+}
+
+header li.theme-switch span.dark {
+  top: -2.6rem;
+  right: -3px;
 }
 
 nav.sidebar {
@@ -180,6 +235,9 @@ nav.sidebar a.active-link {
 nav.mobile-menu {
   left: -50rem
 }
+
+.transition {
+  background: var(--transition); }
 
 .transition.vanish {
   animation: vanish 0.3s;
@@ -254,7 +312,7 @@ article.demo pre:not([class*='hljs'])::before {
 
 article.demo pre > code {
   border-radius: 1rem;
-  background-color: #23004b;
+  background-color: var(--code-bg);
 }
 
 code.loc {
