@@ -1,39 +1,66 @@
 :root {
-  --bg-color: #f6f6f6;
+  --bg: #f6f6f6;
   --header-bg: #fff;
   --header-shadow: #52525242;
-  --font-color: #000;
-  --link-color: #66008d;
-  --link-underline-color: #c788e0;
-  --menulink-color: #333;
+  --font: #000;
+  --title: #444;
+  --link: #66008d;
+  --active-link: #66008d;
+  --link-underline: #c788e0;
+  --menulink: #333;
+  --menutitle: #444;
   --menulink-hover: #000;
+  --icon-hover: orangered;
   --transition: #fff;
   --code-bg: #23004b;
+  --inline-code-bg: #ffe4c9;
+  --border-light-dotted: #ccc;
+  --border-light-solid: #ccc;
+  --note-border: #9ccaff;
+  --note-bg: #d7eeff;
 }
 
 [data-theme="dark"] {
-  --bg-color: #060323;
+  --bg: #060323;
   --header-bg: #080725;
   --header-shadow: #00000060;
-  --font-color: #fff;
-  --link-color: #66008d;
-  --link-underline-color: #c788e0;
-  --menulink-color: #837f7a;
-  --menulink-hover: #69635c;
-  --transition: #000;
-  --code-bg: #120831;
+  --font: #e0dbd3;
+  --font-light: #fff;
+  --title: #e6ba90;
+  --link: #ffc9a2;
+  --active-link: #d09255;
+  --link-underline: #e6c8b3;
+  --menulink: #d4c9b9;
+  --menutitle: #e9dac5;
+  --menulink-hover: #ffffff;
+  --icon-hover: #ff9900;
+  --transition: var(--bg);
+  --code-bg: #21163c;
+  --inline-code-bg: #2c0f4a;
+  --border-light-dotted: #666;
+  --border-light-solid: #4a4a4a;
+  --note-border: #31278f;
+  --note-bg: #26205f;
 }
 
 body {
-  background: var(--bg-color);
+  background: var(--bg);
   font-family: 'Heebo', sans-serif;
   transition: all 0.4s ease;
-  color: var(--font-color);
+  color: var(--font);
 }
 
-a {
+a,
+p a {
   text-decoration: none;
-  color: var(--link-color);
+  color: var(--link);
+  transition: 0.2s ease-in-out;
+}
+
+a.no-underline:hover:before,
+nav.sidebar a.no-underline:hover:before, 
+.desktop-menu a.no-underline:hover:before {
+  height: 0;
 }
 
 main.container,
@@ -80,7 +107,7 @@ article span a:before {
   content: "";
   width: 100%;
   height: 1px;
-  background-color: #c788e0;
+  background-color: var(--link-underline);
   position: absolute;
   bottom: 6px;
 }
@@ -102,23 +129,28 @@ article h4 {
   letter-spacing: -0.5px;
 }
 
+article h1 {
+  color: var(--title);
+}
+
 article p {
   line-height: 3.4rem;
 }
 
 article p.note {
   padding: 1.6rem 1rem 1.6rem 2rem;
-  background: #d7eeff;
+  background: var(--note-bg);
   border-radius: 1rem;
-  border-left: 4px solid #9ccaff;
+  border-left: 4px solid var(--note-border);
   font-size: 1.6rem;
   line-height: 2.6rem;
+  transition: background-color 0.3s ease;
 }
 
 header {
   background: var(--header-bg);
   box-shadow: 0 0 0.3rem var(--header-shadow);
-  transition: all 0.4s ease;
+  transition: all 0.3s ease;
 }
 
 header .icon {
@@ -142,7 +174,7 @@ header .github-icon:hover {
 header ul li a,
 .sidebar ul li a,
 header .logo a {
-  color: var(--menulink-color);
+  color: var(--menulink);
 }
 
 header ul li a:before,
@@ -176,14 +208,21 @@ header li.theme-switch label input {
   left: 1rem;
 }
 
-header li.theme-switch span {
+header li.theme-switch a {
   position: relative;
-  top: -2.7rem;
+  top: -2.9rem;
+  left: 0.11rem;
 }
 
-header li.theme-switch span.dark {
-  top: -2.6rem;
-  right: -3px;
+header li.theme-switch a.dark {
+  top: -0.4rem;
+  left: -0.11rem;
+  transform: scaleX(-1)
+}
+
+header li.theme-switch a:hover {
+  color: var(--icon-hover);
+  transition: 0.4s ease-in-out;
 }
 
 nav.sidebar {
@@ -192,6 +231,8 @@ nav.sidebar {
   left: 0;
   width: 18%;
   padding: 10.6rem 0.6rem 2rem 2.8%;
+  border-right: 1px dotted var(--border-light);
+  transition: border 0.3s ease;
 }
 
 nav.sidebar > h5 {
@@ -202,7 +243,7 @@ nav.sidebar > h5 > a {
   font-weight: 600;
   text-transform: uppercase;
   font-size: 1.5rem;
-  color: #444;
+  color: var(--menutitle);
 }
 
 nav.sidebar a:hover:before,
@@ -229,7 +270,7 @@ nav.sidebar ul.sub-links > ul.sub-links {
 
 nav.sidebar a.active-link {
   font-weight: bold;
-  color: #66008d;
+  color: var(--active-link);
 }
 
 nav.mobile-menu {
@@ -242,6 +283,11 @@ nav.mobile-menu {
 .transition.vanish {
   animation: vanish 0.3s;
   animation-fill-mode: forwards; 
+}
+
+.border-top-light {
+  border-top: 1px solid var(--border-light-solid);
+  transition: 0.3s ease;
 }
 
 article.demo {
@@ -320,6 +366,13 @@ code.loc {
   color: black;
 }
 
+p > code,
+li > code {
+  color: var(--font-light);
+  background: var(--inline-code-bg);
+  transition: all 0.3s ease;
+}
+
 .sublink {
   /* scroll-margin: 10rem; awaiting fix for Safari */
   position: relative;
@@ -345,10 +398,11 @@ footer p a:hover {
 }
 
 footer .buffer {
-  background: #f6f6f6;
+  background: var(--bg);
   height: 5rem;
-  box-shadow: 0 -3rem 3rem #f6f6f6;
+  box-shadow: 0 -3rem 3rem var(--bg);
   margin-top: -1px;
+  transition: 0.2s ease;
 }
 
 /* Tomorrow Night Blue Theme for highlight.js */
