@@ -1,9 +1,10 @@
 :root {
   --bg: #f6f6f6;
+  --bg-darker: #dddbd5;
   --header-bg: #fff;
   --header-shadow: #52525242;
   --font: #000;
-  --title: #444;
+  --title: #000;
   --link: #66008d;
   --active-link: #66008d;
   --link-underline: #c788e0;
@@ -12,21 +13,24 @@
   --menulink-hover: #000;
   --icon-hover: orangered;
   --transition: #fff;
+  --transition-duration: 0.3s;
   --code-bg: #23004b;
   --inline-code-bg: #ffe4c9;
   --border-light-dotted: #ccc;
   --border-light-solid: #ccc;
   --note-border: #9ccaff;
   --note-bg: #d7eeff;
+  --icon-filter: invert(0);
 }
 
 [data-theme="dark"] {
   --bg: #060323;
-  --header-bg: #080725;
+  --bg-darker: #c5ad88;
+  --header-bg: #0b092f;
   --header-shadow: #00000060;
   --font: #e0dbd3;
   --font-light: #fff;
-  --title: #e6ba90;
+  --title: #cac4bb;
   --link: #ffc9a2;
   --active-link: #d09255;
   --link-underline: #e6c8b3;
@@ -35,18 +39,20 @@
   --menulink-hover: #ffffff;
   --icon-hover: #ff9900;
   --transition: var(--bg);
+  --transition-duration: 0.3s;
   --code-bg: #21163c;
-  --inline-code-bg: #2c0f4a;
+  --inline-code-bg: #391e54;
   --border-light-dotted: #666;
-  --border-light-solid: #4a4a4a;
+  --border-light-solid: #222b4e;
   --note-border: #31278f;
-  --note-bg: #26205f;
+  --note-bg: #130f40;
+  --icon-filter: invert(70%);
 }
 
 body {
   background: var(--bg);
   font-family: 'Heebo', sans-serif;
-  transition: all 0.4s ease;
+  transition: all var(--transition-duration) ease;
   color: var(--font);
 }
 
@@ -82,7 +88,7 @@ button.outline-l {
   border: 2px solid #fff;
   font-weight: 600;
   letter-spacing: 4px;
-  transition: all 0.4s ease;
+  transition: all var(--transition-duration) ease;
 }
 
 button.outline-l a {
@@ -144,13 +150,13 @@ article p.note {
   border-left: 4px solid var(--note-border);
   font-size: 1.6rem;
   line-height: 2.6rem;
-  transition: background-color 0.3s ease;
+  transition: background var(--transition-duration) ease;
 }
 
 header {
   background: var(--header-bg);
   box-shadow: 0 0 0.3rem var(--header-shadow);
-  transition: all 0.3s ease;
+  transition: all var(--transition-duration) ease;
 }
 
 header .icon {
@@ -164,6 +170,8 @@ header .icon {
 header .github-icon {
   width: 2.8rem;
   height: 2.8rem;
+  filter: var(--icon-filter);
+  transition: var(--transition-duration) ease;
 }
 
 header .identity:hover,
@@ -222,7 +230,7 @@ header li.theme-switch a.dark {
 
 header li.theme-switch a:hover {
   color: var(--icon-hover);
-  transition: 0.4s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 nav.sidebar {
@@ -232,7 +240,7 @@ nav.sidebar {
   width: 18%;
   padding: 10.6rem 0.6rem 2rem 2.8%;
   border-right: 1px dotted var(--border-light);
-  transition: border 0.3s ease;
+  transition: border var(--transition-duration) ease;
 }
 
 nav.sidebar > h5 {
@@ -278,16 +286,16 @@ nav.mobile-menu {
 }
 
 .transition {
-  background: var(--transition); }
+  background: var(--transition); 
+}
 
 .transition.vanish {
-  animation: vanish 0.3s;
-  animation-fill-mode: forwards; 
-}
+  animation: vanish var(transition-duration);
+  animation-fill-mode: forwards; }
 
 .border-top-light {
   border-top: 1px solid var(--border-light-solid);
-  transition: 0.3s ease;
+  transition: var(--transition-duration) ease;
 }
 
 article.demo {
@@ -362,15 +370,23 @@ article.demo pre > code {
 }
 
 code.loc {
-  background: #e3e3e3;
-  color: black;
+  background: var(--bg-darker);
+  color: #000;
 }
 
 p > code,
 li > code {
   color: var(--font-light);
   background: var(--inline-code-bg);
-  transition: all 0.3s ease;
+  transition: all var(--transition-duration) ease;
+}
+
+table {
+  color: var(--font);
+}
+
+table thead tr th, table tbody tr td {
+  border-bottom: 1px solid var(--border-light-solid);
 }
 
 .sublink {
@@ -380,7 +396,7 @@ li > code {
 }
 
 footer {
-  background: #140024;
+  background: #000;
   padding: 0 0 8rem;
   position: relative;
   flex-shrink: 0;
@@ -498,7 +514,7 @@ footer .buffer {
     background: #fff;
     padding: 6% 1% 1% 6%;
     left: -50rem;
-    transition: 0.3s ease;
+    transition: var(--transition-duration) ease;
     box-shadow: 0px 0px 8px #00000030;
   }
 
