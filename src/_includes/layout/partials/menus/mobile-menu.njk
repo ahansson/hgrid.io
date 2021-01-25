@@ -4,4 +4,8 @@
   <h5 role="menuitem"><a href="/documentation/installation/" class="{{ 'active-link' if 'documentation' in page.url }}">Documentation</a></h5>
   <h5 role="menuitem"><a href="/documentation/integrate/" class="{{ 'active-link' if 'integrate' in page.url }}">Integration</a></h5>
   <h5 role="menuitem"><a href="https://github.com/ahansson/hgrid-css">GitHub</a></h5>
+
+  <div role="menuitem" class="push20v">
+  {% include "components/colormode-toggle.njk" %}
+  </div>
 </nav>

@@ -156,14 +156,14 @@ header .logo a {
   margin-top: -1px;
 }
 
-header li.theme-switch label {
+.theme-switch {
   width: 2rem;
   height: 2rem;
   cursor: pointer;
   display: block;
 }
 
-header li.theme-switch label input {
+.theme-switch input {
   width: 0;
   height: 0;
   position: relative;
@@ -171,19 +171,19 @@ header li.theme-switch label input {
   left: 1rem;
 }
 
-header li.theme-switch a {
+.theme-switch a {
   position: relative;
   top: -2.9rem;
   left: 0.11rem;
 }
 
-header li.theme-switch a.dark {
+.theme-switch a.dark {
   top: -0.4rem;
   left: -0.11rem;
   transform: scaleX(-1)
 }
 
-header li.theme-switch a:hover {
+.theme-switch a:hover {
   color: var(--icon-hover);
   transition: 0.2s ease-in-out;
 }
