@@ -8,7 +8,7 @@
     <script type="text/javascript" src="/assets/js/transition.js"></script>
     {% include "layout/partials/header.njk" %}
 
-    {% if title == 'Home' %}
+    {% if page.url == '/' %}
       {% include "layout/partials/menus/mobile-menu.njk" %}
     {% endif %}
     
