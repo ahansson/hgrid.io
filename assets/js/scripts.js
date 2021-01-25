@@ -1,15 +1,21 @@
 (() => {
-  
   // Theme Switcher
+  
   const themeSwitch = document.querySelector('.theme-switch input[type="checkbox"]')
   const sun = document.querySelector('.light')
   const moon = document.querySelector('.dark')
+  const swapIcons = (el1, el2) => {
+    el1.classList.remove('hide')
+    el1.classList.add('fade-in')
+    el2.classList.add('hide')
+    el2.classList.remove('fade-in')
+  }
+
   if (colorMode.preferredTheme === 'dark') {
     themeSwitch.checked = true
     moon.classList.remove('hide')
     localStorage.setItem('theme', 'dark')
-  }
-  if (colorMode.preferredTheme === 'light') {
+  } else {
     themeSwitch.checked = false
     sun.classList.remove('hide')
     localStorage.setItem('theme', 'light')
@@ -17,18 +23,14 @@
   const switchTheme = (e) => {
     if (e.target.checked) {
       document.documentElement.setAttribute('data-theme', 'dark')
-      moon.classList.remove('hide')
-      moon.classList.add('fade-in')
-      sun.classList.add('hide')
-      sun.classList.remove('fade-in')
+      swapIcons(moon, sun)
       localStorage.setItem('theme', 'dark')
+      colorMode.meta.content = '#060323'
     } else {
       document.documentElement.setAttribute('data-theme', 'light')
-      moon.classList.add('hide')
-      moon.classList.remove('fade-in')
-      sun.classList.remove('hide')
-      sun.classList.add('fade-in')
+      swapIcons(sun, moon)
       localStorage.setItem('theme', 'light')
+      colorMode.meta.content = '#23004b'
     }
   }
   themeSwitch.addEventListener('change', switchTheme, false)
