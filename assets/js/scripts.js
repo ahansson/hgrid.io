@@ -1,23 +1,30 @@
 (() => {
-  // Theme Switcher
   
-  const themeSwitch = document.querySelector('.theme-switch input[type="checkbox"]')
-  const sun = document.querySelector('.light')
-  const moon = document.querySelector('.dark')
-  const swapIcons = (el1, el2) => {
-    el1.classList.remove('hide')
-    el1.classList.add('fade-in')
-    el2.classList.add('hide')
-    el2.classList.remove('fade-in')
-  }
+  // Color Theme Switcher
+  
+  const themeSwitch = document.querySelectorAll('.theme-switch input[type="checkbox"]')
+  const toggle1 = document.querySelector('.toggle1')
+  const toggle2 = document.querySelector('.toggle2')
+  const sun = document.querySelectorAll('.light')
+  const moon = document.querySelectorAll('.dark')
 
+  const swapIcons = (el1, el2) => {
+    el1.forEach((el) => {
+      el.classList.remove('hide')
+      el.classList.add('fade-in')
+    })
+    el2.forEach(el => {
+      el.classList.add('hide')
+      el.classList.remove('fade-in')
+    })
+  }
   if (colorMode.preferredTheme === 'dark') {
-    themeSwitch.checked = true
-    moon.classList.remove('hide')
+    themeSwitch.forEach(el => el.checked = true)
+    moon.forEach(el => el.classList.remove('hide'))
     localStorage.setItem('theme', 'dark')
   } else {
-    themeSwitch.checked = false
-    sun.classList.remove('hide')
+    themeSwitch.forEach(el => el.checked = false)
+    sun.forEach(el => el.classList.remove('hide'))
     localStorage.setItem('theme', 'light')
   }
   const switchTheme = (e) => {
@@ -33,7 +40,8 @@
       colorMode.meta.content = '#23004b'
     }
   }
-  themeSwitch.addEventListener('change', switchTheme, false)
+  toggle1.addEventListener('change', switchTheme, false)
+  toggle2.addEventListener('change', switchTheme, false)
   
   // Documentation Menu (handheld)
 
