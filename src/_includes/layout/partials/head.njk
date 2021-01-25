@@ -33,25 +33,29 @@
 <meta name="description" content="{{ description }}" />
 <meta name="twitter:description" content="{{ description }}" />
 <meta property="og:description" content="{{ description }}" />
+
 <script type="text/javascript">
-
-const colorMode = (() => {
-  const initialMode = () => {
-    const persistedMode = window.localStorage.getItem('theme')
-    const hasPersistedMode = typeof persistedMode === 'string'
-    if (hasPersistedMode) {
-      return persistedMode
+  const colorMode = (() => {
+    const initialMode = () => {
+      const persistedMode = window.localStorage.getItem('theme')
+      const hasPersistedMode = typeof persistedMode === 'string'
+      if (hasPersistedMode) {
+        return persistedMode
+      }
+      const preferredMode = window.matchMedia('(prefers-color-scheme: dark)')
+      const hasPreferredMode = typeof preferredMode.matches === 'boolean'
+      if (hasPreferredMode) {
+        return preferredMode.matches ? 'dark' : 'light'
+      }
+      return 'light' // default if no preference found
     }
-    const preferredMode = window.matchMedia('(prefers-color-scheme: dark)')
-    const hasPreferredMode = typeof preferredMode.matches === 'boolean'
-    if (hasPreferredMode) {
-      return preferredMode.matches ? 'dark' : 'light'
-    }
-    return 'light' // default if no preference found
-  }
-  const preferredTheme = initialMode()
-  document.documentElement.setAttribute('data-theme', preferredTheme)
-  return { preferredTheme }
-})()
-
+    const preferredTheme = initialMode()
+    document.documentElement.setAttribute('data-theme', preferredTheme)
+    const meta = document.createElement('meta')
+    meta.name = 'theme-color'
+    if (preferredTheme === 'dark') { meta.content = '#060323' } 
+    else { meta.content = '#23004b'}
+    document.getElementsByTagName('head')[0].prepend(meta)
+    return { preferredTheme }
+  })()
 </script>
