@@ -136,7 +136,9 @@ header .github-icon:hover {
 
 header ul li a,
 .sidebar ul li a,
-header .logo a {
+header .logo a,
+.docs-toggle a,
+.mobile-toggle a {
   color: var(--menulink);
 }
 
@@ -539,6 +541,10 @@ footer .buffer {
 
   nav.mobile-menu {
     padding-top: 7rem !important;
+  }
+
+ .docs-toggle {
+    display: block;
   }
 
   .sublink {
