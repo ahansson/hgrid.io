@@ -43,10 +43,10 @@
   }
 
   const toggles = [toggle1, toggle2, toggle3]
-  const listen = (elem) => elem.map(el => (el !== null) ? el.addEventListener('change', switchTheme, false) : false)
+  const listen = (elem) => elem.map(el => el && el.addEventListener('change', switchTheme, false))
   listen(toggles)
 
-  // Documentation Menu (handheld)
+  // Mobile menus
   if (document.querySelector('.docs-menu') || document.querySelector('.mobile-menu')) {
     const trigger = document.querySelector('.menu-trigger')
     const mobileMenu = document.querySelector('.mobile-menu')
@@ -63,7 +63,7 @@
         }
       })
     }
-    (mobileMenu !== null) ? toggleMenu(mobileMenu) : toggleMenu(docsMenu)
+    (mobileMenu) ? toggleMenu(mobileMenu) : toggleMenu(docsMenu)
   }
 })();
 
