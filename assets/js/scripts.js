@@ -21,23 +21,23 @@
   if (colorMode.preferredTheme === 'dark') {
     themeSwitch.forEach(el => el.checked = true)
     moon.forEach(el => el.classList.remove('hide'))
-    localStorage.setItem('theme', 'dark')
+    localStorage.theme = 'dark'
   } else {
     themeSwitch.forEach(el => el.checked = false)
     sun.forEach(el => el.classList.remove('hide'))
-    localStorage.setItem('theme', 'light')
+    localStorage.theme = 'light'
   }
 
   const switchTheme = (e) => {
     if (e.target.checked) {
       document.documentElement.setAttribute('data-theme', 'dark')
       swapIcons(moon, sun)
-      localStorage.setItem('theme', 'dark')
+      localStorage.theme = 'dark'
       colorMode.meta.content = '#060323'
     } else {
       document.documentElement.setAttribute('data-theme', 'light')
       swapIcons(sun, moon)
-      localStorage.setItem('theme', 'light')
+      localStorage.theme = 'light'
       colorMode.meta.content = '#23004b'
     }
   }
