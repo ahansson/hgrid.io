@@ -4,9 +4,7 @@
 readme.md
 package-lock.json
 package.json
-src/assets/css/styles.css
-assets/css/styles.css.map
-assets/css/styles.prefix.css
-assets/css/styles.prefix.css.map
-assets/hgrid-css/**
-assets/scss/**
+src/_assets/css/devstyle.css
+src/_assets/css/devstyle.css.map
+src/_assets/hgrid-css/**
+src/_assets/scss/**

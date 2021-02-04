@@ -13,9 +13,6 @@
   $link-color-hover: #9139b4,
   $link-underline-color: #c19ad1,
 
-  $turn-off-link-decoration: true,
-  $use-global-link-underlines: true,
-  $use-article-link-underlines: true,
   $font-family: 'Heebo'#{','}sans-serif,
 );
 
@@ -111,52 +108,49 @@ button.outline-l {
   font-weight: 600;
   letter-spacing: 4px;
   transition: all var(--transition-duration) ease;
-}
-
-button.outline-l a {
-  line-height: 6rem;
-  padding: 0 6rem;
-}
-
-button.outline-l:hover {
+  a {
+    line-height: 6rem;
+    padding: 0 6rem;
+  }
+  &:hover {
   background: #ffffff38;
   transform: scale(1.08)
-}
-
-button.outline-l:focus {
+  }
+  &:focus {
   background: #ffffff38;
   transform: scale(1.08)
+  }
 }
 
 header {
   background: var(--header-bg);
   box-shadow: 0 0 0.3rem var(--header-shadow);
   transition: all var(--transition-duration) ease;
-}
 
-header .icon {
-  width: 19px;
-  height: 19px;
-  margin-right: 0.8rem;
-  position: relative;
-  top: -1px;
-}
+  .icon {
+    width: 19px;
+    height: 19px;
+    margin-right: 0.8rem;
+    position: relative;
+    top: -1px;
+  }
 
-header .github-icon {
-  width: 2.8rem;
-  height: 2.8rem;
-  filter: var(--icon-filter);
-  transition: var(--transition-duration) ease;
-}
+  .github-icon {
+    width: 2.8rem;
+    height: 2.8rem;
+    filter: var(--icon-filter);
+    transition: var(--transition-duration) ease;
+  }
 
-header .identity:hover,
-header .github-icon:hover {
-  opacity: 0.6;
+  .identity:hover,
+  .github-icon:hover {
+    opacity: 0.6;
+  }
 }
 
 header ul li a,
-.sidebar ul li a,
 header .logo a,
+.sidebar ul li a,
 .docs-toggle a,
 .mobile-toggle a {
   color: var(--menulink);
@@ -183,31 +177,30 @@ header .logo a {
   height: 2rem;
   cursor: pointer;
   display: block;
-}
 
-.theme-switch input {
-  width: 0;
-  height: 0;
-  position: relative;
-  top: -0.4rem;
-  left: 1rem;
-}
+  input {
+    width: 0;
+    height: 0;
+    position: relative;
+    top: -0.4rem;
+    left: 1rem;
+  }
 
-.theme-switch a {
-  position: relative;
-  top: -2.9rem;
-  left: 0.11rem;
-}
+  a {
+    position: relative;
+    top: -2.9rem;
+    left: 0.11rem;
 
-.theme-switch a.dark {
-  top: -0.4rem;
-  left: -0.11rem;
-  transform: scaleX(-1)
-}
-
-.theme-switch a:hover {
-  color: var(--icon-hover);
-  transition: 0.2s ease-in-out;
+    &.dark {
+      top: -0.4rem;
+      left: -0.11rem;
+      transform: scaleX(-1)
+    }
+    &:hover {
+      color: var(--icon-hover);
+      transition: 0.2s ease-in-out;
+    }
+  }
 }
 
 nav.sidebar {
@@ -218,17 +211,17 @@ nav.sidebar {
   padding: 10.6rem 0.6rem 2rem 2.8%;
   border-right: 1px dotted var(--border-light-dotted);
   transition: border var(--transition-duration) ease;
-}
 
-nav.sidebar > h5 {
-  margin-bottom: 0.8rem;;
-}
+  > h5 {
+    margin-bottom: 0.8rem;
 
-nav.sidebar > h5 > a {
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 1.5rem;
-  color: var(--menutitle);
+    > a {
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+      color: var(--menutitle);
+    }
+  }
 }
 
 nav.sidebar a:hover:before,

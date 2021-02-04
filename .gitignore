@@ -1,7 +1,6 @@
 node_modules
 .vscode
-_public/assets/css/styles.css.map
-_public/assets/css/styles.prefix
-_public/assets/css/styles.prefix.css.map
-_public/assets/hgrid-css/
-_public/assets/scss/
+_public/assets/css/devstyle.css
+_public/assets/css/devstyle.css.map
+_public/assets/hgrid-css/*
+_public/assets/scss/*
