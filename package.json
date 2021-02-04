@@ -6,9 +6,10 @@
   "scripts": {
     "start": "eleventy --serve & npm run watch:css",
     "build": "eleventy && npm run build:css",
-    "watch:css": "sass --watch src/_assets/scss/main.scss:src/_assets/css/devstyle.css",
-    "prefix:css": "postcss --use autoprefixer -b 'last 4 versions' src/_assets/css/devstyle.css -o src/_assets/css/style.css",
-    "minify:css": "sass src/_assets/css/style.css src/_assets/css/style.min.css --style=compressed",
+    "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
+    "watch:css": "sass --watch assets/scss/main.scss:assets/css/devstyle.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 4 versions' assets/css/devstyle.css -o assets/css/style.css",
+    "minify:css": "sass assets/css/style.css assets/css/style.min.css --style=compressed",
     "build:css": "npm run prefix:css && npm run minify:css"
   },
   "repository": {
@@ -29,6 +30,5 @@
     "postcss-cli": "^8.3.1",
     "sass": "^1.32.6",
     "sass-loader": "^10.1.1"
-  },
-  "dependencies": {}
+  }
 }

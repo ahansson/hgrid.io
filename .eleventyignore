@@ -1,10 +1,4 @@
-.gitignore
-.eleventyignore
-.editorconfig
-readme.md
-package-lock.json
-package.json
-src/_assets/css/devstyle.css
-src/_assets/css/devstyle.css.map
-src/_assets/hgrid-css/**
-src/_assets/scss/**
+assets/css/devstyle.css
+assets/css/devstyle.css.map
+assets/hgrid-css/
+assets/scss/

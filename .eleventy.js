@@ -1,11 +1,11 @@
 module.exports = (eleventyConfig) => {
   
-  eleventyConfig.addWatchTarget("/src/_assets/scss/main.scss");
-  eleventyConfig.addPassthroughCopy('/src/_assets/css/style.min.css')
-  eleventyConfig.addPassthroughCopy('/src/_assets/css/style.min.css.map')
-  eleventyConfig.addPassthroughCopy('/src/_assets/css/style.css')
-  eleventyConfig.addPassthroughCopy('/src/_assets/img/')
-  eleventyConfig.addPassthroughCopy('/src/_assets/js/')
+  eleventyConfig.addWatchTarget("assets/scss/main.scss");
+  eleventyConfig.addPassthroughCopy('assets/css/style.min.css')
+  eleventyConfig.addPassthroughCopy('assets/css/style.min.css.map')
+  eleventyConfig.addPassthroughCopy('assets/css/style.css')
+  eleventyConfig.addPassthroughCopy('assets/img/')
+  eleventyConfig.addPassthroughCopy('assets/js/')
 
   return {
     passthroughFileCopy: true,
@@ -15,6 +15,5 @@ module.exports = (eleventyConfig) => {
       input: 'src',
       output: '_public'
     }
-  
   }
 }
