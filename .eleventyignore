@@ -4,3 +4,8 @@
 readme.md
 package-lock.json
 package.json
+styles.css
+styles.css.map
+styles.prefix.css
+styles.prefix.css.map
+hgrid-css/*
