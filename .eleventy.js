@@ -1,6 +1,8 @@
 module.exports = (eleventyConfig) => {
   
-  eleventyConfig.addPassthroughCopy('assets')
+  eleventyConfig.addPassthroughCopy('assets/css/styles.min.css')
+  eleventyConfig.addPassthroughCopy('assets/css/styles.min.map')
+  eleventyConfig.addPassthroughCopy('assets/img/**')
 
   return {
     passthroughFileCopy: true,

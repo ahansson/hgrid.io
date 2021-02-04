@@ -17,7 +17,7 @@
   },
   "keywords": [],
   "author": "Atle Hansson",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ahansson/hgrid.io/issues"
   },
@@ -25,7 +25,6 @@
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
     "autoprefixer": "^10.1.0",
-    "hgrid-css": "1.3.0",
     "postcss": "^8.2.4",
     "postcss-cli": "^8.3.1",
     "sass": "^1.32.6",
