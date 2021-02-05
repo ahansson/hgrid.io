@@ -59,6 +59,7 @@ body {
   background-color: #fff;
   display: block;
   font-family: "Heebo" ,sans-serif;
+  font-display: optional;
   font-size: 1.6rem;
   height: 100vh;
   width: 100%;
@@ -2307,6 +2308,12 @@ table tfoot tr td {
   background: #ccc;
   line-height: 1.6rem;
   padding: 0.2rem 1rem;
+}
+table-auto {
+  table-layout: auto;
+}
+table-fixed {
+  table-layout: fixed;
 }
 table.striped tbody tr td {
   border: none;
