@@ -25,7 +25,8 @@
   "homepage": "https://hgrid.io",
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
-    "autoprefixer": "^10.1.0",
+    "autoprefixer": "^10.2.4",
+    "hgrid-css": "0.1.0-alpha",
     "postcss": "^8.2.4",
     "postcss-cli": "^8.3.1",
     "sass": "^1.32.6",
