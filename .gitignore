@@ -1,4 +1,3 @@
 node_modules
 .vscode
-_public/assets/hgrid-css/*
-_public/assets/scss/*
+assets/css/

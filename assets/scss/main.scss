@@ -1,18 +1,6 @@
 @use './../../node_modules/hgrid-css/sass/hgrid.scss' with (
 
-  $container-max-width: 1440px,
-  // $custom-stack-point: $phone,
-
-  $text-highlight-color: #ffe4c9,
-  $inline-code-color: #620042,
-  $inline-code-bg: #ffe4c9,
-  $pre-code-color: #fff,
-  $pre-code-bg: #361c43,
-
-  $link-color: #66008d,
-  $link-color-hover: #9139b4,
-  $link-underline-color: #c19ad1,
-
+  $use-article-link-underlines: true,
   $font-family: 'Heebo'#{','}sans-serif,
 );
 
@@ -156,15 +144,17 @@ header .logo a,
   color: var(--menulink);
 }
 
-header ul li a:before,
-.sidebar a:before {
-  height: 0;
-  background-color: none
-}
+header ul li a,
+.sidebar a {
 
-header ul li a:hover,
-.sidebar a:hover {
-  color: var(--menulink-hover);
+  &:before {
+    height: 0;
+    background-color: none;
+  }
+
+  &:hover {
+    color: var(--menulink-hover);
+  }
 }
 
 header .logo a {
@@ -241,14 +231,17 @@ nav.sidebar ul.sub-links {
   margin-top: -0.6rem;
 }
 
-nav.sidebar ul.sub-links > ul.sub-links {
-  font-size: 100%;
-  margin-top: unset;
-}
+nav.sidebar {
 
-nav.sidebar a.active-link {
-  font-weight: bold;
-  color: var(--active-link);
+  ul.sub-links > ul.sub-links {
+    font-size: 100%;
+    margin-top: unset;
+  }
+
+  a.active-link {
+    font-weight: bold;
+    color: var(--active-link);
+  }
 }
 
 nav.mobile-menu {
@@ -257,35 +250,36 @@ nav.mobile-menu {
 
 .transition {
   background: var(--transition); 
-}
 
-.transition.vanish {
-  animation: vanish var(transition-duration);
-  animation-fill-mode: forwards; }
+  &.vanish {
+    animation: vanish var(transition-duration);
+    animation-fill-mode: forwards; 
+  }
+}
 
 .border-top-light {
   border-top: 1px solid var(--border-light-solid);
   transition: var(--transition-duration) ease;
 }
 
-article a:before,
-article ul li a:before,
-article ol li a:before,
-article span a:before {
-  content: "";
-  width: 100%;
-  height: 1px;
-  background-color: var(--link-underline);
-  position: absolute;
-  bottom: 6px;
-}
+// article a:before,
+// article ul li a:before,
+// article ol li a:before,
+// article span a:before {
+//   content: "";
+//   width: 100%;
+//   height: 1px;
+//   background-color: var(--link-underline);
+//   position: absolute;
+//   bottom: 6px;
+// }
 
-article a:hover:before,
-article ul li a:hover:before,
-article ol li a:hover:before,
-article span a:hover:before {
-  height: 0;
-}
+// article a:hover:before,
+// article ul li a:hover:before,
+// article ol li a:hover:before,
+// article span a:hover:before {
+//   height: 0;
+// }
 
 article h1,
 article h2 {
