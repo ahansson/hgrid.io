@@ -1,7 +1,5 @@
 @use './../../node_modules/hgrid-css/sass/hgrid.scss' with (
-
-  $use-article-link-underlines: true,
-  $font-family: 'Heebo'#{','}sans-serif,
+  $use-article-link-underlines: true
 );
 
 :root {
@@ -61,6 +59,7 @@ body {
   background: var(--bg);
   transition: all var(--transition-duration) ease;
   color: var(--font);
+  font-family: "Heebo";
 }
 
 a,
