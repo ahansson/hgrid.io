@@ -1,4 +1,13 @@
 (() => {
+  
+  // Remove focus outline on clicks
+  const body = document.querySelector('body')
+  body.addEventListener('mousedown', () => {
+    body.classList.add('no-outline')
+  })
+  body.addEventListener('keydown', () => {
+    body.classList.remove('no-outline')
+  })
 
   // Color Theme Switcher
   const themeSwitch = document.querySelectorAll('.theme-switch input[type="checkbox"]')
