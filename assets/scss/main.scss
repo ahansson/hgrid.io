@@ -26,6 +26,7 @@
   --note-border: #9ccaff;
   --note-bg: #d7eeff;
   --icon-filter: invert(0);
+  --focus-border: 0 0 0 0.3rem #3971ffaf;
 }
 
 [data-theme="dark"] {
@@ -53,6 +54,7 @@
   --note-border: #31278f;
   --note-bg: #130f40;
   --icon-filter: invert(70%);
+  --focus-border: 0 0 0 0.3rem #467aff;
 }
 
 body {
@@ -73,6 +75,15 @@ a.no-underline:hover:before,
 nav.sidebar a.no-underline:hover:before, 
 .desktop-menu a.no-underline:hover:before {
   height: 0;
+}
+
+:focus {
+  outline: 0;
+  outline-color: transparent;
+  outline-style: none;
+  outline-width: 0;
+  border-radius: 3px;
+  box-shadow: var(--focus-border);
 }
 
 main.container,
@@ -171,8 +182,9 @@ header .logo a {
     width: 0;
     height: 0;
     position: relative;
-    top: -0.4rem;
-    left: 1rem;
+    left: 0;
+    opacity: 0.01;
+    visibility: hidden;
   }
 
   a {
