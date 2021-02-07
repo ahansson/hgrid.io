@@ -63,10 +63,11 @@ body {
   color: var(--font);
   font-family: "Heebo";
 
-  &.no-outline button,
-  &.no-outline a,
-  &.no-outline label,
-  &.no-outline input {
+  &.no-outline button:focus,
+  &.no-outline a:focus,
+  &.no-outline label:focus,
+  &.no-outline input:focus,
+  &.no-outline ul li:focus {
     outline-color: transparent;
     outline-style: none;
     outline-width: 0;
