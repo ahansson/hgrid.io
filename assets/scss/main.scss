@@ -184,34 +184,32 @@ header .logo a {
 }
 
 .theme-switch {
-  width: 2rem;
-  height: 2rem;
-  cursor: pointer;
-  display: block;
-
-  input {
-    width: 0;
-    height: 0;
-    position: relative;
-    left: 0;
-    opacity: 0.01;
-    visibility: hidden;
-  }
-
+  width: 2.2rem;
+  height: 2.2rem;
   a {
     position: relative;
-    top: -2.9rem;
-    left: 0.11rem;
-
     &.dark {
-      top: -0.4rem;
-      left: -0.11rem;
-      transform: scaleX(-1)
+      transform: scaleX(-1);
+      top: -3px;
+      right: -3px;
+    }
+    &.light {
+      right: -2px;
     }
     &:hover {
       color: var(--icon-hover);
       transition: 0.2s ease-in-out;
     }
+  }
+}
+
+.docs-toggle a {
+  position: relative;
+  top: 2px;
+
+  &.dark {
+    top: -1px;
+    right: -4px;
   }
 }
 
