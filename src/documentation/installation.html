@@ -43,20 +43,22 @@ title: Installation
 </h3>
 
 <pre class="language-html push30v">
-  <code class="hljs-string">https://unpkg.com/hgrid@1.3.0/dist/hgrid.1.3.min.css</code>
+  <code class="hljs-string">https://unpkg.com/hgrid-css@latest/dist/hgrid.min.css</code>
 </pre>
-<p class="mt-40">Include the link to the <a href="https://unpkg.com/hgrid@1.3.0/dist/hgrid.1.3.min.css">precompiled hgrid kit</a>
+<p class="mt-40">Include the link to the <a href="https://unpkg.com/hgrid-css@latest/dist/hgrid.min.css">precompiled hgrid kit</a>
   from the CDN, or a local copy, before any other stylesheets in your html. You can customize hgrid by overwriting the CSS
   classes below the import in the code flow.</p>
 
 <pre class="language-html">
-  <code>&lt;head&gt;<br>  &lt;link rel="stylesheet" href="https://unpkg.com/hgrid@1.3.0/dist/hgrid.1.3.min.css"&gt;<br><span class="hljs-comment">  &lt;-- more css --></span><br>&lt;/head&gt;</code>
+  <code>&lt;head&gt;<br>  &lt;link rel="stylesheet" href="https://unpkg.com/hgrid-css@latest/dist/hgrid.min.css"&gt;
+  <span class="hljs-comment">  &lt;-- more css --></span><br>&lt;/head&gt;</code>
 </pre>
 
 <p class="mt-40">You can also <code>@import</code> it at the top of your local stylesheet:</p>
 
 <pre class="language-css">
-  <code><span class="hljs-comment block">/* From node_modules */</span>@import './../etc./node_modules/hgrid-css/dist/hgrid.1.3.min.css';<br><br><span class="hljs-comment block">/* From CDN */</span>@import 'https://unpkg.com/hgrid@1.3.0/dist/hgrid.1.3.min.css';</code>
+  <code><span class="hljs-comment block">/* From node_modules */</span>@import './../etc./node_modules/hgrid-css/dist/hgrid.min.css';
+  <span class="hljs-comment block">/* From CDN */</span>@import 'https://unpkg.com/hgrid-css@latest/dist/hgrid.min.css';</code>
 </pre>
 
 <h3 class="mt-60">
