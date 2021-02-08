@@ -379,21 +379,21 @@ article.demo button {
   font-size: 1.6rem;
 }
 
-article.demo pre:not([class*='hljs'])::before {
-  content: attr(data-title);
+article.demo pre {
+  position: relative;
+}
+
+article.demo pre.filename:before {
+  content: attr(data-file);
   position: absolute;
-  font-size: 12px;
-  top: 40px;
-  right: 45px;
+  font-size: 1.2rem;
+  top: 1.6rem;
+  right: 1.6rem;
   text-align: right;
-  color: rgb(68, 68, 68);
-  font-weight: 700;
-  letter-spacing: 0.8px;
-  opacity: 0.8;
-  text-transform: uppercase;
-  padding: 2px 10px 3px;
-  border-radius: 5px;
-  background: rgb(221, 221, 221);
+  color: #ffe590;
+  padding: 1rem 0.6rem;
+  border-radius: 0.4rem;
+  background: #16083f;
 }
 
 article.demo pre > code {

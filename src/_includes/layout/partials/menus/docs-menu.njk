@@ -10,7 +10,12 @@
       <li role="menuitem"><a href="/documentation/installation#cdn" class="{{ 'active-link' if 'installation#cdn' in page.url }}">CDN</a></li>
       <li role="menuitem"><a href="/documentation/installation#clone" class="{{ 'active-link' if 'installation#clone' in page.url }}">Clone</a></li>
     </ul>
-  <h5 role="menuitem"><a href="/documentation/integrate/" {% if title == 'Integrate hgrid With Your Projects' %}class="active-link"{% endif %}>Integration</a></h5>
+  <h5 role="menuitem"><a href="/documentation/integrate/" {% if title == 'Integrate hgrid in Your Projects' %}class="active-link"{% endif %}>Integration</a></h5>
+      <ul class="sub-links">
+      <li role="menuitem"><a href="/documentation/integrate/#vue" class="{{ 'active-link' if 'documentation/integrate/#vue' in page.url }}">Vue</a></li>
+      <li role="menuitem"><a href="/documentation/integrate/#react" class="{{ 'active-link' if 'documentation/integrate/#react' in page.url }}">React</a></li>
+      <li role="menuitem"><a href="/documentation/integrate/#svelte" class="{{ 'active-link' if 'documentation/integrate/#svelte' in page.url }}">Svelte</a></li>
+    </ul>
   <h5 role="menuitem"><a href="/documentation/layout/" {% if title == 'Layout' %}class="active-link"{% endif %}>Layout</a></h5>
     <ul class="sub-links">
       <li role="menuitem"><a href="/documentation/layout#containers" class="{{ 'active-link' if 'documentation/layout/#containers' in page.url }}">Containers</a></li>
