@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Integrate hgrid With Your Projects | hgrid</title>
 <style type="text/css">@font-face{font-family:'Wotfard';src:url('/assets/font/subset-Wotfard-Regular.woff2') format('woff2'), url('/assets/font/subset-Wotfard-Regular.woff') format('woff');font-style:normal;font-display:swap}</style>
-<meta name="description" content="How to integrate and use hgrid in your development projects.">
+<meta name="description" content="How to integrate and use hgrid in your Node driven development projects.">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Atle Hansson">
 <link rel="stylesheet" href="/assets/css/style.min.css">
@@ -186,8 +186,8 @@
 
             
 <p class="intro">
-  Learn how you can set up <strong>hgrid</strong> in your node/npm based projects, 
-  and how to customize the default settings.
+  Learn how you can set up <strong>hgrid</strong> in your Node/NPM driven projects, 
+  and how to customize its default settings.
 </p>
 
 <h2 class="h3 mt-40">
@@ -301,7 +301,9 @@ leave out anything parts of <strong>hgrid</strong>.</p>
 rule</a> over at sass-lang.com.</p>
 
 <h4 class="mt-60">Method 3</h4>
-<h5>Quick import in <code>App.vue</code></h5>
+<h5>Quick imports</h5>
+
+<h6>Import in <code>App.vue</code></h6>
 <p>Import either Sass or precompiled CSS at the top of your <code>App.vue</code>'s <code>&lt;style></style></code> tag.</p>
 
 <pre class="language-html filename" data-file="App.vue">
@@ -316,26 +318,27 @@ rule</a> over at sass-lang.com.</p>
 <p>You can override <strong>hgrid</strong> classes using the same class names in any of your stylesheets loaded after this point. 
 The output is static CSS that can be used anywhere in your app.</p>
 
-<p class="note" id="variable-access">Remember that scoped styles will be loaded before <strong>hgrid</strong> when Vue stitches together its DOM. This means 
+<p class="note">Remember that scoped styles will be loaded before <strong>hgrid</strong> when Vue stitches together its DOM. This means 
 <strong>hgrid</strong> can override specific styles scoped to a component. Implementation method 3 is also 
 limited because you won't be able to tweak <strong>hgrid</strong>'s Sass variables.</p>
 
-<h5 class="mt-40">Quick import in <code>main.js</code></h5>
+<h6 class="mt-40">Import in <code>main.js</code></h6>
 
 <pre class="language-js filename" data-file="main.js">
 <code>import ‘~hgrid-css/dist/hgrid.min.css’
 </code></pre>
 
-<h5 class="mt-40">Quick import of prebuilt CSS to local CSS</h5>
+<h5 class="mt-40">Import prebuilt CSS to local CSS</h5>
 
 <p>At the top of a local stylesheet in for example <code>public/assets/</code>, you could import the full <strong>hgrid</strong> kit like this:</p>
 
 <pre class="language-css filename" data-file="style.css">
 <code>@import '~hgrid-css/dist/hgrid.min.css;</code></pre>
 
+<span id="variable-access"></span>
 <p>The same limitations apply as for the other quick add methods.</p>
 
-<h5 class="mt-40">Global access to Sass variables</h5>
+<h4 class="mt-40">Global access to Sass variables</h4>
 
 <p>If you need access to the <strong>hgrid</strong> $variables from within components, you can make them available from the config like so:</p>
 
@@ -362,16 +365,59 @@ as the same styles will be included multiple times in the bundle – once for ev
   React
 </h2>
 
-<p class="small"><em>This recipe is tested with React x.x.x</em></p>
+<p class="small"><em>This recipe is verified with React 17.0.1 and <a href="https://github.com/facebook/create-react-app" 
+target="_blank" rel="noreferrer noopener">create-react-app 4.0.2</a>.</em></p>
 
 <h4 class="push20v">Prerequisites</h4>
 
 <ol>
-  <li>Install two packages: <code>npm i sass sass-loader --save-dev</code></li>
-  <li>Install <strong>hgrid</strong>: <code>npm install hgrid-css --save-dev</code></li>
-  <li>Create <code>main.scss</code>, for example in <code>assets/scss</code></li>
-  <li>Initiate <code>main.scss</code> in your <code>main.js</code> file, respecting your local folder structure:</li>
+  <li>Install the Dart Sass package: <code>npm i sass --save-dev</code></li>
+  <li>Install <strong>hgrid</strong>: <code>npm i hgrid-css --save-dev</code></li>
+  <li>Rename <code>index.css</code> to <code>index.scss</code> (or create it in <code>src</code> if it doesn't exist.</li>
+  <li>Rename <code>App.css</code> and other component files to use the file ending <code>.scss</code>.</li>
+  <li>Import your <code>.scss</code> files in <code>index.js</code> and the relevant component files:</li>
 </ol>
+
+<pre class="language-js filename" data-file="index.js">
+<code>import './index.scss';</code></pre>
+
+<pre class="language-js filename" data-file="App.js">
+<code>import './App.scss';</code></pre>
+
+<p>Any files with the <code>.scss</code> extension imported in <code>App.js</code> will be automatically compiled to CSS. 
+Autoprefixer is a part of <strong>hgrid</strong> for broader browser compatibility, but in a React app you have to configure it yourself 
+to make it work with your project setup (outside the scope of this documentation).</p>
+
+<h4 class="mt-60">Title</h4>
+<h5>Subtitle</h5>
+
+<pre class="language-scss filename" data-file="index.scss">
+<code>@charset "utf-8";
+
+// Override some hgrid default variables
+$container-max-width: 1333px;
+$font-color: #333;
+$link-color: #ffe88d;
+$link-color-hover: #fff0b4;
+
+// Import everything from hgrid
+@import '~hgrid-css/sass/hgrid';
+
+// ... or just the parts you need
+@import '~hgrid-css/sass/variables/variables'; // Required
+@import '~hgrid-css/sass/mixins/mixins'; // Required
+@import '~hgrid-css/sass/layout/flex';
+@import '~hgrid-css/sass/layout/containers';
+@import '~hgrid-css/sass/layout/helpers/adjustment';
+
+// Add your own scss/css below
+@import 'partials/_app-frame.scss';
+
+body {
+  // etc.
+}
+</code>
+</pre>
 
 <h2 class="h3 mt-60">
   <span id="svelte" class="sublink"></span>
