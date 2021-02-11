@@ -1,15 +1,19 @@
 (() => {
-  const toggle1 = document.querySelector('.desktop-toggle'),
-  toggle2       = document.querySelector('.mobile-toggle'),
-  toggle3       = document.querySelector('.docs-toggle'),
-  sun           = document.querySelectorAll('.light'),
-  moon          = document.querySelectorAll('.dark'),
-  body          = document.querySelector('body'),
-  html          = document.querySelector('html')
+  
+  const toggle1       = document.querySelector('.desktop-toggle'),
+        toggle2       = document.querySelector('.mobile-toggle'),
+        toggle3       = document.querySelector('.docs-toggle'),
+        sun           = document.querySelectorAll('.light'),
+        moon          = document.querySelectorAll('.dark'),
+        docsMenu      = document.querySelector('.docs-menu'),
+        body          = document.querySelector('body'),
+        html          = document.querySelector('html'),
+        hash          = window.location.hash
 
   // Remove focus outline on clicks
   body.addEventListener('mousedown', () => { body.classList.add('no-outline')})
-  body.addEventListener('keydown', () => { body.classList.remove('no-outline')})
+  body.addEventListener('keydown', () => { body.classList.remove('no-outline') })
+  
 
   // Color Theme Switcher
   const swapIcons = (el1, el2) => {
@@ -63,7 +67,6 @@
     arr.map((el) => {
       
       if (el) {
-        
         el.addEventListener('click', switchTheme, false)
         el.addEventListener('keydown', (e) => {
           if (e.keyCode === 13 || e.keyCode === 32) {
@@ -74,10 +77,12 @@
       }
     })
   }
+
   listen(toggles)
 
   // Mobile menus
   if (document.querySelector('.docs-menu') || document.querySelector('.mobile-menu')) {
+    
     const trigger = document.querySelector('.menu-trigger'),
     mobileMenu    = document.querySelector('.mobile-menu'),
     docsMenu      = document.querySelector('.docs-menu'),
@@ -100,6 +105,35 @@
     (mobileMenu) ? toggleMenu(mobileMenu) : toggleMenu(docsMenu)
 
   }
+
+  // Set active anchor link on pageload
+  const activeSubLink = (h) => {
+    const links = docsMenu.querySelectorAll('a')
+    links.forEach((el) => {
+      if (el.hash === h) {
+        el.classList.add('active-link')
+      } else {
+        el.classList.remove('active-link')
+      }
+    })
+  }
+  (hash) ? activeSubLink(hash) : null
+
+  // Set active anchor for anchor links
+  const colorHashLinks = (e) => {
+    docsMenu.querySelectorAll('.active-link').forEach(l => l.classList.remove('active-link'))
+    e.target.classList.add('active-link')
+  }
+
+  docsMenu.addEventListener('click', (e) => {
+    if (e.target.tagName.toLowerCase() === 'a' && e.target.hash) {
+      const path = window.location.pathname
+      if (e.target.pathname === path)  {
+        colorHashLinks(e)
+      }
+    }
+  })
+
 })();
 
 // highlight.js, from separate file
