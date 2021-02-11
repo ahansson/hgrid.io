@@ -71,6 +71,7 @@ $link-color-hover: #fff0b4;
 
 <pre class="language-scss filename" data-file="main.scss">
 <code>@import '~hgrid-css/sass/variables/variables'; // Required
+@import '~hgrid-css/sass/base/base'; // Required
 @import '~hgrid-css/sass/mixins/mixins'; // Required
 
 @import '~hgrid-css/sass/layout/flex';
@@ -129,7 +130,7 @@ rule</a> over at sass-lang.com.</p>
 <p>Import either Sass or precompiled CSS at the top of your <code>App.vue</code>'s <code>&lt;style></style></code> tag.</p>
 
 <pre class="language-html filename" data-file="App.vue">
-<code>&lt;style lang="scss"&gt;
+<code>&lt;style lang="css"&gt;
   @import '~hgrid-css/dist/hgrid.min.css';
 &lt;/style&gt;</code>
 </pre>
@@ -138,6 +139,7 @@ rule</a> over at sass-lang.com.</p>
 <code>&lt;style lang="scss"&gt;
 
   // Override hgrid defaults
+  
   $container-max-width: 1400px;
   $font-color: #888;
 
@@ -238,23 +240,26 @@ target="_blank" rel="noreferrer noopener">create-react-app 4.0.2</a>.</em></p>
 Autoprefixer is a part of <strong>hgrid</strong> for broader browser compatibility, but in a React app you have to configure it yourself 
 to make it work with your project setup (outside the scope of this documentation).</p>
 
-<h4 class="mt-60">Title</h4>
-<h5>Subtitle</h5>
+<h4 class="mt-40">Demo project</h4>
 
-<pre class="language-scss filename" data-file="index.scss">
+Basic example on GitHub on how to integrate <strong>hgrid</strong> 
+<a href="https://github.com/ahansson/hgrid-css-react-app" target="_blank">in a React app</a>.
+
+<h4 class="mt-40">SCSS setup with @import to index.scss</h4>
+
+<pre class="push20v language-scss filename" data-file="index.scss">
 <code>@charset "utf-8";
 
-// Override some hgrid default variables
+// Override hgrid default variables if you wish
 $container-max-width: 1333px;
 $font-color: #333;
-$link-color: #ffe88d;
-$link-color-hover: #fff0b4;
 
 // Import everything from hgrid
 @import '~hgrid-css/sass/hgrid';
 
 // ... or just the parts you need
 @import '~hgrid-css/sass/variables/variables'; // Required
+@import '~hgrid-css/sass/base/base'; // Required
 @import '~hgrid-css/sass/mixins/mixins'; // Required
 @import '~hgrid-css/sass/layout/flex';
 @import '~hgrid-css/sass/layout/containers';
@@ -268,6 +273,60 @@ body {
 }
 </code>
 </pre>
+
+<p>You now have access to <strong>hgrid's'</strong> utilities from any component file in your app.</p>
+
+<pre class="push20v language-jsx filename" data-file="App.js">
+<code>import './App.scss';
+
+function App() {
+  return (
+    &lt;div className="App container-max">
+      &lt;div className="row padding-top-150">
+        &lt;div className="column radius-6 bg-gray-light">Content&lt;/div>
+        &lt;div className="column radius-6 bg-dark text-white">Content here&lt;/div>
+        &lt;div className="column radius-6 bg-gray-darker text-white">More content&lt;/div>
+        &lt;div className="column radius-6 bg-white text-blue">Hello content&lt;/div>
+      &lt;/div>
+    &lt;/div>
+  );
+}
+
+export default App;
+</code>
+</pre>
+
+<p>If you need access to specifics from <strong>hgrid</strong> in your components, you can import partials in the component scss.</p>
+
+<pre class="push20v language-scss filename" data-file="ExcellentComponent.scss">
+<code>@import '~hgrid-css/sass/variables/variables.scss';
+
+.ExcellentComponent {
+  font-size: 20px;
+  .column {
+    padding: 1rem 2rem;
+  }
+
+  // See if a hgrid default variable is available:
+  @media (max-width: $phone-landscape) {
+    text-align: center;
+  }
+}
+
+// Here we override a hgrid class which has a customized value from 'index.scss' 
+// and set it back to the original variable value we imported above
+
+.container-max {
+  max-width: $container-max-width;
+}
+</code>
+</pre>
+
+<p>Inspect the page and you will see that the 1200px <code>$container-max-width</code> variable we configured in 
+<code>index.scss</code> has been overridden by the default variable's value of 1440px that we imported into this file.</p>
+
+<p>Overrides in <code>index.scss</code> will display in dev tools as coming from hgrid's own partial files. This is correct, 
+as variables you customize get injected during compilation.</p>
 
 <h2 class="h3 mt-60">
   <span id="svelte" class="sublink"></span>
