@@ -190,12 +190,12 @@
   and how to customize its default settings.
 </p>
 
-<h2 class="h3 mt-40">
+<h2 class="mt-40">
   <span id="vue" class="sublink"></span>
   Vue
 </h2>
 
-<p class="small"><em>These recipes are tested with Vue 3.</em></p>
+<p class="small"><em>These recipes are tested with Vue v3.0.4.</em></p>
 
 <h4 class="push20v">Prerequisites</h4>
 
@@ -211,8 +211,13 @@
 
 <h5 class="mt-60">Method 1</h5>
 <h4>Modify hgrid variables before the import</h4>
-<p>Configure hgrid default variables to your own likings before you import the full kit or individual parts. This is the recommended 
-method.</p>
+<p>Configure hgrid default variables to your own likings before you import the full kit or individual parts.</p> 
+
+<p><img src="../../assets/img/ico-info.png" alt="info icon" class="p-ico"> This method is simple and flexible, as it injects <strong>hgrid</strong> into the global CSS namespace. The Sass maintainers 
+are however planning to deprecate the <code>@import</code> rule sometime in the future and replace it entirely with <code>@use</code> 
+and <code>@forward</code> which provide greater control by isolating classes and not polluting the global namespace. 
+<code>@import</code> will continue to work in plain CSS. Note that CSS's <code>@import</code> is not the same as ES6'
+<code>import</code>.</p>
 
 <pre class="language-scss filename" data-file="main.scss">
 <code>// Override hgrid default variables
@@ -259,13 +264,15 @@ $link-color-hover: #fff0b4;
 
 <p>Regular CSS variables like <code>--sample-var: #111;</code> from <strong>hgrid</strong> can be overridden in your 
 own <code>:root { ... }</code> class. Regular CSS variables from <strong>hgrid</strong> 
-are available to be used anywhere in your project, including in components.</p>
+are available to be used anywhere in your project, including in components, thanks to <code>@import</code> (as opposed to 
+<code>@use</code> which would isolate them to the file where they are imported.</p>
 
-<p class="note"><code>$sass-variables</code> from <strong>hgrid</strong> do not work in component files. 
-If you need to use <strong>hgrid</strong>'s Sass variables you must do so in the global stylesheets – outside of your <code>.vue</code> files. 
-Or, you can get access to them via <code>vue.config.js</code> like <a href="#variable-access">explained here</a>.</p>
+<p class="note"><code>$sass-variables</code> from <strong>hgrid</strong> do not work in component files unless you import 
+<code>sass/variables/variables.scss</code> at the top of each file. Or, you can get access to them via <code>vue.config.js</code> 
+like <a href="#variable-access">explained here</a>. It's recommended to keep <strong>hgrid</strong> in the global context 
+and use these variables in the global stylesheets outside of your <code>.vue</code> files.</p>
 
-<h5 class="mt-60">Method 2</h5>
+<h5 id="method-2" class="mt-60">Method 2</h5>
 <h4>Include the full kit with <code>@use</code></h4>
 
 <p>In your <code>main.scss</code>, import <strong>hgrid</strong> as shown below. Modify <strong>hgrid</strong> variables 
@@ -279,7 +286,7 @@ you want to change. Note that we use commas after the variable declarations, not
   $link-underline-color: #ffe88d
 );
 
-// Import your own sass or regular css partials, if you have any
+// Import your own scss or regular css partials, if you have any
 @import 'partials/_app-frame.scss';
 @import 'partials/_theme.scss';
 
@@ -291,33 +298,40 @@ you want to change. Note that we use commas after the variable declarations, not
 // etc.
 </code></pre>
 
-<p><strong>hgrid</strong> will now be fully loaded into your project, with your own overrides, if you added any.</p>
+<p><strong>hgrid</strong> will now be fully loaded into your project with your own variable overrides, if you added any.</p>
 
-<p class="note">Please note that you can’t use <strong>hgrid</strong>'s variables once the <code>@use</code> 
-rule has been executed by the compiler. Importing other files before the <code>@use</code> rule will not compile either. 
-Unless you apply one <code>@use</code> rule for each file to import from <strong>hgrid</strong>, method 2 doesn't allow you 
-leave out anything parts of <strong>hgrid</strong>.</p>
+<p class="note">You can’t use <strong>hgrid</strong>'s variables once <code>@use</code> 
+has been executed by the compiler. The <code>@use</code> rule compiles to an isolated CSS namespace. It requires to be included at 
+the top of your files. Trying to <code>@import</code> anything else before the <code>@use</code> rule will not compile.</p>
 
-<p>Read more about the <a href="https://sass-lang.com/documentation/at-rules/use#configuration" target="_blank"><code>@use</code> 
+<p>If you want to leave certain partials from <strong>hgrid</strong> out, you have to use one <code>@use</code> rule for each 
+partial to include.</p>
+
+<p>Read more about the <a href="https://sass-lang.com/documentation/at-rules/use#configuration" target="_blank">@use 
 rule</a> over at sass-lang.com.</p>
 
 <h5 class="mt-60">Method 3</h5>
 <h4>Quick imports</h4>
 <br>
 <h5>3a. Import in 'App.vue'</h5>
-<p>Import either Sass or precompiled CSS at the top of your <code>App.vue</code>'s <code>&lt;style></style></code> tag.</p>
+<p>Import either Sass or precompiled CSS at the top of <code>App.vue</code>'s <code>&lt;style></style></code> tag.</p> 
+
+<h6>CSS</h6>
 
 <pre class="language-html filename" data-file="App.vue">
 <code>&lt;style lang="css"&gt;
   @import '~hgrid-css/dist/hgrid.min.css';
+
+  /* Other CSS classes from here down */
 &lt;/style&gt;</code>
 </pre>
 
-<pre class="language-html filename" data-file="App.vue">
+<h6>SCSS</h6>
+
+<pre class="language-scss filename" data-file="App.vue">
 <code>&lt;style lang="scss"&gt;
 
   // Override hgrid defaults
-  
   $container-max-width: 1400px;
   $font-color: #888;
 
@@ -346,10 +360,11 @@ rule</a> over at sass-lang.com.</p>
 &lt;/style&gt;
 </code></pre>
 
-<p>Please refer to <a href="/documentation/integrate/#vue">prerequisites</a> if you're using Sass.</p>
+<p>Please refer to <a href="/documentation/integrate/#vue">prerequisites</a> for setting up Sass in Vue.</p>
 
-<p class="note">Remember that <code>scoped</code> styles will be loaded before <strong>hgrid</strong> when Vue stiches together its 
-virtual DOM. This means <strong>hgrid</strong> can override specific styles scoped to a component.</p>
+<p class="note">Remember that <code>scoped</code> styles will be loaded before <strong>hgrid</strong> when Vue stitches together its 
+virtual DOM. This means <strong>hgrid</strong> may interfere with certain styles even though they are scoped to a component. 
+This can be avoided with <code>@use</code> from <a href="#method-2">method 2</a>.</p>
 
 <br>
 <h5>3b. Import in 'main.js'</code></h5>
@@ -359,18 +374,20 @@ virtual DOM. This means <strong>hgrid</strong> can override specific styles scop
 </code></pre>
 
 <br>
-
 <h5>3c. Import prebuilt CSS to local CSS</h5>
-<p>At the top of a local stylesheet in for example <code>public/assets/</code>, you could import the full <strong>hgrid</strong> kit like this:</p>
+
+<p>At the top of a local stylesheet in for example <code>public/assets/</code> you can import the full <strong>hgrid</strong> 
+kit like this:</p>
 
 <pre class="language-css filename" data-file="style.css">
 <code>@import '~hgrid-css/dist/hgrid.min.css;</code></pre>
 
 <span id="variable-access"></span>
 <br>
-<h4 class="push20v">Global access to Sass variables in Vue</h4>
+<h4 class="push20v">Global access to Sass variables with <code>vue.config.js</code></h4>
 
-<p>If you need access to the <strong>hgrid</strong> $variables from within components, you can make them available from the config like so:</p>
+<p>Another way to access to the <strong>hgrid</strong> $variables from within components is to make them available from the 
+config like so:</p>
 
 <pre class="language-js filename" data-file="vue.config.js">
 <code>module.exports = {
@@ -390,7 +407,7 @@ performance will be affected. The same styles will be included multiple times in
 
 <p class="note">Restart the dev server with <code>npm run serve</code> for config changes to take effect.</p>
 
-<h2 class="h3 mt-60">
+<h2 class="mt-60">
   <span id="react" class="sublink"></span>
   React
 </h2>
@@ -398,7 +415,12 @@ performance will be affected. The same styles will be included multiple times in
 <p class="small"><em>This recipe is verified with React 17.0.1 and <a href="https://github.com/facebook/create-react-app" 
 target="_blank" rel="noreferrer noopener">create-react-app 4.0.2</a>.</em></p>
 
-<h4 class="push20v">Prerequisites</h4>
+<h4 class="mt-40">Demo project</h4>
+
+Check out the <a href="https://github.com/ahansson/hgrid-css-react-app" target="_blank" rel="noopener noreferrer">starter project 
+on GitHub</a>.
+
+<h4 class="mt-40">Prerequisites</h4>
 
 <ol>
   <li>Install the Dart Sass package: <code>npm i sass --save-dev</code></li>
@@ -415,15 +437,10 @@ target="_blank" rel="noreferrer noopener">create-react-app 4.0.2</a>.</em></p>
 <code>import './App.scss';</code></pre>
 
 <p>Any files with the <code>.scss</code> extension imported in <code>App.js</code> will be automatically compiled to CSS. 
-Autoprefixer is a part of <strong>hgrid</strong> for broader browser compatibility, but in a React app you have to configure it yourself 
-to make it work with your project setup (outside the scope of this documentation).</p>
+Autoprefixer is a part of the <strong>hgrid</strong> project for broader browser compatibility, but in a React app from scratch 
+you have to configure it yourself. Create-react-app and the starter project we link to above has Autoprefixer working out of the box.</p>
 
-<h4 class="mt-40">Demo project</h4>
-
-Basic example on GitHub on how to integrate <strong>hgrid</strong> 
-<a href="https://github.com/ahansson/hgrid-css-react-app" target="_blank">in a React app</a>.
-
-<h4 class="mt-40">SCSS setup with @import to index.scss</h4>
+<h4 class="mt-40">@import to index.scss</h4>
 
 <pre class="push20v language-scss filename" data-file="index.scss">
 <code>@charset "utf-8";
@@ -452,7 +469,7 @@ body {
 </code>
 </pre>
 
-<p>You now have access to <strong>hgrid's'</strong> utilities from any component file in your app.</p>
+<p>You now have access to <strong>hgrid</strong>'s utilities from any component file in your app.</p>
 
 <pre class="push20v language-jsx filename" data-file="App.js">
 <code>import './App.scss';
@@ -505,6 +522,11 @@ export default App;
 
 <p>Overrides in <code>index.scss</code> will display in dev tools as coming from hgrid's own partial files. This is correct, 
 as variables you customize get injected during compilation.</p>
+
+<p class="note">Our <a href="https://github.com/ahansson/hgrid-css-react-app" rel="noopener noreferrer" target="_blank">React 
+starter project</a> which is based on <a href="https://create-react-app.dev/" target="_blank" rel="noopener noreferrer">
+create-react-app</a> automatically minifies and autoprefixes the CSS output. <a href="https://create-react-app.dev/docs/post-processing-css" 
+rel="noopener noreferrer" target="_blank">Read more in the docs</a>.</p>
 
 <h2 class="h3 mt-60">
   <span id="svelte" class="sublink"></span>
