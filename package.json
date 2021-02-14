@@ -7,9 +7,9 @@
     "start": "eleventy --serve & npm run watch:css",
     "build": "eleventy && npm run build:css",
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
-    "watch:css": "sass --watch assets/scss/main.scss:assets/css/devstyle.css assets/css/devstyle.css:_public/assets/css/style.min.css",
-    "prefix:css": "postcss --use autoprefixer -b 'last 4 versions' assets/css/devstyle.css -o assets/css/style.css",
-    "minify:css": "sass assets/css/style.css assets/css/style.min.css --style=compressed",
+    "watch:css": "sass --watch assets/scss/main.scss > assets/css/devstyle.css assets/css/devstyle.css > _public/assets/css/style.min.css",
+    "prefix:css": "postcss --use autoprefixer -b 'last 4 versions' assets/css/devstyle.css -o assets/css/style.prefix.css",
+    "minify:css": "sass assets/css/style.prefix.css > assets/css/style.min.css --style=compressed && sass assets/css/style.prefix.css > _public/assets/css/style.min.css --style=compressed",
     "build:css": "npm run prefix:css && npm run minify:css"
   },
   "repository": {
