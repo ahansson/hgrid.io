@@ -17,7 +17,7 @@
   --menulink-hover: #000;
   --icon-hover: orangered;
   --transition: #fff;
-  --transition-duration: 0.3s;
+  --transition-duration: 0.2s;
   --code-bg: #23004b;
   --inline-code-bg: #ffe4c9;
   --border-light-dotted: #ccc;
@@ -45,7 +45,7 @@
   --menulink-hover: #ffffff;
   --icon-hover: #ff9900;
   --transition: var(--bg);
-  --transition-duration: 0.3s;
+  --transition-duration: 0.2s;
   --code-bg: #21163c;
   --inline-code-bg: #391e54;
   --border-light-dotted: #2c3868;
@@ -171,7 +171,7 @@ header ul li a,
 
   &:before {
     height: 0;
-    background-color: none;
+    background-color: unset;
   }
 
   &:hover {

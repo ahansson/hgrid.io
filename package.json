@@ -7,9 +7,9 @@
     "start": "eleventy --serve & npm run watch:css",
     "build": "eleventy && npm run build:css",
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
-    "watch:css": "sass --watch assets/scss/main.scss > assets/css/devstyle.css assets/css/devstyle.css > _public/assets/css/style.min.css",
+    "watch:css": "sass --watch assets/scss/main.scss:assets/css/devstyle.css assets/css/devstyle.css:_public/assets/css/style.min.css",
     "prefix:css": "postcss --use autoprefixer -b 'last 4 versions' assets/css/devstyle.css -o assets/css/style.prefix.css",
-    "minify:css": "sass assets/css/style.prefix.css > assets/css/style.min.css --style=compressed && sass assets/css/style.prefix.css > _public/assets/css/style.min.css --style=compressed",
+    "minify:css": "postcss assets/css/style.prefix.css > assets/css/style.min.css --style=compressed && postcss assets/css/style.prefix.css > _public/assets/css/style.min.css --style=compressed",
     "build:css": "npm run prefix:css && npm run minify:css"
   },
   "repository": {
@@ -38,6 +38,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
     "autoprefixer": "^10.2.4",
+    "cssnano": "^4.1.10",
     "hgrid-css": "0.1.0-alpha",
     "postcss": "^8.2.5",
     "postcss-cli": "^8.3.1",
