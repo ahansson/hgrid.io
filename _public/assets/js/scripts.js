@@ -125,15 +125,16 @@
     e.target.classList.add('active-link')
   }
 
-  docsMenu.addEventListener('click', (e) => {
-    if (e.target.tagName.toLowerCase() === 'a' && e.target.hash) {
-      const path = window.location.pathname
-      if (e.target.pathname === path)  {
-        colorHashLinks(e)
+  if (docsMenu && typeof docsMenu === 'string') {
+    docsMenu.addEventListener('click', (e) => {
+      if (e.target.tagName.toLowerCase() === 'a' && e.target.hash) {
+        const path = window.location.pathname
+        if (e.target.pathname === path)  {
+          colorHashLinks(e)
+        }
       }
-    }
-  })
-
+    })
+  }
 })();
 
 // highlight.js, from separate file
