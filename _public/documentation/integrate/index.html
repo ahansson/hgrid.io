@@ -265,7 +265,7 @@ $link-color-hover: #fff0b4;
 <p>Regular CSS variables like <code>--sample-var: #111;</code> from <strong>hgrid</strong> can be overridden in your 
 own <code>:root { ... }</code> class. Regular CSS variables from <strong>hgrid</strong> 
 are available to be used anywhere in your project, including in components, thanks to <code>@import</code> (as opposed to 
-<code>@use</code> which would isolate them to the file where they are imported.</p>
+<code>@use</code> which would isolate them to the scope where they are "@used").</p>
 
 <p class="note"><code>$sass-variables</code> from <strong>hgrid</strong> do not work in component files unless you import 
 <code>sass/variables/variables.scss</code> at the top of each file. Or, you can get access to them via <code>vue.config.js</code> 
