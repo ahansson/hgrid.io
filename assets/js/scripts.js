@@ -125,7 +125,7 @@
     e.target.classList.add('active-link')
   }
 
-  if (docsMenu && typeof docsMenu === 'string') {
+  if (docsMenu && typeof docsMenu === 'object') {
     docsMenu.addEventListener('click', (e) => {
       if (e.target.tagName.toLowerCase() === 'a' && e.target.hash) {
         const path = window.location.pathname
