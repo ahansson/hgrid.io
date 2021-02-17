@@ -22,7 +22,7 @@
   --inline-code-bg: #ffe4c9;
   --border-light-dotted: #ccc;
   --border-light-solid: #ccc;
-  --border-dark-solid: #171244;
+  --menu-border: #d4d4d4;
   --note-border: #9ccaff;
   --note-bg: #d7eeff;
   --icon-filter: invert(0);
@@ -50,7 +50,7 @@
   --inline-code-bg: #391e54;
   --border-light-dotted: #2c3868;
   --border-light-solid: #222b4e;
-  --border-dark-solid: #171244;
+  --menu-border: #171244;
   --note-border: #31278f;
   --note-bg: #130f40;
   --icon-filter: invert(70%);
@@ -549,7 +549,7 @@ footer .buffer {
     height: 100vh;
     width: 53%;
     z-index: 9;
-    border-right: 1px solid var(--border-dark-solid);
+    border-right: 1px solid var(--menu-border);
     background: var(--bg);
     padding: 6% 1% 1% 6%;
     left: -50rem;
