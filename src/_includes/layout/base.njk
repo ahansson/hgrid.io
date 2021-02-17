@@ -6,7 +6,7 @@
   <body>
     {% include "layout/partials/header.njk" %}
 
-    {% if page.url == '/' or page.title == '404' %}
+    {% if page.url == '/' or title == '404' %}
       {% include "layout/partials/menus/mobile-menu.njk" %}
     {% endif %}
     
