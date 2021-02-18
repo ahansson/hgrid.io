@@ -3,17 +3,17 @@
   <head>
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Grid | hgrid</title>
+<title>Forms | hgrid</title>
 <style type="text/css">@font-face{font-family:'Wotfard';src:url('/assets/font/subset-Wotfard-Regular.woff2') format('woff2'), url('/assets/font/subset-Wotfard-Regular.woff') format('woff');font-style:normal;font-display:swap}</style>
-<meta name="description" content="Using CSS grid with hgrid.">
+<meta name="description" content="Base styling for forms and inputs included in hgrid.">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Atle Hansson">
 <link rel="stylesheet" href="/assets/css/style.min.css">
-<link rel="canonical" href="https://hgrid.io/documentation/layout/grid/" />
+<link rel="canonical" href="https://hgrid.io/documentation/forms/" />
 <meta property="og:site_name" content="hgrid | Lightweight CSS Utility Kit" />
-<meta property="og:title" content="Grid | hgrid" />
+<meta property="og:title" content="Forms | hgrid" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://hgrid.io/documentation/layout/grid/" />
+<meta property="og:url" content="https://hgrid.io/documentation/forms/" />
 <meta name="twitter:card" content="...." />
 <meta property="og:image" content="" />
 <meta name="twitter:image" content="" />
@@ -169,11 +169,11 @@
       <li role="menuitem"><a href="/documentation/layout/automatic-columns" >Automatic Columns</a></li>
       <li role="menuitem"><a href="/documentation/layout/accurate-columns" >Accurate Columns</a></li>
       <li role="menuitem"><a href="/documentation/layout/flex/" >Flex</a></li>
-      <li role="menuitem"><a href="/documentation/layout/grid/" class="active-link">Grid</a></li>
+      <li role="menuitem"><a href="/documentation/layout/grid/" >Grid</a></li>
       <li role="menuitem"><a href="/documentation/layout/positioning/" class="">Positioning</a></li>
     </ul>
   <h5 role="menuitem"><a href="/documentation/utilities/" >Utility Classes</a></h5>
-  <h5 role="menuitem"><a href="/documentation/forms/" >Forms</a></h5>
+  <h5 role="menuitem"><a href="/documentation/forms/" class="active-link">Forms</a></h5>
   <h5 role="menuitem"><a href="/documentation/typography/" >Typography</a></h5>
   <h5 role="menuitem"><a href="/documentation/animations/" >Animations</a></h5>
 </nav>
@@ -181,18 +181,170 @@
     <main class="container-max padding-top-100 padding-bottom-120">
       <div class="row">
         <article class="column demo">
-          <h1>Grid</h1>
+          <h1>Forms</h1>
 
           <section class="group border-top-light padding-top-40">
 
-            <p>File location: <code class="loc">sass/layout/_grid.scss</code></p>
+            
+<p class="intro">By including <code class="loc">input/_input.scss</code> and <code class="loc">input/_form.scss</code> from <strong>hgrid</strong>, forms in 
+your project will will look decent out of the box.</p>
 
-<h3>Coming.</h3>
+<p>The signal colors used for checkboxes, radio buttons, buttons and focus outline can be set in the global variables. The styles are 
+slightly opinionated, but conservative, css-only and respectful of browser functionality. For additional 
+styling you can add utility classes such as <code>radius-*</code> for border-radius, <code>mt-*</code> for margin-top, <code>bg-gray-*</code> 
+for background color, <code>.block</code> for display:block. Pseudo-selectors like <code>:disabled</code> and <code>:readonly</code> will automatically 
+be reflected visually.</p>
 
-<div class="hairline mt-40"></div>
-<p class="fl hide-phone">← <strong>Previous</strong>: <a href="/documentation/layout/flex/">Flex</a></p>
-<p class="fr"><strong>Next</strong>: <a href="/documentation/layout/positioning/">Positioning</a> →</p>
+<section class="bg-light radius-6 padding-100 box-shadow-1 mt-40">
+          <h3 class="mb-40">Input elements</h3>
+          <form aria-label="Example Form">
+            <fieldset>
+              <label for="name">Full Name <span class="text-red" aria-label="Required Field">*</span></label>
+              <input class="radius-4" type="text" name="name" id="name" minlength="3" maxlength="90" placeholder="Full Name" required />
 
+              <label class="" for="email" aria-labelledby="">Email <span class="text-red" aria-label="Required Field">*</span></label>
+              <input
+                class="radius-4"
+                name="email"
+                id="email"
+                type="text"
+                placeholder="me@mycompany.com"
+                required
+                minlength="6"
+                maxlength="90"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                title="Please enter a correctly formatted email address"
+              />
+
+              <div class="row">
+
+                <div class="column">
+                  <label for="readonly" class="readonly">Readonly</label>
+                  <input class="radius-4" type="text" name="readonly" id="readonly" placeholder="Input not allowed" readonly />
+                </div>
+
+                <div class="column">
+                  <label for="disabled" class="disabled">Disabled Text Input</label>
+                  <input class="radius-4" type="text" name="disabled" id="disabled" placeholder="Not possible to edit" disabled />
+                </div>
+
+              </div>
+
+              <div class="row">
+                <div class="column">
+                  <label for="options"> Which office is your inquiry related to <span class="text-red" aria-label="Required Field">*</span> </label>
+                  <select id="options" name="options" class="radius-4" aria-label="Select City" required>
+                    <option>Select City</option>
+                    <option disabled>-------</option>
+                    <optgroup label="Latin America">
+                      <option value="1">Veracruz</option>
+                      <option value="2">Medellín</option>
+                      <option value="3">Salvador</option>
+                    </optgroup>
+                    <optgroup label="North America">
+                      <option value="4">New Orleans</option>
+                      <option value="5">Austin</option>
+                      <option value="6">Boston</option>
+                    </optgroup>
+                    <optgroup label="Europe">
+                      <option value="7">Avignon</option>
+                      <option value="8">Zürich</option>
+                      <option value="9">Oslo</option>
+                    </optgroup>
+                    <optgroup label="Africa">
+                      <option value="10">Abidjan</option>
+                      <option value="11">Port Harcourt</option>
+                      <option value="12">Mombasa</option>
+                    </optgroup>
+                    <optgroup label="Asia">
+                      <option value="13">Hong Kong</option>
+                      <option value="14">Karachi</option>
+                      <option value="15">Jakarta</option>
+                    </optgroup>
+                  </select>
+                </div>   
+
+                <div class="column">
+                  <label for="disabled-options" class="disabled">Disabled Select Menu</label>
+                  <select id="disabled-options" name="disabled-options" class="radius-4 disabled" aria-label="Disabled Select Menu" disabled>
+                    <option>Copenhagen</option>
+                    <option disabled>-------</option>
+                  </select>
+                </div>
+
+              </div>
+
+              <label class="pointer" name="radios">
+                <input id="radio1" name="radios" type="radio" checked required />
+                Alt 1
+              </label>
+              <label class="pointer" name="radios">
+                <input id="radio2" name="radios" type="radio" class="" required />
+                Alt 2
+              </label>
+              <label class="pointer" name="radios">
+                <input id="radio3" name="radios" type="radio" class="" required />
+                Alt 3
+              </label>
+              <label class="disabled">
+                <input id="radio4" name="radios" type="radio" class="" disabled />
+                Alt 4 (disabled)
+              </label>
+
+              <label class="pointer block mt-20" name="radios2">
+                <input id="radio1" name="radios2" type="radio" class="" required />
+                Yes
+              </label>
+
+              <label class="pointer block disabled readonly" name="radios2">
+                <input id="radio2" name="radios2" type="radio" class="" required checked disabled readonly />
+                No
+              </label>
+            </fieldset>
+
+            <fieldset>
+              <legend class="bold">Legend (fieldset heading)</legend>
+              <label class="" for="message"> Your Message <span class="text-red" aria-label="Required Field">*</span> </label>
+              <textarea
+                id="message"
+                name="message"
+                class="radius-4"
+                rows="6"
+                placeholder="Please enter your message here"
+                required
+                minlength="15"
+                maxlength="2500"
+              ></textarea>
+
+              <label class="pointer block" for="privacy-check">
+                <input id="privacy-check" type="checkbox" name="privacy-check" required />
+                I accept the <a href="#">Privacy Policy</a>
+              </label>
+
+              <label for="cannot" class="block disabled push20v">
+                <input id="cannot" type="checkbox" name="cannot" disabled />
+                Disabled
+              </label>
+
+              <label for="disabled-check" class="block disabled">
+                <input id="disabled-check" type="checkbox" name="disabled-check" checked disabled />
+                Disabled and checked
+              </label>
+
+            </fieldset>
+
+              <button class="inline-block radius-4 outline">Outline Button</button>
+              <button class="inline-block radius-4">Primary Button</button>
+              <button class="inline-block radius-4 secondary">Secondary Button</button>
+              <button class="inline-block radius-4" disabled>Disabled Button</button>
+              <button class="inline-block radius-4 outline" disabled>Disabled Outline</button>
+
+            <fieldset class="push40v">
+              <input type="submit" role="button" class="inline-block radius-4" value="Input Type Submit" />
+              <input type="submit" role="button" class="inline-block radius-4 outline" value="Input Type Submit Outline" />
+            </fieldset>
+          </form>
+</section>
 
           </section>
         </article>
