@@ -325,14 +325,19 @@ the <strong>hgrid</strong> package.</p>
         I accept the <a href="#">Privacy Policy</a>
       </label>
 
-      <label for="cannot" class="block disabled push20v">
-        <input id="cannot" type="checkbox" name="cannot" disabled />
-        Disabled
+      <label class="pointer block" for="checked-box">
+        <input id="checked-box" type="checkbox" name="checked-box" checked required />
+        Checked
       </label>
 
       <label for="disabled-check" class="block disabled">
         <input id="disabled-check" type="checkbox" name="disabled-check" checked disabled />
         Disabled and checked
+      </label>
+
+      <label for="cannot" class="block disabled">
+        <input id="cannot" type="checkbox" name="cannot" disabled />
+        Disabled
       </label>
     </fieldset>
 
@@ -390,7 +395,12 @@ to make them stack vertically. Buttons and input type buttons are displayed as b
 or <code>.inline-block</code> to display them horizontally.</p>
 
 <p><small>*) An exception: We have cleaned up <code>&lt;input type="file" /></code> a little bit by removing default padding and 
-border around the default button and added some (invisibe) margin.</small></p>
+border around the button and added some margin.</small></p>
+
+<div class="hairline mt-40"></div>
+<p class="fl hide-phone">← <strong>Previous</strong>: <a href="/documentation/utilities/">Utility Classes</a></p>
+<p class="fr"><strong>Next</strong>: <a href="/documentation/typography/">Typography</a> →</p>
+
 
           </section>
         </article>

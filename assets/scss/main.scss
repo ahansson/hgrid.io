@@ -302,7 +302,7 @@ article h1 {
 article p {
   line-height: 3rem;
 
-  &.p-ico {
+  .p-ico {
     display: inline;
     width: 1.8rem;
     height: 1.8rem;
@@ -333,7 +333,7 @@ article.demo {
     line-height: 2.2rem;
     margin: 1.6rem 0 3rem;
     padding-bottom: 1.4rem;
-    border-bottom: 1px dotted #bbb;
+    border-bottom: 1px dotted var(--border-light-solid)
   }
 
   .column > p,
@@ -428,6 +428,10 @@ table {
   /* scroll-margin: 10rem; awaiting fix for Safari */
   position: relative;
   top: -10rem;
+}
+
+.hairline {
+  border-top: 1px solid var(--border-light-solid);
 }
 
 footer {
