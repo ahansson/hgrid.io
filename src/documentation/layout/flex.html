@@ -6,13 +6,268 @@ description: Easy Flex Styling with hgrid.
 }
 title: Flex
 ---
+
+<p class="intro">
+  Flex is perfectly suited for utility classes. Without writing a single line of
+  CSS you'll be able to create any kind of flex based layout.
+</p>
+
 <p>File location: <code class="loc">sass/layout/_flex.scss</code></p>
 
-<pre>
-<code>&lt;div class="flex">
+<h5 class="mt-40">Code example</h5>
+
+<pre class="language-html mt-20 mb-30">
+<code>&lt;div class="flex f-wrap" style="height:20rem; color:#fff;">
+  &lt;div class="f-grow-1 bg-gray">
+    &lt;div class="bg-gray-darker f-center padding-20">Content&lt;/div>
+  &lt;/div>
+    &lt;div class="f-center f-grow-1 bg-gray-dark">Content&lt;/div>
+    &lt;div class="f-center f-4 bg-gray-darker">Content&lt;/div>
 &lt;/div></code>
 </pre>
 
+<div class="flex f-wrap" style="height:20rem; color:#fff;">
+  <div class="f-grow-1 bg-gray text-center">
+    <div class="padding-20 bg-gray-darker f-center mb-20">Content</div>
+    Content
+  </div>
+  <div class="f-center f-grow-1 bg-gray-dark">Content</div>
+  <div class="f-center f-4 bg-gray-darker">Content</div>
+</div>
+
+<h5 class="mt-60">Complete list of flex utility classes</h5>
+<div class="group scrollable-y mt-20">
+  <table class="border-gray-lighter">
+    <thead>
+      <tr>
+        <th style="width: 36%;">Classname</th>
+        <th style="width: 36%;">CSS rule</th>
+        <th style="width: 28%;">Comment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>.flex</td>
+        <td>display: flex;</td>
+        <td>Applied to the parent element</td>
+      </tr>
+      <tr>
+        <td>.inline-flex</td>
+        <td>display: inline-flex;</td>
+        <td>Applied to the parent element</td>
+      </tr>
+      <tr>
+        <td>.f-center</td>
+        <td>
+          display: flex;<br />justify-content: center;<br />align-items: center;
+        </td>
+        <td>Applied to the parent element</td>
+      </tr>
+      <tr>
+        <td>.f-direction-row</td>
+        <td>flex-direction: row;</td>
+        <td>Applied to the parent element</td>
+      </tr>
+      <tr>
+        <td>.f-direction-row-reverse</td>
+        <td>flex-direction: row-reverse;</td>
+        <td>Applied to the parent element</td>
+      </tr>
+      <tr>
+        <td>.f-direction-column</td>
+        <td>flex-direction: column;</td>
+        <td>Applied to the parent element</td>
+      </tr>
+      <tr>
+        <td>.f-direction-column-reverse</td>
+        <td>flex-direction: column-reverse;</td>
+        <td>Applied to the parent element</td>
+      </tr>
+      <tr>
+        <td>.f-wrap</td>
+        <td>flex-wrap: wrap;</td>
+        <td>Applied to the parent element</td>
+      </tr>
+      <tr>
+        <td>.f-wrap-nowrap</td>
+        <td>flex-wrap: nowrap;</td>
+        <td>Applied to the parent element</td>
+      </tr>
+      <tr>
+        <td>.f-wrap-reverse</td>
+        <td>flex-wrap: wrap-reverse;</td>
+        <td>Applied to the parent element</td>
+      </tr>
+      <tr>
+        <td>.justify-content-flex-start</td>
+        <td>justify-content: flex-start;</td>
+        <td>Applied to the parent element</td>
+      </tr>
+      <tr>
+        <td>.justify-content-flex-end</td>
+        <td>justify-content: flex-end;</td>
+        <td>Applied to the parent element</td>
+      </tr>
+      <tr>
+        <td>.justify-content-center</td>
+        <td>justify-content: flex-end;</td>
+        <td>Applied to the parent element</td>
+      </tr>
+      <tr>
+        <td>.justify-content-space-between</td>
+        <td>justify-content: space-between;</td>
+        <td>Applied to the parent element</td>
+      </tr>
+      <tr>
+        <td>.justify-content-space-around</td>
+        <td>justify-content: space-around;</td>
+        <td>Applied to the parent element</td>
+      </tr>
+      <tr>
+        <td>.justify-content-space-evenly</td>
+        <td>justify-content: space-evenly;</td>
+        <td>Applied to the parent element</td>
+      </tr>
+      <tr>
+        <td>.align-content-start</td>
+        <td>align-content: flex-start;</td>
+        <td>Applied to the parent element</td>
+      </tr>
+      <tr>
+        <td>.align-content-end</td>
+        <td>align-content: flex-end;</td>
+        <td>Applied to the parent element</td>
+      </tr>
+      <tr>
+        <td>.align-content-center</td>
+        <td>align-content: center;</td>
+        <td>Applied to the parent element</td>
+      </tr>
+      <tr>
+        <td>.align-content-space-between</td>
+        <td>align-content: space-between;</td>
+        <td>Applied to the parent element</td>
+      </tr>
+      <tr>
+        <td>.align-content-space-around</td>
+        <td>align-content: space-around;</td>
+        <td>Applied to the parent element</td>
+      </tr>
+      <tr>
+        <td>.align-content-space-evenly</td>
+        <td>align-content: space-evenly;</td>
+        <td>Applied to the parent element</td>
+      </tr>
+      <tr>
+        <td>.align-items-center</td>
+        <td>align-items: center;</td>
+        <td>Applied to the parent element</td>
+      </tr>
+      <tr>
+        <td>.align-items-flex-start</td>
+        <td>align-items: flex-start;</td>
+        <td>Applied to the parent element</td>
+      </tr>
+      <tr>
+        <td>.align-items-flex-end</td>
+        <td>align-items: flex-end;</td>
+        <td>Applied to the parent element</td>
+      </tr>
+      <tr>
+        <td>.align-items-baseline</td>
+        <td>align-items: baseline;</td>
+        <td>Applied to the parent element</td>
+      </tr>
+      <tr>
+        <td>.align-items-stretch</td>
+        <td>align-items: stretch;</td>
+        <td>Applied to the parent element</td>
+      </tr>
+      <tr>
+        <td>---</td>
+        <td>---</td>
+        <td>---</td>
+      </tr>
+      <tr>
+        <td>.f-grow-1</td>
+        <td>flex-grow: 1;</td>
+        <td>Applied to child elements</td>
+      </tr>
+      <tr>
+        <td>.f-grow-0</td>
+        <td>flex-grow: 0;</td>
+        <td>Applied to child elements</td>
+      </tr>
+      <tr>
+        <td>.f-shrink-1</td>
+        <td>flex-shrink: 1;</td>
+        <td>Applied to child elements</td>
+      </tr>
+      <tr>
+        <td>.f-shrink-0</td>
+        <td>flex-shrink: 0;</td>
+        <td>Applied to child elements</td>
+      </tr>
+      <tr>
+        <td>.align-self-auto</td>
+        <td>align-self: auto;</td>
+        <td>Applied to child elements</td>
+      </tr>
+      <tr>
+        <td>.align-self-start</td>
+        <td>align-self: flex-start;</td>
+        <td>Applied to child elements</td>
+      </tr>
+      <tr>
+        <td>.align-self-end</td>
+        <td>align-self: flex-end;</td>
+        <td>Applied to child elements</td>
+      </tr>
+      <tr>
+        <td>.align-self-center</td>
+        <td>align-self: center;</td>
+        <td>Applied to child elements</td>
+      </tr>
+      <tr>
+        <td>.align-self-stretch</td>
+        <td>align-self: stretch;</td>
+        <td>Applied to child elements</td>
+      </tr>
+      <tr>
+        <td>.order-1 (...) .order-10</td>
+        <td>order: 1; (...) order: 10;</td>
+        <td>Applied to child elements</td>
+      </tr>
+      <tr>
+        <td>.f-1 (...) .f-24</td>
+        <td>flex: 1; (...) flex: 24;</td>
+        <td>Shorthand for <code>flex-grow</code> <code>flex-shrink</code> and <code>flex-basis</code>. 
+        Used for internal proportions. <code>.f-2</code> is twice the size of <code>.f-1</code>, etc.</td>
+      </tr>
+      <tr>
+        <td>.f-auto</td>
+        <td>flex: auto;</td>
+        <td>Applied to child elements</td>
+      </tr>
+      <tr>
+        <td>.f-initial</td>
+        <td>flex: initial;</td>
+        <td>Applied to child elements</td>
+      </tr>
+      <tr>
+        <td>.f-none</td>
+        <td>flex: none;</td>
+        <td>Applied to child elements</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 <div class="hairline mt-40"></div>
-<p class="fl hide-phone">← <strong>Previous</strong>: <a href="/documentation/layout/accurate-columns">Accurate Columns</a></p>
-<p class="fr"><strong>Next</strong>: <a href="/documentation/layout/grid/">Grid</a> →</p>
+<p class="fl hide-phone">
+  ← <strong>Previous</strong>:
+  <a href="/documentation/layout/accurate-columns">Accurate Columns</a>
+</p>
+<p class="fr">
+  <strong>Next</strong>: <a href="/documentation/layout/grid/">Grid</a> →
+</p>
