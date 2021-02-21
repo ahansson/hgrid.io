@@ -1,0 +1,214 @@
+---
+layout: layout/docs.njk
+meta: {
+title: Input | hgrid,
+description: Basic styles for forms and inputs included in hgrid.
+}
+title: Input
+---
+<p class="intro">Make input and form elements look decent out of the box by including styling from <strong>hgrid</strong>.</p>
+
+<p>File location: <code class="loc">input/_input.scss</code> and <code class="loc">input/_form.scss</code></p>
+
+<p>The signal colors used for checkboxes, radio buttons, buttons and focus outline can be set in the global variables. The styles are 
+slightly opinionated, but conservative, CSS-only and respectful of browser functionality. You can add extra styling with utility classes, 
+such as <code>radius-</code> for border-radius, <code>mt-</code> for margin-top, <code>.block</code> for 
+display:block, etc.</p>
+
+<p>Checkboxes and radio buttons are entirely custom styled, reflecting your customized <code>$theme-color-primary</code>. 
+<code>&lt;input type="file" /></code> as well as infrequently used input types such as <code>type="color"</code> and 
+<code>type="range"</code> have their factory settings *. Maintaining styling hacks for all these is beyond the scope of 
+the <strong>hgrid</strong> package.</p>
+
+<p>Pseudo-selectors like <code>:disabled</code> and <code>:readonly</code> will be reflected visually. Examples below.</p>
+
+<section class="bg-light radius-6 padding-100 box-shadow-1 mt-40 form-example">
+  <h3 class="mb-40">Example Form</h3>
+  <form aria-label="Example Form" method="POST">
+    <fieldset>
+      <label for="name">Full Name <span class="text-red" aria-label="Required Field">*</span></label>
+      <input class="radius-4" type="text" name="name" id="name" minlength="3" maxlength="90" placeholder="Full Name" required />
+
+      <label class="" for="email" aria-labelledby="">Email <span class="text-red" aria-label="Required Field">*</span></label>
+      <input
+        class="radius-4"
+        name="email"
+        id="email"
+        type="text"
+        placeholder="me@mycompany.com"
+        required
+        minlength="6"
+        maxlength="90"
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+        title="Please enter a correctly formatted email address"
+      />
+
+      <div class="row">
+        <div class="column">
+          <label for="readonly" class="readonly">Readonly</label>
+          <input class="radius-4" type="text" name="readonly" id="readonly" placeholder="Input not allowed" readonly />
+        </div>
+
+        <div class="column">
+          <label for="disabled" class="disabled">Disabled Text Input</label>
+          <input class="radius-4" type="text" name="disabled" id="disabled" placeholder="Not possible to edit" disabled />
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="column">
+          <label for="options"> Which office is your inquiry related to <span class="text-red" aria-label="Required Field">*</span> </label>
+          <select id="options" name="options" class="radius-4" aria-label="Select City" required>
+            <option>Select City</option>
+            <option disabled>-------</option>
+            <optgroup label="Latin America">
+              <option value="1">Veracruz</option>
+              <option value="2">Medellín</option>
+              <option value="3">Salvador</option>
+            </optgroup>
+            <optgroup label="North America">
+              <option value="4">New Orleans</option>
+              <option value="5">Austin</option>
+              <option value="6">Boston</option>
+            </optgroup>
+            <optgroup label="Europe">
+              <option value="7">Avignon</option>
+              <option value="8">Zürich</option>
+              <option value="9">Oslo</option>
+            </optgroup>
+            <optgroup label="Africa">
+              <option value="10">Abidjan</option>
+              <option value="11">Port Harcourt</option>
+              <option value="12">Mombasa</option>
+            </optgroup>
+            <optgroup label="Asia">
+              <option value="13">Hong Kong</option>
+              <option value="14">Karachi</option>
+              <option value="15">Jakarta</option>
+            </optgroup>
+          </select>
+        </div>   
+
+        <div class="column">
+          <label for="disabled-options" class="disabled">Disabled Select Menu</label>
+          <select id="disabled-options" name="disabled-options" class="radius-4 disabled" aria-label="Disabled Select Menu" disabled>
+            <option>Copenhagen</option>
+            <option disabled>-------</option>
+          </select>
+        </div>
+
+      </div>
+
+      <label class="pointer" name="radios">
+        <input id="radio1" name="radios" type="radio" checked required />
+        Alt 1
+      </label>
+      <label class="pointer" name="radios">
+        <input id="radio2" name="radios" type="radio" class="" required />
+        Alt 2
+      </label>
+      <label class="pointer" name="radios">
+        <input id="radio3" name="radios" type="radio" class="" required />
+        Alt 3
+      </label>
+      <label class="disabled">
+        <input id="radio4" name="radios" type="radio" class="" disabled />
+        Alt 4 (disabled)
+      </label>
+
+      <label class="pointer block mt-20" name="radios2">
+        <input id="radio5" name="radios2" type="radio" class="" required />
+        Yes
+      </label>
+
+      <label class="pointer block disabled readonly" name="radios2">
+        <input id="radio6" name="radios2" type="radio" class="" required checked disabled readonly />
+        No (checked & disabled)
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend class="bold">Legend (fieldset heading)</legend>
+      <label for="message"> Your Message <span class="text-red" aria-label="Required Field">*</span> </label>
+      <textarea
+        id="message"
+        name="message"
+        class="radius-4"
+        rows="6"
+        placeholder="Please enter your message here"
+        required
+        minlength="15"
+        maxlength="2500"
+      ></textarea>
+
+      <label class="pointer block" for="privacy-check">
+        <input id="privacy-check" type="checkbox" name="privacy-check" required />
+        I accept the <a href="#">Privacy Policy</a>
+      </label>
+
+      <label for="cannot" class="block disabled push20v">
+        <input id="cannot" type="checkbox" name="cannot" disabled />
+        Disabled
+      </label>
+
+      <label for="disabled-check" class="block disabled">
+        <input id="disabled-check" type="checkbox" name="disabled-check" checked disabled />
+        Disabled and checked
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <button type="submit" class="inline radius-4">Primary Button</button>
+      <button type="reset" class="inline radius-4 secondary">Secondary Button</button>
+      <button type="button" class="inline radius-4 outline">Outline Button</button>
+    </fieldset>
+
+    <fieldset>
+      <button type="button" class="inline radius-4" disabled>Disabled Button</button>
+      <button type="button" class="inline radius-4 outline" disabled>Disabled Outline</button>
+    </fieldset>
+
+    <fieldset>
+      <input type="submit" role="button" class="inline radius-4" value="Input Type Submit" />
+      <input type="reset" role="button" class="inline radius-4 outline" value="Input Type Reset Outline" />
+    </fieldset>
+
+  </form>
+
+</section>
+
+<div class="mb-30 mt-40 scrollable-x">
+  <table style="min-width: 40rem;">
+    <thead>
+      <tr>
+        <th style="width: 40%;">Related Classes</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>.disabled</td>
+        <td>Grays out <code>label</code> and text elements for use with the <code>:disabled</code> input state. Cursor <code>not-allowed</code>.</td>
+      </tr>
+      <tr>
+        <td>.readonly</td>
+        <td>Grays out <code>label</code> and text elements for use with the <code>:readonly</code> input state. Cursor <code>not-allowed</code>.</td>
+      </tr>
+      <tr>
+        <td>.secondary</td>
+        <td>Lighter variant of <code>button</code>, <code>input[type=submit]</code> and <code>[type=reset]</code></td>
+      </tr>
+      <tr>
+        <td>.outline</td>
+        <td>Outline variant of <code>button</code>, <code>input[type=submit]</code> and <code>[type=reset]</code></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>Radio buttons and checkboxes are inline elements and will display next to each other horizontally. Add <code>class="block"</code> 
+to make them stack vertically. Buttons and input type buttons are displayed as block elements out of the box. Add <code>.inline</code> 
+or <code>.inline-block</code> to display them horizontally.</p>
+
+<p><small>*) An exception: We have cleaned up <code>&lt;input type="file" /></code> a little bit by removing default padding and 
+border around the default button and added some (invisibe) margin.</small></p>

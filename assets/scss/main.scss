@@ -27,6 +27,7 @@
   --note-bg: #d7eeff;
   --icon-filter: invert(0);
   --focus-border: 0 0 0 0.3rem #3971ffaf;
+  --light-bg: #fff;
 }
 
 [data-theme="dark"] {
@@ -55,6 +56,7 @@
   --note-bg: #130f40;
   --icon-filter: invert(70%);
   --focus-border: 0 0 0 0.3rem #467aff;
+  --light-bg: #e8e9f7;
 }
 
 body {
@@ -63,11 +65,11 @@ body {
   color: var(--font);
   font-family: "Wotfard";
 
-  &.no-outline button:focus,
-  &.no-outline a:focus,
-  &.no-outline label:focus,
-  &.no-outline input:focus,
-  &.no-outline ul li:focus {
+  &.no-outline button:not(form button):focus,
+  &.no-outline a:not(form a):focus,
+  &.no-outline label:not(form label):focus,
+  &.no-outline input:not(input[type=radio]:checked):not(form input):focus,
+  &.no-outline ul li:not(form ul li):focus {
     outline-color: transparent;
     outline-style: none;
     outline-width: 0;
@@ -116,19 +118,19 @@ button.outline-l {
   background: none;
   border: 2px solid #fff;
   font-weight: 600;
+  padding: 0;
   letter-spacing: 4px;
   transition: all var(--transition-duration) ease;
   a {
-    line-height: 6rem;
-    padding: 0 6rem;
+    line-height: 7.4rem;
+    padding: 0 8rem;
   }
-  &:hover {
-  background: #ffffff38;
-  transform: scale(1.08)
-  }
-  &:focus {
-  background: #ffffff38;
-  transform: scale(1.08)
+  &:hover,
+  &:focus,
+  &:active {
+    background: #ffffff38;
+    border: 2px solid #fff;
+    transform: scale(1.08)
   }
 }
 
@@ -283,25 +285,6 @@ nav.mobile-menu {
   transition: var(--transition-duration) ease;
 }
 
-// article a:before,
-// article ul li a:before,
-// article ol li a:before,
-// article span a:before {
-//   content: "";
-//   width: 100%;
-//   height: 1px;
-//   background-color: var(--link-underline);
-//   position: absolute;
-//   bottom: 6px;
-// }
-
-// article a:hover:before,
-// article ul li a:hover:before,
-// article ol li a:hover:before,
-// article span a:hover:before {
-//   height: 0;
-// }
-
 article h1,
 article h2 {
   letter-spacing: -1px;
@@ -318,94 +301,98 @@ article h1 {
 
 article p {
   line-height: 3rem;
-}
 
-article p .p-ico {
-  display: inline;
-  width: 1.8rem;
-  height: 1.8rem;
-  transform: translate(0, 0.2rem);
-}
-
-article p.note {
-  padding: 1.6rem 1rem 1.6rem 2rem;
-  background: var(--note-bg);
-  border-radius: 1rem;
-  border-left: 4px solid var(--note-border);
-  font-size: 1.6rem;
-  line-height: 2.6rem;
-  transition: background var(--transition-duration) ease;
+  &.p-ico {
+    display: inline;
+    width: 1.8rem;
+    height: 1.8rem;
+    transform: translate(0, 0.2rem);
+  }
+  &.note {
+    padding: 1.6rem 1rem 1.6rem 2rem;
+    background: var(--note-bg);
+    border-radius: 1rem;
+    border-left: 4px solid var(--note-border);
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+    transition: background var(--transition-duration) ease;
+  }
 }
 
 article.demo {
   padding-left: 20%;
-}
 
-article.demo p.intro {
-  font-size: 2.2rem;
-  line-height: 3.4rem;
-  margin-bottom: 4.2rem;
-}
+  p.intro {
+    font-size: 2.2rem;
+    line-height: 3.4rem;
+    margin-bottom: 4.2rem;
+  }
 
-article.demo p.caption {
-  font-size: 1.5rem;
-  line-height: 2.2rem;
-  margin: 1.6rem 0 3rem;
-  padding-bottom: 1.4rem;
-  border-bottom: 1px dotted #bbb;
-}
+  p.caption {
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+    margin: 1.6rem 0 3rem;
+    padding-bottom: 1.4rem;
+    border-bottom: 1px dotted #bbb;
+  }
 
-article.demo .column > p,
-article.demo [class*="column-"] > p {
-  border-radius: 6px;
-  padding: 2.2rem 0.5rem;
-  background-color: #79518b;
-  color: #fff;
-  font-size: 1.6rem;
-  text-align: center;
-  margin-bottom: 0;
-}
+  .column > p,
+  [class*="column-"] > p {
+    border-radius: 6px;
+    padding: 2.2rem 0.5rem;
+    background-color: #79518b;
+    color: #fff;
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 0;
+  }
 
-article.demo .two-columns p,
-article.demo .three-columns p,
-article.demo .four-columns p,
-article.demo .normal-text p {
-  background: inherit;
-  text-align: initial;
-  padding: 0;
-  margin-bottom: 2.2rem;
-  color: #000;
-}
+  .form-example {
+    color: #000;
+    background: var(--light-bg);
 
-article.demo .circle {
-  max-width: 17%;
-  margin: 4rem 0 5rem;
-}
+    a {
+      color: #66008d;
+    }
+  }
 
-article.demo button {
-  font-size: 1.6rem;
-}
+  .two-columns p,
+  .three-columns p,
+  .four-columns p,
+  .normal-text p {
+    background: inherit;
+    text-align: initial;
+    padding: 0;
+    margin-bottom: 2.2rem;
+    color: #000;
+  }
 
-article.demo pre {
-  position: relative;
-}
+  .circle {
+    max-width: 17%;
+    margin: 4rem 0 5rem;
+  }
 
-article.demo pre.filename:before {
-  content: attr(data-file);
-  position: absolute;
-  font-size: 1.2rem;
-  top: 1.6rem;
-  right: 1.6rem;
-  text-align: right;
-  color: #ffe590;
-  padding: 1rem 0.6rem;
-  border-radius: 0.4rem;
-  background: #16083f;
-}
+  pre {
+    position: relative;
 
-article.demo pre > code {
-  border-radius: 1rem;
-  background-color: var(--code-bg);
+    .filename:before {
+      content: attr(data-file);
+      position: absolute;
+      font-size: 1.2rem;
+      top: 1.6rem;
+      right: 1.6rem;
+      text-align: right;
+      color: #ffe590;
+      padding: 1rem 0.6rem;
+      border-radius: 0.4rem;
+      background: #16083f;
+    }
+
+    pre > code {
+      border-radius: 1rem;
+      background-color: var(--code-bg);
+    }
+  }
 }
 
 code.loc {
@@ -414,7 +401,10 @@ code.loc {
 }
 
 p > code,
-li > code {
+li > code,
+small > code,
+table td > code,
+table th > code {
   color: var(--font-light);
   background: var(--inline-code-bg);
   transition: all var(--transition-duration) ease;
@@ -422,10 +412,16 @@ li > code {
 
 table {
   color: var(--font);
-}
 
-table thead tr th, table tbody tr td {
-  border-bottom: 1px solid var(--border-light-solid);
+  td > code,
+  th > code {
+    font-size: 90%;
+  }
+
+  thead tr th, 
+  tbody tr td {
+    border-bottom: 1px solid var(--border-light-solid);
+  }
 }
 
 .sublink {
@@ -439,26 +435,20 @@ footer {
   padding: 0 0 8rem;
   position: relative;
   flex-shrink: 0;
+
+  p a {
+    color: #cfcfcf;
+    font-size: 1.6rem;
+    border-bottom: 1px solid transparent;
+  }
+
+  p a:hover {
+    color: #fff;
+    border-bottom: 1px dotted #666;
+  }
+
 }
 
-footer p a {
-  color: #cfcfcf;
-  font-size: 1.6rem;
-  border-bottom: 1px solid transparent;
-}
-
-footer p a:hover {
-  color: #fff;
-  border-bottom: 1px dotted #666;
-}
-
-footer .buffer {
-  background: var(--bg);
-  height: 5rem;
-  box-shadow: 0 -3rem 3rem var(--bg);
-  margin-top: -1px;
-  transition: 0.2s ease;
-}
 
 /* Tomorrow Night Blue Theme for highlight.js */
 /* http://jmblog.github.com/color-themes-for-google-code-highlightjs */

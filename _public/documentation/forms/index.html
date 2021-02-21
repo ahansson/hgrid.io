@@ -185,14 +185,17 @@
 
           <section class="group border-top-light padding-top-40">
 
-            
-<p class="intro">By including <code class="loc">input/_input.scss</code> and <code class="loc">input/_form.scss</code> from <strong>hgrid</strong>, forms in 
-your project will will look decent out of the box.</p>
+            <p>File location: <code class="loc">input/_input.scss</code> and <code class="loc">input/_form.scss</code></p>
+
+<p class="intro">By including form styling from <strong>hgrid</strong> in your development project, input elements and forms will look decent 
+out of the box.</p>
 
 <p>The signal colors used for checkboxes, radio buttons, buttons and focus outline can be set in the global variables. The styles are 
 slightly opinionated, but conservative, css-only and respectful of browser functionality. For additional 
-styling you can add utility classes such as <code>radius-*</code> for border-radius, <code>mt-*</code> for margin-top, <code>bg-gray-*</code> 
-for background color, <code>.block</code> for display:block. Pseudo-selectors like <code>:disabled</code> and <code>:readonly</code> will automatically 
+styling you can add utility classes such as <code>radius-*</code> for border-radius, <code>mt-*</code> for margin-top, <code>.block</code> for 
+display:block, etc.</p>
+
+<p>Pseudo-selectors like <code>:disabled</code> and <code>:readonly</code> will automatically 
 be reflected visually.</p>
 
 <section class="bg-light radius-6 padding-100 box-shadow-1 mt-40">
@@ -332,16 +335,15 @@ be reflected visually.</p>
               </label>
 
             </fieldset>
-
-              <button class="inline-block radius-4 outline">Outline Button</button>
-              <button class="inline-block radius-4">Primary Button</button>
-              <button class="inline-block radius-4 secondary">Secondary Button</button>
-              <button class="inline-block radius-4" disabled>Disabled Button</button>
-              <button class="inline-block radius-4 outline" disabled>Disabled Outline</button>
-
-            <fieldset class="push40v">
+              <button type="button" class="inline-block radius-4 outline">Outline Button</button>
+              <button type="submit" class="inline-block radius-4">Primary Button</button>
+              <button type="reset" class="inline-block radius-4 secondary">Secondary Button</button>
+              <button type="button" class="inline-block radius-4" disabled>Disabled Button</button>
+              <button type="button" class="inline-block radius-4 outline" disabled>Disabled Outline</button>
+            </fieldset>
+            <fieldset">
               <input type="submit" role="button" class="inline-block radius-4" value="Input Type Submit" />
-              <input type="submit" role="button" class="inline-block radius-4 outline" value="Input Type Submit Outline" />
+              <input type="reset" role="button" class="inline-block radius-4 outline" value="Input Type Reset Outline" />
             </fieldset>
           </form>
 </section>

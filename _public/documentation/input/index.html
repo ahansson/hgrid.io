@@ -3,17 +3,17 @@
   <head>
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Page Not Found | hgrid</title>
+<title>Input | hgrid</title>
 <style type="text/css">@font-face{font-family:'Wotfard';src:url('/assets/font/subset-Wotfard-Regular.woff2') format('woff2'), url('/assets/font/subset-Wotfard-Regular.woff') format('woff');font-style:normal;font-display:swap}</style>
-<meta name="description" content="Lightweight CSS Utility Kit. Write CSS Faster">
+<meta name="description" content="Basic styles for forms and inputs included in hgrid.">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Atle Hansson">
 <link rel="stylesheet" href="/assets/css/style.min.css">
-<link rel="canonical" href="https://hgrid.io/404.html" />
+<link rel="canonical" href="https://hgrid.io/documentation/input/" />
 <meta property="og:site_name" content="hgrid | Lightweight CSS Utility Kit" />
-<meta property="og:title" content="404 | hgrid" />
+<meta property="og:title" content="Input | hgrid" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://hgrid.io/404.html" />
+<meta property="og:url" content="https://hgrid.io/documentation/input/" />
 <meta name="twitter:card" content="...." />
 <meta property="og:image" content="" />
 <meta name="twitter:image" content="" />
@@ -95,7 +95,7 @@
 </label>
   </li>
   <li role="menuitem" class="push20h">
-    <a class="border-bottom-none " href="/documentation/installation">Documentation</a>
+    <a class="border-bottom-none bold" href="/documentation/installation">Documentation</a>
   </li>
   <li role="menuitem" class="push20h">
     <a class="border-bottom-none" href="https://github.com/ahansson/hgrid-css" rel="noopener noreferrer" target="_blank">GitHub</a>
@@ -119,11 +119,9 @@
     </nav>
   </div>
 </header>
-
-    
-      <nav class="column-5 fixed overflow-y-auto border-right-light mobile-menu sidebar" role="menu">
+    <nav class="column-5 fixed overflow-y-auto docs-menu sidebar" role="menu">
   <span class="hide close-x pointer">&times;</span>
-  <div role="menuitem" class="push20v mb-20 theme-switch mobile-toggle">
+  <div role="menuitem" class="push20v mb-20 theme-switch docs-toggle hide" tabindex="0">
   <a class="light no-underline hide">
   <svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 490 490" version="1.1">
     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
@@ -153,44 +151,254 @@
 </label>
   </div>
   <h5 role="menuitem"><a href="/documentation/about-hgrid/" class="">About</a></h5>
-  <h5 role="menuitem"><a href="/documentation/installation/" class="">Documentation</a></h5>
-  <h5 role="menuitem"><a href="/documentation/integrate/" class="">Integration</a></h5>
-  <h5 role="menuitem"><a href="https://github.com/ahansson/hgrid-css" rel="noopener noreferrer">GitHub</a></h5>
+  <h5 role="menuitem"><a href="/documentation/installation/" >Installation</a></h5>
+    <ul class="sub-links">
+      <li role="menuitem"><a href="/documentation/installation/#npm">NPM/Yarn</a></li>
+      <li role="menuitem"><a href="/documentation/installation/#cdn">CDN</a></li>
+      <li role="menuitem"><a href="/documentation/installation/#clone">Clone</a></li>
+    </ul>
+  <h5 role="menuitem"><a href="/documentation/integrate/" >Integration</a></h5>
+      <ul class="sub-links">
+      <li role="menuitem"><a href="/documentation/integrate/#vue" >Vue</a></li>
+      <li role="menuitem"><a href="/documentation/integrate/#react">React</a></li>
+      <li role="menuitem"><a href="/documentation/integrate/#svelte">Svelte</a></li>
+    </ul>
+  <h5 role="menuitem"><a href="/documentation/layout/" >Layout</a></h5>
+    <ul class="sub-links">
+      <li role="menuitem"><a href="/documentation/layout/#containers">Containers</a></li>
+      <li role="menuitem"><a href="/documentation/layout/automatic-columns" >Automatic Columns</a></li>
+      <li role="menuitem"><a href="/documentation/layout/accurate-columns" >Accurate Columns</a></li>
+      <li role="menuitem"><a href="/documentation/layout/flex/" >Flex</a></li>
+      <li role="menuitem"><a href="/documentation/layout/grid/" >Grid</a></li>
+      <li role="menuitem"><a href="/documentation/layout/positioning/" class="">Positioning</a></li>
+    </ul>
+  <h5 role="menuitem"><a href="/documentation/utilities/" >Utility Classes</a></h5>
+  <h5 role="menuitem"><a href="/documentation/input/" class="active-link">Input</a></h5>
+  <h5 role="menuitem"><a href="/documentation/typography/" >Typography</a></h5>
+  <h5 role="menuitem"><a href="/documentation/animations/" >Animations</a></h5>
 </nav>
     
-    
-      <main class="container-max padding-top-100">
-  <div class="row">
-    <div class="column padding-top-80">
-      <article>
-        <h2>Sorry, that page is missing.</h2>
-        <p>Something we should know about? Please open <a href="https://github.com/ahansson/hgrid-css/issues" rel="noopener noreferrer">an issue</a> on GitHub.</p>   
-      </article>
-    </div>
-  </div>
-</main>
+    <main class="container-max padding-top-100 padding-bottom-120">
+      <div class="row">
+        <article class="column demo">
+          <h1>Input</h1>
 
+          <section class="group border-top-light padding-top-40">
 
-      <footer>
-    <div class="container-max padding-top-100">
+            <p class="intro">Make input and form elements look decent out of the box by including styling from <strong>hgrid</strong>.</p>
+
+<p>File location: <code class="loc">input/_input.scss</code> and <code class="loc">input/_form.scss</code></p>
+
+<p>The signal colors used for checkboxes, radio buttons, buttons and focus outline can be set in the global variables. The styles are 
+slightly opinionated, but conservative, CSS-only and respectful of browser functionality. You can add extra styling with utility classes, 
+such as <code>radius-</code> for border-radius, <code>mt-</code> for margin-top, <code>.block</code> for 
+display:block, etc.</p>
+
+<p>Checkboxes and radio buttons are entirely custom styled, reflecting your customized <code>$theme-color-primary</code>. 
+<code>&lt;input type="file" /></code> as well as infrequently used input types such as <code>type="color"</code> and 
+<code>type="range"</code> have their factory settings *. Maintaining styling hacks for all these is beyond the scope of 
+the <strong>hgrid</strong> package.</p>
+
+<p>Pseudo-selectors like <code>:disabled</code> and <code>:readonly</code> will be reflected visually. Examples below.</p>
+
+<section class="bg-light radius-6 padding-100 box-shadow-1 mt-40 form-example">
+  <h3 class="mb-40">Example Form</h3>
+  <form aria-label="Example Form" method="POST">
+    <fieldset>
+      <label for="name">Full Name <span class="text-red" aria-label="Required Field">*</span></label>
+      <input class="radius-4" type="text" name="name" id="name" minlength="3" maxlength="90" placeholder="Full Name" required />
+
+      <label class="" for="email" aria-labelledby="">Email <span class="text-red" aria-label="Required Field">*</span></label>
+      <input
+        class="radius-4"
+        name="email"
+        id="email"
+        type="text"
+        placeholder="me@mycompany.com"
+        required
+        minlength="6"
+        maxlength="90"
+        pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+        title="Please enter a correctly formatted email address"
+      />
+
       <div class="row">
         <div class="column">
-          <p><a>Footer link A</a></p>
-          <p><a>Footer link B</a></p>
+          <label for="readonly" class="readonly">Readonly</label>
+          <input class="radius-4" type="text" name="readonly" id="readonly" placeholder="Input not allowed" readonly />
         </div>
+
         <div class="column">
-          <p><a>Footer link C</a></p>
-          <p><a>Footer link D</a></p>
-        </div>
-        <div class="column">
-          <p><a>Footer link E</a></p>
-          <p><a>Footer link F</a></p>
+          <label for="disabled" class="disabled">Disabled Text Input</label>
+          <input class="radius-4" type="text" name="disabled" id="disabled" placeholder="Not possible to edit" disabled />
         </div>
       </div>
-    </div>
-  </div>
-</footer>
+
+      <div class="row">
+        <div class="column">
+          <label for="options"> Which office is your inquiry related to <span class="text-red" aria-label="Required Field">*</span> </label>
+          <select id="options" name="options" class="radius-4" aria-label="Select City" required>
+            <option>Select City</option>
+            <option disabled>-------</option>
+            <optgroup label="Latin America">
+              <option value="1">Veracruz</option>
+              <option value="2">Medellín</option>
+              <option value="3">Salvador</option>
+            </optgroup>
+            <optgroup label="North America">
+              <option value="4">New Orleans</option>
+              <option value="5">Austin</option>
+              <option value="6">Boston</option>
+            </optgroup>
+            <optgroup label="Europe">
+              <option value="7">Avignon</option>
+              <option value="8">Zürich</option>
+              <option value="9">Oslo</option>
+            </optgroup>
+            <optgroup label="Africa">
+              <option value="10">Abidjan</option>
+              <option value="11">Port Harcourt</option>
+              <option value="12">Mombasa</option>
+            </optgroup>
+            <optgroup label="Asia">
+              <option value="13">Hong Kong</option>
+              <option value="14">Karachi</option>
+              <option value="15">Jakarta</option>
+            </optgroup>
+          </select>
+        </div>   
+
+        <div class="column">
+          <label for="disabled-options" class="disabled">Disabled Select Menu</label>
+          <select id="disabled-options" name="disabled-options" class="radius-4 disabled" aria-label="Disabled Select Menu" disabled>
+            <option>Copenhagen</option>
+            <option disabled>-------</option>
+          </select>
+        </div>
+
+      </div>
+
+      <label class="pointer" name="radios">
+        <input id="radio1" name="radios" type="radio" checked required />
+        Alt 1
+      </label>
+      <label class="pointer" name="radios">
+        <input id="radio2" name="radios" type="radio" class="" required />
+        Alt 2
+      </label>
+      <label class="pointer" name="radios">
+        <input id="radio3" name="radios" type="radio" class="" required />
+        Alt 3
+      </label>
+      <label class="disabled">
+        <input id="radio4" name="radios" type="radio" class="" disabled />
+        Alt 4 (disabled)
+      </label>
+
+      <label class="pointer block mt-20" name="radios2">
+        <input id="radio5" name="radios2" type="radio" class="" required />
+        Yes
+      </label>
+
+      <label class="pointer block disabled readonly" name="radios2">
+        <input id="radio6" name="radios2" type="radio" class="" required checked disabled readonly />
+        No (checked & disabled)
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend class="bold">Legend (fieldset heading)</legend>
+      <label for="message"> Your Message <span class="text-red" aria-label="Required Field">*</span> </label>
+      <textarea
+        id="message"
+        name="message"
+        class="radius-4"
+        rows="6"
+        placeholder="Please enter your message here"
+        required
+        minlength="15"
+        maxlength="2500"
+      ></textarea>
+
+      <label class="pointer block" for="privacy-check">
+        <input id="privacy-check" type="checkbox" name="privacy-check" required />
+        I accept the <a href="#">Privacy Policy</a>
+      </label>
+
+      <label for="cannot" class="block disabled push20v">
+        <input id="cannot" type="checkbox" name="cannot" disabled />
+        Disabled
+      </label>
+
+      <label for="disabled-check" class="block disabled">
+        <input id="disabled-check" type="checkbox" name="disabled-check" checked disabled />
+        Disabled and checked
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <button type="submit" class="inline radius-4">Primary Button</button>
+      <button type="reset" class="inline radius-4 secondary">Secondary Button</button>
+      <button type="button" class="inline radius-4 outline">Outline Button</button>
+    </fieldset>
+
+    <fieldset>
+      <button type="button" class="inline radius-4" disabled>Disabled Button</button>
+      <button type="button" class="inline radius-4 outline" disabled>Disabled Outline</button>
+    </fieldset>
+
+    <fieldset>
+      <input type="submit" role="button" class="inline radius-4" value="Input Type Submit" />
+      <input type="reset" role="button" class="inline radius-4 outline" value="Input Type Reset Outline" />
+    </fieldset>
+
+  </form>
+
+</section>
+
+<div class="mb-30 mt-40 scrollable-x">
+  <table style="min-width: 40rem;">
+    <thead>
+      <tr>
+        <th style="width: 40%;">Related Classes</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>.disabled</td>
+        <td>Grays out <code>label</code> and text elements for use with the <code>:disabled</code> input state. Cursor <code>not-allowed</code>.</td>
+      </tr>
+      <tr>
+        <td>.readonly</td>
+        <td>Grays out <code>label</code> and text elements for use with the <code>:readonly</code> input state. Cursor <code>not-allowed</code>.</td>
+      </tr>
+      <tr>
+        <td>.secondary</td>
+        <td>Lighter variant of <code>button</code>, <code>input[type=submit]</code> and <code>[type=reset]</code></td>
+      </tr>
+      <tr>
+        <td>.outline</td>
+        <td>Outline variant of <code>button</code>, <code>input[type=submit]</code> and <code>[type=reset]</code></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>Radio buttons and checkboxes are inline elements and will display next to each other horizontally. Add <code>class="block"</code> 
+to make them stack vertically. Buttons and input type buttons are displayed as block elements out of the box. Add <code>.inline</code> 
+or <code>.inline-block</code> to display them horizontally.</p>
+
+<p><small>*) An exception: We have cleaned up <code>&lt;input type="file" /></code> a little bit by removing default padding and 
+border around the default button and added some (invisibe) margin.</small></p>
+
+          </section>
+        </article>
+      </div>
+    </main>
+
       <script src="/assets/js/highlight.pack.js" defer></script>
   <script src="/assets/js/scripts.js" defer></script>
+
   </body>
 </html>
