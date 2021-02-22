@@ -193,28 +193,85 @@
 
 <p>File location: <code class="loc">sass/layout/_flex.scss</code></p>
 
-<h5 class="mt-40">Code example</h5>
+<h4 class="mt-40 mb-20">Code examples</h4>
 
-<pre class="language-html mt-20 mb-30">
-<code>&lt;div class="flex f-wrap" style="height:20rem; color:#fff;">
-  &lt;div class="f-grow-1 bg-gray">
-    &lt;div class="bg-gray-darker f-center padding-20">Content&lt;/div>
+<h5>1. Responsive masonry with <code>flex-wrap</code></h5>
+
+<pre class="language-html mt-20 mb-20 filename" data-file="html">
+<code>&lt;div class="flex f-wrap" style="height:28rem; color:#fff;">
+  &lt;div class="flex f-grow-1 f-direction-column" style="min-width:20rem;">
+    &lt;div class="bg-gray-darker f-center padding-20 margin-5">Content&lt;/div>
+    &lt;div class="bg-gray f-1 f-center padding-20 margin-5">Content&lt;/div>
   &lt;/div>
-    &lt;div class="f-center f-grow-1 bg-gray-dark">Content&lt;/div>
-    &lt;div class="f-center f-4 bg-gray-darker">Content&lt;/div>
+    &lt;div class="f-center f-grow-1 bg-gray-dark margin-5" style="min-width:30rem;">Content&lt;/div>
+    &lt;div class="f-center f-4 bg-gray-darker padding-20 margin-5">Content&lt;/div>
 &lt;/div></code>
 </pre>
 
-<div class="flex f-wrap" style="height:20rem; color:#fff;">
-  <div class="f-grow-1 bg-gray text-center">
-    <div class="padding-20 bg-gray-darker f-center mb-20">Content</div>
-    Content
+<p><small>Inline style tags for demo puprposes only. Result:</small></p>
+
+<div class="row">
+  <div class="flex f-wrap f-grow-1" style="height:28rem; color:#fff;">
+    <div class="flex f-grow-1 f-direction-column" style="min-width:20rem;">
+      <div class="bg-gray-darker f-center padding-20 margin-5">Content</div>
+      <div class="bg-gray f-1 f-center padding-20 margin-5">Content</div>
+    </div>
+      <div class="f-center f-grow-1 bg-gray-dark margin-5" style="min-width:30rem;">Content</div>
+      <div class="f-center f-4 bg-gray-darker padding-20 margin-5">Content</div>
   </div>
-  <div class="f-center f-grow-1 bg-gray-dark">Content</div>
-  <div class="f-center f-4 bg-gray-darker">Content</div>
 </div>
 
-<h5 class="mt-60">Complete list of flex utility classes</h5>
+<h5 class="mt-40">2. Horizontal bar chart</h5>
+
+<pre class="language-html mt-20 filename" data-file="html">
+<code>&lt;div class="flex padding-20 radius-6 border-light box-shadow-1 text-right demo-barchart">
+  &lt;div class="flex f-direction-column justify-content-space-around padding-right-10 text-right" style="width:20rem;">
+    &lt;div class="">Australia&lt;/div>
+    &lt;div class="">Cameroon&lt;/div>
+    &lt;div class="">Brazil&lt;/div>
+    &lt;div class="">Germany&lt;/div>
+    &lt;div class="">Indonesia&lt;/div>
+  &lt;/div>
+  &lt;div class="flex full-width f-direction-column justify-content-space-around">
+    &lt;div class="bg-gray-light padding-right-10 border-gray radius-4 text-black text-right" style="width:79%;">
+      &lt;small>79%&lt;/small>
+    &lt;/div>
+    &lt;div class="bg-gray-light padding-right-10 border-gray radius-4 text-black text-right" style="width:72%;">
+      &lt;small>72%&lt;/small>
+    &lt;/div>
+    &lt;div class="bg-gray-light padding-right-10 border-gray radius-4 text-black text-right" style="width:68.7%;">
+      &lt;small>68.7%&lt;/small>
+    &lt;/div>
+    &lt;div class="bg-gray-light padding-right-10 border-gray radius-4 text-black text-right" style="width:67%;">
+      &lt;small>67%&lt;/small>
+    &lt;/div>
+    &lt;div class="bg-gray-light padding-right-10 border-gray radius-4 text-black text-right" style="width:53.5%;">
+      &lt;small>53.5%&lt;/small>
+    &lt;/div>
+  &lt;/div>
+&lt;/div></code>
+</pre>
+
+<p><small>Inline style tags for demo puprposes only. Result:</small></p>
+
+<div class="flex padding-20 radius-6 border-light box-shadow-1 text-right demo-barchart">
+  <div class="flex f-direction-column justify-content-space-around padding-right-10 text-right" style="width:20rem;">
+    <div class="">Australia</div>
+    <div class="">Cameroon</div>
+    <div class="">Brazil</div>
+    <div class="">Germany</div>
+    <div class="">Indonesia</div>
+  </div>
+  <div class="flex full-width f-direction-column justify-content-space-around">
+    <div class="bg-gray-light padding-right-10 border-gray radius-4 text-black text-right" style="width:79%;"><small>79%</small></div>
+    <div class="bg-gray-light padding-right-10 border-gray radius-4 text-black text-right" style="width:72%;"><small>72%</small></div>
+    <div class="bg-gray-light padding-right-10 border-gray radius-4 text-black text-right" style="width:68.7%;"><small>68.7%</small></div>
+    <div class="bg-gray-light padding-right-10 border-gray radius-4 text-black text-right" style="width:67%;"><small>67%</small></div>
+    <div class="bg-gray-light padding-right-10 border-gray radius-4 text-black text-right" style="width:53.5%;"><small>53.5%</small></div>
+  </div>
+</div>
+
+<h4 class="mt-60">Complete list of flex utility classes</h4>
 <div class="group scrollable-y mt-20">
   <table class="border-gray-lighter">
     <thead>
@@ -361,11 +418,6 @@
         <td>.align-items-stretch</td>
         <td>align-items: stretch;</td>
         <td>Applied to the parent element</td>
-      </tr>
-      <tr>
-        <td>---</td>
-        <td>---</td>
-        <td>---</td>
       </tr>
       <tr>
         <td>.f-grow-1</td>

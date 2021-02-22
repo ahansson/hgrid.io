@@ -308,7 +308,7 @@ article p {
     height: 1.8rem;
     transform: translate(0, 0.2rem);
   }
-  
+
   &.note {
     padding: 1.6rem 1rem 1.6rem 2rem;
     background: var(--note-bg);
@@ -376,7 +376,7 @@ article.demo {
   pre {
     position: relative;
 
-    .filename:before {
+    &.filename:before {
       content: attr(data-file);
       position: absolute;
       font-size: 1.2rem;
@@ -425,6 +425,11 @@ table {
   }
 }
 
+.demo-barchart {
+  height: 24rem;
+  margin-top: 2rem;
+}
+
 .sublink {
   /* scroll-margin: 10rem; awaiting fix for Safari */
   position: relative;
@@ -433,6 +438,27 @@ table {
 
 .hairline {
   border-top: 1px solid var(--border-light-solid);
+}
+
+.border-light {
+  border: 1px solid var(--border-light-solid);
+}
+
+article.demo table.striped {
+
+  tbody tr:nth-child(even) {
+    background: var(--border-light-solid);
+    border-bottom: 1px dotted var(--border-light-solid);
+  }
+  
+  tbody tr:nth-child(even):hover {
+    background: #e1dae5;
+  }
+  
+  tbody tr:nth-child(odd):hover {
+    background: #f5f0e3;
+    border-bottom: 1px dotted var(--border-light-solid);
+  }
 }
 
 footer {
@@ -453,7 +479,6 @@ footer {
   }
 
 }
-
 
 /* Tomorrow Night Blue Theme for highlight.js */
 /* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
