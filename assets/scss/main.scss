@@ -430,10 +430,69 @@ table {
   margin-top: 2rem;
 }
 
+.demo-blinker {
+  width: 2.6rem;
+  height: 2.6rem;
+  border: 2px solid #ff5f5f;
+  border-radius: 100%;
+
+  .inner {
+    width: 1rem;
+    height: 1rem;
+    background: red;
+    border-radius: 100%;
+  }
+}
+
+.demo-pulse-ring {
+  background: #98d1ff;
+  border-radius: 100%;
+  padding: 0.8rem;
+
+  .inner {
+    width: 1rem;
+    height: 1rem;
+    background: #42aaff;
+    border-radius: 100%;
+  }
+}
+
+.demo-triangle {
+    width: 0;
+    height: 0;
+    border-left: 2rem solid transparent;
+    border-right: 2rem solid transparent;
+    border-bottom: 3.2rem solid #ff0000;
+    position: relative;
+
+    .inner {
+      width: 0;
+      height: 0;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-bottom: 20px solid #fff;
+      top: 18px;
+      position: relative;
+
+      span {
+        position: relative;
+        top: 11px;
+        font-weight: bold;
+        font-size: 17px;
+        right: -0.2px;
+      }
+    }
+  }
+
 .sublink {
   /* scroll-margin: 10rem; awaiting fix for Safari */
   position: relative;
   top: -10rem;
+}
+
+.x-close {
+  font-size: 4rem;
+  margin-right: 1%;
 }
 
 .hairline {

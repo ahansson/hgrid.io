@@ -135,6 +135,30 @@
       }
     })
   }
+
+  // Fade element demo
+  (() => {
+    const fadeTrigger = document.querySelector('.demo-fade-trigger')
+    const fadeElem = document.querySelector('.fade')
+    const x = document.querySelector('.x-close')
+
+    if (!fadeTrigger) return
+
+    fadeTrigger.addEventListener('click', () => {
+      fadeElem.classList.add('fade-in')
+      fadeElem.classList.remove('fade-out')
+      fadeElem.classList.remove('hide')
+    })
+
+    x.addEventListener('click', () => {
+      fadeElem.classList.remove('fade-in')
+      fadeElem.classList.add('fade-out')
+
+      setTimeout(() => {
+        fadeElem.classList.add('hide')
+      }, 400)
+    })
+  })();
 })();
 
 // highlight.js, from separate file
