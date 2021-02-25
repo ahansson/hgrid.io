@@ -25,10 +25,10 @@ title: Animations
   <code>.inline-block</code> or use flex if you want to place it next to another element.</p>
 
   <div class="padding-20 bg-light radius-6 box-shadow-1 flex align-items-center justify-content-space-around">
-    <div class="donut-spinner small inline-block"></div>
-    <div class="donut-spinner inline-block"></div>
-    <div class="donut-spinner large inline-block"></div>
-    <div class="donut-spinner xl inline-block"></div>
+    <div class="donut-spinner small"></div>
+    <div class="donut-spinner"></div>
+    <div class="donut-spinner large"></div>
+    <div class="donut-spinner xl"></div>
   </div>
 </div>
 
@@ -142,31 +142,31 @@ title: Animations
 }
 
 .triangle {
+  width: 0;
+  height: 0;
+  border-left: 2rem solid transparent;
+  border-right: 2rem solid transparent;
+  border-bottom: 3.2rem solid #ff0000;
+  position: relative;
+
+  .inner {
     width: 0;
     height: 0;
-    border-left: 2rem solid transparent;
-    border-right: 2rem solid transparent;
-    border-bottom: 3.2rem solid #ff0000;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 20px solid #fff;
+    top: 18px;
     position: relative;
 
-    .inner {
-      width: 0;
-      height: 0;
-      border-left: 12px solid transparent;
-      border-right: 12px solid transparent;
-      border-bottom: 20px solid #fff;
-      top: 18px;
+    span {
       position: relative;
-
-      span {
-        position: relative;
-        top: 11px;
-        font-weight: bold;
-        font-size: 17px;
-        right: -0.2px;
-      }
+      top: 11px;
+      font-weight: bold;
+      font-size: 17px;
+      right: -0.2px;
     }
-  }</code></pre>
+  }
+}</code></pre>
 </div>
 
 <div class="group">
