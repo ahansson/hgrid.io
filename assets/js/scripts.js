@@ -69,7 +69,7 @@
       if (el) {
         el.addEventListener('click', switchTheme, false)
         el.addEventListener('keydown', (e) => {
-          if (e.keyCode === 13 || e.keyCode === 32) {
+          if (e.key === 'Enter' || e.key === ' ') {
             e.preventDefault()
             switchTheme()
           }
