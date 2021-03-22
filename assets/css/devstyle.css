@@ -7042,11 +7042,6 @@ nav.sidebar a.no-underline:hover:before,
 }
 
 :focus {
-  outline: 0;
-  outline-color: transparent;
-  outline-style: none;
-  outline-width: 0;
-  border-radius: 3px;
   box-shadow: var(--focus-border);
 }
 
@@ -7062,6 +7057,20 @@ main.container-max {
 
 .signal {
   color: #f7e0a8;
+}
+
+.npm-install {
+  color: var(--link);
+  background: var(--inline-code-bg);
+  padding: 0.8rem 1.8rem;
+  border-radius: 4px;
+}
+
+[data-theme=dark] .pitch .column {
+  background: #110533;
+}
+[data-theme=dark] .pitch .column p {
+  color: #b2aaa4;
 }
 
 button.outline-l {
@@ -7602,13 +7611,17 @@ footer p a:hover {
     text-align: center;
   }
 }
-@media (max-width: 769px) {
+@media (max-width: 768px) {
   article.demo {
     padding-left: unset;
   }
 
   nav.sidebar {
     padding: 4.6rem 0.6rem 2rem 8%;
+  }
+
+  .pitch .column {
+    margin-bottom: 2.4rem;
   }
 }
 @media (max-width: 600px) {
