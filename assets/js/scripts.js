@@ -86,15 +86,18 @@
     const trigger = document.querySelector('.menu-trigger'),
     mobileMenu    = document.querySelector('.mobile-menu'),
     docsMenu      = document.querySelector('.docs-menu'),
-    close = document.querySelector('.close-x'),
+    close         = document.querySelectorAll('.close'),
     
     toggleMenu = (el) => {
-      
       trigger.addEventListener('click', () => el.classList.toggle('show'))
-      close.addEventListener('click', () => el.classList.toggle('show'))
+      close.forEach((elem) => {
+        elem.addEventListener(
+          'click', () => el.classList.remove('show')
+        )
+      })
 
       document.addEventListener('click', (e) => {
-        const clickInside = el.contains(e.target) || close.contains(e.target) || trigger.contains(e.target)
+        const clickInside = el.contains(e.target) || close.forEach((elem) => { elem.contains(e.target)}) || trigger.contains(e.target)
 
         if (!clickInside) {
           el.classList.remove('show')

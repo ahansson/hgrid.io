@@ -1,20 +1,20 @@
 <nav class="column-5 fixed overflow-y-auto docs-menu sidebar" role="menu">
-  <span class="hide close-x pointer">&times;</span>
+  <span class="hide close close-x pointer">&times;</span>
   <div role="menuitem" class="push20v mb-20 theme-switch docs-toggle hide" tabindex="0">
   {% include "components/colormode-toggle.njk" %}
   </div>
   <h5 role="menuitem"><a href="/documentation/about-hgrid/" class="{{ 'active-link' if 'about-hgrid' in page.url }}">About</a></h5>
   <h5 role="menuitem"><a href="/documentation/installation/" {% if title == 'Installation' %}class="active-link"{% endif %}>Installation</a></h5>
     <ul class="sub-links">
-      <li role="menuitem"><a href="/documentation/installation/#npm">NPM/Yarn</a></li>
-      <li role="menuitem"><a href="/documentation/installation/#cdn">CDN</a></li>
-      <li role="menuitem"><a href="/documentation/installation/#clone">Clone</a></li>
+      <li role="menuitem"><a class="close" href="/documentation/installation/#npm">NPM/Yarn</a></li>
+      <li role="menuitem"><a class="close" href="/documentation/installation/#cdn">CDN</a></li>
+      <li role="menuitem"><a class="close" href="/documentation/installation/#clone">Clone</a></li>
     </ul>
   <h5 role="menuitem"><a href="/documentation/integrate/" {% if title == 'Integrate hgrid in Your Projects' %}class="active-link"{% endif %}>Integration</a></h5>
       <ul class="sub-links">
-      <li role="menuitem"><a href="/documentation/integrate/#vue" >Vue</a></li>
-      <li role="menuitem"><a href="/documentation/integrate/#react">React</a></li>
-      <li role="menuitem"><a href="/documentation/integrate/#svelte">Svelte</a></li>
+      <li role="menuitem"><a class="close" href="/documentation/integrate/#vue" >Vue</a></li>
+      <li role="menuitem"><a class="close" href="/documentation/integrate/#react">React</a></li>
+      <li role="menuitem"><a class="close" href="/documentation/integrate/#svelte">Svelte</a></li>
     </ul>
   <h5 role="menuitem"><a href="/documentation/layout/" {% if title == 'Layout' %}class="active-link"{% endif %}>Layout</a></h5>
     <ul class="sub-links">
