@@ -6,42 +6,59 @@ description: Animations Included in the hgrid CSS Kit.
 }
 title: Animations
 ---
-<p class="intro">A few, commonly used animations are included in <strong>hgrid</strong>.</p>
 
-<div class="group">
-  <h4>Donut Spinner</h4>
+<main>
+  <p class="intro">
+    A few, commonly used animations are included in <strong>hgrid</strong>.
+  </p>
 
-  <p>It comes in four sizes. <code>.small</code>, <code>.large</code>, <code>.xl</code> and 
-  the <em>default</em>.</p>
+  <div class="group">
+    <h4>Donut Spinner</h4>
 
-  <pre class="language-html filename" data-file="html">
+    <p>
+      It comes in four sizes. <code>.small</code>, <code>.large</code>,
+      <code>.xl</code> and the <em>default</em>.
+    </p>
+
+    <pre class="language-html filename" data-file="html">
   <code>&lt;div class="donut-spinner small">&lt;/div>
   &lt;div class="donut-spinner">&lt;/div>
   &lt;div class="donut-spinner large">&lt;/div>
   &lt;div class="donut-spinner xl">&lt;/div></code>
   </pre>
 
-  <p>Out of the box, the donut glaze picks up the primary theme color you set when customizing <strong>hgrid</strong>. Add 
-  <code>.inline-block</code> or use flex if you want to place it next to another element.</p>
+    <p>
+      Out of the box, the donut glaze picks up the primary theme color you set
+      when customizing <strong>hgrid</strong>. Add <code>.inline-block</code> or
+      use flex if you want to place it next to another element.
+    </p>
 
-  <div class="padding-20 bg-light radius-6 box-shadow-1 flex align-items-center justify-content-space-around">
-    <div class="donut-spinner small"></div>
-    <div class="donut-spinner"></div>
-    <div class="donut-spinner large"></div>
-    <div class="donut-spinner xl"></div>
+    <div
+      class="padding-20 bg-light radius-6 box-shadow-1 flex align-items-center justify-content-space-around"
+    >
+      <div class="donut-spinner small"></div>
+      <div class="donut-spinner"></div>
+      <div class="donut-spinner large"></div>
+      <div class="donut-spinner xl"></div>
+    </div>
   </div>
-</div>
 
-<div class="group">
-  <h4>Transition</h4>
+  <div class="group">
+    <h4>Transition</h4>
 
-  <p>Applying <code>.transition</code> and <code>.vanish</code> to an HTML element creates a hidden 
-  overlay that covers the entire viewport. With JavaScript, reveal the overlay by temporarily removing the 
-  <code>.vanish</code> class until the page has completed loading.</p>
+    <p>
+      Applying <code>.transition</code> and <code>.vanish</code> to an HTML
+      element creates a hidden overlay that covers the entire viewport. With
+      JavaScript, reveal the overlay by temporarily removing the
+      <code>.vanish</code> class until the page has completed loading.
+    </p>
 
-  <p>Place the overlay and its script right after the opening <code>body</code> tag:</p>
+    <p>
+      Place the overlay and its script right after the opening
+      <code>body</code> tag:
+    </p>
 
-  <pre class="mt-40 language-html filename" data-file="html">
+    <pre class="mt-40 language-html filename" data-file="html">
   <code>&lt;body>
 
   &lt;div class="transition">&lt;/div>
@@ -58,37 +75,39 @@ title: Animations
 &lt;/body></code>
   </pre>
 
-<p>The effect can be seen by refreshing this page.</p>
+    <p>The effect can be seen by refreshing this page.</p>
 
-  <div class="transition vanish"></div>
-</div>
-
-<div class="group">
-  <h4>Flashing Element</h4>
-
-  <p>Add the class <code>.flash</code> to any HTML element to animate it.</p>
-
-  <div class="mb-30 padding-20 radius-6 box-shadow-1 f-center justify-content-space-around">
-    <div class="demo-blinker f-center flash">
-        <div class="inner"></div>
-    </div>
-
-    <div class="demo-blinker f-center">
-      <div class="inner flash"></div>
-    </div>
-
-    <div class="demo-pulse-ring f-center flash">
-      <div class="inner flash"></div>
-    </div>
-
-    <div class="demo-triangle f-center flash">
-      <div class="inner f-center">
-        <span>!</span>
-      </div>
-    </div>
+    <div class="transition vanish"></div>
   </div>
 
-  <pre class="language-html filename" data-file="html">
+  <div class="group">
+    <h4>Flashing Element</h4>
+
+    <p>Add the class <code>.flash</code> to any HTML element to animate it.</p>
+
+    <div
+      class="mb-30 padding-20 radius-6 box-shadow-1 f-center justify-content-space-around"
+    >
+      <div class="demo-blinker f-center flash">
+        <div class="inner"></div>
+      </div>
+
+      <div class="demo-blinker f-center">
+        <div class="inner flash"></div>
+      </div>
+
+      <div class="demo-pulse-ring f-center flash">
+        <div class="inner flash"></div>
+      </div>
+
+      <div class="demo-triangle f-center flash">
+        <div class="inner f-center">
+          <span>!</span>
+        </div>
+      </div>
+    </div>
+
+    <pre class="language-html filename" data-file="html">
 <code>&lt;!-- Flashing outer element -->
 &lt;div class="blinker f-center flash">
   &lt;div class="inner">&lt;/div>
@@ -111,7 +130,7 @@ title: Animations
   &lt;/div>
 &lt;/div></code></pre>
 
-  <pre class="language-scss filename" data-file="scss">
+    <pre class="language-scss filename" data-file="scss">
 <code>// These examples are not part of hgrid.
 
 .blinker {
@@ -167,32 +186,38 @@ title: Animations
     }
   }
 }</code></pre>
-</div>
+  </div>
 
-<div class="group">
-  <h4>Fade</h4>
+  <div class="group">
+    <h4>Fade</h4>
 
-  <p>Fade elements in and out from a hidden state.</p>
+    <p>Fade elements in and out from a hidden state.</p>
 
-  <pre class="language-html filename mb-30" data-file="html">
+    <pre class="language-html filename mb-30" data-file="html">
 <code>&lt;div class="bg-gray-darker radius-6 hide fade">
   &lt;span class="x-close text-white fr pointer">&times;&lt;/span>
   &lt;p class="text-center text-white padding-20">I'm fading in and out&lt;/p>
 &lt;/div></code></pre>
 
-  <div class="bg-gray-darker mb-30 radius-6 hide fade">
-    <span class="x-close text-white fr pointer">&times;</span>
-    <p class="text-center text-white padding-20">I'm fading in and out</p>
-  </div>
+    <div class="bg-gray-darker mb-30 radius-6 hide fade">
+      <span class="x-close text-white fr pointer">&times;</span>
+      <p class="text-center text-white padding-20">I'm fading in and out</p>
+    </div>
 
-  <button class="demo-fade-trigger mb-40">Click for action</button>
+    <button class="demo-fade-trigger mb-40">Click for action</button>
 
-  <p>The element to be faded in and out requires the <code>.fade</code> class and is invisible (<code>opacity: 0;</code>) by default. 
-  If you prefer to remove it entirely from the document, add <code>.hide</code>.</p>
-  
-  <p>Apply <code>.fade-in</code> and <code>.fade-out</code> with a JS snippet, for example like this:</p>
+    <p>
+      The element to be faded in and out requires the <code>.fade</code> class
+      and is invisible (<code>opacity: 0;</code>) by default. If you prefer to
+      remove it entirely from the document, add <code>.hide</code>.
+    </p>
 
-  <pre class="language-js filename" data-file="js">
+    <p>
+      Apply <code>.fade-in</code> and <code>.fade-out</code> with a JS snippet,
+      for example like this:
+    </p>
+
+    <pre class="language-js filename" data-file="js">
     <code>(() => {
   const fadeTrigger = document.querySelector('.demo-fade-trigger')
   const fadeElem = document.querySelector('.fade')
@@ -218,10 +243,11 @@ title: Animations
   
   })
 })();</code></pre>
-
-</div>
-
-
+  </div>
+</main>
 
 <div class="hairline mt-40"></div>
-<p class="fl">← <strong>Previous</strong>: <a href="/documentation/typography/">Typography</a></p>
+<p class="fl">
+  ← <strong>Previous</strong>:
+  <a href="/documentation/typography/">Typography</a>
+</p>

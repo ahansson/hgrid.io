@@ -6,54 +6,75 @@ description: Using hgrid for page layout.
 }
 title: Layout
 ---
-<p class="intro">
-  There are various ways you can create your layout system with
-  <strong>hgrid</strong>. Use the flex or grid classes provided, or whip up
-  something super fast and precise with the built-in, automatic content
-  columns.
-</p>
-<h3 class="mt-60">
-  <span id="containers" class="sublink"></span>
-  Containers
-</h3>
 
-<p>File location: <code class="loc">sass/layout/_containers.scss</code></p>
+<main>
+  <p class="intro">
+    There are various ways you can create your layout system with
+    <strong>hgrid</strong>. Use the flex or grid classes provided, or whip up
+    something super fast and precise with the built-in, automatic content
+    columns.
+  </p>
+  <h3 class="mt-60">
+    <span id="containers" class="sublink"></span>
+    Containers
+  </h3>
 
-<p>
-  Keep your content from falling off to the sides by wrapping it in a
-  <code>.container-max</code>. This lets you control the max-width of your
-  page with the <code>scss</code> variable
-  <code>$container-max-width</code> (or you can overwrite
-  <code>.container-max</code> in your regular <code>css</code>).
-</p>
+  <p>File location: <code class="loc">sass/layout/_containers.scss</code></p>
 
-<img src="/assets/img/container.png" alt="hgrid container width" width="1104" height="252" loading="lazy" />
-<p class="caption">
-  <em>Hgrid's 1440 pixel <strong>.container-max</strong> on a 1680 pixel
-    screen.</em>
-</p>
+  <p>
+    Keep your content from falling off to the sides by wrapping it in a
+    <code>.container-max</code>. This lets you control the max-width of your
+    page with the <code>scss</code> variable
+    <code>$container-max-width</code> (or you can overwrite
+    <code>.container-max</code> in your regular <code>css</code>).
+  </p>
 
-<p>
-  The default <code>.container-max</code> limit is set to 1440 pixels. Use
-  <code>.container</code> if you instead want to use the full viewport width.
-</p>
-<p>
-  In order to group content in vertical sections within a container, use the
-  class <code>.row</code> (creates a flex container) or
-  <code>.row-block</code> (creates a block container).
-</p>
+  <img
+    src="/assets/img/container.png"
+    alt="hgrid container width"
+    width="1104"
+    height="252"
+    loading="lazy"
+  />
+  <p class="caption">
+    <em
+      >Hgrid's 1440 pixel <strong>.container-max</strong> on a 1680 pixel
+      screen.</em
+    >
+  </p>
 
-<p>
-  Creating layouts with the
-  <a href="/documentation/layout/automatic-columns/">automatic content columns</a> requires the use of
-  <code>.row</code>. More on this below. <code>.row-block</code> is made for
-  full width content that don't need a column, like headlines and text with
-  floating images, etc.
-</p>
-<p>
-  <code>.group</code> can be used to section off multiple rows of content,
-  like we have done on this page.
-</p>
+  <p>
+    The default <code>.container-max</code> limit is set to 1440 pixels. Use
+    <code>.container</code> if you instead want to use the full viewport width.
+  </p>
+  <p>
+    In order to group content in vertical sections within a container, use the
+    class <code>.row</code> (creates a flex container) or
+    <code>.row-block</code> (creates a block container).
+  </p>
+
+  <p>
+    Creating layouts with the
+    <a href="/documentation/layout/automatic-columns/"
+      >automatic content columns</a
+    >
+    requires the use of <code>.row</code>. More on this below.
+    <code>.row-block</code> is made for full width content that don't need a
+    column, like headlines and text with floating images, etc.
+  </p>
+  <p>
+    <code>.group</code> can be used to section off multiple rows of content,
+    like we have done on this page.
+  </p>
+</main>
 <div class="hairline mt-40"></div>
-<p class="fl hide-phone">← <strong>Previous</strong>: <a href="/documentation/integrate/">Integrate</a></p>
-<p class="fr"><strong>Next</strong>: <a href="/documentation/layout/automatic-columns/">Automatic Content Columns</a> →</p>
+<p class="fl hide-phone">
+  ← <strong>Previous</strong>: <a href="/documentation/integrate/">Integrate</a>
+</p>
+<p class="fr">
+  <strong>Next</strong>:
+  <a href="/documentation/layout/automatic-columns/"
+    >Automatic Content Columns</a
+  >
+  →
+</p>

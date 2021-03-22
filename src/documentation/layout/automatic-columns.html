@@ -6,20 +6,21 @@ description: Setting Up the Built-In Automatic Content Column Layout in hgrid.
 }
 title: Automatic Content Columns
 ---
-<p class="intro">
-  In order to quickly mark up a flexible layout grid, start by adding the
-  <code>.row</code> class to an HTML element. This creates a flex container with
-  special configuration for the column system to fit in.
-</p>
+<main>
+  <p class="intro">
+    In order to quickly mark up a flexible layout grid, start by adding the
+    <code>.row</code> class to an HTML element. This creates a flex container
+    with special configuration for the column system to fit in.
+  </p>
 
-<p>File location: <code class="loc">sass/layout/_auto_columns.scss</code></p>
+  <p>File location: <code class="loc">sass/layout/_auto_columns.scss</code></p>
 
-<p>
-  Any number of elements with the class <code>.column</code> inside the
-  <code>.row</code> will split its width equally:
-</p>
+  <p>
+    Any number of elements with the class <code>.column</code> inside the
+    <code>.row</code> will split its width equally:
+  </p>
 
-<pre class="language-html filename" data-file="html">
+  <pre class="language-html filename" data-file="html">
 <code>&lt;div class="container-max"&gt;
   &lt;div class="row"&gt;
     &lt;div class="column"&gt;
@@ -41,97 +42,111 @@ title: Automatic Content Columns
     <code>.column</code> and modify the default value of 0.8% on each side.
   </p>
 
-  <p>The number of columns in each <code>.row</code> determines the width of each column.</p>
-
   <p>
-    Columns will by default stack on viewports that are less than 769px
-    wide. Breakpoints for responsiveness can be adjusted in <code>_variables.scss</code> or 
-    <a href="/documentation/integrate/">overwritten</a> with your own values when you 
-    import <strong>hgrid</strong> as either CSS or Sass.
+    The number of columns in each <code>.row</code> determines the width of each
+    column.
   </p>
 
   <p>
-    The default breakpoint where columns stack can be overridden by modifying hgrid's 
-    <code>$stack-point</code> variable (read more <a href="/documentation/integrate/">here</a>). You can also override it by 
-    adding an alternative breakpoint with <code>$custom-stack-point</code> and the class <code>.custom-stack</code> after the 
-    <code>.row</code> class.
+    Columns will by default stack on viewports that are less than 769px wide.
+    Breakpoints for responsiveness can be adjusted in
+    <code>_variables.scss</code> or
+    <a href="/documentation/integrate/">overwritten</a> with your own values
+    when you import <strong>hgrid</strong> as either CSS or Sass.
   </p>
 
-  <p>Use <code>.no-stack</code> on the element that holds the <code>.row</code> class in order to prevent stacking.</p>
-  
-  <p class="note mb-40"><strong>Note:</strong> Columns would normally stack vertically on handheld devices 
-    (< 769px wide). For the sake of the examples on this page we have applied <code>.no-stack</code> after <code>.row</code> 
+  <p>
+    The default breakpoint where columns stack can be overridden by modifying
+    hgrid's
+    <code>$stack-point</code> variable (read more
+    <a href="/documentation/integrate/">here</a>). You can also override it by
+    adding an alternative breakpoint with <code>$custom-stack-point</code> and
+    the class <code>.custom-stack</code> after the <code>.row</code> class.
+  </p>
+
+  <p>
+    Use <code>.no-stack</code> on the element that holds the
+    <code>.row</code> class in order to prevent stacking.
+  </p>
+
+  <p class="note mb-40">
+    <strong>Note:</strong> Columns would normally stack vertically on handheld
+    devices (< 769px wide). For the sake of the examples on this page we have
+    applied <code>.no-stack</code> after <code>.row</code>
     so they make sense for readers on any device.
   </p>
 
-<div class="row no-stack">
-  <div class="column">
-    <p>Column 1 (auto)</p>
+  <div class="row no-stack">
+    <div class="column">
+      <p>Column 1 (auto)</p>
+    </div>
+    <div class="column">
+      <p>Column 2 (auto)</p>
+    </div>
+    <div class="column">
+      <p>Column 3 (auto)</p>
+    </div>
+    <div class="column">
+      <p>Column 4 (auto)</p>
+    </div>
+    <div class="column">
+      <p>Column 5 (auto)</p>
+    </div>
+    <div class="column">
+      <p>Column 6 (auto)</p>
+    </div>
+    <div class="column">
+      <p>Column 7 (auto)</p>
+    </div>
+    <div class="column">
+      <p>Column 8 (auto)</p>
+    </div>
   </div>
-  <div class="column">
-    <p>Column 2 (auto)</p>
-  </div>
-  <div class="column">
-    <p>Column 3 (auto)</p>
-  </div>
-  <div class="column">
-    <p>Column 4 (auto)</p>
-  </div>
-  <div class="column">
-    <p>Column 5 (auto)</p>
-  </div>
-  <div class="column">
-    <p>Column 6 (auto)</p>
-  </div>
-  <div class="column">
-    <p>Column 7 (auto)</p>
-  </div>
-  <div class="column">
-    <p>Column 8 (auto)</p>
-  </div>
-</div>
 
-<div class="row no-stack">
-  <div class="column">
-    <p>Column 1 (auto)</p>
+  <div class="row no-stack">
+    <div class="column">
+      <p>Column 1 (auto)</p>
+    </div>
+    <div class="column">
+      <p>Column 2 (auto)</p>
+    </div>
+    <div class="column">
+      <p>Column 3 (auto)</p>
+    </div>
+    <div class="column">
+      <p>Column 4 (auto)</p>
+    </div>
+    <div class="column">
+      <p>Column 5 (auto)</p>
+    </div>
   </div>
-  <div class="column">
-    <p>Column 2 (auto)</p>
-  </div>
-  <div class="column">
-    <p>Column 3 (auto)</p>
-  </div>
-  <div class="column">
-    <p>Column 4 (auto)</p>
-  </div>
-  <div class="column">
-    <p>Column 5 (auto)</p>
-  </div>
-</div>
 
-<div class="row no-stack">
-  <div class="column">
-    <p>Column 1 (auto)</p>
+  <div class="row no-stack">
+    <div class="column">
+      <p>Column 1 (auto)</p>
+    </div>
+    <div class="column">
+      <p>Column 2 (auto)</p>
+    </div>
+    <div class="column">
+      <p>Column 3 (auto)</p>
+    </div>
   </div>
-  <div class="column">
-    <p>Column 2 (auto)</p>
+  <div class="row">
+    <div class="column">
+      <p>Full width (auto)</p>
+    </div>
   </div>
-  <div class="column">
-    <p>Column 3 (auto)</p>
-  </div>
-</div>
-<div class="row">
-  <div class="column">
-    <p>Full width (auto)</p>
-  </div>
-</div>
 
-<p class="mt-40">
-  Containers can be nested inside each other as long as you wrap each new
-  level in a new <code>.row</code>.
-</p>
+  <p class="mt-40">
+    Containers can be nested inside each other as long as you wrap each new
+    level in a new <code>.row</code>.
+  </p>
 
-<pre class="language-html filename" data-file="html"><code>&lt;div class="row"&gt;
+  <pre
+    class="language-html filename"
+    data-file="html"
+  ><code>&lt;div class="row"&gt;
   &lt;div class="column border-gray padding-5 radius-8">&lt;/div&gt;
   &lt;div class="column border-gray padding-5 radius-8"&gt;
     &lt;div class="row margin-bottom-0"&gt;
@@ -141,25 +156,35 @@ title: Automatic Content Columns
   &lt;/div&gt;
 &lt;/div&gt;</code></pre>
 
-<div class="row mt-40 no-stack">
-  <div class="column text-center"><small>.column</small></div>
-  <div class="column text-center"><small>.column</small></div>
-</div>
-<div class="row pull8v no-stack">
-  <div class="column border-gray padding-5 radius-8"></div>
-  <div class="column border-gray padding-5 radius-8">
-    <div class="row mb-0 no-stack">
-      <div class="column mb-0 padding-10 bg-gray-light text-center radius-2"><small class="text-black">.column</small></div>
-      <div class="column mb-0 padding-10 bg-gray-light text-center radius-2"><small class="text-black">.column</small></div>
+  <div class="row mt-40 no-stack">
+    <div class="column text-center"><small>.column</small></div>
+    <div class="column text-center"><small>.column</small></div>
+  </div>
+  <div class="row pull8v no-stack">
+    <div class="column border-gray padding-5 radius-8"></div>
+    <div class="column border-gray padding-5 radius-8">
+      <div class="row mb-0 no-stack">
+        <div class="column mb-0 padding-10 bg-gray-light text-center radius-2">
+          <small class="text-black">.column</small>
+        </div>
+        <div class="column mb-0 padding-10 bg-gray-light text-center radius-2">
+          <small class="text-black">.column</small>
+        </div>
+      </div>
     </div>
   </div>
-</div>
-<p class="mt-30">
-  As seen here, if we nest two <code>.columns</code> inside of another <code>.column</code>, 
-  the width of the inner columns will be half of the outer one. For each level we nest, the parent element 
-  acts as the new "viewport" width to be split in 24 <strong>hgrid</strong> units.
-</p>
-
+  <p class="mt-30">
+    As seen here, if we nest two <code>.columns</code> inside of another
+    <code>.column</code>, the width of the inner columns will be half of the
+    outer one. For each level we nest, the parent element acts as the new
+    "viewport" width to be split in 24 <strong>hgrid</strong> units.
+  </p>
+</main>
 <div class="hairline mt-40"></div>
-<p class="fl hide-phone">← <strong>Previous</strong>: <a href="/documentation/layout/">Containers</a></p>
-<p class="fr"><strong>Next</strong>: <a href="/documentation/layout/accurate-columns/">Accurate Columns</a> →</p>
+<p class="fl hide-phone">
+  ← <strong>Previous</strong>: <a href="/documentation/layout/">Containers</a>
+</p>
+<p class="fr">
+  <strong>Next</strong>:
+  <a href="/documentation/layout/accurate-columns/">Accurate Columns</a> →
+</p>
