@@ -45,12 +45,12 @@ title: Input
     class="bg-light radius-6 padding-100 box-shadow-1 mt-40 form-example"
   >
     <h3 class="mb-40">Example Form</h3>
-    <form aria-label="Example Form" method="POST">
+    <form aria-label="Example Form" method="POST" autocomplete="on">
       <fieldset>
-        <label for="name"
-          >Full Name
-          <span class="text-red" aria-label="Required Field">*</span></label
-        >
+        <label for="name">
+          Full Name
+          <span class="text-red" aria-label="Required Field">*</span>
+        </label>
         <input
           class="radius-4"
           type="text"
@@ -59,19 +59,21 @@ title: Input
           minlength="3"
           maxlength="90"
           placeholder="Full Name"
+          autocomplete="name"
           required
         />
 
-        <label class="" for="email" aria-labelledby=""
-          >Email
-          <span class="text-red" aria-label="Required Field">*</span></label
-        >
+        <label for="email">
+          Email
+          <span class="text-red" aria-label="Required Field">*</span>
+        </label>
         <input
           class="radius-4"
           name="email"
           id="email"
           type="text"
           placeholder="me@mycompany.com"
+          autocomplete="email"
           required
           minlength="6"
           maxlength="90"
@@ -88,6 +90,7 @@ title: Input
               name="readonly"
               id="readonly"
               placeholder="Input not allowed"
+              autocomplete="off"
               readonly
             />
           </div>
@@ -100,6 +103,7 @@ title: Input
               name="disabled"
               id="disabled"
               placeholder="Not possible to edit"
+              autocomplete="off"
               disabled
             />
           </div>
@@ -116,6 +120,7 @@ title: Input
               name="options"
               class="radius-4"
               aria-label="Select City"
+              autocomplete="address-level2"
               required
             >
               <option>Select City</option>
@@ -157,6 +162,7 @@ title: Input
               name="disabled-options"
               class="radius-4 disabled"
               aria-label="Disabled Select Menu"
+              autocomplete="off"
               disabled
             >
               <option>Copenhagen</option>
@@ -170,20 +176,20 @@ title: Input
           Alt 1
         </label>
         <label class="pointer" name="radios">
-          <input id="radio2" name="radios" type="radio" class="" required />
+          <input id="radio2" name="radios" type="radio" required />
           Alt 2
         </label>
         <label class="pointer" name="radios">
-          <input id="radio3" name="radios" type="radio" class="" required />
+          <input id="radio3" name="radios" type="radio" required />
           Alt 3
         </label>
         <label class="disabled">
-          <input id="radio4" name="radios" type="radio" class="" disabled />
+          <input id="radio4" name="radios" type="radio" disabled />
           Alt 4 (disabled)
         </label>
 
         <label class="pointer block mt-20" name="radios2">
-          <input id="radio5" name="radios2" type="radio" class="" required />
+          <input id="radio5" name="radios2" type="radio" required />
           Yes
         </label>
 
@@ -192,7 +198,6 @@ title: Input
             id="radio6"
             name="radios2"
             type="radio"
-            class=""
             required
             checked
             disabled
