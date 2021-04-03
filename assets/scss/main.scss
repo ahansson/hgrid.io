@@ -1,4 +1,5 @@
 @use './../../node_modules/hgrid-css/sass/hgrid.scss' with (
+  $use-global-link-underlines: false,
   $use-article-link-underlines: true
 );
 
@@ -40,7 +41,7 @@
   --title: #cac4bb;
   --link: #ffc9a2;
   --active-link: #d09255;
-  --link-underline: #e6c8b3;
+  --link-underline: #9248a0;
   --menulink: #d4c9b9;
   --menutitle: #e9dac5;
   --menulink-hover: #ffffff;
@@ -80,15 +81,14 @@ body {
 
 a,
 p a {
-  text-decoration: none;
   color: var(--link);
-  transition: 0.2s ease-in-out;
+  text-decoration-color:  var(--link-underline)
 }
 
-a.no-underline:hover:before,
-nav.sidebar a.no-underline:hover:before, 
-.desktop-menu a.no-underline:hover:before {
-  height: 0;
+a.no-underline:hover,
+nav.sidebar a.no-underline:hover, 
+.desktop-menu a.no-underline:hover {
+  text-decoration: none;
 }
 
 :focus {
@@ -112,14 +112,14 @@ main.container-max {
 .npm-install {
   color: var(--link);
   background: var(--inline-code-bg);
-  padding: 0.8rem 1.8rem;
+  padding: 0.6rem 1.2rem;
   border-radius: 4px;
 }
 
 [data-theme="dark"] .pitch .column {
   background:#110533;
   p {
-    color:#b2aaa4
+    color:#b1b6e6;
   }
 }
 
@@ -132,7 +132,7 @@ button.outline-l {
   transition: all var(--transition-duration) ease;
   a {
     line-height: 7.4rem;
-    padding: 0 8rem;
+    padding: 2.5rem 8rem;
   }
   &:hover,
   &:focus,
@@ -202,11 +202,12 @@ header .logo a {
     position: relative;
     &.dark {
       transform: scaleX(-1);
-      top: -3px;
+      top: 3px;
       right: -3px;
     }
     &.light {
       right: -2px;
+      top: 1px;
     }
     &:hover {
       color: var(--icon-hover);
