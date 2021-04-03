@@ -36,10 +36,10 @@
     "url": "https://github.com/ahansson/hgrid.io/issues"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.11.1",
+    "@11ty/eleventy": "^0.12.1",
     "autoprefixer": "^10.2.5",
-    "hgrid-css": "^0.3.0-alpha",
-    "postcss": "^8.2.6",
+    "hgrid-css": "^0.2.0-alpha",
+    "postcss": "^8.2.9",
     "postcss-cli": "^8.3.1",
     "sass": "^1.32.8",
     "sass-loader": "^11.0.1"
