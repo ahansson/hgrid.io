@@ -1,54 +1,48 @@
 @use './../../node_modules/hgrid-css/sass/hgrid.scss' with (
   $turn-off-link-decoration: true,
-  $use-article-link-underlines: true
+  $use-article-link-underlines: true,
+  $link-underline-color: #c788e0,
+  $pre-code-bg: #23004b,
+  $focus-border-color: #3971ffaf,
+  $focus-border-weight: 0.3rem
 );
 
 :root {
   --bg: #f6f6f6;
-  --bg-darker: #dddbd5;
+  --bg-gray-darker: #dddbd5;
   --header-bg: #fff;
   --header-shadow: #52525242;
   --font: #000;
   --title: #000;
-  --link: #66008d;
-  --active-link: #66008d;
-  --link-underline: #c788e0;
   --menulink: #333;
   --menutitle: #444;
   --menulink-hover: #000;
-  --icon-hover: orangered;
-  --transition: #fff;
   --transition-duration: 0.2s;
-  --code-bg: #23004b;
-  --inline-code-bg: #ffe4c9;
-  --border-light-dotted: #ccc;
-  --border-light-solid: #ccc;
+  --border-light-dotted: var(--bg-gray-light);
+  --border-light-solid: var(--bg-gray-light);
   --menu-border: #d4d4d4;
   --note-border: #9ccaff;
   --note-bg: #d7eeff;
   --icon-filter: invert(0);
-  --focus-border: 0 0 0 0.3rem #3971ffaf;
-  --light-bg: #fff;
 }
 
 [data-theme="dark"] {
   --bg: #060323;
-  --bg-darker: #c5ad88;
+  --bg-gray-darker: #c5ad88;
   --header-bg: #0b092f;
   --header-shadow: #00000060;
   --font: #e0dbd3;
-  --font-light: #fff;
   --title: #cac4bb;
-  --link: #ffc9a2;
-  --active-link: #d09255;
-  --link-underline: #9248a0;
   --menulink: #d4c9b9;
   --menutitle: #e9dac5;
   --menulink-hover: #ffffff;
-  --icon-hover: #ff9900;
+  --link-color: #ffc9a2;
+  --active-link: #d09255;
+  --link-underline-color: #9248a0;
+  --color-orange: #ff9900;
   --transition: var(--bg);
   --transition-duration: 0.2s;
-  --code-bg: #21163c;
+  --pre-code-bg: #21163c;
   --inline-code-bg: #391e54;
   --border-light-dotted: #2c3868;
   --border-light-solid: #222b4e;
@@ -56,13 +50,12 @@
   --note-border: #31278f;
   --note-bg: #130f40;
   --icon-filter: invert(70%);
-  --focus-border: 0 0 0 0.3rem #467aff;
-  --light-bg: #e8e9f7;
+  --bg-light: #e8e9f7;
 }
 
 body {
   background: var(--bg);
-  transition: all var(--transition-duration) ease;
+  transition: all var(--transition-duration);
   color: var(--font);
   font-family: "Wotfard";
 
@@ -81,18 +74,14 @@ body {
 
 a,
 p a {
-  color: var(--link);
-  text-decoration-color:  var(--link-underline)
+  color: var(--link-color);
+  text-decoration-color:  var(--link-underline-color)
 }
 
 a.no-underline:hover,
 nav.sidebar a.no-underline:hover, 
 .desktop-menu a.no-underline:hover {
   text-decoration: none;
-}
-
-:focus {
-  box-shadow: var(--focus-border);
 }
 
 main.container,
@@ -110,7 +99,7 @@ main.container-max {
 }
 
 .npm-install {
-  color: var(--link);
+  color: var(--link-color);
   background: var(--inline-code-bg);
   padding: 0.6rem 1.2rem;
   border-radius: 4px;
@@ -146,7 +135,6 @@ button.outline-l {
 header {
   background: var(--header-bg);
   box-shadow: 0 0 0.3rem var(--header-shadow);
-  transition: all var(--transition-duration) ease;
 
   .icon {
     width: 19px;
@@ -203,14 +191,14 @@ header .logo a {
     &.dark {
       transform: scaleX(-1);
       top: 3px;
-      right: -3px;
+      right: -4px;
     }
     &.light {
       right: -2px;
       top: 1px;
     }
     &:hover {
-      color: var(--icon-hover);
+      color: var(--color-orange);
       transition: 0.2s ease-in-out;
     }
   }
@@ -247,14 +235,11 @@ nav.sidebar {
   }
 }
 
-nav.sidebar a:hover:before,
-.desktop-menu a:hover:before {
-  content: "";
-  width: 100%;
-  height: 1px;
-  background-color: #aaa;
-  position: absolute;
-  bottom: 3px;
+nav.sidebar a:hover,
+.desktop-menu a:hover {
+  text-decoration: underline #999 solid;
+  text-decoration-thickness: 0.2rem;
+  text-underline-offset: 0.12rem;
 }
 
 nav.sidebar ul.sub-links {
@@ -360,7 +345,7 @@ article.demo {
 
   .form-example {
     color: #000;
-    background: var(--light-bg);
+    background: var(--bg-light);
 
     a {
       color: #66008d;
@@ -407,7 +392,7 @@ article.demo {
 }
 
 code.loc {
-  background: var(--bg-darker);
+  background: var(--bg-gray-darker);
   color: #000;
 }
 
@@ -418,7 +403,7 @@ table td > code,
 table th > code {
   color: var(--font-light);
   background: var(--inline-code-bg);
-  transition: all var(--transition-duration) ease;
+  transition: all 0.1s;
 }
 
 table {
@@ -623,7 +608,7 @@ footer {
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: var(--tablet-portrait)) {
   nav.sidebar {
     padding: 10.6rem 0.6rem 2rem 2.2%;
     width: 22%;
@@ -707,7 +692,7 @@ footer {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: var(--phone-landscape)) {
   article.demo {
     padding-left: unset;
   }
@@ -719,7 +704,7 @@ footer {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: var(--phone)) {
   nav.sidebar {
     width: 70%;
   }
