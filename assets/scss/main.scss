@@ -1,5 +1,5 @@
 @use './../../node_modules/hgrid-css/sass/hgrid.scss' with (
-  $use-global-link-underlines: false,
+  $turn-off-link-decoration: true,
   $use-article-link-underlines: true
 );
 
@@ -509,7 +509,7 @@ table {
   border-top: 1px solid var(--border-light-solid);
 }
 
-.border-light {
+.border--gray-light {
   border: 1px solid var(--border-light-solid);
 }
 
