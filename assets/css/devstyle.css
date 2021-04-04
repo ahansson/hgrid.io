@@ -1,4 +1,4 @@
-/*! hgrid v0.4.1-alpha | MIT License | github.com/ahansson/hgrid-css !*/
+/*! hgrid v0.4.2-alpha | MIT License | github.com/ahansson/hgrid-css !*/
 :root {
   --phone: 600px;
   --phone-landscape: 768px;
@@ -27,6 +27,7 @@
   --pre-code-color: #fff;
   --pre-code-bg: #23004b;
   --body-bg: #fff;
+  --transition-bg: #fff;
   --bg-light: #fff;
   --bg-dark: #000;
   --bg-gray-light: #ccc;
@@ -1310,7 +1311,6 @@ input[type=reset]:not(.block):last-child {
 @keyframes vanish {
   100% {
     opacity: 0;
-    visibility: hidden;
   }
 }
 .container,
@@ -7031,7 +7031,7 @@ hr {
   --active-link: #d09255;
   --link-underline-color: #9248a0;
   --color-orange: #ff9900;
-  --transition: var(--bg);
+  --transition-bg: var(--bg);
   --transition-duration: 0.2s;
   --pre-code-bg: #21163c;
   --inline-code-bg: #391e54;
@@ -7056,6 +7056,11 @@ body.no-outline button:not(form button):focus, body.no-outline a:not(form a):foc
   outline-width: 0;
   border-radius: 0;
   box-shadow: none;
+}
+
+.transition {
+  background: var(--transition-bg);
+  pointer-events: none;
 }
 
 a,
@@ -7235,14 +7240,6 @@ nav.sidebar a.active-link {
 
 nav.mobile-menu {
   left: -50rem;
-}
-
-.transition {
-  background: var(--transition);
-}
-.transition.vanish {
-  animation: vanish var(transition-duration);
-  animation-fill-mode: forwards;
 }
 
 .border-top-light {

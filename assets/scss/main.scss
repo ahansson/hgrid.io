@@ -40,7 +40,7 @@
   --active-link: #d09255;
   --link-underline-color: #9248a0;
   --color-orange: #ff9900;
-  --transition: var(--bg);
+  --transition-bg: var(--bg);
   --transition-duration: 0.2s;
   --pre-code-bg: #21163c;
   --inline-code-bg: #391e54;
@@ -70,6 +70,11 @@ body {
     border-radius: 0;
     box-shadow: none;
   }
+}
+
+.transition {
+  background: var(--transition-bg);
+  pointer-events: none;
 }
 
 a,
@@ -264,15 +269,6 @@ nav.sidebar {
 
 nav.mobile-menu {
   left: -50rem
-}
-
-.transition {
-  background: var(--transition); 
-
-  &.vanish {
-    animation: vanish var(transition-duration);
-    animation-fill-mode: forwards; 
-  }
 }
 
 .border-top-light {
