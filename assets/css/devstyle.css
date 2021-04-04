@@ -7036,7 +7036,7 @@ hr {
   --pre-code-bg: #21163c;
   --inline-code-bg: #391e54;
   --border-light-dotted: #2c3868;
-  --border-light-solid: #222b4e;
+  --border-light-solid: #191f35;
   --menu-border: #171244;
   --note-border: #31278f;
   --note-bg: #130f40;
@@ -7443,7 +7443,7 @@ table tbody tr td {
   border-top: 1px solid var(--border-light-solid);
 }
 
-.border--gray-light {
+.border-gray-light {
   border: 1px solid var(--border-light-solid);
 }
 
