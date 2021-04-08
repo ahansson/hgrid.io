@@ -145,7 +145,7 @@
     const fadeElem = document.querySelector('.fade')
     const x = document.querySelector('.x-close')
 
-    if (!fadeTrigger) return
+    if (!fadeTrigger || !fadeElem || !x) return
 
     fadeTrigger.addEventListener('click', () => {
       fadeElem.classList.add('fade-in')
