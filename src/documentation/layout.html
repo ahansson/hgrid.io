@@ -19,7 +19,10 @@ title: Layout
     Containers
   </h3>
 
-  <p>File location: <code class="loc">sass/layout/_containers.scss</code></p>
+  <p>
+    File location: <code class="loc">sass/layout/_containers.scss</code> (<a 
+    href="https://github.com/ahansson/hgrid-css/blob/main/sass/layout/_containers.scss" target="_blank" rel="noopener">GitHub</a>)
+  </p>
 
   <p>
     Keep your content from falling off to the sides by wrapping it in a
@@ -37,10 +40,8 @@ title: Layout
     loading="lazy"
   />
   <p class="caption">
-    <em
-      >Hgrid's 1440 pixel <strong>.container-max</strong> on a 1680 pixel
-      screen.</em
-    >
+    <em>The 1440 pixel <strong>.container-max</strong> on a 1680 pixel
+      screen. The header uses the full-width <strong>.container</strong>.</em>
   </p>
 
   <p>
@@ -56,6 +57,8 @@ title: Layout
     <code>.row-block</code> (creates a container for block elements).
   </p>
 
+  <h4 class="push40v">Row</h4>
+
   <p>
     Creating layouts with the
     <a href="/documentation/layout/automatic-columns/">automatic content columns</a>
@@ -65,8 +68,36 @@ title: Layout
     <code>.row-block</code> is made for full width content that don't need columns, 
     like headlines, text with floating images, etc.
   </p>
+
+  <h5>Column Stacking</h5>
+
   <p>
-    <code>.group</code> can be used to group rows of content in sections.
+    <code>.row</code> stacks its columns vertically on screens less than 769px wide. This breakpoint is determined 
+    by the variable <code>$stack-point</code> that by default uses the width set in <code>$phone-landscape</code>. You can modify 
+    this in the <code>@use</code> rule when importing. You also have access to this breakpoint through the custom property 
+    <code>--stack-point</code>.
+  </p>
+
+  <h5>Custom Stacking Breakpoint</h5>
+
+  <p>
+    Having more than one breakpoint for stacking can be useful. Configure your alternative breakpoint in <code>$custom-stack-point</code>. 
+    Then, declare <code>&lt;div class="row custom-stack-point"&gt;</code> in your HTML.
+  </p>
+
+  <h5>Preventing Stacking</h5>
+
+  <p>
+    You can prevent row content from stacking altogether with the help of <code>.no-stack</code>. 
+    HTML: <code>&lt;div class="row no-stack"&gt;</code>.
+  </p>
+
+
+
+  <h4 class="push40v">Group</h4>
+
+  <p>
+    <code>.group</code> can be used to group rows of content into sections.
   </p>
 </main>
 <div class="hairline mt-40"></div>
