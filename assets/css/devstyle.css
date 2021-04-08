@@ -7112,8 +7112,8 @@ button.outline-l {
   transition: all var(--transition-duration) ease;
 }
 button.outline-l a {
-  line-height: 7.4rem;
-  padding: 2.5rem 8rem;
+  line-height: 6.4rem;
+  padding: 2.2rem 6rem;
 }
 button.outline-l:hover, button.outline-l:focus, button.outline-l:active {
   background: #ffffff38;
