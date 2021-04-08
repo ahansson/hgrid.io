@@ -208,13 +208,13 @@ title: Animations
 
     <p>
       The element to be faded in and out requires the <code>.fade</code> class
-      and is invisible (<code>opacity: 0;</code>) by default. If you prefer to
+      and is invisible with <code>opacity: 0;</code> by default. If you prefer to
       remove it entirely from the document, add <code>.hide</code>.
     </p>
 
     <p>
-      Apply <code>.fade-in</code> and <code>.fade-out</code> with a JS snippet,
-      for example like this:
+      Manipulate <code>.fade-in</code>, <code>.fade-out</code> (and optionally <code>.hide</code>) 
+      with a JavaScript snippet, for example like this:
     </p>
 
     <pre class="language-js filename" data-file="js">
@@ -223,7 +223,7 @@ title: Animations
   const fadeElem = document.querySelector('.fade')
   const x = document.querySelector('.x-close')
 
-  if (!fadeTrigger) return
+  if (!fadeTrigger || !fadeElem || !x) return
 
   fadeTrigger.addEventListener('click', () => {
     fadeElem.classList.add('fade-in')

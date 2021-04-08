@@ -159,7 +159,7 @@
 
       setTimeout(() => {
         fadeElem.classList.add('hide')
-      }, 400)
+      }, 600)
     })
   })();
 })();
