@@ -8,45 +8,54 @@ title: Variables
 ---
 <main>
   <p class="intro">
-    <strong>Hgrid</strong> comes with two types of variables. Sass <code>$variables</code> for internal use and customization 
-    with Sass (SCSS), and regular CSS <code>--custom-properties</code> accessible from anywhere in your project.
+    <strong>Hgrid</strong> comes with two types of variables: Sass <code>$variables</code> for internal use and customization, 
+    and regular CSS <code>--custom-properties</code>, accessible from anywhere in your project.
   </p>
-
   <p>
-    Sass variables are configurable with the @use rule if you import <strong>hgrid</strong> as Sass into your project. Example:
+    File location: <code class="loc">variables/_variables.scss</code> (<a 
+    href="https://github.com/ahansson/hgrid-css/blob/main/sass/variables/_variables.scss" target="_blank" rel="noopener">GitHub</a>)
+  </p>
+  <h4 class="push40v">Internal variables</h4>
+  <p>
+    The Sass variables are configurable with the @use rule if you import <strong>hgrid</strong> as a node module with 
+    <code>.scss</code>:
   </p>
   <pre class="language-scss filename" data-file="main.scss">
-<code>@use 'hgrid-css/sass/hgrid' with (
+  <code>@use 'hgrid-css/sass/hgrid' with (
   $theme-color-primary: #ffe88d,
   $theme-color-secondary: #fff0b4,
   $link-underline-color: #ffe88d,
   $container-max-width: 1680px,
   $custom-stack-point: 572px
-);
-</code></pre>
+);</code></pre>
 
-  <p>This overwrites the default values and replaces them with your custom values. Notice the use of commas, not semicolons.</p>
+  <p>
+    This overwrites <strong>hgrid's</strong> default values and replaces them with your custom values. Notice the use of commas, 
+    not semicolons.
+  </p>
 
   <p>
     <strong>See also:</strong> 
-      <a href="/documentation/integrate/">How to integrate hgrid in your Node-driven projects</a>
+      <a href="/documentation/integrate/">How to integrate hgrid in your project as an npm package</a>
   </p>
 
+  <h4 class="push40v">Custom properties</h3>
+
   <p>
-    Sass variables are abstracted away and converted to regular CSS during compilation. They aren't available in project 
-    components unless you explicitly import them into every file. To avoid this overhead, <strong>hgrid</strong> exposes the most 
-    useful internal variables as regular CSS custom properties, which are by default available everywhere via the global 
-    <code>:root</code> element.
+    Sass variables are abstracted away and converted to regular CSS during compilation. They aren't available in your project 
+    components unless you explicitly import them into every file. In order to avoid this overhead, 
+    <strong>hgrid</strong> exposes essential internal variables as CSS custom properties. These are by default available 
+    everywhere via the global<code>:root</code> element.
   </p>
   <p>
-    As all the custom properties get their values from internal Sass variables, you can customize them with the 
-    <code>@use</code> configuration described above. Later in your CSS or SCSS or component files you can use them freely as is, 
-    overwrite them, or replace them with JavaScript.
+    As all the custom properties get their values from the internal <code>$variables</code>, their values will be updated based
+    on your <code>@use</code> customization described above. In your <code>css</code>, <code>scss</code> or component files 
+    you can use them freely as is, overwrite them, or use JavaScript to replace them.
   </p>
 
     <p>Example of some of the custom properties available:</p>
     <pre class="language-scss filename" data-file="main.scss">
-<code>:root {
+    <code>:root {
 
   // Breakpoints
 
@@ -63,10 +72,9 @@ title: Variables
   --theme-color-primary: #{$theme-color-primary};
   --theme-color-secondary: #{$theme-color-secondary};
   --theme-color-tertiary: #{$theme-color-tertiary};
-}
-</code></pre>
+}</code></pre>
 
-  <p>You can now (for example) use variables to write <code>@media</code> queries:</p>
+  <p>One use case for the custom properties is <code>@media</code> queries:</p>
 
     <pre class="language-scss filename" data-file="main.scss">
 <code>@media (min-width: var(--phone-landscape)) {
@@ -76,8 +84,8 @@ title: Variables
 }</code></pre>
   
   <p>
-    Another example use case: Custom color themes for your site. With a <code>data</code> property you can use 
-    JavaScript to replace the initial colors with an alternate set of variables:
+    Another example: Custom color themes for your site. Set a <code>data</code> property and you can use 
+    JavaScript to swap the initial colors with an alternate set of variables:
   </p>
 
   <pre class="language-css filename" data-file="style.scss">
@@ -93,14 +101,16 @@ title: Variables
 
 <pre class="language-js filename" data-file="script.js">
 <code>const toggleColorTheme = () => {
-    if (html.dataset.theme === 'light') {
-      document.documentElement.setAttribute('data-theme', 'dark')
-      localStorage.theme = 'dark'
-    } else {
-      document.documentElement.setAttribute('data-theme', 'light')
-      localStorage.theme = 'light'
-    }
-  }</code></pre>
+  if (html.dataset.theme === 'light') {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    localStorage.theme = 'dark'
+  } else {
+    document.documentElement.setAttribute('data-theme', 'light')
+    localStorage.theme = 'light'
+  }
+}
+
+toggleColorTheme()</code></pre>
 
 </main>
 <div class="hairline mt-40"></div>
