@@ -14,8 +14,11 @@ title: Input
   </p>
 
   <p>
-    File location: <code class="loc">input/_input.scss</code> and
-    <code class="loc">input/_form.scss</code>
+    File location: <code class="loc">sass/input/_input.scss</code> and
+    <code class="loc">input/_form.scss</code> (<a 
+    href="https://github.com/ahansson/hgrid-css/blob/main/sass/input" 
+    target="_blank" 
+    rel="noopener">GitHub</a>)
   </p>
 
   <p>
@@ -30,7 +33,7 @@ title: Input
   <p>
     Checkboxes and radio buttons are entirely custom styled, reflecting your
     customized <code>$theme-color-primary</code>.
-    <code>&lt;input type="file" /></code> as well as infrequently used input
+    <code>&lt;input type="file"&gt;</code> as well as infrequently used input
     types such as <code>type="color"</code> and <code>type="range"</code> have
     their factory settings *. Maintaining styling hacks for all these is beyond
     the scope of the <strong>hgrid</strong> package.
@@ -61,7 +64,7 @@ title: Input
           placeholder="Full Name"
           autocomplete="name"
           required
-        />
+        >
 
         <label for="email">
           Email
@@ -79,7 +82,7 @@ title: Input
           maxlength="90"
           pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
           title="Please enter a correctly formatted email address"
-        />
+        >
 
         <div class="row">
           <div class="column">
@@ -92,7 +95,7 @@ title: Input
               placeholder="Input not allowed"
               autocomplete="off"
               readonly
-            />
+            >
           </div>
 
           <div class="column">
@@ -105,7 +108,7 @@ title: Input
               placeholder="Not possible to edit"
               autocomplete="off"
               disabled
-            />
+            >
           </div>
         </div>
 
@@ -172,24 +175,24 @@ title: Input
         </div>
 
         <label class="pointer" name="radios">
-          <input id="radio1" name="radios" type="radio" checked required />
+          <input id="radio1" name="radios" type="radio" checked required>
           Alt 1
         </label>
         <label class="pointer" name="radios">
-          <input id="radio2" name="radios" type="radio" required />
+          <input id="radio2" name="radios" type="radio" required>
           Alt 2
         </label>
         <label class="pointer" name="radios">
-          <input id="radio3" name="radios" type="radio" required />
+          <input id="radio3" name="radios" type="radio" required>
           Alt 3
         </label>
         <label class="disabled">
-          <input id="radio4" name="radios" type="radio" disabled />
+          <input id="radio4" name="radios" type="radio" disabled>
           Alt 4 (disabled)
         </label>
 
         <label class="pointer block mt-20" name="radios2">
-          <input id="radio5" name="radios2" type="radio" required />
+          <input id="radio5" name="radios2" type="radio" required>
           Yes
         </label>
 
@@ -202,7 +205,7 @@ title: Input
             checked
             disabled
             readonly
-          />
+          >
           No (checked & disabled)
         </label>
       </fieldset>
@@ -230,7 +233,7 @@ title: Input
             type="checkbox"
             name="privacy-check"
             required
-          />
+          >
           I accept the <a href="#">Privacy Policy</a>
         </label>
 
@@ -241,7 +244,7 @@ title: Input
             name="checked-box"
             checked
             required
-          />
+          >
           Checked
         </label>
 
@@ -252,12 +255,12 @@ title: Input
             name="disabled-check"
             checked
             disabled
-          />
+          >
           Disabled and checked
         </label>
 
         <label for="cannot" class="block disabled">
-          <input id="cannot" type="checkbox" name="cannot" disabled />
+          <input id="cannot" type="checkbox" name="cannot" disabled>
           Disabled
         </label>
       </fieldset>
@@ -287,13 +290,13 @@ title: Input
           role="button"
           class="inline radius-4"
           value="Input Type Submit"
-        />
+        >
         <input
           type="reset"
           role="button"
           class="inline radius-4 outline"
           value="Input Type Reset Outline"
-        />
+        >
       </fieldset>
     </form>
   </section>

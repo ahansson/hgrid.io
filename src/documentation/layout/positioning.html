@@ -7,171 +7,126 @@ description: Positioning and layout adjustments with hgrid classes.
 title: Positioning
 ---
 <main>
-<h3 class="mt-30">
-  <span id="push-and-pull" class="sublink"></span>
-  Push and pull
-</h3>
+  <h3 class="mt-30">
+    <span id="push-and-pull" class="sublink"></span>
+    Push and pull
+  </h3>
 
-<p>File location: <code class="loc">sass/layout/helpers/_adjustment.scss</code></p>
+  <p>
+    File location: <code class="loc">sass/layout/sass/layout/helpers/_adjustment.scss</code> (<a 
+    href="https://github.com/ahansson/hgrid-css/blob/main/sass/layout/sass/layout/helpers/_adjustment.scss" 
+    target="_blank" 
+    rel="noopener">GitHub</a>)
+  </p>
 
-<p>Push and pull classes are used to fine tune the position of html elements.</p>
-  
-<p>We use two methods: <code>push</code> and <code>pull</code> classes, or <code>translate-push</code> 
-  and <code>translate-pull</code> classes. Push/pull will influence sibling element(s) while translate-push/-pull will 
-  move the element independently of its surroundings.
-</p>
+  <p>Push and pull classes can be used to fine tune the position of HTML elements.</p>
+    
+  <p>We use two methods: <code>push</code> and <code>pull</code> classes, or <code>translate-push</code> 
+    and <code>translate-pull</code> classes. Push/pull will influence sibling element(s) while translate-push/-pull will 
+    move the element independently of its surroundings.
+  </p>
 
-<div class="mb-30 scrollable-x">
-<table style="min-width: 40rem;">
-  <thead>
-    <tr>
-      <th style="width: 40%;">Class Name</th>
-      <th>Comment</th>
-    </tr>
-  </thead>
-	<tbody>
-		<tr>
-			<td>.push1v (...) .push40v</td>
-			<td>Push 1-40px vertically (down)</td>
-		</tr>
-		<tr>
-			<td>.pull1v (...) .pull40v</td>
-			<td>Pull 1-40px vertically (up)</td>
-		</tr>
-		<tr>
-			<td>.push1h (...) .push40h</td>
-			<td>Push 1-40px horizontally (right)</td>
-		</tr>
-		<tr>
-			<td>.pull1h (...) pull40h</td>
-			<td>Pull 1-40px horizontally (left)</td>
-		</tr>
-		<tr>
-			<td>.translate-push1v (...) -push40v</td>
-			<td>Move 1-40px down</td>
-		</tr>
-		<tr>
-			<td>.translate-pull1v (...) -pull40v</td>
-			<td>Move 1-40px up</td>
-		</tr>
-		<tr>
-			<td>.translate-push1h (...) -push40h</td>
-			<td>Move 1-40px right</td>
-		</tr>
-		<tr>
-			<td>.translate-pull1h (...) -pull40h</td>
-			<td>Move 1-40px left</td>
-		</tr>
-	</tbody>
-</table>
-</div>
+  <div class="mb-30 scrollable-x">
+  <table style="min-width: 40rem;">
+    <thead>
+      <tr>
+        <th style="width: 40%;">Class Name</th>
+        <th>Comment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>.push1v (...) .push40v</td>
+        <td>Push 1-40px vertically (down)</td>
+      </tr>
+      <tr>
+        <td>.pull1v (...) .pull40v</td>
+        <td>Pull 1-40px vertically (up)</td>
+      </tr>
+      <tr>
+        <td>.push1h (...) .push40h</td>
+        <td>Push 1-40px horizontally (right)</td>
+      </tr>
+      <tr>
+        <td>.pull1h (...) pull40h</td>
+        <td>Pull 1-40px horizontally (left)</td>
+      </tr>
+      <tr>
+        <td>.translate-push1v (...) -push40v</td>
+        <td>Move 1-40px down</td>
+      </tr>
+      <tr>
+        <td>.translate-pull1v (...) -pull40v</td>
+        <td>Move 1-40px up</td>
+      </tr>
+      <tr>
+        <td>.translate-push1h (...) -push40h</td>
+        <td>Move 1-40px right</td>
+      </tr>
+      <tr>
+        <td>.translate-pull1h (...) -pull40h</td>
+        <td>Move 1-40px left</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
 
-<hr class="relative z-index-2" style="transform: translateY(7.6rem); border-color: #c5660c;">
-<div class="row mt-30 no-stack">
-  <div class="column">
-    <h5>Push down &darr;</h5>
-    <div class="row push20v">
-      <div class="column">
-        <p>Normal</p>
+  <hr class="relative z-index-2" style="transform: translateY(7.6rem); border-color: #c5660c;">
+  <div class="row mt-30 no-stack">
+    <div class="column">
+      <h5>Push down &darr;</h5>
+      <div class="row push20v">
+        <div class="column">
+          <p>Normal</p>
+        </div>
+        <div class="column push40v">
+          <p class="border-gray-light">.push40v</p>
+        </div>
       </div>
-      <div class="column push40v">
-        <p class="border-gray-light">.push40v</p>
+    </div>
+    <div class="column">
+      <h5>Pull up &uarr;</h5>
+      <div class="row mt-20">
+        <div class="column">
+          <p>Normal</p>
+        </div>
+        <div class="column pull20v">
+          <p class="border-gray-light">.pull20v</p>
+        </div>
       </div>
     </div>
   </div>
-  <div class="column">
-    <h5>Pull up &uarr;</h5>
-    <div class="row mt-20">
-      <div class="column">
-        <p>Normal</p>
+  <div class="row mt-40 flex">
+    <div class="column">
+      <h5>Push right &rarr;</h5>
+      <div class="row push20v">
+        <div class="column">
+          <p>Normal</p>
+        </div>
+        <div class="column push20h">
+          <p class="border-gray-light">.push20h</p>
+        </div>
       </div>
-      <div class="column pull20v">
-        <p class="border-gray-light">.pull20v</p>
+    </div>
+    <div class="column">
+      <h5>Pull left &larr;</h5>
+      <div class="row push20v">
+        <div class="column">
+          <p>Normal</p>
+        </div>
+        <div class="column pull20h">
+          <p class="border-gray-light">.pull20h</p>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<div class="row mt-40 flex">
-  <div class="column">
-    <h5>Push right &rarr;</h5>
-    <div class="row push20v">
-      <div class="column">
-        <p>Normal</p>
-      </div>
-      <div class="column push20h">
-        <p class="border-gray-light">.push20h</p>
-      </div>
-    </div>
-  </div>
-  <div class="column">
-    <h5>Pull left &larr;</h5>
-    <div class="row push20v">
-      <div class="column">
-        <p>Normal</p>
-      </div>
-      <div class="column pull20h">
-        <p class="border-gray-light">.pull20h</p>
-      </div>
-    </div>
-  </div>
-</div>
 
-<h3 class="mt-60">Positions</h3>
+  <h3 class="mt-60">Positions</h3>
 
-<p>File location <code class="loc">layout/helpers/_adjustments.scss</code></p>
+  <p>File location <code class="loc">layout/helpers/_adjustments.scss</code></p>
 
-<div class="mb-30 scrollable-x">
-<table style="min-width: 40rem;">
-  <thead>
-    <tr>
-      <th style="width: 40%;">Class Name</th>
-      <th>CSS Rule</th>
-    </tr>
-  </thead>
-	<tbody>
-		<tr>
-			<td>.static</td>
-			<td>position: static;</td>
-		</tr>
-		<tr>
-			<td>.absolute</td>
-			<td>position: absolute;</td>
-		</tr>
-		<tr>
-			<td>.fixed</td>
-			<td>position: fixed;</td>
-		</tr>
-		<tr>
-			<td>.relative</td>
-			<td>position: relative;</td>
-		</tr>
-		<tr>
-			<td>.sticky</td>
-			<td>position: sticky;</td>
-		</tr>
-		<tr>
-			<td>.position-initial</td>
-			<td>position: initial;</td>
-		</tr>
-		<tr>
-			<td>.position-inherit</td>
-			<td>position: inherit;</td>
-		</tr>
-		<tr>
-			<td>.absolute-center</td>
-			<td>left: 50%;<br>position: absolute;<br>top: 50%;<br>transform: translate(-50%, -50%);</td>
-		</tr>
-	</tbody>
-</table>
-</div>
-
-<h3 class="mt-50">
-  <span id="floats" class="sublink"></span>
-  Floats
-</h3>
-
-<div class="mb-30 scrollable-x">
-  <table>
+  <div class="mb-30 scrollable-x">
+  <table style="min-width: 40rem;">
     <thead>
       <tr>
         <th style="width: 40%;">Class Name</th>
@@ -180,20 +135,70 @@ title: Positioning
     </thead>
     <tbody>
       <tr>
-        <td>.fr</td>
-        <td>float: right;</td>
+        <td>.static</td>
+        <td>position: static;</td>
       </tr>
       <tr>
-        <td>.fl</td>
-        <td>float: left;</td>
+        <td>.absolute</td>
+        <td>position: absolute;</td>
       </tr>
       <tr>
-        <td>.fn</td>
-        <td>float: none;</td>
+        <td>.fixed</td>
+        <td>position: fixed;</td>
+      </tr>
+      <tr>
+        <td>.relative</td>
+        <td>position: relative;</td>
+      </tr>
+      <tr>
+        <td>.sticky</td>
+        <td>position: sticky;</td>
+      </tr>
+      <tr>
+        <td>.position-initial</td>
+        <td>position: initial;</td>
+      </tr>
+      <tr>
+        <td>.position-inherit</td>
+        <td>position: inherit;</td>
+      </tr>
+      <tr>
+        <td>.absolute-center</td>
+        <td>left: 50%;<br>position: absolute;<br>top: 50%;<br>transform: translate(-50%, -50%);</td>
       </tr>
     </tbody>
   </table>
-</div>
+  </div>
+
+  <h3 class="mt-50">
+    <span id="floats" class="sublink"></span>
+    Floats
+  </h3>
+
+  <div class="mb-30 scrollable-x">
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 40%;">Class Name</th>
+          <th>CSS Rule</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>.fr</td>
+          <td>float: right;</td>
+        </tr>
+        <tr>
+          <td>.fl</td>
+          <td>float: left;</td>
+        </tr>
+        <tr>
+          <td>.fn</td>
+          <td>float: none;</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </main>
 <div class="hairline mt-40"></div>
 <p class="fl hide-phone">← <strong>Previous</strong>: <a href="/documentation/layout/grid/">Grid</a></p>

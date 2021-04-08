@@ -2,7 +2,7 @@
 layout: layout/docs.njk
 meta: {
 title: Variables | hgrid,
-description: Variables in hgrid.
+description: Using and modifying hgrid variables.
 }
 title: Variables
 ---
@@ -12,7 +12,7 @@ title: Variables
     and regular CSS <code>--custom-properties</code>, accessible from anywhere in your project.
   </p>
   <p>
-    File location: <code class="loc">variables/_variables.scss</code> (<a 
+    File location: <code class="loc">sass/variables/_variables.scss</code> (<a 
     href="https://github.com/ahansson/hgrid-css/blob/main/sass/variables/_variables.scss" target="_blank" rel="noopener">GitHub</a>)
   </p>
   <h4 class="push40v">Internal variables</h4>
@@ -59,13 +59,13 @@ title: Variables
 
   // Breakpoints
 
-  --phone: #{$phone};                        // 0 - 600px
-  --phone-landscape: #{$phone-landscape};    // 601 - 768px
-  --tablet-portrait: #{$tablet-portrait};    // 769 - 900px
-  --tablet-landscape: #{$tablet-landscape};  // 901 - 1024px
-  --laptop: #{$laptop};                      // 1025 - 1280px
-  --desktop: #{$desktop};                    // 1281 - 1680px
-  --desktop-large: #{$desktop-large};        // 1681 - ∞
+  --phone: #{$phone};                        // 0 &larr; 600px
+  --phone-landscape: #{$phone-landscape};    // 768px
+  --tablet-portrait: #{$tablet-portrait};    // 900px
+  --tablet-landscape: #{$tablet-landscape};  // 1024px
+  --laptop: #{$laptop};                      // 1280px
+  --desktop: #{$desktop};                    // 1680px
+  --desktop-large: #{$desktop-large};        // 1681px &rarr; ∞
 
   // Theme Colors
 
