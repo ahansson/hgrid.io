@@ -13,7 +13,9 @@ title: Variables
   </p>
   <p>
     File location: <code class="loc">sass/variables/_variables.scss</code> (<a 
-    href="https://github.com/ahansson/hgrid-css/blob/main/sass/variables/_variables.scss" target="_blank" rel="noopener">GitHub</a>)
+    href="https://github.com/ahansson/hgrid-css/blob/main/sass/variables/_variables.scss" 
+    target="_blank" 
+    rel="noopener">GitHub</a>)
   </p>
   <h4 class="push40v">Internal variables</h4>
   <p>
@@ -72,17 +74,34 @@ title: Variables
   --theme-color-primary: #{$theme-color-primary};
   --theme-color-secondary: #{$theme-color-secondary};
   --theme-color-tertiary: #{$theme-color-tertiary};
+
+  // Generic Colors
+
+  --color-light: #{$color-light};
+  --color-dark: #{$color-dark};
+
+  // Text Colors 
+
+  --text-color-primary: #{$text-color-primary};
+  --text-color-secondary: #{$text-color-secondary};
+  --text-color-tertiary: #{$text-color-tertiary};
+
+  // Focus outline (:focus)
+
+  --focus-border-color: #{$focus-border-color};
+  --focus-border-weight: #{$focus-border-weight};
+
 }</code></pre>
 
-  <p>One use case for the custom properties is <code>@media</code> queries:</p>
+  <p>One use case for the custom properties is to ensure consistent breakpoints for <code>@media</code> queries:</p>
 
     <pre class="language-scss filename" data-file="main.scss">
 <code>@media (min-width: var(--phone-landscape)) {
-  .example {
-    color: var(--theme-color-secondary);
+  .example h3 {
+    color: var(--text-color-tertiary);
   }
 }</code></pre>
-  
+
   <p>
     Another example: Custom color themes for your site. Set a <code>data</code> property and you can use 
     JavaScript to swap the initial colors with an alternate set of variables:
@@ -93,7 +112,11 @@ title: Variables
   --theme-color-primary: #ffc9a2;
   --theme-color-secondary: #d09255;
   --theme-color-tertiary: #d09255;
-  --bg: #060323;
+  --text-color-primary: #fff;
+  --text-color-secondary: var(--color-light);
+  --text-color-tertiary: var(--color-gray-lighter);
+  --body-bg: var(--color-dark);
+  --focus-border-color: #35d700af;
 }
 </code></pre>
 
