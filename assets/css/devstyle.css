@@ -94,7 +94,7 @@ html {
 body {
   background-color: #fff;
   display: block;
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Symbol", "Noto Color Emoji", "Segoe UI Emoji";
+  font-family: "Wotfard";
   font-size: 1.6rem;
   height: 100vh;
   width: 100%;
@@ -7003,7 +7003,6 @@ hr {
   --bg-gray-darker: #dddbd5;
   --header-bg: #fff;
   --header-shadow: #52525242;
-  --font: #000;
   --title: #000;
   --menulink: #333;
   --menutitle: #444;
@@ -7019,11 +7018,11 @@ hr {
 
 [data-theme=dark] {
   --bg: #060323;
-  --bg-gray-darker: #c5ad88;
+  --bg-gray-darker: #29236c;
+  --color-dark: #e0dbd3;
   --header-bg: #0b092f;
+  --title: #cabfaf;
   --header-shadow: #00000060;
-  --font: #e0dbd3;
-  --title: #cac4bb;
   --menulink: #d4c9b9;
   --menutitle: #e9dac5;
   --menulink-hover: #ffffff;
@@ -7047,8 +7046,7 @@ hr {
 body {
   background: var(--bg);
   transition: all var(--transition-duration);
-  color: var(--font);
-  font-family: "Wotfard";
+  color: var(--color-dark);
 }
 body.no-outline button:not(form button):focus, body.no-outline a:not(form a):focus, body.no-outline label:not(form label):focus, body.no-outline input:not(input[type=radio]:checked):not(form input):focus, body.no-outline ul li:not(form ul li):focus {
   outline-color: transparent;
@@ -7348,7 +7346,7 @@ article.demo pre pre > code {
 
 code.loc {
   background: var(--bg-gray-darker);
-  color: #000;
+  color: var(--color-dark);
 }
 
 p > code,
