@@ -7545,7 +7545,7 @@ footer p a:hover {
     padding: 10.6rem 0.6rem 2rem 0.8%;
   }
 }
-@media (max-width: var(--tablet-portrait)) {
+@media (max-width: 900px) {
   nav.sidebar {
     padding: 10.6rem 0.6rem 2rem 2.2%;
     width: 22%;
@@ -7628,11 +7628,7 @@ footer p a:hover {
     text-align: center;
   }
 }
-@media (max-width: var(--phone-landscape)) {
-  article.demo {
-    padding-left: unset;
-  }
-
+@media (max-width: 768px) {
   nav.sidebar {
     padding: 4.6rem 0.6rem 2rem 8%;
   }
@@ -7641,7 +7637,7 @@ footer p a:hover {
     margin-bottom: 2.4rem;
   }
 }
-@media (max-width: var(--phone)) {
+@media (max-width: 600px) {
   nav.sidebar {
     width: 70%;
   }
