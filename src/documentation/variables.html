@@ -59,16 +59,6 @@ title: Variables
     <pre class="language-scss filename" data-file="main.scss">
     <code>:root {
 
-  // Breakpoints
-
-  --phone: #{$phone};                        // 0 &larr; 600px
-  --phone-landscape: #{$phone-landscape};    // 768px
-  --tablet-portrait: #{$tablet-portrait};    // 900px
-  --tablet-landscape: #{$tablet-landscape};  // 1024px
-  --laptop: #{$laptop};                      // 1280px
-  --desktop: #{$desktop};                    // 1680px
-  --desktop-large: #{$desktop-large};        // 1681px &rarr; ∞
-
   // Theme Colors
 
   --theme-color-primary: #{$theme-color-primary};
@@ -93,18 +83,9 @@ title: Variables
 
 }</code></pre>
 
-  <p>One use case for the custom properties is to ensure consistent breakpoints for <code>@media</code> queries:</p>
-
-    <pre class="language-scss filename" data-file="main.scss">
-<code>@media (min-width: var(--phone-landscape)) {
-  .example h3 {
-    color: var(--text-color-tertiary);
-  }
-}</code></pre>
-
   <p>
-    Another example: Custom color themes for your site. Set a <code>data</code> property and you can use 
-    JavaScript to swap the initial colors with an alternate set of variables:
+    One use case is color theming for your site. Set a <code>data</code> property and you can use 
+    JavaScript to swap the initial colors with an alternate set of color variables:
   </p>
 
   <pre class="language-css filename" data-file="style.scss">
