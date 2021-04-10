@@ -47,7 +47,7 @@ title: Variables
     Sass variables are abstracted away and converted to regular CSS during compilation. They aren't available in your project 
     components unless you explicitly import them into every file. In order to avoid this overhead, 
     <strong>hgrid</strong> exposes essential internal variables as CSS custom properties. These are by default available 
-    everywhere via the global<code>:root</code> element.
+    everywhere via the global <code>:root</code> pseudo-selector (equivalent to the <code>html</code> element).
   </p>
   <p>
     As all the custom properties get their values from the internal <code>$variables</code>, their values will be updated based
@@ -55,7 +55,7 @@ title: Variables
     you can use them freely as is, overwrite them, or use JavaScript to replace them.
   </p>
 
-    <p>Example of some of the custom properties available:</p>
+    <p>Here are some of the custom properties available:</p>
     <pre class="language-scss filename" data-file="main.scss">
     <code>:root {
 
@@ -83,8 +83,14 @@ title: Variables
 
 }</code></pre>
 
+  <p>Full list 
+    <a href="https://github.com/ahansson/hgrid-css/blob/main/sass/variables/_variables.scss" 
+    target="_blank" 
+    rel="noopener">on GitHub</a>.
+  </p>
+  
   <p>
-    One use case is color theming for your site. Set a <code>data</code> property and you can use 
+    One use case for custom properties is color theming for your site. Add a <code>data</code> property and you can use 
     JavaScript to swap the initial colors with an alternate set of color variables:
   </p>
 
