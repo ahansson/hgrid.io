@@ -28,7 +28,8 @@
 
 [data-theme="dark"] {
   --bg: #060323;
-  --bg-gray-darker: #c5ad88;
+  --bg-gray-darker: #29236c;
+  --color-dark: #e0dbd3;
   --header-bg: #0b092f;
   --header-shadow: #00000060;
   --font: #e0dbd3;
@@ -389,7 +390,7 @@ article.demo {
 
 code.loc {
   background: var(--bg-gray-darker);
-  color: #000;
+  color: var(--color-dark);
 }
 
 p > code,
