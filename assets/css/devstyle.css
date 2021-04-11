@@ -7026,7 +7026,7 @@ hr {
   --color-orange: #ff9900;
   --transition-bg: var(--bg);
   --transition-duration: 0.2s;
-  --pre-code-bg: #21163c;
+  --pre-code-bg: #150035;
   --inline-code-bg: #391e54;
   --border-light-dotted: #2c3868;
   --border-light-solid: #191f35;
@@ -7333,9 +7333,9 @@ article.demo pre.filename:before {
   border-radius: 0.4rem;
   background: #16083f;
 }
-article.demo pre pre > code {
+article.demo pre > code {
   border-radius: 1rem;
-  background-color: var(--code-bg);
+  background-color: var(--pre-code-bg);
 }
 
 code.loc {
