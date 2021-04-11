@@ -7328,10 +7328,10 @@ article.demo pre.filename:before {
   top: 1.6rem;
   right: 1.6rem;
   text-align: right;
-  color: #ffe590;
+  color: #fff3cc;
   padding: 1rem 0.6rem;
   border-radius: 0.4rem;
-  background: #16083f;
+  background: #060018;
 }
 article.demo pre > code {
   border-radius: 1rem;
