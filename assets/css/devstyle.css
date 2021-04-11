@@ -1,12 +1,5 @@
-/*! hgrid v0.4.2-alpha | MIT License | github.com/ahansson/hgrid-css !*/
+/*! hgrid v0.4.4-alpha | MIT License | github.com/ahansson/hgrid-css !*/
 :root {
-  --phone: 600px;
-  --phone-landscape: 768px;
-  --tablet-portrait: 900px;
-  --tablet-landscape: 1024px;
-  --laptop: 1280px;
-  --desktop: 1680px;
-  --desktop-large: 1681px;
   --theme-color-primary: #66008d;
   --theme-color-secondary: #9139b4;
   --theme-color-tertiary: #c19ad1;
@@ -21,6 +14,9 @@
   --color-gray: #888;
   --color-gray-dark: #555;
   --color-gray-darker: #333;
+  --text-color-primary: #000;
+  --text-color-secondary: #333;
+  --text-color-tertiary: #555;
   --text-highlight-color: #ffe4c9;
   --inline-code-color: #620042;
   --inline-code-bg: #ffe4c9;
@@ -46,8 +42,6 @@
   --gutter: 1.6%;
   --group-margin-bottom: 0 0 6rem 0;
   --paragraph-margin-bottom: 2rem;
-  --stack-point: 768px;
-  --custom-stack-point: 600px;
 }
 
 *,
@@ -360,7 +354,6 @@ q::after {
   outline-color: transparent;
   outline-style: none;
   outline-width: 0;
-  border-radius: 6px;
   box-shadow: 0 0 0 0.3rem #3971ffaf;
 }
 
@@ -1184,10 +1177,12 @@ input[type=reset]:not(.block):last-child {
 .fade {
   transition: ease 0.3s;
   opacity: 0;
+  pointer-events: none;
 }
 
 .fade-in {
   animation: fadingIn ease 1.6s forwards;
+  pointer-events: all;
 }
 
 @keyframes fadingIn {
@@ -1200,6 +1195,7 @@ input[type=reset]:not(.block):last-child {
 }
 .fade-out {
   animation: fadingOut ease 0.6s forwards;
+  pointer-events: none;
 }
 
 @keyframes fadingOut {
@@ -1208,8 +1204,6 @@ input[type=reset]:not(.block):last-child {
   }
   to {
     opacity: 0;
-    visibility: hidden;
-    display: none;
   }
 }
 .flash {
@@ -1300,9 +1294,9 @@ input[type=reset]:not(.block):last-child {
   left: 0;
   width: 100vw;
   height: 100vh;
+  pointer-events: none;
   background: #fff;
 }
-
 .transition.vanish {
   animation: vanish 0.6s;
   animation-fill-mode: forwards;
