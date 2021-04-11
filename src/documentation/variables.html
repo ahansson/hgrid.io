@@ -9,18 +9,21 @@ title: Variables
 <main>
   <p class="intro">
     <strong>Hgrid</strong> comes with two types of variables: Sass <code>$variables</code> for internal use and customization, 
-    and regular CSS <code>--custom-properties</code>, accessible from anywhere in your project.
+    and CSS <code>--custom-properties</code>, accessible from anywhere in your project.
   </p>
+
   <p>
-    File location: <code class="loc">sass/variables/_variables.scss</code> (<a 
-    href="https://github.com/ahansson/hgrid-css/blob/main/sass/variables/_variables.scss" 
+    File locations: <code class="loc">sass/variables/_variables.scss</code> and 
+    <code class="loc">sass/variables/_custom-properties.scss</code> (<a 
+    href="https://github.com/ahansson/hgrid-css/blob/main/sass/variables/" 
     target="_blank" 
     rel="noopener">GitHub</a>)
   </p>
+
   <h4 class="push40v">Internal variables</h4>
+
   <p>
-    The Sass variables are configurable with the @use rule if you import <strong>hgrid</strong> as a node module with 
-    <code>.scss</code>:
+    The Sass variables are configurable with the <code>@use</code> rule if you import <strong>hgrid</strong> as a Node module:
   </p>
   <pre class="language-scss filename" data-file="main.scss">
   <code>@use 'hgrid-css/sass/hgrid' with (
@@ -32,31 +35,52 @@ title: Variables
 );</code></pre>
 
   <p>
-    This overwrites <strong>hgrid's</strong> default values and replaces them with your custom values. Notice the use of commas, 
-    not semicolons.
+    This overwrites <strong>hgrid's</strong> variable defaults with your custom values. 
+    Notice the use of commas instead of semicolons.
   </p>
 
   <p>
+    Sass variables are aren't available in your project files unless you reference their file with <code>@use</code>.
+    Every partial from <strong>hgrid</strong> can be accessed this way. A clear use case is to get access to the 
+    <code>viewport</code> mixin to help keep media queries consistent:
+  </p>
+
+  <pre class="language-scss filename" data-file="main.scss">
+  <code>@use 'variables/variables' as *;
+@use 'mixins/mixins' as mixin;
+
+.fantastic-component {
+  color: $text-color-primary;
+  background: $bg-gray-light;
+
+  @include mixin.viewport(phone-landscape) {
+    color: red;
+  }
+};</code></pre>
+
+  <p>
     <strong>See also:</strong> 
-      <a href="/documentation/integrate/">How to integrate hgrid in your project as an npm package</a>
+      <a href="/documentation/integrate/">How to integrate hgrid in your project as a Node module</a>
   </p>
 
   <h4 class="push40v">Custom properties</h3>
 
   <p>
-    Sass variables are abstracted away and converted to regular CSS during compilation. They aren't available in your project 
-    components unless you explicitly import them into every file. In order to avoid this overhead, 
-    <strong>hgrid</strong> exposes essential internal variables as CSS custom properties. These are by default available 
-    everywhere via the global <code>:root</code> pseudo-selector (equivalent to the <code>html</code> element).
+    As we have seen above, Sass variables must be referenced with <code>@use</code> in every file you want to use them. 
+    To avoid this overhead, and to allow easy manipulation with JavaScript, <strong>hgrid</strong> exposes essential 
+    internal variables as CSS custom properties. They are by by default available everywhere, via the global 
+    <code>:root</code> pseudo-selector (equivalent to the <code>html</code> element).
   </p>
   <p>
-    As all the custom properties get their values from the internal <code>$variables</code>, their values will be updated based
-    on your <code>@use</code> customization described above. In your <code>css</code>, <code>scss</code> or component files 
-    you can use them freely as is, overwrite them, or use JavaScript to replace them.
+    The custom properties get their values from internal <strong>hgrid</strong> <code>$variables</code>, 
+    and their values will be based on your <code>@use</code> customization described above. In your 
+    <code>css</code>, <code>scss</code> or component files you can use them freely as is, overwrite them, 
+    and manipulate them with JS.
   </p>
 
-    <p>Here are some of the custom properties available:</p>
-    <pre class="language-scss filename" data-file="main.scss">
+  <p>Here are a few of the custom properties available:</p>
+
+  <pre class="language-scss filename" data-file="main.scss">
     <code>:root {
 
   // Theme Colors
@@ -84,14 +108,14 @@ title: Variables
 }</code></pre>
 
   <p>Full list 
-    <a href="https://github.com/ahansson/hgrid-css/blob/main/sass/variables/_variables.scss" 
+    <a href="https://github.com/ahansson/hgrid-css/blob/main/sass/variables/_custom-properties.scss" 
     target="_blank" 
     rel="noopener">on GitHub</a>.
   </p>
   
   <p>
-    One use case for custom properties is color theming for your site. Add a <code>data</code> property and you can use 
-    JavaScript to swap the initial colors with an alternate set of color variables:
+    As mentioned previously, a use for custom properties is color theming for your site. Add a <code>data</code> 
+    property and you can use JavaScript to swap the initial colors with an alternate set values:
   </p>
 
   <pre class="language-css filename" data-file="style.scss">
