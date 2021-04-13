@@ -24,7 +24,7 @@ title: Integrate hgrid in Your Projects
   <ol>
     <li>Install two packages: <code>npm i sass sass-loader --save-dev</code></li>
     <li>Install <strong>hgrid</strong>: <code>npm install hgrid-css --save-dev</code></li>
-    <li>Create <code>main.scss</code>, for example in <code>assets/scss</code></li>
+    <li>Create your main <code>scss</code> file, for example <code>assets/scss/main.scss</code></li>
     <li>Initiate <code>main.scss</code> in your <code>main.js</code> file, respecting your local folder structure:</li>
   </ol>
 
@@ -52,13 +52,10 @@ title: Integrate hgrid in Your Projects
   $link-underline-color: #ffe88d
 );
 
-// Import  or @use your own CSS or SCSS partials, if you have any
+// Add your own CSS or SCSS partials (if you have any) with @import or @use respectively:
 
-@import 'partials/_app-frame.scss';
-@import 'partials/_theme.scss';
-
-// Note that the Sass maintainers plan to deprecate @import sometime 
-// in the future and replace it entirely with the @use rule.
+@import 'css/partials/app-frame.css';
+@use 'scss/partials/_theme.scss';
 
 // Sass $variables aren't available globally. But hgrid's custom 
 // properties reflect the most useful sass variables and are 
@@ -78,15 +75,14 @@ title: Integrate hgrid in Your Projects
   </p>
 
   <p class="note">
-    Trying to execute any code before the <code>@use</code> rule will not compile. Read more about the 
+    Trying to execute any other code than @forward before <code>@use</code> won't compile. Read more about the 
     <a href="https://sass-lang.com/documentation/at-rules/use#configuration" target="_blank" rel="noopener noreferrer">@use rule</a> 
     over at sass-lang.com.
   </p>
 
   <p>
-    If you require access to any <code>$hgrid-variables</code> in app components, 
-    you need to @import or @use <code>sass/variables/variables.scss</code> at the top of each component file. 
-    Or you can get access to them via <code>vue.config.js</code> as <a href="#variable-access">explained here</a>.
+    If you need access to any <code>$hgrid-variables</code> you have to include them with 
+    <code>@use 'hgrid-css/sass/variables/variables'</code> at the top of each file.
   </p>
 
   <p>
@@ -96,14 +92,14 @@ title: Integrate hgrid in Your Projects
   <h5 class="mt-60">Method 2</h5>
   <h4>Quick imports</h4>
   <br>
-  <h5>2a. Import in 'App.vue'</h5>
-  <p>Import either Sass or precompiled CSS at the top of <code>App.vue</code>'s <code>&lt;style></code> tag.</p>
+  <h5>2a. @import or @use in 'App.vue'</h5>
+  <p>@import precompiled CSS or @use SCSS at the top of <code>App.vue</code>'s <code>&lt;style></code> tag.</p>
 
   <h6>CSS</h6>
 
   <pre class="language-html filename" data-file="App.vue">
 <code>&lt;style lang="css"&gt;
-  @use '~hgrid-css/dist/hgrid.min.css';
+  @import '~hgrid-css/dist/hgrid.min.css';
 
   /* Other CSS classes from here down */
 &lt;/style&gt;</code>
@@ -112,27 +108,29 @@ title: Integrate hgrid in Your Projects
   <h6>SCSS</h6>
 
   <p>
-    See the description under Method 1. Please refer to <a href="/documentation/integrate/#vue">prerequisites</a> 
-    for setting up Sass in Vue.</p>
+    Set up a style tag with <code>lang="scss"</code> in <code>App.vue</code>. Then use the description from Method 1 to 
+    @use <strong>hgrid</strong>. Please refer to <a href="/documentation/integrate/#vue">prerequisites</a> for using Vue with Sass.
+  </p>
   <br>
 
-  <h5>2b. Import in 'main.js'</code></h5>
+  <h5>2b. Import prebuilt CSS in 'main.js'</code></h5>
 
   <pre class="language-js filename" data-file="main.js">
-<code>import ‘~hgrid-css/dist/hgrid.min.css’
-</code></pre>
-
+    <code>import ‘~hgrid-css/dist/hgrid.min.css’</code>
+  </pre>
   <br>
-  <h5>2c. Import prebuilt CSS to local CSS</h5>
 
-  <p>At the top of a local stylesheet in for example <code>public/assets/</code> you can import the full <strong>hgrid</strong>
-    kit like this:</p>
+  <h5>2c. Import prebuilt CSS to local stylesheet</h5>
+
+  <p>
+    At the top of a local CSS file, for example <code>public/assets/css/style.css</code> you can import the full 
+    <strong>hgrid</strong> kit from <code>node_modules</code>:
+  </p>
 
   <pre class="language-css filename" data-file="style.css">
-<code>@import '~hgrid-css/dist/hgrid.min.css;</code></pre>
+    <code>@import '~hgrid-css/dist/hgrid.min.css';</code>
+  </pre>
 
-  <span id="variable-access"></span>
-  <br>
   <h4 class="push20v">Global access to Sass variables with <code>vue.config.js</code></h4>
 
   <p>Another way to access to the <strong>hgrid</strong> $variables from within components is to make them available from the
@@ -150,10 +148,11 @@ title: Integrate hgrid in Your Projects
     }
   }
 }</code></pre>
-
+  <p><strong>Note:</strong> This method may be redundant as you automatically have global access to all the relevant CSS custom properties that reflect the 
+  Sass variables. You can also <code>@use</code> the variables partial where needed.</p>
   <p>
-    ⚠️ <strong>Important:</strong> Do not import anything here that won't be abstracted away in the build process. If you do,
-    performance will be affected. The same styles will be included multiple times in the bundle – once for every component and view.
+    ⚠️ Don't import anything here that won't be abstracted away in the build process. If you do,
+    performance will be affected. The same styles will be included multiple times – once for every component and view.
   </p>
 
   <p class="note">
