@@ -7043,10 +7043,6 @@ body {
   color: var(--color-dark);
 }
 body.no-outline button:not(form button):focus, body.no-outline a:not(form a):focus, body.no-outline label:not(form label):focus, body.no-outline input:not(input[type=radio]:checked):not(form input):focus, body.no-outline ul li:not(form ul li):focus {
-  outline-color: transparent;
-  outline-style: none;
-  outline-width: 0;
-  border-radius: 0;
   box-shadow: none;
 }
 
