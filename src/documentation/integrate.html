@@ -58,7 +58,7 @@ title: Integrate hgrid in Your Projects
 @use 'scss/partials/_theme.scss';
 
 // Sass $variables aren't available globally. But hgrid's custom 
-// properties reflect the most useful sass variables and are 
+// properties reflect the most useful variables and are 
 // available everywhere:
 
 .alertbox {
@@ -169,59 +169,86 @@ title: Integrate hgrid in Your Projects
 
   <h4 class="mt-40">Demo project</h4>
 
-  Check out the <a href="https://github.com/ahansson/hgrid-css-react-app" target="_blank" rel="noopener noreferrer">starter project
-    on GitHub</a>.
+  <p>
+    Check out the <a href="https://github.com/ahansson/hgrid-css-react-app" target="_blank" rel="noopener noreferrer">starter 
+    project</a> on GitHub.
+  </p>
 
   <h4 class="mt-40">Prerequisites</h4>
 
   <ol>
     <li>Install the Dart Sass package: <code>npm i sass --save-dev</code></li>
     <li>Install <strong>hgrid</strong>: <code>npm i hgrid-css --save-dev</code></li>
-    <li>Rename <code>index.css</code> to <code>index.scss</code> (or create it in <code>src</code> if it doesn't exist.</li>
+    <li>Rename <code>index.css</code> to <code>index.scss</code> (or create it in <code>src</code> if it doesn't exist.)</li>
     <li>Rename <code>App.css</code> and other component files to use the file ending <code>.scss</code>.</li>
     <li>Import your <code>.scss</code> files in <code>index.js</code> and the relevant component files:</li>
   </ol>
 
   <pre class="language-js filename" data-file="index.js">
-<code>import './index.scss';</code></pre>
+    <code>import './index.scss';</code>
+  </pre>
 
   <pre class="language-js filename" data-file="App.js">
-<code>import './App.scss';</code></pre>
+    <code>import './App.scss';</code>
+  </pre>
 
-  <p>Any files with the <code>.scss</code> extension imported in <code>App.js</code> will be automatically compiled to CSS.
+  <p>
+    Any files with the <code>.scss</code> extension imported in <code>App.js</code> will now be automatically compiled to CSS.
     Autoprefixer is a part of the <strong>hgrid</strong> project for broader browser compatibility, but in a React app from scratch
-    you have to configure it yourself. Create-react-app and the starter project we link to above has Autoprefixer working out of the box.</p>
+    you have to configure it yourself. Create-react-app and the starter project we link to above has Autoprefixer working out of the box.
+  </p>
 
-  <h4 class="mt-40">@import to index.scss</h4>
+  <h4 class="mt-40">'@use' in index.scss</h4>
 
   <pre class="push20v language-scss filename" data-file="index.scss">
-<code>@charset "utf-8";
+    <code>@use '~hgrid-css/sass/hgrid' with (
+  $body-bg: #7056ce,
+  $link-color: #00a344,
+  $link-color-hover: #00cc66,
+  $container-max-width: 1680px,
+  $link-underline-color: #daae00,
+  $column-gutter-width: 1.2%,
+  $turn-off-link-decoration: true,
+  $use-global-link-underlines: true,
+);
 
-// Override hgrid default variables if you wish
-$container-max-width: 1333px;
-$font-color: #333;
+// ... or @use only specific modules:
 
-// Import everything from hgrid
-@import '~hgrid-css/sass/hgrid';
+// @use '~hgrid-css/sass/variables/variables'; // Required*
+// @use '~hgrid-css/sass/mixins/mixins'; // Required*
+// @use '~hgrid-css/sass/base/base'; // Required*
 
-// ... or just the parts you need
-@import '~hgrid-css/sass/variables/variables'; // Required
-@import '~hgrid-css/sass/base/base'; // Required
-@import '~hgrid-css/sass/mixins/mixins'; // Required
-@import '~hgrid-css/sass/layout/flex';
-@import '~hgrid-css/sass/layout/containers';
-@import '~hgrid-css/sass/layout/helpers/adjustment';
+// @use '~hgrid-css/sass/base/a11y';
+// @use '~hgrid-css/sass/layout/flex';
+// @use '~hgrid-css/sass/layout/containers';
+// @use '~hgrid-css/sass/layout/auto-columns';
+// @use '~hgrid-css/sass/layout/helpers/background';
 
-// Add your own scss/css below
-@import 'partials/_app-frame.scss';
+// Add your own CSS or SCSS partials (if you have any) with @import and @use respectively:
 
-body {
-  // etc.
-}
-</code>
+@import 'css/partials/app-frame.css';
+@use 'scss/partials/_theme.scss';
+
+// Add other global styles from here down
+
+// You have access to hgrid's custom properties
+// https://hgrid.io/documentation/variables/
+
+.example {
+  background: var(--bg-dark);
+
+  h1 {
+    color: var(--text-color-secondary);
+    font-size: 3rem;
+
+    @media (max-width: var(--phone)) {
+      font-size: 2.4rem;
+    }
+  }
+}</code>
 </pre>
 
-  <p>You now have access to <strong>hgrid</strong>'s utilities from any component file in your app.</p>
+  <p>You now have access to <strong>hgrid</strong>'s utility classes from all component files.</p>
 
   <pre class="push20v language-jsx filename" data-file="App.js">
 <code>import './App.scss';
@@ -243,31 +270,25 @@ export default App;
 </code>
 </pre>
 
-  <p>If you need access to specifics from <strong>hgrid</strong> in your components, you can import partials in the component scss.</p>
+  <p>If you need something from <strong>hgrid</strong> you can't get from the custom properties, @use any of the partials like this:</p>
 
   <pre class="push20v language-scss filename" data-file="ExcellentComponent.scss">
-<code>@import '~hgrid-css/sass/variables/variables.scss';
+<code>@use '~hgrid-css/sass/variables/variables' as var;
+@use '~hgrid-css/sass/mixins/mixins' as mixin;
 
 .ExcellentComponent {
   font-size: 20px;
   .column {
-    padding: 1rem 2rem;
+    padding: var.$column-gutter-width;
   }
 }
 
-
-.container-max {
-  max-width: $container-max-width;
-}
-</code>
+@include mixin.viewport(phone-landscape) {
+  .container-max {
+    max-width: 96%;
+  }
+}</code>
 </pre>
-
-  <p>Inspect the page and you will see that the 1200px <code>$container-max-width</code> variable we configured in
-    <code>index.scss</code> has been overridden by the default variable's value of 1440px that we imported into this file.
-  </p>
-
-  <p>Overrides in <code>index.scss</code> will display in dev tools as coming from hgrid's own partial files. This is correct,
-    as variables you customize get injected during compilation.</p>
 
   <p class="note">Our <a href="https://github.com/ahansson/hgrid-css-react-app" rel="noopener noreferrer" target="_blank">React
       starter project</a> which is based on <a href="https://create-react-app.dev/" target="_blank" rel="noopener noreferrer">
@@ -279,8 +300,10 @@ export default App;
     Svelte
   </h2>
 
-  <p class="small"><em>This recipe is tested with Svelte x.x.x</em></p>
+  <p class="small"><em>This recipe is tested with SvelteKit x.x.x</em></p>
 
+  <p>Coming soon!</p>
+  
   <h4 class="push20v">Prerequisites</h4>
 
   <ol>
