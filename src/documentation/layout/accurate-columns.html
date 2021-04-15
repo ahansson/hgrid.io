@@ -21,10 +21,17 @@ title: Accurate Content Columns
   </p>
 
   <p>
-    <strong>hgrid</strong> splits the viewport into 24 equal fractional units. A full width column is called
-    <code>.column-1</code> and spans all 24 units. <code>.column-2</code> spans 12 units, or 50% of the
-    viewport width. <code>.column-3</code> spans 8 units (33,33%), and so on up to
-    <code>.column-24</code>. By combining fractional units we now get a precisely controlled layout grid:
+    <strong>hgrid</strong> splits the viewport into 24 equal fractional units.
+  </p>
+
+  <ul>
+    <li><code>.column-1</code> is a full width column that spans all 24 units.</li>
+    <li><code>.column-2</code> spans 12 units, or 50% of the viewport width.</li>
+    <li><code>.column-3</code> spans 8 units (33,33%) ...</li>
+    <li>... and so on up to <code>.column-24</code>.</li>
+  </ul>
+  <p>
+ By combining fractional units we now get a precisely controlled layout grid:
   </p>
   <pre class="language-html filename" data-file="html">
 <code>&lt;div class="row">
@@ -43,11 +50,6 @@ title: Accurate Content Columns
     The code above results in one column spanning 2/4 and two columns spanning 1/4, for a
     total of 4/4, or 100%, of the parent container.</p>
 
-  <p class="note mb-40"><strong>Note:</strong> These columns would normally stack vertically on handheld devices
-    (viewports < 769px). For the sake of the examples on this page, we have applied <code>.no-stack</code>
-      after <code>.row</code> so they make sense for readers on any device.
-  </p>
-
   <div class="row no-stack">
     <div class="column-2">
       <p>.column-2</p>
@@ -60,19 +62,23 @@ title: Accurate Content Columns
     </div>
   </div>
 
+  <p class="note mb-40">
+    <strong>Note:</strong> These columns would normally stack vertically on devices with 
+    with viewport width up to 768 pixels. For the sake of the examples on this page, we have applied 
+    <code>.no-stack</code> after <code>.row</code> so they make sense for readers on any device.
+  </p>
+
   <p>The default breakpoint where columns stack can be overridden by modifying hgrid's
-    <code>$stack-point</code> variable (read more <a href="/documentation/integrate/">here</a>). You can also override it by
-    adding an alternative breakpoint with <code>$custom-stack-point</code> and the class <code>.custom-stack</code> after the
-    <code>.row</code> class.
+    <code>$stack-point</code> variable (read more about <a href="/documentation/variables/">variables</a>). You can also override 
+    it by adding an alternative breakpoint value to <code>$custom-stack-point</code> and the class <code>.custom-stack</code> 
+    after the <code>.row</code> class.
   </p>
 
   <p>
     Containers can be nested inside of each other as long as you wrap each
-    level in a new <code>.row</code>. If you nest a
-    <code>.column-2</code> inside of another <code>.column-2</code>, the width
-    of the inner column will be half of the outer. The parent element always
-    acts as its children's new 'viewport' context and is fractionable into 24
-    equal parts.
+    level in a new <code>.row</code>. If you nest a <code>.column-2</code> inside of 
+    another <code>.column-2</code>, the width of the inner column will be half of the outer. The parent 
+    element always acts as its children's new 'viewport' context and is fractionable into 24 equal parts.
   </p>
 
   <p>
@@ -109,6 +115,11 @@ title: Accurate Content Columns
     As seen here, if we nest two <code>.column-2</code> inside of another <code>.column-2</code>,
     the width of the inner columns will be half of the outer one. For each level we nest, the parent element
     act as the new "viewport" width to be split in 24 <strong>hgrid</strong> units.
+  </p>
+
+  <p>
+    The columns don't have to add up to 24 units. You can use <code>.column-fill</code> to fill the
+    remaining horizontal space.
   </p>
 
   <div class="row mt-60 no-stack">
@@ -247,15 +258,94 @@ title: Accurate Content Columns
   </div>
 
   <p>
-    The accurate columns don't have to add up to 24 units. You can use <code>.column-fill</code> to fill the
-    remaining horizontal space.
-  </p>
-
-  <p>
-    If you happen to fill a <code>.row</code> with columns adding up to more than 24 units, each will
-    be squeezed to fit while preserving their proportions relative to their siblings. A squeezed
+    If you fill a <code>.row</code> with columns adding up to more than 24 units, each will
+    be squeezed to fit while their proportions relative to their siblings will be preserved. A squeezed
     <code>.column-3</code> is still twice as wide as a squeezed <code>.column-6</code>.
   </p>
+
+  <h5>Column Stacking</h5>
+
+  <p>
+    Accurate columns stack vertically on screens less than 769px wide. The breakpoint is determined 
+    by the <a href="http://hgrid.io/documentation/variables/">variable</a> <code>$stack-point</code> which is equal to the width set 
+    in <code>$phone-landscape</code>. You can modify this in the <code>@use</code> rule when importing <strong>hgrid</strong>. 
+    You also have access to this breakpoint through the custom property <code>--stack-point</code>.
+  </p>
+
+  <h5>Custom Stacking Breakpoint</h5>
+
+  <p>
+    Having more than one breakpoint for stacking can be useful. Configure your alternative breakpoint in <code>$custom-stack-point</code>. 
+    Then, declare <code>&lt;div class="row custom-stack-point"&gt;</code> in your HTML.
+  </p>
+
+  <h5>Preventing Stacking</h5>
+
+  <p>
+    You can prevent columns from stacking altogether with <code>.no-stack</code>. 
+    HTML: <code>&lt;div class="row no-stack"&gt;</code>.
+  </p>
+
+  <h5>Responsive Column Wrapping with <code>flex-wrap</code></h5>
+
+  <p>
+    Accurate columns will wrap on to new lines if <code>.f-wrap</code> has been added to the row as 
+    <code>&lt;div class="row f-wrap"></code> and the columns combined fill more than 100% of the row width.
+  </p>
+  <p>
+    This can happen in the following ways:
+  </p>
+
+  <ol>
+    <li>An additional media query class of <code>.{ viewport }-{ fraction }</code> (e.g. <code>.phone-4</code>) has been added to at 
+    least one of the columns, and will make the combined column width exceed 100% of the row width on specific viewports.</li>
+    <li>Min-width, or a fixed width has been added to one or more columns, and has made the combined column width exceed 100% 
+    of the row width, depending on screen size.</li>
+    <li>The columns add up to more than 100% of the row width from start.</li>
+  </ol>
+
+  <p class="note">You can optionally add <code>.no-stack</code> to the row element to prevent vertical stacking on narrow screens.</p>
+
+  <p>The media query classes <code>.{ viewport }-{ fraction }</code> will be triggered on the viewport indicated by the class name. 
+    In this example we modify one of the <code>.column-2</code> with <code>.tablet-landscape-1</code>, meaning that the column 
+    will go from taking up half of the viewport to filling up the full width on tablets in landscape mode (1024px and less). 
+    This will force the other columns to wrap on to new lines because of the <code>.f-wrap</code> on the row element.
+  </p>
+
+  <p>Let's add a different setting for <code>phone-landscape</code>. The same column now goes 
+  from 50% of the row width on laptops, to 100% on wide tablets, and down to 25% on wide phone screens. The other 
+  columns will behave the same regardless of screen size.</p>
+
+  <pre class="language-html filename" data-file="html">
+  <code>&lt;div class="row no-stack f-wrap"&gt;
+  &lt;div class="column-2 tablet-landscape-1 phone-landscape-4 padding-10 bg-gray-light">1&lt;/div&gt;
+  &lt;div class="column-2 padding-10 bg-gray-light text-center">2&lt;/div&gt;
+  &lt;div class="column-4 padding-10 bg-gray-light text-center">3&lt;/div&gt;
+  &lt;div class="column-4 padding-10 bg-gray-light text-center">4&lt;/div&gt;
+&lt;/div&gt;</code>
+  </pre>
+
+  <p>Result:</p>
+  <div class="row no-stack f-wrap">
+    <div class="column-2 tablet-landscape-1 phone-landscape-4 padding-10 bg-gray-light text-center"><small class="text-black">1</small></div>
+    <div class="column-2 padding-10 bg-gray-light text-center"><small class="text-black">2</small></div>
+    <div class="column-4 padding-10 bg-gray-light text-center"><small class="text-black">3</small></div>
+    <div class="column-4 padding-10 bg-gray-light text-center"><small class="text-black">4</small></div>
+  </div>
+
+  <p>The media query utility classes go from 1 to 24 and all viewports are covered.</p>
+
+  <pre class="language-css">
+  <code>.desktop-large-1 .... ..desktop-large-24
+.desktop-1 .... .desktop-24
+.laptop-1 .... .laptop-24
+.tablet-landscape-1 .... .tablet-landscape-24
+.tablet-portrait-1 .... .tablet-portrait-24
+.phone-landscape-1 .... .phone-landscape-24
+.phone-1 ... .phone-24</code>
+</pre>
+
+
 </main>
 
 <div class="hairline mt-40"></div>
