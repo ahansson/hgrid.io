@@ -312,39 +312,37 @@ title: Accurate Content Columns
     This will force the other columns to wrap on to new lines because of the <code>.f-wrap</code> on the row element.
   </p>
 
-  <p>Let's add a different setting for <code>phone-landscape</code>. The same column now goes 
+  <p>Let's add a setting for <code>phone-landscape</code>, too. The same column now grows 
   from 50% of the row width on laptops, to 100% on wide tablets, and down to 25% on wide phone screens. The other 
-  columns will behave the same regardless of screen size.</p>
+  columns will be unaffected.</p>
 
   <pre class="language-html filename" data-file="html">
   <code>&lt;div class="row no-stack f-wrap"&gt;
-  &lt;div class="column-2 tablet-landscape-1 phone-landscape-4 padding-10 bg-gray-light">1&lt;/div&gt;
-  &lt;div class="column-2 padding-10 bg-gray-light text-center">2&lt;/div&gt;
-  &lt;div class="column-4 padding-10 bg-gray-light text-center">3&lt;/div&gt;
-  &lt;div class="column-4 padding-10 bg-gray-light text-center">4&lt;/div&gt;
+  &lt;div class="column-2 tablet-landscape-1 phone-landscape-4">1&lt;/div&gt;
+  &lt;div class="column-2">2&lt;/div&gt;
+  &lt;div class="column-4">3&lt;/div&gt;
+  &lt;div class="column-4">4&lt;/div&gt;
 &lt;/div&gt;</code>
   </pre>
-
+ 
   <p>Result:</p>
   <div class="row no-stack f-wrap">
-    <div class="column-2 tablet-landscape-1 phone-landscape-4 padding-10 bg-gray-light text-center"><small class="text-black">1</small></div>
-    <div class="column-2 padding-10 bg-gray-light text-center"><small class="text-black">2</small></div>
-    <div class="column-4 padding-10 bg-gray-light text-center"><small class="text-black">3</small></div>
-    <div class="column-4 padding-10 bg-gray-light text-center"><small class="text-black">4</small></div>
+    <div class="column-2 tablet-landscape-1 phone-landscape-4 text-center"><p>1</p></div>
+    <div class="column-2 text-center"><p>2</p></div>
+    <div class="column-4 text-center"><p>3</p></div>
+    <div class="column-4 text-center"><p>4</p></div>
   </div>
 
-  <p>The media query utility classes go from 1 to 24 and all viewports are covered.</p>
+  <p>These media query utility classes go from 1 to 12 and all viewports except <code>laptop</code> are covered.</p>
 
   <pre class="language-css">
-  <code>.desktop-large-1 .... ..desktop-large-24
-.desktop-1 .... .desktop-24
-.laptop-1 .... .laptop-24
-.tablet-landscape-1 .... .tablet-landscape-24
-.tablet-portrait-1 .... .tablet-portrait-24
-.phone-landscape-1 .... .phone-landscape-24
-.phone-1 ... .phone-24</code>
+  <code>.desktop-large-1 ___ .desktop-large-12
+.desktop-1 ___ .desktop-12
+.tablet-landscape-1 ___ .tablet-landscape-12
+.tablet-portrait-1 ___ .tablet-portrait-12
+.phone-landscape-1 ___ .phone-landscape-12
+.phone-1 ___ .phone-12</code>
 </pre>
-
 
 </main>
 
