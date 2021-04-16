@@ -48,7 +48,8 @@ title: Accurate Content Columns
 
   <p>
     The code above results in one column spanning 2/4 and two columns spanning 1/4, for a
-    total of 4/4, or 100%, of the parent container.</p>
+    total of 4/4, or 100%, of the parent container.
+  </p>
 
   <div class="row no-stack">
     <div class="column-2">
@@ -68,11 +69,15 @@ title: Accurate Content Columns
     <code>.no-stack</code> after <code>.row</code> so they make sense for readers on any device.
   </p>
 
-  <p>The default breakpoint where columns stack can be overridden by modifying hgrid's
-    <code>$stack-point</code> variable (read more about <a href="/documentation/variables/">variables</a>). You can also override 
-    it by adding an alternative breakpoint value to <code>$custom-stack-point</code> and the class <code>.custom-stack</code> 
-    after the <code>.row</code> class.
+  <h5>Column Stacking</h5>
+
+  <p>
+    Accurate columns stack vertically on screens less than 769px wide. The breakpoint is determined 
+    by the <a href="http://hgrid.io/documentation/variables/">variable</a> <code>$stack-point</code> which is equal to the width set 
+    in <code>$phone-landscape</code>. You can modify this in the <code>@use</code> rule when importing <strong>hgrid</strong>.
   </p>
+
+  <h5>Nesting</h5>
 
   <p>
     Containers can be nested inside of each other as long as you wrap each
@@ -261,22 +266,6 @@ title: Accurate Content Columns
     If you fill a <code>.row</code> with columns adding up to more than 24 units, each will
     be squeezed to fit while their proportions relative to their siblings will be preserved. A squeezed
     <code>.column-3</code> is still twice as wide as a squeezed <code>.column-6</code>.
-  </p>
-
-  <h5>Column Stacking</h5>
-
-  <p>
-    Accurate columns stack vertically on screens less than 769px wide. The breakpoint is determined 
-    by the <a href="http://hgrid.io/documentation/variables/">variable</a> <code>$stack-point</code> which is equal to the width set 
-    in <code>$phone-landscape</code>. You can modify this in the <code>@use</code> rule when importing <strong>hgrid</strong>. 
-    You also have access to this breakpoint through the custom property <code>--stack-point</code>.
-  </p>
-
-  <h5>Custom Stacking Breakpoint</h5>
-
-  <p>
-    Having more than one breakpoint for stacking can be useful. Configure your alternative breakpoint in <code>$custom-stack-point</code>. 
-    Then, declare <code>&lt;div class="row custom-stack-point"&gt;</code> in your HTML.
   </p>
 
   <h5>Preventing Stacking</h5>
