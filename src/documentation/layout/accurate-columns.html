@@ -77,7 +77,14 @@ title: Accurate Content Columns
     in <code>$phone-landscape</code>. You can modify this in the <code>@use</code> rule when importing <strong>hgrid</strong>.
   </p>
 
-  <h5>Nesting</h5>
+  <h6>Prevent Column Stacking</h6>
+
+  <p>
+    You can avoid column stacking altogether with <code>.no-stack</code>. 
+    HTML: <code>&lt;div class="row no-stack"&gt;</code>.
+  </p>
+
+  <h5 class="push40v">Nesting</h5>
 
   <p>
     Containers can be nested inside of each other as long as you wrap each
@@ -268,13 +275,6 @@ title: Accurate Content Columns
     <code>.column-3</code> is still twice as wide as a squeezed <code>.column-6</code>.
   </p>
 
-  <h5>Preventing Stacking</h5>
-
-  <p>
-    You can prevent columns from stacking altogether with <code>.no-stack</code>. 
-    HTML: <code>&lt;div class="row no-stack"&gt;</code>.
-  </p>
-
   <h5>Responsive Column Wrapping with <code>flex-wrap</code></h5>
 
   <p>
@@ -287,10 +287,11 @@ title: Accurate Content Columns
 
   <ol>
     <li>An additional media query class of <code>.{ viewport }-{ fraction }</code> (e.g. <code>.phone-4</code>) has been added to at 
-    least one of the columns, making the combined column width exceed 100% of the row width on specific viewports.</li>
-    <li>Min-width, or a fixed width, has been added to one or more columns, and make the combined column width exceed 100% 
+    least one of the columns, making the combined column width exceed 100% of the row width on a specific viewport (in this case the 
+    <code>phone</code> viewport).</li>
+    <li>A min-width or a fixed width has been added to one or more columns in the row, making the combined column width exceed 100% 
     of the row width on certain screen sizes.</li>
-    <li>The columns add up to more than 100% of the row width from start.</li>
+    <li>The columns add up to more than 100% of the row width from the start.</li>
   </ol>
 
   <p class="note">You can optionally add <code>.no-stack</code> to the row element to prevent vertical stacking on narrow screens.</p>
