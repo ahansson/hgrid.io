@@ -1,4 +1,4 @@
-/*! hgrid v0.4.6-alpha | MIT License | github.com/ahansson/hgrid-css !*/
+/*! hgrid v0.4.7-alpha | MIT License | github.com/ahansson/hgrid-css !*/
 :root {
   --theme-color-primary: #66008d;
   --theme-color-secondary: #9139b4;
@@ -251,7 +251,9 @@ button,
 select,
 input[type=submit],
 input[type=radio],
-input[type=checkbox] [role=button],
+input[type=checkbox],
+input[type=reset],
+[role=button],
 [type=button] {
   cursor: pointer;
 }
@@ -1030,10 +1032,10 @@ input[type=file] {
 }
 
 button,
-[type=button]:not(:disabled),
-[type=reset]:not(:disabled),
-[type=submit]:not(:disabled),
-[type=file]:not(:disabled) {
+[type=button],
+[type=reset],
+[type=submit],
+[type=file] {
   color: #fff;
   border: 2px solid #66008d;
   background: #66008d;
@@ -1044,89 +1046,132 @@ button,
   width: max-content;
   margin-bottom: 2rem;
 }
-button.outline, button:not(:disabled):hover,
-[type=button]:not(:disabled).outline,
-[type=button]:not(:disabled):not(:disabled):hover,
-[type=reset]:not(:disabled).outline,
-[type=reset]:not(:disabled):not(:disabled):hover,
-[type=submit]:not(:disabled).outline,
-[type=submit]:not(:disabled):not(:disabled):hover,
-[type=file]:not(:disabled).outline,
-[type=file]:not(:disabled):not(:disabled):hover {
+button.negative,
+[type=button].negative,
+[type=reset].negative,
+[type=submit].negative,
+[type=file].negative {
+  background: #fff;
+  border: 2px solid #fff;
+  color: #66008d;
+}
+button.outline, button:hover,
+[type=button].outline,
+[type=button]:hover,
+[type=reset].outline,
+[type=reset]:hover,
+[type=submit].outline,
+[type=submit]:hover,
+[type=file].outline,
+[type=file]:hover {
   background: none;
   border: 2px solid #66008d;
   color: #66008d;
 }
-button:not(:disabled).outline:hover, button:not(:disabled, .outline):active,
-[type=button]:not(:disabled):not(:disabled).outline:hover,
-[type=button]:not(:disabled):not(:disabled, .outline):active,
-[type=reset]:not(:disabled):not(:disabled).outline:hover,
-[type=reset]:not(:disabled):not(:disabled, .outline):active,
-[type=submit]:not(:disabled):not(:disabled).outline:hover,
-[type=submit]:not(:disabled):not(:disabled, .outline):active,
-[type=file]:not(:disabled):not(:disabled).outline:hover,
-[type=file]:not(:disabled):not(:disabled, .outline):active {
+button.outline:hover, button:active,
+[type=button].outline:hover,
+[type=button]:active,
+[type=reset].outline:hover,
+[type=reset]:active,
+[type=submit].outline:hover,
+[type=submit]:active,
+[type=file].outline:hover,
+[type=file]:active {
   background: #66008d;
   border: 2px solid #66008d;
   color: #fff;
 }
-button:not(:disabled).outline:active,
-[type=button]:not(:disabled):not(:disabled).outline:active,
-[type=reset]:not(:disabled):not(:disabled).outline:active,
-[type=submit]:not(:disabled):not(:disabled).outline:active,
-[type=file]:not(:disabled):not(:disabled).outline:active {
+button.outline:active,
+[type=button].outline:active,
+[type=reset].outline:active,
+[type=submit].outline:active,
+[type=file].outline:active {
   background: none;
   border: 2px solid #66008d;
   color: #66008d;
 }
+button.outline.negative, button.negative:hover,
+[type=button].outline.negative,
+[type=button].negative:hover,
+[type=reset].outline.negative,
+[type=reset].negative:hover,
+[type=submit].outline.negative,
+[type=submit].negative:hover,
+[type=file].outline.negative,
+[type=file].negative:hover {
+  background: none;
+  border: 2px solid #fff;
+  color: #fff;
+}
+button.outline.negative:hover, button.negative:active,
+[type=button].outline.negative:hover,
+[type=button].negative:active,
+[type=reset].outline.negative:hover,
+[type=reset].negative:active,
+[type=submit].outline.negative:hover,
+[type=submit].negative:active,
+[type=file].outline.negative:hover,
+[type=file].negative:active {
+  background: #fff;
+  color: #66008d;
+}
+button.outline.negative:active,
+[type=button].outline.negative:active,
+[type=reset].outline.negative:active,
+[type=submit].outline.negative:active,
+[type=file].outline.negative:active {
+  background: none;
+  border: 2px solid #fff;
+  color: #fff;
+}
 button.secondary,
-[type=button]:not(:disabled).secondary,
-[type=reset]:not(:disabled).secondary,
-[type=submit]:not(:disabled).secondary,
-[type=file]:not(:disabled).secondary {
+[type=button].secondary,
+[type=reset].secondary,
+[type=submit].secondary,
+[type=file].secondary {
   background: #9139b4;
   border: 2px solid #9139b4;
   color: #fff;
 }
-button.secondary:not(:disabled):hover,
-[type=button]:not(:disabled).secondary:not(:disabled):hover,
-[type=reset]:not(:disabled).secondary:not(:disabled):hover,
-[type=submit]:not(:disabled).secondary:not(:disabled):hover,
-[type=file]:not(:disabled).secondary:not(:disabled):hover {
+button.secondary:hover,
+[type=button].secondary:hover,
+[type=reset].secondary:hover,
+[type=submit].secondary:hover,
+[type=file].secondary:hover {
   background: none;
   border: 2px solid #9139b4;
   color: #9139b4;
 }
-button.secondary.secondary:not(:disabled):active,
-[type=button]:not(:disabled).secondary.secondary:not(:disabled):active,
-[type=reset]:not(:disabled).secondary.secondary:not(:disabled):active,
-[type=submit]:not(:disabled).secondary.secondary:not(:disabled):active,
-[type=file]:not(:disabled).secondary.secondary:not(:disabled):active {
+button.secondary.secondary:active,
+[type=button].secondary.secondary:active,
+[type=reset].secondary.secondary:active,
+[type=submit].secondary.secondary:active,
+[type=file].secondary.secondary:active {
   background: #9139b4;
   border: 2px solid #9139b4;
   color: #fff;
 }
 button:disabled, button.secondary:disabled,
-[type=button]:not(:disabled):disabled,
-[type=button]:not(:disabled).secondary:disabled,
-[type=reset]:not(:disabled):disabled,
-[type=reset]:not(:disabled).secondary:disabled,
-[type=submit]:not(:disabled):disabled,
-[type=submit]:not(:disabled).secondary:disabled,
-[type=file]:not(:disabled):disabled,
-[type=file]:not(:disabled).secondary:disabled {
+[type=button]:disabled,
+[type=button].secondary:disabled,
+[type=reset]:disabled,
+[type=reset].secondary:disabled,
+[type=submit]:disabled,
+[type=submit].secondary:disabled,
+[type=file]:disabled,
+[type=file].secondary:disabled {
   background: #ccc;
   border: 2px solid #ccc;
   color: #555;
   cursor: not-allowed;
 }
 button.outline:disabled,
-[type=button]:not(:disabled).outline:disabled,
-[type=reset]:not(:disabled).outline:disabled,
-[type=submit]:not(:disabled).outline:disabled,
-[type=file]:not(:disabled).outline:disabled {
-  background: #eee;
-  border: 2px solid #ccc;
+[type=button].outline:disabled,
+[type=reset].outline:disabled,
+[type=submit].outline:disabled,
+[type=file].outline:disabled {
+  background: none;
+  border: 2px solid #888;
   color: #888;
 }
 
@@ -2899,11 +2944,11 @@ table tfoot tr td {
   line-height: 1.6rem;
   padding: 0.2rem 1rem;
 }
-table-auto {
-  table-layout: auto;
-}
-table-fixed {
+table.layout-fixed {
   table-layout: fixed;
+}
+table.layout-auto {
+  table-layout: auto;
 }
 table.striped tbody tr td {
   border: none;
