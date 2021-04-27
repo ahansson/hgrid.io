@@ -1,0 +1,182 @@
+---
+layout: layout/docs.njk
+meta: {
+title: Tables | hgrid,
+description: Tables styling with hgrid.
+}
+title: Tables
+---
+<main>
+  <p class="intro">
+    Usable table styling out of the box.
+  </p>
+
+  <p>
+    File location: <code class="loc">sass/layout/_tables.scss</code> (<a 
+    href="https://github.com/ahansson/hgrid-css/blob/main/sass/layout/_tables.scss" 
+    target="_blank" 
+    rel="noopener">GitHub</a>)
+  </p>
+
+  <h4 class="mt-60">Basic responsive table</h4>
+
+  <p>
+    A data table with <code>auto</code> column widths, which is the browser's default rendering.
+  </p>
+
+  <table class="mt-60 mb-60">
+    <thead>
+      <tr>
+        <th>Rank</th>
+        <th>Name</th>
+        <th>Symbol</th>
+        <th>Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>2</td>
+        <td>Bitcoin</td>
+        <td>BTC</td>
+        <td>$59,239.22</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Ethereum</td>
+        <td>ETH</td>
+        <td>$2,502.18</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Binance Coin</td>
+        <td>BNB</td>
+        <td>$529.42</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>XRP</td>
+        <td>XRP</td>
+        <td>$1.41</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 class="mt-60">Fixed column widths</h4>
+
+  <p>
+    Add <code>class="layout-fixed"</code> to the table element, and every column will get the same width. Or style the first 
+    table cells with CSS in order to control each column width independently.
+  </p>
+
+  <p>Adding <code>.striped</code> helps distinguish the rows from each other.</p>
+
+  <table class="mt-60 mb-60 striped layout-fixed">
+    <thead>
+      <tr>
+        <th>Country</th>
+        <th>Capital</th>
+        <th>Currency</th>
+        <th>Population</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Norway</td>
+        <td>Oslo</td>
+        <td>Norwegian Krone (NOK)</td>
+        <td>5.45 million</td>
+      </tr>
+      <tr>
+        <td>Sweden</td>
+        <td>Stockholm</td>
+        <td>Swedish Krona (SEK)</td>
+        <td>10.15 million</td>
+      </tr>
+      <tr>
+        <td>Denmark</td>
+        <td>Copenhagen</td>
+        <td>Danish Krone</td>
+        <td>5.81 million</td>
+      </tr>
+      <tr>
+        <td>Finland</td>
+        <td>Helsinki</td>
+        <td>Euro</td>
+        <td>5.54 million</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h4 class="mt-60">Scrollable tables</h4>
+
+  <p>
+    By wrapping the table in an HTML element with a limited width and a class of <code>.scrollable-x</code>, the table will be 
+    scrollable horizontally, given that its content overflows the container width. Only tables cells, rows or columns with a max-width or a width, will at some point 
+    become bigger than the available viewport width. For vertical scrolling, use an element with <code>.scrollable-y</code> and a fixed 
+    height.
+  </p>
+
+  <div class="mb-30 scrollable-x">
+    <table>
+  <thead>
+    <tr>
+      <th>Classname</th>
+      <th>CSS rule</th>
+      <th>Comment</th>
+    </tr>
+  </thead>
+	<tbody>
+		<tr>
+			<td>.static</td>
+			<td>position: static;</td>
+			<td>Comment:</td>
+		</tr>
+		<tr>
+			<td>.absolute</td>
+			<td>position: absolute;</td>
+			<td>Comment:</td>
+		</tr>
+		<tr>
+			<td>.fixed</td>
+			<td>position: fixed;</td>
+			<td>Comment:</td>
+		</tr>
+		<tr>
+			<td>.relative</td>
+			<td>position: relative;</td>
+			<td>Comment</td>
+		</tr>
+		<tr>
+			<td>.sticky</td>
+			<td>position: sticky;</td>
+			<td>Comment</td>
+		</tr>
+		<tr>
+			<td>.position-initial</td>
+			<td>position: initial;</td>
+			<td>Comment</td>
+		</tr>
+		<tr>
+			<td>.position-inherit</td>
+			<td>position: inherit;</td>
+			<td>Comment</td>
+		</tr>
+		<tr>
+			<td>.absolute-center</td>
+			<td>left: 50%;<br>position: absolute;<br>top: 50%;<br>transform: translate(-50%, -50%);</td>
+			<td>Comment</td>
+		</tr>
+    <tfoot>
+      <tr>
+        <td>Class name</td>
+        <td>CSS rule</td>
+        <td>CSS rule</td>
+      </tr>
+    </tfoot>
+	</tbody>
+    </table>
+  </div>
+</main>
+<div class="hairline mt-40"></div>
+<p class="fl hide-phone">← <strong>Previous</strong>: <a href="/documentation/layout/positioning/">Positioning</a></p>
+<p class="fr"><strong>Next</strong>: <a href="/documentation/utilities/">Utilities</a> →</p>
