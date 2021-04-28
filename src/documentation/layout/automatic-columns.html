@@ -51,28 +51,6 @@ title: Automatic Content Columns
     column.
   </p>
 
-  <p>
-    Columns will by default stack on viewports that are less than 769px wide.
-    Breakpoints for responsiveness can be adjusted in
-    <code>_variables.scss</code> or
-    <a href="/documentation/integrate/">overwritten</a> with your own values
-    when you import <strong>hgrid</strong> as either CSS or Sass.
-  </p>
-
-  <p>
-    The default breakpoint where columns stack can be overridden by modifying
-    hgrid's
-    <code>$stack-point</code> variable (read more
-    <a href="/documentation/variables/">here</a>). You can also override it by
-    adding an alternative breakpoint value to <code>$custom-stack-point</code> and
-    the class <code>.custom-stack</code> after the <code>.row</code> class.
-  </p>
-
-  <p>
-    Use <code>.no-stack</code> on the element that holds the
-    <code>.row</code> class in order to prevent stacking.
-  </p>
-
   <p class="note mb-40">
     <strong>Note:</strong> Columns would normally stack vertically on handheld
     devices (< 769px wide). For the sake of the examples on this page we have
@@ -142,7 +120,68 @@ title: Automatic Content Columns
     </div>
   </div>
 
-  <p class="mt-40">
+  <h2 class="h4 mt-40">Remove Column Gutters</h3>
+
+  <p>
+    Remove margins between columns (aka. <em>gutters</em>) with the override class <code>.no-gutter</code> on the 
+    <code>.row</code> element. Or add it to individual <code>.column</code> elements if you want to remove gutters from 
+    only those elements.
+  </p>
+
+  <pre
+    class="language-html filename"
+    data-file="html"
+  ><code>&lt;div class="row no-gutter"&gt;
+  &lt;div class="column">&lt;/div&gt;
+  &lt;div class="column"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt!-- or -->
+
+&lt;div class="row"&gt;
+  &lt;div class="column no-gutter">&lt;/div&gt;
+  &lt;div class="column no-gutter"&gt;&lt;/div&gt;
+&lt;/div&gt;</code>
+  </pre>
+
+<p>Result:</p>
+
+  <div class="row no-gutter">
+    <div class="column">
+      <p>1</p>
+    </div>
+    <div class="column">
+      <p>2</p>
+    </div>
+  </div>
+
+  <h3 class="h4 mt-40">Stacking and Preventing Stacking</h3>
+
+  <p>
+    Columns will by default stack on viewports that are less than 769px wide.
+    Breakpoints for responsiveness can be adjusted in
+    <code>_variables.scss</code> or
+    <a href="/documentation/integrate/">overwritten</a> with your own values
+    when you import <strong>hgrid</strong> as either CSS or Sass.
+  </p>
+
+  <p>
+    The default breakpoint where columns stack can be overridden by modifying
+    hgrid's
+    <code>$stack-point</code> variable (read more
+    <a href="/documentation/variables/">here</a>). You can also override it by
+    adding an alternative breakpoint value to <code>$custom-stack-point</code> and
+    the class <code>.custom-stack</code> after the <code>.row</code> class.
+  </p>
+
+  <p>
+    Prevent stacking altogether by adding <code>.no-stack</code> on the element that holds the
+    <code>.row</code> class.
+  </p>
+
+  <h3 class="h4">Nesting</h3>
+
+  <p>
     Containers can be nested inside each other as long as you wrap each new
     level in a new <code>.row</code>.
   </p>
@@ -183,6 +222,7 @@ title: Automatic Content Columns
     outer one. For each level we nest, the parent element acts as the new
     "viewport" width to be split in 24 <strong>hgrid</strong> units.
   </p>
+
 </main>
 <div class="hairline mt-40"></div>
 <p class="fl hide-phone">

@@ -69,7 +69,7 @@ title: Accurate Content Columns
     <code>.no-stack</code> after <code>.row</code> so they make sense for readers on any device.
   </p>
 
-  <h5>Column Stacking</h5>
+  <h2 class="h4">Column Stacking</h2>
 
   <p>
     Accurate columns stack vertically on screens less than 769px wide. The breakpoint is determined 
@@ -77,14 +77,49 @@ title: Accurate Content Columns
     in <code>$phone-landscape</code>. You can modify this in the <code>@use</code> rule when importing <strong>hgrid</strong>.
   </p>
 
-  <h6>Prevent Column Stacking</h6>
+  <h3 class="h5">Prevent Column Stacking</h6>
 
   <p>
     You can avoid column stacking altogether with <code>.no-stack</code>. 
     HTML: <code>&lt;div class="row no-stack"&gt;</code>.
   </p>
 
-  <h5 class="push40v">Nesting</h5>
+
+  <h3 class="h4 mt-40">Remove Column Gutters</h3>
+
+  <p>
+    Remove margins between columns (aka. <em>gutters</em>) with the override class <code>.no-gutter</code> on the element that  
+    holds the <code>.row</code> class. Or add it to individual columns if you want to remove gutters from only certain elements.
+  </p>
+
+  <pre
+    class="language-html filename"
+    data-file="html"
+  ><code>&lt;div class="row no-gutter"&gt;
+  &lt;div class="column-2">&lt;/div&gt;
+  &lt;div class="column-2"&gt;&lt;/div&gt;
+&lt;/div&gt;
+
+&lt!-- or -->
+
+&lt;div class="row"&gt;
+  &lt;div class="column-2 no-gutter">&lt;/div&gt;
+  &lt;div class="column-2 no-gutter"&gt;&lt;/div&gt;
+&lt;/div&gt;</code>
+  </pre>
+
+<p>Result:</p>
+
+  <div class="row no-gutter">
+    <div class="column-2">
+      <p>column-2</p>
+    </div>
+    <div class="column-2">
+      <p>column-2</p>
+    </div>
+  </div>
+
+  <h3 class="h4 push40v">Nesting</h5>
 
   <p>
     Containers can be nested inside of each other as long as you wrap each
@@ -134,7 +169,13 @@ title: Accurate Content Columns
     remaining horizontal space.
   </p>
 
-  <div class="row mt-60 no-stack">
+    <p class="note mb-40">
+    <strong>Note:</strong> The layout below would normally stack vertically on devices with 
+    with viewport width up to 768 pixels. For the sake of the example we have applied 
+    <code>.no-stack</code> after <code>.row</code> so it makes sense for readers on any device.
+  </p>
+
+  <div class="row no-stack">
     <div class="column-24">
       <p>1</p>
     </div>
@@ -297,7 +338,7 @@ title: Accurate Content Columns
   <p class="note">You can optionally add <code>.no-stack</code> to the row element to prevent vertical stacking on narrow screens.</p>
 
   <p>The media query classes <code>.{ viewport }-{ fraction }</code> will be triggered on the viewport indicated by the class name. 
-    In this example we modify one of the <code>.column-2</code> with <code>.tablet-landscape-1</code>, meaning that the column 
+    In the example below we modify one of the <code>.column-2</code> with <code>.tablet-landscape-1</code>, meaning that the column 
     will go from taking up half of the viewport to filling up the full width on tablets in landscape mode (1024px and less). 
     This will force the other columns to wrap on to new lines because of the <code>.f-wrap</code> on the row element.
   </p>
