@@ -8,7 +8,7 @@ title: Tables
 ---
 <main>
   <p class="intro">
-    Usable table styling out of the box.
+    Useful table styling out of the box.
   </p>
 
   <p>
@@ -18,13 +18,13 @@ title: Tables
     rel="noopener">GitHub</a>)
   </p>
 
-  <h4 class="mt-60">Basic responsive table</h4>
+  <h2 class="h4 mt-60">Basic responsive table</h2>
 
   <p>
     A data table with <code>auto</code> column widths, which is the browser's default rendering.
   </p>
 
-  <table class="mt-60 mb-60">
+  <table class="mt-20 mb-60">
     <thead>
       <tr>
         <th>Rank</th>
@@ -61,16 +61,16 @@ title: Tables
     </tbody>
   </table>
 
-  <h4 class="mt-60">Fixed column widths</h4>
+  <h3 class="h4 mt-60">Fixed column widths</h3>
 
   <p>
-    Add <code>class="layout-fixed"</code> to the table element, and every column will get the same width. Or style the first 
-    table cells with CSS in order to control each column width independently.
+    Add <code>class="layout-fixed"</code> to the table element, and every column will get the same width. Or style the 
+    table cells on the first row in order to control the column widths independently.
   </p>
 
-  <p>Adding <code>.striped</code> helps distinguish the rows from each other.</p>
+  <p>Adding <code>.striped</code> to <code>table</code> helps distinguish rows from each other.</p>
 
-  <table class="mt-60 mb-60 striped layout-fixed">
+  <table class="mt-20 mb-60 striped layout-fixed">
     <thead>
       <tr>
         <th>Country</th>
@@ -95,89 +95,161 @@ title: Tables
       <tr>
         <td>Denmark</td>
         <td>Copenhagen</td>
-        <td>Danish Krone</td>
+        <td>Danish Krone (DKK)</td>
         <td>5.81 million</td>
       </tr>
       <tr>
         <td>Finland</td>
         <td>Helsinki</td>
-        <td>Euro</td>
+        <td>Euro (EUR)</td>
         <td>5.54 million</td>
       </tr>
     </tbody>
   </table>
 
-  <h4 class="mt-60">Scrollable tables</h4>
+  <h4 class="mt-60">Table Scroll</h4>
 
   <p>
-    By wrapping the table in an HTML element with a limited width and a class of <code>.scrollable-x</code>, the table will be 
-    scrollable horizontally, given that its content overflows the container width. Only table cells, rows or columns with a max-width 
-    or a width, will at a certain point grow larger than the available container width.
-  </p> 
-    <p>
-    For vertical scrolling, use an element with <code>.scrollable-y</code> and a fixed height.
+    By wrapping the table in a container with a limited width and a class of <code>.scrollable-x</code>, it will be 
+    scrollable horizontally – as long as its content overflows the container width. Only a table, table cells, rows or columns 
+    with a max-width or a fixed width will contribute to the table growing larger than the scroll container.
   </p>
 
-  <div class="mb-30 scrollable-x">
-    <table>
-  <thead>
-    <tr>
-      <th>Classname</th>
-      <th>CSS rule</th>
-      <th>Comment</th>
-    </tr>
-  </thead>
-	<tbody>
-		<tr>
-			<td>.static</td>
-			<td>position: static;</td>
-			<td>Comment:</td>
-		</tr>
-		<tr>
-			<td>.absolute</td>
-			<td>position: absolute;</td>
-			<td>Comment:</td>
-		</tr>
-		<tr>
-			<td>.fixed</td>
-			<td>position: fixed;</td>
-			<td>Comment:</td>
-		</tr>
-		<tr>
-			<td>.relative</td>
-			<td>position: relative;</td>
-			<td>Comment</td>
-		</tr>
-		<tr>
-			<td>.sticky</td>
-			<td>position: sticky;</td>
-			<td>Comment</td>
-		</tr>
-		<tr>
-			<td>.position-initial</td>
-			<td>position: initial;</td>
-			<td>Comment</td>
-		</tr>
-		<tr>
-			<td>.position-inherit</td>
-			<td>position: inherit;</td>
-			<td>Comment</td>
-		</tr>
-		<tr>
-			<td>.absolute-center</td>
-			<td>left: 50%;<br>position: absolute;<br>top: 50%;<br>transform: translate(-50%, -50%);</td>
-			<td>Comment</td>
-		</tr>
-    <tfoot>
-      <tr>
-        <td>Class name</td>
-        <td>CSS rule</td>
-        <td>CSS rule</td>
-      </tr>
-    </tfoot>
-	</tbody>
+  <p>
+    The following example table scrolls horizontally, and includes a <code>tfoot</code> element. This can be practical for long lists.
+    The footer gets basic <strong>hgrid</strong> styling out of the box. We have added a dotted border in order to show 
+    the container limit:
+  </p>
+
+  <div class="mb-30 demo-scrolltable-x scrollable-x border-right-gray-dotted">
+    <table style="width:100rem;">
+      <thead>
+        <tr>
+          <th>Artist</th>
+          <th>Born</th>
+          <th>Specialty</th>
+          <th>City</th>
+          <th>Comment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Matthieu Chedi</td>
+          <td>1971</td>
+          <td>Falsetto and big hair</td>
+          <td>Paris</td>
+          <td>Artist nickname: -M-</td>
+        </tr>
+        <tr>
+          <td>Francis Cabrel</td>
+          <td>1953</td>
+          <td>French folk/blues/country</td>
+          <td>Astaffort</td>
+          <td>Famous song: Je l'aime a mourir</td>
+        </tr>
+        <tr>
+          <td>Vanessa Paradis</td>
+          <td>1972</td>
+          <td>Child prodigy</td>
+          <td>Saint-Maur-des-Fossés</td>
+          <td>Famous song: Joe le taxi</td>
+        </tr>
+        <tr>
+          <td>JoeyStarr</td>
+          <td>1967</td>
+          <td>Rap (NTM)</td>
+          <td>Saint-Denis</td>
+          <td>Real name: Didier Morville</td>
+        </tr>
+        <tr>
+          <td>Isabelle Geoffroy</td>
+          <td>1980</td>
+          <td>Scat singing</td>
+          <td>Tours</td>
+          <td>Artist name: Zaz</td>
+        </tr>
+        <tfoot>
+          <tr>
+            <td>Artist</td>
+            <td>Born</td>
+            <td>Specialty</td>
+            <td>City</th>
+            <td>Comment</td>
+          </tr>
+        </tfoot>
+      </tbody>
     </table>
   </div>
+  <p>
+    For vertical scrolling, wrap the table in a container with <code>.scrollable-y</code> and a fixed height 
+    (border added to the container for clarity).
+  </p>
+
+  <div class="mb-30 padding-10 scrollable-y border-gray-dark" style="height:15rem;">
+    <table>
+      <thead>
+        <tr>
+          <th>Artist</th>
+          <th>Born</th>
+          <th>Specialty</th>
+          <th>City</th>
+          <th>Comment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Matthieu Chedi</td>
+          <td>1971</td>
+          <td>Falsetto and big hair</td>
+          <td>Paris</td>
+          <td>Artist nickname: -M-</td>
+        </tr>
+        <tr>
+          <td>Francis Cabrel</td>
+          <td>1953</td>
+          <td>French folk/blues/country</td>
+          <td>Astaffort</td>
+          <td>Famous song: Je l'aime a mourir</td>
+        </tr>
+        <tr>
+          <td>Vanessa Paradis</td>
+          <td>1972</td>
+          <td>Child prodigy</td>
+          <td>Saint-Maur-des-Fossés</td>
+          <td>Famous song: Joe le taxi</td>
+        </tr>
+        <tr>
+          <td>JoeyStarr</td>
+          <td>1967</td>
+          <td>Rap (NTM)</td>
+          <td>Saint-Denis</td>
+          <td>Real name: Didier Morville</td>
+        </tr>
+        <tr>
+          <td>Isabelle Geoffroy</td>
+          <td>1980</td>
+          <td>Scat singing</td>
+          <td>Tours</td>
+          <td>Artist name: Zaz</td>
+        </tr>
+        <tfoot>
+          <tr>
+            <td>Artist</td>
+            <td>Born</td>
+            <td>Specialty</td>
+            <td>City</th>
+            <td>Comment</td>
+          </tr>
+        </tfoot>
+      </tbody>
+    </table>
+  </div>
+
+  <p>
+    Combine <code>.scrollable-x</code> and <code>.scrollable-y</code> if you want the table to scroll both horizontally and 
+    vertically.
+  </p>
+
 </main>
 <div class="hairline mt-40"></div>
 <p class="fl hide-phone">← <strong>Previous</strong>: <a href="/documentation/layout/positioning/">Positioning</a></p>

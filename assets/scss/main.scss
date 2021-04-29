@@ -20,6 +20,9 @@
   --transition-duration: 0.2s;
   --border-light-dotted: var(--bg-gray-light);
   --border-light-solid: var(--bg-gray-light);
+  --table-row-even: #eee;
+  --table-row-hover: #fff6dd;
+  --tfoot-bg: #d4d4d4;
   --menu-border: #d4d4d4;
   --note-border: #9ccaff;
   --note-bg: #d7eeff;
@@ -46,6 +49,9 @@
   --inline-code-bg: #391e54;
   --border-light-dotted: #2c3868;
   --border-light-solid: #191f35;
+  --table-row-even: #191f35;
+  --table-row-hover: #f5f0e345;
+  --tfoot-bg: #201d3f;
   --menu-border: #171244;
   --note-border: #31278f;
   --note-bg: #130f40;
@@ -409,6 +415,10 @@ table {
   tbody tr td {
     border-bottom: 1px solid var(--border-light-solid);
   }
+
+  tfoot tr td {
+    background: var(--tfoot-bg);
+  }
 }
 
 .demo-barchart {
@@ -492,18 +502,26 @@ table {
 article.demo table.striped {
 
   tbody tr:nth-child(even) {
-    background: var(--border-light-solid);
+    background: var(--table-row-even);
     border-bottom: 1px dotted var(--border-light-solid);
   }
   
   tbody tr:nth-child(even):hover {
-    background: #e1dae5;
+    background: var(--table-row-hover);
   }
   
   tbody tr:nth-child(odd):hover {
-    background: #f5f0e3;
+    background: var(--table-row-hover);
     border-bottom: 1px dotted var(--border-light-solid);
   }
+}
+
+.scrollable-y {
+  overflow-y: scroll;
+}
+
+.demo-scrolltable-x {
+  width: 80%;
 }
 
 footer {
@@ -689,6 +707,9 @@ footer {
   }
   .pitch .column {
     margin-bottom: 2.4rem;  
+  }
+  .demo-scrolltable-x {
+    width: 100%;
   }
 }
 
