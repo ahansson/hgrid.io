@@ -39,7 +39,7 @@
     "@11ty/eleventy": "^0.12.1",
     "autoprefixer": "^10.2.5",
     "hgrid-css": "^0.5.0-beta",
-    "postcss": "^8.2.9",
+    "postcss": "^8.2.13",
     "postcss-cli": "^8.3.1",
     "sass": "^1.32.12",
     "sass-loader": "^11.0.1"
