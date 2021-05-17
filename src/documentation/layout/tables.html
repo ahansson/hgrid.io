@@ -21,7 +21,8 @@ title: Tables
   <h2 class="h4 mt-60">Basic responsive table</h2>
 
   <p>
-    A data table with <code>auto</code> column widths, which is the browser's default rendering.
+    A data table with <code>auto</code> column widths, which is the browser's default rendering. 
+    No <strong>hgrid</strong> classes needed here.
   </p>
 
   <table class="mt-20 mb-60">
@@ -64,11 +65,16 @@ title: Tables
   <h3 class="h4 mt-60">Fixed column widths</h3>
 
   <p>
-    Add <code>class="layout-fixed"</code> to the table element, and every column will get the same width. Or style the 
-    table cells on the first row in order to control the column widths independently.
+    Add <code>.layout-fixed</code> to the <code>table</code> element. Now every column will have the same width. You can also choose to 
+    style the table cells on the first row in order to control the column widths independently.
   </p>
 
   <p>Adding <code>.striped</code> to <code>table</code> helps distinguish rows from each other.</p>
+
+  <pre class="language-html mt-20 mb-20 filename" data-file="html">
+<code>&lt;table class="layout-fixed striped">
+  &lt;!-- table rows here -->
+&lt;/table></code></pre>
 
   <table class="mt-20 mb-60 striped layout-fixed">
     <thead>
@@ -117,11 +123,28 @@ title: Tables
 
   <p>
     The following example table scrolls horizontally, and includes a <code>tfoot</code> element. This can be practical for long lists.
-    The footer gets basic <strong>hgrid</strong> styling out of the box. We have added a dotted border in order to show 
-    the container limit:
+    The footer gets basic <strong>hgrid</strong> styling out of the box.
   </p>
 
-  <div class="mb-30 demo-scrolltable-x scrollable-x border-right-gray-dotted">
+  <pre class="language-html mt-20 mb-20 filename" data-file="html">
+<code>&lt;div class="scrollable-x">
+  &lt;table>
+    &lt;thead>
+      &lt;!-- table head rows here -->
+    &lt;/thead>
+      &lt;!-- table rows here -->
+    &lt;tfoot>
+      &lt;!-- table footer rows here -->
+    &lt;/tfoot>
+  &lt;/table>
+&lt;/div></code></pre>
+
+  <p class="push30v">
+    Here we have set a fixed container width to make the table scrollable, and added a dotted border in order to show the 
+    container limit:
+  </p>
+
+  <div class="push40v mb-30 demo-scrolltable-x scrollable-x border-right-gray-dotted">
     <table style="width:100rem;">
       <thead>
         <tr>
@@ -138,7 +161,7 @@ title: Tables
           <td>1971</td>
           <td>Falsetto and big hair</td>
           <td>Paris</td>
-          <td>Artist nickname: -M-</td>
+          <td>Artist name: -M-</td>
         </tr>
         <tr>
           <td>Francis Cabrel</td>
@@ -155,11 +178,11 @@ title: Tables
           <td>Famous song: Joe le taxi</td>
         </tr>
         <tr>
-          <td>JoeyStarr</td>
+          <td>Didier Morville</td>
           <td>1967</td>
           <td>Rap (NTM)</td>
           <td>Saint-Denis</td>
-          <td>Real name: Didier Morville</td>
+          <td>Artist name: JoeyStarr</td>
         </tr>
         <tr>
           <td>Isabelle Geoffroy</td>
@@ -181,8 +204,8 @@ title: Tables
     </table>
   </div>
   <p>
-    For vertical scrolling, wrap the table in a container with <code>.scrollable-y</code> and a fixed height 
-    (border added to the container for clarity).
+    For vertical scrolling, wrap the table in a container with <code>.scrollable-y</code> and a fixed height. 
+    (Border added to the container for clarity).
   </p>
 
   <div class="mb-30 padding-10 scrollable-y border-gray-dark" style="height:15rem;">
@@ -232,15 +255,6 @@ title: Tables
           <td>Tours</td>
           <td>Artist name: Zaz</td>
         </tr>
-        <tfoot>
-          <tr>
-            <td>Artist</td>
-            <td>Born</td>
-            <td>Specialty</td>
-            <td>City</th>
-            <td>Comment</td>
-          </tr>
-        </tfoot>
       </tbody>
     </table>
   </div>
