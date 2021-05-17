@@ -7,11 +7,6 @@ description: Positioning and layout adjustments with hgrid classes.
 title: Positioning
 ---
 <main>
-  <h3 class="mt-30">
-    <span id="push-and-pull" class="sublink"></span>
-    Push and pull
-  </h3>
-
   <p>
     File location: <code class="loc">sass/layout/sass/layout/helpers/_adjustment.scss</code> (<a 
     href="https://github.com/ahansson/hgrid-css/blob/main/sass/layout/helpers/_adjustment.scss" 
@@ -19,14 +14,26 @@ title: Positioning
     rel="noopener">GitHub</a>)
   </p>
 
-  <p>Push and pull classes can be used to fine tune the position of HTML elements.</p>
-    
-  <p>We use two methods: <code>push</code> and <code>pull</code> classes, or <code>translate-push</code> 
-    and <code>translate-pull</code> classes. Push/pull will influence sibling element(s) while translate-push/-pull will 
-    move the element independently of its surroundings.
+  <h3 class="mt-30">
+    <span id="push-and-pull" class="sublink"></span>
+    Push and pull
+  </h3>
+
+  <p>Push and pull classes can be used to fine tune the position of HTML elements. We use two methods:</p> 
+  
+  <ul>
+    <li><code>push</code> and <code>pull</code></li>
+    <li><code>translate-push</code> and <code>translate-pull</code></li>
+  </ul>
+  
+  <p>
+    Push/pull will influence sibling element(s), while translate-push/-pull will 
+    move the element independently of its surroundings. The latter requires that the element has is a block level element. To achieve this 
+    you can add <code>.block</code> or <code>.inline-block</code> to the element. Translate-push/pull is very useful for pixel 
+    perfect positioning of – for example – icons (svg/png) relative to other page elements.
   </p>
 
-  <div class="mb-30 scrollable-x">
+  <div class="mb-30 mt-60 scrollable-x">
   <table style="min-width: 40rem;">
     <thead>
       <tr>
@@ -122,8 +129,6 @@ title: Positioning
   </div>
 
   <h3 class="mt-60">Positions</h3>
-
-  <p>File location <code class="loc">layout/helpers/_adjustments.scss</code></p>
 
   <div class="mb-30 scrollable-x">
   <table style="min-width: 40rem;">
