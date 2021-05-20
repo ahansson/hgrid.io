@@ -6,18 +6,24 @@ description: Utility classes in hgrid
 }
 title: Utilities
 ---
+
 <main>
   <div class="group">
-    <h3 class="mt-30">Background Utilities</h3>
+    <h2 class="h3 mt-30">
+      <span id="background" class="sublink"></span>
+      Background
+    </h2>
+    <p>
+      File location:
+      <code class="loc">sass/layout/helpers/_background.scss</code> (<a
+        href="https://github.com/ahansson/hgrid-css/blob/main/sass/layout/helpers/_background.scss"
+        target="_blank"
+        rel="noopener"
+        >GitHub</a
+      >)
+    </p>
 
-  <p>
-    File location: <code class="loc">sass/layout/helpers/_background.scss</code> (<a 
-    href="https://github.com/ahansson/hgrid-css/blob/main/sass/layout/helpers/_background.scss" 
-    target="_blank" 
-    rel="noopener">GitHub</a>)
-  </p>
-
-  <h4 class="mt-60">Background Colors</h4>
+    <h4 class="mt-60">Background Colors</h4>
 
     <div class="row mt-40 padding-bottom-10 border-bottom-light">
       <div class="column-4 bold">CSS</div>
@@ -30,12 +36,16 @@ title: Utilities
     </div>
     <div class="row">
       <div class="column-4"><code>.bg-gray-lighter</code></div>
-      <div class="column-2 bg-gray-lighter text-center border-gray-light">&nbsp;</div>
+      <div class="column-2 bg-gray-lighter text-center border-gray-light">
+        &nbsp;
+      </div>
       <div class="column"></div>
     </div>
     <div class="row">
       <div class="column-4"><code>.bg-gray-light</code></div>
-      <div class="column-2 bg-gray-light text-center border-gray-light">&nbsp;</div>
+      <div class="column-2 bg-gray-light text-center border-gray-light">
+        &nbsp;
+      </div>
       <div class="column"></div>
     </div>
     <div class="row">
@@ -45,12 +55,16 @@ title: Utilities
     </div>
     <div class="row">
       <div class="column-4"><code>.bg-gray-dark</code></div>
-      <div class="column-2 bg-gray-dark text-center border-gray-light">&nbsp;</div>
+      <div class="column-2 bg-gray-dark text-center border-gray-light">
+        &nbsp;
+      </div>
       <div class="column"></div>
     </div>
     <div class="row">
       <div class="column-4"><code>.bg-gray-darker</code></div>
-      <div class="column-2 bg-gray-darker text-center border-gray-light">&nbsp;</div>
+      <div class="column-2 bg-gray-darker text-center border-gray-light">
+        &nbsp;
+      </div>
       <div class="column"></div>
     </div>
     <div class="row">
@@ -61,109 +75,133 @@ title: Utilities
     <div class="row mt-60">
       <div class="column-4"><code>.bg-light</code></div>
       <div class="column-2 bg-light text-center border-gray-light">&nbsp;</div>
-      <div class="column"><small class="text-gray-dark">White default, customizable</small></div>
+      <div class="column">
+        <small class="text-gray-dark">White default, customizable</small>
+      </div>
     </div>
 
     <div class="row">
       <div class="column-4"><code>.bg-dark</code></div>
       <div class="column-2 bg-dark text-center border-gray-light">&nbsp;</div>
-      <div class="column"><small class="text-gray-dark">Black default, customizable</small></div>
+      <div class="column">
+        <small class="text-gray-dark">Black default, customizable</small>
+      </div>
+    </div>
+
+    <h4 class="mt-60">Miscellaneous Background Utilities</h4>
+
+    <div class="scrollable-y mt-20">
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 36%">Classname</th>
+            <th style="width: 36%">CSS rule</th>
+            <th style="width: 28%">Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>.bg-fixed</code></td>
+            <td>background-attachment: fixed;</td>
+            <td>Background stays put relative to the viewport</td>
+          </tr>
+          <tr>
+            <td><code>.bg-local</code></td>
+            <td>background-attachment: local;</td>
+            <td>Background scrolls if the element content is scrollable.</td>
+          </tr>
+          <tr>
+            <td><code>.bg-pos-top</code></td>
+            <td>background-position: top;</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>.bg-pos-bottom</code></td>
+            <td>background-position: bottom;</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>.bg-pos-right</code></td>
+            <td>background-position: right;</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>.bg-pos-left</code></td>
+            <td>background-position: left;</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>.bg-pos-center</code></td>
+            <td>background-position: center;</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>.bg-repeat-x</code></td>
+            <td>background-repeat: repeat-x;</td>
+            <td>Repeats background image horizontally</td>
+          </tr>
+          <tr>
+            <td><code>.bg-repeat-y</code></td>
+            <td>background-repeat: repeat-y;</td>
+            <td>Repeats background image vertically</td>
+          </tr>
+          <tr>
+            <td><code>.bg-repeat-space</code></td>
+            <td>background-repeat: space;</td>
+            <td>
+              Background repeated as many times as allowed by the element
+              width/height
+            </td>
+          </tr>
+          <tr>
+            <td><code>.bg-repeat-round</code></td>
+            <td>background-repeat: round;</td>
+            <td>
+              Background repeated without gaps as many times as allowed by the
+              element width/height
+            </td>
+          </tr>
+          <tr>
+            <td><code>.bg-repeat-none</code></td>
+            <td>background-repeat: no-repeat;</td>
+            <td>Background is not repeated</td>
+          </tr>
+          <tr>
+            <td><code>.bg-size-cover</code></td>
+            <td>background-size: cover;</td>
+            <td>Responsively fill element with the background</td>
+          </tr>
+          <tr>
+            <td><code>.bg-size-contain</code></td>
+            <td>background-size: contain;</td>
+            <td>
+              Background is fitted to the element so that it's always fully
+              visible
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
-  <h4 class="mt-60">Miscellaneous Background Utilities</h4>
-
-  <div class="group scrollable-y mt-20">
-    <table>
-      <thead>
-        <tr>
-          <th style="width: 36%">Classname</th>
-          <th style="width: 36%">CSS rule</th>
-          <th style="width: 28%">Comment</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><code>.bg-fixed</code></td>
-          <td>background-attachment: fixed;</td>
-          <td>Background stays put relative to the viewport</td>
-        </tr>
-        <tr>
-          <td><code>.bg-local</code></td>
-          <td>background-attachment: local;</td>
-          <td>Background scrolls if the element content is scrollable.</td>
-        </tr>
-        <tr>
-          <td><code>.bg-pos-top</code></td>
-          <td>background-position: top;</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td><code>.bg-pos-bottom</code></td>
-          <td>background-position: bottom;</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td><code>.bg-pos-right</code></td>
-          <td>background-position: right;</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td><code>.bg-pos-left</code></td>
-          <td>background-position: left;</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td><code>.bg-pos-center</code></td>
-          <td>background-position: center;</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td><code>.bg-repeat-x</code></td>
-          <td>background-repeat: repeat-x;</td>
-          <td>Repeats background image horizontally</td>
-        </tr>
-        <tr>
-          <td><code>.bg-repeat-y</code></td>
-          <td>background-repeat: repeat-y;</td>
-          <td>Repeats background image vertically</td>
-        </tr>
-        <tr>
-          <td><code>.bg-repeat-space</code></td>
-          <td>background-repeat: space;</td>
-          <td>Background repeated as many times as allowed by the element width/height</td>
-        </tr>
-        <tr>
-          <td><code>.bg-repeat-round</code></td>
-          <td>background-repeat: round;</td>
-          <td>Background repeated without gaps as many times as allowed by the element width/height</td>
-        </tr>
-        <tr>
-          <td><code>.bg-repeat-none</code></td>
-          <td>background-repeat: no-repeat;</td>
-          <td>Background is not repeated</td>
-        </tr>
-        <tr>
-          <td><code>.bg-size-cover</code></td>
-          <td>background-size: cover;</td>
-          <td>Responsively fill element with the background</td>
-        </tr>
-        <tr>
-          <td><code>.bg-size-contain</code></td>
-          <td>background-size: contain;</td>
-          <td>Background is fitted to the element so that it's always fully visible</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-
-  <h3 class="mt-30">Lines and borders</h3>
-
-  <p>File location: <code class="loc">layout/helpers/_separation.scss</code></p>
-
   <div class="group">
-    <h5 class="mt-30">Rulers</h5>
+  <h2 class="h3 mt-30">
+    <span id="lines-and-borders" class="sublink"></span>
+      Lines & Borders
+  </h2>
+
+  <p>File location: <code class="loc">layout/helpers/_separation.scss</code> (<a 
+      href="https://github.com/ahansson/hgrid-css/blob/main/sass/layout/helpers/_separation.scss"
+      target="_blank"
+      rel="noopener"
+      >GitHub
+      </a>)
+  </p>
+
+    <h3 class="h4 mt-30">Rulers</h3>
+
+    <code>&lt;hr></code>
+    <hr class="margin-right-150">
 
     <code>.hairline</code>
     <div class="hairline push10v margin-right-150"></div>
@@ -172,16 +210,19 @@ title: Utilities
     <div class="hairline-darker push10v margin-right-150"></div>
 
     <code>hr</code>
-    <hr class="horizontal-line push10v margin-right-150">
-  </div>
+    <hr class="horizontal-line push10v margin-right-150" />
 
-  <div class="group">
-    <h5>Borders</h5>
-    <p><code>.border-gray-light</code> <code>.border-dark</code> <code>.border-transparent</code></p>
+    <h4>Borders</h4>
+    <p>
+      <code>.border-gray-light</code> <code>.border-dark</code>
+      <code>.border-transparent</code>
+    </p>
 
     <div class="row padding-right-150">
       <div class="column-2 border-gray-light">
-        <small class="block mb-0 text-center padding-20">.border-gray-light</small>
+        <small class="block mb-0 text-center padding-20"
+          >.border-gray-light</small
+        >
       </div>
       <div class="column-2 border-dark">
         <small class="block mb-0 text-center padding-20">.border-dark</small>
@@ -193,17 +234,32 @@ title: Utilities
     <div class="column">
       <h5 class="mt-20">Circle shape</h5>
       <code>.circle</code>
-      <img class="circle demo mb-40" src="/assets/img/portrait.jpg" alt="portrait" loading="lazy" />
+      <img
+        class="circle demo mb-40"
+        src="/assets/img/portrait.jpg"
+        alt="portrait"
+        loading="lazy"
+      />
     </div>
     <div class="column">
       <h5 class="mt-20">Rounded shape</h5>
       <code>.rounded</code>
-      <button class="rounded block padding-20 mt-40 text-white" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" rel="noopener noreferrer">
+      <button
+        class="rounded block padding-20 mt-40 text-white"
+        href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         Click all you want
       </button>
     </div>
   </div>
 </main>
 <div class="hairline mt-40"></div>
-<p class="fl hide-phone">← <strong>Previous</strong>: <a href="/documentation/layout/positioning/">Positioning</a></p>
-<p class="fr"><strong>Next</strong>: <a href="/documentation/typography/">Typography</a> →</p>
+<p class="fl hide-phone">
+  ← <strong>Previous</strong>:
+  <a href="/documentation/layout/positioning/">Positioning</a>
+</p>
+<p class="fr">
+  <strong>Next</strong>: <a href="/documentation/typography/">Typography</a> →
+</p>
