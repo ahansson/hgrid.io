@@ -25,73 +25,69 @@ title: Utilities
 
     <h4 class="mt-60">Background Colors</h4>
 
-    <div class="row mt-40 padding-bottom-10 border-bottom-light">
-      <div class="column-4 bold">CSS</div>
-      <div class="column-2 bold text-center">Color</div>
-    </div>
-    <div class="row no-wrap">
-      <div class="column-4"><code>.bg-white</code></div>
-      <div class="column-2 bg-white text-center border-gray-light">&nbsp;</div>
-      <div class="column"></div>
-    </div>
-    <div class="row">
-      <div class="column-4"><code>.bg-gray-lighter</code></div>
-      <div class="column-2 bg-gray-lighter text-center border-gray-light">
-        &nbsp;
-      </div>
-      <div class="column"></div>
-    </div>
-    <div class="row">
-      <div class="column-4"><code>.bg-gray-light</code></div>
-      <div class="column-2 bg-gray-light text-center border-gray-light">
-        &nbsp;
-      </div>
-      <div class="column"></div>
-    </div>
-    <div class="row">
-      <div class="column-4"><code>.bg-gray</code></div>
-      <div class="column-2 bg-gray text-center border-gray-light">&nbsp;</div>
-      <div class="column"></div>
-    </div>
-    <div class="row">
-      <div class="column-4"><code>.bg-gray-dark</code></div>
-      <div class="column-2 bg-gray-dark text-center border-gray-light">
-        &nbsp;
-      </div>
-      <div class="column"></div>
-    </div>
-    <div class="row">
-      <div class="column-4"><code>.bg-gray-darker</code></div>
-      <div class="column-2 bg-gray-darker text-center border-gray-light">
-        &nbsp;
-      </div>
-      <div class="column"></div>
-    </div>
-    <div class="row">
-      <div class="column-4"><code>.bg-black</code></div>
-      <div class="column-2 bg-black text-center border-gray-light">&nbsp;</div>
-      <div class="column"></div>
-    </div>
-    <div class="row mt-60">
-      <div class="column-4"><code>.bg-light</code></div>
-      <div class="column-2 bg-light text-center border-gray-light">&nbsp;</div>
-      <div class="column">
-        <small class="text-gray-dark">White default, customizable</small>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="column-4"><code>.bg-dark</code></div>
-      <div class="column-2 bg-dark text-center border-gray-light">&nbsp;</div>
-      <div class="column">
-        <small class="text-gray-dark">Black default, customizable</small>
-      </div>
+    <div class="scrollable-y mt-20">
+      <table style="min-width: 600px;">
+        <thead>
+          <tr>
+            <th style="width: 23%">Classname</th>
+            <th style="width: 30%">Color</th>
+            <th style="width: 40%">Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>.bg-white</code></td>
+            <td><div class="bg-white width-75pct border-gray-light">&nbsp;</div></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>.bg-gray-lighter</code></td>
+            <td><div class="bg-gray-lighter width-75pct border-gray-light">&nbsp;</div></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>.bg-gray-light</code></td>
+            <td><div class="bg-gray-light width-75pct border-gray-light">&nbsp;</div></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>.bg-gray</code></td>
+            <td><div class="bg-gray width-75pct border-gray-light">&nbsp;</div></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>.bg-gray-dark</code></td>
+            <td><div class="bg-gray-dark width-75pct border-gray-light">&nbsp;</div></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>.bg-gray-darker</code></td>
+            <td><div class="bg-gray-darker width-75pct border-gray-light">&nbsp;</div></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>.bg-black</code></td>
+            <td><div class="bg-black width-75pct border-gray-light">&nbsp;</div></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>.bg-light</code></td>
+            <td><div class="bg-light width-75pct border-gray-light">&nbsp;</div></td>
+            <td>White default color, customizable</td>
+          </tr>
+          <tr>
+            <td><code>.bg-dark</code></td>
+            <td><div class="bg-dark width-75pct border-gray-light">&nbsp;</div></td>
+            <td>Black default color, customizable</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <h4 class="mt-60">Miscellaneous Background Utilities</h4>
 
     <div class="scrollable-y mt-20">
-      <table>
+      <table style="min-width: 600px;">
         <thead>
           <tr>
             <th style="width: 36%">Classname</th>
@@ -201,34 +197,61 @@ title: Utilities
     <h3 class="h4 mt-30">Rulers</h3>
 
     <code>&lt;hr></code>
-    <hr class="margin-right-150">
+    <hr class="push10v margin-right-150 phone-landscape-mr-0">
 
     <code>.hairline</code>
-    <div class="hairline push10v margin-right-150"></div>
+    <div class="hairline demo push10v margin-right-150 phone-landscape-mr-0"></div>
 
     <code>.hairline-darker</code>
-    <div class="hairline-darker push10v margin-right-150"></div>
+    <div class="hairline-darker push10v margin-right-150 phone-landscape-mr-0"></div>
 
-    <code>hr</code>
-    <hr class="horizontal-line push10v margin-right-150" />
+    <h4 class="mt-50">Borders</h4>
 
-    <h4>Borders</h4>
-    <p>
-      <code>.border-gray-light</code> <code>.border-dark</code>
-      <code>.border-transparent</code>
-    </p>
-
-    <div class="row padding-right-150">
-      <div class="column-2 border-gray-light">
-        <small class="block mb-0 text-center padding-20"
-          >.border-gray-light</small
-        >
+    <div class="row">
+      <div class="column-2 border-gray-lighter">
+        <small class="block mb-0 text-center padding-20">
+          <code>.border-gray-lighter</code>
+        </small>
       </div>
-      <div class="column-2 border-dark">
-        <small class="block mb-0 text-center padding-20">.border-dark</small>
+      <div class="column-2 border-gray-light">
+        <small class="block mb-0 text-center padding-20">
+          <code>.border-gray-light</code>
+        </small>
       </div>
     </div>
+    <div class="row">
+      <div class="column-2 border-gray">
+        <small class="block mb-0 text-center padding-20">
+          <code>.border-gray</code>
+        </small>
+      </div>
+      <div class="column-2 border-gray-dark">
+        <small class="block mb-0 text-center padding-20">
+          <code>.border-gray-dark</code>
+        </small>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column-2 border-gray-darker">
+        <small class="block mb-0 text-center padding-20">
+          <code>.border-gray-darker</code>
+        </small>
+      </div>
+    </div>
+
+    <p>Additionally: <code>.border-transparent</code> and <code>.border-none</code></p>
+
+    <h5>Individual Borders</h5>
+
+    <h5>Responsive Border Overrides</h5>
+
+    <h5>Border Radius</h5>
   </div>
+
+  <h2 class="h3 mt-30">
+    <span id="shapes" class="sublink"></span>
+    Shapes
+  </h2>
 
   <div class="row">
     <div class="column">
@@ -255,7 +278,7 @@ title: Utilities
     </div>
   </div>
 </main>
-<div class="hairline mt-40"></div>
+<div class="custom-hairline mt-40"></div>
 <p class="fl hide-phone">
   ← <strong>Previous</strong>:
   <a href="/documentation/layout/positioning/">Positioning</a>
