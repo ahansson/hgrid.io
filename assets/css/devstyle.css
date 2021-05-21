@@ -11493,7 +11493,7 @@ table tfoot tr td {
   margin-bottom: 3rem;
 }
 
-.border-gray-light {
+.demo-border-gray-light {
   border: 1px solid var(--border-light-solid);
 }
 
