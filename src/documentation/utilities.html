@@ -71,6 +71,11 @@ title: Utilities
             <td></td>
           </tr>
           <tr>
+            <td></td>
+            <td>&nbsp;</td>
+            <td></td>
+          </tr>
+          <tr>
             <td><code>.bg-light</code></td>
             <td><div class="bg-light width-75pct border-gray-light">&nbsp;</div></td>
             <td>White default color, customizable</td>
@@ -193,7 +198,7 @@ title: Utilities
       >GitHub</a>)
   </p>
 
-    <h3 class="h4 mt-30">Rulers</h3>
+    <h3 class="h4 mt-30">Horizontal Separators</h3>
 
     <code>&lt;hr></code>
     <hr class="push10v margin-right-150 phone-landscape-mr-0">
@@ -206,7 +211,7 @@ title: Utilities
 
     <h4 class="mt-50">Borders</h4>
 
-    <div class="row">
+    <div class="row mt-40">
       <div class="column-2 border-gray-lighter">
         <small class="block mb-0 text-center padding-20">
           <code>.border-gray-lighter</code>
@@ -240,8 +245,78 @@ title: Utilities
 
     <p>Additionally: <code>.border-transparent</code> and <code>.border-none</code></p>
 
-    <h5>Individual Borders</h5>
-    
+    <h5 class="mt-40">Border Modifiers</h5>
+
+    <p>
+      The border modifiers require that the element has a border. For example one of <strong>hgrid's</strong> border or line utilities. 
+      The border utility must come before the modifier in the code sequence.
+    </p>
+    <p> 
+      Note that some of the modifier effects can be impossible to notice if the border is too thin.
+    </p>
+
+    <pre class="push20v language-html filename" data-file="html">
+<code>&lt;div class="border-gray-dark border-dashed">
+  &lt;!-- container content -->
+&lt;/div>
+
+&lt;hr class="border-dotted">
+</code>
+</pre>
+
+    <div class="row mt-40">
+      <div class="column-4 border-gray-darker border-dotted">
+        <small class="block mb-0 text-center padding-20">
+          <code>.border-dotted</code>
+        </small>
+      </div>
+      <div class="column-4 border-gray-darker border-dashed">
+        <small class="block mb-0 text-center padding-20">
+          <code>.border-dashed</code>
+        </small>
+      </div>
+      <div class="column-4 border-gray border-double" style="border-width: 1rem; height: 62px;">
+        <small class="block mb-0 text-center padding-20 translate-pull8v">
+          <code>.border-double</code>
+        </small>
+      </div>
+      <div class="column-4 border-gray border-groove" style="border-width: 1rem; height: 62px;">
+        <small class="block mb-0 text-center padding-20 translate-pull8v">
+          <code>.border-groove</code>
+        </small>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column-4">
+        <div class="border-gray-light border-ridge" style="border-width: 1rem; height: 62px;">       
+          <small class="block mb-0 text-center padding-20 translate-pull8v">
+            <code>.border-ridge</code>
+          </small>
+        </div>
+      </div>
+      <div class="column-4 border-gray border-inset" style="border-width: 1rem; height: 62px;">
+        <small class="block mb-0 text-center padding-20 translate-pull8v">
+          <code>.border-inset</code>
+        </small>
+      </div>
+      <div class="column-4 border-gray border-outset" style="border-width: 1rem; height: 62px;">
+        <small class="block mb-0 text-center padding-20 translate-pull8v">
+          <code>.border-outset</code>
+        </small>
+      </div>
+      <div class="column-4">&nbsp;</div>
+    </div>
+
+    <h5 class="mt-60">Individual Borders</h5>
+
+    <div class="row mt-40">
+      <div class="column-2 border-gray-lighter border-top-gray">
+        <small class="block mb-0 text-center padding-20">
+          <code>.border-top-gray</code>
+        </small>
+      </div>
+    </div>
+
     <div class="scrollable-y mt-20">
       <table style="min-width: 600px;">
         <thead>
