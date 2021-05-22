@@ -57,6 +57,7 @@
   --note-bg: #130f40;
   --icon-filter: invert(70%);
   --bg-light: #e8e9f7;
+  --bg-gray-lighter: #0e0c33;
 }
 
 body {
@@ -361,8 +362,8 @@ article.demo {
   }
 
   .circle {
-    max-width: 17%;
-    margin: 4rem 0 5rem;
+    max-width: 50%;
+    margin: 2rem 0 0;
   }
 
   pre {
@@ -454,31 +455,35 @@ table {
 }
 
 .demo-triangle {
+  width: 0;
+  height: 0;
+  border-left: 2rem solid transparent;
+  border-right: 2rem solid transparent;
+  border-bottom: 3.2rem solid #ff0000;
+  position: relative;
+
+  .inner {
     width: 0;
     height: 0;
-    border-left: 2rem solid transparent;
-    border-right: 2rem solid transparent;
-    border-bottom: 3.2rem solid #ff0000;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-bottom: 20px solid #fff;
+    top: 18px;
     position: relative;
 
-    .inner {
-      width: 0;
-      height: 0;
-      border-left: 12px solid transparent;
-      border-right: 12px solid transparent;
-      border-bottom: 20px solid #fff;
-      top: 18px;
+    span {
       position: relative;
-
-      span {
-        position: relative;
-        top: 11px;
-        font-weight: bold;
-        font-size: 17px;
-        right: -0.2px;
-      }
+      top: 11px;
+      font-weight: bold;
+      font-size: 17px;
+      right: -0.2px;
     }
   }
+}
+
+.individual-border-demo .bg-gray-lighter {
+  background-color: var(--bg-gray-lighter);
+}
 
 .sublink {
   /* scroll-margin: 10rem; awaiting fix for Safari */

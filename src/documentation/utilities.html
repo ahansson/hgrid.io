@@ -198,7 +198,7 @@ title: Utilities
       >GitHub</a>)
   </p>
 
-    <h3 class="h4 mt-30">Horizontal Separators</h3>
+    <h3 class="h4 mt-40">Horizontal Separators</h3>
 
     <code>&lt;hr></code>
     <hr class="push10v margin-right-150 phone-landscape-mr-0">
@@ -245,100 +245,263 @@ title: Utilities
 
     <p>Additionally: <code>.border-transparent</code> and <code>.border-none</code></p>
 
+    <h5 class="mt-60">Individual Borders</h5>
+
+    <div class="row mt-40 individual-border-demo">
+      <div class="column-5 bg-gray-lighter border-top-gray">
+        <small class="block mb-0 text-center padding-20">
+          <code>.border-top-gray</code>
+        </small>
+      </div>
+      <div class="column-5 bg-gray-lighter border-right-gray">
+        <small class="block mb-0 text-center padding-20">
+          <code>.border-right-gray</code>
+        </small>
+      </div>
+      <div class="column-5 bg-gray-lighter border-bottom-gray">
+        <small class="block mb-0 text-center padding-20">
+          <code>.border-bottom-gray</code>
+        </small>
+      </div>
+      <div class="column-5 bg-gray-lighter border-left-gray">
+        <small class="block mb-0 text-center padding-20">
+          <code>.border-left-gray</code>
+        </small>
+      </div>
+      <div class="column-5 bg-gray-lighter border-top-gray-dotted">
+        <small class="block mb-0 text-center padding-20">
+          <code>.border-top-gray-dotted</code>
+        </small>
+      </div>
+    </div>
+
+    <div class="row individual-border-demo">
+      <div class="column-5 bg-gray-lighter border-top-gray-dotted">
+        <small class="block mb-0 text-center padding-20">
+          <code>.border-top-gray-dotted</code>
+        </small>
+      </div>
+      <div class="column-5 bg-gray-lighter border-right-gray-dotted">
+        <small class="block mb-0 text-center padding-20">
+          <code>.border-right-gray-dotted</code>
+        </small>
+      </div>
+      <div class="column-5 bg-gray-lighter border-bottom-gray-dotted">
+        <small class="block mb-0 text-center padding-20">
+          <code>.border-bottom-gray-dotted</code>
+        </small>
+      </div>
+      <div class="column-5 bg-gray-lighter border-left-gray-dotted">
+        <small class="block mb-0 text-center padding-20">
+          <code>.border-left-gray-dotted</code>
+        </small>
+      </div>
+      <div class="column-5 bg-gray-lighter border-gray border-top-none">
+        <small class="block mb-0 text-center padding-20">
+          <code>.border-top-none</code>
+        </small>
+      </div>
+    </div>
+
+    <p>
+      The above naming pattern will work with the five grayscale colors we already know, as well as <code>none</code>:
+    </p>
+    <p>
+      <code>gray-lighter</code>, <code>gray-light</code>, <code>gray</code>, <code>gray-dark</code> and <code>gray-darker</code>.
+    </p>
+
+    <p>Code example:</p>
+
+    <pre class="push20v language-html filename" data-file="html">
+<code>&lt;div class="border-right-gray-darker">
+  &lt;!-- element content -->
+&lt;/div>
+
+&lt;div class="border-top-gray-dark-dotted">
+  &lt;!-- element content -->
+&lt;/div>
+
+&lt;div class="border-gray border-left-none">
+  &lt;!-- element content -->
+&lt;/div>
+</code>
+</pre>
+
     <h5 class="mt-40">Border Modifiers</h5>
 
     <p>
-      The border modifiers require that the element has a border. For example one of <strong>hgrid's</strong> border or line utilities. 
-      The border utility must come before the modifier in the code sequence.
+      The border modifiers require that the element has a border. For example by the help of one of <strong>hgrid's</strong> 
+      border or line utilities. The modifier must come after the initial border in the html sequence.
     </p>
-    <p> 
-      Note that some of the modifier effects can be impossible to notice if the border is too thin.
+    <p>
+      Note that some of the modifier effects can be hard to see if the border is too thin. The modifiers depend on the browser's 
+      implementation of standard CSS rules and may consequently look slightly different from browser to browser.
     </p>
 
     <pre class="push20v language-html filename" data-file="html">
 <code>&lt;div class="border-gray-dark border-dashed">
-  &lt;!-- container content -->
+  &lt;!-- element content -->
 &lt;/div>
 
 &lt;hr class="border-dotted">
 </code>
 </pre>
 
-    <div class="row mt-40">
-      <div class="column-4 border-gray-darker border-dotted">
+    <div class="row f-wrap mt-40 no-stack">
+      <div class="column-4 tablet-landscape-2 border-gray-darker border-dotted">
         <small class="block mb-0 text-center padding-20">
           <code>.border-dotted</code>
         </small>
       </div>
-      <div class="column-4 border-gray-darker border-dashed">
+      <div class="column-4 tablet-landscape-2 border-gray-darker border-dashed">
         <small class="block mb-0 text-center padding-20">
           <code>.border-dashed</code>
         </small>
       </div>
-      <div class="column-4 border-gray border-double" style="border-width: 1rem; height: 62px;">
+      <div class="column-4 tablet-landscape-2 border-gray border-double border-10px" style="height: 62px;">
         <small class="block mb-0 text-center padding-20 translate-pull8v">
           <code>.border-double</code>
         </small>
       </div>
-      <div class="column-4 border-gray border-groove" style="border-width: 1rem; height: 62px;">
+      <div class="column-4 tablet-landscape-2 border-gray border-groove border-10px" style="height: 62px;">
         <small class="block mb-0 text-center padding-20 translate-pull8v">
           <code>.border-groove</code>
         </small>
       </div>
     </div>
-    <div class="row">
-      <div class="column-4">
-        <div class="border-gray-light border-ridge" style="border-width: 1rem; height: 62px;">       
-          <small class="block mb-0 text-center padding-20 translate-pull8v">
-            <code>.border-ridge</code>
-          </small>
-        </div>
+    <div class="row f-wrap no-stack">
+      <div class="column-4 tablet-landscape-2 border-gray-light border-ridge border-10px" style="height: 62px;">
+        <small class="block mb-0 text-center padding-20 translate-pull8v">
+          <code>.border-ridge</code>
+        </small>
       </div>
-      <div class="column-4 border-gray border-inset" style="border-width: 1rem; height: 62px;">
+      <div class="column-4 tablet-landscape-2 border-gray border-inset border-10px" style="height: 62px;">
         <small class="block mb-0 text-center padding-20 translate-pull8v">
           <code>.border-inset</code>
         </small>
       </div>
-      <div class="column-4 border-gray border-outset" style="border-width: 1rem; height: 62px;">
+      <div class="column-4 tablet-landscape-2 border-gray border-outset border-10px" style="height: 62px;">
         <small class="block mb-0 text-center padding-20 translate-pull8v">
           <code>.border-outset</code>
         </small>
       </div>
-      <div class="column-4">&nbsp;</div>
-    </div>
-
-    <h5 class="mt-60">Individual Borders</h5>
-
-    <div class="row mt-40">
-      <div class="column-2 border-gray-lighter border-top-gray">
-        <small class="block mb-0 text-center padding-20">
-          <code>.border-top-gray</code>
+      <div class="column-4 tablet-landscape-2 border-gray-light border-ridge border-10px" style="height: 62px;">
+        <small class="block mb-0 text-center padding-20 translate-pull8v">
+          <code>.border-ridge</code>
+        </small>
+      </div>
+      <div class="column-4 tablet-landscape-2 border-gray border-inset border-10px" style="height: 62px;">
+        <small class="block mb-0 text-center padding-20 translate-pull8v">
+          <code>.border-inset</code>
         </small>
       </div>
     </div>
 
-    <div class="scrollable-y mt-20">
+    <div class="row f-wrap mt-20 no-stack">
+      <div class="column-4 tablet-landscape-2 border-gray border-thin">
+        <small class="block mb-0 text-center padding-20 translate-push4v">
+          <code>.border-thin</code>
+        </small>
+      </div>
+      <div class="column-4 tablet-landscape-2 border-gray border-medium">
+        <small class="block mb-0 text-center padding-20 translate-push2v">
+          <code>.border-medium</code>
+        </small>
+      </div>
+      <div class="column-4 tablet-landscape-2 border-gray border-thick">
+        <small class="block mb-0 text-center padding-20">
+          <code>.border-thick</code>
+        </small>
+      </div>
+      <div class="column-4 tablet-landscape-2 border-gray border-2px">
+        <small class="block mb-0 text-center padding-20 translate-push4v">
+          <code>.border-2px</code>
+        </small>
+      </div>
+      <div class="column-4 tablet-landscape-2 border-gray border-3px">
+        <small class="block mb-0 text-center padding-20 translate-push1v">
+          <code>.border-3px</code>
+        </small>
+      </div>
+      <div class="column-4 tablet-landscape-2 border-gray border-4px">
+        <small class="block mb-0 text-center padding-20">
+          <code>.border-4px</code>
+        </small>
+      </div>
+      <div class="column-4 tablet-landscape-2 border-gray border-5px">
+        <small class="block mb-0 text-center padding-20">
+          <code>.border-5px</code>
+        </small>
+      </div>
+      <div class="column-4 tablet-landscape-2 border-gray border-6px">
+        <small class="block mb-0 text-center padding-20">
+          <code>.border-6px</code>
+        </small>
+      </div>
+      <div class="column-4 tablet-landscape-2 border-gray border-10px">
+        <small class="block mb-0 text-center padding-20">
+          <code>.border-10px</code>
+        </small>
+      </div>
+    </div>
+    
+    <h5 class="mt-60">Responsive Border Overrides</h5>
+
+    <p>Remove borders responsively:</p>
+
+    <div class="scrollable-y mt-30 mb-20">
       <table style="min-width: 600px;">
         <thead>
           <tr>
-            <th style="width: 36%">Classname</th>
-            <th style="width: 36%">CSS rule</th>
-            <th style="width: 28%">Comment</th>
+            <th style="width: 30%">Classname</th>
+            <th style="width: 30%">CSS rule</th>
+            <th style="width: 40%">Comment</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><code>.bg-fixed</code></td>
-            <td>background-attachment: fixed;</td>
-            <td>Background stays put relative to the viewport</td>
+            <td><code>.{ viewport-name }-bn-0</code></td>
+            <td>border: none;</td>
+            <td>Example: <code>tablet-portrait-bn-0</code></td>
+          </tr>
+          <tr>
+            <td><code>.{ viewport-name }-bt-0</code></td>
+            <td>border-top: none;</td>
+            <td>Example: <code>desktop-large-bt-0</code></td>
+          </tr>
+          <tr>
+            <td><code>.{ viewport-name }-bb-0</code></td>
+            <td>border-bottom: none;</td>
+            <td>Example: <code>phone-bb-0</code></td>
+          </tr>
+          <tr>
+            <td><code>.{ viewport-name }-br-0</code></td>
+            <td>border-right: none;</td>
+            <td>Example: <code>laptop-br-0</code></td>
+          </tr>
+          <tr>
+            <td><code>.{ viewport-name }-bl-0</code></td>
+            <td>border-left: none;</td>
+            <td>Example: <code>phone-landscape-bl-0</code></td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <h5>Responsive Border Overrides</h5>
+    <p>
+      Supported breakpoint names:
+    </p>
 
-    <h5>Border Radius</h5>
+    <ul>
+      <li><code>desktop-large</code></li>
+      <li><code>desktop</code></li>
+      <li><code>laptop</code></li>
+      <li><code>tablet-landscape</code></li>
+      <li><code>tablet-portrait</code></li>
+      <li><code>phone-landscape</code></li>
+      <li><code>phone</code></li>
+    </ul>
+
   </div>
 
   <h2 class="h3 mt-30">
@@ -346,30 +509,125 @@ title: Utilities
     Shapes
   </h2>
 
-  <div class="row">
-    <div class="column">
-      <h5 class="mt-20">Circle shape</h5>
+  <p>
+    File location:
+    <code class="loc">sass/layout/helpers/_utilities.scss</code> (<a
+      href="https://github.com/ahansson/hgrid-css/blob/main/sass/layout/helpers/_utilities.scss"
+      target="_blank"
+      rel="noopener"
+      >GitHub</a>)
+  </p>
+
+  <div class="row mt-40 no-stack">
+    <div class="column-3 tablet-portrait-2">
+      <h5>Circle</h5>
       <code>.circle</code>
+    </div>
+    <div class="column tablet-portrait-2">
+      <h5>Rounded</h5>
+      <code>.rounded</code>
+    </div>
+  </div>
+  <div class="row align-items-center no-stack">
+    <div class="column-3 tablet-portrait-2">
       <img
-        class="circle demo mb-40"
+        class="circle border-gray-dark border-3px"
         src="/assets/img/portrait.jpg"
         alt="portrait"
         loading="lazy"
       />
     </div>
-    <div class="column">
-      <h5 class="mt-20">Rounded shape</h5>
-      <code>.rounded</code>
-      <button
-        class="rounded block padding-20 mt-40 text-white"
-        href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Click all you want
-      </button>
+    <div class="column phone-landscape-pt-30">
+      <button class="outline rounded">Hi there!</button>
     </div>
   </div>
+
+  <pre class="mt-40 language-html filename" data-file="html">
+<code>&lt;img 
+  class="border-gray-dark border-3px circle" 
+  src="/img/portrait.jpg"
+  alt="Portrait of a bearded man"
+>
+
+&lt;button class="outline rounded">
+  Hi there!
+&lt;/button>
+</code>
+</pre>
+
+  <h5 class="mt-60">Border Radius</h5>
+
+  <div class="row f-wrap mt-40 no-stack">
+    <div class="column-4 tablet-landscape-2 border-gray radius">
+      <small class="block mb-0 text-center padding-20">
+        <code>.radius</code> *
+      </small>
+    </div>
+    <div class="column-4 tablet-landscape-2 border-gray radius-2">
+      <small class="block mb-0 text-center padding-20">
+        <code>.radius-2</code>
+      </small>
+    </div>
+    <div class="column-4 tablet-landscape-2 border-gray radius-4">
+      <small class="block mb-0 text-center padding-20">
+        <code>.radius-4</code>
+      </small>
+    </div>
+    <div class="column-4 tablet-landscape-2 border-gray radius-6">
+      <small class="block mb-0 text-center padding-20">
+        <code>.radius-6</code>
+      </small>
+    </div>
+    <div class="column-4 tablet-landscape-2 border-gray radius-8">
+      <small class="block mb-0 text-center padding-20">
+        <code>.radius-8</code>
+      </small>
+    </div>
+    <div class="column-4 tablet-landscape-2 border-gray radius-10">
+      <small class="block mb-0 text-center padding-20">
+        <code>.radius-10</code>
+      </small>
+    </div>
+    <div class="column-4 tablet-landscape-2 border-gray radius-12">
+      <small class="block mb-0 text-center padding-20">
+        <code>.radius-12</code>
+      </small>
+    </div>
+    <div class="column-4 tablet-landscape-2 border-gray radius-14">
+      <small class="block mb-0 text-center padding-20">
+        <code>.radius-14</code>
+      </small>
+    </div>
+    <div class="column-4 tablet-landscape-2 border-gray radius-16">
+      <small class="block mb-0 text-center padding-20">
+        <code>.radius-16</code>
+      </small>
+    </div>
+    <div class="column-4 tablet-landscape-2 border-gray radius-18">
+      <small class="block mb-0 text-center padding-20">
+        <code>.radius-18</code>
+      </small>
+    </div>
+    <div class="column-4 tablet-landscape-2 border-gray radius-20">
+      <small class="block mb-0 text-center padding-20">
+        <code>.radius-20</code>
+      </small>
+    </div>
+  </div>
+
+  <p class="note push10v">
+    *) Customizable default, 6px. Modify the <code>$border-radius</code> variable in the <code>@use</code> 
+    rule when integrating <strong>hgrid</strong> in your project, or overwrite the <code>.radius</code> class in your CSS.
+  </p>
+
+  <h6>Variants</h6>
+
+  <ul>
+    <li><code>.radius-top-2</code> – <code>.radius-top-4</code> ... <code>.radius-top-20</code></li>
+    <li><code>.radius-bottom-2</code> – <code>.radius-bottom-4</code> ... <code>.radius-bottom-20</code></li>
+    <li><code>.radius-left-2</code> – <code>.radius-left-4</code> ... <code>.radius-left-20</code></li>
+    <li><code>.radius-right-2</code> – <code>.radius-right-4</code> ... <code>.radius-right-20</code></li>  
+  </ul>
 </main>
 <div class="custom-hairline mt-40"></div>
 <p class="fl hide-phone">

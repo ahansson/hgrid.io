@@ -1,4 +1,4 @@
-/*! hgrid v0.5.0-beta | MIT License | github.com/ahansson/hgrid-css !*/
+/*! hgrid v0.5.1-beta | MIT License | github.com/ahansson/hgrid-css !*/
 :root {
   --theme-color-primary: #66008d;
   --theme-color-secondary: #9139b4;
@@ -2920,13 +2920,13 @@ input[type=reset]:not(.block):last-child {
 }
 
 .scrollable-x {
-  overflow: auto;
   overflow-y: hidden;
+  overflow-x: scroll;
 }
 
 .scrollable-y {
-  overflow: auto;
-  overflow-y: hidden;
+  overflow: hidden;
+  overflow-y: scroll;
   max-width: 100%;
 }
 
@@ -3056,7 +3056,7 @@ hr {
 }
 
 .border-top-gray {
-  border-top: 1px dotted #888;
+  border-top: 1px solid #888;
 }
 
 .border-top-gray-dotted {
@@ -3144,7 +3144,7 @@ hr {
 }
 
 .border-right-gray {
-  border-right: 1px dotted #888;
+  border-right: 1px solid #888;
 }
 
 .border-right-gray-dotted {
@@ -3188,7 +3188,7 @@ hr {
 }
 
 .border-left-gray {
-  border-left: 1px dotted #888;
+  border-left: 1px solid #888;
 }
 
 .border-left-gray-dotted {
@@ -8356,10 +8356,6 @@ hr {
   background-attachment: local;
 }
 
-.bg-scroll {
-  background-attachment: scroll;
-}
-
 .bg-pos-top {
   background-position: top;
 }
@@ -11093,6 +11089,7 @@ hr {
   --note-bg: #130f40;
   --icon-filter: invert(70%);
   --bg-light: #e8e9f7;
+  --bg-gray-lighter: #0e0c33;
 }
 
 body {
@@ -11369,8 +11366,8 @@ article.demo .normal-text p {
   color: #000;
 }
 article.demo .circle {
-  max-width: 17%;
-  margin: 4rem 0 5rem;
+  max-width: 50%;
+  margin: 2rem 0 0;
 }
 article.demo pre {
   position: relative;
@@ -11475,6 +11472,10 @@ table tfoot tr td {
   font-weight: bold;
   font-size: 17px;
   right: -0.2px;
+}
+
+.individual-border-demo .bg-gray-lighter {
+  background-color: var(--bg-gray-lighter);
 }
 
 .sublink {
