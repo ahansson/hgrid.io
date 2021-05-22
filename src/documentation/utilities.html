@@ -333,12 +333,12 @@ title: Utilities
       The border modifiers require that the element has a border. For example by the help of one of <strong>hgrid's</strong> 
       border or line utilities. The modifier must come after the initial border in the html sequence.
     </p>
-    <p>
-      Note that some of the modifier effects can be hard to see if the border is too thin. The modifiers depend on the browser's 
+    <p class="note">
+      Some of the modifier effects can be hard to see if the border line is too thin. The modifiers depend on the browser's 
       implementation of standard CSS rules and may consequently look slightly different from browser to browser.
     </p>
 
-    <pre class="push20v language-html filename" data-file="html">
+    <pre class="push30v language-html filename" data-file="html">
 <code>&lt;div class="border-gray-dark border-dashed">
   &lt;!-- element content -->
 &lt;/div>
@@ -620,7 +620,7 @@ title: Utilities
     rule when integrating <strong>hgrid</strong> in your project, or overwrite the <code>.radius</code> class in your CSS.
   </p>
 
-  <h6>Variants</h6>
+  <h6>Border Radius Variants</h6>
 
   <ul>
     <li><code>.radius-top-2</code> – <code>.radius-top-4</code> ... <code>.radius-top-20</code></li>
@@ -628,6 +628,53 @@ title: Utilities
     <li><code>.radius-left-2</code> – <code>.radius-left-4</code> ... <code>.radius-left-20</code></li>
     <li><code>.radius-right-2</code> – <code>.radius-right-4</code> ... <code>.radius-right-20</code></li>  
   </ul>
+
+  <h2 class="h3 mt-60">
+    <span id="embed" class="sublink"></span>
+    Embed
+  </h2>
+
+  <p>
+    File location:
+    <code class="loc">sass/layout/helpers/_embed.scss</code> (<a
+      href="https://github.com/ahansson/hgrid-css/blob/main/sass/layout/helpers/_embed.scss"
+      target="_blank"
+      rel="noopener"
+      >GitHub</a>)
+  </p>
+
+  <p>
+    Create a responsive container for elements such as <code>&lt;iframe></code> and <code>&lt;embed></code>, with the 
+    <code>.embed</code> class.
+  </p>
+
+  <div class="row f-wrap push20v">
+    <div class="column tablet-portrait-2">
+      <div class="embed radius-10">
+        <iframe 
+          width="560" 
+          height="315" 
+          src="https://www.youtube-nocookie.com/embed/cVFzblT5VPE" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+    <div class="column-3 tablet-portrait-2">
+      <pre class="language-html filename" data-file="html">
+<code>&lt;div class="embed">
+  &lt;iframe 
+    width="560"
+    height="315"
+    src="https://www.youtube-nocookie.com/embed/cVFzblT5VPE" 
+    title="Video Player">
+  &lt;/iframe>
+&lt;/div></code>
+</pre>
+    </div>
+  </div>
 </main>
 <div class="custom-hairline mt-40"></div>
 <p class="fl hide-phone">
