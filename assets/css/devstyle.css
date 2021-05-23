@@ -11363,7 +11363,7 @@ article.demo .normal-text p {
   text-align: initial;
   padding: 0;
   margin-bottom: 2.2rem;
-  color: #000;
+  color: var(--color-dark);
 }
 article.demo .circle {
   max-width: 50%;
