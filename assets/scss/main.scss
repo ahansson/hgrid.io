@@ -522,8 +522,14 @@ article.demo table.striped {
   }
 }
 
+.scrollable-x {
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
 .scrollable-y {
   overflow-y: scroll;
+  max-width: 100%;
 }
 
 .demo-scrolltable-x {

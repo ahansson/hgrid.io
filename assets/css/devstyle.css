@@ -11510,8 +11510,14 @@ article.demo table.striped tbody tr:nth-child(odd):hover {
   border-bottom: 1px dotted var(--border-light-solid);
 }
 
+.scrollable-x {
+  overflow-y: hidden;
+  overflow-x: scroll;
+}
+
 .scrollable-y {
   overflow-y: scroll;
+  max-width: 100%;
 }
 
 .demo-scrolltable-x {
