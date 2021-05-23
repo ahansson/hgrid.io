@@ -131,45 +131,96 @@ title: Positioning
   <h3 class="mt-60">Positions</h3>
 
   <div class="mb-30 scrollable-x">
-  <table style="min-width: 40rem;">
+  <table style="min-width: 60rem;">
     <thead>
       <tr>
         <th style="width: 40%;">Class Name</th>
-        <th>CSS Rule</th>
+        <th>CSS Properties</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>.static</td>
+        <td><code>.static</code></td>
         <td>position: static;</td>
       </tr>
       <tr>
-        <td>.absolute</td>
+        <td><code>.absolute</code></td>
         <td>position: absolute;</td>
       </tr>
       <tr>
-        <td>.fixed</td>
+        <td><code>.fixed</code></td>
         <td>position: fixed;</td>
       </tr>
       <tr>
-        <td>.relative</td>
+        <td><code>.relative</code></td>
         <td>position: relative;</td>
       </tr>
       <tr>
-        <td>.sticky</td>
+        <td><code>.sticky</code></td>
         <td>position: sticky;</td>
       </tr>
       <tr>
-        <td>.position-initial</td>
+        <td><code>.position-initial</code></td>
         <td>position: initial;</td>
       </tr>
       <tr>
-        <td>.position-inherit</td>
+        <td><code>.position-inherit</code></td>
         <td>position: inherit;</td>
       </tr>
       <tr>
-        <td>.absolute-center</td>
+        <td><code>.absolute-center</code></td>
         <td>left: 50%;<br>position: absolute;<br>top: 50%;<br>transform: translate(-50%, -50%);</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <h4 class="h5 mt-50">Alignment of Positioned Elements</h4>
+
+  <div class="push20v mb-30 scrollable-x">
+  <table style="min-width: 60rem;">
+    <thead>
+      <tr>
+        <th style="width: 30%;">Class Name</th>
+        <th style="width: 30%">CSS Properties</th>
+        <th style="width: 40%">Comment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>.pos-spread</code></td>
+        <td>top: 0; right: 0;<br>bottom: 0; left: 0;</td>
+        <td>Full viewport overlay</td>
+      </tr>
+      <tr>
+        <td><code>.pos-fill-v</code></td>
+        <td>top: 0; bottom: 0;</td>
+        <td>Fill up viewport vertically</td>
+      </tr>
+      <tr>
+        <td><code>.pos-fill-h</code></td>
+        <td>left: 0; right: 0;</td>
+        <td>Fill up viewport horizontally</td>
+      </tr>
+      <tr>
+        <td><code>.pos-top-0</code></td>
+        <td>top: 0;</td>
+        <td>Relative to top of element or viewport</td>
+      </tr>
+      <tr>
+        <td><code>.pos-bottom-0</code></td>
+        <td>bottom: 0;</td>
+        <td>Relative to bottom of element or viewport</td>
+      </tr>
+      <tr>
+        <td><code>.pos-left-0</code></td>
+        <td>left: 0;</td>
+        <td>Relative to left side of elemement or viewport</td>
+      </tr>
+      <tr>
+        <td><code>.pos-right-0</code></td>
+        <td>right: 0;</td>
+        <td>Relative to right side of element or viewport</td>
       </tr>
     </tbody>
   </table>
@@ -180,30 +231,70 @@ title: Positioning
     Floats
   </h3>
 
-  <div class="mb-30 scrollable-x">
+  <div class="mb-30">
     <table>
       <thead>
         <tr>
           <th style="width: 40%;">Class Name</th>
-          <th>CSS Rule</th>
+          <th>CSS Properties</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td>.fr</td>
+          <td><code>.fr</code></td>
           <td>float: right;</td>
         </tr>
         <tr>
-          <td>.fl</td>
+          <td><code>.fl</code></td>
           <td>float: left;</td>
         </tr>
         <tr>
-          <td>.fn</td>
+          <td><code>.fn</code></td>
           <td>float: none;</td>
         </tr>
       </tbody>
     </table>
   </div>
+
+
+  <h3 class="mt-50">
+    <span id="floats" class="sublink"></span>
+    Clears
+  </h3>
+
+  <div class="mb-30 scrollable-x">
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 40%;">Class Name</th>
+          <th>CSS Properties</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>.clear-left</code></td>
+          <td>clear: left;</td>
+        </tr>
+        <tr>
+          <td><code>.clear-right</code></td>
+          <td>clear: right;</td>
+        </tr>
+        <tr>
+          <td><code>.clear-both</code></td>
+          <td>clear: both;</td>
+        </tr>
+        <tr>
+          <td><code>.clearfix</code></td>
+          <td>clear: both;<br>content: ' ';<br>display: table;</td>
+        </tr>
+        <tr>
+          <td><code>.clear-none</code></td>
+          <td>clear: none;</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
 </main>
 <div class="custom-hairline mt-40"></div>
 <p class="fl hide-phone">← <strong>Previous</strong>: <a href="/documentation/layout/grid/">Grid</a></p>
