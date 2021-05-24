@@ -1,4 +1,4 @@
-/*! hgrid v0.5.1-beta | MIT License | github.com/ahansson/hgrid-css !*/
+/*! hgrid v0.5.2-beta | MIT License | github.com/ahansson/hgrid-css !*/
 :root {
   --theme-color-primary: #66008d;
   --theme-color-secondary: #9139b4;
@@ -2925,7 +2925,6 @@ input[type=reset]:not(.block):last-child {
 }
 
 .scrollable-y {
-  overflow: hidden;
   overflow-y: scroll;
   max-width: 100%;
 }
@@ -3104,7 +3103,7 @@ hr {
 }
 
 .border-bottom-gray-dotted {
-  border-bottom: 1px dotted #ccc;
+  border-bottom: 1px dotted #888;
 }
 
 .border-bottom-dark {
