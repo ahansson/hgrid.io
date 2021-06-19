@@ -7,99 +7,98 @@ description: Using hgrid for page layout.
 title: Layout
 ---
 
-<main>
-  <p class="intro">
-    There are various ways you can create your layout system with
-    <strong>hgrid</strong>. Use the provided flex or grid classes, or whip up
-    something super fast and precise with the built-in, automatic content
-    columns.
-  </p>
-  <h2 class="h3 mt-60">
-    <span id="containers" class="sublink"></span>
-    Containers
-  </h2>
+<p class="intro">
+  There are various ways you can create your layout system with
+  <strong>hgrid</strong>. Use the provided flex or grid classes, or whip up
+  something super fast and precise with the built-in, automatic content
+  columns.
+</p>
+<h2 class="h3 mt-60">
+  <span id="containers" class="sublink"></span>
+  Containers
+</h2>
 
-  <p>
-    File location: <code class="loc">sass/layout/_containers.scss</code> (<a 
-    href="https://github.com/ahansson/hgrid-css/blob/main/sass/layout/_containers.scss" 
-    target="_blank" 
-    rel="noopener">GitHub</a>)
-  </p>
+<p>
+  File location: <code class="loc">sass/layout/_containers.scss</code> (<a 
+  href="https://github.com/ahansson/hgrid-css/blob/main/sass/layout/_containers.scss" 
+  target="_blank" 
+  rel="noopener">GitHub</a>)
+</p>
 
-  <p>
-    Keep your content from falling off to the sides by wrapping it in a
-    <code>.container-max</code>. This lets you control the max-width of your
-    page with the <code>scss</code> variable
-    <code>$container-max-width</code> (or you can overwrite
-    <code>.container-max</code> in your regular <code>css</code>).
-  </p>
+<p>
+  Keep your content from falling off to the sides by wrapping it in a
+  <code>.container-max</code>. This lets you control the max-width of your
+  page with the <code>scss</code> variable
+  <code>$container-max-width</code> (or you can overwrite
+  <code>.container-max</code> in your regular <code>css</code>).
+</p>
 
-  <img
-    src="/assets/img/container.png"
-    alt="hgrid container width"
-    width="1104"
-    height="252"
-    loading="lazy"
-  />
-  <p class="caption">
-    <em>The 1440 pixel <strong>.container-max</strong> on a 1680 pixel
-      screen. The header uses the full-width <strong>.container</strong>.</em>
-  </p>
+<img
+  src="/assets/img/container.png"
+  alt="hgrid container width"
+  width="1104"
+  height="252"
+  loading="lazy"
+/>
+<p class="caption">
+  <em>The 1440 pixel <strong>.container-max</strong> on a 1680 pixel
+    screen. The header uses the full-width <strong>.container</strong>.</em>
+</p>
 
-  <p>
-    The default <code>.container-max</code> width is set to 1440 pixels.
-  </p>
-    
-  <p>
-    Use <code>.container</code> if you instead want to use the full viewport width.
-  </p>
-  <p>
-    In order to group content in vertical sections within a container, use the
-    class <code>.row</code> (creates a flex container) or
-    <code>.row-block</code> (creates a container for block elements).
-  </p>
+<p>
+  The default <code>.container-max</code> width is set to 1440 pixels.
+</p>
+  
+<p>
+  Use <code>.container</code> if you instead want to use the full viewport width.
+</p>
+<p>
+  In order to group content in vertical sections within a container, use the
+  class <code>.row</code> (creates a flex container) or
+  <code>.row-block</code> (creates a container for block elements).
+</p>
 
-  <h3 class="h4 push40v">Row</h3>
+<h3 class="h4 push40v">Row</h3>
 
-  <p>
-    Creating layouts with the
-    <a href="/documentation/layout/automatic-columns/">automatic content columns</a>
-    requires the use of <code>.row</code>.
-  </p>
-  <p>
-    <code>.row-block</code> is made for full width content that don't need columns, 
-    like headlines, text with floating images, etc.
-  </p>
+<p>
+  Creating layouts with the
+  <a href="/documentation/layout/automatic-columns/">automatic content columns</a>
+  requires the use of <code>.row</code>.
+</p>
+<p>
+  <code>.row-block</code> is made for full width content that don't need columns, 
+  like headlines, text with floating images, etc.
+</p>
 
-  <h4>Column Stacking</h4>
+<h4>Column Stacking</h4>
 
-  <p>
-    <code>.row</code> stacks its columns vertically on screens less than 769px wide. This breakpoint is determined 
-    by the variable <code>$stack-point</code> that by default uses the width set in <code>$phone-landscape</code>. You can modify 
-    this in the <code>@use</code> rule when importing. You also have access to this breakpoint through the custom property 
-    <code>--stack-point</code>.
-  </p>
+<p>
+  <code>.row</code> stacks its columns vertically on screens less than 769px wide. This breakpoint is determined 
+  by the variable <code>$stack-point</code> that by default uses the width set in <code>$phone-landscape</code>. You can modify 
+  this in the <code>@use</code> rule when importing. You also have access to this breakpoint through the custom property 
+  <code>--stack-point</code>.
+</p>
 
-  <h5>Custom Stacking Breakpoint</h5>
+<h5>Custom Stacking Breakpoint</h5>
 
-  <p>
-    Having more than one breakpoint for stacking can be useful. Configure your alternative breakpoint in <code>$custom-stack-point</code>. 
-    Then, declare <code>&lt;div class="row custom-stack-point"&gt;</code> in your HTML.
-  </p>
+<p>
+  Having more than one breakpoint for stacking can be useful. Configure your alternative breakpoint in <code>$custom-stack-point</code>. 
+  Then, declare <code>&lt;div class="row custom-stack-point"&gt;</code> in your HTML.
+</p>
 
-  <h5>Preventing Stacking</h5>
+<h5>Preventing Stacking</h5>
 
-  <p>
-    You can prevent columns from stacking altogether with <code>.no-stack</code>. 
-    HTML: <code>&lt;div class="row no-stack"&gt;</code>.
-  </p>
+<p>
+  You can prevent columns from stacking altogether with <code>.no-stack</code>. 
+  HTML: <code>&lt;div class="row no-stack"&gt;</code>.
+</p>
 
-  <h4 class="push40v">Group</h4>
+<h4 class="push40v">Group</h4>
 
-  <p>
-    <code>.group</code> can be used to group rows of content into sections.
-  </p>
-</main>
+<p>
+  <code>.group</code> can be used to group rows of content into sections.
+</p>
+
 <div class="custom-hairline mt-40"></div>
 <p class="fl hide-phone">
   ← <strong>Previous</strong>: <a href="/documentation/integrate/">Integrate</a>

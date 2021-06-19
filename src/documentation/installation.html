@@ -6,103 +6,103 @@ description: How to install and use hgrid in your projects.
 }
 title: Installation
 ---
-<main>
-  <h3 class="mt-30">
-    <span id="npm" class="sublink"></span>
-    NPM or Yarn
-  </h3>
 
-  <p>From the root of your project, install <code>hgrid-css</code> as a dependency:</p>
+<h3 class="mt-30">
+  <span id="npm" class="sublink"></span>
+  NPM or Yarn
+</h3>
 
-  <pre class="language-bash">
-    <code>$ <strong>npm</strong> <span class="hljs-built_in">install</span> hgrid-css --save-dev</code>
-  </pre>
+<p>From the root of your project, install <code>hgrid-css</code> as a dependency:</p>
 
-  <pre class="language-bash">
-    <code>$ <strong>yarn</strong> <span class="hljs-built_in">add</span> hgrid-css --dev</code>
-  </pre>
+<pre class="language-bash">
+  <code>$ <strong>npm</strong> <span class="hljs-built_in">install</span> hgrid-css --save-dev</code>
+</pre>
 
-  <p class="mt-40">Which <a href="https://www.npmjs.com/package/sass/v/1.30.0" rel="noopener noreferrer" target="_blank">additional</a>
-  <a href="https://www.npmjs.com/package/sass-loader" rel="noopener noreferrer" target="_blank">packages</a> you need in order to integrate <strong>hgrid</strong>
-  as <code>.sass/.scss</code> in your project may depend on the framework you use.</p>
+<pre class="language-bash">
+  <code>$ <strong>yarn</strong> <span class="hljs-built_in">add</span> hgrid-css --dev</code>
+</pre>
 
-  <pre class="language-bash"><code><span class="hljs-comment">// React:
-  </span>$ <strong>npm</strong> <span class="hljs-built_in">install</span> sass --save-dev
+<p class="mt-40">Which <a href="https://www.npmjs.com/package/sass/v/1.30.0" rel="noopener noreferrer" target="_blank">additional</a>
+<a href="https://www.npmjs.com/package/sass-loader" rel="noopener noreferrer" target="_blank">packages</a> you need in order to integrate <strong>hgrid</strong>
+as <code>.sass/.scss</code> in your project may depend on the framework you use.</p>
 
-  <span class="hljs-comment block">// Vue.js:</span>$ <strong>npm</strong> <span class="hljs-built_in">install</span> sass sass-loader --save-dev
+<pre class="language-bash"><code><span class="hljs-comment">// React:
+</span>$ <strong>npm</strong> <span class="hljs-built_in">install</span> sass --save-dev
 
-  <span class="hljs-comment">// Note that `node-sass` is deprecated as of October 2020. We use `sass` instead.</code>
-  </pre>
+<span class="hljs-comment block">// Vue.js:</span>$ <strong>npm</strong> <span class="hljs-built_in">install</span> sass sass-loader --save-dev
 
-  <p>There are multiple ways to integrate <strong>hgrid</strong> in your projects, both as <code>scss</code> or with the pre-built
-  <code>css</code>. Check the <a href="/documentation/integrate/">detailed description</a> on how to set it up.</p>
+<span class="hljs-comment">// Note that `node-sass` is deprecated as of October 2020. We use `sass` instead.</code>
+</pre>
 
-  <h3 class="mt-60">
-    <span id="cdn" class="sublink"></span>
-    CDN
-  </h3>
+<p>There are multiple ways to integrate <strong>hgrid</strong> in your projects, both as <code>scss</code> or with the pre-built
+<code>css</code>. Check the <a href="/documentation/integrate/">detailed description</a> on how to set it up.</p>
 
-  <pre class="language-html push30v">
-    <code class="hljs-string">https://unpkg.com/hgrid-css@latest/dist/hgrid.min.css</code>
-  </pre>
-  <p class="mt-40">Include the link to the <a href="https://unpkg.com/hgrid-css@latest/dist/hgrid.min.css" 
-  target="_blank" rel="noopener noreferrer">precompiled hgrid kit</a> from the CDN, or a local copy, before any other 
-  stylesheets in your html. You can customize hgrid by overwriting the CSS classes below the import in the code flow.</p>
+<h3 class="mt-60">
+  <span id="cdn" class="sublink"></span>
+  CDN
+</h3>
 
-  <pre class="language-html">
-    <code>&lt;head&gt;<br>  &lt;link rel="stylesheet" href="https://unpkg.com/hgrid-css@latest/dist/hgrid.min.css"&gt;
-    <span class="hljs-comment">  &lt;-- more css --></span><br>&lt;/head&gt;</code>
-  </pre>
+<pre class="language-html push30v">
+  <code class="hljs-string">https://unpkg.com/hgrid-css@latest/dist/hgrid.min.css</code>
+</pre>
+<p class="mt-40">Include the link to the <a href="https://unpkg.com/hgrid-css@latest/dist/hgrid.min.css" 
+target="_blank" rel="noopener noreferrer">precompiled hgrid kit</a> from the CDN, or a local copy, before any other 
+stylesheets in your html. You can customize hgrid by overwriting the CSS classes below the import in the code flow.</p>
 
-  <p class="mt-40">You can also <code>@import</code> it at the top of your local stylesheet:</p>
+<pre class="language-html">
+  <code>&lt;head&gt;<br>  &lt;link rel="stylesheet" href="https://unpkg.com/hgrid-css@latest/dist/hgrid.min.css"&gt;
+  <span class="hljs-comment">  &lt;-- more css --></span><br>&lt;/head&gt;</code>
+</pre>
 
-  <pre class="language-css">
-    <code><span class="hljs-comment block">/* From node_modules */</span>@import './../../node_modules/hgrid-css/dist/hgrid.min.css';
-    <span class="hljs-comment block">/* From CDN */</span>@import 'https://unpkg.com/hgrid-css@latest/dist/hgrid.min.css';</code>
-  </pre>
+<p class="mt-40">You can also <code>@import</code> it at the top of your local stylesheet:</p>
 
-  <h3 class="mt-60">
-    <span id="clone" class="sublink"></span>
-    Bake your own
-  </h3>
+<pre class="language-css">
+  <code><span class="hljs-comment block">/* From node_modules */</span>@import './../../node_modules/hgrid-css/dist/hgrid.min.css';
+  <span class="hljs-comment block">/* From CDN */</span>@import 'https://unpkg.com/hgrid-css@latest/dist/hgrid.min.css';</code>
+</pre>
 
-  <p class="note"><strong>Note:</strong> If your project is Node.js driven,
-  read this instead: <a href="/documentation/integrate/">How to integrate hgrid</a> as an npm module in your
-  project.</p>
+<h3 class="mt-60">
+  <span id="clone" class="sublink"></span>
+  Bake your own
+</h3>
 
-  <pre class="language-bash mt-30">
-    <code>$ <strong>git</strong> clone https://github.com/ahansson/hgrid-css.git</code>
-  </pre>
+<p class="note"><strong>Note:</strong> If your project is Node.js driven,
+read this instead: <a href="/documentation/integrate/">How to integrate hgrid</a> as an npm module in your
+project.</p>
 
-  <p>With the source code you can modify or extend <strong>hgrid</strong> to fit your needs. From the root of the <code>hgrid-css</code> 
-  folder, run <code>npm install</code>. This will set up the dev dependencies needed to run the Sass compiler and build the final 
-  CSS files.</p>
+<pre class="language-bash mt-30">
+  <code>$ <strong>git</strong> clone https://github.com/ahansson/hgrid-css.git</code>
+</pre>
 
-  <p>With Node.js installed, use <code>npm run watch</code> to listen for changes and compile the result as CSS in the 
-    <code>dist/</code> directory.</p>
+<p>With the source code you can modify or extend <strong>hgrid</strong> to fit your needs. From the root of the <code>hgrid-css</code> 
+folder, run <code>npm install</code>. This will set up the dev dependencies needed to run the Sass compiler and build the final 
+CSS files.</p>
 
-  <p>Add to, remove from, or edit the entry file <code>sass/hgrid.scss</code> in order to modify
-    the final build.</p>
+<p>With Node.js installed, use <code>npm run watch</code> to listen for changes and compile the result as CSS in the 
+  <code>dist/</code> directory.</p>
 
-  <p>We use <a href="https://www.npmjs.com/package/autoprefixer" target="_blank" rel="noopener noreferrer">Autoprefixer</a> to add some 
-    extra backwards browser compatibility. The result is minified with the excellent JavaScript implementation of <a href="https://www.npmjs.com/package/sass" 
-    target="_blank" rel="noopener noreferrer">Dart Sass</a> minification tool.</p> 
-    
-  <p>Use <code>npm run build</code> to prefix, minify and 
-    output compiled css files to the <code>dist/</code> directory:</p>
+<p>Add to, remove from, or edit the entry file <code>sass/hgrid.scss</code> in order to modify
+  the final build.</p>
 
-  <ul>
-    <li><code>hgrid.css</code> (prefixed, uncompressed)</li>
-    <li><code>hgrid.css.map</code> (source map for hgrid.css)</li>
-    <li><code>hgrid.min.css</code> (prefixed, minified)</li>
-    <li><code>hgrid.min.css.map</code> (source map for hgrid.min.css)</li>
-  </ul>
+<p>We use <a href="https://www.npmjs.com/package/autoprefixer" target="_blank" rel="noopener noreferrer">Autoprefixer</a> to add some 
+  extra backwards browser compatibility. The result is minified with the excellent JavaScript implementation of <a href="https://www.npmjs.com/package/sass" 
+  target="_blank" rel="noopener noreferrer">Dart Sass</a> minification tool.</p> 
+  
+<p>Use <code>npm run build</code> to prefix, minify and 
+  output compiled css files to the <code>dist/</code> directory:</p>
 
-  <p>Adding your own custom style partials to the <code>sass/</code> directory is the quick and dirty way to reuse and
-    modify <strong>hgrid's</strong> variables while taking advantage of the existing compilation tools. If you wish to keep things more separated, 
-    which is recommended, please refer to the <a href="/documentation/integrate">integration article</a> for pointers.
-  </p>
-</main>
+<ul>
+  <li><code>hgrid.css</code> (prefixed, uncompressed)</li>
+  <li><code>hgrid.css.map</code> (source map for hgrid.css)</li>
+  <li><code>hgrid.min.css</code> (prefixed, minified)</li>
+  <li><code>hgrid.min.css.map</code> (source map for hgrid.min.css)</li>
+</ul>
+
+<p>Adding your own custom style partials to the <code>sass/</code> directory is the quick and dirty way to reuse and
+  modify <strong>hgrid's</strong> variables while taking advantage of the existing compilation tools. If you wish to keep things more separated, 
+  which is recommended, please refer to the <a href="/documentation/integrate">integration article</a> for pointers.
+</p>
+
 <div class="custom-hairline mt-40"></div>
 <p class="fl hide-phone">← <strong>Previous</strong>: <a href="/documentation/about-hgrid/">About hgrid</a></p>
 <p class="fr"><strong>Next</strong>: <a href="/documentation/variables/">Variables</a> →</p>

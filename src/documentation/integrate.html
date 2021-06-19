@@ -6,45 +6,45 @@ description: How to integrate and use hgrid in your Node driven development proj
 }
 title: Integrate hgrid in Your Projects
 ---
-<main>
-  <p class="intro">
-    Learn how you can set up <strong>hgrid</strong> in your Node.js driven projects,
-    and how to customize its default settings.
-  </p>
 
-  <h2 class="mt-40">
-    <span id="vue" class="sublink"></span>
-    Vue
-  </h2>
+<p class="intro">
+  Learn how you can set up <strong>hgrid</strong> in your Node.js driven projects,
+  and how to customize its default settings.
+</p>
 
-  <p class="small"><em>These recipes are tested with Vue v3.0.4.</em></p>
+<h2 class="mt-40">
+  <span id="vue" class="sublink"></span>
+  Vue
+</h2>
 
-  <h4 class="push20v">Prerequisites</h4>
+<p class="small"><em>These recipes are tested with Vue v3.0.4.</em></p>
 
-  <ol>
-    <li>Install two packages: <code>npm i sass sass-loader --save-dev</code></li>
-    <li>Install <strong>hgrid</strong>: <code>npm install hgrid-css --save-dev</code></li>
-    <li>Create your main <code>scss</code> file, for example <code>assets/scss/main.scss</code></li>
-    <li>Initiate <code>main.scss</code> in your <code>main.js</code> file, respecting your local folder structure:</li>
-  </ol>
+<h4 class="push20v">Prerequisites</h4>
 
-  <pre class="language-js filename" data-file="main.js">
-    <code>import './assets/scss/main.scss'</code>
-  </pre>
+<ol>
+  <li>Install two packages: <code>npm i sass sass-loader --save-dev</code></li>
+  <li>Install <strong>hgrid</strong>: <code>npm install hgrid-css --save-dev</code></li>
+  <li>Create your main <code>scss</code> file, for example <code>assets/scss/main.scss</code></li>
+  <li>Initiate <code>main.scss</code> in your <code>main.js</code> file, respecting your local folder structure:</li>
+</ol>
 
-  <h5 class="mt-60">Method 1 <small>(recommended)</small></h5>
-  <h4>Include with <code>@use</code></h4>
-  <br>
-  <p>
-    In your <code>main.scss</code>, import <strong>hgrid</strong> from <code>node_modules</code> as shown below. 
-    Modify any <strong>hgrid</strong> <a href="/documentation/variables/">variables</a> you wish to change 
-    (see the <a 
-      href="https://github.com/ahansson/hgrid-css/blob/main/sass/variables/_variables.scss" 
-      rel="noopener" 
-      target="_blank">full list</a>). Note that we use commas after the variable declarations, not semicolons:
-  </p>
+<pre class="language-js filename" data-file="main.js">
+  <code>import './assets/scss/main.scss'</code>
+</pre>
 
-  <pre class="language-scss filename" data-file="main.scss">
+<h5 class="mt-60">Method 1 <small>(recommended)</small></h5>
+<h4>Include with <code>@use</code></h4>
+<br>
+<p>
+  In your <code>main.scss</code>, import <strong>hgrid</strong> from <code>node_modules</code> as shown below. 
+  Modify any <strong>hgrid</strong> <a href="/documentation/variables/">variables</a> you wish to change 
+  (see the <a 
+    href="https://github.com/ahansson/hgrid-css/blob/main/sass/variables/_variables.scss" 
+    rel="noopener" 
+    target="_blank">full list</a>). Note that we use commas after the variable declarations, not semicolons:
+</p>
+
+<pre class="language-scss filename" data-file="main.scss">
 <code>@use 'hgrid-css/sass/hgrid' with (
   $link-color: #ffe88d,
   $link-color-hover: #fff0b4,
@@ -69,35 +69,35 @@ title: Integrate hgrid in Your Projects
 // etc.
 </code></pre>
 
-  <p>
-    <strong>hgrid</strong> will now be fully loaded into your project. If you want to leave out certain 
-    parts of <strong>hgrid</strong>, use one <code>@use</code> rule for each partial to include.
-  </p>
+<p>
+  <strong>hgrid</strong> will now be fully loaded into your project. If you want to leave out certain 
+  parts of <strong>hgrid</strong>, use one <code>@use</code> rule for each partial to include.
+</p>
 
-  <p class="note">
-    Trying to execute any other code than @forward before <code>@use</code> won't compile. Read more about the 
-    <a href="https://sass-lang.com/documentation/at-rules/use#configuration" target="_blank" rel="noopener noreferrer">@use rule</a> 
-    over at sass-lang.com.
-  </p>
+<p class="note">
+  Trying to execute any other code than @forward before <code>@use</code> won't compile. Read more about the 
+  <a href="https://sass-lang.com/documentation/at-rules/use#configuration" target="_blank" rel="noopener noreferrer">@use rule</a> 
+  over at sass-lang.com.
+</p>
 
-  <p>
-    If you need access to any <code>$hgrid-variables</code> you have to include them with 
-    <code>@use 'hgrid-css/sass/variables/variables'</code> at the top of each file.
-  </p>
+<p>
+  If you need access to any <code>$hgrid-variables</code> you have to include them with 
+  <code>@use 'hgrid-css/sass/variables/variables'</code> at the top of each file.
+</p>
 
-  <p>
-    Read more about <strong>hgrid</strong> <a href="/documentation/variables/">variables and custom properties</a>.
-  </p>
+<p>
+  Read more about <strong>hgrid</strong> <a href="/documentation/variables/">variables and custom properties</a>.
+</p>
 
-  <h5 class="mt-60">Method 2</h5>
-  <h4>Quick imports</h4>
-  <br>
-  <h5>2a. @import or @use in 'App.vue'</h5>
-  <p>@import precompiled CSS or @use SCSS at the top of <code>App.vue</code>'s <code>&lt;style></code> tag.</p>
+<h5 class="mt-60">Method 2</h5>
+<h4>Quick imports</h4>
+<br>
+<h5>2a. @import or @use in 'App.vue'</h5>
+<p>@import precompiled CSS or @use SCSS at the top of <code>App.vue</code>'s <code>&lt;style></code> tag.</p>
 
-  <h6>CSS</h6>
+<h6>CSS</h6>
 
-  <pre class="language-html filename" data-file="App.vue">
+<pre class="language-html filename" data-file="App.vue">
 <code>&lt;style lang="css"&gt;
   @import '~hgrid-css/dist/hgrid.min.css';
 
@@ -105,36 +105,37 @@ title: Integrate hgrid in Your Projects
 &lt;/style&gt;</code>
 </pre>
 
-  <h6>SCSS</h6>
+<h6>SCSS</h6>
 
-  <p>
-    Set up a style tag with <code>lang="scss"</code> in <code>App.vue</code>. Then use the description from Method 1 to 
-    @use <strong>hgrid</strong>. Please refer to <a href="/documentation/integrate/#vue">prerequisites</a> for using Vue with Sass.
-  </p>
-  <br>
+<p>
+  Set up a style tag with <code>lang="scss"</code> in <code>App.vue</code>. Then use the description from Method 1 to 
+  @use <strong>hgrid</strong>. Please refer to <a href="/documentation/integrate/#vue">prerequisites</a> for using Vue with Sass.
+</p>
+<br>
 
-  <h5>2b. Import prebuilt CSS in 'main.js'</code></h5>
+<h5>2b. Import prebuilt CSS in 'main.js'</code></h5>
 
-  <pre class="language-js filename" data-file="main.js">
-    <code>import ‘~hgrid-css/dist/hgrid.min.css’</code>
-  </pre>
-  <br>
+<pre class="language-js filename" data-file="main.js">
+<code>import ‘~hgrid-css/dist/hgrid.min.css’</code>
+</pre>
+<br>
 
-  <h5>2c. Import prebuilt CSS to local stylesheet</h5>
+<h5>2c. Import prebuilt CSS to local stylesheet</h5>
 
-  <p>
-    At the top of a local CSS file, for example <code>public/assets/css/style.css</code> you can import the full 
-    <strong>hgrid</strong> kit from <code>node_modules</code>:
-  </p>
+<p>
+  At the top of a local CSS file, for example <code>public/assets/css/style.css</code> you can import the full 
+  <strong>hgrid</strong> kit from <code>node_modules</code>:
+</p>
 
-  <pre class="language-css filename" data-file="style.css">
-    <code>@import '~hgrid-css/dist/hgrid.min.css';</code>
-  </pre>
+<pre class="language-css filename" data-file="style.css">
+  <code>@import '~hgrid-css/dist/hgrid.min.css';</code>
+</pre>
 
-  <h4 class="push20v">Global access to Sass variables with <code>vue.config.js</code></h4>
+<h4 class="push20v">Global access to Sass variables with <code>vue.config.js</code></h4>
 
-  <p>Another way to access to the <strong>hgrid</strong> $variables from within components is to make them available from the
-    config like so:</p>
+<p>Another way to access to the <strong>hgrid</strong> $variables from within components is to make them available from the
+  config like so:
+</p>
 
   <pre class="language-js filename" data-file="vue.config.js">
 <code>module.exports = {
@@ -200,8 +201,8 @@ title: Integrate hgrid in Your Projects
 
   <h4 class="mt-40">'@use' in index.scss</h4>
 
-  <pre class="push20v language-scss filename" data-file="index.scss">
-    <code>@use '~hgrid-css/sass/hgrid' with (
+<pre class="push20v language-scss filename" data-file="index.scss">
+  <code>@use '~hgrid-css/sass/hgrid' with (
   $body-bg: #7056ce,
   $link-color: #00a344,
   $link-color-hover: #00cc66,
@@ -244,9 +245,9 @@ title: Integrate hgrid in Your Projects
 }</code>
 </pre>
 
-  <p>You now have access to <strong>hgrid</strong>'s utility classes from all component files.</p>
+<p>You now have access to <strong>hgrid</strong>'s utility classes from all component files.</p>
 
-  <pre class="push20v language-jsx filename" data-file="App.js">
+<pre class="push20v language-jsx filename" data-file="App.js">
 <code>import './App.scss';
 
 function App() {
@@ -286,29 +287,29 @@ export default App;
 }</code>
 </pre>
 
-  <p class="note">Our <a href="https://github.com/ahansson/hgrid-css-react-app" rel="noopener noreferrer" target="_blank">React
-      starter project</a> which is based on <a href="https://create-react-app.dev/" target="_blank" rel="noopener noreferrer">
-      create-react-app</a> automatically minifies and autoprefixes the CSS output. <a href="https://create-react-app.dev/docs/post-processing-css"
-      rel="noopener noreferrer" target="_blank">Read more in the docs</a>.</p>
+<p class="note">Our <a href="https://github.com/ahansson/hgrid-css-react-app" rel="noopener noreferrer" target="_blank">React
+    starter project</a> which is based on <a href="https://create-react-app.dev/" target="_blank" rel="noopener noreferrer">
+    create-react-app</a> automatically minifies and autoprefixes the CSS output. <a href="https://create-react-app.dev/docs/post-processing-css"
+    rel="noopener noreferrer" target="_blank">Read more in the docs</a>.</p>
 
-  <h2 class="h3 mt-60">
-    <span id="svelte" class="sublink"></span>
-    Svelte
-  </h2>
+<h2 class="h3 mt-60">
+  <span id="svelte" class="sublink"></span>
+  Svelte
+</h2>
 
-  <p class="small"><em>This recipe is tested with SvelteKit x.x.x</em></p>
+<p class="small"><em>This recipe is tested with SvelteKit x.x.x</em></p>
 
-  <p class="text-red">Coming soon!</p>
-  
-  <h4 class="push20v">Prerequisites</h4>
+<p class="text-red">Coming soon!</p>
 
-  <ol>
-    <li>Install two packages: <code>npm i sass sass-loader --save-dev</code></li>
-    <li>Install <strong>hgrid</strong>: <code>npm install hgrid-css --save-dev</code></li>
-    <li>Create <code>main.scss</code>, for example in <code>assets/scss</code></li>
-    <li>Initiate <code>main.scss</code> in your <code>main.js</code> file, respecting your local folder structure:</li>
-  </ol>
-</main>
+<h4 class="push20v">Prerequisites</h4>
+
+<ol>
+  <li>Install two packages: <code>npm i sass sass-loader --save-dev</code></li>
+  <li>Install <strong>hgrid</strong>: <code>npm install hgrid-css --save-dev</code></li>
+  <li>Create <code>main.scss</code>, for example in <code>assets/scss</code></li>
+  <li>Initiate <code>main.scss</code> in your <code>main.js</code> file, respecting your local folder structure:</li>
+</ol>
+
 <div class="custom-hairline mt-40"></div>
 <p class="fl hide-phone">← <strong>Previous</strong>: <a href="/documentation/installation/">Installation</a></p>
 <p class="fr"><strong>Next</strong>: <a href="/documentation/layout/">Layout</a> →</p>
