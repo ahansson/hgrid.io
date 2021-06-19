@@ -7,715 +7,188 @@ description: Utility classes in hgrid
 title: Utilities
 ---
 
-<main>
-  <div class="group">
-    <h2 class="h3 mt-30">
-      <span id="background" class="sublink"></span>
-      Background
-    </h2>
-    <p>
-      File location:
-      <code class="loc">sass/layout/helpers/_background.scss</code> (<a
-        href="https://github.com/ahansson/hgrid-css/blob/main/sass/layout/helpers/_background.scss"
-        target="_blank"
-        rel="noopener"
-        >GitHub</a
-      >)
-    </p>
-
-    <h4 class="mt-60">Background Colors</h4>
-
-    <div class="scrollable-x mt-20">
-      <table style="min-width: 600px;">
-        <thead>
-          <tr>
-            <th style="width: 23%">Classname</th>
-            <th style="width: 30%">Color</th>
-            <th style="width: 40%">Comment</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>.bg-white</code></td>
-            <td><div class="bg-white width-75pct border-gray-light">&nbsp;</div></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>.bg-gray-lighter</code></td>
-            <td><div class="bg-gray-lighter width-75pct border-gray-light">&nbsp;</div></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>.bg-gray-light</code></td>
-            <td><div class="bg-gray-light width-75pct border-gray-light">&nbsp;</div></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>.bg-gray</code></td>
-            <td><div class="bg-gray width-75pct border-gray-light">&nbsp;</div></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>.bg-gray-dark</code></td>
-            <td><div class="bg-gray-dark width-75pct border-gray-light">&nbsp;</div></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>.bg-gray-darker</code></td>
-            <td><div class="bg-gray-darker width-75pct border-gray-light">&nbsp;</div></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>.bg-black</code></td>
-            <td><div class="bg-black width-75pct border-gray-light">&nbsp;</div></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td></td>
-            <td>&nbsp;</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>.bg-light</code></td>
-            <td><div class="bg-light width-75pct border-gray-light">&nbsp;</div></td>
-            <td>White default color, customizable</td>
-          </tr>
-          <tr>
-            <td><code>.bg-dark</code></td>
-            <td><div class="bg-dark width-75pct border-gray-light">&nbsp;</div></td>
-            <td>Black default color, customizable</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <h4 class="mt-60">Miscellaneous Background Utilities</h4>
-
-    <div class="scrollable-x mt-20">
-      <table style="min-width: 600px;">
-        <thead>
-          <tr>
-            <th style="width: 36%">Classname</th>
-            <th style="width: 36%">CSS Property</th>
-            <th style="width: 28%">Comment</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>.bg-fixed</code></td>
-            <td>background-attachment: fixed;</td>
-            <td>Background stays put relative to the viewport</td>
-          </tr>
-          <tr>
-            <td><code>.bg-local</code></td>
-            <td>background-attachment: local;</td>
-            <td>Background scrolls if the element content is scrollable.</td>
-          </tr>
-          <tr>
-            <td><code>.bg-pos-top</code></td>
-            <td>background-position: top;</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>.bg-pos-bottom</code></td>
-            <td>background-position: bottom;</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>.bg-pos-right</code></td>
-            <td>background-position: right;</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>.bg-pos-left</code></td>
-            <td>background-position: left;</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>.bg-pos-center</code></td>
-            <td>background-position: center;</td>
-            <td></td>
-          </tr>
-          <tr>
-            <td><code>.bg-repeat-x</code></td>
-            <td>background-repeat: repeat-x;</td>
-            <td>Repeats background image horizontally</td>
-          </tr>
-          <tr>
-            <td><code>.bg-repeat-y</code></td>
-            <td>background-repeat: repeat-y;</td>
-            <td>Repeats background image vertically</td>
-          </tr>
-          <tr>
-            <td><code>.bg-repeat-space</code></td>
-            <td>background-repeat: space;</td>
-            <td>
-              Background repeated as many times as allowed by the element
-              width/height
-            </td>
-          </tr>
-          <tr>
-            <td><code>.bg-repeat-round</code></td>
-            <td>background-repeat: round;</td>
-            <td>
-              Background repeated without gaps as many times as allowed by the
-              element width/height
-            </td>
-          </tr>
-          <tr>
-            <td><code>.bg-repeat-none</code></td>
-            <td>background-repeat: no-repeat;</td>
-            <td>Background is not repeated</td>
-          </tr>
-          <tr>
-            <td><code>.bg-size-cover</code></td>
-            <td>background-size: cover;</td>
-            <td>Responsively fill element with the background</td>
-          </tr>
-          <tr>
-            <td><code>.bg-size-contain</code></td>
-            <td>background-size: contain;</td>
-            <td>
-              Background is fitted to the element so that it's always fully
-              visible
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="group">
+<div class="group">
   <h2 class="h3 mt-30">
-    <span id="lines-and-borders" class="sublink"></span>
-      Lines & Borders
+    <span id="background" class="sublink"></span>
+    Background
   </h2>
-
-  <p>File location: <code class="loc">layout/helpers/_separation.scss</code> (<a 
-      href="https://github.com/ahansson/hgrid-css/blob/main/sass/layout/helpers/_separation.scss"
-      target="_blank"
-      rel="noopener"
-      >GitHub</a>)
-  </p>
-
-    <h3 class="h4 mt-40">Horizontal Separators</h3>
-
-    <code>&lt;hr></code>
-    <hr class="push10v margin-right-150 phone-landscape-mr-0">
-
-    <code>.hairline</code>
-    <div class="hairline demo push10v margin-right-150 phone-landscape-mr-0"></div>
-
-    <code>.hairline-darker</code>
-    <div class="hairline-darker push10v margin-right-150 phone-landscape-mr-0"></div>
-
-    <h4 class="mt-50">Borders</h4>
-
-    <div class="row mt-40">
-      <div class="column-2 border-gray-lighter">
-        <small class="block mb-0 text-center padding-20">
-          <code>.border-gray-lighter</code>
-        </small>
-      </div>
-      <div class="column-2 border-gray-light">
-        <small class="block mb-0 text-center padding-20">
-          <code>.border-gray-light</code>
-        </small>
-      </div>
-    </div>
-    <div class="row">
-      <div class="column-2 border-gray">
-        <small class="block mb-0 text-center padding-20">
-          <code>.border-gray</code>
-        </small>
-      </div>
-      <div class="column-2 border-gray-dark">
-        <small class="block mb-0 text-center padding-20">
-          <code>.border-gray-dark</code>
-        </small>
-      </div>
-    </div>
-    <div class="row">
-      <div class="column-2 border-gray-darker">
-        <small class="block mb-0 text-center padding-20">
-          <code>.border-gray-darker</code>
-        </small>
-      </div>
-    </div>
-
-    <p>Additionally: <code>.border-transparent</code> and <code>.border-none</code></p>
-
-    <h5 class="mt-60">Individual Borders</h5>
-
-    <div class="row mt-40 individual-border-demo">
-      <div class="column-5 bg-gray-lighter border-top-gray">
-        <small class="block mb-0 text-center padding-20">
-          <code>.border-top-gray</code>
-        </small>
-      </div>
-      <div class="column-5 bg-gray-lighter border-right-gray">
-        <small class="block mb-0 text-center padding-20">
-          <code>.border-right-gray</code>
-        </small>
-      </div>
-      <div class="column-5 bg-gray-lighter border-bottom-gray">
-        <small class="block mb-0 text-center padding-20">
-          <code>.border-bottom-gray</code>
-        </small>
-      </div>
-      <div class="column-5 bg-gray-lighter border-left-gray">
-        <small class="block mb-0 text-center padding-20">
-          <code>.border-left-gray</code>
-        </small>
-      </div>
-      <div class="column-5 bg-gray-lighter border-top-gray-dotted">
-        <small class="block mb-0 text-center padding-20">
-          <code>.border-top-gray-dotted</code>
-        </small>
-      </div>
-    </div>
-
-    <div class="row individual-border-demo">
-      <div class="column-5 bg-gray-lighter border-top-gray-dotted">
-        <small class="block mb-0 text-center padding-20">
-          <code>.border-top-gray-dotted</code>
-        </small>
-      </div>
-      <div class="column-5 bg-gray-lighter border-right-gray-dotted">
-        <small class="block mb-0 text-center padding-20">
-          <code>.border-right-gray-dotted</code>
-        </small>
-      </div>
-      <div class="column-5 bg-gray-lighter border-bottom-gray-dotted">
-        <small class="block mb-0 text-center padding-20">
-          <code>.border-bottom-gray-dotted</code>
-        </small>
-      </div>
-      <div class="column-5 bg-gray-lighter border-left-gray-dotted">
-        <small class="block mb-0 text-center padding-20">
-          <code>.border-left-gray-dotted</code>
-        </small>
-      </div>
-      <div class="column-5 bg-gray-lighter border-gray border-top-none">
-        <small class="block mb-0 text-center padding-20">
-          <code>.border-top-none</code>
-        </small>
-      </div>
-    </div>
-
-    <p>
-      This will work for the five grayscale colors we already know, but with simpler naming, as well as <code>none</code>,:
-    </p>
-    <p>
-      <code>lighter</code> (gray-lighter), <code>light</code> (gray-light), <code>gray</code>, <code>dark</code> (gray-dark) and <code>darker</code> (gray-darker).
-    </p>
-
-    <p>Code example:</p>
-
-    <pre class="push20v language-html filename" data-file="html">
-<code>&lt;div class="border-right-darker">
-  &lt;!-- element content -->
-&lt;/div>
-
-&lt;div class="border-top-dark-dotted">
-  &lt;!-- element content -->
-&lt;/div>
-
-&lt;div class="border-gray border-left-none">
-  &lt;!-- element content -->
-&lt;/div>
-</code>
-</pre>
-
-    <h5 class="mt-40">Border Modifiers</h5>
-
-    <p>
-      The border modifiers require that the element has a border. For example by the help of one of <strong>hgrid's</strong> 
-      border or line utilities. The modifier must come after the initial border in the html sequence.
-    </p>
-    <p class="note">
-      ⚠️ Some of the modifier effects can be hard to see if the border line is too thin. The modifiers depend on the browser's 
-      implementation of standard CSS properties and may consequently look slightly different from browser to browser.
-    </p>
-
-    <pre class="push30v language-html filename" data-file="html">
-<code>&lt;div class="border-gray-dark border-dashed">
-  &lt;!-- element content -->
-&lt;/div>
-
-&lt;hr class="border-dotted">
-</code>
-</pre>
-
-    <div class="row f-wrap mt-40 no-stack">
-      <div class="column-4 tablet-landscape-2 border-gray-darker border-dotted">
-        <small class="block mb-0 text-center padding-20">
-          <code>.border-dotted</code>
-        </small>
-      </div>
-      <div class="column-4 tablet-landscape-2 border-gray-darker border-dashed">
-        <small class="block mb-0 text-center padding-20">
-          <code>.border-dashed</code>
-        </small>
-      </div>
-      <div class="column-4 tablet-landscape-2 border-gray border-double border-10px" style="height: 62px;">
-        <small class="block mb-0 text-center padding-20 translate-pull8v">
-          <code>.border-double</code>
-        </small>
-      </div>
-      <div class="column-4 tablet-landscape-2 border-gray border-groove border-10px" style="height: 62px;">
-        <small class="block mb-0 text-center padding-20 translate-pull8v">
-          <code>.border-groove</code>
-        </small>
-      </div>
-    </div>
-    <div class="row f-wrap no-stack">
-      <div class="column-4 tablet-landscape-2 border-gray-light border-ridge border-10px" style="height: 62px;">
-        <small class="block mb-0 text-center padding-20 translate-pull8v">
-          <code>.border-ridge</code>
-        </small>
-      </div>
-      <div class="column-4 tablet-landscape-2 border-gray border-inset border-10px" style="height: 62px;">
-        <small class="block mb-0 text-center padding-20 translate-pull8v">
-          <code>.border-inset</code>
-        </small>
-      </div>
-      <div class="column-4 tablet-landscape-2 border-gray border-outset border-10px" style="height: 62px;">
-        <small class="block mb-0 text-center padding-20 translate-pull8v">
-          <code>.border-outset</code>
-        </small>
-      </div>
-      <div class="column-4 tablet-landscape-2 border-gray-light border-ridge border-10px" style="height: 62px;">
-        <small class="block mb-0 text-center padding-20 translate-pull8v">
-          <code>.border-ridge</code>
-        </small>
-      </div>
-      <div class="column-4 tablet-landscape-2 border-gray border-inset border-10px" style="height: 62px;">
-        <small class="block mb-0 text-center padding-20 translate-pull8v">
-          <code>.border-inset</code>
-        </small>
-      </div>
-    </div>
-
-    <div class="row f-wrap mt-20 no-stack">
-      <div class="column-4 tablet-landscape-2 border-gray border-thin">
-        <small class="block mb-0 text-center padding-20 translate-push4v">
-          <code>.border-thin</code>
-        </small>
-      </div>
-      <div class="column-4 tablet-landscape-2 border-gray border-medium">
-        <small class="block mb-0 text-center padding-20 translate-push2v">
-          <code>.border-medium</code>
-        </small>
-      </div>
-      <div class="column-4 tablet-landscape-2 border-gray border-thick">
-        <small class="block mb-0 text-center padding-20">
-          <code>.border-thick</code>
-        </small>
-      </div>
-      <div class="column-4 tablet-landscape-2 border-gray border-2px">
-        <small class="block mb-0 text-center padding-20 translate-push4v">
-          <code>.border-2px</code>
-        </small>
-      </div>
-      <div class="column-4 tablet-landscape-2 border-gray border-3px">
-        <small class="block mb-0 text-center padding-20 translate-push1v">
-          <code>.border-3px</code>
-        </small>
-      </div>
-      <div class="column-4 tablet-landscape-2 border-gray border-4px">
-        <small class="block mb-0 text-center padding-20">
-          <code>.border-4px</code>
-        </small>
-      </div>
-      <div class="column-4 tablet-landscape-2 border-gray border-5px">
-        <small class="block mb-0 text-center padding-20">
-          <code>.border-5px</code>
-        </small>
-      </div>
-      <div class="column-4 tablet-landscape-2 border-gray border-6px">
-        <small class="block mb-0 text-center padding-20">
-          <code>.border-6px</code>
-        </small>
-      </div>
-      <div class="column-4 tablet-landscape-2 border-gray border-10px">
-        <small class="block mb-0 text-center padding-20">
-          <code>.border-10px</code>
-        </small>
-      </div>
-    </div>
-
-    <h5 class="mt-40">Text Column Separators</h5>
-
-    <p>
-      Add the CSS class <code>.col-rule-gray-light</code> to a multi-column text container and light gray lines will show up 
-      between each column. More about text columns is coming up in the <a href="/documentation/typography/">next chapter</a>.
-    </p>
-
-    <div class="row mt-40">
-      <div class="column three-columns col-rule-gray-light italic">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
-          odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
-          quis sem at.
-        </p>
-
-        <p>
-          Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.
-          Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem
-          at dolor.
-        </p>
-
-        <p>
-          Class aptent taciti sociosqu ad litora torquent per conubia nostra,
-          per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non maecenas
-          tincidunt.
-        </p>
-      </div>
-    </div>
-
-    <p>
-      Our usual shades of gray can be used, with the naming pattern <code>.col-rule-{ color-name }</code>: <code>gray-lighter</code>, 
-      <code>gray-light</code>, <code>gray</code>, <code>gray-dark</code>, <code>gray-darker</code>, in addition to 
-      <code>color-light</code> and <code>color-dark</code> (customizable with white and black as defaults)
-    </p>
-
-    <h5 class="mt-60">Responsive Border Overrides</h5>
-
-    <p>Remove borders responsively:</p>
-
-    <div class="scrollable-x mt-30 mb-20">
-      <table style="min-width: 600px;">
-        <thead>
-          <tr>
-            <th style="width: 30%">Classname</th>
-            <th style="width: 30%">CSS Property</th>
-            <th style="width: 40%">Comment</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><code>.{ viewport-name }-bn-0</code></td>
-            <td>border: none;</td>
-            <td>Example: <code>tablet-portrait-bn-0</code></td>
-          </tr>
-          <tr>
-            <td><code>.{ viewport-name }-bt-0</code></td>
-            <td>border-top: none;</td>
-            <td>Example: <code>desktop-large-bt-0</code></td>
-          </tr>
-          <tr>
-            <td><code>.{ viewport-name }-bb-0</code></td>
-            <td>border-bottom: none;</td>
-            <td>Example: <code>phone-bb-0</code></td>
-          </tr>
-          <tr>
-            <td><code>.{ viewport-name }-br-0</code></td>
-            <td>border-right: none;</td>
-            <td>Example: <code>laptop-br-0</code></td>
-          </tr>
-          <tr>
-            <td><code>.{ viewport-name }-bl-0</code></td>
-            <td>border-left: none;</td>
-            <td>Example: <code>phone-landscape-bl-0</code></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <p>
-      Supported breakpoint names:
-    </p>
-
-    <ul>
-      <li><code>desktop-large</code></li>
-      <li><code>desktop</code></li>
-      <li><code>laptop</code></li>
-      <li><code>tablet-landscape</code></li>
-      <li><code>tablet-portrait</code></li>
-      <li><code>phone-landscape</code></li>
-      <li><code>phone</code></li>
-    </ul>
-
-  </div>
-
-  <h2 class="h3 mt-30">
-    <span id="shapes" class="sublink"></span>
-    Shapes
-  </h2>
-
   <p>
     File location:
-    <code class="loc">sass/layout/helpers/_utilities.scss</code> (<a
-      href="https://github.com/ahansson/hgrid-css/blob/main/sass/layout/helpers/_utilities.scss"
+    <code class="loc">sass/layout/helpers/_background.scss</code> (<a
+      href="https://github.com/ahansson/hgrid-css/blob/main/sass/layout/helpers/_background.scss"
       target="_blank"
       rel="noopener"
-      >GitHub</a>)
+      >GitHub</a
+    >)
   </p>
 
-  <div class="row mt-40 no-stack">
-    <div class="column-3 tablet-portrait-2">
-      <h5>Circle</h5>
-      <code>.circle</code>
-    </div>
-    <div class="column tablet-portrait-2">
-      <h5>Rounded</h5>
-      <code>.rounded</code>
-    </div>
-  </div>
-  <div class="row align-items-center no-stack">
-    <div class="column-3 tablet-portrait-2">
-      <img
-        class="circle border-gray-dark border-3px"
-        src="/assets/img/portrait.jpg"
-        alt="portrait"
-        loading="lazy"
-      />
-    </div>
-    <div class="column phone-landscape-pt-30">
-      <button class="rounded">Hi there!</button>
-    </div>
-  </div>
+  <h4 class="mt-60">Background Colors</h4>
 
-  <pre class="mt-40 language-html filename" data-file="html">
-<code>&lt;img 
-  class="border-gray-dark border-3px circle" 
-  src="/img/portrait.jpg"
-  alt="Portrait of a bearded man"
->
-
-&lt;button class="rounded">
-  Hi there!
-&lt;/button>
-</code>
-</pre>
-
-  <h5 class="mt-60">Border Radius</h5>
-
-  <div class="row f-wrap mt-40 no-stack">
-    <div class="column-4 tablet-landscape-2 border-gray radius">
-      <small class="block mb-0 text-center padding-20">
-        <code>.radius</code> *
-      </small>
-    </div>
-    <div class="column-4 tablet-landscape-2 border-gray radius-2">
-      <small class="block mb-0 text-center padding-20">
-        <code>.radius-2</code>
-      </small>
-    </div>
-    <div class="column-4 tablet-landscape-2 border-gray radius-4">
-      <small class="block mb-0 text-center padding-20">
-        <code>.radius-4</code>
-      </small>
-    </div>
-    <div class="column-4 tablet-landscape-2 border-gray radius-6">
-      <small class="block mb-0 text-center padding-20">
-        <code>.radius-6</code>
-      </small>
-    </div>
-    <div class="column-4 tablet-landscape-2 border-gray radius-8">
-      <small class="block mb-0 text-center padding-20">
-        <code>.radius-8</code>
-      </small>
-    </div>
-    <div class="column-4 tablet-landscape-2 border-gray radius-10">
-      <small class="block mb-0 text-center padding-20">
-        <code>.radius-10</code>
-      </small>
-    </div>
-    <div class="column-4 tablet-landscape-2 border-gray radius-12">
-      <small class="block mb-0 text-center padding-20">
-        <code>.radius-12</code>
-      </small>
-    </div>
-    <div class="column-4 tablet-landscape-2 border-gray radius-14">
-      <small class="block mb-0 text-center padding-20">
-        <code>.radius-14</code>
-      </small>
-    </div>
-    <div class="column-4 tablet-landscape-2 border-gray radius-16">
-      <small class="block mb-0 text-center padding-20">
-        <code>.radius-16</code>
-      </small>
-    </div>
-    <div class="column-4 tablet-landscape-2 border-gray radius-18">
-      <small class="block mb-0 text-center padding-20">
-        <code>.radius-18</code>
-      </small>
-    </div>
-    <div class="column-4 tablet-landscape-2 border-gray radius-20">
-      <small class="block mb-0 text-center padding-20">
-        <code>.radius-20</code>
-      </small>
-    </div>
+  <div class="scrollable-x mt-20">
+    <table style="min-width: 600px;">
+      <thead>
+        <tr>
+          <th style="width: 23%">Classname</th>
+          <th style="width: 30%">Color</th>
+          <th style="width: 40%">Comment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>.bg-white</code></td>
+          <td><div class="bg-white width-75pct border-gray-light">&nbsp;</div></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><code>.bg-gray-lighter</code></td>
+          <td><div class="bg-gray-lighter width-75pct border-gray-light">&nbsp;</div></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><code>.bg-gray-light</code></td>
+          <td><div class="bg-gray-light width-75pct border-gray-light">&nbsp;</div></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><code>.bg-gray</code></td>
+          <td><div class="bg-gray width-75pct border-gray-light">&nbsp;</div></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><code>.bg-gray-dark</code></td>
+          <td><div class="bg-gray-dark width-75pct border-gray-light">&nbsp;</div></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><code>.bg-gray-darker</code></td>
+          <td><div class="bg-gray-darker width-75pct border-gray-light">&nbsp;</div></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><code>.bg-black</code></td>
+          <td><div class="bg-black width-75pct border-gray-light">&nbsp;</div></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>&nbsp;</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><code>.bg-light</code></td>
+          <td><div class="bg-light width-75pct border-gray-light">&nbsp;</div></td>
+          <td>White default color, customizable</td>
+        </tr>
+        <tr>
+          <td><code>.bg-dark</code></td>
+          <td><div class="bg-dark width-75pct border-gray-light">&nbsp;</div></td>
+          <td>Black default color, customizable</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
-  <p class="note push10v">
-    *) Customizable default, 6px. Modify the <code>$border-radius</code> variable in the <code>@use</code> 
-    rule when integrating <strong>hgrid</strong> in your project, or overwrite the <code>.radius</code> class in your CSS.
-  </p>
+  <h4 class="mt-60">Miscellaneous Background Utilities</h4>
 
-  <h6>Border Radius Variants</h6>
-
-  <ul>
-    <li><code>.radius-top-2</code> – <code>.radius-top-4</code> ... <code>.radius-top-20</code></li>
-    <li><code>.radius-bottom-2</code> – <code>.radius-bottom-4</code> ... <code>.radius-bottom-20</code></li>
-    <li><code>.radius-left-2</code> – <code>.radius-left-4</code> ... <code>.radius-left-20</code></li>
-    <li><code>.radius-right-2</code> – <code>.radius-right-4</code> ... <code>.radius-right-20</code></li>  
-  </ul>
-
-  <h2 class="h3 mt-60">
-    <span id="embed" class="sublink"></span>
-    Embed
-  </h2>
-
-  <p>
-    File location:
-    <code class="loc">sass/layout/helpers/_embed.scss</code> (<a
-      href="https://github.com/ahansson/hgrid-css/blob/main/sass/layout/helpers/_embed.scss"
-      target="_blank"
-      rel="noopener"
-      >GitHub</a>)
-  </p>
-
-  <p>
-    Create a responsive container for elements such as <code>&lt;iframe></code> and <code>&lt;embed></code>, with the 
-    <code>.embed</code> class.
-  </p>
-
-  <div class="row f-wrap push20v">
-    <div class="column tablet-portrait-2">
-      <div class="embed radius-10">
-        <iframe 
-          width="560" 
-          height="315" 
-          src="https://www.youtube-nocookie.com/embed/cVFzblT5VPE" 
-          title="YouTube video player" 
-          frameborder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowfullscreen>
-        </iframe>
-      </div>
-    </div>
-    <div class="column-3 tablet-portrait-2">
-      <pre class="language-html filename" data-file="html">
-<code>&lt;div class="embed radius-10">
-  &lt;iframe 
-    width="560"
-    height="315"
-    src="https://www.youtube-nocookie.com/embed/cVFzblT5VPE" 
-    title="Video Player">
-  &lt;/iframe>
-&lt;/div></code>
-</pre>
-    </div>
+  <div class="scrollable-x mt-20">
+    <table style="min-width: 600px;">
+      <thead>
+        <tr>
+          <th style="width: 36%">Classname</th>
+          <th style="width: 36%">CSS Property</th>
+          <th style="width: 28%">Comment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>.bg-fixed</code></td>
+          <td>background-attachment: fixed;</td>
+          <td>Background stays put relative to the viewport</td>
+        </tr>
+        <tr>
+          <td><code>.bg-local</code></td>
+          <td>background-attachment: local;</td>
+          <td>Background scrolls if the element content is scrollable.</td>
+        </tr>
+        <tr>
+          <td><code>.bg-pos-top</code></td>
+          <td>background-position: top;</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><code>.bg-pos-bottom</code></td>
+          <td>background-position: bottom;</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><code>.bg-pos-right</code></td>
+          <td>background-position: right;</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><code>.bg-pos-left</code></td>
+          <td>background-position: left;</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><code>.bg-pos-center</code></td>
+          <td>background-position: center;</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><code>.bg-repeat-x</code></td>
+          <td>background-repeat: repeat-x;</td>
+          <td>Repeats background image horizontally</td>
+        </tr>
+        <tr>
+          <td><code>.bg-repeat-y</code></td>
+          <td>background-repeat: repeat-y;</td>
+          <td>Repeats background image vertically</td>
+        </tr>
+        <tr>
+          <td><code>.bg-repeat-space</code></td>
+          <td>background-repeat: space;</td>
+          <td>
+            Background repeated as many times as allowed by the element
+            width/height
+          </td>
+        </tr>
+        <tr>
+          <td><code>.bg-repeat-round</code></td>
+          <td>background-repeat: round;</td>
+          <td>
+            Background repeated without gaps as many times as allowed by the
+            element width/height
+          </td>
+        </tr>
+        <tr>
+          <td><code>.bg-repeat-none</code></td>
+          <td>background-repeat: no-repeat;</td>
+          <td>Background is not repeated</td>
+        </tr>
+        <tr>
+          <td><code>.bg-size-cover</code></td>
+          <td>background-size: cover;</td>
+          <td>Responsively fill element with the background</td>
+        </tr>
+        <tr>
+          <td><code>.bg-size-contain</code></td>
+          <td>background-size: contain;</td>
+          <td>
+            Background is fitted to the element so that it's always fully
+            visible
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-</main>
+</div>
+
 <div class="custom-hairline mt-40"></div>
 <p class="fl hide-phone">
   ← <strong>Previous</strong>:
-  <a href="/documentation/layout/positioning/">Positioning</a>
+  <a href="/documentation/layout/tables/">Tables</a>
 </p>
 <p class="fr">
-  <strong>Next</strong>: <a href="/documentation/typography/">Typography</a> →
+  <strong>Next</strong>: <a href="/documentation/utilities/lines-and-borders/">Lines & Borders</a> →
 </p>

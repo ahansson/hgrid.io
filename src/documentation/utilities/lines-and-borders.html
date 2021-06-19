@@ -1,0 +1,359 @@
+---
+layout: layout/docs.njk
+meta: {
+title: Line and Border Utilities | hgrid,
+description: Utility classes for lines and borders in hgrid.
+}
+title: Lines & Borders
+---
+<p>File location: <code class="loc">layout/helpers/_separation.scss</code> (<a 
+    href="https://github.com/ahansson/hgrid-css/blob/main/sass/layout/helpers/_separation.scss"
+    target="_blank"
+    rel="noopener"
+    >GitHub</a>)
+</p>
+
+<h3 class="h4 mt-40">Horizontal Separators</h3>
+
+<code>&lt;hr></code>
+<hr class="push10v margin-right-150 phone-landscape-mr-0">
+
+<code>.hairline</code>
+<div class="hairline demo push10v margin-right-150 phone-landscape-mr-0"></div>
+
+<code>.hairline-darker</code>
+<div class="hairline-darker push10v margin-right-150 phone-landscape-mr-0"></div>
+
+<h4 class="mt-50">Borders</h4>
+
+<div class="row mt-40">
+  <div class="column-2 border-gray-lighter">
+    <small class="block mb-0 text-center padding-20">
+      <code>.border-gray-lighter</code>
+    </small>
+  </div>
+  <div class="column-2 border-gray-light">
+    <small class="block mb-0 text-center padding-20">
+      <code>.border-gray-light</code>
+    </small>
+  </div>
+</div>
+<div class="row">
+  <div class="column-2 border-gray">
+    <small class="block mb-0 text-center padding-20">
+      <code>.border-gray</code>
+    </small>
+  </div>
+  <div class="column-2 border-gray-dark">
+    <small class="block mb-0 text-center padding-20">
+      <code>.border-gray-dark</code>
+    </small>
+  </div>
+</div>
+<div class="row">
+  <div class="column-2 border-gray-darker">
+    <small class="block mb-0 text-center padding-20">
+      <code>.border-gray-darker</code>
+    </small>
+  </div>
+</div>
+
+<p>Additionally: <code>.border-transparent</code> and <code>.border-none</code></p>
+
+<h5 class="mt-60">Individual Borders</h5>
+
+<div class="row mt-40 individual-border-demo">
+  <div class="column-5 bg-gray-lighter border-top-gray">
+    <small class="block mb-0 text-center padding-20">
+      <code>.border-top-gray</code>
+    </small>
+  </div>
+  <div class="column-5 bg-gray-lighter border-right-gray">
+    <small class="block mb-0 text-center padding-20">
+      <code>.border-right-gray</code>
+    </small>
+  </div>
+  <div class="column-5 bg-gray-lighter border-bottom-gray">
+    <small class="block mb-0 text-center padding-20">
+      <code>.border-bottom-gray</code>
+    </small>
+  </div>
+  <div class="column-5 bg-gray-lighter border-left-gray">
+    <small class="block mb-0 text-center padding-20">
+      <code>.border-left-gray</code>
+    </small>
+  </div>
+  <div class="column-5 bg-gray-lighter border-top-gray-dotted">
+    <small class="block mb-0 text-center padding-20">
+      <code>.border-top-gray-dotted</code>
+    </small>
+  </div>
+</div>
+
+<div class="row individual-border-demo">
+  <div class="column-5 bg-gray-lighter border-top-gray-dotted">
+    <small class="block mb-0 text-center padding-20">
+      <code>.border-top-gray-dotted</code>
+    </small>
+  </div>
+  <div class="column-5 bg-gray-lighter border-right-gray-dotted">
+    <small class="block mb-0 text-center padding-20">
+      <code>.border-right-gray-dotted</code>
+    </small>
+  </div>
+  <div class="column-5 bg-gray-lighter border-bottom-gray-dotted">
+    <small class="block mb-0 text-center padding-20">
+      <code>.border-bottom-gray-dotted</code>
+    </small>
+  </div>
+  <div class="column-5 bg-gray-lighter border-left-gray-dotted">
+    <small class="block mb-0 text-center padding-20">
+      <code>.border-left-gray-dotted</code>
+    </small>
+  </div>
+  <div class="column-5 bg-gray-lighter border-gray border-top-none">
+    <small class="block mb-0 text-center padding-20">
+      <code>.border-top-none</code>
+    </small>
+  </div>
+</div>
+
+<p>
+  This will work for the five grayscale colors we already know, but with simpler naming, as well as <code>none</code>,:
+</p>
+<p>
+  <code>lighter</code> (gray-lighter), <code>light</code> (gray-light), <code>gray</code>, <code>dark</code> (gray-dark) and <code>darker</code> (gray-darker).
+</p>
+
+<p>Code example:</p>
+
+<pre class="push20v language-html filename" data-file="html">
+<code>&lt;div class="border-right-darker">
+&lt;!-- element content -->
+&lt;/div>
+
+&lt;div class="border-top-dark-dotted">
+&lt;!-- element content -->
+&lt;/div>
+
+&lt;div class="border-gray border-left-none">
+&lt;!-- element content -->
+&lt;/div>
+</code>
+</pre>
+
+<h5 class="mt-40">Border Modifiers</h5>
+
+<p>
+  The border modifiers require that the element has a border. For example by the help of one of <strong>hgrid's</strong> 
+  border or line utilities. The modifier must come after the initial border in the html sequence.
+</p>
+<p class="note">
+  ⚠️ Some of the modifier effects can be hard to see if the border line is too thin. The modifiers depend on the browser's 
+  implementation of standard CSS properties and may consequently look slightly different from browser to browser.
+</p>
+
+<pre class="push30v language-html filename" data-file="html">
+<code>&lt;div class="border-gray-dark border-dashed">
+&lt;!-- element content -->
+&lt;/div>
+
+&lt;hr class="border-dotted">
+</code>
+</pre>
+
+<div class="row f-wrap mt-40 no-stack">
+  <div class="column-4 tablet-landscape-2 border-gray-darker border-dotted">
+    <small class="block mb-0 text-center padding-20">
+      <code>.border-dotted</code>
+    </small>
+  </div>
+  <div class="column-4 tablet-landscape-2 border-gray-darker border-dashed">
+    <small class="block mb-0 text-center padding-20">
+      <code>.border-dashed</code>
+    </small>
+  </div>
+  <div class="column-4 tablet-landscape-2 border-gray border-double border-10px" style="height: 62px;">
+    <small class="block mb-0 text-center padding-20 translate-pull8v">
+      <code>.border-double</code>
+    </small>
+  </div>
+  <div class="column-4 tablet-landscape-2 border-gray border-groove border-10px" style="height: 62px;">
+    <small class="block mb-0 text-center padding-20 translate-pull8v">
+      <code>.border-groove</code>
+    </small>
+  </div>
+</div>
+<div class="row f-wrap no-stack">
+  <div class="column-4 tablet-landscape-2 border-gray-light border-ridge border-10px" style="height: 62px;">
+    <small class="block mb-0 text-center padding-20 translate-pull8v">
+      <code>.border-ridge</code>
+    </small>
+  </div>
+  <div class="column-4 tablet-landscape-2 border-gray border-inset border-10px" style="height: 62px;">
+    <small class="block mb-0 text-center padding-20 translate-pull8v">
+      <code>.border-inset</code>
+    </small>
+  </div>
+  <div class="column-4 tablet-landscape-2 border-gray border-outset border-10px" style="height: 62px;">
+    <small class="block mb-0 text-center padding-20 translate-pull8v">
+      <code>.border-outset</code>
+    </small>
+  </div>
+  <div class="column-4 tablet-landscape-2 border-gray-light border-ridge border-10px" style="height: 62px;">
+    <small class="block mb-0 text-center padding-20 translate-pull8v">
+      <code>.border-ridge</code>
+    </small>
+  </div>
+  <div class="column-4 tablet-landscape-2 border-gray border-inset border-10px" style="height: 62px;">
+    <small class="block mb-0 text-center padding-20 translate-pull8v">
+      <code>.border-inset</code>
+    </small>
+  </div>
+</div>
+
+<div class="row f-wrap mt-20 no-stack">
+  <div class="column-4 tablet-landscape-2 border-gray border-thin">
+    <small class="block mb-0 text-center padding-20 translate-push4v">
+      <code>.border-thin</code>
+    </small>
+  </div>
+  <div class="column-4 tablet-landscape-2 border-gray border-medium">
+    <small class="block mb-0 text-center padding-20 translate-push2v">
+      <code>.border-medium</code>
+    </small>
+  </div>
+  <div class="column-4 tablet-landscape-2 border-gray border-thick">
+    <small class="block mb-0 text-center padding-20">
+      <code>.border-thick</code>
+    </small>
+  </div>
+  <div class="column-4 tablet-landscape-2 border-gray border-2px">
+    <small class="block mb-0 text-center padding-20 translate-push4v">
+      <code>.border-2px</code>
+    </small>
+  </div>
+  <div class="column-4 tablet-landscape-2 border-gray border-3px">
+    <small class="block mb-0 text-center padding-20 translate-push1v">
+      <code>.border-3px</code>
+    </small>
+  </div>
+  <div class="column-4 tablet-landscape-2 border-gray border-4px">
+    <small class="block mb-0 text-center padding-20">
+      <code>.border-4px</code>
+    </small>
+  </div>
+  <div class="column-4 tablet-landscape-2 border-gray border-5px">
+    <small class="block mb-0 text-center padding-20">
+      <code>.border-5px</code>
+    </small>
+  </div>
+  <div class="column-4 tablet-landscape-2 border-gray border-6px">
+    <small class="block mb-0 text-center padding-20">
+      <code>.border-6px</code>
+    </small>
+  </div>
+  <div class="column-4 tablet-landscape-2 border-gray border-10px">
+    <small class="block mb-0 text-center padding-20">
+      <code>.border-10px</code>
+    </small>
+  </div>
+</div>
+
+<h5 class="mt-40">Text Column Separators</h5>
+
+<p>
+  Add the CSS class <code>.col-rule-gray-light</code> to a multi-column text container and light gray lines will show up 
+  between each column. More about text columns is coming up in the <a href="/documentation/typography/">next chapter</a>.
+</p>
+
+<div class="row mt-40">
+  <div class="column three-columns col-rule-gray-light italic">
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
+      odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
+      quis sem at.
+    </p>
+
+    <p>
+      Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.
+      Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem
+      at dolor.
+    </p>
+
+    <p>
+      Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+      per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non maecenas
+      tincidunt.
+    </p>
+  </div>
+</div>
+
+<p>
+  Our usual shades of gray can be used, with the naming pattern <code>.col-rule-{ color-name }</code>: <code>gray-lighter</code>, 
+  <code>gray-light</code>, <code>gray</code>, <code>gray-dark</code>, <code>gray-darker</code>, in addition to 
+  <code>color-light</code> and <code>color-dark</code> (customizable with white and black as defaults)
+</p>
+
+<h5 class="mt-60">Responsive Border Overrides</h5>
+
+<p>Remove borders responsively:</p>
+
+<div class="scrollable-x mt-30 mb-20">
+  <table style="min-width: 600px;">
+    <thead>
+      <tr>
+        <th style="width: 30%">Classname</th>
+        <th style="width: 30%">CSS Property</th>
+        <th style="width: 40%">Comment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>.{ viewport-name }-bn-0</code></td>
+        <td>border: none;</td>
+        <td>Example: <code>tablet-portrait-bn-0</code></td>
+      </tr>
+      <tr>
+        <td><code>.{ viewport-name }-bt-0</code></td>
+        <td>border-top: none;</td>
+        <td>Example: <code>desktop-large-bt-0</code></td>
+      </tr>
+      <tr>
+        <td><code>.{ viewport-name }-bb-0</code></td>
+        <td>border-bottom: none;</td>
+        <td>Example: <code>phone-bb-0</code></td>
+      </tr>
+      <tr>
+        <td><code>.{ viewport-name }-br-0</code></td>
+        <td>border-right: none;</td>
+        <td>Example: <code>laptop-br-0</code></td>
+      </tr>
+      <tr>
+        <td><code>.{ viewport-name }-bl-0</code></td>
+        <td>border-left: none;</td>
+        <td>Example: <code>phone-landscape-bl-0</code></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<p>
+  Supported viewport names:
+</p>
+
+<ul>
+  <li><code>desktop-large</code></li>
+  <li><code>desktop</code></li>
+  <li><code>laptop</code></li>
+  <li><code>tablet-landscape</code></li>
+  <li><code>tablet-portrait</code></li>
+  <li><code>phone-landscape</code></li>
+  <li><code>phone</code></li>
+</ul>
+
+<div class="custom-hairline mt-40"></div>
+<div class="flex justify-content-space-between">
+  <p class="">← <strong>Previous</strong>: <a href="/documentation/utilities/#background">Background</a></p>
+  <p class=""><strong>Next</strong>: <a href="/documentation/utilities/shapes">Shapes</a> →</p>
+</div>

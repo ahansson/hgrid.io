@@ -30,9 +30,9 @@
   <h5 role="menuitem"><a href="/documentation/utilities/" {% if title == 'Utilities' %}class="active-link"{% endif %}>Utilities</a></h5>
       <ul class="sub-links">
       <li role="menuitem"><a class="close" href="/documentation/utilities/#background">Background</a></li>
-      <li role="menuitem"><a class="close" href="/documentation/utilities/#lines-and-borders">Lines & Borders</a></li>
-      <li role="menuitem"><a class="close" href="/documentation/utilities/#shapes">Shapes</a></li>
-      <li role="menuitem"><a class="close" href="/documentation/utilities/#embed">Embed</a></li>
+      <li role="menuitem"><a href="/documentation/utilities/lines-and-borders" class="{{ 'active-link' if 'lines-and-borders' in page.url }}">Lines & Borders</a></li>
+      <li role="menuitem"><a href="/documentation/utilities/shapes" class="{{ 'active-link' if 'shapes' in page.url }}">Shapes</a></li>
+      <li role="menuitem"><a href="/documentation/utilities/embed" class="{{ 'active-link' if 'embed' in page.url }}">Embed</a></li>
     </ul>
   <h5 role="menuitem"><a href="/documentation/input/" {% if title == 'Input' %}class="active-link"{% endif %}>Input</a></h5>
   <h5 role="menuitem"><a href="/documentation/typography/" {% if title == 'Typography' %}class="active-link"{% endif %}>Typography</a></h5>

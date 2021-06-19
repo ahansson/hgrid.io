@@ -1,0 +1,136 @@
+---
+layout: layout/docs.njk
+meta: {
+title: Shapes | hgrid,
+description: Utility classes for element shapes in hgrid.
+}
+title: Shapes
+---
+<p>
+  File location:
+  <code class="loc">sass/layout/helpers/_utilities.scss</code> (<a
+    href="https://github.com/ahansson/hgrid-css/blob/main/sass/layout/helpers/_utilities.scss"
+    target="_blank"
+    rel="noopener"
+    >GitHub</a>)
+</p>
+
+<div class="row mt-40 no-stack">
+  <div class="column-3 tablet-portrait-2">
+    <h5>Circle</h5>
+    <code>.circle</code>
+  </div>
+  <div class="column tablet-portrait-2">
+    <h5>Rounded</h5>
+    <code>.rounded</code>
+  </div>
+</div>
+<div class="row align-items-center no-stack">
+  <div class="column-3 tablet-portrait-2">
+    <img
+      class="circle border-gray-dark border-3px"
+      src="/assets/img/portrait.jpg"
+      alt="portrait"
+      loading="lazy"
+    />
+  </div>
+  <div class="column phone-landscape-pt-30">
+    <button class="rounded">Hi there!</button>
+  </div>
+</div>
+
+<pre class="mt-40 language-html filename" data-file="html">
+<code>&lt;img 
+class="border-gray-dark border-3px circle" 
+src="/img/portrait.jpg"
+alt="Portrait of a bearded man"
+>
+
+&lt;button class="rounded">
+Hi there!
+&lt;/button>
+</code>
+</pre>
+
+<h5 class="mt-60">Border Radius</h5>
+
+<div class="row f-wrap mt-40 no-stack">
+  <div class="column-4 tablet-landscape-2 border-gray radius">
+    <small class="block mb-0 text-center padding-20">
+      <code>.radius</code> *
+    </small>
+  </div>
+  <div class="column-4 tablet-landscape-2 border-gray radius-2">
+    <small class="block mb-0 text-center padding-20">
+      <code>.radius-2</code>
+    </small>
+  </div>
+  <div class="column-4 tablet-landscape-2 border-gray radius-4">
+    <small class="block mb-0 text-center padding-20">
+      <code>.radius-4</code>
+    </small>
+  </div>
+  <div class="column-4 tablet-landscape-2 border-gray radius-6">
+    <small class="block mb-0 text-center padding-20">
+      <code>.radius-6</code>
+    </small>
+  </div>
+  <div class="column-4 tablet-landscape-2 border-gray radius-8">
+    <small class="block mb-0 text-center padding-20">
+      <code>.radius-8</code>
+    </small>
+  </div>
+  <div class="column-4 tablet-landscape-2 border-gray radius-10">
+    <small class="block mb-0 text-center padding-20">
+      <code>.radius-10</code>
+    </small>
+  </div>
+  <div class="column-4 tablet-landscape-2 border-gray radius-12">
+    <small class="block mb-0 text-center padding-20">
+      <code>.radius-12</code>
+    </small>
+  </div>
+  <div class="column-4 tablet-landscape-2 border-gray radius-14">
+    <small class="block mb-0 text-center padding-20">
+      <code>.radius-14</code>
+    </small>
+  </div>
+  <div class="column-4 tablet-landscape-2 border-gray radius-16">
+    <small class="block mb-0 text-center padding-20">
+      <code>.radius-16</code>
+    </small>
+  </div>
+  <div class="column-4 tablet-landscape-2 border-gray radius-18">
+    <small class="block mb-0 text-center padding-20">
+      <code>.radius-18</code>
+    </small>
+  </div>
+  <div class="column-4 tablet-landscape-2 border-gray radius-20">
+    <small class="block mb-0 text-center padding-20">
+      <code>.radius-20</code>
+    </small>
+  </div>
+</div>
+
+<p class="note push10v">
+  *) Customizable default, 6px. Modify the <code>$border-radius</code> variable in the <code>@use</code> 
+  rule when integrating <strong>hgrid</strong> in your project, or overwrite the <code>.radius</code> class in your CSS.
+</p>
+
+<h6>Border Radius Variants</h6>
+
+<ul>
+  <li><code>.radius-top-2</code> – <code>.radius-top-4</code> ... <code>.radius-top-20</code></li>
+  <li><code>.radius-bottom-2</code> – <code>.radius-bottom-4</code> ... <code>.radius-bottom-20</code></li>
+  <li><code>.radius-left-2</code> – <code>.radius-left-4</code> ... <code>.radius-left-20</code></li>
+  <li><code>.radius-right-2</code> – <code>.radius-right-4</code> ... <code>.radius-right-20</code></li>  
+</ul>
+
+<div class="custom-hairline mt-40"></div>
+<p class="fl hide-phone">
+  ← <strong>Previous</strong>: <a href="/documentation/utilities/lines-and-borders/">Lines & Borders</a>
+</p>
+<p class="fr">
+  <strong>Next</strong>:
+  <a href="/documentation/utilities/embed/">Embed</a> →
+</p>
