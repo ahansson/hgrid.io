@@ -6,117 +6,130 @@ description: Typographic CSS styles in hgrid
 }
 title: Typography
 ---
-<div class="row mt-20">
-  <div class="column">
-    <h4 class="mt-50">1. Headlines</h4>
-    <h1 class="mt-30">Hello, this is h1</h1>
-    <h2>Hello, this is h2</h2>
-    <h3>Hello, this is h3</h3>
-    <h4>Hello, this is h4</h4>
-    <h5>Hello, this is h5</h5>
-    <h6>Hello, this is h6</h6>
-  </div>
+<h2 class="h3 mt-30">Headlines</h2>
+
+<p>Heading elements <code>h1</code> to <code>h6</code> are styled out of the box.</p>
+
+<div class="padding-40 border-gray-light mt-30 radius-10 desktop-mr-150 tablet-portrait-mr-0">
+  <h1 class="demo-title">Hello, this is h1</h1>
+  <h2 class="demo-title">Hello, this is h2</h2>
+  <h3>Hello, this is h3</h3>
+  <h4>Hello, this is h4</h4>
+  <h5>Hello, this is h5</h5>
+  <h6 class="mb-0">Hello, this is h6</h6>
 </div>
-<div class="row mt-50">
-  <div class="column">
-    <h4>2. Text columns</h4>
-    <code class="mt-20">.two-columns</code>
-    <div class="row mt-20">
-      <div class="column two-columns">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
-          odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
-          quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent
-          mauris. Fusce nec tellus sed augue semper porta. Mauris massa.
-          Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad
-          litora torquent per conubia nostra, per inceptos himenaeos.
-        </p>
 
-        <p>
-          Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.
-          Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem
-          at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut
-          ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel,
-          suscipit quis, luctus non, massa. Fusce ac turpis quis ligula
-          lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel,
-          tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit.
-        </p>
 
-        <p>
-          Class aptent taciti sociosqu ad litora torquent per conubia nostra,
-          per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non
-          tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante
-          quis turpis. Nulla facilisi. Ut fringilla. Suspendisse potenti. Nunc
-          feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin
-          quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit.
-          Sed lectus. Integer euismod lacus luctus magna.
-        </p>
-      </div>
-    </div>
-    <div class="row mt-20">
-      <div class="column">
-        <code>.three-columns</code>
-      </div>
-    </div>
-    <div class="row">
-      <div class="column three-columns">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
-          odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
-          quis sem at nibh elementum imperdiet.
-        </p>
+<p class="push40v">
+  You can achieve the same visual result by using the utility classes <code>.h1</code>, <code>.h2</code> and so on, with 
+  any HTML element. This lets you for example keep your markup semantic while at the same time reducing or increasing 
+  the font size relative to the element's default font size: 
+</p>
 
-        <p>
-          Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.
-          Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem
-          at dolor. Maecenas mattis.
-        </p>
+<pre class="language-html filename" data-file="html">
+<code>&lt;h2 class="h4">An h2 headline, with a smaller font size&lt;/h2></code>
+</pre>
 
-        <p>
-          Class aptent taciti sociosqu ad litora torquent per conubia nostra,
-          per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non
-          tincidunt.
-        </p>
-      </div>
-    </div>
-    <div class="row mt-20">
-      <div class="column">
-        <code>.four-columns</code>
-      </div>
-    </div>
-    <div class="row">
-      <div class="column four-columns">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
-          odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
-          quis sem at nibh elementum imperdiet. Pellentesque nibh.
-        </p>
+<h3 class="mt-80">Text columns</h3>
+<p>
+  Split a text container into responsive columns with <code>.two-columns</code>,  
+  <code>.three-columns</code> or <code>.four-columns</code> on the parent element.
+</p>
 
-        <p>
-          Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.
-          Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem
-          at dolor. Maecenas mattis. Pellentesque nibh. Aenean quam.
-        </p>
+<pre class="language-html filename" data-file="html">
+  <code>&lt;div class="two-columns padding-40 border-gray-light radius-10 ">
+  &lt;p>Lorem ipsum dolor ...&lt;/p>
+  &lt;p>Curabitur sodales ...&lt;/p>
+  &lt;p>Class aptent taciti...&lt;/p>
+&lt;/div></code>
+</pre>
 
-        <p>
-          Class aptent taciti sociosqu ad litora torquent per conubia nostra,
-          per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non
-          tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante
-          quis turpis. Aenean quam. In scelerisque sem at dolor. Maecenas
-          mattis. Pellentesque nibh.
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
-<div class="row-block">
-  <article>
-    <h4>3. Lists</h4>
+<div class="padding-40 radius-10 border-gray-light">
+  <p><code>.two-columns</code></p>
+  <div class="two-columns">
     <p>
-      Lists will get basic styling if they are located within an
-      <code>article</code> element.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
+      odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
+      quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent
+      mauris. Fusce nec tellus sed augue semper porta. Mauris massa.
+      Vestibulum lacinia arcu eget nulla. Class aptent taciti sociosqu ad
+      litora torquent per conubia nostra, per inceptos himenaeos.
     </p>
-    <p>Unordered list <code>ul</code></p>
+
+    <p>
+      Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.
+      Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem
+      at dolor. Maecenas mattis. Sed convallis tristique sem. Proin ut
+      ligula vel nunc egestas porttitor. Morbi lectus risus, iaculis vel,
+      suscipit quis, luctus non, massa. Fusce ac turpis quis ligula
+      lacinia aliquet. Mauris ipsum. Nulla metus metus, ullamcorper vel,
+      tincidunt sed, euismod in, nibh. Quisque volutpat condimentum velit.
+    </p>
+
+    <p>
+      Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+      per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non
+      tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante
+      quis turpis. Nulla facilisi. Ut fringilla. Suspendisse potenti. Nunc
+      feugiat mi a tellus consequat imperdiet. Vestibulum sapien. Proin
+      quam. Etiam ultrices. Suspendisse in justo eu magna luctus suscipit.
+      Sed lectus. Integer euismod lacus luctus magna.
+    </p>
+  </div>
+</div>
+
+<div class="padding-40 padding-bottom-10 border-gray-light radius-10 mt-20">
+  <p><code>.three-columns</code></p>
+  <div class="three-columns">
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
+      odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
+      quis sem at nibh elementum imperdiet.
+    </p>
+
+    <p>
+      Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.
+      Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem
+      at dolor. Maecenas mattis.
+    </p>
+
+    <p>
+      Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+      per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non
+      tincidunt.
+    </p>
+  </div>
+</div>
+<div class="padding-40 border-gray-light radius-10 mt-20 mb-80">
+  <p><code>.four-columns</code></p>
+  <div class="four-columns">
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
+      odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla
+      quis sem at nibh elementum imperdiet. Pellentesque nibh.
+    </p>
+
+    <p>
+      Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.
+      Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem
+      at dolor. Maecenas mattis. Pellentesque nibh. Aenean quam.
+    </p>
+
+    <p>
+      Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+      per inceptos himenaeos. Nam nec ante. Sed lacinia, urna non
+      tincidunt mattis, tortor neque adipiscing diam, a cursus ipsum ante
+      quis turpis. Aenean quam. In scelerisque sem at dolor. Maecenas
+      mattis. Pellentesque nibh.
+    </p>
+  </div>
+</div>
+
+<h3>Lists</h3>
+<p>
+  Lists will get basic styling if they are located within an <code>article</code> element.
+</p>
+    <p class="h5 bold push40v">Unordered list <code>ul</code></p>
     <ul>
       <li>Unordered item number one</li>
       <li>List item <a href="https://google.com/" rel="noopener noreferrer">number two</a></li>
@@ -127,7 +140,7 @@ title: Typography
       <li>List item number seven</li>
     </ul>
 
-    <p>Ordered list <code>ol</code></p>
+    <p class="h5 bold push40v">Ordered list <code>ol</code></p>
     <ol>
       <li>Ordered list item number one</li>
       <li>List item <a href="https://google.com/" rel="noopener noreferrer">number two</a></li>
@@ -137,34 +150,34 @@ title: Typography
       <li>List item number six</li>
       <li>List item number seven</li>
     </ol>
-  </article>
-</div>
-<div class="row-block mt-40">
-  <h4>4. Formatting</h4>
-  <code class="mt-20">&lt;blockquote&gt;</code>
 
-  <blockquote class="mt-40 mb-50">
+<h3 class="mt-60 mb-40">Text Formatting</h3>
+  <p><code>&lt;blockquote&gt;</code></p>
+
+  <blockquote>
     Insanity is doing the same thing over and over again, but expecting
     different results.
   </blockquote>
 
-  <code class="mt-40 mb-20">.uppercase</code>
+  <p class="mt-60"><code>.uppercase</code></p>
   <p class="uppercase">Class aptent taciti sociosqu ad litora torquent.</p>
 
+  <p class="mt-60"><code>.text-center</code></p>
   <p class="text-center">
     This is centered text with <code>.text-center</code>
   </p>
 
-  <code class="mt-20 mb-20">.capitalize</code>
+  <p class="mt-60"><code>.capitalize</code></p>
   <p class="capitalize">Curabitur sodales ligula in libero.</p>
 
-  <code class="mt-20 mb-20">.strike</code>
+  <p class="mt-60"><code>.strike or &lt;del> or &lt;s></code></p>
+  <p><del>Maecenas mattis. Pellentesque nibh.</del></p>
 
-  <p class="strike">Maecenas mattis. Pellentesque nibh.</p>
+  <p class="mt-60"><code>&lt;code&gt;</code></p>
+  <code>if (lorem > ipsum) { do this }</code>
 
-  <code class="mt-20 mb-20">&lt;code&gt;</code>
-  <code>if ($lorem == 'ipsum') { do this }</code>
-</div>
+  <p class="mt-60"><code>&lt;pre>&lt;code&gt; ... &lt/code>&lt;/pre></code></p>
+  <pre><code>if (lorem > ipsum) { do this }</code></pre>
 
 <div class="custom-hairline mt-40"></div>
 <p class="fl hide-phone">← <strong>Previous</strong>: <a href="/documentation/input/">Input</a></p>

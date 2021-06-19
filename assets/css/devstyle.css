@@ -11388,6 +11388,11 @@ article.demo pre > code {
   background-color: var(--pre-code-bg);
 }
 
+.demo-title {
+  color: var(--color-dark);
+  letter-spacing: unset;
+}
+
 code.loc {
   background: var(--bg-gray-darker);
   color: var(--color-dark);
