@@ -11363,6 +11363,8 @@ article.demo .normal-text p {
   padding: 0;
   margin-bottom: 2.2rem;
   color: var(--color-dark);
+  line-height: 2.2rem;
+  font-size: 1.4rem;
 }
 article.demo .circle {
   max-width: 50%;

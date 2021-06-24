@@ -33,10 +33,18 @@ title: Typography
 <h3 class="mt-80">Text columns</h3>
 <p>
   Split a text container into responsive columns with <code>.two-columns</code>,  
-  <code>.three-columns</code> or <code>.four-columns</code> on the parent element.
+  <code>.three-columns</code> or <code>.four-columns</code> on the parent element. 
+  The standard gutter between the columns is 4% of the viewport width, as determined by the <code>@mixin col-format</code> in the file 
+  <code>sass/mixins/_mixins.scss</code>.
 </p>
 
-<pre class="language-html filename" data-file="html">
+<p class="note"><strong>Note:</strong> Text columns are automatically adapted to the viewport width by <strong>hgrid</strong>. 
+  All text column utilities are reset to the HTML default, single column flow on the <code>$phone</code> viewport. <code>.three-columns</code> 
+  and <code>.four-columns</code> are also reduced to two columns on <code>$phone-landscape</code> and <code>$tablet-portrait</code> viewports 
+  respectively.
+</p>
+
+<pre class="language-html filename push30v" data-file="html">
   <code>&lt;div class="two-columns padding-40 border-gray-light radius-10 ">
   &lt;p>Lorem ipsum dolor ...&lt;/p>
   &lt;p>Curabitur sodales ...&lt;/p>
@@ -44,7 +52,7 @@ title: Typography
 &lt;/div></code>
 </pre>
 
-<div class="padding-40 radius-10 border-gray-light">
+<div class="padding-30 radius-10 border-gray-light">
   <p><code>.two-columns</code></p>
   <div class="two-columns">
     <p>
@@ -78,7 +86,7 @@ title: Typography
   </div>
 </div>
 
-<div class="padding-40 padding-bottom-10 border-gray-light radius-10 mt-20">
+<div class="padding-30 padding-bottom-10 border-gray-light radius-10 mt-20">
   <p><code>.three-columns</code></p>
   <div class="three-columns">
     <p>
@@ -100,7 +108,7 @@ title: Typography
     </p>
   </div>
 </div>
-<div class="padding-40 border-gray-light radius-10 mt-20 mb-80">
+<div class="padding-30 border-gray-light radius-10 mt-20 mb-80">
   <p><code>.four-columns</code></p>
   <div class="four-columns">
     <p>
@@ -132,7 +140,7 @@ title: Typography
     <p class="h5 bold push40v">Unordered list <code>ul</code></p>
     <ul>
       <li>Unordered item number one</li>
-      <li>List item <a href="https://google.com/" rel="noopener noreferrer">number two</a></li>
+      <li>List item <a href="https://github.com/ahansson/hgrid-css" rel="noopener noreferrer">number two</a> has a demo link</li>
       <li>List item number three</li>
       <li>List item number four</li>
       <li>List item number five</li>
@@ -143,7 +151,7 @@ title: Typography
     <p class="h5 bold push40v">Ordered list <code>ol</code></p>
     <ol>
       <li>Ordered list item number one</li>
-      <li>List item <a href="https://google.com/" rel="noopener noreferrer">number two</a></li>
+      <li>List item <a href="https://github.com/ahansson/hgrid-css" rel="noopener noreferrer">number two</a> has a demo link</li>
       <li>List item number three</li>
       <li>List item number four</li>
       <li>List item number five</li>
@@ -152,32 +160,66 @@ title: Typography
     </ol>
 
 <h3 class="mt-60 mb-40">Text Formatting</h3>
-  <p><code>&lt;blockquote&gt;</code></p>
+
+  <p><code>&lt;a></code></p>
+  <p>
+    Links are <a>automatically styled like this</a>. They can be customized in 
+    <a href="/documentation/variables/">different</a> <a href="/documentation/integrate/">ways</a>.
+  </p>
+  <p class="mt-60"><code>&lt;i&gt;</code>, <code>&lt;em></code></p>
+  <p><em>Cursive letters are nice for emphasis.</em></p>
+
+  <p class="mt-60"><code>&lt;blockquote&gt;</code></p>
 
   <blockquote>
-    Insanity is doing the same thing over and over again, but expecting
-    different results.
+    The only thing necessary for the triumph of evil is for good men to do nothing.
   </blockquote>
 
   <p class="mt-60"><code>.uppercase</code></p>
-  <p class="uppercase">Class aptent taciti sociosqu ad litora torquent.</p>
+  <p class="uppercase">if you inspect the code you will discover that this text is lowercase</p>
+
+  <p class="mt-60"><code>.lowercase</code></p>
+  <p class="lowercase">MOST OF THIS TEXT IS UPPERCASE, if you inspect the code.</p>
+
+  <p class="mt-60"><code>.capitalize</code></p>
+  <p class="capitalize">"positive anything is better than negative nothing", coded in lowercase</p>
+
+  <p class="mt-60"><code>.no-transform</code></p>
+  <p class="lowercase uppercase capitalize no-transform">text transform has been reset with <code>class="no-transform"</code></p>
 
   <p class="mt-60"><code>.text-center</code></p>
   <p class="text-center">
     This is centered text with <code>.text-center</code>
   </p>
 
-  <p class="mt-60"><code>.capitalize</code></p>
-  <p class="capitalize">Curabitur sodales ligula in libero.</p>
+  <p class="mt-60"><code>&lt;u></code>, <code>.underline</code> (override with <code>.no-underline</code>)</p>
+  <p>
+    Here comes a phrase with <span class="underline">some underlined text</span>.
+  </p>
 
-  <p class="mt-60"><code>.strike or &lt;del> or &lt;s></code></p>
-  <p><del>Maecenas mattis. Pellentesque nibh.</del></p>
+  <p class="mt-60"><code>&lt;small></code>, <code>.small</code></p>
+  <p>
+    This is some <span class="small">smaller text</span> in the middle of a line of regular text.
+  </p>
+
+  <p class="mt-60"><code>&lt;del></code>, <code>&lt;s></code> or <code>.strike</code> (override with <code>.no-strike</code>)</p>
+  <p class="strike">It's too late to change my mind</p>
 
   <p class="mt-60"><code>&lt;code&gt;</code></p>
-  <code>if (lorem > ipsum) { do this }</code>
+  <code>const isEven = (num) => num % 2 === 0</code>
 
-  <p class="mt-60"><code>&lt;pre>&lt;code&gt; ... &lt/code>&lt;/pre></code></p>
-  <pre><code>if (lorem > ipsum) { do this }</code></pre>
+  <p class="mt-60"><code>&lt;pre>&lt;code&gt;</code></p>
+  <pre class="language-js"><code>exports.handler = async (event, context) => {
+  if ((event.httpMethod !== 'OPTIONS') && (event.httpMethod !== 'POST')) {
+    return {
+      statusCode: 405,
+      body: 'Method Not Allowed',
+      headers: {
+        Allow: 'POST'
+      }
+    }
+  }
+}</code></pre>
 
 <div class="custom-hairline mt-40"></div>
 <p class="fl hide-phone">← <strong>Previous</strong>: <a href="/documentation/input/">Input</a></p>
