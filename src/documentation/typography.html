@@ -137,19 +137,11 @@ title: Typography
 <p>
   Lists will get basic styling if they are located within an <code>article</code> element.
 </p>
-    <p class="h5 bold push40v">Unordered list <code>ul</code></p>
-    <ul>
-      <li>Unordered item number one</li>
-      <li>List item <a href="https://github.com/ahansson/hgrid-css" rel="noopener noreferrer">number two</a> has a demo link</li>
-      <li>List item number three</li>
-      <li>List item number four</li>
-      <li>List item number five</li>
-      <li>List item number six</li>
-      <li>List item number seven</li>
-    </ul>
 
-    <p class="h5 bold push40v">Ordered list <code>ol</code></p>
-    <ol>
+<div class="row push40v">
+  <div class="column">
+    <h5>Ordered list <span class="highlight">ol</span></h5>
+    <ol class="demo-list">
       <li>Ordered list item number one</li>
       <li>List item <a href="https://github.com/ahansson/hgrid-css" rel="noopener noreferrer">number two</a> has a demo link</li>
       <li>List item number three</li>
@@ -158,55 +150,73 @@ title: Typography
       <li>List item number six</li>
       <li>List item number seven</li>
     </ol>
+  </div>
+  <div class="column">
+    <h5>Unordered list <span class="highlight">ul</span></h5>
+    <ul class="demo-list">
+      <li>Unordered item number one</li>
+      <li>List item <a href="https://github.com/ahansson/hgrid-css" rel="noopener noreferrer">number two</a> has a demo link</li>
+      <li>List item number three</li>
+      <li>List item number four</li>
+      <li>List item number five</li>
+      <li>List item number six</li>
+      <li>List item number seven</li>
+    </ul>
+  </div>
+</div>
 
 <h3 class="mt-60 mb-40">Text Formatting</h3>
 
-  <p><code>&lt;a></code></p>
-  <p>
-    Links are <a>automatically styled like this</a>. They can be customized in 
-    <a href="/documentation/variables/">different</a> <a href="/documentation/integrate/">ways</a>.
-  </p>
-  <p class="mt-60"><code>&lt;i&gt;</code>, <code>&lt;em></code></p>
-  <p><em>Cursive letters are nice for emphasis.</em></p>
+<p><code>&lt;a></code></p>
+<p>
+  Links are <a>automatically styled like this</a>. They can be customized in 
+  <a href="/documentation/variables/">different</a> <a href="/documentation/integrate/">ways</a>.
+</p>
+<p class="mt-60"><code>&lt;i&gt;</code>, <code>&lt;em></code> or <code>.italic</code></p>
+<p><em>Cursive text adds emphasis.</em></p>
 
-  <p class="mt-60"><code>&lt;blockquote&gt;</code></p>
+<p class="mt-60"><code>&lt;blockquote&gt;</code></p>
 
-  <blockquote>
-    The only thing necessary for the triumph of evil is for good men to do nothing.
-  </blockquote>
+<blockquote>
+  The only thing necessary for the triumph of evil is for good men to do nothing.
+</blockquote>
 
-  <p class="mt-60"><code>.uppercase</code></p>
-  <p class="uppercase">if you inspect the code you will discover that this text is lowercase</p>
+<p class="mt-60"><code>.uppercase</code></p>
+<p class="uppercase">if you inspect the code you will discover that this text is lowercase</p>
 
-  <p class="mt-60"><code>.lowercase</code></p>
-  <p class="lowercase">MOST OF THIS TEXT IS UPPERCASE, if you inspect the code.</p>
+<p class="mt-60"><code>.lowercase</code></p>
+<p class="lowercase">MOST OF THIS TEXT IS UPPERCASE, if you inspect the code.</p>
 
-  <p class="mt-60"><code>.capitalize</code></p>
-  <p class="capitalize">"positive anything is better than negative nothing", coded in lowercase</p>
+<p class="mt-60"><code>.capitalize</code></p>
+<p class="capitalize">"positive anything is better than negative nothing", coded in lowercase</p>
 
-  <p class="mt-60"><code>.no-transform</code></p>
-  <p class="lowercase uppercase capitalize no-transform">text transform has been reset with <code>class="no-transform"</code></p>
+<p class="mt-60"><code>.no-transform</code></p>
+<p class="lowercase uppercase capitalize no-transform">text transform has been reset with <code>class="no-transform"</code></p>
 
-  <p class="mt-60"><code>.text-center</code></p>
-  <p class="text-center">
-    This is centered text with <code>.text-center</code>
-  </p>
+<p class="mt-60"><code>.text-center</code></p>
+<p class="text-center">
+  This is centered text with <code>.text-center</code>.
+</p>
 
-  <p class="mt-60"><code>&lt;u></code>, <code>.underline</code> (override with <code>.no-underline</code>)</p>
-  <p>
-    Here comes a phrase with <span class="underline">some underlined text</span>.
-  </p>
+<p class="note push30v">
+  Other text alignment options: <code>text-left</code>, <code>text-right</code>, <code>text-justify</code>, <code>text-inherit</code>, 
+  <code>-text-initial</code>, <code>text-unset</code>, <code>text-start</code>, <code>text-end</code></p>
 
-  <p class="mt-60"><code>&lt;small></code>, <code>.small</code></p>
-  <p>
-    This is some <span class="small">smaller text</span> in the middle of a line of regular text.
-  </p>
+<p class="mt-60"><code>&lt;u></code>, <code>.underline</code> (override with <code>.no-underline</code>)</p>
+<p>
+  Here comes a phrase with <span class="underline">some underlined</span> text.
+</p>
 
-  <p class="mt-60"><code>&lt;del></code>, <code>&lt;s></code> or <code>.strike</code> (override with <code>.no-strike</code>)</p>
-  <p class="strike">It's too late to change my mind</p>
+<p class="mt-60"><code>&lt;small></code>, <code>.small</code></p>
+<p>
+  This is some <span class="small">smaller text</span> in the middle of a line of regular text.
+</p>
 
-  <p class="mt-60"><code>&lt;code&gt;</code></p>
-  <code>const isEven = (num) => num % 2 === 0</code>
+<p class="mt-60"><code>&lt;del></code>, <code>&lt;s></code> or <code>.strike</code> (override with <code>.no-strike</code>)</p>
+<p class="strike">It's too late to change my mind</p>
+
+<p class="mt-60"><code>&lt;code&gt;</code></p>
+<code>const isEven = (num) => num % 2 === 0</code>
 
   <p class="mt-60"><code>&lt;pre>&lt;code&gt;</code></p>
   <pre class="language-js"><code>exports.handler = async (event, context) => {
@@ -220,6 +230,38 @@ title: Typography
     }
   }
 }</code></pre>
+
+<p class="mt-60"><code>&lt;mark></code>, <code>.highlight</code></p>
+<p>Add this to your markup in order to <mark>add extra emphasis</mark> to certain words or a phrase.</p>
+
+<p class="mt-60"><code>.shorten</code></p>
+<p class="shorten">
+  Shorten long lines of text with this utility. Chocolate topping gummi bears. Dessert danish tart. 
+  Soufflé apple pie tootsie roll muffin carrot cake oat cake pudding sugar plum. Lollipop lollipop icing toffee halvah 
+  croissant gummies pastry. Jujubes chocolate cake tiramisu fruitcake. Cupcake marshmallow lollipop. Oat cake cupcake 
+  fruitcake. Croissant muffin gingerbread. Carrot cake soufflé danish sugar plum danish carrot cake. Dessert gummi 
+  bears cake caramels. Cupcake jelly beans liquorice danish. Icing icing croissant wafer cookie dessert. Brownie 
+  tiramisu bonbon pie tiramisu.
+</p>
+
+<p class="mt-60"><code>.ellipsis</code></p>
+<small 
+  class="bg-dark text-light border-gray box-shadow-1 padding-10 mb-20 radius overflow-hidden ellipsis" 
+  style="display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; height: 10rem;">
+  Chocolate topping gummi bears. Dessert danish tart. Soufflé apple pie tootsie roll muffin carrot cake oat cake pudding sugar plum. 
+  Lollipop lollipop icing toffee halvah croissant gummies pastry. Jujubes chocolate cake tiramisu fruitcake. Cupcake marshmallow lollipop. 
+  Oat cake cupcake fruitcake. Croissant muffin gingerbread. Carrot cake soufflé danish sugar plum danish carrot cake. Dessert gummi 
+  bears, cake and caramels. Cupcake jelly beans and Danish liquorice. Icing icing croissant wafer cookie dessert. Brownie 
+  tiramisu bonbon pie with tiramisu.
+</small>
+
+<p>
+  Paragraphs of text can be shortened with an ellipsis symbol after a set number of lines. 
+  For the utility to work, the text element must have a fixed height, <code>.overflow-hidden</code> (a hgrid utility) and enough 
+  text to overflow, plus the following CSS: <code>-webkit-line-clamp: 3</code> (number of lines displayed), 
+  <code>display: -webkit-box</code> and <code>-webkit-box-orient</code>. Works in all major browsers.
+</p>
+
 
 <div class="custom-hairline mt-40"></div>
 <p class="fl hide-phone">← <strong>Previous</strong>: <a href="/documentation/input/">Input</a></p>

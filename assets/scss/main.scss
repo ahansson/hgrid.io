@@ -396,6 +396,11 @@ article.demo {
   letter-spacing: unset;
 }
 
+article ul.demo-list, 
+article ol.demo-list {
+  padding-left: 8%;
+}
+
 code.loc {
   background: var(--bg-gray-darker);
   color: var(--color-dark);
@@ -731,5 +736,8 @@ footer {
 @media (max-width: 600px) {
   nav.sidebar {
     width: 70%;
+  }
+  small.ellipsis {
+    height: 9.1rem !important;
   }
 }
