@@ -11474,8 +11474,8 @@ article.demo p.caption {
   padding-bottom: 1.4rem;
   border-bottom: 1px dotted var(--border-light-solid);
 }
-article.demo .column > p,
-article.demo [class*=column-] > p {
+article.demo .column > p:not(.normal),
+article.demo [class*=column-] > p:not(.normal) {
   border-radius: 6px;
   padding: 2.2rem 0.5rem;
   background-color: #79518b;

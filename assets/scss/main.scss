@@ -330,8 +330,8 @@ article.demo {
     border-bottom: 1px dotted var(--border-light-solid)
   }
 
-  .column > p,
-  [class*="column-"] > p {
+  .column > p:not(.normal),
+  [class*="column-"] > p:not(.normal) {
     border-radius: 6px;
     padding: 2.2rem 0.5rem;
     background-color: #79518b;

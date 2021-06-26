@@ -175,8 +175,10 @@ title: Typography
 <p class="mt-60"><code>&lt;i&gt;</code>, <code>&lt;em></code> or <code>.italic</code></p>
 <p><em>Cursive text adds emphasis.</em></p>
 
-<p class="mt-60"><code>&lt;blockquote&gt;</code></p>
+<p class="mt-60"><code>.normal</code></p>
+<p class="italic normal">Resets italic font-style to <code>font-style: normal</code>.</p>
 
+<p class="mt-60"><code>&lt;blockquote&gt;</code></p>
 <blockquote>
   The only thing necessary for the triumph of evil is for good men to do nothing.
 </blockquote>
@@ -200,7 +202,8 @@ title: Typography
 
 <p class="note push30v">
   Other text alignment options: <code>text-left</code>, <code>text-right</code>, <code>text-justify</code>, <code>text-inherit</code>, 
-  <code>-text-initial</code>, <code>text-unset</code>, <code>text-start</code>, <code>text-end</code></p>
+  <code>-text-initial</code>, <code>text-unset</code>, <code>text-start</code>, <code>text-end</code>
+</p>
 
 <p class="mt-60"><code>&lt;u></code>, <code>.underline</code> (override with <code>.no-underline</code>)</p>
 <p>
@@ -262,6 +265,43 @@ title: Typography
   <code>display: -webkit-box</code> and <code>-webkit-box-orient</code>. Works in all major browsers.
 </p>
 
+<h3 class="mt-80 mb-30">Line Breaks</h3>
+
+<div class="row">
+  <div class="column">
+    <p class="normal"><code>.word-break-all</code></p>
+    <p class="normal border-gray padding-20 word-break-all radius" style="max-width: 36rem;">
+      Tells the browser to break words between any two characters instead of letting them overflow their container. This is the longest 
+      word in the English language: Pneumonoultramicroscopicsilicovolcanoconiosis (<a href="https://en.wikipedia.org/wiki/Pneumonoultramicroscopicsilicovolcanoconiosis" 
+      target="_blank" rel="noopener noreferrer">Wikipedia</a>).
+    </p>
+  </div>
+  <div class="column">
+    <p class="normal"><code>.word-break-normal</code></p>
+    <p class="normal border-gray padding-20 word-break-normal radius" style="max-width: 36rem;">
+      Tells the browser to use the default rule for line breaks and let long words overflow the container if needed. 
+      Here's a long word: Pneumonoultramicroscopicsilicovolcanoconiosis 
+      (<a href="https://en.wikipedia.org/wiki/Pneumonoultramicroscopicsilicovolcanoconiosis" target="_blank" rel="noopener noreferrer">Wikipedia</a>).
+    </p>
+  </div>
+</div>
+
+<h3 class="mt-80 mb-30">Text Selection</h3>
+
+<p><code>.user-select-none</code></p>
+<p class="border-gray padding-20 radius user-select-none">
+  This text element and any potential sub-elements cannot be selected by the user.
+</p>
+
+<p class="mt-60"><code>.user-select-all</code></p>
+<p class="border-gray padding-20 radius user-select-all">
+  You can select this text element and any potential sub-elements with a single click.
+</p>
+
+<p class="mt-60"><code>.user-select-auto</code></p>
+<p class="border-gray padding-20 radius user-select-auto">
+  This is the default for text selection in all browsers.
+</p>
 
 <div class="custom-hairline mt-40"></div>
 <p class="fl hide-phone">← <strong>Previous</strong>: <a href="/documentation/input/">Input</a></p>
