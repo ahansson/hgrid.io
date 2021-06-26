@@ -11106,7 +11106,9 @@ body.no-outline button:not(form button):focus, body.no-outline a:not(form a):foc
 }
 
 a,
-p a {
+p a,
+ol li a,
+ul li a {
   color: var(--link-color);
   text-decoration-color: var(--link-underline-color);
 }
@@ -11533,6 +11535,10 @@ article.demo table.striped tbody tr:nth-child(odd):hover {
 
 .demo-scrolltable-x {
   width: 80%;
+}
+
+.highlight {
+  background: var(--inline-code-bg);
 }
 
 footer {
