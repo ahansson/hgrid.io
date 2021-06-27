@@ -11,8 +11,12 @@
       <li role="menuitem"><a class="close" href="/documentation/installation/#clone">Clone</a></li>
     </ul>
   <h5 role="menuitem"><a href="/documentation/variables/" {% if title == 'Variables' %}class="active-link"{% endif %}>Variables</a></h5>
+    <ul class="sub-links">
+      <li role="menuitem"><a class="close" href="/documentation/variables/#internal-variables" >Internal Variables</a></li>
+      <li role="menuitem"><a class="close" href="/documentation/variables/#custom-properties">Custom Properties</a></li>
+    </ul>
   <h5 role="menuitem"><a href="/documentation/integrate/" {% if title == 'Integrate hgrid in Your Projects' %}class="active-link"{% endif %}>Integration</a></h5>
-      <ul class="sub-links">
+    <ul class="sub-links">
       <li role="menuitem"><a class="close" href="/documentation/integrate/#vue" >Vue</a></li>
       <li role="menuitem"><a class="close" href="/documentation/integrate/#react">React</a></li>
       <li role="menuitem"><a class="close" href="/documentation/integrate/#svelte">Svelte</a></li>
@@ -32,6 +36,7 @@
       <li role="menuitem"><a class="close" href="/documentation/utilities/#background">Background</a></li>
       <li role="menuitem"><a href="/documentation/utilities/lines-and-borders" class="{{ 'active-link' if 'lines-and-borders' in page.url }}">Lines & Borders</a></li>
       <li role="menuitem"><a href="/documentation/utilities/shapes" class="{{ 'active-link' if 'shapes' in page.url }}">Shapes</a></li>
+      <li role="menuitem"><a href="/documentation/utilities/cursors" class="{{ 'active-link' if 'cursors' in page.url }}">Cursors</a></li>
       <li role="menuitem"><a href="/documentation/utilities/embed" class="{{ 'active-link' if 'embed' in page.url }}">Embed</a></li>
     </ul>
   <h5 role="menuitem"><a href="/documentation/input/" {% if title == 'Input' %}class="active-link"{% endif %}>Input</a></h5>
