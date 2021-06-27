@@ -1,4 +1,4 @@
-/*! hgrid v0.5.2-beta | MIT License | github.com/ahansson/hgrid-css !*/
+/*! hgrid v0.5.3-beta | MIT License | github.com/ahansson/hgrid-css !*/
 :root {
   --theme-color-primary: #66008d;
   --theme-color-secondary: #9139b4;
@@ -580,17 +580,18 @@ article label a:hover,
   text-decoration: none;
 }
 
+i,
+em,
+.italic {
+  font-style: italic;
+}
+
 blockquote {
   border-left: 3px solid #ccc;
   font-size: 2.4rem;
   margin-bottom: 2.2rem;
   padding-left: 1.2rem;
   line-height: 3.4rem;
-}
-
-i,
-em {
-  font-style: italic;
 }
 
 small,
@@ -651,10 +652,6 @@ mark,
   text-overflow: clip;
 }
 
-.italic {
-  font-style: italic;
-}
-
 .normal {
   font-style: normal;
 }
@@ -684,31 +681,31 @@ mark,
   user-select: auto;
 }
 
-.cursor-cursor {
+.cursor-not-allowed {
   cursor: not-allowed;
 }
 
-.cursor-cursor {
+.cursor-move {
   cursor: move;
 }
 
-.cursor-cursor {
+.cursor-wait {
   cursor: wait;
 }
 
-.cursor-cursor {
+.cursor-text {
   cursor: text;
 }
 
-.cursor-cursor {
+.cursor-pointer {
   cursor: pointer;
 }
 
-.cursor-cursor {
+.cursor-default {
   cursor: default;
 }
 
-.cursor-cursor {
+.cursor-auto {
   cursor: auto;
 }
 
