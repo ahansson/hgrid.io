@@ -315,7 +315,7 @@ title: Typography
   Letter Spacing <small class="font-normal">(tracking)</small>
 </h3>
 
-<div class="group scrollable-x mt-20">
+<div class="group scrollable-x">
   <table style="min-width: 60rem;">
     <thead>
       <tr>
@@ -328,47 +328,47 @@ title: Typography
       <tr>
         <td><code>.spacing-neg-4</code></td>
         <td>letter-spacing: -0.3rem;</td>
-        <td><h5 class="spacing-neg-4">Lorem ipsum</h2></td>
+        <td><h5 class="spacing-neg-4 mb-0">Lorem ipsum</h5></td>
       </tr>
       <tr>
         <td><code>.spacing-neg-3</code></td>
         <td>letter-spacing: -0.1rem;</td>
-        <td><h5 class="spacing-neg-3">Lorem ipsum</h5></td>
+        <td><h5 class="spacing-neg-3 mb-0">Lorem ipsum</h5></td>
       </tr>
       <tr>
         <td><code>.spacing-neg-2</code></td>
         <td>letter-spacing: -0.03rem;</td>
-        <td><h5 class="spacing-neg-2">Lorem ipsum</h5></td>
+        <td><h5 class="spacing-neg-2 mb-0">Lorem ipsum</h5></td>
       </tr>
       <tr>
         <td><code>.spacing-neg-1</code></td>
         <td>letter-spacing: -0.008rem;</td>
-        <td><h5 class="spacing-neg-1">Lorem ipsum</h5></td>
+        <td><h5 class="spacing-neg-1 mb-0">Lorem ipsum</h5></td>
       </tr>
       <tr>
         <td><code>.spacing-0</code></td>
         <td>letter-spacing: 0;</td>
-        <td><h5 class="spacing-0">Lorem ipsum</h5></td>
+        <td><h5 class="spacing-0 mb-0">Lorem ipsum</h5></td>
       </tr>
       <tr>
         <td><code>.spacing-1</code></td>
         <td>letter-spacing: 0.008rem;</td>
-        <td><h5 class="spacing-1">Lorem ipsum</h5></td>
+        <td><h5 class="spacing-1 mb-0">Lorem ipsum</h5></td>
       </tr>
       <tr>
         <td><code>.spacing-2</code></td>
         <td>letter-spacing: 0.03rem;</td>
-        <td><h5 class="spacing-2">Lorem ipsum</h5></td>
+        <td><h5 class="spacing-2 mb-0">Lorem ipsum</h5></td>
       </tr>
       <tr>
         <td><code>.spacing-3</code></td>
         <td>letter-spacing: 0.1rem;</td>
-        <td><h5 class="spacing-3">Lorem ipsum</h5></td>
+        <td><h5 class="spacing-3 mb-0">Lorem ipsum</h5></td>
       </tr>
       <tr>
         <td><code>.spacing-4</code></td>
         <td>letter-spacing: 0.3rem;</td>
-        <td><h5 class="letter-spacing-4 spacing-4">Lorem ipsum</h5></td>
+        <td><h5 class="letter-spacing-4 spacing-4 mb-0">Lorem ipsum</h5></td>
       </tr>
     </tbody>
   </table>
@@ -418,6 +418,96 @@ title: Typography
 <p class="border-gray-light padding-20 radius user-select-auto">
   This is the default for text selection in all browsers.
 </p>
+
+<h3 class="mt-80 mb-30">
+  <span id="text-colors" class="sublink"></span>
+  Text Colors
+</h3>
+
+<p>
+  Adjust the text colors by customizing the color variables you find in <code>/variables/_variables.scss</code>, as described 
+  <a href="/documentation/integrate">here</a>. You can also override them with plain CSS, with or without their corresponding 
+  custom properties (see <code>/variables/_custom-properties.scss</code>).
+</p>
+
+<div class="group scrollable-x">
+  <table style="min-width: 60rem;">
+    <thead>
+      <tr>
+        <th>Class Name</th>
+        <th>Variable/Default HEX</th>
+        <th>Result</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>.text-orange</code></td>
+        <td>$color-orange (#e93e00)</td>
+        <td><p class="text-orange mb-0">Lorem ipsum</p></td>
+      </tr>
+      <tr>
+        <td><code>.text-red</code></td>
+        <td>$color-red (#ff0000)</td>
+        <td><p class="text-red mb-0">Lorem ipsum</p></td>
+      </tr>
+      <tr>
+        <td><code>.text-green</code></td>
+        <td>$color-green (#1f6e00)</td>
+        <td><p class="text-green mb-0">Lorem ipsum</p></td>
+      </tr>
+      <tr>
+        <td><code>.text-blue</code></td>
+        <td>$color-blue (#003f88)</td>
+        <td><p class="text-blue mb-0">Lorem ipsum</p></td>
+      </tr>
+      <tr>
+        <td><code>.text-gray-lighter</code></td>
+        <td>$color-gray-lighter (#eee)</td>
+        <td><p class="text-gray-lighter mb-0">Lorem ipsum</p></td>
+      </tr>
+      <tr>
+        <td><code>.text-gray-light</code></td>
+        <td>$color-gray-light (#ccc)</td>
+        <td><p class="text-gray-light mb-0">Lorem ipsum</p></td>
+      </tr>
+      <tr>
+        <td><code>.text-gray</code></td>
+        <td>$color-gray (#888)</td>
+        <td><p class="text-gray mb-0">Lorem ipsum</p></td>
+      </tr>
+      <tr>
+        <td><code>.text-gray-dark</code></td>
+        <td>$color-gray-dark (#555)</td>
+        <td><p class="text-gray-dark mb-0">Lorem ipsum</p></td>
+      </tr>
+      <tr>
+        <td><code>.text-gray-darker</code></td>
+        <td>$color-gray-darker (#333)</td>
+        <td><p class="text-gray-darker mb-0">Lorem ipsum</p></td>
+      </tr>
+      <tr>
+        <td><code>.text-black</code></td>
+        <td>color #000</td>
+        <td><p class="text-black mb-0">Lorem ipsum</p></td>
+      </tr>
+      <tr>
+        <td><code>.text-white</code></td>
+        <td>color: #fff</td>
+        <td><p class="text-white mb-0">Lorem ipsum</p></td>
+      </tr>
+      <tr>
+        <td><code>.text-light</code></td>
+        <td>$color-light (#fff)</td>
+        <td><p class="text-light mb-0">Lorem ipsum</p></td>
+      </tr>
+      <tr>
+        <td><code>.text-dark</code></td>
+        <td>$color-dark (#000)</td>
+        <td><p class="text-dark mb-0">Lorem ipsum</p></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 <div class="custom-hairline mt-40"></div>
 <p class="fl hide-phone">← <strong>Previous</strong>: <a href="/documentation/input/">Input</a></p>
