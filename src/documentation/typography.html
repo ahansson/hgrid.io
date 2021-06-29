@@ -509,6 +509,45 @@ title: Typography
   </table>
 </div>
 
+<h3 class="mt-80 mb-30">
+  <span id="anti-aliasing" class="sublink"></span>
+  Text Anti-Aliasing
+</h3>
+
+<p class="note">
+  This feature has only been implemented for Chromium and Firefox on macOS systems. It will be 
+  ignored by other browsers/systems. The <code>font-smooth</code> property that previously made it into the CSS specification 
+  has since been <a href="https://caniuse.com/font-smooth" target="_blank" rel="noopener nofollow">removed</a>.
+</p>
+
+<p>
+  Anti-aliasing is a term used to describe the programmatic process of making the edges of fonts (or any graphic) smoother. 
+  It's accomplished by adding additional pixels along the edge between a shape and its background. Anti-aliasing improves 
+  the appearance of jagged edges, so they look smooth on the screen.
+</p>
+
+<p class="mt-30">
+  <code>.antialiased</code> is <strong>hgrid</strong>'s default setting, as seen in <code>_base.scss</code>. 
+  The result is smooth, crisp and slightly lighter than the subpixel rendering mode. In our opinion this works
+  especially well for white text on dark backgrounds.
+</p>
+
+<pre class="language-css filename" data-file="css">
+  <code>.antialiased { 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}</code>
+</pre>
+
+<p><code>.subpixel-antialiased</code> is the default setting on macOS systems. It gives a stronger type.</p>
+
+<pre class="language-css filename" data-file="css">
+  <code>.subpixel-antialiased { 
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+}</code>
+</pre>
+
 <div class="custom-hairline mt-40"></div>
 <p class="fl hide-phone">← <strong>Previous</strong>: <a href="/documentation/input/">Input</a></p>
 <p class="fr"><strong>Next</strong>: <a href="/documentation/animations/">Animations</a> →</p>
