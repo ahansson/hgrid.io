@@ -21,16 +21,17 @@
     const colorTheme = localStorage.getItem('theme');
 
     if (!lightImage || !darkImage || !colorTheme) return;
-
-    if (colorTheme === 'dark') {
+    if (colorTheme === 'dark' && window.innerWidth <= 600) {
       lightImage.style.display = 'none';
       darkImage.style.display = 'block';
     } 
-    if (colorTheme === 'light') {
+    if (colorTheme === 'light' && window.innerWidth <= 600) {
       lightImage.style.display = 'block';
       darkImage.style.display = 'none';
     }
   }
+
+  setImageMode()
   
   // Process colorMode() from <head>
   if (colorMode.preferredTheme === 'dark') {

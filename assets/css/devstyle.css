@@ -11712,11 +11712,13 @@ footer p a:hover {
   }
 
   .demo-word-break {
+    max-width: 39.5rem;
     display: none;
   }
 }
 @media (prefers-color-scheme: light) and (max-width: 600px) {
   .demo-word-break-dm {
+    max-width: 43rem;
     display: none;
   }
 
