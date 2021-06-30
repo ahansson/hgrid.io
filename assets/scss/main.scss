@@ -727,6 +727,26 @@ footer {
   }
 }
 
+@media (prefers-color-scheme: dark) {
+  .demo-word-break-dm {
+    display: block;
+    max-width: 43rem;
+  }
+  .demo-word-break {
+    display: none;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .demo-word-break-dm {
+    display: none;
+  }
+  .demo-word-break {
+    display: block;
+    max-width: 39.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   nav.sidebar {
     padding: 4.6rem 0.6rem 2rem 8%;
