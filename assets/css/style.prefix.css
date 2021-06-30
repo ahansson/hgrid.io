@@ -11842,7 +11842,7 @@ footer p a:hover {
     text-align: center;
   }
 }
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) and (max-width: 600px) {
   .demo-word-break-dm {
     display: block;
     max-width: 43rem;
@@ -11852,7 +11852,7 @@ footer p a:hover {
     display: none;
   }
 }
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: light) and (max-width: 600) {
   .demo-word-break-dm {
     display: none;
   }

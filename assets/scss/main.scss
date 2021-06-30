@@ -727,7 +727,7 @@ footer {
   }
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) and (max-width: 600px) {
   .demo-word-break-dm {
     display: block;
     max-width: 43rem;
@@ -737,7 +737,7 @@ footer {
   }
 }
 
-@media (prefers-color-scheme: light) {
+@media (prefers-color-scheme: light) and (max-width: 600px) {
   .demo-word-break-dm {
     display: none;
   }
