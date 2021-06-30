@@ -14,8 +14,36 @@
   body.addEventListener('mousedown', () => { body.classList.add('no-outline')})
   body.addEventListener('keydown', () => { body.classList.remove('no-outline') })
   
+  // Display demo images in correct color mode
+  const setImageMode = () => {
+    const lightImage = document.querySelector('.demo-word-break');
+    const darkImage = document.querySelector('.demo-word-break-dm');
+    const colorTheme = localStorage.getItem('theme');
 
-  // Color Theme Switcher
+    if (!lightImage || !darkImage || !colorTheme) return;
+
+    if (colorTheme === 'dark') {
+      lightImage.style.display = 'none';
+      darkImage.style.display = 'block';
+    } 
+    if (colorTheme === 'light') {
+      lightImage.style.display = 'block';
+      darkImage.style.display = 'none';
+    }
+  }
+  
+  // Process colorMode() from <head>
+  if (colorMode.preferredTheme === 'dark') {
+    moon.forEach(el => el.classList.remove('hide'))
+    localStorage.theme = 'dark'
+
+  } else {
+    
+    sun.forEach(el => el.classList.remove('hide'))
+    localStorage.theme = 'light'
+  }
+
+  // Set correct color mode icon
   const swapIcons = (el1, el2) => {
     
     el1.forEach((el) => {
@@ -29,16 +57,7 @@
     })
   }
   
-  if (colorMode.preferredTheme === 'dark') {
-    moon.forEach(el => el.classList.remove('hide'))
-    localStorage.theme = 'dark'
-
-  } else {
-    
-    sun.forEach(el => el.classList.remove('hide'))
-    localStorage.theme = 'light'
-  }
-  
+  // Color theme switcher
   const switchTheme = () => {
 
     if (html.dataset.theme === 'light') {
@@ -46,23 +65,19 @@
       swapIcons(moon, sun)
       localStorage.theme      = 'dark'
       colorMode.meta.content  = '#060323'
+      setImageMode()
     }
     
     else {
-      
       document.documentElement.setAttribute('data-theme', 'light')
       swapIcons(sun, moon)
       localStorage.theme      = 'light'
       colorMode.meta.content  = '#23004b'
+      setImageMode()
     }
   }
 
-  const toggles = [
-    toggle1,
-    toggle2,
-    toggle3
-  ]
-
+  // Add listener for theme switcher
   const listen = (arr) => {
     arr.map((el) => {
       
@@ -77,7 +92,7 @@
       }
     })
   }
-
+  const toggles = [toggle1, toggle2, toggle3]
   listen(toggles)
 
   // Mobile menus
@@ -109,7 +124,7 @@
 
   }
 
-  // Set active anchor link on pageload
+  // Activate current menu link on page load
   const activeSubLink = (h) => {
     const links = docsMenu.querySelectorAll('a')
     links.forEach((el) => {
@@ -122,7 +137,7 @@
   }
   (hash) ? activeSubLink(hash) : null
 
-  // Set active anchor for anchor links
+  // Activate anchor links on click (no page load)
   const colorHashLinks = (e) => {
     docsMenu.querySelectorAll('.active-link').forEach(l => l.classList.remove('active-link'))
     e.target.classList.add('active-link')
