@@ -554,6 +554,10 @@ article.demo table.striped {
   background: var(--inline-code-bg);
 }
 
+.min-content {
+  width: min-content;
+}
+
 footer {
   background: #000;
   padding: 0 0 8rem;
