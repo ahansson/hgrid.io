@@ -13,82 +13,132 @@ title: Padding
   rel="noopener">GitHub</a>)
 </p>
 
-<h2 class="h3">General Padding</h2>
+<div class="group mt-30">
+  <h2 class="h3">General Padding</h2>
 
-<p>
-  The padding utilities have 5 and 10 pixels incrementations, between 0 and 150 pixels. They use <code>rem</code> units internally, 
-  but their naming reflect the pixel value they correspond to with the default <strong>hgrid</strong> configuration. Applying 
-  <code>padding-80</code> to an elements gives it 8rem of visually adjusted padding on all sides which correspond to 80px.
-</p>
+  <p>
+    The padding utilities have 5 and 10 pixels incrementations, between 0 and 150 pixels. They use <code>rem</code> units internally, 
+    but their naming reflect the pixel value they correspond to with the default <strong>hgrid</strong> configuration. Applying 
+    <code>padding-80</code> to an elements gives it 8rem of visually adjusted padding on all sides which correspond to 80px.
+  </p>
 
-<ul class="mb-40">
-  <li><code>padding-0</code></li>
-  <li><code>padding-5</code></li>
-  <li><code>padding-10</code></li>
-  <li><code>padding-20</code></li>
-  <li><code>padding-30</code></li>
-  <li>...</li>
-  <li><code>padding-150</code></li>
-</ul>
-
-<h3>Individual Padding</h3>
-
-<pre class="language-html mt-30 mb-20 filename" data-file="html">
-<code>&lt;div class="bg-gray pt-50 pr-90 pb-80 pl-40 min-content">
-  &lt;div class="bg-gray-dark border-gray-lighter border-dashed" style="height:5rem; width:20rem;">&lt;/div>
-&lt;/div></code>
-</pre>
-
-<p>Result:</p>
-
-<div class="bg-gray pt-50 pr-90 pb-80 pl-40 min-content">
-  <div class="bg-gray-dark border-gray-lighter border-dashed" style="height: 5rem; width:20rem;"></div>
+  <ul>
+    <li><code>padding-0</code></li>
+    <li><code>padding-5</code></li>
+    <li><code>padding-10</code></li>
+    <li><code>padding-20</code></li>
+    <li><code>padding-30</code></li>
+    <li>...</li>
+    <li><code>padding-150</code></li>
+  </ul>
 </div>
 
-<div class="scrollable-y mt-20">
-  <table>
-    <thead>
-      <tr>
-        <th>Class Name</th>
-        <th>CSS Property</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>.pt-0</code><br><code>.padding-top-0</code></td>
-        <td>padding-top: 0;</td>
-      </tr>
-      <tr>
-        <td><code>.pt-10</code><br><code>.padding-top-10</code></td>
-        <td>padding-top: 1rem;</td>
-      </tr>
-      <tr>
-        <td><code>.pt-20</code><br><code>.padding-top-20</code></td>
-        <td>padding-top: 2rem;</td>
-      </tr>
-      <tr>
-        <td>etc. ...</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><code>.pt-140</code><br><code>.padding-top-140</code></td>
-        <td>padding-top: 14rem;</td>
-      </tr>
-      <tr>
-        <td><code>.pt-150</code><br><code>.padding-top-150</code></td>
-        <td>padding-top: 15rem;</td>
-      </tr>
-    </tbody>
-  </table>
+<div class="group">
+  <h3>Individual Padding</h3>
+
+  <pre class="language-html mt-30 mb-20 filename" data-file="html">
+  <code>&lt;div class="bg-gray pt-50 pr-90 pb-80 pl-40 min-content">
+    &lt;div class="bg-gray-dark border-gray-lighter border-dashed" style="height:5rem; width:20rem;">&lt;/div>
+  &lt;/div></code>
+  </pre>
+
+  <p>Result:</p>
+
+  <div class="bg-gray pt-50 pr-90 pb-80 pl-40 min-content">
+    <div class="bg-gray-dark border-gray-lighter border-dashed" style="height: 5rem; width:20rem;"></div>
+  </div>
+
+  <div class="scrollable-y mt-20">
+    <table>
+      <thead>
+        <tr>
+          <th>Class Name</th>
+          <th>CSS Property</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>.pt-0</code><br><code>.padding-top-0</code></td>
+          <td>padding-top: 0;</td>
+        </tr>
+        <tr>
+          <td><code>.pt-10</code><br><code>.padding-top-10</code></td>
+          <td>padding-top: 1rem;</td>
+        </tr>
+        <tr>
+          <td><code>.pt-20</code><br><code>.padding-top-20</code></td>
+          <td>padding-top: 2rem;</td>
+        </tr>
+        <tr>
+          <td>etc. ...</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><code>.pt-140</code><br><code>.padding-top-140</code></td>
+          <td>padding-top: 14rem;</td>
+        </tr>
+        <tr>
+          <td><code>.pt-150</code><br><code>.padding-top-150</code></td>
+          <td>padding-top: 15rem;</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="push40v">
+    Following the pattern above, you can add the class names <code>.pr-* / .padding-right-*</code>, 
+    <code>.pb-* / .padding-bottom-*</code> or <code>.pl-* / .padding-left-*</code>. Values from 0 to 150 incremented by 10.
+  </p>
 </div>
 
-<p class="push40v">
-  Follow the pattern above by switching the class names to <code>.pr-* / .padding-right-*</code>, 
-  <code>.pb-* / .padding-bottom-*</code> or <code>.pl-* / .padding-left-*</code>. Values from 0 to 150 with incrementations of 10.
-</p>
+<div class="group">
+  <h3>Responsive Overrides</h3>
 
+  <p>
+    Let's revisit the example above and add a responsive modification of the padding-bottom. On screens smaller than tablets in landscape mode 
+    (<code>tablet-landscape</code>) we decide to remove the top padding completely:
+  </p>
 
-<div class="custom-hairline mt-40"></div>
+  <pre class="language-html mt-30 mb-20 filename" data-file="html">
+  <code>&lt;div class="bg-gray pt-50 pr-90 pb-80 pl-40 tablet-landscape-pt-0 min-content">
+    &lt;div class="bg-gray-dark border-gray-lighter border-dashed" style="height:5rem; width:20rem;">&lt;/div>
+  &lt;/div></code>
+  </pre>
+
+  <p>The result can now be seen if you scale your viewport down to less than 1024 pixels:</p>
+
+  <div class="bg-gray pt-50 pr-90 pb-80 pl-40 tablet-landscape-pt-0 min-content">
+    <div class="bg-gray-dark border-gray-lighter border-dashed" style="height: 5rem; width:20rem;"></div>
+  </div>
+
+  <p class="mt-20">Use the override utilities along this pattern:</p>
+
+  <ul>
+    <li><code>.desktop-large-p-10</code></li>
+    <li><code>.desktop-large-pt-10</code></li>
+    <li><code>.desktop-large-pr-10</code></li>
+    <li><code>.desktop-large-pb-10</code></li>
+    <li><code>.desktop-large-pl-10</code></li>
+  </ul>
+
+  <ul class="mt-30">
+    <li><code>.phone-landscape-p-100</code></li>
+    <li><code>.phone-landscape-pt-100</code></li>
+    <li><code>.phone-landscape-pr-100</code></li>
+    <li><code>.phone-landscape-pb-100</code></li>
+    <li><code>.phone-landscape-pl-100</code></li>
+  </ul>
+
+  <p>
+    The default viewport <code>laptop</code> (&lt;1280px) is excluded from the list of viewports you can use to construct these overrides.
+  </p>
+  <p>
+    These are your alternatives: <code>.desktop-large</code> (>1680px), <code>.desktop</code> (&lt;1680px), <code>.tablet-landscape</code> (&lt;1024px), 
+    <code>.tablet-portrait</code> (&lt;900px), <code>.phone-landscape</code> (&lt;768px) and <code>.phone</code> (&lt;600px).
+  </p>
+</div>
+
+<div class="custom-hairline"></div>
 <p class="fl hide-phone">
   ← <strong>Previous</strong>: <a href="/documentation/layout/positioning">Positioning</a>
 </p>
