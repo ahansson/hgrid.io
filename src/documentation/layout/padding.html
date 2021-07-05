@@ -17,10 +17,15 @@ title: Padding
   <h2 class="h3">General Padding</h2>
 
   <p>
-    The padding utilities have 5 and 10 pixels incrementations, going from 0 to 150 pixels. They use <code>rem</code> units internally, 
+    The general padding utilities have 5 and 10 pixels incrementations, going from 0 to 150 pixels. They use <code>rem</code> units internally, 
     but their names reflect the pixel value they correspond to in a default <strong>hgrid</strong> setup. Applying 
-    <code>padding-80</code> to an elements gives it 8rem of visually adjusted padding on all sides which correspond to 80px.
+    <code>padding-60</code> to an elements gives it 6rem of visually adjusted padding on all sides, which corresponds to 60px.
   </p>
+
+  <p>
+    By «visually adjusted» we mean that <strong>hgrid</strong> by default uses slightly reduced top and bottom padding in an attempt to make 
+    up for line height, margin etc. that is often found around text content. If you don't want any of this adjustment, 
+    go for the <a href="/documentation/layout/padding/#individual-padding">individual padding</a> utilities instead.</p>
 
   <ul>
     <li><code>padding-0</code></li>
@@ -31,24 +36,50 @@ title: Padding
     <li>...</li>
     <li><code>padding-150</code></li>
   </ul>
+
+  <p>Code example:</p>
+
+<pre class="language-html mt-30 mb-20 filename" data-file="html">
+<code>&lt;div class="bg-gray padding-60 max-content-max">
+  &lt;div class="bg-gray-dark border-gray-lighter border-dashed text-white">
+    The ecommerce site had an average conversion rate of 2.1%.
+  &lt;/div>
+&lt;/div></code>
+</pre>
+
+  <p>Result:</p>
+
+  <div class="bg-gray padding-60 max-content-max">
+    <div class="bg-gray-dark border-gray-lighter border-dashed text-white">
+      The ecommerce site had an average conversion rate of 2.1%.
+    </div>
+  </div>
+
 </div>
 
 <div class="group">
-  <h3>Individual Padding</h3>
+  <h3>
+    <span class="sublink" id="individual-padding"></span>
+    Individual Padding
+  </h3>
 
   <pre class="language-html mt-30 mb-20 filename" data-file="html">
-  <code>&lt;div class="bg-gray pt-50 pr-90 pb-80 pl-40 min-content">
-    &lt;div class="bg-gray-dark border-gray-lighter border-dashed" style="height:5rem; width:20rem;">&lt;/div>
-  &lt;/div></code>
+  <code>&lt;div class="bg-gray pt-20 pr-90 pb-100 pl-30 max-content-max">
+  &lt;div class="bg-gray-dark border-gray-lighter border-dashed">
+    Starting small is always a great way to start with freelancing.
+  &lt;/div>
+&lt;/div></code>
   </pre>
 
   <p>Result:</p>
 
-  <div class="bg-gray pt-50 pr-90 pb-80 pl-40 min-content">
-    <div class="bg-gray-dark border-gray-lighter border-dashed" style="height: 5rem; width:20rem;"></div>
+  <div class="bg-gray pt-20 pr-90 pb-100 pl-30 max-content-max">
+    <div class="bg-gray-dark border-gray-lighter border-dashed">
+      Starting small is always a great way to start with freelancing.
+    </div>
   </div>
 
-  <div class="scrollable-y mt-20">
+  <div class="scrollable-y mt-40">
     <table>
       <thead>
         <tr>
@@ -95,20 +126,25 @@ title: Padding
   <h3>Responsive Overrides</h3>
 
   <p>
-    Let's revisit the example above and add a responsive modification of the padding-bottom. On screens smaller than tablets in landscape mode 
-    (<code>tablet-landscape</code>) we decide to remove the top padding completely:
+    Let's revisit the example above and add a responsive modification. On screens smaller than tablets in 
+    landscape mode we want to remove the padding-top completely. We'll use 
+    the <code>.tablet-landscape-pt-0</code> utility:
   </p>
 
   <pre class="language-html mt-30 mb-20 filename" data-file="html">
-  <code>&lt;div class="bg-gray pt-50 pr-90 pb-80 pl-40 tablet-landscape-pt-0 min-content">
-    &lt;div class="bg-gray-dark border-gray-lighter border-dashed" style="height:5rem; width:20rem;">&lt;/div>
-  &lt;/div></code>
+  <code>&lt;div class="bg-gray pt-50 pr-90 pb-80 pl-40 tablet-landscape-pt-0 max-content-max">
+  &lt;div class="bg-gray-dark border-gray-lighter border-dashed">
+    Starting small is always a great way to start with freelancing.
+  &lt;/div>
+&lt;/div></code>
   </pre>
 
-  <p>The result can now be seen if you scale your viewport down to less than 1024 pixels:</p>
+  <p>The result can now be seen by scaling your viewport down to less than 1024 pixels:</p>
 
-  <div class="bg-gray pt-50 pr-90 pb-80 pl-40 tablet-landscape-pt-0 min-content">
-    <div class="bg-gray-dark border-gray-lighter border-dashed" style="height: 5rem; width:20rem;"></div>
+  <div class="bg-gray pt-50 pr-90 pb-80 pl-40 tablet-landscape-pt-0 max-content-max">
+    <div class="bg-gray-dark border-gray-lighter border-dashed">
+      Starting small is always a great way to start with freelancing.
+    </div>
   </div>
 
   <p class="mt-20">Use the override utilities along this pattern:</p>
@@ -136,6 +172,9 @@ title: Padding
     Here are your alternatives: <code>.desktop-large</code> (>1680px), <code>.desktop</code> (&lt;1680px), <code>.tablet-landscape</code> (&lt;1024px), 
     <code>.tablet-portrait</code> (&lt;900px), <code>.phone-landscape</code> (&lt;768px) and <code>.phone</code> (&lt;600px).
   </p>
+
+  <p>Each series of overrides goes from -0 to -150, incremented in steps of 10.</p>
+
 </div>
 
 <div class="custom-hairline"></div>

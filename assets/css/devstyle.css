@@ -11538,8 +11538,10 @@ article.demo table.striped tbody tr:nth-child(odd):hover {
   background: var(--inline-code-bg);
 }
 
-.min-content {
-  width: min-content;
+.max-content-max {
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
 }
 
 footer {
