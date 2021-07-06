@@ -225,35 +225,108 @@ title: Positioning
 </table>
 </div>
 
+<h4 class="h5 mt-50">Z-Index (Stacking of Positioned Elements)</h4>
+
+<p>
+  Stack elements relative to each others by first applying positioning. Non-positioned elements won't be influenced by 
+  <code>z-index</code>.
+</p>
+
+<pre class="language-html mt-30 mb-40 filename" data-file="html">
+  <code>&lt;header "class="sticky pos-top-0 z-index-4">
+  &lt;!-- 
+    This element will be visible above elements with lower or no z-index 
+    applied, and stick to the top of the window when the page is scrolled.
+  -->
+&lt;/header></code>
+</pre>
+
+<table class="mb-30">
+  <thead>
+    <tr>
+      <th style="width: 40%;">Class Name</th>
+      <th>CSS Property</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>.z-index-1</code></td>
+      <td>z-index: 1;</td>
+    </tr>
+    <tr>
+      <td><code>.z-index-2</code></td>
+      <td>z-index: 2;</td>
+    </tr>
+    <tr>
+      <td><code>.z-index-3</code></td>
+      <td>z-index: 3;</td>
+    </tr>
+    <tr>
+      <td><code>etc.</code></td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <td><code>.z-index-18</code></td>
+      <td>z-index: 18;</td>
+    </tr>
+    <tr>
+      <td><code>.z-index-19</code></td>
+      <td>z-index: 19;</td>
+    </tr>
+    <tr>
+      <td><code>.z-index-20</code></td>
+      <td>z-index: 20;</td>
+    </tr>
+    <tr>
+      <td><code>.z-index-999</code></td>
+      <td>z-index: 999;</td>
+    </tr>
+    <tr>
+      <td><code>.z-index-auto</code></td>
+      <td>z-index: auto;</td>
+    </tr>
+    <tr>
+      <td><code>.z-index-initial</code></td>
+      <td>z-index: initial;</td>
+    </tr>
+    <tr>
+      <td><code>.z-index-inherit</code></td>
+      <td>z-index: inherit;</td>
+    </tr>
+    <tr>
+      <td><code>.z-index-unset</code></td>
+      <td>z-index: unset;</td>
+    </tr>
+  </tbody>
+</table>
+
 <h3 class="mt-50">
   <span id="floats" class="sublink"></span>
   Floats
 </h3>
 
-<div class="mb-30">
-  <table>
-    <thead>
-      <tr>
-        <th style="width: 40%;">Class Name</th>
-        <th>CSS Properties</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>.fr</code></td>
-        <td>float: right;</td>
-      </tr>
-      <tr>
-        <td><code>.fl</code></td>
-        <td>float: left;</td>
-      </tr>
-      <tr>
-        <td><code>.fn</code></td>
-        <td>float: none;</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<table class="mb-30">
+  <thead>
+    <tr>
+      <th style="width: 40%;">Class Name</th>
+      <th>CSS Property</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>.fr</code></td>
+      <td>float: right;</td>
+    </tr>
+    <tr>
+      <td><code>.fl</code></td>
+      <td>float: left;</td>
+    </tr>
+    <tr>
+      <td><code>.fn</code></td>
+      <td>float: none;</td>
+    </tr>
+  </tbody>
+</table>
 
 
 <h3 class="mt-50">
@@ -261,38 +334,36 @@ title: Positioning
   Clears
 </h3>
 
-<div class="mb-30 scrollable-x">
-  <table>
-    <thead>
-      <tr>
-        <th style="width: 40%;">Class Name</th>
-        <th>CSS Properties</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>.clear-left</code></td>
-        <td>clear: left;</td>
-      </tr>
-      <tr>
-        <td><code>.clear-right</code></td>
-        <td>clear: right;</td>
-      </tr>
-      <tr>
-        <td><code>.clear-both</code></td>
-        <td>clear: both;</td>
-      </tr>
-      <tr>
-        <td><code>.clearfix</code></td>
-        <td>clear: both;<br>content: ' ';<br>display: table;</td>
-      </tr>
-      <tr>
-        <td><code>.clear-none</code></td>
-        <td>clear: none;</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+<table class="mb-90">
+  <thead>
+    <tr>
+      <th style="width: 40%;">Class Name</th>
+      <th>CSS Properties</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>.clear-left</code></td>
+      <td>clear: left;</td>
+    </tr>
+    <tr>
+      <td><code>.clear-right</code></td>
+      <td>clear: right;</td>
+    </tr>
+    <tr>
+      <td><code>.clear-both</code></td>
+      <td>clear: both;</td>
+    </tr>
+    <tr>
+      <td><code>.clearfix</code></td>
+      <td>clear: both;<br>content: ' ';<br>display: table;</td>
+    </tr>
+    <tr>
+      <td><code>.clear-none</code></td>
+      <td>clear: none;</td>
+    </tr>
+  </tbody>
+</table>
 
 <div class="custom-hairline mt-40"></div>
 <p class="fl hide-phone">← <strong>Previous</strong>: <a href="/documentation/layout/tables/">Tables</a></p>
