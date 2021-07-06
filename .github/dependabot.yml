@@ -1,21 +1,17 @@
 version: 2
 updates:
+# Fetch and update latest `npm` packages
 - package-ecosystem: npm
-  directory: "/"
+  directory: '/'
   schedule:
-    interval: daily
-    time: "04:00"
+    interval: weekly
+    time: '00:00'
   open-pull-requests-limit: 10
-  ignore:
-  - dependency-name: sass
-    versions:
-    - 1.32.11
-  - dependency-name: postcss
-    versions:
-    - 8.2.10
-    - 8.2.12
-    - 8.2.7
-    - 8.2.8
-  - dependency-name: autoprefixer
-    versions:
-    - 10.2.4
+  reviewers:
+    - ahansson
+  assignees:
+    - ahansson
+  commit-message:
+    prefix: fix
+    prefix-development: chore
+    include: scope
