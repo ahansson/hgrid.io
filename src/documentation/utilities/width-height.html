@@ -13,9 +13,11 @@ title: Width & Height
     >GitHub</a>)
 </p>
 
+<h3 class="mt-60">Width Utilities</h3>
+
 <p>
-  Width and max-width utilities follow the naming pattern <code>.[max-]width-[n]pct</code>. The array of numbers replacing the 
-  <code>n</code> variable is like this by default: 
+  The majority of the width and max-width utilities follow the naming pattern <code>.[max-]width-[n]pct</code>. The array of numbers 
+  replacing the <code>n</code> variable is like this by default: 
   <code><small>[100, 90, 80, 75, 70, 66.666666, 60, 50, 40, 33.333333, 30, 25, 20, 10, 5]</small></code>.
 </p>
 
@@ -39,75 +41,99 @@ title: Width & Height
   <li><code>.max-width-50pct</code></li>
 </ul>
 
-<p>In addition we have these utilities for widths:</p>
+<p class="push40v">In addition we have these utilities for widths:</p>
 
-<ul>
-  <li><code>.width-auto</code> (width: auto;)</li>
-  <li><code>.min-content</code> (width: min-content;)</li>
-</ul>
+<div class="scrollable-y mt-40 mb-30">
+  <table>
+    <thead>
+      <tr>
+        <th class="width-40pct">Utility Name</th>
+        <th>CSS Property</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>.width-auto</code></td>
+        <td>width: auto;</td>
+      </tr>
+      <tr>
+        <td><code>.min-content</code></td>
+        <td>width: min-content;</td>
+      </tr>
+      <tr>
+        <td><code>.max-content</code></td>
+        <td>width: max-content;</td>
+      </tr>
+      <tr>
+        <td><code>.fit-content</code></td>
+        <td>width: fit-content;</td>
+      </tr>
+      <tr>
+        <td><code>.fit-content-min</code></td>
+        <td>min-width: fit-content;</td>
+      </tr>
+      <tr>
+        <td><code>.fit-content-max</code></td>
+        <td>max-width: fit-content;</td>
+      </tr>
+      <tr>
+        <td><code>.min-content-min</code></td>
+        <td>min-width: min-content;</td>
+      </tr>
+      <tr>
+        <td><code>.min-content-max</code></td>
+        <td>max-width: min-content;</td>
+      </tr>
+      <tr>
+        <td><code>.max-content-min</code></td>
+        <td>min-width: max-content;</td>
+      </tr>
+      <tr>
+        <td><code>.max-content-max</code></td>
+        <td>max-width: max-content;</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-.width-auto {
-  width: auto;
-}
+<h3 class="mt-60">Height Utilities</h3>
 
-.height-auto {
-  height: auto;
-}
+<div class="scrollable-y mt-40 mb-80">
+  <table>
+    <thead>
+      <tr>
+        <th class="width-40pct">Utility Name</th>
+        <th>CSS Property</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>.height-auto</code></td>
+        <td>height: auto;</td>
+      </tr>
+      <tr>
+        <td><code>.height-100pct</code></td>
+        <td>height: 100%;</td>
+      </tr>
+      <tr>
+        <td><code>.height-100vh</code></td>
+        <td>height: 100vh;</td>
+      </tr>
+      <tr>
+        <td><code>.min-height-100</code></td>
+        <td>min-height: 100%;</td>
+      </tr>
+      <tr>
+        <td><code>.min-height-100vh</code></td>
+        <td>min-height: 100vh;</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
-.height-100pct {
-  height: 100%;
-}
-
-.height-100vh {
-  height: 100vh;
-}
-
-.min-height-100 {
-  min-height: 100%;
-}
-
-.min-height-100-vh {
-  min-height: 100vh;
-}
-
-.min-content {
-  width: min-content;
-}
-
-.max-content {
-  width: max-content;
-}
-
-.fit-content {
-  width: fit-content;
-}
-
-.min-content-min {
-  min-width: min-content
-}
-
-.min-content-max {
-  max-width: min-content
-}
-
-.max-content-min {
-  min-width: max-content;
-}
-
-.max-content-max {
-  max-width: max-content;
-}
-
-.fit-content-min {
-  min-width: fit-content;
-}
-
-.fit-content-max {
-  max-width: fit-content;
-}
 
 <div class="custom-hairline mt-40"></div>
 <div class="flex justify-content-space-between">
   <p class="">← <strong>Previous</strong>: <a href="/documentation/utilities/embed">Embed</a></p>
-  <p class=""><strong>Next</strong>: <a href="/documentation/utilities/xxxxx">Xxxxx</a><!-- TODO --> →</p>
+  <p class=""><strong>Next</strong>: <a href="/documentation/utilities/visibility">Visibility</a> →</p>
 </div>
