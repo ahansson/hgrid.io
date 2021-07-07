@@ -11170,8 +11170,7 @@ header .icon {
   width: 19px;
   height: 19px;
   margin-right: 0.8rem;
-  position: relative;
-  top: -1px;
+  opacity: 0.83;
 }
 header .github-icon {
   width: 2.8rem;
@@ -11550,9 +11549,12 @@ footer {
   position: relative;
   flex-shrink: 0;
 }
-footer p a {
+footer p a,
+footer p {
   color: #cfcfcf;
   font-size: 1.6rem;
+}
+footer p a {
   border-bottom: 1px solid transparent;
 }
 footer p a:hover {

@@ -149,8 +149,7 @@ header {
     width: 19px;
     height: 19px;
     margin-right: 0.8rem;
-    position: relative;
-    top: -1px;
+    opacity: 0.83;
   }
 
   .github-icon {
@@ -566,9 +565,13 @@ footer {
   position: relative;
   flex-shrink: 0;
 
-  p a {
+  p a,
+  p {
     color: #cfcfcf;
     font-size: 1.6rem;
+  }
+
+  p a {
     border-bottom: 1px solid transparent;
   }
 
@@ -576,7 +579,6 @@ footer {
     color: #fff;
     border-bottom: 1px dotted #666;
   }
-
 }
 
 /* Tomorrow Night Blue Theme for highlight.js */
