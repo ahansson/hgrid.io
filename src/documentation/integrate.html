@@ -294,21 +294,58 @@ export default App;
 
 <h2 class="h3 mt-60">
   <span id="svelte" class="sublink"></span>
-  Svelte
+  Svelte (with SvelteKit)
 </h2>
 
-<p class="small"><em>This recipe is tested with SvelteKit x.x.x</em></p>
+<p class="small"><em>This recipe is tested with the SvelteKit beta</em></p>
 
-<p class="text-red">Coming soon!</p>
+<h4 class="mt-40">Demo project</h4>
 
-<h4 class="push20v">Prerequisites</h4>
+<p>
+  Check out the <a href="https://github.com/ahansson/hgrid-css-sveltekit" target="_blank" rel="noopener noreferrer">starter 
+  project</a> on GitHub.
+</p>
+
+<h4 class="mt-40">Manual Setup</h4>
+
+<p>Set up a new SvelteKit project from scratch with <code>npm init svelte@latest my-app-name</code>.</p>
 
 <ol>
-  <li>Install two packages: <code>npm i sass sass-loader --save-dev</code></li>
-  <li>Install <strong>hgrid</strong>: <code>npm install hgrid-css --save-dev</code></li>
-  <li>Create <code>main.scss</code>, for example in <code>assets/scss</code></li>
-  <li>Initiate <code>main.scss</code> in your <code>main.js</code> file, respecting your local folder structure:</li>
+  <li>(Go to your project folder if you're not already there: <code>cd my-app-name</code>.)</li>
+  <li>Install dependencies with <code>npm i</code>.</li>
+  <li>Install Svelte's preprocessor: <code>npm install -D svelte-preprocess</code></li>
+  <li>Install Sass: <code>npm install -D sass</code>.</li>
+  <li>Rename SvelteKit's <code>app.css</code> file to <code>main.scss</code>.</li>
+  <li>Add preprocessing config: <pre class="push20v filename" data-file="svelte.config.js"><code>import preprocess from 'svelte-preprocess'
+
+const config = {
+  preprocess: preprocess({
+    renderSync: true,
+    implementation: 'sass'
+  })
+}
+
+export default config</code></pre></li>
+  <li>Initialize <strong>hgrid</strong> in <code>app.scss</code> with your own config if required: 
+<pre class="push20v filename" data-file="app.scss">
+<code>@use 'hgrid-css' with (
+  $body-bg: #7056ce,
+  $link-color: #00a344,
+  $link-color-hover: #00cc66,
+  $container-max-width: 1680px,
+  $link-underline-color: #daae00,
+  $column-gutter-width: 1.2%,
+  $turn-off-link-decoration: true,
+  $use-global-link-underlines: true,
+);</code></pre></li></li>
+  <li>In your terminal: <code>npm run dev</code></li>
+  <li>The project now runs on <code>localhost:3000</code> with <strong>hgrid</strong> styling.</li>
 </ol>
+
+<p class="note">
+  Our <a href="https://github.com/ahansson/hgrid-css-sveltekit" rel="noopener noreferrer" target="_blank">Svelte 
+  starter project</a> is based on <a href="https://kit.svelte.dev" target="_blank" rel="noopener noreferrer">SvelteKit</a>.
+</p>
 
 <div class="custom-hairline mt-40"></div>
 <p class="fl hide-phone">← <strong>Previous</strong>: <a href="/documentation/installation/">Installation</a></p>
