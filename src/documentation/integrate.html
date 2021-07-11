@@ -14,10 +14,10 @@ title: Integrate hgrid in Your Projects
 
 <h2 class="mt-40">
   <span id="vue" class="sublink"></span>
-  Vue
+  Vue & NuxtJS
 </h2>
 
-<p class="small"><em>These recipes are tested with Vue v3.0.4.</em></p>
+<p class="small"><em>These recipes are tested with Vue v3.0.4 and NuxtJS v2.15</em></p>
 
 <h4 class="push20v">Prerequisites</h4>
 
@@ -329,8 +329,8 @@ const config = {
 export default config</code></pre></li>
   <li>Initialize <strong>hgrid</strong> in <code>app.scss</code> with your own config if required: 
 <pre class="push20v filename" data-file="app.scss">
-<code>@use 'hgrid-css' with (
-  // Examples of variables you can customize
+<code>  // Examples of variables you can customize
+@use 'hgrid-css' with (
   $body-bg: #7056ce,
   $link-color: #00a344,
   $link-color-hover: #00cc66,
@@ -342,7 +342,7 @@ export default config</code></pre></li>
 );
 
 // Other global styles from here down
-// .....</code></pre></li>
+// ...</code></pre></li>
 
   <li>In your terminal: <code>npm run dev</code></li>
   <li>The project now runs on <code>localhost:3000</code> with <strong>hgrid</strong> styling.</li>
