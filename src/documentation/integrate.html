@@ -315,7 +315,8 @@ export default App;
   <li>Install dependencies with <code>npm i</code>.</li>
   <li>Install Svelte's preprocessor: <code>npm install -D svelte-preprocess</code></li>
   <li>Install Sass: <code>npm install -D sass</code>.</li>
-  <li>Rename SvelteKit's <code>app.css</code> file to <code>main.scss</code>.</li>
+  <li>Install <strong>hgrid</strong>: <code>npm install -D hgrid-css</code></li>
+  <li>Change the file type of SvelteKit's <code>app.css</code> to <code>app.scss</code> (how you name it is up to you).</li>
   <li>Add preprocessing config: <pre class="push20v filename" data-file="svelte.config.js"><code>import preprocess from 'svelte-preprocess'
 
 const config = {
@@ -329,14 +330,15 @@ export default config</code></pre></li>
   <li>Initialize <strong>hgrid</strong> in <code>app.scss</code> with your own config if required: 
 <pre class="push20v filename" data-file="app.scss">
 <code>@use 'hgrid-css' with (
+  // Examples of variables you can customize
   $body-bg: #7056ce,
   $link-color: #00a344,
   $link-color-hover: #00cc66,
   $container-max-width: 1680px,
-  $link-underline-color: #daae00,
   $column-gutter-width: 1.2%,
   $turn-off-link-decoration: true,
   $use-global-link-underlines: true,
+  $link-underline-color: #daae00
 );</code></pre></li></li>
   <li>In your terminal: <code>npm run dev</code></li>
   <li>The project now runs on <code>localhost:3000</code> with <strong>hgrid</strong> styling.</li>
