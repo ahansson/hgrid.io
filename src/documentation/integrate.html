@@ -339,14 +339,19 @@ export default config</code></pre></li>
   $turn-off-link-decoration: true,
   $use-global-link-underlines: true,
   $link-underline-color: #daae00
-);</code></pre></li></li>
+);
+
+// Other global styles from here down
+// .....</code></pre></li>
+
   <li>In your terminal: <code>npm run dev</code></li>
   <li>The project now runs on <code>localhost:3000</code> with <strong>hgrid</strong> styling.</li>
 </ol>
 
 <p class="note">
-  Our <a href="https://github.com/ahansson/hgrid-css-sveltekit" rel="noopener noreferrer" target="_blank">Svelte 
-  starter project</a> is based on <a href="https://kit.svelte.dev" target="_blank" rel="noopener noreferrer">SvelteKit</a>.
+  While <code>scss</code> from <strong>hgrid</strong> will compile without any further configuration, adding 
+  <code>&lt;style lang="scss"></code> to your style tags is needed if you wish to write custom <code>scss</code> in 
+  Svelte components.
 </p>
 
 <div class="custom-hairline mt-40"></div>
