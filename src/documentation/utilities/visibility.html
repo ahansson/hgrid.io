@@ -7,13 +7,77 @@ description: Visibility, display and opacity utilities in hgrid
 title: Visibility
 ---
 <p>File location: <code class="loc">layout/helpers/_utilities.scss</code> (<a 
-    href="https://github.com/ahansson/hgrid-css/blob/main/sass/layout/helpers/_utilities.scss"
-    target="_blank"
-    rel="noopener"
-    >GitHub</a>)
+  href="https://github.com/ahansson/hgrid-css/blob/main/sass/layout/helpers/_utilities.scss"
+  target="_blank"
+  rel="noopener"
+  >GitHub</a>)
 </p>
 
-<div class="custom-hairline mt-40"></div>
+<div class="scrollable-y mt-40 mb-30">
+  <table class="striped">
+    <thead>
+      <tr>
+        <th class="width-30pct">Utility Name</th>
+        <th class="width-25pct">CSS Property</th>
+        <th>Comment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>.hide</code><br><code>.display-none</code></td>
+        <td>display: none;</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>.show</code><br><code>.block</code><br><code>.display-block</code></td>
+        <td>display: block;</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>.inline</code></td>
+        <td>display: inline;</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>.inline-block</code></td>
+        <td>display: inline-block;</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>.flow-root</code></td>
+        <td>display: flow-root;</td>
+        <td>Creates a new block formatting context for the element. Can replace clearfix hacks for floated elements.</td>
+      </tr>
+      <tr>
+        <td><code>.contents</code></td>
+        <td>display: contents;</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>.invisible</code><br><code>.hidden</code></td>
+        <td>visibility: hidden;</td>
+        <td>The element is invisible (also to screen readers), but layout is affected as normal.</td>
+      </tr>
+      <tr>
+        <td><code>.visible</code></td>
+        <td>visibility: visible;</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>.pointer-events-all</code></td>
+        <td>pointer-events: all;</td>
+        <td>Clicks/taps will be registered even for invisible elements</td>
+      </tr>
+      <tr>
+        <td><code>.pointer-events-none</code></td>
+        <td>pointer-events: none;</td>
+        <td>No clicks/taps will be registered</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="custom-hairline mt-80"></div>
 <div class="flex justify-content-space-between">
   <p class="">← <strong>Previous</strong>: <a href="/documentation/utilities/width-height/">Width & Height</a></p>
 <!-- TODO next -->
