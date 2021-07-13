@@ -206,7 +206,7 @@ title: Visibility
 
 <h5 class="mt-40">4. Show elements on a specific viewport</h5>
 
-<div class="scrollable-y mt-40 mb-10">
+<div class="scrollable-y mt-40">
   <table class="striped" style="min-width: 600px;">
     <thead>
       <tr>
@@ -240,9 +240,25 @@ title: Visibility
   </table>
 </div>
 
-<p class="note">
+<p class="note mb-60">
   As we can see, the viewports <code>phone</code> and <code>desktop-large</code> are excluded from these utilities. Show/hide for these two  
   is covered by the general utilities (#1 and #2 above).
+</p>
+
+<h4>Opacity</h4>
+
+<p>
+  Control element opacity with utility classes from <code>.opacity-0</code> to <code>.opacity-100</code>, with intervals of <code>-5</code>. 
+  Here's a red rectangle with 40% opacity:</p>
+
+<div class="opacity-40 mb-20 radius flex align-items-center justify-content-center padding-10" style="width: 40rem; height: 14rem; background: red;">
+  <p class="mb-0 text-center"><code>.opacity-40</code></p>
+</div>
+
+<p>
+  Each number is a percentage value from 0% to 100%, where 0 means the element is completely transparent, and 100 means the element is fully 
+  opaque (no transparency). <code>.opacity-35</code> sets opacity to 0.35, <code>.opacity-70</code> sets opacity to 0.7, 
+  <code>.opacity-100</code> sets the css property to <code>opacity: 1;</code>.
 </p>
 
 <div class="custom-hairline mt-80"></div>
