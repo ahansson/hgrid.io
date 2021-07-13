@@ -13,6 +13,8 @@ title: Visibility
   >GitHub</a>)
 </p>
 
+<h2 class="h4 mt-40">General Utilities</h2>
+
 <div class="scrollable-y mt-40 mb-30">
   <table class="striped">
     <thead>
@@ -77,8 +79,99 @@ title: Visibility
   </table>
 </div>
 
+<h3 class="h4 mt-60 mb-30">Responsive Overrides</h3>
+
+<h5>1. Hide elements from certain viewports</h5>
+
+<div class="scrollable-y mt-40 mb-30">
+  <table class="striped">
+    <thead>
+      <tr>
+        <th class="width-40pct">Utility Name</th>
+        <th class="width-20pct">CSS Property</th>
+        <th>Comment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>.hide-desktop</code><br><code>.hide-desktop-large</code></td>
+        <td>display: none;</td>
+        <td><strong>Hide</strong> element from breakpoint and up (wider)</td>
+      </tr>
+      <tr>
+        <td><code>.hide-laptop</code><br><code>.hide-tablet-landscape</code><br><code>.hide-tablet-portrait</code><br>
+        <code>.hide-phone-landscape</code><br><code>.hide-phone</code></td>
+        <td>display: none;</td>
+        <td><strong>Hide</strong> element from breakpoint and down (narrower)</td>
+      </tr>
+      <tr>
+        <td><code>.invisible-desktop</code><br><code>.invisible-desktop-large</code></td>
+        <td>visibility: hidden;</td>
+        <td><strong>Hide</strong> element from breakpoint and up (wider)</td>
+      </tr>
+      <tr>
+        <td><code>.invisible-laptop</code><br><code>.invisible-tablet-landscape</code><br><code>.invisible-tablet-portrait</code><br>
+        <code>.invisible-phone-landscape</code><br><code>.invisible-phone</code></td>
+        <td>visibility: hidden;</td>
+        <td><strong>Hide</strong> element from breakpoint and down (narrower)</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h5 class="mt-40">2. Show elements on certain viewports</h5>
+
+<div class="scrollable-y mt-40 mb-30">
+  <table class="striped">
+    <thead>
+      <tr>
+        <th class="width-40pct">Utility Name</th>
+        <th class="width-20pct">CSS Property</th>
+        <th>Comment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>.show-desktop</code><br><code>.show-desktop-large</code></td>
+        <td>display: block;</td>
+        <td><strong>Show</strong> element from breakpoint and up (wider)</td>
+      </tr>
+      <tr>
+        <td><code>.show-laptop</code><br><code>.show-tablet-landscape</code><br><code>.show-tablet-portrait</code><br>
+        <code>.show-phone-landscape</code><br><code>.show-phone</code></td>
+        <td>display: block;</td>
+        <td><strong>Show</strong> element from breakpoint and down (narrower)</td>
+      </tr>
+      <tr>
+        <td><code>.visible-desktop</code><br><code>.visible-desktop-large</code></td>
+        <td>visibility: visible;</td>
+        <td><strong>Show</strong> element from breakpoint and up (wider)</td>
+      </tr>
+      <tr>
+        <td><code>.visible-laptop</code><br><code>.visible-tablet-landscape</code><br><code>.visible-tablet-portrait</code><br>
+        <code>.visible-phone-landscape</code><br><code>.visible-phone</code></td>
+        <td>visibility: visible;</td>
+        <td><strong>Show</strong> element from breakpoint and down (narrower)</td>
+      </tr>
+      <tr>
+        <td><code>.flex-show-desktop</code><br><code>.flex-show-desktop-large</code></td>
+        <td>display: flex;</td>
+        <td><strong>Show</strong> non-stacked flex containers (like <code>.row</code>) from a breakpoint and up 
+        if they have been hidden with <code>display:none;</code></td>
+      </tr>
+      <tr>
+        <td><code>.flex-show-laptop</code><br><code>.flex-show-tablet-landscape</code><br><code>.flex-show-tablet-portrait</code><br>
+        <code>.flex-show-phone-landscape</code><br><code>.flex-show-phone</code></td>
+        <td>display: flex;</td>
+        <td><strong>Show</strong> non-stacked flex containers (like <code>.row</code>) from a breakpoint and down 
+        if they have been hidden with <code>display:none;</code></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 <div class="custom-hairline mt-80"></div>
 <div class="flex justify-content-space-between">
   <p class="">← <strong>Previous</strong>: <a href="/documentation/utilities/width-height/">Width & Height</a></p>
-<!-- TODO next -->
+  <p class=""><strong>Next</strong>: <a href="/documentation/utilities/input/">Box Shadow</a> →</p>
 </div>
