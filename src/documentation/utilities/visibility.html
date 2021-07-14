@@ -13,385 +13,394 @@ title: Visibility
   >GitHub</a>)
 </p>
 
-<h2 class="h3 mt-40">General Utilities</h2>
+<div class="group mt-40">
 
-<div class="scrollable-y mt-40 mb-30">
-  <table class="striped" style="min-width: 600px;">
-    <thead>
-      <tr>
-        <th class="width-30pct">Utility Name</th>
-        <th class="width-25pct">CSS Property</th>
-        <th>Comment</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>.hide</code><br><code>.display-none</code></td>
-        <td>display: none;</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><code>.show</code><br><code>.block</code><br><code>.display-block</code></td>
-        <td>display: block;</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><code>.inline</code></td>
-        <td>display: inline;</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><code>.inline-block</code></td>
-        <td>display: inline-block;</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><code>.flow-root</code></td>
-        <td>display: flow-root;</td>
-        <td>Creates a new block formatting context for the element. Can replace clearfix hacks for floated elements.</td>
-      </tr>
-      <tr>
-        <td><code>.contents</code></td>
-        <td>display: contents;</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><code>.invisible</code><br><code>.hidden</code></td>
-        <td>visibility: hidden;</td>
-        <td>The element is invisible (also to screen readers), but layout is affected as normal.</td>
-      </tr>
-      <tr>
-        <td><code>.visible</code></td>
-        <td>visibility: visible;</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td><code>.pointer-events-all</code></td>
-        <td>pointer-events: all;</td>
-        <td>Clicks/taps will be registered even for invisible elements</td>
-      </tr>
-      <tr>
-        <td><code>.pointer-events-none</code></td>
-        <td>pointer-events: none;</td>
-        <td>No clicks/taps will be registered</td>
-      </tr>
-    </tbody>
-  </table>
+  <h2 class="h3">General Utilities</h2>
+
+  <div class="scrollable-y mt-40 mb-30">
+    <table class="striped" style="min-width: 600px;">
+      <thead>
+        <tr>
+          <th class="width-30pct">Utility Name</th>
+          <th class="width-25pct">CSS Property</th>
+          <th>Comment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>.hide</code><br><code>.display-none</code></td>
+          <td>display: none;</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><code>.show</code><br><code>.block</code><br><code>.display-block</code></td>
+          <td>display: block;</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><code>.inline</code></td>
+          <td>display: inline;</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><code>.inline-block</code></td>
+          <td>display: inline-block;</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><code>.flow-root</code></td>
+          <td>display: flow-root;</td>
+          <td>Creates a new block formatting context for the element. Can replace clearfix hacks for floated elements.</td>
+        </tr>
+        <tr>
+          <td><code>.contents</code></td>
+          <td>display: contents;</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><code>.invisible</code><br><code>.hidden</code></td>
+          <td>visibility: hidden;</td>
+          <td>The element is invisible (also to screen readers), but layout is affected as normal.</td>
+        </tr>
+        <tr>
+          <td><code>.visible</code></td>
+          <td>visibility: visible;</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><code>.pointer-events-all</code></td>
+          <td>pointer-events: all;</td>
+          <td>Clicks/taps will be registered even for invisible elements</td>
+        </tr>
+        <tr>
+          <td><code>.pointer-events-none</code></td>
+          <td>pointer-events: none;</td>
+          <td>No clicks/taps will be registered</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 </div>
 
-<h3 class="mt-60 mb-30">Responsive Overrides</h3>
+<div class="group">
+  <h4 class="mt-60 mb-30">Responsive Overrides</h4>
 
-<h4>1. Hide elements from certain viewports</h4>
+  <h5>1. Hide elements from certain viewports</h5>
 
-<div class="scrollable-y mt-40 mb-30">
-  <table class="striped" style="min-width: 600px;">
-    <thead>
-      <tr>
-        <th class="width-40pct">Utility Name</th>
-        <th class="width-20pct">CSS Property</th>
-        <th>Comment</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>.hide-desktop</code><br><code>.hide-desktop-large</code></td>
-        <td>display: none;</td>
-        <td>Hide element from breakpoint and up (wider)</td>
-      </tr>
-      <tr>
-        <td><code>.hide-laptop</code><br><code>.hide-tablet-landscape</code><br><code>.hide-tablet-portrait</code><br>
-        <code>.hide-phone-landscape</code><br><code>.hide-phone</code></td>
-        <td>display: none;</td>
-        <td>Hide element from breakpoint and down (narrower)</td>
-      </tr>
-      <tr>
-        <td><code>.invisible-desktop</code><br><code>.invisible-desktop-large</code></td>
-        <td>visibility: hidden;</td>
-        <td>Hide element from breakpoint and up (wider)</td>
-      </tr>
-      <tr>
-        <td><code>.invisible-laptop</code><br><code>.invisible-tablet-landscape</code><br><code>.invisible-tablet-portrait</code><br>
-        <code>.invisible-phone-landscape</code><br><code>.invisible-phone</code></td>
-        <td>visibility: hidden;</td>
-        <td>Hide element from breakpoint and down (narrower)</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="scrollable-y mt-40 mb-30">
+    <table class="striped" style="min-width: 600px;">
+      <thead>
+        <tr>
+          <th class="width-40pct">Utility Name</th>
+          <th class="width-20pct">CSS Property</th>
+          <th>Comment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>.hide-desktop</code><br><code>.hide-desktop-large</code></td>
+          <td>display: none;</td>
+          <td>Hide element from breakpoint and up (wider)</td>
+        </tr>
+        <tr>
+          <td><code>.hide-laptop</code><br><code>.hide-tablet-landscape</code><br><code>.hide-tablet-portrait</code><br>
+          <code>.hide-phone-landscape</code><br><code>.hide-phone</code></td>
+          <td>display: none;</td>
+          <td>Hide element from breakpoint and down (narrower)</td>
+        </tr>
+        <tr>
+          <td><code>.invisible-desktop</code><br><code>.invisible-desktop-large</code></td>
+          <td>visibility: hidden;</td>
+          <td>Hide element from breakpoint and up (wider)</td>
+        </tr>
+        <tr>
+          <td><code>.invisible-laptop</code><br><code>.invisible-tablet-landscape</code><br><code>.invisible-tablet-portrait</code><br>
+          <code>.invisible-phone-landscape</code><br><code>.invisible-phone</code></td>
+          <td>visibility: hidden;</td>
+          <td>Hide element from breakpoint and down (narrower)</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h5 class="mt-40">2. Show elements on certain viewports</h5>
+
+  <div class="scrollable-y mt-40 mb-30">
+    <table class="striped" style="min-width: 600px;">
+      <thead>
+        <tr>
+          <th class="width-40pct">Utility Name</th>
+          <th class="width-20pct">CSS Property</th>
+          <th>Comment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>.show-desktop</code><br><code>.show-desktop-large</code></td>
+          <td>display: block;</td>
+          <td>Show element from breakpoint and up (wider)</td>
+        </tr>
+        <tr>
+          <td><code>.show-laptop</code><br><code>.show-tablet-landscape</code><br><code>.show-tablet-portrait</code><br>
+          <code>.show-phone-landscape</code><br><code>.show-phone</code></td>
+          <td>display: block;</td>
+          <td>Show element from breakpoint and down (narrower)</td>
+        </tr>
+        <tr>
+          <td><code>.visible-desktop</code><br><code>.visible-desktop-large</code></td>
+          <td>visibility: visible;</td>
+          <td>Show element from breakpoint and up (wider)</td>
+        </tr>
+        <tr>
+          <td><code>.visible-laptop</code><br><code>.visible-tablet-landscape</code><br><code>.visible-tablet-portrait</code><br>
+          <code>.visible-phone-landscape</code><br><code>.visible-phone</code></td>
+          <td>visibility: visible;</td>
+          <td>Show element from breakpoint and down (narrower)</td>
+        </tr>
+        <tr>
+          <td><code>.flex-show-desktop</code><br><code>.flex-show-desktop-large</code></td>
+          <td>display: flex;</td>
+          <td>Show non-stacked flex containers (like <code>.row</code>) from the breakpoint and up 
+          if they have been hidden with <code>display:none;</code></td>
+        </tr>
+        <tr>
+          <td><code>.flex-show-laptop</code><br><code>.flex-show-tablet-landscape</code><br><code>.flex-show-tablet-portrait</code><br>
+          <code>.flex-show-phone-landscape</code><br><code>.flex-show-phone</code></td>
+          <td>display: flex;</td>
+          <td>Show non-stacked flex containers (like <code>.row</code>) from the breakpoint and down 
+          if they have been hidden with <code>display:none;</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h5>3. Hide elements from a specific viewport</h5>
+
+  <div class="scrollable-y mt-40 mb-10">
+    <table class="striped" style="min-width: 600px;">
+      <thead>
+        <tr>
+          <th class="width-40pct">Utility Name</th>
+          <th class="width-20pct">CSS Property</th>
+          <th>Comment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>.hide-desktop-only</code><br><code>.hide-laptop-only</code><br><code>.hide-tablet-landscape-only</code><br>
+          <code>.hide-tablet-portrait-only</code><br><code>.hide-phone-landscape-only</code></td>
+          <td>display: none;</td>
+          <td>Hide element from this viewport only</td>
+        </tr>
+        <tr>
+          <td><code>.invisible-desktop-only</code><br><code>.invisible-laptop-only</code><br><code>.invisible-tablet-landscape-only</code><br><code>.invisible-tablet-portrait-only</code><br>
+          <code>.invisible-phone-landscape-only</code></td>
+          <td>visibility: hidden;</td>
+          <td>Hide element from this viewport only</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="note">
+    As we can see, the viewports <code>phone</code> and <code>desktop-large</code> are excluded from these utilities. Show/hide for these two  
+    is covered by the general utilities (#1 and #2 above).
+  </p>
+
+  <h5 class="mt-40">4. Show elements on a specific viewport</h5>
+
+  <div class="scrollable-y mt-40">
+    <table class="striped" style="min-width: 600px;">
+      <thead>
+        <tr>
+          <th class="width-40pct">Utility Name</th>
+          <th class="width-20pct">CSS Property</th>
+          <th>Comment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>.show-desktop-only</code><br><code>.show-laptop-only</code><br><code>.show-tablet-landscape-only</code>
+          <br><code>.show-tablet-portrait-only</code><br>
+          <code>.show-phone-landscape-only</code></td>
+          <td>display: block;</td>
+          <td>Show element on this viewport only</td>
+        </tr>
+        <tr>
+          <td><code>.visible-desktop-only</code><br><code>.visible-laptop-only</code><br><code>.visible-tablet-landscape-only</code><br>
+          <code>.visible-tablet-portrait-only</code><br><code>.visible-phone-landscape-only</code></td>
+          <td>visibility: visible;</td>
+          <td>Show element on this viewport only</td>
+        </tr>
+        <tr>
+          <td><code>.flex-show-desktop-only</code><br><code>.flex-show-laptop-only</code><br><code>.flex-show-tablet-landscape-only</code><br>
+          <code>.flex-show-tablet-portrait-only</code><br><code>.flex-show-phone-landscape-only</code></td>
+          <td>display: flex;</td>
+          <td>Show non-stacked flex containers (like <code>.row</code>) on this viewport only, if they have been 
+          hidden with <code>display:none;</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="note mb-60">
+    As we can see, the viewports <code>phone</code> and <code>desktop-large</code> are excluded from these utilities. Show/hide for these two  
+    is covered by the general utilities (#1 and #2 above).
+  </p>
 </div>
 
-<h4 class="mt-40">2. Show elements on certain viewports</h4>
+<div class="group">
+  <h3>Opacity</h3>
 
-<div class="scrollable-y mt-40 mb-30">
-  <table class="striped" style="min-width: 600px;">
-    <thead>
-      <tr>
-        <th class="width-40pct">Utility Name</th>
-        <th class="width-20pct">CSS Property</th>
-        <th>Comment</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>.show-desktop</code><br><code>.show-desktop-large</code></td>
-        <td>display: block;</td>
-        <td>Show element from breakpoint and up (wider)</td>
-      </tr>
-      <tr>
-        <td><code>.show-laptop</code><br><code>.show-tablet-landscape</code><br><code>.show-tablet-portrait</code><br>
-        <code>.show-phone-landscape</code><br><code>.show-phone</code></td>
-        <td>display: block;</td>
-        <td>Show element from breakpoint and down (narrower)</td>
-      </tr>
-      <tr>
-        <td><code>.visible-desktop</code><br><code>.visible-desktop-large</code></td>
-        <td>visibility: visible;</td>
-        <td>Show element from breakpoint and up (wider)</td>
-      </tr>
-      <tr>
-        <td><code>.visible-laptop</code><br><code>.visible-tablet-landscape</code><br><code>.visible-tablet-portrait</code><br>
-        <code>.visible-phone-landscape</code><br><code>.visible-phone</code></td>
-        <td>visibility: visible;</td>
-        <td>Show element from breakpoint and down (narrower)</td>
-      </tr>
-      <tr>
-        <td><code>.flex-show-desktop</code><br><code>.flex-show-desktop-large</code></td>
-        <td>display: flex;</td>
-        <td>Show non-stacked flex containers (like <code>.row</code>) from the breakpoint and up 
-        if they have been hidden with <code>display:none;</code></td>
-      </tr>
-      <tr>
-        <td><code>.flex-show-laptop</code><br><code>.flex-show-tablet-landscape</code><br><code>.flex-show-tablet-portrait</code><br>
-        <code>.flex-show-phone-landscape</code><br><code>.flex-show-phone</code></td>
-        <td>display: flex;</td>
-        <td>Show non-stacked flex containers (like <code>.row</code>) from the breakpoint and down 
-        if they have been hidden with <code>display:none;</code></td>
-      </tr>
-    </tbody>
-  </table>
+  <p>
+    Control element opacity with utility classes from <code>.opacity-0</code> to <code>.opacity-100</code>, with intervals of <code>-5</code>. 
+    Here's a red rectangle with 40% opacity:
+  </p>
+
+  <div class="opacity-40 mb-20 radius flex align-items-center justify-content-center padding-10" style="width: 40rem; height: 14rem; background: red;">
+    <p class="mb-0 text-center"><code>.opacity-40</code></p>
+  </div>
+
+  <p class="small">
+    Each number is a percentage value from 0% to 100%, where 0 means the element is completely transparent, and 100 means the element is fully 
+    opaque (no transparency). <code>.opacity-35</code> sets opacity to 0.35, <code>.opacity-70</code> sets opacity to 0.7, 
+    <code>.opacity-100</code> sets the css property to <code>opacity: 1;</code>.
+  </p>
 </div>
 
+<div class="group">
+  <h3 class="mt-50">Overflow</h3>
 
-<h4>3. Hide elements from a specific viewport</h4>
+  <div class="scrollable-y mt-20">
+    <table style="min-width: 600px;">
+      <thead>
+        <tr>
+          <th class="width-40pct">Utility Name</th>
+          <th class="width-20pct">CSS Property</th>
+          <th>Comment</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>.overflow-hidden</code></td>
+          <td>overflow: hidden;</td>
+          <td>No scrollbars</td>
+        </tr>
+        <tr>
+          <td><code>.overflow-scroll</code></td>
+          <td>overflow: scroll;</td>
+          <td>Always scrollbars, both directions</td>
+        </tr>
+        <tr>
+          <td><code>.overflow-auto</code></td>
+          <td>overflow: auto;</td>
+          <td>Scrollbars if needed, both directions</td>
+        </tr>
+        <tr>
+          <td><code>.overflow-hidden-visible</code></td>
+          <td>overflow: hidden visible;</td>
+          <td>Vertical scrollbar only, clip content at the bottom</td>
+        </tr>
+        <tr>
+          <td><code>.overflow-visible-hidden</code></td>
+          <td>overflow: visible hidden;</td>
+          <td>Horizontal scrollbar only, clip content on the right side and at the bottom if it overflows available height/width.</td>
+        </tr>
+        <tr>
+          <td><code>.overflow-x-hidden</code></td>
+          <td>overflow-x: hidden;</td>
+          <td>Clip horizontal content if needed, no scrollbar.</td>
+        </tr>
+        <tr>
+          <td><code>.overflow-x-scroll</code></td>
+          <td>overflow-x: hidden;</td>
+          <td>Clip horizontal content if needed, with horizontal scrollbar.</td>
+        </tr>
+        <tr>
+          <td><code>.overflow-x-auto</code></td>
+          <td>overflow-x: auto;</td>
+          <td>Horizontal scrollbar if element is too narrow for the content</td>
+        </tr>
+        <tr>
+          <td><code>.overflow-y-hidden</code></td>
+          <td>overflow-y: hidden;</td>
+          <td>Clip vertical content if needed, no scrollbar.</td>
+        </tr>
+        <tr>
+          <td><code>.overflow-y-scroll</code></td>
+          <td>overflow-y: scroll;</td>
+          <td>Vertical scrollbar if content needs to be clipped.</td>
+        </tr>
+        <tr>
+          <td><code>.overflow-y-auto</code></td>
+          <td>overflow-y: scroll;</td>
+          <td>Vertical scrollbar if element is too short for the content</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
-<div class="scrollable-y mt-40 mb-10">
-  <table class="striped" style="min-width: 600px;">
-    <thead>
-      <tr>
-        <th class="width-40pct">Utility Name</th>
-        <th class="width-20pct">CSS Property</th>
-        <th>Comment</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>.hide-desktop-only</code><br><code>.hide-laptop-only</code><br><code>.hide-tablet-landscape-only</code><br>
-        <code>.hide-tablet-portrait-only</code><br><code>.hide-phone-landscape-only</code></td>
-        <td>display: none;</td>
-        <td>Hide element from this viewport only</td>
-      </tr>
-      <tr>
-        <td><code>.invisible-desktop-only</code><br><code>.invisible-laptop-only</code><br><code>.invisible-tablet-landscape-only</code><br><code>.invisible-tablet-portrait-only</code><br>
-        <code>.invisible-phone-landscape-only</code></td>
-        <td>visibility: hidden;</td>
-        <td>Hide element from this viewport only</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+  <small>
+    In addition we have these variants: <code>inherit</code>, <code>initial</code>, <code>visible</code>, <code>unset</code> for these utilities: 
+    <code>.overflow-*</code>, <code>.overflow-x-*</code> and <code>.overflow-y-*</code>
+  </small>
 
-<p class="note">
-  As we can see, the viewports <code>phone</code> and <code>desktop-large</code> are excluded from these utilities. Show/hide for these two  
-  is covered by the general utilities (#1 and #2 above).
-</p>
+  <h4 class="mt-40 mb-20">Overflow Examples</h4>
 
-<h4 class="mt-40">4. Show elements on a specific viewport</h4>
+  <h5>a) Overflow hidden</h5>
 
-<div class="scrollable-y mt-40">
-  <table class="striped" style="min-width: 600px;">
-    <thead>
-      <tr>
-        <th class="width-40pct">Utility Name</th>
-        <th class="width-20pct">CSS Property</th>
-        <th>Comment</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>.show-desktop-only</code><br><code>.show-laptop-only</code><br><code>.show-tablet-landscape-only</code>
-        <br><code>.show-tablet-portrait-only</code><br>
-        <code>.show-phone-landscape-only</code></td>
-        <td>display: block;</td>
-        <td>Show element on this viewport only</td>
-      </tr>
-      <tr>
-        <td><code>.visible-desktop-only</code><br><code>.visible-laptop-only</code><br><code>.visible-tablet-landscape-only</code><br>
-        <code>.visible-tablet-portrait-only</code><br><code>.visible-phone-landscape-only</code></td>
-        <td>visibility: visible;</td>
-        <td>Show element on this viewport only</td>
-      </tr>
-      <tr>
-        <td><code>.flex-show-desktop-only</code><br><code>.flex-show-laptop-only</code><br><code>.flex-show-tablet-landscape-only</code><br>
-        <code>.flex-show-tablet-portrait-only</code><br><code>.flex-show-phone-landscape-only</code></td>
-        <td>display: flex;</td>
-        <td>Show non-stacked flex containers (like <code>.row</code>) on this viewport only, if they have been 
-        hidden with <code>display:none;</code></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+  <pre class="language-html filename" data-file="html">
+    <code>&lt;div class="overflow-hidden border-gray" style="max-width:40rem; height: 10rem;">
+    &lt;!-- content ... -->
+  &lt;/div></code>
+  </pre>
 
-<p class="note mb-60">
-  As we can see, the viewports <code>phone</code> and <code>desktop-large</code> are excluded from these utilities. Show/hide for these two  
-  is covered by the general utilities (#1 and #2 above).
-</p>
+  <div class="overflow-hidden border-gray" style="max-width:40rem; height: 10rem;">
+    This is some overflowing content. Chocolate cake pie chocolate cake ice cream jujubes. Toffee candy tootsie roll. 
+    Gummi bears cupcake oat cake dragée. Halvah soufflé brownie muffin danish muffin brownie jelly gingerbread. Icing 
+    croissant tiramisu sugar plum candy. Danish cheesecake cake. Marzipan brownie candy sweet sugar plum. Pudding sweet 
+    fruitcake cookie pie. Liquorice lemon drops toffee candy. Jelly-o chocolate jelly beans donut wafer bear claw. 
+    Jujubes bear claw chocolate cake biscuit cookie muffin powder pudding. Lemon drops chupa chups cheesecake. Cheesecake 
+    pastry chocolate candy canes liquorice gummi bears. Sugar plum tootsie roll croissant marzipan cheesecake toffee macaroon.
+  </div>
 
-<h3>Opacity</h3>
+  <div class="mt-30 custom-hairline"></div>
 
-<p>
-  Control element opacity with utility classes from <code>.opacity-0</code> to <code>.opacity-100</code>, with intervals of <code>-5</code>. 
-  Here's a red rectangle with 40% opacity:</p>
+  <h5>b) Overflow scroll</h5>
 
-<div class="opacity-40 mb-20 radius flex align-items-center justify-content-center padding-10" style="width: 40rem; height: 14rem; background: red;">
-  <p class="mb-0 text-center"><code>.opacity-40</code></p>
-</div>
+  <pre class="language-html filename" data-file="html">
+    <code>&lt;div class="overflow-scroll border-gray" style="max-width:40rem; height: 10rem;">
+    &lt;!-- content ... -->
+  &lt;/div></code>
+  </pre>
 
-<p class="small">
-  Each number is a percentage value from 0% to 100%, where 0 means the element is completely transparent, and 100 means the element is fully 
-  opaque (no transparency). <code>.opacity-35</code> sets opacity to 0.35, <code>.opacity-70</code> sets opacity to 0.7, 
-  <code>.opacity-100</code> sets the css property to <code>opacity: 1;</code>.
-</p>
+  <div class="overflow-scroll border-gray" style="max-width:40rem; height: 10rem;">
+    This is some overflowing content on both axes. Very long horizontal overflowing content chocolatecakepiechocolatecakeicecreamjujubestoffee-candy-tootsie-roll. 
+    Gummi bears cupcake oat cake dragée. Halvah soufflé brownie muffin danish muffin brownie jelly gingerbread. Icing croissant 
+    tiramisu sugar plum candy. Danish cheesecake cake. Marzipan brownie candy sweet sugar plum. Pudding sweet 
+    fruitcake cookie pie. Liquorice lemon drops toffee candy. Jelly-o chocolate jelly beans donut wafer bear claw. 
+    Jujubes bear claw chocolate cake biscuit cookie muffin powder pudding. Lemon drops chupa chups cheesecake. Cheesecake 
+    pastry chocolate candy canes liquorice gummi bears. Sugar plum tootsie roll croissant marzipan cheesecake toffee macaroon.
+  </div>
 
-<h3 class="mt-50">Overflow</h3>
+  <div class="mt-30 custom-hairline"></div>
 
-<div class="scrollable-y mt-40">
-  <table style="min-width: 600px;">
-    <thead>
-      <tr>
-        <th class="width-40pct">Utility Name</th>
-        <th class="width-20pct">CSS Property</th>
-        <th>Comment</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><code>.overflow-hidden</code></td>
-        <td>overflow: hidden;</td>
-        <td>No scrollbars</td>
-      </tr>
-      <tr>
-        <td><code>.overflow-scroll</code></td>
-        <td>overflow: scroll;</td>
-        <td>Always scrollbars, both directions</td>
-      </tr>
-      <tr>
-        <td><code>.overflow-auto</code></td>
-        <td>overflow: auto;</td>
-        <td>Scrollbars if needed, both directions</td>
-      </tr>
-      <tr>
-        <td><code>.overflow-hidden-visible</code></td>
-        <td>overflow: hidden visible;</td>
-        <td>Vertical scrollbar only, clip content at the bottom</td>
-      </tr>
-      <tr>
-        <td><code>.overflow-visible-hidden</code></td>
-        <td>overflow: visible hidden;</td>
-        <td>Horizontal scrollbar only, clip content on the right side and at the bottom if it overflows available height/width.</td>
-      </tr>
-      <tr>
-        <td><code>.overflow-x-hidden</code></td>
-        <td>overflow-x: hidden;</td>
-        <td>Clip horizontal content if needed, no scrollbar.</td>
-      </tr>
-      <tr>
-        <td><code>.overflow-x-scroll</code></td>
-        <td>overflow-x: hidden;</td>
-        <td>Clip horizontal content if needed, with horizontal scrollbar.</td>
-      </tr>
-      <tr>
-        <td><code>.overflow-x-auto</code></td>
-        <td>overflow-x: auto;</td>
-        <td>Horizontal scrollbar if element is too narrow for the content</td>
-      </tr>
-      <tr>
-        <td><code>.overflow-y-hidden</code></td>
-        <td>overflow-y: hidden;</td>
-        <td>Clip vertical content if needed, no scrollbar.</td>
-      </tr>
-      <tr>
-        <td><code>.overflow-y-scroll</code></td>
-        <td>overflow-y: scroll;</td>
-        <td>Vertical scrollbar if content needs to be clipped.</td>
-      </tr>
-      <tr>
-        <td><code>.overflow-y-auto</code></td>
-        <td>overflow-y: scroll;</td>
-        <td>Vertical scrollbar if element is too short for the content</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+  <h5>c) Overflow visible-hidden</h5>
 
-<small>
-  In addition we have these variants: <code>inherit</code>, <code>initial</code>, <code>visible</code>, <code>unset</code> for these utilities: 
-  <code>.overflow-*</code>, <code>.overflow-x-*</code> and <code>.overflow-y-*</code>
-</small>
+  <pre class="language-html filename" data-file="html">
+    <code>&lt;div class="overflow-visible-hidden border-gray" style="max-width:40rem; height: 10rem;">
+    &lt;!-- content ... -->
+  &lt;/div></code>
+  </pre>
 
-<h4 class="mt-40 mb-20">Overflow Examples</h4>
-
-<h5>1. Overflow hidden</h5>
-
-<pre class="language-html filename" data-file="html">
-  <code>&lt;div class="overflow-hidden border-gray" style="max-width:40rem; height: 10rem;">
-  &lt;!-- content ... -->
-&lt;/div></code>
-</pre>
-
-<div class="overflow-hidden border-gray" style="max-width:40rem; height: 10rem;">
-  This is some overflowing content. Chocolate cake pie chocolate cake ice cream jujubes. Toffee candy tootsie roll. 
-  Gummi bears cupcake oat cake dragée. Halvah soufflé brownie muffin danish muffin brownie jelly gingerbread. Icing 
-  croissant tiramisu sugar plum candy. Danish cheesecake cake. Marzipan brownie candy sweet sugar plum. Pudding sweet 
-  fruitcake cookie pie. Liquorice lemon drops toffee candy. Jelly-o chocolate jelly beans donut wafer bear claw. 
-  Jujubes bear claw chocolate cake biscuit cookie muffin powder pudding. Lemon drops chupa chups cheesecake. Cheesecake 
-  pastry chocolate candy canes liquorice gummi bears. Sugar plum tootsie roll croissant marzipan cheesecake toffee macaroon.
-</div>
-
-<div class="mt-30 custom-hairline"></div>
-
-<h5>2. Overflow scroll</h5>
-
-<pre class="language-html filename" data-file="html">
-  <code>&lt;div class="overflow-scroll border-gray" style="max-width:40rem; height: 10rem;">
-  &lt;!-- content ... -->
-&lt;/div></code>
-</pre>
-
-<div class="overflow-scroll border-gray" style="max-width:40rem; height: 10rem;">
-  This is some overflowing content on both axes. Very long horizontal overflowing content chocolatecakepiechocolatecakeicecreamjujubestoffee-candy-tootsie-roll. 
-  Gummi bears cupcake oat cake dragée. Halvah soufflé brownie muffin danish muffin brownie jelly gingerbread. Icing croissant 
-  tiramisu sugar plum candy. Danish cheesecake cake. Marzipan brownie candy sweet sugar plum. Pudding sweet 
-  fruitcake cookie pie. Liquorice lemon drops toffee candy. Jelly-o chocolate jelly beans donut wafer bear claw. 
-  Jujubes bear claw chocolate cake biscuit cookie muffin powder pudding. Lemon drops chupa chups cheesecake. Cheesecake 
-  pastry chocolate candy canes liquorice gummi bears. Sugar plum tootsie roll croissant marzipan cheesecake toffee macaroon.
-</div>
-
-<div class="mt-30 custom-hairline"></div>
-
-<h5>3. Overflow visible-hidden</h5>
-
-<pre class="language-html filename" data-file="html">
-  <code>&lt;div class="overflow-visible-hidden border-gray" style="max-width:40rem; height: 10rem;">
-  &lt;!-- content ... -->
-&lt;/div></code>
-</pre>
-
-<div class="overflow-visible-hidden border-gray" style="max-width:40rem; height: 10rem;">
-  This is some overflowing content on both axes. Very long horizontal overflowing content chocolatecakepiechocolatecakeicecreamjujubestoffee-candy-tootsie-roll. 
-  Gummi bears cupcake oat cake dragée. Halvah soufflé brownie muffin danish muffin brownie jelly gingerbread. Icing croissant 
-  tiramisu sugar plum candy. Danish cheesecake cake. Marzipan brownie candy sweet sugar plum. Pudding sweet 
-  fruitcake cookie pie. Liquorice lemon drops toffee candy. Jelly-o chocolate jelly beans donut wafer bear claw. 
-  Jujubes bear claw chocolate cake biscuit cookie muffin powder pudding. Lemon drops chupa chups cheesecake. Cheesecake 
-  pastry chocolate candy canes liquorice gummi bears. Sugar plum tootsie roll croissant marzipan cheesecake toffee macaroon.
+  <div class="overflow-visible-hidden border-gray" style="max-width:40rem; height: 10rem;">
+    This is some overflowing content on both axes. Very long horizontal overflowing content chocolatecakepiechocolatecakeicecreamjujubestoffee-candy-tootsie-roll. 
+    Gummi bears cupcake oat cake dragée. Halvah soufflé brownie muffin danish muffin brownie jelly gingerbread. Icing croissant 
+    tiramisu sugar plum candy. Danish cheesecake cake. Marzipan brownie candy sweet sugar plum. Pudding sweet 
+    fruitcake cookie pie. Liquorice lemon drops toffee candy. Jelly-o chocolate jelly beans donut wafer bear claw. 
+    Jujubes bear claw chocolate cake biscuit cookie muffin powder pudding. Lemon drops chupa chups cheesecake. Cheesecake 
+    pastry chocolate candy canes liquorice gummi bears. Sugar plum tootsie roll croissant marzipan cheesecake toffee macaroon.
+  </div>
 </div>
 
 <div class="custom-hairline mt-80"></div>
