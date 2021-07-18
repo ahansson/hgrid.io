@@ -59,10 +59,10 @@ title: Animations
   </h4>
 
   <p>
-    Applying <code>.transition</code> and <code>.vanish</code> to an HTML
-    element creates a hidden overlay that covers the entire viewport. With
-    JavaScript, reveal the overlay by temporarily removing the
-    <code>.vanish</code> class until the page has completed loading.
+    Applying the CSS class <code>.transition</code> to an HTML
+    element creates an overlay that covers the entire viewport. With
+    JavaScript, hide this overlay by applying <code>.vanish</code>
+    when the page has finished loading.
   </p>
 
   <p>
@@ -75,7 +75,7 @@ title: Animations
 
   &lt;div class="transition">&lt;/div>
 
-  &lt;!-- Reveal'.vanish' class with JS while page is loading: -->
+  &lt;!-- Add '.vanish' when the page content has loaded: -->
   &lt;script type="text/javascript">
     window.addEventListener('load', () => {
       document.querySelector('.transition').classList.add('vanish')
