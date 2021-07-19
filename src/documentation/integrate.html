@@ -368,15 +368,20 @@ export default config</code></pre></li>
   project</a> on GitHub.
 </p>
 
-<p>Astro comes with automatic Sass support, so there's nothing extra to install besides <code>hgrid-css</code> itself.</p>
+<h4>Setup</h4>
+
+<p>
+  Setting up <code>hgrid</code> with Sass in Astro is super easy. Astro ships with automatic Sass support, so there's nothing extra to 
+  install besides <code>hgrid-css</code> itself.
+</p>
 
 <p>
   In your terminal of choice, <code>cd</code> into your project folder and install <code>hgrid-css</code> with <code>npm i -D hgrid-css</code>. 
-  Then, rename Astro's default <code>/public/style/global.css</code> to <code>/public/style/global.<strong>scss</strong></code> and initialize hgrid 
+  Then, rename Astro's default <code>global.css</code> in the <code>/public/style/</code> folder to <code>global.<strong>scss</strong></code> and initialize hgrid 
   at the top of the file:
 </p>
 
-<pre class="language-scss"><code>@use 'hgrid-css/sass/hgrid' with (
+<pre class="language-scss filename" data-file="global.scss"><code>@use 'hgrid-css/sass/hgrid' with (
   <span class="hljs-comment">// optional config goes here, see code examples in previous sections</span>
 );
 
@@ -389,13 +394,14 @@ export default config</code></pre></li>
 
 <p>
   CSS in Astro can be located anywhere, as global stylesheets, in components or in page files. SCSS styling inside of Astro components is done by 
-  adding a <code>&lt;style lang="scss"></code> anywhere. By default, all Astro component styles are scoped, meaning they only apply to the 
-  current component. Styles are automatically extracted and optimized in the final build.
+  adding a <code>&lt;style lang="scss"></code> anywhere. Multiple style tags per file are permitted. By default, all Astro component styles 
+  are scoped, meaning they only apply to the current component. To create global styles from a locally scoped context, add the 
+  <code>:global()</code> wrapper, e.g. <code>:global(.my-style) { ... }</code>. Styles are automatically extracted and optimized in the final build.
 
 <p>
-  As for the other frameworks, if you need access to any <code>$hgrid-variables</code> in components, you must include them with 
-  <code>@use 'hgrid-css/sass/variables/variables'</code> at the top of you style tags. But as always you already have the most important 
-  variables available as <code>--custom-variables</code> without importing or "@using" anything.
+  As is always the case, access to <code>$hgrid-variables</code> in components requires you to first include them with 
+  <code>@use 'hgrid-css/sass/variables/variables'</code> at the beginning of you style sections. But you may not need this, as you always 
+  have the most important variables available to you as <code>--custom-variables</code> without any @import or @use.
 </p>
 
 <div class="custom-hairline mt-40"></div>
