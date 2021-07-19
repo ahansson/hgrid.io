@@ -1,7 +1,7 @@
 ---
 layout: layout/docs.njk
 meta: {
-title: Integrate hgrid With Your Projects | hgrid,
+title: Integrate hgrid in Your Projects | hgrid,
 description: How to integrate and use hgrid in your Node driven development projects.
 }
 title: Integrate hgrid in Your Projects
@@ -82,7 +82,7 @@ title: Integrate hgrid in Your Projects
 
 <p>
   If you need access to any <code>$hgrid-variables</code> you have to include them with 
-  <code>@use 'hgrid-css/sass/variables/variables'</code> at the top of each file.
+  <code>@use 'hgrid-css/sass/variables/variables'</code> at the top of each file (or at the start of each style tag).
 </p>
 
 <p>
@@ -352,6 +352,50 @@ export default config</code></pre></li>
   While <code>scss</code> from <strong>hgrid</strong> will compile without any further configuration, adding 
   <code>&lt;style lang="scss"></code> to your style tags is needed if you wish to write custom <code>scss</code> in 
   Svelte components.
+</p>
+
+<h2 class="h3 mt-60">
+  <span id="astro" class="sublink"></span>
+  Astro
+</h2>
+
+<p class="small"><em>This recipe is verified with Astro beta 0.0.12</em></p>
+
+<h4 class="mt-40">Demo project</h4>
+
+<p>
+  Check out the <a href="https://github.com/ahansson/hgrid-css-astro" target="_blank" rel="noopener noreferrer">starter 
+  project</a> on GitHub.
+</p>
+
+<p>Astro comes with automatic Sass support, so there's nothing extra to install besides <code>hgrid-css</code> itself.</p>
+
+<p>
+  In your terminal of choice, <code>cd</code> into your project folder and install <code>hgrid-css</code> with <code>npm i -D hgrid-css</code>. 
+  Then, rename Astro's default <code>/public/style/global.css</code> to <code>/public/style/global.<strong>scss</strong></code> and initialize hgrid 
+  at the top of the file:
+</p>
+
+<pre class="language-scss"><code>@use 'hgrid-css/sass/hgrid' with (
+  <span class="hljs-comment">// optional config goes here, see code examples in previous sections</span>
+);
+
+// Other global styles from here on
+</code></pre>
+
+<p>
+  Voilà, that's it. You can immediately style your html anywhere in your <code>.astro</code> files with <strong>hgrid</strong> utilities. 
+</p>
+
+<p>
+  CSS in Astro can be located anywhere, as global stylesheets, in components or in page files. SCSS styling inside of Astro components is done by 
+  adding a <code>&lt;style lang="scss"></code> anywhere. By default, all Astro component styles are scoped, meaning they only apply to the 
+  current component. Styles are automatically extracted and optimized in the final build.
+
+<p>
+  As for the other frameworks, if you need access to any <code>$hgrid-variables</code> in components, you must include them with 
+  <code>@use 'hgrid-css/sass/variables/variables'</code> at the top of you style tags. But as always you already have the most important 
+  variables available as <code>--custom-variables</code> without importing or "@using" anything.
 </p>
 
 <div class="custom-hairline mt-40"></div>
