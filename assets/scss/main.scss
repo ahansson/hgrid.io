@@ -103,6 +103,14 @@ main.container-max {
   background: linear-gradient(197deg, #2c004f 0%, #0b0029 100%);
 }
 
+.graphic {
+  background: url('/assets/img/bg-t.png');
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 50.7rem;
+}
+
 .signal {
   color: #f7e0a8;
 }
