@@ -371,14 +371,13 @@ export default config</code></pre></li>
 <h4>Setup</h4>
 
 <p>
-  Setting up <code>hgrid</code> with Sass in Astro is super easy. Astro ships with automatic Sass support, so there's nothing extra to 
-  install besides <code>hgrid-css</code> itself.
+  Astro so far offers the undiscutably easiest process of integrating <strong>hgrid</strong> of all the frameworks on this page. Astro ships with automatic Sass support, so there's nothing extra to install, except <code>hgrid-css</code> itself.
 </p>
 
 <p>
   In your terminal of choice, <code>cd</code> into your project folder and install <code>hgrid-css</code> with <code>npm i -D hgrid-css</code>. 
-  Then, rename Astro's default <code>global.css</code> in the <code>/public/style/</code> folder to <code>global.<strong>scss</strong></code> and initialize hgrid 
-  at the top of the file:
+  Rename Astro's default <code>global.css</code> file in the <code>/public/style/</code> folder to <code>global.<strong>scss</strong></code> and initialize hgrid 
+  like this at the top of the same file:
 </p>
 
 <pre class="language-scss filename" data-file="global.scss"><code>@use 'hgrid-css/sass/hgrid' with (
