@@ -371,7 +371,8 @@ export default config</code></pre></li>
 <h4>Setup</h4>
 
 <p>
-  Astro so far offers the undiscutably easiest process of integrating <strong>hgrid</strong> of all the frameworks on this page. Astro ships with automatic Sass support, so there's nothing extra to install, except <code>hgrid-css</code> itself.
+  Of all the frameworks on this page, Astro undiscutably offers the easiest process of integrating <strong>hgrid</strong>. It ships with 
+  automatic Sass support, so there's nothing extra to install &mdash; except <code>hgrid-css</code> itself.
 </p>
 
 <p>
@@ -382,13 +383,15 @@ export default config</code></pre></li>
 
 <pre class="language-scss filename" data-file="global.scss"><code>@use 'hgrid-css/sass/hgrid' with (
   <span class="hljs-comment">// optional config goes here, see code examples in previous sections</span>
+  <span class="hljs-comment">// skip the `with ();` part if you don&rsquo;t want to use configuration</span>
 );
 
 // Other global styles from here on
 </code></pre>
 
+<p>Voilà, that's it.</p>
 <p>
-  Voilà, that's it. You can immediately style your html anywhere in your <code>.astro</code> files with <strong>hgrid</strong> utilities. 
+  You can immediately style your HTML with <strong>hgrid</strong> utilities anywhere in your <code>.astro</code> files. 
 </p>
 
 <p>
