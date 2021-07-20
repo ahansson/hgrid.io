@@ -1,7 +1,7 @@
 <nav class="column-5 fixed overflow-y-auto border-right-light mobile-menu sidebar" role="menu">
-  <span class="hide close close-x pointer">&times;</span>
-  <div role="menuitem" class="push20v mb-20 theme-switch mobile-toggle">
-  {% include "components/colormode-toggle.njk" %}
+  <span aria-label="Close Menu" class="hide close close-x pointer">&times;</span>
+  <div aria-label="Color Theme Switcher" class="push20v mb-20 theme-switch mobile-toggle">
+    {% include "components/colormode-toggle.njk" %}
   </div>
   <h5 role="menuitem"><a class="close" href="/documentation/about-hgrid/" class="{{ 'active-link' if 'about-hgrid' in page.url }}">About</a></h5>
   <h5 role="menuitem"><a class="close" href="/documentation/installation/" class="{{ 'active-link' if 'documentation' in page.url }}">Documentation</a></h5>

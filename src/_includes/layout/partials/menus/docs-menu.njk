@@ -1,74 +1,74 @@
 <nav class="column-5 fixed overflow-y-auto docs-menu sidebar" role="menu">
   <span class="hide close close-x pointer">&times;</span>
-  <div role="menuitem" class="push20v mb-20 theme-switch docs-toggle hide" tabindex="0">
+  <div aria-label="Color Theme Switcher" class="push20v mb-20 theme-switch docs-toggle hide" tabindex="0">
   {% include "components/colormode-toggle.njk" %}
   </div>
   <h5 role="menuitem"><a href="/documentation/about-hgrid/" class="{{ 'active-link' if 'about-hgrid' in page.url }}">About</a></h5>
   <h5 role="menuitem"><a href="/documentation/installation/" {% if title == 'Installation' %}class="active-link"{% endif %}>Installation</a></h5>
-    <ul class="sub-links">
-      <li role="menuitem"><a class="close" href="/documentation/installation/#npm">NPM/Yarn</a></li>
-      <li role="menuitem"><a class="close" href="/documentation/installation/#cdn">CDN</a></li>
-      <li role="menuitem"><a class="close" href="/documentation/installation/#clone">Clone</a></li>
+    <ul role="menuitem" class="sub-links">
+      <li aria-label="Sub Menu Item"><a class="close" href="/documentation/installation/#npm">NPM/Yarn</a></li>
+      <li aria-label="Sub Menu Item"><a class="close" href="/documentation/installation/#cdn">CDN</a></li>
+      <li aria-label="Sub Menu Item"><a class="close" href="/documentation/installation/#clone">Clone</a></li>
     </ul>
   <h5 role="menuitem"><a href="/documentation/variables/" {% if title == 'Variables' %}class="active-link"{% endif %}>Variables</a></h5>
-    <ul class="sub-links">
-      <li role="menuitem"><a class="close" href="/documentation/variables/#internal-variables" >Internal Variables</a></li>
-      <li role="menuitem"><a class="close" href="/documentation/variables/#custom-properties">Custom Properties</a></li>
+    <ul role="menuitem" class="sub-links">
+      <li aria-label="Sub Menu Item"><a class="close" href="/documentation/variables/#internal-variables" >Internal Variables</a></li>
+      <li aria-label="Sub Menu Item"><a class="close" href="/documentation/variables/#custom-properties">Custom Properties</a></li>
     </ul>
   <h5 role="menuitem"><a href="/documentation/integrate/" {% if title == 'Integrate hgrid in Your Projects' %}class="active-link"{% endif %}>Integration</a></h5>
-    <ul class="sub-links">
-      <li role="menuitem"><a class="close" href="/documentation/integrate/#vue" >Vue &amp; Nuxt</a></li>
-      <li role="menuitem"><a class="close" href="/documentation/integrate/#react">React</a></li>
-      <li role="menuitem"><a class="close" href="/documentation/integrate/#svelte">Svelte</a></li>
-      <li role="menuitem"><a class="close" href="/documentation/integrate/#astro">Astro</a></li>
+    <ul role="menuitem" class="sub-links">
+      <li aria-label="Sub Menu Item"><a class="close" href="/documentation/integrate/#vue" >Vue &amp; Nuxt</a></li>
+      <li aria-label="Sub Menu Item"><a class="close" href="/documentation/integrate/#react">React</a></li>
+      <li aria-label="Sub Menu Item"><a class="close" href="/documentation/integrate/#svelte">Svelte</a></li>
+      <li aria-label="Sub Menu Item"><a class="close" href="/documentation/integrate/#astro">Astro</a></li>
     </ul>
   <h5 role="menuitem"><a href="/documentation/layout/" {% if title == 'Layout' %}class="active-link"{% endif %}>Layout</a></h5>
-    <ul class="sub-links">
-      <li role="menuitem"><a class="close" href="/documentation/layout/#containers">Containers</a></li>
-      <li role="menuitem"><a href="/documentation/layout/automatic-columns" {% if title == 'Automatic Content Columns' %}class="active-link"{% endif %}>Automatic Columns</a></li>
-      <li role="menuitem"><a href="/documentation/layout/accurate-columns" {% if title == 'Accurate Content Columns' %}class="active-link"{% endif %}>Accurate Columns</a></li>
-      <li role="menuitem"><a href="/documentation/layout/flex/" {% if title == 'Flex' %}class="active-link"{% endif %}>Flex</a></li>
-      <li role="menuitem"><a href="/documentation/layout/grid/" {% if title == 'Grid' %}class="active-link"{% endif %}>Grid</a></li>
-      <li role="menuitem"><a href="/documentation/layout/tables/" class="{{ 'active-link' if 'tables' in page.url }}">Tables</a></li>
-      <li role="menuitem"><a href="/documentation/layout/positioning/" class="{{ 'active-link' if 'positioning' in page.url }}">Positioning</a></li>
-      <li role="menuitem"><a href="/documentation/layout/padding/" class="{{ 'active-link' if 'padding' in page.url }}">Padding</a></li>
-      <li role="menuitem"><a href="/documentation/layout/margin/" class="{{ 'active-link' if 'margin' in page.url }}">Margin</a></li>
+    <ul role="menuitem" class="sub-links">
+      <li aria-label="Sub Menu Item"><a class="close" href="/documentation/layout/#containers">Containers</a></li>
+      <li aria-label="Sub Menu Item"><a href="/documentation/layout/automatic-columns" {% if title == 'Automatic Content Columns' %}class="active-link"{% endif %}>Automatic Columns</a></li>
+      <li aria-label="Sub Menu Item"><a href="/documentation/layout/accurate-columns" {% if title == 'Accurate Content Columns' %}class="active-link"{% endif %}>Accurate Columns</a></li>
+      <li aria-label="Sub Menu Item"><a href="/documentation/layout/flex/" {% if title == 'Flex' %}class="active-link"{% endif %}>Flex</a></li>
+      <li aria-label="Sub Menu Item"><a href="/documentation/layout/grid/" {% if title == 'Grid' %}class="active-link"{% endif %}>Grid</a></li>
+      <li aria-label="Sub Menu Item"><a href="/documentation/layout/tables/" class="{{ 'active-link' if 'tables' in page.url }}">Tables</a></li>
+      <li aria-label="Sub Menu Item"><a href="/documentation/layout/positioning/" class="{{ 'active-link' if 'positioning' in page.url }}">Positioning</a></li>
+      <li aria-label="Sub Menu Item"><a href="/documentation/layout/padding/" class="{{ 'active-link' if 'padding' in page.url }}">Padding</a></li>
+      <li aria-label="Sub Menu Item"><a href="/documentation/layout/margin/" class="{{ 'active-link' if 'margin' in page.url }}">Margin</a></li>
     </ul>
   <h5 role="menuitem"><a href="/documentation/utilities/" {% if title == 'Utilities' %}class="active-link"{% endif %}>Utilities</a></h5>
-      <ul class="sub-links">
-      <li role="menuitem"><a class="close" href="/documentation/utilities/#background">Background</a></li>
-      <li role="menuitem"><a href="/documentation/utilities/lines-and-borders" class="{{ 'active-link' if 'lines-and-borders' in page.url }}">Lines & Borders</a></li>
-      <li role="menuitem"><a href="/documentation/utilities/shapes" class="{{ 'active-link' if 'shapes' in page.url }}">Shapes</a></li>
-      <li role="menuitem"><a href="/documentation/utilities/box-shadow" class="{{ 'active-link' if 'box-shadow' in page.url }}">Box Shadow</a></li>
-      <li role="menuitem"><a href="/documentation/utilities/cursors" class="{{ 'active-link' if 'cursors' in page.url }}">Cursors</a></li>
-      <li role="menuitem"><a href="/documentation/utilities/embed" class="{{ 'active-link' if 'embed' in page.url }}">Embed</a></li>
-      <li role="menuitem"><a href="/documentation/utilities/width-height" class="{{ 'active-link' if 'width-height' in page.url }}">Width &amp; Height</a></li>
-      <li role="menuitem"><a href="/documentation/utilities/visibility" class="{{ 'active-link' if 'visibility' in page.url }}">Visibility</a></li>
+      <ul role="menuitem" class="sub-links">
+      <li aria-label="Sub Menu Item"><a class="close" href="/documentation/utilities/#background">Background</a></li>
+      <li aria-label="Sub Menu Item"><a href="/documentation/utilities/lines-and-borders" class="{{ 'active-link' if 'lines-and-borders' in page.url }}">Lines & Borders</a></li>
+      <li aria-label="Sub Menu Item"><a href="/documentation/utilities/shapes" class="{{ 'active-link' if 'shapes' in page.url }}">Shapes</a></li>
+      <li aria-label="Sub Menu Item"><a href="/documentation/utilities/box-shadow" class="{{ 'active-link' if 'box-shadow' in page.url }}">Box Shadow</a></li>
+      <li aria-label="Sub Menu Item"><a href="/documentation/utilities/cursors" class="{{ 'active-link' if 'cursors' in page.url }}">Cursors</a></li>
+      <li aria-label="Sub Menu Item"><a href="/documentation/utilities/embed" class="{{ 'active-link' if 'embed' in page.url }}">Embed</a></li>
+      <li aria-label="Sub Menu Item"><a href="/documentation/utilities/width-height" class="{{ 'active-link' if 'width-height' in page.url }}">Width &amp; Height</a></li>
+      <li aria-label="Sub Menu Item"><a href="/documentation/utilities/visibility" class="{{ 'active-link' if 'visibility' in page.url }}">Visibility</a></li>
     </ul>
   <h5 role="menuitem"><a href="/documentation/input/" {% if title == 'Input' %}class="active-link"{% endif %}>Input</a></h5>
-    <ul class="sub-links">
-      <li role="menuitem"><a class="close" href="/documentation/input/#form">Form Example</a></li>
-      <li role="menuitem"><a class="close" href="/documentation/input/#classes">Related Classes</a></li>
+    <ul role="menuitem" class="sub-links">
+      <li aria-label="Sub Menu Item"><a class="close" href="/documentation/input/#form">Form Example</a></li>
+      <li aria-label="Sub Menu Item"><a class="close" href="/documentation/input/#classes">Related Classes</a></li>
     </ul>
   <h5 role="menuitem"><a href="/documentation/typography/" {% if title == 'Typography' %}class="active-link"{% endif %}>Typography</a></h5>
-    <ul class="sub-links">
-      <li role="menuitem"><a class="close" href="/documentation/typography/#headlines">Headlines</a></li>
-      <li role="menuitem"><a class="close" href="/documentation/typography/#text-columns">Text Columns</a></li>
-      <li role="menuitem"><a class="close" href="/documentation/typography/#lists">Lists</a></li>
-      <li role="menuitem"><a class="close" href="/documentation/typography/#text-formatting">Text Formatting</a></li>
-      <li role="menuitem"><a class="close" href="/documentation/typography/#font-weight">Font Weight</a></li>
-      <li role="menuitem"><a class="close" href="/documentation/typography/#spacing">Letter Spacing</a></li>
-      <li role="menuitem"><a class="close" href="/documentation/typography/#line-breaks">Line Breaks</a></li>
-      <li role="menuitem"><a class="close" href="/documentation/typography/#text-selection">Text Selection</a></li>
-      <li role="menuitem"><a class="close" href="/documentation/typography/#text-colors">Text Colors</a></li>
-      <li role="menuitem"><a class="close" href="/documentation/typography/#anti-aliasing">Text Anti-Aliasing</a></li>
+    <ul role="menuitem" class="sub-links">
+      <li aria-label="Sub Menu Item"><a class="close" href="/documentation/typography/#headlines">Headlines</a></li>
+      <li aria-label="Sub Menu Item"><a class="close" href="/documentation/typography/#text-columns">Text Columns</a></li>
+      <li aria-label="Sub Menu Item"><a class="close" href="/documentation/typography/#lists">Lists</a></li>
+      <li aria-label="Sub Menu Item"><a class="close" href="/documentation/typography/#text-formatting">Text Formatting</a></li>
+      <li aria-label="Sub Menu Item"><a class="close" href="/documentation/typography/#font-weight">Font Weight</a></li>
+      <li aria-label="Sub Menu Item"><a class="close" href="/documentation/typography/#spacing">Letter Spacing</a></li>
+      <li aria-label="Sub Menu Item"><a class="close" href="/documentation/typography/#line-breaks">Line Breaks</a></li>
+      <li aria-label="Sub Menu Item"><a class="close" href="/documentation/typography/#text-selection">Text Selection</a></li>
+      <li aria-label="Sub Menu Item"><a class="close" href="/documentation/typography/#text-colors">Text Colors</a></li>
+      <li aria-label="Sub Menu Item"><a class="close" href="/documentation/typography/#anti-aliasing">Text Anti-Aliasing</a></li>
     </ul>
   <h5 role="menuitem"><a href="/documentation/animations/" {% if title == 'Animations' %}class="active-link"{% endif %}>Animations</a></h5>
-    <ul class="sub-links">
-      <li role="menuitem"><a class="close" href="/documentation/animations/#donut">Donut Spinner</a></li>
-      <li role="menuitem"><a class="close" href="/documentation/animations/#transition">Transition</a></li>
-      <li role="menuitem"><a class="close" href="/documentation/animations/#flashing">Flashing</a></li>
-      <li role="menuitem"><a class="close" href="/documentation/animations/#fade">Fade</a></li>
+    <ul role="menuitem" class="sub-links">
+      <li aria-label="Sub Menu Item"><a class="close" href="/documentation/animations/#donut">Donut Spinner</a></li>
+      <li aria-label="Sub Menu Item"><a class="close" href="/documentation/animations/#transition">Transition</a></li>
+      <li aria-label="Sub Menu Item"><a class="close" href="/documentation/animations/#flashing">Flashing</a></li>
+      <li aria-label="Sub Menu Item"><a class="close" href="/documentation/animations/#fade">Fade</a></li>
     </ul>
   <small class="push8h"><a href="https://github.com/ahansson/hgrid-css/releases" target="_blank" rel="noopener">v0.5.3-beta</a></small>
 </nav>
