@@ -401,9 +401,9 @@ export default config</code></pre></li>
   <code>:global()</code> wrapper, e.g. <code>:global(.my-style) { ... }</code>. Styles are automatically extracted and optimized in the final build.
 
 <p>
-  As is always the case, access to <code>$hgrid-variables</code> in components requires you to first include them with 
-  <code>@use 'hgrid-css/sass/variables/variables'</code> at the beginning of you style sections. But you may not need this, as you always 
-  have the most important variables available to you as <code>--custom-variables</code> without any @import or @use.
+  As always, access to internal <code>$hgrid-variables</code> in components requires you to first include them with 
+  <code>@use 'hgrid-css/sass/variables/variables'</code> at the beginning of your style sections. But you may not need this because 
+  the most important variables are available as <code>--custom-properties</code> without any @import or @use.
 </p>
 
 <div class="custom-hairline mt-40"></div>
