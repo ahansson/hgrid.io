@@ -111,6 +111,33 @@ main.container-max {
   height: 50.7rem;
 }
 
+.lines {
+  background: url('/assets/img/lines.svg');
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 50.7rem;
+  opacity: 0.2;
+}
+
+.lines-2 {
+  background: url('/assets/img/lines2.svg');
+  background-position: top left;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 50.7rem;
+  opacity: 0.1;
+}
+
+.lines-3 {
+  background: url('/assets/img/lines3.svg');
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 50.7rem;
+  opacity: 0.1;
+}
+
 .signal {
   color: #f7e0a8;
 }
