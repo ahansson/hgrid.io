@@ -7,6 +7,7 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy('assets/img/')
   eleventyConfig.addPassthroughCopy('assets/font/')
   eleventyConfig.addPassthroughCopy('assets/js/')
+  eleventyConfig.addPassthroughCopy('_redirects')
 
   return {
     passthroughFileCopy: true,
