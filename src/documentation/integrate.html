@@ -160,6 +160,8 @@ title: Integrate hgrid in Your Projects
     Restart the dev server with <code>npm run serve</code> for config changes to take effect.
   </p>
 
+  <div class="custom-hairline mt-60"></div>
+
   <h2 class="mt-60">
     <span id="react" class="sublink"></span>
     React
@@ -168,7 +170,7 @@ title: Integrate hgrid in Your Projects
   <p class="small"><em>This recipe is verified with React 17.0.1 and <a href="https://github.com/facebook/create-react-app" target="_blank"
         rel="noopener noreferrer">create-react-app 4.0.2</a>.</em></p>
 
-  <h4 class="mt-40">Demo project</h4>
+  <h4 class="mt-40">Demo Project</h4>
 
   <p>
     Check out the <a href="https://github.com/ahansson/hgrid-css-react-app" target="_blank" rel="noopener noreferrer">starter 
@@ -287,10 +289,14 @@ export default App;
 }</code>
 </pre>
 
-<p class="note">Our <a href="https://github.com/ahansson/hgrid-css-react-app" rel="noopener noreferrer" target="_blank">React
-    starter project</a> which is based on <a href="https://create-react-app.dev/" target="_blank" rel="noopener noreferrer">
-    create-react-app</a> automatically minifies and autoprefixes the CSS output. <a href="https://create-react-app.dev/docs/post-processing-css"
-    rel="noopener noreferrer" target="_blank">Read more in the docs</a>.</p>
+<p class="note">
+  Our <a href="https://github.com/ahansson/hgrid-css-react-app" rel="noopener noreferrer" target="_blank">React
+  starter project</a> which is based on <a href="https://create-react-app.dev/" target="_blank" rel="noopener noreferrer">
+  create-react-app</a> automatically minifies and autoprefixes the CSS output. <a href="https://create-react-app.dev/docs/post-processing-css"
+  rel="noopener noreferrer" target="_blank">Read more in the docs</a>.
+</p>
+
+<div class="custom-hairline mt-60"></div>
 
 <h2 class="mt-60">
   <span id="svelte" class="sublink"></span>
@@ -299,7 +305,7 @@ export default App;
 
 <p class="small"><em>This recipe is tested with the SvelteKit beta</em></p>
 
-<h4 class="mt-40">Demo project</h4>
+<h4 class="mt-40">Demo Project</h4>
 
 <p>
   Check out the <a href="https://github.com/ahansson/hgrid-css-sveltekit" target="_blank" rel="noopener noreferrer">starter 
@@ -329,8 +335,8 @@ const config = {
 export default config</code></pre></li>
   <li>Initialize <strong>hgrid</strong> in <code>app.scss</code> with your own config if required: 
 <pre class="push20v filename" data-file="app.scss">
-<code>  // Examples of variables you can customize
-@use 'hgrid-css' with (
+<code>@use 'hgrid-css' with (
+  <span class="hljs-comment">// optional config goes here, for example:</span>
   $body-bg: #7056ce,
   $link-color: #00a344,
   $link-color-hover: #00cc66,
@@ -354,6 +360,8 @@ export default config</code></pre></li>
   Svelte components.
 </p>
 
+<div class="custom-hairline mt-60"></div>
+
 <h2 class="mt-60">
   <span id="11ty" class="sublink"></span>
   Eleventy (11ty)
@@ -369,14 +377,14 @@ export default config</code></pre></li>
   </em>
 </p>
 
-<h4 class="mt-40">Demo project</h4>
+<h4 class="mt-40">Demo Project</h4>
 
 <p>
   Check out the <a href="https://github.com/ahansson/hgrid-css-eleventy" target="_blank" rel="noopener noreferrer">starter 
   project</a> on GitHub.
 </p>
 
-<h4>Manual Setup</h4>
+<h4 class="mt-30">Project Setup from Scratch</h4>
 
 <p>
   Let's set up a minimal <a href="https://11ty.dev" rel="noopener noreferrer">11ty</a> project from scratch and install 
@@ -385,11 +393,245 @@ export default config</code></pre></li>
 
 <h5>Step 1</h5>
 
-<p>Point your terminal to a new project folder and run <code>npm init -y && npm install --save-dev @11ty/eleventy</code></p>
+<p>Point your terminal to a new project folder and install 11ty:</p>
+
+<pre class="language-bash">
+<code>$ <strong>npm</strong> <span class="hljs-built_in">init -y</span> && <strong>npm</strong> <span class="hljs-built_in">install --save-dev</span> @11ty/eleventy</code>
+</pre>
 
 <h5>Step 2</h5>
 
-<p>Coming soon ...</p>
+<p>Install some required packages (as dev dependencies):</p>
+
+<ul>
+  <li>hgrid-css</li>
+  <li>autoprefixer</li>
+  <li>npm-run-all</li>
+  <li>postcss</li>
+  <li>postcss-cli</li>
+  <li>sass</li>
+  <li>sass-loader</li>
+</ul>
+
+<pre class="language-bash">
+<code>$ <strong>npm</strong> <span class="hljs-built_in">install --save-dev</span> hgrid-css autoprefixer npm-run-all postcss postcss-cli sass sass-loader</code>
+</pre>
+
+<h5>Step 3</h5>
+
+<p>Create the 11ty config file <code>eleventy.js</code> at the root of the project folder and add this content:</p>
+
+<pre class="language-js filename" data-file="eleventy.js">
+<code>module.exports = (eleventyConfig) => {
+
+  <span class="hljs-params">eleventyConfig</span>.addPassthroughCopy('src/assets/img/icon.png')
+
+  return {
+    passthroughFileCopy: true,
+    markdownTemplateEngine: 'njk',
+    templateFormats: ['html', 'njk', 'md', 'js'],
+
+    dir: {
+      input: 'src',
+      output: '_public'
+    }
+  }
+}</code>
+</pre>
+
+<p>
+  Here we tell 11ty to copy our favicon from the input directory (<code>src</code>) to the build output directory (<code>_public</code>) when 
+  it builds the final files. We also set up a config object with information about which template engine and formats we wish to use as well as the 
+  names of our input and output directories (their naming is up to you).
+</p>
+
+<h5>Step 4</h5>
+
+<p>
+  Create the folder <code>src</code>, the directory where 11ty will find the source code to compile and copy to the 
+  <code>_public</code> directory. Inside <code>src</code>, create three other directories: <code>_includes</code>, <code>assets</code> 
+  and <code>scss</code>. Also, create the file <code>index.njk</code>. Remember to install a <em>Nunjucks</em> code editor plugin to obtain 
+  syntax highlighting.
+</p>
+<p>
+  <a href="https://mozilla.github.io/nunjucks/" target="_blank" rel="noopener noreferrer">Nunjucks</a> is a templating engine 
+  for JavaScript, similar to ESJ, Jade and Mustache. <code>.njk</code> files work with ordinary HTML 
+  and Markdown syntax in addition to inline JavaScript in <code>&#123;&#123; tokenFormat &#125;&#125;</code> or as 
+  <code>&#123;% expression blocks %&#125;</code>. Data and variables can be set with <em>front matter</em> at the top of a <code>.njk</code> file. 
+  Your <code>index.njk</code> could look like this:
+</p>
+
+<pre class="language-html filename" data-file="index.njk">
+<code>---
+layout: layout/base.njk,
+pageTitle: The Grapes of Wrath by John Steinbeck,
+meta: {
+  author: John Steinbeck,
+  description: 'A page about my latest novel, called "The Grapes of Wrath"'
+}
+---
+
+&lt;html>
+  &lt;head>
+    &lt;title>&#123;&#123; pageTitle &#125;&#125;&lt;/title>
+    &lt;meta name="author" content="&#123;&#123; meta.author &#125;&#125;">
+    &lt;meta name="description" content="&#123;&#123; meta.description &#125;&#125;">
+  &lt;/head>
+
+  &lt;body>
+    &lt;h1>&#123;&#123; pageTitle  &#125;&#125;&lt;/h1>
+  &lt;/body>
+&lt;/html></code>
+</pre>
+
+<h5>Step 5</h5>
+
+<p>
+  As a proof of concept for 11ty/Nunjucks' templating engine, let's use a base layout template for our page and extract the <code>&lt;head></code> 
+  section into a separate file. Notice how we refereced the base template at the top of <code>index.njk</code> (step #4). In the <code>_includes</code> 
+  directory, create a folder named <code>layout</code>. Inside, add a file called <code>base.njk</code>:
+</p>
+
+<pre class="language-html filename" data-file="base.njk">
+<code>&lt;!DOCTYPE html>
+&lt;html lang="en-US">
+  &#123;% include "layout/partials/head.njk" %&#125;
+  &lt;body>
+    &#123;&#123; content | safe &#125;&#125;
+  &lt;/body>
+&lt;/html></code>
+</pre>
+
+<p>
+  As the <code>html</code>, <code>head</code> and <code>body</code> tags are now taken care of by our new partial, we can simplify 
+  <code>index.njk</code>:
+</p>
+
+<pre class="language-html filename" data-file="index.njk">
+<code>---
+layout: layout/base.njk,
+pageTitle: The Grapes of Wrath by John Steinbeck,
+meta: {
+  author: John Steinbeck,
+  description: 'A page about my latest novel, called "The Grapes of Wrath"'
+}
+---
+
+&lt;main>
+  &lt;h1>&#123;&#123; pageTitle  &#125;&#125;&lt;/h1>
+&lt;/main></code>
+</pre>
+
+<h5>Step 6</h5>
+
+<p>
+  In your <code>layout</code> folder, create a new folder named <code>partials</code> with a file called <code>head.njk</code> in it. Cut the 
+  <code>&lt;head></code> code from <code>index.njk</code> (step #4) and paste it into this file. Add this at the top of the file:
+</p>
+
+<pre class="language-js filename" data-file="head.njk">
+<code>&#123;%- set siteTitle = '11ty starter project with hgrid-css' -%&#125;
+</code>
+</pre>
+
+<p>You're soon ready to start the local development server so you can see your website in the browser. Just one more step.</p>
+
+<h5>Step 7</h5>
+
+<p>We need to add some scripts to our <code>package.json</code>:</p>
+
+<pre class="language-json filename" data-file="package.json">
+<code>"scripts": {
+  "watch:sass": "sass --no-source-map --watch src/scss/main.scss:_public/css/style.css",
+  "watch:eleventy": "eleventy --serve",
+  "build:sass": "sass --no-source-map --style=compressed src/scss/main.scss:_public/css/style.css",
+  "build:eleventy": "eleventy",
+  "prefix:css": "postcss --use autoprefixer --no-map -b 'last 2 versions' _public/css/style.css -o _public/css/style.css",
+  "start": "npm-run-all build:sass --parallel watch:*",
+  "build": "npm-run-all build:* prefix:css"
+}</code>
+</pre>
+
+<p>What's going on here?</p>
+
+<ol>
+  <li>We're setting up automatic compilation for <strong>hgrid</strong> with Sass and drop the resulting CSS file in 
+  <code>_public/css/</code>.</li>
+  <li>When you run <code>npm run start</code> in your terminal, 11ty will spin up a development server with hotvbrowser reloading. This is 
+  the <code>eleventy --serve</code> part.</li>
+  <li>It will watch for changes in files in the <code>src</code> (input) directory.</li> 
+  <li>If code is changed, it will compile everything over again and spit overwrite old files in <code>_public</code>.</li>
+  <li>When the build command is ran, PostCSS' Autoprefixer plugin will do its thing and the final CSS will be minified.</li>
+</ol>
+
+<p>
+  After running <code>npm run start</code>, open <code>localhost:8080</code>, which is 11ty's default port in development mode. 
+  You should see your unstyled index page with all template variables in place. Time to add CSS with <strong>hgrid</strong>!
+</p>
+
+<h5>Step 8</h5>
+
+<p>
+  In <code>/src/scss</code>, add a new file called e.g. <code>main.scss</code>. At the top of the file, initialize <strong>hgrid</strong> with the 
+  <code>@use</code> rule, as seen multiple times before in previous recipes. Note that we have to give 11ty the full path in order to find 
+  <strong>hgrid</strong>:
+</p>
+
+<pre class="language-scss filename" data-file="main.scss">
+<code>@use './../../node_modules/hgrid-css/sass/hgrid.scss' with (
+  <span class="hljs-comment">// optional config goes here, for example:</span>
+  $body-bg: #7056ce,
+  $link-color: #00a344,
+  $link-color-hover: #00cc66,
+  $link-underline-color: #daae00
+);
+
+// Other global styles from here down
+// ...</code>
+</pre>
+
+<p>Check your browser again and you should now see that <strong>hgrid</strong> styling has been applied. Add in a few extra 
+<strong>hgrid utilities</strong> to see how it works:</p>
+
+<pre class="language-html filename" data-file="index.njk">
+<code>&lt;main class="container-max padding-80 tablet-portrait-pr-30 tablet-portrait-pl-30">
+  &lt;h1 class="text-center">&#123;&#123; pageTitle  &#125;&#125;&lt;/h1>
+&lt;/main></code>
+</pre>
+
+<p>Now you have a centered title in a container with a max-width and some padding that is reduced on tablet sized viewports.</p>
+
+<h5>Step 9</h5>
+
+<p>
+  A last detail is to add a favicon and any other images you may need in the <code>/assets/img/</code> directory. Update 
+  <code>head.njk</code> like this:
+</p>
+
+<pre class="language-html filename" data-file="head.njk">
+<code>&lt;link rel="icon" type="image/png" href="/assets/img/icon.png"></code>
+</pre>
+
+<p>
+  The assets folder is where you would also usually put fonts etc. that aren't supposed to be compiled by 11ty (but just 
+  passed straight through to the <code>_public</code> folder). Remember to reference files and folders you want to include 
+  as <code>addPassthroughCopy</code> in <code>eleventy.js</code>.
+</p>
+
+<p>
+  You're done! Run <code>npm run build</code> and deploy everything in <code>_public</code> to your preferred 
+  static website hosting provider or content delivery network.
+</p>
+
+<p class="note">
+  11ty will exclude from the build process any files or folders in the input (<code>src</code>) directory that are referenced in your 
+  <code>.gitignore</code>. If you need to git-ignore something you want to include in the 11ty output, 
+  add <code>eleventyConfig.setUseGitIgnore(false);</code> to <code>eleventy.js</code> and create instead a <code>.eleventyignore</code> 
+  file in the project root where you indicate what 11ty should exclude. 
+  <a href="https://www.11ty.dev/docs/ignores/" target="_blank" rel="noopener noreferrer">More info</a>.
+</p>
+
+<div class="custom-hairline mt-60"></div>
 
 <h2 class="mt-60">
   <span id="astro" class="sublink"></span>
@@ -401,7 +643,7 @@ export default config</code></pre></li>
   beta 0.0.12</em>
 </p>
 
-<h4 class="mt-40">Demo project</h4>
+<h4 class="mt-40">Demo Project</h4>
 
 <p>
   Check out the <a href="https://github.com/ahansson/hgrid-css-astro" target="_blank" rel="noopener noreferrer">starter 
@@ -422,11 +664,16 @@ export default config</code></pre></li>
 </p>
 
 <pre class="language-scss filename" data-file="global.scss"><code>@use 'hgrid-css/sass/hgrid' with (
-  <span class="hljs-comment">// optional config goes here, see code examples in previous sections</span>
-  <span class="hljs-comment">// skip the `with ();` part if you don&rsquo;t want to use configuration</span>
+  <span class="hljs-comment">// optional config goes here, for example:</span>
+  $body-bg: #7056ce,
+  $container-max-width: 1680px,
+  $turn-off-link-decoration: true,
+  $use-global-link-underlines: true,
+  $link-underline-color: #daae00
 );
 
-// Other global styles from here on
+<span class="hljs-comment">// Other global styles and from here down</span>
+<span class="hljs-comment">// ...</span>
 </code></pre>
 
 <p>Voilà, that's it.</p>
