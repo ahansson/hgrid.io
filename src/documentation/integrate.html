@@ -75,7 +75,7 @@ title: Integrate hgrid in Your Projects
 </p>
 
 <p class="note">
-  Trying to execute any other code than @forward before <code>@use</code> won't compile. Read more about the 
+  Trying to execute any other code than <code>@forward</code> before <code>@use</code> won't compile. Read more about the 
   <a href="https://sass-lang.com/documentation/at-rules/use#configuration" target="_blank" rel="noopener noreferrer">@use rule</a> 
   over at sass-lang.com.
 </p>
@@ -246,6 +246,12 @@ title: Integrate hgrid in Your Projects
   }
 }</code>
 </pre>
+
+<p class="note">
+  Trying to execute any other code than <code>@forward</code> before <code>@use</code> won't compile. Read more about the 
+  <a href="https://sass-lang.com/documentation/at-rules/use#configuration" target="_blank" rel="noopener noreferrer">@use rule</a> 
+  over at sass-lang.com.
+</p>
 
 <p>You now have access to <strong>hgrid</strong>'s utility classes from all component files.</p>
 
@@ -590,8 +596,14 @@ meta: {
 // ...</code>
 </pre>
 
+<p class="note">
+  Trying to execute any other code than <code>@forward</code> before <code>@use</code> won't compile. Read more about the 
+  <a href="https://sass-lang.com/documentation/at-rules/use#configuration" target="_blank" rel="noopener noreferrer">@use rule</a> 
+  over at sass-lang.com.
+</p>
+
 <p>Check your browser again and you should now see that <strong>hgrid</strong> styling has been applied. Add in a few extra 
-<strong>hgrid utilities</strong> to see how it works:</p>
+<strong>hgrid utilities</strong> to see how they work:</p>
 
 <pre class="language-html filename" data-file="index.njk">
 <code>&lt;main class="container-max padding-80 tablet-portrait-pr-30 tablet-portrait-pl-30">
@@ -599,7 +611,10 @@ meta: {
 &lt;/main></code>
 </pre>
 
-<p>Now you have a centered title in a container with a max-width and some padding that is reduced on tablet sized viewports.</p>
+<p>
+  Now you have a centered title in a container with a max-width and some padding that is reduced on the right and left sides on tablet 
+  sized viewports.
+</p>
 
 <h5>Step 9</h5>
 
