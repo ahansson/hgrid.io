@@ -594,6 +594,11 @@ article.demo table.striped {
   max-width: max-content;
 }
 
+.cursor-move-demo {
+  font-size: 83%;
+  line-height: 1.4rem;
+}
+
 footer {
   background: #000;
   padding: 0 0 8rem;
@@ -810,5 +815,8 @@ footer {
   }
   small.ellipsis {
     height: 9.1rem !important;
+  }
+  .cursor-move-demo {
+    width: 80%;
   }
 }
