@@ -1,4 +1,3 @@
-assets/css/devstyle.css
-assets/css/devstyle.css.map
-assets/css/style.prefix.css
+assets/css/*.css
 assets/scss/
+assets/js/

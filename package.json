@@ -5,12 +5,13 @@
   "main": "eleventy.js",
   "scripts": {
     "start": "eleventy --serve & npm run watch:css & npm run build:css",
-    "build": "eleventy && npm run build:css",
+    "build": "rm -rf _public && eleventy && npm run build:css && npm run build:js",
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
     "watch:css": "sass --watch assets/scss/main.scss:assets/css/devstyle.css assets/css/devstyle.css:_public/assets/css/style.min.css",
     "prefix:css": "postcss --use autoprefixer -b 'last 4 versions' assets/css/devstyle.css -o assets/css/style.prefix.css",
     "minify:css": "sass assets/css/style.prefix.css > assets/css/style.min.css --style=compressed && sass assets/css/style.prefix.css > _public/assets/css/style.min.css --style=compressed",
-    "build:css": "npm run prefix:css && npm run minify:css"
+    "build:css": "npm run prefix:css && npm run minify:css",
+    "build:js": "mkdir _public/assets/js/ && cp assets/js/highlight.pack.js _public/assets/js/highlight.min.js && cp assets/js/scripts.js _public/assets/js/scripts.min.js && minify _public/assets/js/scripts.min.js --out-file _public/assets/js/scripts.min.js --mangle.keepClassName"
   },
   "repository": {
     "type": "git",
@@ -38,6 +39,7 @@
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
     "autoprefixer": "^10.3.1",
+    "babel-minify": "^0.5.1",
     "hgrid-css": "^0.5.3-beta",
     "postcss": "^8.3.6",
     "postcss-cli": "^8.3.1",
