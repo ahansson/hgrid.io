@@ -1,8 +1,5 @@
 module.exports = (eleventyConfig) => {
   
-  eleventyConfig.addWatchTarget("assets/scss/main.scss");
-  eleventyConfig.addPassthroughCopy('assets/css/style.min.css')
-  eleventyConfig.addPassthroughCopy('assets/css/style.min.css.map')
   eleventyConfig.addPassthroughCopy('assets/img/')
   eleventyConfig.addPassthroughCopy('assets/font/')
   eleventyConfig.addPassthroughCopy('_redirects')
