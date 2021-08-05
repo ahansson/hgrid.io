@@ -63,14 +63,58 @@ title: Layout
 <p>
   Creating layouts with the
   <a href="/documentation/layout/automatic-columns/">automatic content columns</a>
-  requires the use of <code>.row</code>.
-</p>
-<p>
-  <code>.row-block</code> is made for full width content that don't need columns, 
-  like headlines, text with floating images, etc.
+  requires the use of <code>.row</code>. In the basic example below we have removed the default margin-bottom from paragraphs 
+  with the <code>.mb-0</code> utility and center the text with <code>.text-center</code>:
 </p>
 
-<h4>Column Stacking</h4>
+<pre class="html filename" data-file="file.html">
+<code>&lt;div class="container">
+  &lt;div class="row">
+    &lt;div class="column">
+      &lt;p class="mb-0 text-center">Some content 1&lt;/p>
+    &lt;/div>
+    &lt;div class="column">
+      &lt;p class="normal mb-0 text-center">Some other content 2&lt;/p>
+    &lt;/div>
+  &lt;/div>
+  &lt;div class="row">
+    &lt;div class="column">
+      &lt;p class="normal text-center mb-0">Some content 3&lt;/p>
+    &lt;/div>
+    &lt;div class="column">
+      &lt;p class="text-center mb-0">Some other content 4&lt;/p>
+    &lt;/div>
+  &lt;/div>
+&lt;/div></code>
+</pre>
+
+<p>As we can see, columns and rows have gutters/margin. Borders added for clarity.</p>
+
+<div class="container border-gray">
+  <div class="row border-gray">
+    <div class="column border-gray">
+      <p class="normal mb-0 text-center">Some content 1</p>
+    </div>
+    <div class="column border-gray">
+      <p class="normal mb-0 text-center">Some other content 2</p>
+    </div>
+  </div>
+  <div class="row border-gray">
+    <div class="column border-gray">
+      <p class="normal text-center mb-0">Some content 3</p>
+    </div>
+    <div class="column border-gray">
+      <p class="normal text-center mb-0">Some other content 4</p>
+    </div>
+  </div>
+</div>
+
+<p class="mt-20">
+  You can use <code>.row-block</code> for full width content that don't need columns, such as headlines, article text with 
+  floating images, <a href="/documentation/typography/#text-columns">text columns</a>, etc.
+</p>
+
+<h5>Column Stacking</h5>
 
 <p>
   <code>.row</code> stacks its columns vertically on screens less than 769px wide. This breakpoint is determined 
