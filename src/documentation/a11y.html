@@ -1,0 +1,83 @@
+---
+layout: layout/docs.njk
+meta: {
+title: Accessibility | hgrid,
+description: Accessibility features in hgrid
+}
+title: Accessibility
+---
+<p class="intro">
+  Interactive elements like <a href="/documentation/input">input elements</a> and links are fully accessible by default with 
+  <strong>hgrid</strong>.
+</p>
+
+<p>File location: <code class="loc">base/_a11y.scss</code> (<a 
+    href="https://github.com/ahansson/hgrid-css/blob/main/sass/base/_a11y.scss"
+    target="_blank"
+    rel="noopener"
+    >GitHub</a>)
+</p>
+
+<h2 class="h4 mt-40">Relative Units</h2>
+
+<p>
+  All <strong>hgrid</strong> CSS with accessibility implications is set in relative units, such as <code>rem</code> and percentages. 
+  This makes resizing and zooming possible without layout shifts and alteration of internal element proportions (complies with 
+  <a href="https://www.w3.org/TR/WCAG21/#resize-text" rel="noopener" target="_blank">WCAG 2.1</a>'s success criterion 1.4.4). 
+  The <strong>hgrid</strong> <a href="/documentation/layout">layout</a> systems are by default completely flexible, and thus 
+  in compliance with WCAG's recently added <a href="https://www.w3.org/TR/WCAG21/#reflow" rel="noopener" target="_blank">content reflow</a> 
+  criterion.
+</p>
+
+<p>
+  Your site should work responsively on screen sizes as narrow as 320 pixels without horizontal scrolling, according to the 
+  guidelines.
+</p>
+
+<h3 class="h4">Consistent Focus Outline</h3>
+
+<p>
+  When navigated to, interactive elements are highlighted with a strong <code>:focus</code> outline that is consistent regardless 
+  of browser styles (<a href="https://www.w3.org/TR/WCAG21/#focus-visible" rel="noopener" target="_blank">success criterion 2.4.7</a>). 
+  You can customize the color and thickness of this outline with the <a href="/documentation/variables">hgrid variables</a> 
+  <code>$focus-border-weight</code> and <code>$focus-border-color</code> when you initialize <strong>hgrid</strong>.
+</p>
+
+<p>
+  Read more: <a href="/documentation/integrate">Customization</a>.
+</p>
+
+<h4>Compliant Headings</h4>
+
+<p>
+  To stay compliant with WCAG, web content creators are asked to organize their text content under semantic headlines, using 
+  <code>h1</code> to <code>h6</code> elements. The next headline after a <code>&lt;h1></code> must be an 
+  <code>&lt;h2></code>. After an <code>&lt;h2></code> thou shalt always use an <code>&lt;h2></code> or <code>&lt;h3></code>. And so forth.
+</p>
+<p>
+  With <strong>hgrid</strong> you can keep the code semantically compliant, while avoiding being tied up to the visual style of a specific 
+  heading element. Use the provided utility classes <code>.h3</code>, <code>.h4</code> etc. to reduce or increase the font size. 
+  Here's an example of how we can work around the guidelines using a h2 heading that visually looks like an h3:
+</p>
+
+<pre class="language-html filename" data-file="html">
+<code>&lt;h1>9 of 10 web bros favor semantic code&lt;/h1>
+
+&lt;p class="ingress">
+  A large majority of web developers think semantic HTML is great for accessibility 
+  – and for business.
+&lt;/p>
+
+&lt;h2 class="h3">An h2 styled to look like an h3 is still semantically correct&lt;/h2>
+
+&lt;p>A text paragraph before it's time yet again to add another headline.&lt;/p>
+
+&lt;h3>Here we are allowed to use a regular h3&lt;/h3></code>
+</pre>
+
+<p>More about headlines in the <a href="/documentation/typography/#headlines">typography</a> section.</p>
+
+<div class="custom-hairline mt-40"></div>
+<p class="fl mb-0 mr-5">
+  ← <strong>Previous</strong>: <a href="/documentation/animations">Animations</a>
+</p>
