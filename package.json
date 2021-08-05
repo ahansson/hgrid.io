@@ -4,7 +4,7 @@
   "description": "",
   "main": "eleventy.js",
   "scripts": {
-    "start": "npm-run-all build:css --parallel watch:*",
+    "start": "npm-run-all build:css build:js --parallel watch:*",
     "build": "npm-run-all build:* prefix:css",
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy",
     "watch:css": "sass --no-source-map --watch assets/scss/main.scss:_public/assets/css/style.min.css",
