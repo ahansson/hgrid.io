@@ -626,13 +626,12 @@ footer {
 /* Original theme - https://github.com/chriskempson/tomorrow-theme */
 /* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
 
-/* Tomorrow Comment */
+/*! purgecss start ignore */
 .hljs-comment,
 .hljs-quote {
   color: #7b72a1;
 }
 
-/* Tomorrow Red */
 .hljs-variable,
 .hljs-template-variable,
 .hljs-tag,
@@ -644,7 +643,6 @@ footer {
   color: #ff95b0;
 }
 
-/* Tomorrow Orange */
 .hljs-number,
 .hljs-built_in,
 .hljs-builtin-name,
@@ -656,12 +654,10 @@ footer {
   color: #ffc58f;
 }
 
-/* Tomorrow Yellow */
 .hljs-attribute {
   color: #ffeead;
 }
 
-/* Tomorrow Green */
 .hljs-string,
 .hljs-symbol,
 .hljs-bullet,
@@ -669,13 +665,11 @@ footer {
   color: #f1ffac;
 }
 
-/* Tomorrow Blue */
 .hljs-title,
 .hljs-section {
   color: #bbdaff;
 }
 
-/* Tomorrow Purple */
 .hljs-keyword,
 .hljs-selector-tag {
   color: #ebbbff;
@@ -688,6 +682,7 @@ footer {
 .hljs-strong {
   font-weight: bold;
 }
+/*! purgecss end ignore */
 
 @media (max-width: 1100px) {
   nav.sidebar {
