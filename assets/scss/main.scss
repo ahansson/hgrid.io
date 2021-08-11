@@ -765,7 +765,8 @@ footer {
     padding-left: initial;
   }
 
-  footer p {
+  footer .row .column-1 {
+    flex-direction: column;
     text-align: center;
   }
 }
