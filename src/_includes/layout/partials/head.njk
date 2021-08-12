@@ -10,14 +10,14 @@
 <style type="text/css">@font-face{font-family:'Wotfard';src:url('/assets/font/subset-Wotfard-Regular.woff2') format('woff2'), url('/assets/font/subset-Wotfard-Regular.woff') format('woff');font-style:normal;font-display:swap}</style>
 <link rel="stylesheet" href="/assets/css/style.min.css?v=1.0.1">
 <link rel="canonical" href="{{ currentUrl }}" />
-<link rel="icon" type="image/png" href="/assets/img/icon.png">
+<link rel="icon" type="image/png" href="{{ baseUrl }}{{ socialImage }}">
 <meta name="description" content="{{ meta.description }}">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Atle Hansson">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ meta.title }}">
 <meta name="twitter:site" content="{{ siteTitle }}">
-<meta name="twitter:image" content="{{ socialImage }}">
+<meta name="twitter:image" content="{{ baseUrl }}{{ socialImage }}">
 <meta name="twitter:image:alt" content="Social sharing image for hgrid.io">
 <meta name="twitter:description" content="{{ meta.description }}">
 <meta name="twitter:creator" content="@h4n5s0n">
@@ -26,7 +26,7 @@
 <meta property="og:description" content="{{ meta.description }}">
 <meta property="og:url" content="{{ currentUrl }}">
 <meta property="og:type" content="website">
-<meta property="og:image" content="{{ socialImage }}">
+<meta property="og:image" content="{{ baseUrl }}{{ socialImage }}">
 <meta property="og:image:alt" content="Social sharing image for hgrid.io">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="628">
