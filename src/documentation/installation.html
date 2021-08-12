@@ -13,7 +13,7 @@ tags: [installation]
   NPM or Yarn
 </h2>
 
-<p>From the root of your project, install <code>hgrid-css</code> as a dependency:</p>
+<p>From the root of your project, install <code>hgrid-css</code> as a dev dependency:</p>
 
 <pre class="language-bash">
   <code>$ <strong>npm</strong> <span class="hljs-built_in">install</span> hgrid-css --save-dev</code>
@@ -24,19 +24,21 @@ tags: [installation]
 </pre>
 
 <p class="mt-40">Which <a href="https://www.npmjs.com/package/sass/v/1.30.0" rel="noopener noreferrer" target="_blank">additional</a>
-<a href="https://www.npmjs.com/package/sass-loader" rel="noopener noreferrer" target="_blank">packages</a> you need in order to integrate <strong>hgrid</strong>
-as <code>.sass/.scss</code> in your project may depend on the framework you use.</p>
+<a href="https://www.npmjs.com/package/sass-loader" rel="noopener noreferrer" target="_blank">packages</a> you need to use <strong>hgrid</strong>
+as <code>.sass/.scss</code> in your specific project depends on your framework.</p>
 
 <pre class="language-bash"><code><span class="hljs-comment">// React:
 </span>$ <strong>npm</strong> <span class="hljs-built_in">install</span> sass --save-dev
 
-<span class="hljs-comment block">// Vue.js:</span>$ <strong>npm</strong> <span class="hljs-built_in">install</span> sass sass-loader --save-dev
+<span class="hljs-comment block">// Vue:</span>$ <strong>npm</strong> <span class="hljs-built_in">install</span> sass sass-loader --save-dev
 
 <span class="hljs-comment">// Note that `node-sass` is deprecated as of October 2020. We use `sass` instead.</code>
 </pre>
 
-<p>There are multiple ways to integrate <strong>hgrid</strong> in your projects, both as <code>scss</code> or with the pre-built
-<code>css</code>. Check the <a href="/documentation/integrate/">detailed description</a> on how to set it up.</p>
+<p>
+  Check the detailed <a href="/documentation/integrate/">integration documentation</a> on how to make <strong>hgrid</strong> work seamlessly 
+  with React, Vue, Nuxt, Svelte, Eleventy and Astro.
+</p>
 
 <h3 class="mt-60">
   <span id="cdn" class="sublink"></span>
@@ -48,9 +50,9 @@ as <code>.sass/.scss</code> in your project may depend on the framework you use.
 </pre>
 <p class="mt-40">Include the link to the <a href="https://unpkg.com/hgrid-css@latest/dist/hgrid.min.css" 
 target="_blank" rel="noopener noreferrer">precompiled hgrid kit</a> from the CDN, or a local copy, before any other 
-stylesheets in your html. You can customize hgrid by overwriting the CSS classes below the import in the code flow.</p>
+stylesheets in your html.</p>
 
-<pre class="language-html">
+<pre class="language-html filename" data-file="html">
   <code>&lt;head&gt;<br>  &lt;link rel="stylesheet" href="https://unpkg.com/hgrid-css@latest/dist/hgrid.min.css"&gt;
   <span class="hljs-comment">  &lt;-- more css --></span><br>&lt;/head&gt;</code>
 </pre>
@@ -61,6 +63,11 @@ stylesheets in your html. You can customize hgrid by overwriting the CSS classes
   <code><span class="hljs-comment block">/* From node_modules */</span>@import './../../node_modules/hgrid-css/dist/hgrid.min.css';
   <span class="hljs-comment block">/* From CDN */</span>@import 'https://unpkg.com/hgrid-css@latest/dist/hgrid.min.css';</code>
 </pre>
+
+<p>
+  You can now customize <strong>hgrid</strong> by overwriting its CSS utilities with your own classes anywhere after the import in 
+  the code flow.
+</p>
 
 <h3 class="mt-60">
   <span id="clone" class="sublink"></span>
@@ -75,22 +82,26 @@ project.</p>
   <code>$ <strong>git</strong> clone https://github.com/ahansson/hgrid-css.git</code>
 </pre>
 
-<p>With the source code you can modify or extend <strong>hgrid</strong> to fit your needs. From the root of the <code>hgrid-css</code> 
-folder, run <code>npm install</code>. This will set up the dev dependencies needed to run the Sass compiler and build the final 
-CSS files.</p>
+<p>With the source code you can modify or extend <strong>hgrid</strong> to fit your needs, regardless of whether you use Node or 
+not. If you don't use Node.js, you can't run the Sass compilator locally, so you'll have to use the precompiled CSS you find in 
+<code>hgrid-css/dist/</code>.
+</p>
 
-<p>With Node.js installed, use <code>npm run watch</code> to listen for changes and compile the result as CSS in the 
+<p>
+  If you do have Node.js installed, <code>cd</code> into the <code>hgrid-css/</code> folder and run <code>npm install</code>. 
+  This will set up what you need to compile Sass locally.</p>
+
+<p>Run <code>npm run watch</code> to listen for changes to <code>sass/**/*.scss</code> and compile it as CSS in the 
   <code>dist/</code> directory.</p>
 
-<p>Add to, remove from, or edit the entry file <code>sass/hgrid.scss</code> in order to modify
-  the final build.</p>
+<p>
+  We use <a href="https://www.npmjs.com/package/autoprefixer" target="_blank" rel="noopener noreferrer">Autoprefixer</a> to add some 
+  backwards browser compatibility. The result is then minified with the excellent JavaScript implementation of the 
+  <a href="https://www.npmjs.com/package/sass" target="_blank" rel="noopener noreferrer">Dart Sass</a> minification tool.
+</p>
 
-<p>We use <a href="https://www.npmjs.com/package/autoprefixer" target="_blank" rel="noopener noreferrer">Autoprefixer</a> to add some 
-  extra backwards browser compatibility. The result is minified with the excellent JavaScript implementation of <a href="https://www.npmjs.com/package/sass" 
-  target="_blank" rel="noopener noreferrer">Dart Sass</a> minification tool.</p> 
-  
 <p>Use <code>npm run build</code> to prefix, minify and 
-  output compiled css files to the <code>dist/</code> directory:</p>
+  output these CSS files to <code>dist/</code>:</p>
 
 <ul>
   <li><code>hgrid.css</code> (prefixed, uncompressed)</li>
@@ -99,9 +110,11 @@ CSS files.</p>
   <li><code>hgrid.min.css.map</code> (source map for hgrid.min.css)</li>
 </ul>
 
-<p>Adding your own custom style partials to the <code>sass/</code> directory is the quick and dirty way to reuse and
-  modify <strong>hgrid's</strong> variables while taking advantage of the existing compilation tools. If you wish to keep things more separated, 
-  which is recommended, please refer to the <a href="/documentation/integrate">integration article</a> for pointers.
+<p>
+  Add to, remove from, or edit the entry file <code>sass/hgrid.scss</code> if you want to modify the final build. Adding your 
+  own custom <code>.scss</code> partials to the <code>sass/*</code> directory is the quick and dirty way to modify 
+  <strong>hgrid</strong>. But if you wish to keep things cleaner, please refer to the <a href="/documentation/integrate">integration 
+  article</a> for detailed recipes.
 </p>
 
 <div class="custom-hairline mt-40"></div>
