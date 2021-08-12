@@ -1,0 +1,15 @@
+---
+eleventyExcludeFromCollections: true
+permalink: /sitemap.xml
+---
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{% for page in collections.all %}
+  <url>
+      <loc>https://hgrid.io{{ page.url | url }}</loc>
+      <lastmod>{{ page.date.toISOString() }}</lastmod>
+      <changefreq>{{ page.data.sitemapChangefreq | default("monthly") }}</changefreq>
+      <priority>{{ page.data.sitemapPriority | default(0.8) }}</priority>
+  </url>
+{% endfor %}
+</urlset>
