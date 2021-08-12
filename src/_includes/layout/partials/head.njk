@@ -1,32 +1,35 @@
 
 {%- set baseUrl = 'https://hgrid.io' %}
-{%- set pageTitle = title + ' | ' + 'hgrid' -%}
-{%- set siteTitle = 'hgrid | A lightweight CSS Utility Kit' -%}
+{%- set siteTitle = 'hgrid | a lightweight and practical CSS utility kit' -%}
 {%- set currentUrl = baseUrl + page.url -%}
+{%- set socialImage = '/assets/img/social.jpg' -%}
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{ meta.title }}</title>
 <style type="text/css">@font-face{font-family:'Wotfard';src:url('/assets/font/subset-Wotfard-Regular.woff2') format('woff2'), url('/assets/font/subset-Wotfard-Regular.woff') format('woff');font-style:normal;font-display:swap}</style>
+<link rel="stylesheet" href="/assets/css/style.min.css?v=1.0.1">
+<link rel="canonical" href="{{ currentUrl }}" />
+<link rel="icon" type="image/png" href="/assets/img/icon.png">
 <meta name="description" content="{{ meta.description }}">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Atle Hansson">
-<link rel="stylesheet" href="/assets/css/style.min.css?v=1.0.1">
-<link rel="canonical" href="{{ currentUrl }}" />
-<meta property="og:site_name" content="{{ siteTitle }}" />
-<meta property="og:title" content="{{ pageTitle }}" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="{{ currentUrl }}" />
-<meta name="twitter:card" content="...." />
-<meta property="og:image" content="{{ thumbnail }}" />
-<meta name="twitter:image" content="{{ thumbnail }}" />
-<meta property="og:image:alt" content="Page image for {{ site.name }}" />
-<meta name="twitter:image:alt" content="Page image for {{ site.name }}" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta name="description" content="{{ description }}" />
-<meta name="twitter:description" content="{{ description }}" />
-<meta property="og:description" content="{{ description }}" />
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ meta.title }}">
+<meta name="twitter:site" content="{{ siteTitle }}">
+<meta name="twitter:image" content="{{ socialImage }}">
+<meta name="twitter:image:alt" content="Social sharing image for hgrid.io">
+<meta name="twitter:description" content="{{ meta.description }}">
+<meta name="twitter:creator" content="@h4n5s0n">
+<meta property="og:site_name" content="{{ siteTitle }}">
+<meta property="og:title" content="{{ meta.title }}">
+<meta property="og:description" content="{{ meta.description }}">
+<meta property="og:url" content="{{ currentUrl }}">
+<meta property="og:type" content="website">
+<meta property="og:image" content="{{ socialImage }}">
+<meta property="og:image:alt" content="Social sharing image for hgrid.io">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="628">
 
 <script type="text/javascript">
   const colorMode = (() => {
@@ -55,5 +58,3 @@
 </script>
 
 <script defer data-domain="hgrid.io" data-api="/assets/api/event" src="/assets/js/script.js?v=1.0.0"></script>
-
-<link rel="icon" type="image/png" href="/assets/img/icon.png">
