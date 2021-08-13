@@ -28,9 +28,9 @@ tags: [layout, positioning]
 
 <p>
   Push/pull will influence sibling element(s), while translate-push/-pull will 
-  move the element independently of its surroundings. The latter requires that the element is a block level element. To achieve this 
-  you can add <code>.block</code> or <code>.inline-block</code> to the element. Translate-push/pull is very useful for pixel 
-  perfect positioning of – for example – icons (svg/png) relative to other page elements.
+  move the element independently of its surroundings. Translate-push/pull requires that the element is a block level element. 
+  If it's not already a block level element, add <code>.block</code> or <code>.inline-block</code> to it. Translate-push/pull 
+  is very useful for pixel perfect positioning of – for example – icons (svg/png), relative to other page elements.
 </p>
 
 <div class="mb-30 mt-60 scrollable-x">
@@ -177,6 +177,10 @@ tags: [layout, positioning]
 
 <h4 class="h5 mt-50">Alignment of Positioned Elements</h4>
 
+<p>
+  For use together with one of the position utilities in the list above.
+</p>
+
 <div class="push20v mb-30 scrollable-x">
 <table style="min-width: 60rem;">
   <thead>
@@ -226,11 +230,11 @@ tags: [layout, positioning]
 </table>
 </div>
 
-<h4 class="h5 mt-50">Z-Index (Stacking of Positioned Elements)</h4>
+<h4 class="h5 mt-50">Z-Index</h4>
 
 <p>
-  Stack elements relative to each others by first applying positioning. Non-positioned elements won't be influenced by 
-  <code>z-index</code>.
+  <code>z-index</code> indicates the stacking order of positioned elements. With these utility classes you can stack elements 
+  in layers, relative to each other, after first applying a position. Non-positioned elements won't be affected.
 </p>
 
 <pre class="language-html mt-30 mb-40 filename" data-file="html">
