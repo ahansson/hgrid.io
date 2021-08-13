@@ -8,184 +8,230 @@ title: Utilities
 tags: [utilities]
 ---
 
-<div class="group">
-  <h2 class="h3 mt-30">
-    <span id="background" class="sublink"></span>
-    Background
-  </h2>
-  <p>
-    File location:
-    <code class="loc">sass/layout/helpers/_background.scss</code> (<a
-      href="https://github.com/ahansson/hgrid-css/blob/main/sass/layout/helpers/_background.scss"
-      target="_blank"
-      rel="noopener"
-      >GitHub</a
-    >)
-  </p>
+<h2 class="h3 mt-30">
+  <span id="background" class="sublink"></span>
+  Background
+</h2>
+<p>
+  File location:
+  <code class="loc">sass/layout/helpers/_background.scss</code> (<a
+    href="https://github.com/ahansson/hgrid-css/blob/main/sass/layout/helpers/_background.scss"
+    target="_blank"
+    rel="noopener"
+    >GitHub</a
+  >)
+</p>
 
-  <h4 class="mt-60">Background Colors</h4>
+<h4 class="mt-60">Background Colors</h4>
 
-  <div class="scrollable-x mt-20">
-    <table style="min-width: 600px;">
-      <thead>
-        <tr>
-          <th style="width: 23%">Class Name</th>
-          <th style="width: 30%">Color</th>
-          <th style="width: 40%">Comment</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><code>.bg-white</code></td>
-          <td><div class="bg-white width-75pct border-gray-light">&nbsp;</div></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td><code>.bg-gray-lighter</code></td>
-          <td><div class="bg-gray-lighter width-75pct border-gray-light">&nbsp;</div></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td><code>.bg-gray-light</code></td>
-          <td><div class="bg-gray-light width-75pct border-gray-light">&nbsp;</div></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td><code>.bg-gray</code></td>
-          <td><div class="bg-gray width-75pct border-gray-light">&nbsp;</div></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td><code>.bg-gray-dark</code></td>
-          <td><div class="bg-gray-dark width-75pct border-gray-light">&nbsp;</div></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td><code>.bg-gray-darker</code></td>
-          <td><div class="bg-gray-darker width-75pct border-gray-light">&nbsp;</div></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td><code>.bg-black</code></td>
-          <td><div class="bg-black width-75pct border-gray-light">&nbsp;</div></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>&nbsp;</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td><code>.bg-light</code></td>
-          <td><div class="bg-light width-75pct border-gray-light">&nbsp;</div></td>
-          <td>White default color, customizable</td>
-        </tr>
-        <tr>
-          <td><code>.bg-dark</code></td>
-          <td><div class="bg-dark width-75pct border-gray-light">&nbsp;</div></td>
-          <td>Black default color, customizable</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <h4 class="mt-60">Miscellaneous Background Utilities</h4>
-
-  <div class="scrollable-x mt-20">
-    <table style="min-width: 600px;">
-      <thead>
-        <tr>
-          <th style="width: 36%">Class Name</th>
-          <th style="width: 36%">CSS Property</th>
-          <th style="width: 28%">Comment</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><code>.bg-fixed</code></td>
-          <td>background-attachment: fixed;</td>
-          <td>Background stays put relative to the viewport</td>
-        </tr>
-        <tr>
-          <td><code>.bg-local</code></td>
-          <td>background-attachment: local;</td>
-          <td>Background scrolls if the element content is scrollable.</td>
-        </tr>
-        <tr>
-          <td><code>.bg-pos-top</code></td>
-          <td>background-position: top;</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td><code>.bg-pos-bottom</code></td>
-          <td>background-position: bottom;</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td><code>.bg-pos-right</code></td>
-          <td>background-position: right;</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td><code>.bg-pos-left</code></td>
-          <td>background-position: left;</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td><code>.bg-pos-center</code></td>
-          <td>background-position: center;</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td><code>.bg-repeat-x</code></td>
-          <td>background-repeat: repeat-x;</td>
-          <td>Repeats background image horizontally</td>
-        </tr>
-        <tr>
-          <td><code>.bg-repeat-y</code></td>
-          <td>background-repeat: repeat-y;</td>
-          <td>Repeats background image vertically</td>
-        </tr>
-        <tr>
-          <td><code>.bg-repeat-space</code></td>
-          <td>background-repeat: space;</td>
-          <td>
-            Background repeated as many times as allowed by the element
-            width/height
-          </td>
-        </tr>
-        <tr>
-          <td><code>.bg-repeat-round</code></td>
-          <td>background-repeat: round;</td>
-          <td>
-            Background repeated without gaps as many times as allowed by the
-            element width/height
-          </td>
-        </tr>
-        <tr>
-          <td><code>.bg-repeat-none</code></td>
-          <td>background-repeat: no-repeat;</td>
-          <td>Background is not repeated</td>
-        </tr>
-        <tr>
-          <td><code>.bg-size-cover</code></td>
-          <td>background-size: cover;</td>
-          <td>Responsively fill element with the background</td>
-        </tr>
-        <tr>
-          <td><code>.bg-size-contain</code></td>
-          <td>background-size: contain;</td>
-          <td>
-            Background is fitted to the element so that it's always fully
-            visible
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+<div class="scrollable-x mt-20">
+  <table style="min-width: 600px;">
+    <thead>
+      <tr>
+        <th style="width: 23%">Class Name</th>
+        <th style="width: 30%">Color</th>
+        <th style="width: 40%">Comment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>.bg-white</code></td>
+        <td><div class="bg-white width-75pct border-gray-light">&nbsp;</div></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>.bg-gray-lighter</code></td>
+        <td><div class="bg-gray-lighter width-75pct border-gray-light">&nbsp;</div></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>.bg-gray-light</code></td>
+        <td><div class="bg-gray-light width-75pct border-gray-light">&nbsp;</div></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>.bg-gray</code></td>
+        <td><div class="bg-gray width-75pct border-gray-light">&nbsp;</div></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>.bg-gray-dark</code></td>
+        <td><div class="bg-gray-dark width-75pct border-gray-light">&nbsp;</div></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>.bg-gray-darker</code></td>
+        <td><div class="bg-gray-darker width-75pct border-gray-light">&nbsp;</div></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>.bg-black</code></td>
+        <td><div class="bg-black width-75pct border-gray-light">&nbsp;</div></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>&nbsp;</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>.bg-light</code></td>
+        <td><div class="bg-light width-75pct border-gray-light">&nbsp;</div></td>
+        <td>White default color, customizable</td>
+      </tr>
+      <tr>
+        <td><code>.bg-dark</code></td>
+        <td><div class="bg-dark width-75pct border-gray-light">&nbsp;</div></td>
+        <td>Black default color, customizable</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
-<div class="custom-hairline mt-40"></div>
+
+<h4 class="mt-60">Background Size</h4>
+
+<div class="scrollable-x mt-20">
+  <table style="min-width: 600px;">
+    <thead>
+      <tr>
+        <th style="width: 36%">Class Name</th>
+        <th style="width: 36%">CSS Property</th>
+        <th style="width: 28%">Comment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>.bg-size-cover</code></td>
+        <td>background-size: cover;</td>
+        <td>Responsively fill element with the background</td>
+      </tr>
+      <tr>
+        <td><code>.bg-size-contain</code></td>
+        <td>background-size: contain;</td>
+        <td>
+          Background is fitted to the element so that it's always fully
+          visible
+        </td>
+    </tbody>
+  </table>
+</div>
+
+<h4 class="mt-60">Background Attachment</h4>
+
+<div class="scrollable-x mt-20">
+  <table style="min-width: 600px;">
+    <thead>
+      <tr>
+        <th style="width: 36%">Class Name</th>
+        <th style="width: 36%">CSS Property</th>
+        <th style="width: 28%">Comment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>.bg-fixed</code></td>
+        <td>background-attachment: fixed;</td>
+        <td>Background stays put relative to the viewport</td>
+      </tr>
+      <tr>
+        <td><code>.bg-local</code></td>
+        <td>background-attachment: local;</td>
+        <td>Background scrolls if the element content is scrollable.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h4 class="mt-60">Background Position</h4>
+
+<div class="scrollable-x mt-20">
+  <table style="min-width: 600px;">
+    <thead>
+      <tr>
+        <th style="width: 36%">Class Name</th>
+        <th style="width: 36%">CSS Property</th>
+        <th style="width: 28%">Comment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>.bg-pos-top</code></td>
+        <td>background-position: top;</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>.bg-pos-bottom</code></td>
+        <td>background-position: bottom;</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>.bg-pos-right</code></td>
+        <td>background-position: right;</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>.bg-pos-left</code></td>
+        <td>background-position: left;</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><code>.bg-pos-center</code></td>
+        <td>background-position: center;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h4 class="mt-60">Background Repeat</h4>
+
+<div class="scrollable-x mt-20">
+  <table style="min-width: 600px;">
+    <thead>
+      <tr>
+        <th style="width: 36%">Class Name</th>
+        <th style="width: 36%">CSS Property</th>
+        <th style="width: 28%">Comment</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>.bg-repeat-x</code></td>
+        <td>background-repeat: repeat-x;</td>
+        <td>Repeats background image horizontally</td>
+      </tr>
+      <tr>
+        <td><code>.bg-repeat-y</code></td>
+        <td>background-repeat: repeat-y;</td>
+        <td>Repeats background image vertically</td>
+      </tr>
+      <tr>
+        <td><code>.bg-repeat-space</code></td>
+        <td>background-repeat: space;</td>
+        <td>
+          Background repeated as many times as allowed by the element
+          width/height
+        </td>
+      </tr>
+      <tr>
+        <td><code>.bg-repeat-round</code></td>
+        <td>background-repeat: round;</td>
+        <td>
+          Background repeated without gaps as many times as allowed by the
+          element width/height
+        </td>
+      </tr>
+      <tr>
+        <td><code>.bg-repeat-none</code></td>
+        <td>background-repeat: no-repeat;</td>
+        <td>Background is not repeated</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="custom-hairline mt-60"></div>
 <p class="fl mb-0 mr-5">
   ← <strong>Previous</strong>:
   <a href="/documentation/layout/tables/">Tables</a>
