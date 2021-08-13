@@ -3,6 +3,7 @@
 {%- set siteTitle = 'hgrid | a lightweight and practical CSS utility kit' -%}
 {%- set currentUrl = baseUrl + page.url -%}
 {%- set socialImage = '/assets/img/social.jpg' -%}
+{%- set favicon = '/assets/img/icon.png' -%}
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +11,7 @@
 <style type="text/css">@font-face{font-family:'Wotfard';src:url('/assets/font/subset-Wotfard-Regular.woff2') format('woff2'), url('/assets/font/subset-Wotfard-Regular.woff') format('woff');font-style:normal;font-display:swap}</style>
 <link rel="stylesheet" href="/assets/css/style.min.css?v=1.0.1">
 <link rel="canonical" href="{{ currentUrl }}" />
-<link rel="icon" type="image/png" href="{{ baseUrl }}{{ socialImage }}">
+<link rel="icon" type="image/png" href="{{ baseUrl }}{{ favicon }}">
 <meta name="description" content="{{ meta.description }}">
 <meta name="robots" content="index, follow">
 <meta name="author" content="Atle Hansson">
