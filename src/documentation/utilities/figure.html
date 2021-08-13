@@ -1,0 +1,61 @@
+---
+layout: layout/docs.njk
+meta: {
+title: Figure and Figcaption | hgrid,
+description: 'Spice up your content pages with images, tables or charts wrapped in the HTML figure element.'
+}
+title: Figure & Figcaption
+tags: [utilities]
+---
+<p>
+  The <code>figure</code> tag is a HTML wrapper used for graphics such as maps, charts, images, etc. It's typically used semantically 
+  in the context of an <code>&lt;article></code>. The element itself is unstyled in <strong>hgrid</strong>, except for a bottom 
+  margin (the same as a regular text paragraph).
+</p>
+
+<p>
+  The <code>figcaption</code> element is optional. It's used to hold a text description for the graphic element and has the same text 
+  style as a regular paragraph. You can add <code>&lt;small></code> if you wish to reduce the font size.
+</p>
+
+<p>Example:<sup>*</sup></p>
+
+<pre class="language-html filename" data-file="html">
+<code>&lt;figure class="width-80pct"&gt;
+  &lt;img src="/assets/img/global-happiness.png"&gt;
+  &lt;figcaption&gt;
+    &lt;small>Some explanatory text about the ...&lt;/small>
+  &lt;/figcaption&gt;
+&lt;/figure&gt;
+</code></pre>
+
+<p class="small italic">
+  <sup>*)</sup> For clarity, we left out the responsive <strong>hgrid</strong> containers the example is wrapped in.
+</p>
+
+<p>Result:</p>
+
+<div class="row push40v">
+  <div class="column">
+    <figure class="width-80pct">
+      <img 
+        src="/assets/img/global-happiness.png" 
+        alt="Global Happiness Index Map 2021 by Visual Capitalist" 
+        title="Global Happiness Index Map 2021 by Visual Capitalist"
+        class="border-gray-light"
+      >
+      <figcaption>
+        <small>Some explanatory text about the happiness map, wrapped in a <code>figcaption</code> element.</small>
+      </figcaption>
+    </figure>
+  </div>
+</div>
+
+
+<div class="custom-hairline mt-40"></div>
+<p class="fl mb-0 mr-5">
+  ← <strong>Previous</strong>: <a href="/documentation/utilities/visibility/">Visibility</a>
+</p>
+<p class="fr ml-5">
+  <strong>Next</strong>: <a href="/documentation/input/">Input</a> →
+</p>

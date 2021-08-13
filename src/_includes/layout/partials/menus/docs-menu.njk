@@ -30,21 +30,22 @@
       <li aria-label="Sub Menu Item"><a href="/documentation/layout/accurate-columns" {% if title == 'Accurate Content Columns' %}class="active-link"{% endif %}>Accurate Columns</a></li>
       <li aria-label="Sub Menu Item"><a href="/documentation/layout/flex/" {% if title == 'Flex' %}class="active-link"{% endif %}>Flex</a></li>
       <li aria-label="Sub Menu Item"><a href="/documentation/layout/grid/" {% if title == 'Grid' %}class="active-link"{% endif %}>Grid</a></li>
-      <li aria-label="Sub Menu Item"><a href="/documentation/layout/tables/" class="{{ 'active-link' if 'tables' in page.url }}">Tables</a></li>
-      <li aria-label="Sub Menu Item"><a href="/documentation/layout/positioning/" class="{{ 'active-link' if 'positioning' in page.url }}">Positioning</a></li>
-      <li aria-label="Sub Menu Item"><a href="/documentation/layout/padding/" class="{{ 'active-link' if 'padding' in page.url }}">Padding</a></li>
-      <li aria-label="Sub Menu Item"><a href="/documentation/layout/margin/" class="{{ 'active-link' if 'margin' in page.url }}">Margin</a></li>
+      <li aria-label="Sub Menu Item"><a href="/documentation/layout/tables/" {% if title == 'Tables' %}class="active-link"{% endif %}>Tables</a></li>
+      <li aria-label="Sub Menu Item"><a href="/documentation/layout/positioning/" {% if title == 'Positioning' %}class="active-link"{% endif %}>Positioning</a></li>
+      <li aria-label="Sub Menu Item"><a href="/documentation/layout/padding/" {% if title == 'Padding' %}class="active-link"{% endif %}>Padding</a></li>
+      <li aria-label="Sub Menu Item"><a href="/documentation/layout/margin/" {% if title == 'Margin' %}class="active-link"{% endif %}>Margin</a></li>
     </ul>
   <h5 role="menuitem"><a href="/documentation/utilities/" {% if title == 'Utilities' %}class="active-link"{% endif %}>Utilities</a></h5>
       <ul role="menuitem" class="sub-links">
       <li aria-label="Sub Menu Item"><a class="close" href="/documentation/utilities/#background">Background</a></li>
       <li aria-label="Sub Menu Item"><a href="/documentation/utilities/lines-and-borders" class="{{ 'active-link' if 'lines-and-borders' in page.url }}">Lines & Borders</a></li>
-      <li aria-label="Sub Menu Item"><a href="/documentation/utilities/shapes" class="{{ 'active-link' if 'shapes' in page.url }}">Shapes</a></li>
+      <li aria-label="Sub Menu Item"><a href="/documentation/utilities/shapes" {% if title == 'Shapes' %}class="active-link"{% endif %}>Shapes</a></li>
       <li aria-label="Sub Menu Item"><a href="/documentation/utilities/box-shadow" class="{{ 'active-link' if 'box-shadow' in page.url }}">Box Shadow</a></li>
-      <li aria-label="Sub Menu Item"><a href="/documentation/utilities/cursors" class="{{ 'active-link' if 'cursors' in page.url }}">Cursors</a></li>
-      <li aria-label="Sub Menu Item"><a href="/documentation/utilities/embed" class="{{ 'active-link' if 'embed' in page.url }}">Embed</a></li>
+      <li aria-label="Sub Menu Item"><a href="/documentation/utilities/cursors" {% if title == 'Cursors' %}class="active-link"{% endif %}>Cursors</a></li>
+      <li aria-label="Sub Menu Item"><a href="/documentation/utilities/embed" {% if title == 'Embed' %}class="active-link"{% endif %}>Embed</a></li>
       <li aria-label="Sub Menu Item"><a href="/documentation/utilities/width-height" class="{{ 'active-link' if 'width-height' in page.url }}">Width &amp; Height</a></li>
-      <li aria-label="Sub Menu Item"><a href="/documentation/utilities/visibility" class="{{ 'active-link' if 'visibility' in page.url }}">Visibility</a></li>
+      <li aria-label="Sub Menu Item"><a href="/documentation/utilities/visibility" {% if title == 'Visibility' %}class="active-link"{% endif %}>Visibility</a></li>
+      <li aria-label="Sub Menu Item"><a href="/documentation/utilities/figure" class="{{ 'active-link' if 'figure' in page.url }}">Figure</a></li>
     </ul>
   <h5 role="menuitem"><a href="/documentation/input/" {% if title == 'Input' %}class="active-link"{% endif %}>Input</a></h5>
     <ul role="menuitem" class="sub-links">
