@@ -20,10 +20,10 @@ tags: [animations]
 </p>
 
 <div class="group mt-60">
-  <h4>
+  <h2 class="h3">
     <span id="donut" class="sublink"></span>
     Donut Spinner
-  </h4>
+  </h2>
 
   <p>
     It comes in four sizes. <code>.small</code>, <code>.large</code>,
@@ -53,11 +53,38 @@ tags: [animations]
   </div>
 </div>
 
+<div class="custom-hairline"></div>
+
 <div class="group">
-  <h4>
+  <h3>
+    <span id="rotate" class="sublink"></span>
+    Rotate
+  </h3>
+
+  <p>Rotate any element once (on pageload) with <code>.rotate-once</code>. Default rotation speed is 0.8s. Refresh page for demo.</p>
+  <h5 class="max-content text-red rotate-once bg-gray-lighter box-shadow-1 padding-5">Sale!</h5>
+  <pre class="language-html filename mt-30 mb-30" data-file="html">
+<code>&lt;h5 class="rotate-once max-content text-red">Sale!&lt;/h5></code></pre>
+
+  <p class="note mb-60">
+    We use the <code>max-content</code> utility to reduce the size of the wide <code>h5</code> element to the width of the text. 
+    Otherwise the center of the rotation would be at the center of the wide element instead of at the center of the text.
+  </p>
+
+  <p>Rotate any element indefinitely with <code>.rotate</code>. Default speed is 1s per rotation.</p>
+  <img class="rotate mt-20 mb-40" src="/assets/img/icon.png" width="50" alt="rotating hgrid icon">
+
+  <pre class="language-html filename mb-60" data-file="html">
+<code>&lt;img class="rotate" src="/assets/img/icon.png" alt="rotating icon"></code></pre>
+
+</div>
+<div class="custom-hairline"></div>
+
+<div class="group">
+  <h3>
     <span id="transition" class="sublink"></span>
     Transition
-  </h4>
+  </h3>
 
   <p>
     Applying the CSS class <code>.transition</code> to an HTML
@@ -93,11 +120,13 @@ tags: [animations]
   <div class="transition vanish"></div>
 </div>
 
+<div class="custom-hairline"></div>
+
 <div class="group">
-  <h4>
+  <h3>
     <span id="flashing" class="sublink"></span>
     Flashing Element
-  </h4>
+  </h3>
 
   <p>Add the class <code>.flash</code> to any HTML element to animate it.</p>
 
@@ -125,7 +154,7 @@ tags: [animations]
 
   <pre class="language-html filename" data-file="html">
 <code>&lt;!-- Flashing outer element -->
-  &lt;div class="blinker f-center flash">
+&lt;div class="blinker f-center flash">
   &lt;div class="inner">&lt;/div>
 &lt;/div>
 
@@ -204,11 +233,13 @@ tags: [animations]
 }</code></pre>
 </div>
 
+<div class="custom-hairline"></div>
+
 <div class="group">
-  <h4>
+  <h3>
     <span id="fade" class="sublink"></span>
     Fade
-  </h4>
+  </h3>
 
   <p>Fade elements in and out from a hidden state.</p>
 
@@ -263,6 +294,38 @@ tags: [animations]
   })
 })();</code></pre>
 </div>
+
+<div class="custom-hairline"></div>
+
+<div class="group">
+  <h3>
+    <span id="scroll" class="sublink"></span>
+    Scroll
+  </h3>
+
+  <p>
+    This "animation" depends on browser implementation of the CSS spec. It's typically used as <code>&lt;body class="scroll-smooth"></code> and 
+    controls the scroll method between anchor links. Available variations:
+  </p>
+
+  <pre class="language-css filename mb-30" data-file="css">
+<code>.scroll-auto { /* CSS default */
+  scroll-behavior: auto;
+}
+
+.scroll-inherit {
+  scroll-behavior: inherit;
+}
+
+.scroll-smooth { /* hgrid default in _base.scss */
+  scroll-behavior: smooth;
+}
+
+.scroll-unset {
+  scroll-behavior: unset;
+}</code></pre>
+</div>
+
 
 <div class="custom-hairline mt-40"></div>
 <p class="fl">
