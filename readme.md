@@ -1,12 +1,13 @@
-<img src="assets/img/social.jpg" style="margin: 0 0 3rem;">
+<img src="assets/img/social.jpg">
 
-<div style="text-align: center;">
+<div align="center">
 
   # Homepage and documentation for hgrid-css
 
   ## **[https://hgrid.io](https://hgrid.io)**  
 
   ## A Lightweight and Practical CSS Utility Kit
+  
   **Zero Config. Flat Learning Curve**  
 
   Hgrid is a starting point intended to make HTML work out of the box, with very little effort. 
