@@ -31,7 +31,7 @@ exports.handler = async (event, context) => {
       })
 
       const data = await response.json()
-      return data[0].name
+      return JSON.stringify(data[0].name)
 
     } catch (err) {
       console.log(err)
