@@ -189,12 +189,15 @@ const versionTags = document.querySelectorAll('.versiontag')
 if (versionTags && versionTags.length >= 1) {
   const getVersion = async (url) => {
     try {
-    
+
       const response = await fetch(url, {
         method: "GET",
         mode: "no-cors"
       })
-      return response.json()
+      
+      const res = await response.json()
+      console.log(res, res.body)
+      return JSON.parse(res.body)
 
     } catch(err) {
       console.log(err)
@@ -202,7 +205,7 @@ if (versionTags && versionTags.length >= 1) {
   }
 
   const version = getVersion("https://hgrid.io/.netlify/functions/github")
-
+  
   versionTags.forEach((element) => {
     element.innerText = version
   })
