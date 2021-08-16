@@ -39,12 +39,29 @@ sitemapPriority: 1.0
 <h4>Include with <code>@use</code></h4>
 <br>
 <p>
-  In your <code>main.scss</code>, import <strong>hgrid</strong> from <code>node_modules</code> as shown below. 
-  Modify any <strong>hgrid</strong> <a href="/documentation/variables/">variables</a> you wish to change 
-  (see the <a 
+  In <code>main.scss</code>, import <strong>hgrid</strong> from <code>node_modules</code>.
+</p>
+
+<pre class="language-scss filename" data-file="main.scss">
+<code>@use 'hgrid-css/sass/hgrid'
+
+<span class="hljs-comment">// Add your own CSS or SCSS (if you have any) with @import and @use respectively:</span>
+
+@import 'css/partials/app-frame.css';
+@use 'scss/partials/_theme.scss';</code></pre>
+
+<p>
+  <strong>hgrid</strong> is now fully loaded into your project. If you want to leave out certain 
+  parts, use one <code>@use</code> rule for each <strong>hgrid</strong> <a href="https://github.com/ahansson/hgrid-css/tree/main/sass" 
+  rel="noopener" target="_blank">partial</a> to include.
+</p>
+
+<p>
+  Configuration is optional. You can set your own theme colors and more by adding your own values to the  
+  <strong>hgrid</strong> <a href="/documentation/variables/">variables</a> (see the <a 
     href="https://github.com/ahansson/hgrid-css/blob/main/sass/variables/_variables.scss" 
     rel="noopener" 
-    target="_blank">full list</a>). Note that we use commas after the variable declarations, not semicolons:
+    target="_blank">full list of options</a>). Note that we use commas after the declarations, not semicolons:
 </p>
 
 <pre class="language-scss filename" data-file="main.scss">
@@ -55,11 +72,6 @@ sitemapPriority: 1.0
   $link-underline-color: #ffe88d
 );
 
-// Add your own CSS or SCSS partials (if you have any) with @import or @use respectively:
-
-@import 'css/partials/app-frame.css';
-@use 'scss/partials/_theme.scss';
-
 // Sass $variables aren't available globally. But hgrid's custom 
 // properties reflect the most useful variables and are 
 // available everywhere:
@@ -68,14 +80,7 @@ sitemapPriority: 1.0
   background: var(--bg-gray-dark);
   color: var(--text-color-secondary);
 }
-
-// etc.
 </code></pre>
-
-<p>
-  <strong>hgrid</strong> will now be fully loaded into your project. If you want to leave out certain 
-  parts of <strong>hgrid</strong>, use one <code>@use</code> rule for each partial to include.
-</p>
 
 <p class="note">
   Trying to execute any other code than <code>@forward</code> before <code>@use</code> won't compile. Read more about the 
@@ -100,7 +105,7 @@ sitemapPriority: 1.0
 
 <h6>CSS</h6>
 
-<pre class="language-html filename" data-file="App.vue">
+<pre class="language-html filename mb-40" data-file="App.vue">
 <code>&lt;style lang="css"&gt;
   @import '~hgrid-css/dist/hgrid.min.css';
 
@@ -111,9 +116,18 @@ sitemapPriority: 1.0
 <h6>SCSS</h6>
 
 <p>
-  Set up a style tag with <code>lang="scss"</code> in <code>App.vue</code>. Then use the description from Method 1 to 
-  @use <strong>hgrid</strong>. Please refer to <a href="/documentation/integrate/#vue">prerequisites</a> for using Vue with Sass.
+  Set up a style tag for <code>scss</code> in <code>App.vue</code>. Then use the description from Method 1 to 
+  @use <strong>hgrid</strong>. Remember the <a href="/documentation/integrate/#vue">prerequisites</a>.
 </p>
+
+<pre class="language-html filename" data-file="App.vue">
+<code>&lt;style lang="scss"&gt;
+  @use 'hgrid-css/sass/hgrid' with (
+    <span class="hljs-comment">// optional config</span>
+  );
+&lt;/style&gt;</code>
+</pre>
+
 <br>
 
 <h5>2b. Import prebuilt CSS in 'main.js'</code></h5>
@@ -126,7 +140,7 @@ sitemapPriority: 1.0
 <h5>2c. Import prebuilt CSS to local stylesheet</h5>
 
 <p>
-  At the top of a local CSS file, for example <code>public/assets/css/style.css</code> you can import the full 
+  At the top of a local CSS file, for example <code>/assets/css/style.css</code> you can import the full 
   <strong>hgrid</strong> kit from <code>node_modules</code>:
 </p>
 
@@ -134,10 +148,11 @@ sitemapPriority: 1.0
   <code>@import '~hgrid-css/dist/hgrid.min.css';</code>
 </pre>
 
-<h4 class="push20v">Global access to Sass variables with <code>vue.config.js</code></h4>
+<h4 class="mt-60">Alternative method for global variables</h4>
 
-<p>Another way to access to the <strong>hgrid</strong> $variables from within components is to make them available from the
-  config like so:
+<p>
+  Previously we learned that <strong>hgrid</strong> $variables can be accessed in component files with the <code>@use</code> rule. 
+  Another way to access them is to make them available from <code>vue.config.js</code> like so:
 </p>
 
   <pre class="language-js filename" data-file="vue.config.js">
@@ -152,15 +167,15 @@ sitemapPriority: 1.0
     }
   }
 }</code></pre>
-  <p><strong>Note:</strong> This method may be redundant as you automatically have global access to all the relevant CSS custom properties that reflect the 
-  Sass variables. You can also <code>@use</code> the variables partial where needed.</p>
-  <p>
-    ⚠️ Don't import anything here that won't be abstracted away in the build process. If you do,
-    performance will be affected. The same styles will be included multiple times – once for every component and view.
-  </p>
+
+  <p>Restart the dev server with <code>npm run serve</code> for config changes to take effect.</p>
+
+  <p><strong>Note:</strong> Using global Sass variables may be redundant as you automatically have access to all of <strong>hgrid</strong>'s
+  custom properties that reflect the same variables.</p>
 
   <p class="note">
-    Restart the dev server with <code>npm run serve</code> for config changes to take effect.
+    ⚠️ Don't import anything here that won't be abstracted away in the build process. If you do,
+    performance will be affected. The same styles will be included multiple times – once for every component and view.
   </p>
 
   <div class="custom-hairline mt-60"></div>
@@ -185,7 +200,7 @@ sitemapPriority: 1.0
   <ol>
     <li>Install the Dart Sass package: <code>npm i sass --save-dev</code></li>
     <li>Install <strong>hgrid</strong>: <code>npm i hgrid-css --save-dev</code></li>
-    <li>Rename <code>index.css</code> to <code>index.scss</code> (or create it in <code>src</code> if it doesn't exist.)</li>
+    <li>Rename <code>index.css</code> to <code>index.scss</code> (or create it in <code>src/</code> if it doesn't exist.)</li>
     <li>Rename <code>App.css</code> and other component files to use the file ending <code>.scss</code>.</li>
     <li>Import your <code>.scss</code> files in <code>index.js</code> and the relevant component files:</li>
   </ol>
@@ -204,35 +219,55 @@ sitemapPriority: 1.0
     you have to configure it yourself. Create-react-app and the starter project we link to above has Autoprefixer working out of the box.
   </p>
 
-  <h4 class="mt-40">'@use' in index.scss</h4>
+  <h4 class="mt-40">Initialization in index.scss</h4>
+
+<pre class="push20v language-scss filename" data-file="index.scss">
+  <code>@use '~hgrid-css/sass/hgrid'</code>
+</pre>
+
+<p>
+  <strong>hgrid</strong> is now fully loaded into your project. If you want to leave out certain 
+  parts, use one <code>@use</code> rule for each <strong>hgrid</strong> <a href="https://github.com/ahansson/hgrid-css/tree/main/sass" 
+  rel="noopener" target="_blank">partial</a> to include.
+</p>
+
+<pre class="push20v language-scss filename" data-file="index.scss">
+  <code>@use '~hgrid-css/sass/variables/variables'; // Required*
+@use '~hgrid-css/sass/mixins/mixins'; // Required*
+@use '~hgrid-css/sass/base/base'; // Required*
+
+@use '~hgrid-css/sass/base/a11y';
+@use '~hgrid-css/sass/layout/flex';
+@use '~hgrid-css/sass/layout/containers';
+@use '~hgrid-css/sass/layout/auto-columns';
+@use '~hgrid-css/sass/layout/helpers/background';
+</code>
+</pre>
+
+
+<p>
+  Configuration is optional. You can set your own theme colors and more by adding your own values to the  
+  <strong>hgrid</strong> <a href="/documentation/variables/">variables</a> (see the <a 
+    href="https://github.com/ahansson/hgrid-css/blob/main/sass/variables/_variables.scss" 
+    rel="noopener" 
+    target="_blank">full list of options</a>). Note that we use commas after the declarations, not semicolons:
+</p>
 
 <pre class="push20v language-scss filename" data-file="index.scss">
   <code>@use '~hgrid-css/sass/hgrid' with (
   $body-bg: #7056ce,
+  $column-gutter-width: 1.2%,
+  $container-max-width: 1680px,
   $link-color: #00a344,
   $link-color-hover: #00cc66,
-  $container-max-width: 1680px,
   $link-underline-color: #daae00,
-  $column-gutter-width: 1.2%,
   $turn-off-link-decoration: true,
   $use-global-link-underlines: true,
 );
 
-// ... or @use only specific modules:
-
-// @use '~hgrid-css/sass/variables/variables'; // Required*
-// @use '~hgrid-css/sass/mixins/mixins'; // Required*
-// @use '~hgrid-css/sass/base/base'; // Required*
-
-// @use '~hgrid-css/sass/base/a11y';
-// @use '~hgrid-css/sass/layout/flex';
-// @use '~hgrid-css/sass/layout/containers';
-// @use '~hgrid-css/sass/layout/auto-columns';
-// @use '~hgrid-css/sass/layout/helpers/background';
-
 // Add your own CSS or SCSS partials (if you have any) with @import and @use respectively:
 
-@import 'css/partials/app-frame.css';
+@import 'css/vendors/tooltipz.css';
 @use 'scss/partials/_theme.scss';
 
 // Add other global styles from here down
@@ -256,7 +291,7 @@ sitemapPriority: 1.0
   over at sass-lang.com.
 </p>
 
-<p>You now have access to <strong>hgrid</strong>'s utility classes from all component files.</p>
+<p>Usage of <strong>hgrid</strong>'s utility classes in component files:</p>
 
 <pre class="push20v language-jsx filename" data-file="App.js">
 <code>import './App.scss';
