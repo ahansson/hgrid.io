@@ -195,9 +195,9 @@ if (versionTags && versionTags.length >= 1) {
         mode: "no-cors"
       })
       
-      const res = await response.json()
-      console.log(res, res.body)
-      return JSON.parse(res.body)
+      const res = await response.text()
+      console.log(res)
+      return res
 
     } catch(err) {
       console.log(err)
