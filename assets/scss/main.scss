@@ -559,6 +559,10 @@ table {
   /* scroll-margin: 10rem; awaiting fix for Safari */
   position: relative;
   top: -10rem;
+
+  &.hack {
+    top: -5rem;
+  }
 }
 
 .x-close {
