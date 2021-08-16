@@ -204,7 +204,7 @@ if (versionTags && versionTags.length >= 1) {
     }
   }
 
-  const version = getVersion("https://hgrid.io/.netlify/functions/github")
+  const version = getVersion('https://hgrid.io/.netlify/functions/github')
   
   versionTags.forEach((element) => {
     element.innerText = version
