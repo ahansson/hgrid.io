@@ -30,12 +30,10 @@ exports.handler = async (event, context) => {
     })
 
     const data = await response.json()
-    console.log(data)
-    console.log(data[0].name)
 
     return {
       statusCode: 200,
-      body: data,
+      body: data[0].name
     }
   } catch (err) {
     console.log(err)

@@ -22,12 +22,12 @@
 
     if (!lightImage || !darkImage || !colorTheme) return;
     if (colorTheme === 'dark' && window.innerWidth <= 600) {
-      lightImage.style.display = 'none';
-      darkImage.style.display = 'block';
+      lightImage.style.display = 'none'
+      darkImage.style.display = 'block'
     } 
     if (colorTheme === 'light' && window.innerWidth <= 600) {
-      lightImage.style.display = 'block';
-      darkImage.style.display = 'none';
+      lightImage.style.display = 'block'
+      darkImage.style.display = 'none'
     }
   }
 
@@ -182,3 +182,28 @@
 
 // highlight.js, from separate file
 hljs.initHighlightingOnLoad()
+
+// Grab latest release number from GitHub
+const versionTags = document.querySelectorAll('.versiontag')
+
+if (versionTags && versionTags.length >= 1) {
+  const getVersion = async (url) => {
+    try {
+    
+      const response = await fetch(url, {
+        method: "GET",
+        mode: "no-cors"
+      })
+      return response.json()
+
+    } catch(err) {
+      console.log(err)
+    }
+  }
+
+  const version = getVersion("https://hgrid.io/.netlify/functions/github")
+
+  versionTags.forEach((element) => {
+    element.innerText = version
+  })
+}
