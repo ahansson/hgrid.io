@@ -138,6 +138,24 @@ main.container-max {
   opacity: 0.1;
 }
 
+.frameworks {
+  a {
+    display: block;
+    margin: 0 4%;
+  }
+  a img,
+  a svg {
+    width: 4rem;
+
+    &.increase {
+      width: 5.4rem;
+    }
+    &.reduce {
+      width: 2.6rem;
+    }
+  }
+}
+
 .signal {
   color: #f7e0a8;
 }
@@ -820,5 +838,11 @@ footer {
   }
   .cursor-move-demo {
     width: 80%;
+  }
+  .frameworks a svg.reduce {
+    width: 1.8rem;
+  }
+  .frameworks a svg.increase {
+    width: 3.5rem;
   }
 }
