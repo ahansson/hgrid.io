@@ -10,17 +10,17 @@ const optionsHeaders = {
 
 const fetchHeaders = {
   "Content-Type": "application/json",
-  Host: "api.github.com",
-  Accept: "*/*",
-  "Accept-Encoding": "gzip, deflate, br"
+  "Host": "api.github.com",
+  "Accept": "application/vnd.github.v3+json"
 }
 
 exports.handler = async (event, context) => {
   if (event.httpMethod === "OPTIONS") {
     return {
-      statusCode: 200,
-      headers: optionsHeaders,
+      "statusCode": "200",
+      "headers": optionsHeaders,
     }
+
   } else {
 
     try {
