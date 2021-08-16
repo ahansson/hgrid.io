@@ -30,6 +30,7 @@ exports.handler = async (event, context) => {
     })
 
     const data = await response.json()
+    console.log(data[0].name, typeof data[0].name)
     return data[0].name
 
   } catch (err) {
