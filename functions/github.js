@@ -30,7 +30,7 @@ exports.handler = async (event, context) => {
         headers: fetchHeaders
       })
 
-      const data = await response.text()
+      const data = await response.json()
       return data[0].name
 
     } catch (err) {
