@@ -182,30 +182,3 @@
 
 // highlight.js, from separate file
 hljs.initHighlightingOnLoad()
-
-// Grab latest release number from GitHub
-const versionTags = document.querySelectorAll('.versiontag')
-
-if (versionTags && versionTags.length >= 1) {
-  const getVersion = async (url) => {
-    try {
-      const response = await fetch(url, {
-        method: "GET",
-        mode: "no-cors"
-      })
-      
-      const res = await response.text()
-      console.log(res)
-      return res
-
-    } catch(err) {
-      console.log(err)
-    }
-  }
-
-  const version = getVersion('https://hgrid.io/.netlify/functions/github')
-  
-  versionTags.forEach((element) => {
-    element.innerText = version
-  })
-}
