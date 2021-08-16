@@ -18,6 +18,8 @@
   --menutitle: #444;
   --menulink-hover: #000;
   --transition-duration: 0.2s;
+  --t-text: #4b0069;
+  --t-bg: #ffe4c9;
   --border-light-dotted: var(--bg-gray-light);
   --border-light-solid: var(--bg-gray-light);
   --table-row-even: #eee;
@@ -40,6 +42,8 @@
   --menutitle: #e9dac5;
   --menulink-hover: #ffffff;
   --link-color: #ffc9a2;
+  --t-text: #ffefda;
+  --t-bg: #000;
   --active-link: #d09255;
   --link-underline-color: #9248a0;
   --color-orange: #ff9900;
@@ -161,8 +165,8 @@ main.container-max {
 }
 
 .npm-install {
-  color: var(--link-color);
-  background: var(--inline-code-bg);
+  color: var(--t-text);
+  background: var(--t-bg);
   padding: 0.6rem 1.2rem;
   border-radius: 4px;
 }
@@ -844,5 +848,10 @@ footer {
   }
   .frameworks a svg.increase {
     width: 3.5rem;
+  }
+  article h2 img,
+  article h2 svg {
+    width: 3rem !important;
+    transform: unset !important;
   }
 }
