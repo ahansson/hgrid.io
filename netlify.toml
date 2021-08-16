@@ -1,4 +1,6 @@
 [build]
   command = "npm run build"
   publish = "_public"
-  functions = "_public/functions/"
+
+[functions]
+  directory = "_public/functions/"
