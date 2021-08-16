@@ -1,7 +1,7 @@
 // Proxy grab latest release number from GitHub API
 
 const fetch = require('node-fetch')
-const url = 'https://api.github.com/repos/ahansson/hgrid-css/releases'
+const url = 'https://api.github.com/repos/ahansson/hgrid-css/releases?per_page=1'
 
 const optionsHeaders = {
   'Access-Control-Allow-Origin': '*',
@@ -31,7 +31,11 @@ exports.handler = async (event, context) => {
       })
 
       const data = await response.json()
-      return JSON.stringify(data[0].name)
+      console.log(JSON.stringify({ data }))
+      return {
+        statusCode: 200,
+        body: JSON.stringify({ data })
+      }
 
     } catch (err) {
       console.log(err)
