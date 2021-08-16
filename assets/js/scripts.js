@@ -189,7 +189,6 @@ const versionTags = document.querySelectorAll('.versiontag')
 if (versionTags && versionTags.length >= 1) {
   const getVersion = async (url) => {
     try {
-
       const response = await fetch(url, {
         method: "GET",
         mode: "no-cors"

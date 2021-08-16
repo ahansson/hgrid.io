@@ -21,20 +21,20 @@ exports.handler = async (event, context) => {
       statusCode: 200,
       headers: optionsHeaders,
     }
-  }
+  } else {
 
-  try {
-    const response = await fetch(url, {
-      method: 'GET',
-      headers: fetchHeaders,
-    })
+    try {
+      const response = await fetch(url, {
+        method: 'GET',
+        headers: fetchHeaders,
+      })
 
-    const data = await response.json()
-    console.log(data[0].name, typeof data[0].name)
-    return data[0].name
+      const data = await response.json()
+      return data[0].name
 
-  } catch (err) {
-    console.log(err)
+    } catch (err) {
+      console.log(err)
+    }
   }
 }
 
