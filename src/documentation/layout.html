@@ -10,9 +10,7 @@ tags: [layout]
 
 <p class="intro">
   There are a few different ways you can create a layout system with
-  <strong>hgrid</strong>. Use the provided flex or grid utilities, or whip up
-  something super fast and precise with the built-in, automatic content
-  columns.
+  <strong>hgrid</strong>. One of them is the built-in, automatic column grid, where special containers play an important part.
 </p>
 <h2 class="h3">
   <span id="containers" class="sublink"></span>
@@ -29,9 +27,13 @@ tags: [layout]
 <p>
   Keep your content from falling off to the sides by wrapping it in a
   <code>.container-max</code>. This lets you control the max-width of your
-  page with the <code>scss</code> variable
-  <code>$container-max-width</code> (or you can overwrite
-  <code>.container-max</code> in your regular <code>css</code>).
+  page with the <code>scss</code> variable <code>$container-max-width</code>. You can also overwrite
+  <code>.container-max</code> or the custom property <code><nobr>--container-max-width</nobr></code> 
+  in your regular CSS.
+</p>
+
+<p>
+  The default <code>.container-max</code> width is 1440 pixels.
 </p>
 
 <img
@@ -45,27 +47,28 @@ tags: [layout]
   <em>The 1440 pixel <strong>.container-max</strong> on a 1680 pixel
     screen. The header uses the full-width <strong>.container</strong>.</em>
 </p>
-
-<p>
-  The default <code>.container-max</code> width is set to 1440 pixels.
-</p>
   
 <p>
-  Use <code>.container</code> if you instead want to use the full viewport width.
-</p>
-<p>
-  In order to group content in vertical sections within a container, use the
-  class <code>.row</code> (creates a flex container) or
-  <code>.row-block</code> (creates a container for block elements).
+  <code>.container</code> lets your content flow all the way to the edges of the screen, but has a small margin on each side. Both containers 
+  are centered.
 </p>
 
 <h3 class="h4 push40v">Row</h3>
 
 <p>
-  Creating layouts with the
-  <a href="/documentation/layout/automatic-columns/">automatic content columns</a>
-  requires the use of <code>.row</code>. In the basic example below we have removed the default margin-bottom from paragraphs 
-  with the <code>.mb-0</code> utility and center the text with <code>.text-center</code>:
+  Rows are used for grouping of content in sections within a container. 
+</p>
+
+<ul>
+  <li><code>.row</code> creates a flex container adjusted to hold the <a href="/documentation/layout/automatic-columns/">different</a> 
+  <a href="/documentation/layout/accurate-columns/">column types</a> we'll learn about on the next pages.</li>
+  <li><code>.row-block</code> creates a container for full-width block content (titles, paragraphs, images, etc.) where there's 
+  no need for separation into columns.</li>
+</ul>
+
+<p>
+  Creating layouts with the <a href="/documentation/layout/automatic-columns/">automatic content columns</a>
+  requires the use of <code>.row</code>:
 </p>
 
 <pre class="html filename" data-file="file.html">
@@ -89,7 +92,11 @@ tags: [layout]
 &lt;/div></code>
 </pre>
 
-<p>As we can see, columns and rows have gutters/margin. Borders added for clarity.</p>
+<p class="note">
+  As we can see, columns and rows are separated by gutters/margin. In the example we have added borders for clarity and 
+  removed the default margin-bottom from paragraphs with <code>.mb-0</code>. Text is centered with – you guessed it: 
+  <code>.text-center</code>.
+</p>
 
 <div class="container border-gray">
   <div class="row border-gray">
@@ -115,20 +122,13 @@ tags: [layout]
   floating images, <a href="/documentation/typography/#text-columns">text columns</a>, etc.
 </p>
 
-<h4 class="h5">Column Stacking</h4>
+<h4 class="h5">Column Stacking in Rows</h4>
 
 <p>
   <code>.row</code> stacks its columns vertically on screens less than 769px wide. This breakpoint is determined 
   by the variable <code>$stack-point</code> that by default uses the width set in <code>$phone-landscape</code>. You can modify 
   this in the <code>@use</code> rule when importing. You also have access to this breakpoint through the custom property 
   <code>--stack-point</code>.
-</p>
-
-<h5>Custom Stacking Breakpoint</h5>
-
-<p>
-  Having more than one breakpoint for stacking can be useful. Configure your alternative breakpoint in <code>$custom-stack-point</code>. 
-  Then, declare <code>&lt;div class="row custom-stack-point"&gt;</code> in your HTML.
 </p>
 
 <h5>Preventing Stacking</h5>
@@ -138,10 +138,20 @@ tags: [layout]
   HTML: <code>&lt;div class="row no-stack"&gt;</code>.
 </p>
 
+<h5>Custom Stacking Breakpoint</h5>
+
+<p>
+  Different content elements could make it useful to have more than one breakpoint where column stacking kicks in. You can 
+  set up an alternative breakpoint with the <code>$custom-stack-point</code> variable if you configure <strong>hgrid</strong> with the 
+  <code>@use</code> rule. Then, declare <code>&lt;div class="row custom-stack-point"&gt;</code> 
+  in your HTML.
+</p>
+
 <h4 class="push40v">Group</h4>
 
 <p>
-  <code>.group</code> can be used to group rows of content into sections.
+  <code>.group</code> is used to organize rows of content into sections, or to group and separate content within columns. More about 
+  columns on the two next pages.
 </p>
 
 <div class="custom-hairline mt-40"></div>
