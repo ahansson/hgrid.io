@@ -2,7 +2,7 @@
 layout: layout/docs.njk
 meta: {
 title: Layout | hgrid,
-description: 'There are a few different ways you can create a layout system with hgrid. Use the provided flex or grid utilities, or whip up something super fast and precise with the built-in, automatic content columns.'
+description: 'There are a few different ways you can create a layout system with hgrid. One of them is the built-in, automatic column grid, where special containers play an important part.'
 }
 title: Layout
 tags: [layout]
@@ -12,7 +12,28 @@ tags: [layout]
   There are a few different ways you can create a layout system with
   <strong>hgrid</strong>. One of them is the built-in, automatic column grid, where special containers play an important part.
 </p>
-<h2 class="h3">
+
+<pre class="html filename" data-file="html">
+<code>&lt;div class="container">
+  &lt;div class="row">
+    &lt;div class="column">
+      &lt;!-- content -->
+    &lt;/div>
+  &lt;/div>
+&lt;/div></code>
+</pre>
+
+<p>
+  The <strong>container > row > column</strong> paradigm is well known from widely used CSS frameworks. It's the basic concept behind 
+  a typical <strong>hgrid</strong> layout as well. These building blocks take care of responsivity and content stacking for you and are 
+  easy to configure and extend.
+<p>
+<p>
+  You can also skip the relative rigidity of the built-in system and freestyle it with just the parts of <stong>hgrid</stong> that you 
+  find useful.
+</p>
+
+<h2 class="mt-60">
   <span id="containers" class="sublink"></span>
   Containers
 </h2>
@@ -36,7 +57,7 @@ tags: [layout]
       <tr>
         <td>.container</td>
         <td>
-          Creates a full width container with 1.6% side margins on larger screens (3.2% or 3.5% on smaller screens).
+          Creates a full width container with 1.6% side margins on larger screens or 3.2%-3.5% on smaller screens.
         </td>
       </tr>
       <tr>
@@ -69,12 +90,12 @@ tags: [layout]
   </table>
 </div>
 
+<h3 class="push40v">Limited Width Container</h3>
+
 <p>
-  Center your content and keep it from falling off to the sides by wrapping it in a
-  <code>.container-max</code>. This lets you control the max-width of your
-  page with the <code>scss</code> variable <code>$container-max-width</code>. You can also overwrite
-  <code>.container-max</code> or the custom property <code><nobr>--container-max-width</nobr></code> 
-  in your regular CSS.
+  <code>.container-max</code> lets you control the max-width of your page with the <code>scss</code> variable 
+  <code>$container-max-width</code>. You can also overwrite <code>.container-max</code> or the custom property 
+  <code><nobr>--container-max-width</nobr></code> in your regular CSS.
 </p>
 
 <p>
@@ -92,27 +113,29 @@ tags: [layout]
   <em>The 1440 pixel <strong>.container-max</strong> on a 1680 pixel
     screen. The header uses the full-width <strong>.container</strong>.</em>
 </p>
+
+<h3 class="push40v">Full Width Container</h3>
   
 <p>
   <code>.container</code> lets your content flow all the way to the edges of the screen, but has a small margin on each side.
 </p>
 
-<h3 class="h4 push40v">Row</h3>
+<h3 class="push40v">Row</h3>
 
 <p>
-  Rows are used for grouping of content in sections within a container. 
+  Rows are used for grouping of content in sections within a container.
 </p>
 
 <ul>
-  <li><code>.row</code> creates a flex container adjusted to hold the <a href="/documentation/layout/automatic-columns/">different</a> 
-  <a href="/documentation/layout/accurate-columns/">column types</a> we'll learn about on the next pages.</li>
+  <li><code>.row</code> creates a container specifically to hold the <a href="/documentation/layout/automatic-columns/">different</a> 
+  column <a href="/documentation/layout/accurate-columns/">types</a> we'll learn about on the next pages. Because of their negative side 
+  margins they aren't suitable for use without columns as child elements.</li>
   <li><code>.row-block</code> creates a container for full-width block content (titles, paragraphs, images, etc.) where there's 
-  no need for separation into columns.</li>
+  no need for columns.</li>
 </ul>
 
 <p>
-  Creating layouts with the <a href="/documentation/layout/automatic-columns/">automatic content columns</a>
-  requires the use of <code>.row</code>:
+  Creating layouts with the <strong>hgrid</strong> columns requires the use of <code>.row</code>:
 </p>
 
 <pre class="html filename" data-file="file.html">
@@ -191,7 +214,7 @@ tags: [layout]
   in your HTML.
 </p>
 
-<h4 class="push40v">Group</h4>
+<h3 class="push40v">Group</h3>
 
 <p>
   <code>.group</code> is used to organize rows of content into sections, or to group and separate content within columns. More about 
