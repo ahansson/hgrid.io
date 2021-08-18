@@ -24,8 +24,53 @@ tags: [layout]
   rel="noopener">GitHub</a>)
 </p>
 
+<div class="mb-30 mt-40 scrollable-x">
+  <table style="min-width: 40rem">
+    <thead>
+      <tr>
+        <th style="width: 40%">Container Utility</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>.container</td>
+        <td>
+          Creates a full width container with 1.6% side margins on larger screens (3.2% or 3.5% on smaller screens).
+        </td>
+      </tr>
+      <tr>
+        <td>.container-max</td>
+        <td>
+          Centered container, default width of 1440px. Same margins as <code>.container</code>.
+        </td>
+      </tr>
+      <tr>
+        <td>.row</td>
+        <td>
+          Creates a container with built-in margins adapted to hold the 
+          <a href="/documentation/layout/accurate-columns">accurate</a> and 
+          <a href="/documentation/layout/automatic-columns">automatic</a> column types within a <code>.row</code>.
+        </td>
+      </tr>
+      <tr>
+        <td>.row-block</td>
+        <td>
+          Creates a container with built-in margins to hold full-width block content in a <code>.row</code> element.
+        </td>
+      </tr>
+      <tr>
+        <td>.group</td>
+        <td>
+          Creates a container with built-in bottom margin to organize and separate sections of content.
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 <p>
-  Keep your content from falling off to the sides by wrapping it in a
+  Center your content and keep it from falling off to the sides by wrapping it in a
   <code>.container-max</code>. This lets you control the max-width of your
   page with the <code>scss</code> variable <code>$container-max-width</code>. You can also overwrite
   <code>.container-max</code> or the custom property <code><nobr>--container-max-width</nobr></code> 
@@ -49,8 +94,7 @@ tags: [layout]
 </p>
   
 <p>
-  <code>.container</code> lets your content flow all the way to the edges of the screen, but has a small margin on each side. Both containers 
-  are centered.
+  <code>.container</code> lets your content flow all the way to the edges of the screen, but has a small margin on each side.
 </p>
 
 <h3 class="h4 push40v">Row</h3>
