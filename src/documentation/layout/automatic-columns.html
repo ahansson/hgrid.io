@@ -8,9 +8,7 @@ title: Automatic Content Columns
 tags: [layout, flex]
 ---
 <p class="intro">
-  In order to quickly mark up a flexible layout grid, start by adding the
-  <code>.row</code> class to an HTML element. This creates a flex container
-  with configuration for the column system to fit in.
+  Quickly mark up a flexible layout system by adding <code>.column</code> to one or more HTML elements in a <code>.row</code>.
 </p>
 
 <p>
@@ -19,9 +17,9 @@ tags: [layout, flex]
   target="_blank" 
   rel="noopener">GitHub</a>)
 </p>
-<p>
-  Any number of elements with the class <code>.column</code> inside the
-  <code>.row</code> will split its width equally:
+
+<p class="mt-40">
+  Any number <code>.column</code> in a row element will split its width equally:
 </p>
 
 <pre class="language-html filename" data-file="html">
@@ -41,10 +39,14 @@ tags: [layout, flex]
 </code></pre>
 
 <p>
-  The Sass variable <code>$column-gutter-width</code> controls the distance
-  between columns. You can also overwrite the regular CSS for
-  <code>.column</code> and modify the default value of 0.8% on each side.
+  There are three ways to customize the distance between columns:
 </p>
+
+<ul class="mb-40">
+  <li>Modify <code>$column-gutter-width</code> in the <code>@use</code> rule where you initialize <strong>hgrid</strong></li>
+  <li>Modify the <code>.column</code> class with regular CSS</li>
+  <li>Modify the custom property <code>--gutter</code> and use it to modify <code>.column</code></li>
+</ul>
 
 <p>
   The number of columns in each <code>.row</code> determines the width of each
@@ -181,8 +183,7 @@ tags: [layout, flex]
 <h3 class="h4">Nesting</h3>
 
 <p>
-  Containers can be nested inside each other as long as you wrap each new
-  level in a new <code>.row</code>.
+  Columns can be nested as long as you wrap each new level in a new <code>.row</code>.
 </p>
 
 <pre
@@ -219,7 +220,7 @@ tags: [layout, flex]
   As seen here, if we nest two <code>.columns</code> inside of another
   <code>.column</code>, the width of the inner columns will be half of the
   outer one. For each level we nest, the parent element acts as the new
-  "viewport" width to be split in 24 <strong>hgrid</strong> units.
+  "viewport" width to be split in up to 24 <strong>hgrid</strong> units.
 </p>
 
 <div class="custom-hairline mt-40"></div>
