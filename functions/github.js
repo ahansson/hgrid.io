@@ -9,6 +9,7 @@ const optionsHeaders = {
 }
 
 const fetchHeaders = {
+  'Access-Control-Allow-Origin': '*',
   'Content-Type': 'application/json',
   'Host': 'api.github.com',
   'Accept': 'application/vnd.github.v3+json',
@@ -18,7 +19,7 @@ const fetchHeaders = {
 exports.handler = async (event, context) => {
   if (event.httpMethod === 'OPTIONS') {
     return {
-      'statusCode': 200,
+      'statusCode': 204,
       'headers': optionsHeaders,
     }
 
