@@ -3,6 +3,7 @@ module.exports = (eleventyConfig) => {
   eleventyConfig.addPassthroughCopy('assets/img/')
   eleventyConfig.addPassthroughCopy('assets/font/')
   eleventyConfig.addPassthroughCopy('_redirects')
+  eleventyConfig.addPassthroughCopy('functions/')
 
   return {
     passthroughFileCopy: true,
