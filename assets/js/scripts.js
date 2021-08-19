@@ -197,19 +197,14 @@ if (versionTags && versionTags.length >= 1) {
       })
 
       const res = await response.text()
-      console.log('Result: ' + res)
-      
+
       versionTags.forEach((element) => {
-        element.innerText = res
+        element.innerText = res.replace(/"/g, '')
       })
-    } catch(err) {
-      if(err.response){
-        console.log(err.response.data)
-      } else if (err.request){
-        console.log(err.request)
-      } else {
-        console.log(err.message)
-      }
     }
+    catch(err) {
+      console.log(err.message)
+    }
+  
   })(url)
 }
