@@ -194,9 +194,10 @@ if (versionTags && versionTags.length >= 1) {
         method: "GET",
         mode: "no-cors"
       })
-      
-      const res = await JSON.parse(response.json())
-      return res[0].name
+
+      const res = await response
+      console.log(res)
+      return res
 
     } catch(err) {
       console.log(err)
