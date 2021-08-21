@@ -1,0 +1,121 @@
+---
+layout: layout/docs.njk
+meta: {
+title: Production Build | hgrid,
+description: Prepare your hgrid css for going into production.
+}
+title: Production Build
+tags: [production]
+---
+<p class="intro">
+  Let's get <strong>hgrid</strong> CSS optimized for a live environment in a few, simple steps.
+</p>
+
+<p>
+  Every build pipeline is different. Here is one way to optimize global CSS, without a bundler, in a Node driven project.
+
+<h2 class="h3 mt-40">
+  Step 1: Minify
+</h2>
+
+<p>
+  We already have <code>sass</code> installed in our project, so let's ask it to build our SCSS as a compressed CSS file. Edit the file 
+  paths in this <code>package.json</code> script to work with your folder structure:
+</p>
+<pre class="language-json filename" data-file="package.json">
+  <code>{
+  "scripts": {
+    "build:css": "sass --no-source-map --style=compressed assets/scss/main.scss:dist/css/style.min.css",
+  }
+}</code></pre>
+
+<h3 class="mt-60">
+  Step 2: Prefix
+</h3>
+
+<p>Let's add some backwards compatibility for older browsers. We need to install <code>postcss</code>.</p>
+
+<pre class="language-bash filename" data-file="terminal">
+  <code>npm i postcss postcss-cli -D</code>
+</pre>
+
+<p>
+  Then we add a new script in <code>package.json</code> where we replace <code>X</code> with how many older browser versions 
+  we want to support (check the <a href="https://github.com/postcss/autoprefixer" target="_blank" rel="noopener">Autoprefixer 
+  documentation</a> for more information):
+</p>
+
+<pre class="language-json filename" data-file="package.json">
+  <code>{
+  "scripts": {
+    "build:css": "sass --no-source-map --style=compressed assets/scss/main.scss:dist/css/style.min.css",
+    <span class="bold">"prefix:css": "postcss --use autoprefixer --no-map -b 'last X versions' dist/css/style.min.css -o dist/css/style.min.css"</span>
+  }
+}</code></pre>
+
+<h3 class="mt-60">
+  Step 3: Purge
+</h3>
+
+<p>
+  Time for a final cleanup. Let's remove every class from both <code>hgrid</code> and any custom CSS which isn't being used by our HTML or JS. 
+  First, install <a href="https://purgecss.com/" target="_blank" rel="noopener">PurgeCSS</a>:
+</p>
+
+<pre class="language-bash filename" data-file="terminal">
+  <code>npm i purgecss -D</code>
+</pre>
+
+<p>
+  Tell it to scan the compiled CSS and compare the class names with what it finds in our HTML and JS files. All unused 
+  CSS will be removed.
+</p>
+
+<p>
+  In development mode, <code>main.scss</code> spits out 160 kB of CSS for the website you're looking at right now. When it 
+  goes live after compression and purging, only 54.3 kB is left, a reduction of 66 percent.
+</p>
+
+<pre class="language-json filename" data-file="package.json">
+  <code>{
+  "scripts": {
+    "build:css": "sass --no-source-map --style=compressed assets/scss/main.scss:dist/css/style.min.css",
+    "prefix:css": "postcss --use autoprefixer --no-map -b 'last X versions' dist/css/style.min.css -o dist/css/style.min.css",
+    <span class="bold">"purge:css": "purgecss --css ./dist/css/style.min.css --content ./dist/**/*.html ./dist/assets/js/*.js --output ./dist/css/style.min.css",</span>
+  }
+}</code></pre>
+
+<p>
+  If you need to protect certain CSS rules from being purged, add <code>/* purgecss ignore */</code> right above them 
+  in your (S)CSS file(s). There are a few other ways to do this, read more about 
+  <a href="https://purgecss.com/safelisting.html#specific-selectors" target="_blank" rel="noopener">safelisting</a> in the PurgeCSS 
+  documentation.
+</p>
+
+<h3 class="mt-60">
+  Step 4: Build
+</h3>
+
+<p>
+  Now you can add a build command that combines the tree previous steps:
+</p>
+
+<pre class="language-json filename" data-file="package.json">
+  <code>{
+  "scripts": {
+    "build:css": "sass --no-source-map --style=compressed assets/scss/main.scss:dist/css/style.min.css",
+    "prefix:css": "postcss --use autoprefixer --no-map -b 'last X versions' dist/css/style.min.css -o dist/css/style.min.css",
+    "purge:css": "purgecss --css ./dist/css/style.min.css --content ./dist/**/*.html ./dist/assets/js/*.js --output ./dist/css/style.min.css",
+    <span class="bold">"build": "npm run build:css && npm run prefix:css && npm run purge:css",</span>
+  }
+}</code></pre>
+
+<p>
+  Before going live with your project, make sure <code>npm run build</code> is executed manually or by a continuous deployment script.
+</p>
+
+<div class="custom-hairline mt-40"></div>
+<p class="fl mb-0 mr-5">
+  ← <strong>Previous</strong>:
+  <a href="/documentation/animations/">Animations</a>
+</p>
