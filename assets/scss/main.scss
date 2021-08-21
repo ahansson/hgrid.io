@@ -858,4 +858,9 @@ footer {
     width: 3rem !important;
     transform: unset !important;
   }
+  article.demo pre.filename:before {
+    font-size: 1.1rem;
+    top: -0.9rem;
+    right: 0.6rem;
+  }
 }
