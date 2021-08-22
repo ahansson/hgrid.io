@@ -36,7 +36,7 @@ tags: [production]
 <p>Let's add some backwards compatibility for older browsers. We need to install <code>postcss</code>.</p>
 
 <pre class="language-bash filename" data-file="terminal">
-  <code>npm i postcss postcss-cli -D</code>
+  <code>$ <strong>npm</strong> <span class="hljs-built_in">i -D</span> postcss postcss-cli</code>
 </pre>
 
 <p>
@@ -49,7 +49,7 @@ tags: [production]
   <code>{
   "scripts": {
     "build:css": "sass --no-source-map --style=compressed assets/scss/main.scss:dist/css/style.min.css",
-    <span class="bold">"prefix:css": "postcss --use autoprefixer --no-map -b 'last X versions' dist/css/style.min.css -o dist/css/style.min.css"</span>
+    <span class="codeline-add">"prefix:css": "postcss --use autoprefixer --no-map -b 'last X versions' dist/css/style.min.css -o dist/css/style.min.css"</span>
   }
 }</code></pre>
 
@@ -63,7 +63,7 @@ tags: [production]
 </p>
 
 <pre class="language-bash filename" data-file="terminal">
-  <code>npm i purgecss -D</code>
+  <code>$ <strong>npm</strong> <span class="hljs-built_in">i -D</span> purgecss</code>
 </pre>
 
 <p>
@@ -81,7 +81,7 @@ tags: [production]
   "scripts": {
     "build:css": "sass --no-source-map --style=compressed assets/scss/main.scss:dist/css/style.min.css",
     "prefix:css": "postcss --use autoprefixer --no-map -b 'last X versions' dist/css/style.min.css -o dist/css/style.min.css",
-    <span class="bold">"purge:css": "purgecss --css ./dist/css/style.min.css --content ./dist/**/*.html ./dist/assets/js/*.js --output ./dist/css/style.min.css",</span>
+    <span class="codeline-add">"purge:css": "purgecss --css ./dist/css/style.min.css --content ./dist/**/*.html ./dist/assets/js/*.js --output ./dist/css/style.min.css"</span>
   }
 }</code></pre>
 
@@ -106,7 +106,7 @@ tags: [production]
     "build:css": "sass --no-source-map --style=compressed assets/scss/main.scss:dist/css/style.min.css",
     "prefix:css": "postcss --use autoprefixer --no-map -b 'last X versions' dist/css/style.min.css -o dist/css/style.min.css",
     "purge:css": "purgecss --css ./dist/css/style.min.css --content ./dist/**/*.html ./dist/assets/js/*.js --output ./dist/css/style.min.css",
-    <span class="bold">"build": "npm run build:css && npm run prefix:css && npm run purge:css",</span>
+    <span class="codeline-add">"build": "npm run build:css && npm run prefix:css && npm run purge:css"</span>
   }
 }</code></pre>
 
