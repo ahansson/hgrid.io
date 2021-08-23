@@ -8,7 +8,7 @@ title: Accessibility
 tags: [accessibility]
 ---
 <p class="intro">
-  Interactive elements like <a href="/documentation/input">input elements</a> and links are fully accessible by default with 
+  Interactive elements like <a href="/documentation/input">input</a> elements and links are fully accessible by default with 
   <strong>hgrid</strong>.
 </p>
 
@@ -19,12 +19,54 @@ tags: [accessibility]
     >GitHub</a>)
 </p>
 
-<h2 class="h4 mt-40">Relative Units</h2>
+<h2 class="h3 mt-40">Consistent Focus Border</h2>
+
+<p>
+  When navigated to, interactive elements are <span class="focus-outline">highlighted</span> with a strong <code>:focus</code> outline 
+  (WCAG 2.1 <a href="https://www.w3.org/TR/WCAG21/#focus-visible" rel="noopener" target="_blank">success criterion 2.4.7</a>) 
+  which is consistent regardless of browser styles.
+</p>
+<p>
+  You can customize its color and line weight with the <a href="/documentation/variables">hgrid variables</a> 
+  <code>$focus-border-weight</code> and <code>$focus-border-color</code> when you <a href="/documentation/integrate">initialize</a> 
+  <strong>hgrid</strong>.
+</p>
+
+<h3>«Jump to Content»-Link</h3>
+
+<p class="note">Try using <code>tab</code> from the top of this page (start in the URL field) to see the skip link in action.</p>
+
+<p>
+  It's good practice to add a visually hidden link at the top of every HTML document, which keyboard and 
+  assistive technology users can use to jump to the main content, bypassing menus, etc. Use the <strong>hgrid</strong> 
+  utility <code>.jump-to-content</code> for this.
+</p>
+
+<p>
+  Place the link as the first element in <code>body</code>. It will be revealed at the top of the page when in <code>:focus</code>.
+</p>
+
+<p>It's (usurprisingly) semantically correct to use the <code>&lt;main></code> element for your main content:</p>
+
+<pre class="language-html filename mb-40" data-file="html">
+<code>&lt;body>
+  &lt;a class="jump-to-content" href="#main-content">Jump to main content&lt;/a>
+  &lt!-- &lt;nav> and other layout elements -->
+  &lt;main id="main-content">
+    &lt;h1>Very nice headline&lt;/h1>
+    &lt!-- etc. -->
+  &lt;/main>
+  &lt!-- &lt;footer> etc. -->
+&lt;/body>
+</code>
+</pre>
+
+<h3>Relative Units</h3>
 
 <p>
   All <strong>hgrid</strong> CSS with accessibility implications is set in relative units, such as <code>rem</code> and percentages. 
-  This makes resizing and zooming possible without layout shifts and alteration of internal element proportions (complies with 
-  <a href="https://www.w3.org/TR/WCAG21/#resize-text" rel="noopener" target="_blank">WCAG 2.1</a>'s success criterion 1.4.4). 
+  This makes resizing and zooming possible without layout shifts and alteration of internal element proportions (complies with WCAG 2.1's 
+  <a href="https://www.w3.org/TR/WCAG21/#resize-text" rel="noopener" target="_blank">success criterion 1.4.4</a>). 
   The <strong>hgrid</strong> <a href="/documentation/layout">layout</a> systems are by default completely flexible, and thus 
   in compliance with WCAG's recently added <a href="https://www.w3.org/TR/WCAG21/#reflow" rel="noopener" target="_blank">content reflow</a> 
   criterion.
@@ -35,20 +77,7 @@ tags: [accessibility]
   guidelines.
 </p>
 
-<h3 class="h4">Consistent Focus Outline</h3>
-
-<p>
-  When navigated to, interactive elements are highlighted with a strong <code>:focus</code> outline that is consistent regardless 
-  of browser styles (<a href="https://www.w3.org/TR/WCAG21/#focus-visible" rel="noopener" target="_blank">success criterion 2.4.7</a>). 
-  You can customize the color and thickness of this outline with the <a href="/documentation/variables">hgrid variables</a> 
-  <code>$focus-border-weight</code> and <code>$focus-border-color</code> when you initialize <strong>hgrid</strong>.
-</p>
-
-<p>
-  Read more: <a href="/documentation/integrate">Customization</a>.
-</p>
-
-<h4>Compliant Headings</h4>
+<h3>Compliant Headings</h3>
 
 <p>
   To stay compliant with WCAG, web content creators are asked to organize their text content under semantic headlines, using 
