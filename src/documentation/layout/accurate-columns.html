@@ -302,7 +302,50 @@ By combining fractional units we now get a precisely controlled layout grid:
   wide. We have applied <code>.no-stack</code> after <code>.row</code> so it makes sense for readers on any device.
 </p>
 
-<h4>Media Query Utilities</h4>
+<h4>Responsive Column Wrapping</h4>
+
+<p>
+  Accurate columns will wrap on to new lines if <code>.f-wrap</code> has been added 
+  (<code>&lt;div class="row f-wrap"></code>) and the columns combined exceed the row width.
+</p>
+
+<p>
+  Wrapping occurs as a result of the following:
+</p>
+
+<ul>
+
+  <li>A responsive utility (see below), for example <code>.phone-landscape-2</code>, has 
+  been added to one or more columns, making the combined width exceed the row width on a specific viewport (in this case the 
+  <code>phone-landscape</code> viewport).</li>
+
+  <li>A min-width or a fixed width has been applied to at least one column, and has made the combined column width exceed the full 
+  row width.</li>
+
+  <li>The column widths in percent add up to more than 100%. With <code>.f-wrap</code> rows
+  won't allow any excess like they usually do.</li>
+
+</ul>
+
+<p>Example:</p>
+
+<pre class="language-html filename" data-file="html">
+<code>&lt;div class="row no-stack f-wrap"&gt;
+  &lt;div class="column-2">1&lt;/div&gt;
+  &lt;div class="column-2">2&lt;/div&gt;
+  &lt;div class="column-4">3&lt;/div&gt;
+  &lt;div class="column-4">4&lt;/div&gt;
+&lt;/div&gt;</code>
+</pre>
+
+<div class="row no-stack f-wrap">
+  <div class="column-2 text-center"><p>1</p></div>
+  <div class="column-2 text-center"><p>2</p></div>
+  <div class="column-4 text-center"><p>3</p></div>
+  <div class="column-4 text-center"><p>4</p></div>
+</div>
+
+<h4 class="mt-40">Media Query Utilities</h4>
 
 <p>The media query utilities follow this naming convention:</p> 
   
@@ -312,29 +355,31 @@ By combining fractional units we now get a precisely controlled layout grid:
 
 <p>
   They apply to the viewport referenced by their name (and smaller, except for <code>.desktop-large</code> 
-  which applies to everything wider than 1680px).
+  which applies to everything wider than 1680px). They are particularly useful combined with <code>.f-wrap</code> 
+  on their parent row.
 </p>
 
 <p>
-  In the example below we'll add <code>.tablet-landscape-1</code> to one of the <code>.column-2</code>, meaning that this column 
-  will go from taking up half of the viewport to full width on tablets in landscape mode and below (&lt;1024px). 
-  This will force the other columns to wrap on to new lines because of <code>.f-wrap</code> on the parent element.
+  Let's add <code>.tablet-landscape-1</code> to one of the <code>.column-2</code> from the previous example. 
+  This means that this column will go from taking up half of the viewport to full width on tablets in landscape mode 
+  and below (&lt;1024px). Other columns will be forced to wrap on to new lines because of <code>.f-wrap</code> on 
+  the parent element.
 </p>
 
 <p>Let's add a setting for <code>phone-landscape</code>, too. The same column now grows 
-from 50% of the row width on laptops, to 100% on wide tablets, and down to 25% on wide phone screens. The other 
+from 50% of the row width on laptops, to 100% on wide tablets, and down to 25% on wide phone screens. Other 
 columns will remain unaffected.</p>
 
 <pre class="language-html filename" data-file="html">
 <code>&lt;div class="row no-stack f-wrap"&gt;
-&lt;div class="column-2 tablet-landscape-1 phone-landscape-4">1&lt;/div&gt;
-&lt;div class="column-2">2&lt;/div&gt;
-&lt;div class="column-4">3&lt;/div&gt;
-&lt;div class="column-4">4&lt;/div&gt;
+  &lt;div class="column-2 tablet-landscape-1 phone-landscape-4">1&lt;/div&gt;
+  &lt;div class="column-2">2&lt;/div&gt;
+  &lt;div class="column-4">3&lt;/div&gt;
+  &lt;div class="column-4">4&lt;/div&gt;
 &lt;/div&gt;</code>
 </pre>
 
-<p>Result:</p>
+<p>Result (resize your browser):</p>
 <div class="row no-stack f-wrap">
   <div class="column-2 tablet-landscape-1 phone-landscape-4 text-center"><p>1</p></div>
   <div class="column-2 text-center"><p>2</p></div>
@@ -343,8 +388,8 @@ columns will remain unaffected.</p>
 </div>
 
 <p>
-  To make it possible to force a column to have a different width on certain screens, the media query utilities don't stretch. 
-  Fraction widths go from 1 to 12. All viewports except the default screen <code>laptop</code> are covered.
+  Media query utilities don't allow their columns to be squeezed to less than their actual width in a <code>.f-wrap</code> 
+  context. Fractions go from 1 to 12. All viewports are covered, except the default <code>laptop</code>.
 </p>
 
 <pre class="language-css mb-40">
@@ -356,28 +401,6 @@ columns will remain unaffected.</p>
 .phone-1, .phone-2 .... .phone-12</code>
 </pre>
 
-<h4>Responsive Column Wrapping</h4>
-
-<p>
-  Accurate columns will wrap on to new lines if <code>.f-wrap</code> has been added 
-  (<code>&lt;div class="row f-wrap"></code>) and the combined columns exceed 100% of the row width.
-</p>
-
-<p>
-  But as mentioned previously, columns are shrinkable, so they will never exceed the full row width unless at least 
-  one column gets a fixed width or a min-width.
-</p>
-<p>
-  This means wrapping can only occur as a result of the following:
-</p>
-
-<ul class="mb-40">
-  <li>A responsive utility (see above), for example <code>.phone-landscape-2</code>, has 
-  been added to one or more columns, making the combined width exceed the row width on a specific viewport – in this case the 
-  <code>phone-landscape</code> viewport.</li>
-  <li>A min-width or a fixed width has been applied to at least one column, and has made the combined column width exceed the full 
-  row width.</li>
-</ul>
 
 <div class="custom-hairline mt-40"></div>
 <p class="fl mb-0 mr-5">
