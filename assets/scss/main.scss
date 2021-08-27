@@ -78,6 +78,7 @@ body {
   }
 }
 
+// TODO remove when updating hgrid -->
 .jump-to-content {
   background: #ffffff20;
   position: absolute;
@@ -91,9 +92,11 @@ body {
   text-decoration-thickness: 0.2rem;
   text-underline-offset: 0.12rem;
 }
+
 .jump-to-content:focus {
   transform: translate(-50%, 10%);
 }
+// <--
 
 .transition {
   background: var(--transition-bg);
@@ -502,6 +505,15 @@ table th > code {
 
 table {
   color: var(--font);
+
+  // TODO remove when updating hgrid -->
+  caption {
+    font-size: 2rem;
+    line-height: 3rem;
+    margin-bottom: 1.6rem;
+    text-align: center;
+  }
+  // <--
 
   td > code,
   th > code {

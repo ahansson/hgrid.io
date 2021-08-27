@@ -18,14 +18,15 @@ tags: [layout, tables]
   rel="noopener">GitHub</a>)
 </p>
 
-<h2 class="h4 mt-60">Basic responsive table</h2>
+<h2 class="h4 mt-60">Basic Responsive Table with Caption</h2>
 
 <p>
   A data table with <code>auto</code> column widths, which is the browser's default rendering. 
   No <strong>hgrid</strong> classes needed here.
 </p>
 
-<table class="mt-20 mb-60">
+<table class="mt-60 mb-60">
+  <caption>Crypto Currency Rates by Market Cap</caption>
   <thead>
     <tr>
       <th>Rank</th>
@@ -62,7 +63,35 @@ tags: [layout, tables]
   </tbody>
 </table>
 
-<h3 class="h4 mt-60">Fixed column widths</h3>
+<pre class="language-html mt-20 mb-20 filename" data-file="html">
+<code>&lt;table>
+  &lt;caption>Crypto Currency Rates by Market Cap&lt;/caption>
+  &lt;thead>
+    &lt;tr>
+      &lt;th>Rank&lt;/th>
+      &lt;th>Name&lt;/th>
+      &lt;th>Symbol&lt;/th>
+      &lt;th>Price&lt;/th>
+    &lt;/tr>
+  &lt;/thead>
+  &lt;tbody>
+    &lt;tr>
+      &lt;td>1&lt;/td>
+      &lt;td>Bitcoin&lt;/td>
+      &lt;td>BTC&lt;/td>
+      &lt;td>$59,239.22&lt;/td>
+    &lt;/tr>
+    &lt;!-- etc. -->
+  &lt;/tbody>
+&lt;/table></code></pre>
+
+<p>
+  You can add headings (<code>h3</code>, <code>h4</code> etc.) or markup like <code>strong</code> inside 
+  <code>caption</code> if you need to tweak its properties. Utilities like <code>margin-bottom-{x}</code> 
+  can also be used.
+</p>
+
+<h3 class="h4 mt-60">Fixed Column Widths</h3>
 
 <p>
   Add <code>.layout-fixed</code> to the <code>table</code> element. Now every column will have the same width. You can also choose to 
