@@ -19,6 +19,13 @@ tags: [animations]
   rel="noopener">GitHub</a>)
 </p>
 
+<p class="note">
+  You can exclude individual animations from the CSS output by changing their Sass variables with the 
+  <code>@use</code> rule. Example: <code>$include-spinner: false</code>. See the full list of variables
+  <a href="https://github.com/ahansson/hgrid-css/blob/main/sass/variables/_variables.scss" target="_blank" rel="noopener"> on 
+  GitHub</a>.
+</p>
+
 <div class="group mt-60">
   <h2 class="h3">
     <span id="donut" class="sublink"></span>
@@ -71,7 +78,7 @@ tags: [animations]
     Otherwise the center of the rotation would be at the center of the wide element instead of at the center of the text.
   </p>
 
-  <p>Rotate any element indefinitely with <code>.rotate</code>. Default speed is 1s per rotation.</p>
+  <p>Rotate any element indefinitely with <code>.rotate</code>. Default speed is 60 rotations per minute.</p>
   <img class="rotate mt-20 mb-40" src="/assets/img/icon.png" width="50" alt="rotating hgrid icon">
 
   <pre class="language-html filename mb-60" data-file="html">

@@ -69,7 +69,9 @@ sitemapPriority: 1.0
   $link-color: #ffe88d,
   $link-color-hover: #fff0b4,
   $container-max-width: 1600px,
-  $link-underline-color: #ffe88d
+  $link-underline-color: #ffe88d,
+  $include-grid: false, <span class="hljs-comment">// exclude CSS grid utilities from output</span>
+  $use-global-link-underlines: true <span class="hljs-comment">// nicer text links</span>
 );
 
 // Sass $variables aren't available globally. But hgrid's custom 
@@ -262,7 +264,8 @@ sitemapPriority: 1.0
   $link-color-hover: #00cc66,
   $link-underline-color: #daae00,
   $turn-off-link-decoration: true,
-  $use-global-link-underlines: true,
+  $use-global-link-underlines: true <span class="hljs-comment">// nicer links</span>
+  $include-grid: false, <span class="hljs-comment">// exclude CSS grid utilities</span>
 );
 
 // Add your own CSS or SCSS partials (if you have any) with @import and @use respectively:
@@ -387,9 +390,10 @@ export default config</code></pre></li>
   $link-color-hover: #00cc66,
   $container-max-width: 1680px,
   $column-gutter-width: 1.2%,
-  $turn-off-link-decoration: true,
-  $use-global-link-underlines: true,
   $link-underline-color: #daae00
+  $turn-off-link-decoration: true,
+  $use-global-link-underlines: true <span class="hljs-comment">// nicer links</span>
+  $include-grid: false, <span class="hljs-comment">// exclude CSS grid utilities</span>
 );
 
 // Other global styles from here down
@@ -652,7 +656,9 @@ meta: {
   $body-bg: #7056ce,
   $link-color: #00a344,
   $link-color-hover: #00cc66,
-  $link-underline-color: #daae00
+  $link-underline-color: #daae00,
+  $include-grid: false, <span class="hljs-comment">// exclude CSS grid utilities from output</span>
+  $use-global-link-underlines: true <span class="hljs-comment">// nicer links</span>
 );
 
 // Other global styles from here down
@@ -753,10 +759,11 @@ meta: {
 <pre class="language-scss filename" data-file="global.scss"><code>@use 'hgrid-css/sass/hgrid' with (
   <span class="hljs-comment">// optional config goes here, for example:</span>
   $body-bg: #7056ce,
+  $link-underline-color: #daae00,
   $container-max-width: 1680px,
   $turn-off-link-decoration: true,
-  $use-global-link-underlines: true,
-  $link-underline-color: #daae00
+  $include-grid: false, <span class="hljs-comment">// exclude CSS grid utilities from output</span>
+  $use-global-link-underlines: true <span class="hljs-comment">// nicer text links</span>
 );
 
 <span class="hljs-comment">// Other global styles and from here down</span>

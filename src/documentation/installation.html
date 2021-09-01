@@ -46,15 +46,18 @@ as <code>.sass/.scss</code> in your specific project depends on your framework.<
 </h3>
 
 <pre class="language-html push30v">
-  <code class="hljs-string">https://unpkg.com/hgrid-css@latest/dist/hgrid.min.css</code>
+  <code><span class="hljs-comment">&lt;!-- Without CSS grid utilities (slimmer) --></span>
+<span class="hljs-string">https://unpkg.com/hgrid-css@latest/dist/hgrid.min.css</span>
+
+<span class="hljs-comment">&lt;!-- Including CSS grid utilities (heavier) --></span>
+<span class="hljs-string">https://unpkg.com/hgrid-css@latest/dist/hgrid.grid.min.css</span></code>
 </pre>
-<p class="mt-40">Include the link to the <a href="https://unpkg.com/hgrid-css@latest/dist/hgrid.min.css" 
-target="_blank" rel="noopener noreferrer">precompiled hgrid kit</a> from the CDN, or a local copy, before any other 
+<p class="mt-40">Include the link to one of the precompiled hgrid kits from CDN, or a local copy, before any other 
 stylesheets in your html.</p>
 
 <pre class="language-html filename" data-file="html">
   <code>&lt;head&gt;<br>  &lt;link rel="stylesheet" href="https://unpkg.com/hgrid-css@latest/dist/hgrid.min.css"&gt;
-  <span class="hljs-comment">  &lt;-- more css --></span><br>&lt;/head&gt;</code>
+  <span class="hljs-comment">  &lt;!-- more css --></span><br>&lt;/head&gt;</code>
 </pre>
 
 <p class="mt-40">You can also <code>@import</code> it at the top of your local stylesheet:</p>
@@ -75,7 +78,7 @@ stylesheets in your html.</p>
 </h3>
 
 <p class="note"><strong>Note:</strong> If your project is Node.js driven,
-read this instead: <a href="/documentation/integrate/">How to integrate hgrid</a> as an npm module.</p>
+read this instead: <a href="/documentation/integrate/">How to integrate hgrid</a> as a module.</p>
 
 <pre class="language-bash mt-30">
   <code>$ <strong>git</strong> clone https://github.com/ahansson/hgrid-css.git</code>
@@ -110,9 +113,10 @@ not. If you don't use Node.js, you can't run the Sass compilator locally, so you
 </ul>
 
 <p>
-  Add to, remove from, or edit the entry file <code>sass/hgrid.scss</code> if you want to modify the final build. Adding your 
-  own custom <code>.scss</code> partials to the <code>sass/*</code> directory is the quick and dirty way to modify 
-  <strong>hgrid</strong>. But if you wish to keep things cleaner, please refer to the <a href="/documentation/integrate">integration 
+  Use <a href="/documentation/variables/">variables</a> to switch off animations or CSS grid in order to reduce the output size. 
+  Add to, remove from, or edit the entry file <code>sass/hgrid.scss</code> if you want to modify the final build. 
+  Adding your own custom <code>.scss</code> partials to the <code>sass/*</code> directory is a quick and dirty way to modify 
+  <strong>hgrid</strong>. But if you prefer to keep things cleaner, refer to the <a href="/documentation/integrate">integration 
   article</a> for detailed recipes.
 </p>
 

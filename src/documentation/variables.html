@@ -26,24 +26,33 @@ tags: [variables]
 </h2>
 
 <p>
-  The Sass variables are configurable with the <code>@use</code> rule if you import <strong>hgrid</strong> as a Node module:
+  These are some of the options that are configurable with the <code>@use</code> rule in <code>sass</code> or <code>scss</code> files:
 </p>
+
 <pre class="language-scss filename" data-file="main.scss">
   <code>@use 'hgrid-css/sass/hgrid' with (
   $theme-color-primary: #ffe88d,
   $theme-color-secondary: #fff0b4,
   $link-underline-color: #ffe88d,
   $container-max-width: 1680px,
-  $custom-stack-point: 572px
+  $custom-stack-point: 572px,
+  $include-grid: false, <span class="hljs-comment">// exclude CSS grid utilities from output</span>
+  $use-global-link-underlines: true <span class="hljs-comment">// nicer link styling</span>
 );</code></pre>
 
 <p>
-  This overwrites <strong>hgrid's</strong> variable defaults with your custom values. 
+  This overwrites <strong>hgrid's</strong> defaults with your custom values. 
   Notice the use of commas instead of semicolons.
 </p>
 
+<p>See the full list
+  <a href="https://github.com/ahansson/hgrid-css/blob/main/sass/variables/_variables.scss" 
+  target="_blank" 
+  rel="noopener">on GitHub</a>.
+</p>
+
 <p>
-  Sass variables are aren't available in your project files unless you reference their file with <code>@use</code>.
+  Internal variables aren't available in your project files unless you reference their file with <code>@use</code>.
   Every partial from <strong>hgrid</strong> can be accessed this way. A clear use case is to get access to the 
   <code>viewport</code> mixin to help keep media queries consistent:
 </p>
@@ -75,7 +84,7 @@ tags: [variables]
 <p>
   As we have seen above, Sass variables must be referenced with <code>@use</code> in every file you want to use them. 
   To avoid this overhead, and to allow easy manipulation with JavaScript, <strong>hgrid</strong> exposes essential 
-  internal variables as CSS custom properties. They are by by default available everywhere, via the global 
+  internal variables as CSS custom properties. They are by default available everywhere, via the global 
   <code>:root</code> pseudo-selector (equivalent to the <code>html</code> element).
 </p>
 <p>
