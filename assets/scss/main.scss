@@ -78,26 +78,6 @@ body {
   }
 }
 
-// TODO remove when updating hgrid -->
-.jump-to-content {
-  background: #ffffff20;
-  position: absolute;
-  z-index: 999;
-  padding: 1% 3%;
-  left: 50%;
-  transform: translate(-50%, -100%);
-  transition: ease 0.6s;
-  color: var(--link-color);
-  text-decoration: underline var(--link-underline-color) solid;
-  text-decoration-thickness: 0.2rem;
-  text-underline-offset: 0.12rem;
-}
-
-.jump-to-content:focus {
-  transform: translate(-50%, 10%);
-}
-// <--
-
 .transition {
   background: var(--transition-bg);
   pointer-events: none;
@@ -208,6 +188,7 @@ button.outline-l {
   a {
     line-height: 6.4rem;
     padding: 2.2rem 6rem;
+    text-decoration: none;
   }
   &:hover,
   &:focus,
@@ -248,6 +229,7 @@ header .logo a,
 .docs-toggle a,
 .mobile-toggle a {
   color: var(--menulink);
+  text-decoration: none;
 }
 
 header ul li a,
@@ -316,6 +298,7 @@ nav.sidebar {
       text-transform: uppercase;
       font-size: 1.5rem;
       color: var(--menutitle);
+      text-decoration: none;
     }
   }
 }
@@ -506,15 +489,6 @@ table th > code {
 table {
   color: var(--font);
 
-  // TODO remove when updating hgrid -->
-  caption {
-    font-size: 2rem;
-    line-height: 3rem;
-    margin-bottom: 1.6rem;
-    text-align: center;
-  }
-  // <--
-
   td > code,
   th > code {
     font-size: 90%;
@@ -681,6 +655,7 @@ footer {
 
   p a {
     border-bottom: 1px solid transparent;
+    text-decoration: none;
   }
 
   p a:hover {
