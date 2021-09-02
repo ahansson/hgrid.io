@@ -8,9 +8,130 @@ title: Grid
 tags: [layout, grid]
 ---
 
+<p class="intro">
+  CSS grid is an optional <strong>hgrid</strong> module that allows you to create complex, bi-dimensional layouts.
+</p>
+
 <p>File location: <code class="loc">sass/layout/_grid.scss</code></p>
 
-<h3>Coming.</h3>
+<h2 class="h3 mt-40 mb-20">Setup</h2>
+
+<ul>
+  <li>
+    The grid utilities can be switched on and off with Sass <code>@use</code> or directly in <code>_variables.scss</code>, 
+    by modifying the <code>$include-grid</code> variable (default: <code>true</code>).
+  </li>
+  <li>
+    Responsive grid utilities can be excluded by changing <code>$include-grid-responsiveness</code> to <code>false</code>.
+  </li>
+  <li>
+    Max columns per grid parent is controlled with <code>$grid-columns</code> (default: 12).
+  </li>
+  <li>
+    Max rows per grid parent is controlled with <code>$grid-rows</code> (default: 6).
+  </li>
+  <li>
+    <strong>Pre-compiled CSS:</strong> To keep the file size low, CSS grid is excluded from 
+    <code>hgrid.min.css</code>. If you want the grid utilities included, use <code>dist/hgrid.grid.min.css</code> instead.
+  </li>
+</ul>
+
+<p class="note">
+  <strong>Note:</strong> Turning off CSS grid utilities is redundant if you plan to purge your CSS with the proposed 
+  <a href="/documentation/production/">build process</a>.
+</p>
+
+<h3 class="h5 mt-40"><strong>Configuration Example with Sass</strong></h3>
+
+<pre class="language-scss mt-20 mb-60 filename" data-file="main.scss">
+<code>// initialize hgrid from node_modules with optional settings
+
+@use 'hgrid-css/sass/hgrid' with (
+  $include-grid: true,
+  $include-grid-responsiveness: false,
+  $grid-columns: 14,
+  $grid-rows: 8
+);</code>
+</pre>
+
+<h3>Basic Grid Example</h3>
+
+<p>
+  Let's make a regular <code>div</code> a grid container with <code>.grid</code>. It's now the grid parent.
+</p>
+
+<pre class="language-html mt-20 mb-30 filename" data-file="html">
+<code>&lt;div class="grid">
+  &lt;p>Grid Child&lt;/p>
+  &lt;p>Grid Child&lt;/p>
+&lt;/div></code>
+</pre>
+
+<h5>Grid Row and Grid Column</h5>
+
+<p>
+ Let's add 3 columns (horizontal) and 2 rows (vertical). It doesn't matter how many child elements we have. Invisible grid 
+ "tracks" will be created no matter what.
+</p>
+
+<pre class="language-html mt-20 mb-30 filename" data-file="html">
+<code>&lt;div class="grid g-column-3 g-row-2">
+  &lt;p>Grid Child&lt;/p>
+  &lt;p>Grid Child&lt;/p>
+&lt;/div></code>
+</pre>
+
+<div class="grid g-column-3 g-row-2 border-gray border-dashed mb-30">
+  <p class="mb-0 padding-20 text-center">Grid Child</p>
+  <p class="mb-0 padding-20 text-center">Grid Child</p>
+</div>
+
+<h5>Gap</h5>
+
+<p>
+  We need some spacing between our grid children. Let's add <code>.gap-5</code> to the parent. It corresponds 
+  to a gap size of <code>1vw</code>. Gap utilities are counted from <code>.gap-1</code> to <code>.gap-19</code> with 
+  both fixed (px and rem) and flexible (<code>vw</code>) values.
+</p>
+
+<p class="note"> 
+  <code>.gap-*</code> apply equal spacing on all sides of child elements. If you want a different gap between columns and rows, 
+  use <code>.column-gap-*</code> and <code>.row-gap-*</code> respectively.
+</p>
+
+<pre class="language-scss mt-30 filename" data-file="_grid.scss">
+<code>// Array of included gap widths
+
+$gaps:
+  1px,
+  0.4vw, 0.6vw, 0.8vw, 1vw, 1.6vw, 2vw, 2.6vw, 3vw, 
+  0.2rem, 0.4rem, 0.6rem, 0.8rem, 1rem, 1.2rem, 1.4rem, 1.6rem, 1.8rem, 2rem;
+</code>
+</pre>
+
+<pre class="language-html mt-20 mb-30 filename" data-file="html">
+<code>&lt;div class="grid g-column-3 g-row-2 gap-5">
+  &lt;p class="text-center mb-0 padding-20">1&lt;/p>
+  &lt;p class="text-center mb-0 padding-20">2&lt;/p>
+  &lt;p class="text-center mb-0 padding-20">3&lt;/p>
+  &lt;p class="text-center mb-0 padding-20">4&lt;/p>
+  &lt;p class="text-center mb-0 padding-20">5&lt;/p>
+  &lt;p class="text-center mb-0 padding-20">6&lt;/p>
+&lt;/div></code>
+</pre>
+
+<h5>Result:</h5>
+
+<div class="grid g-column-3 g-row-2 gap-5 grid-demo">
+  <p class="text-center padding-20 mb-0">1</p>
+  <p class="text-center padding-20 mb-0">2</p>
+  <p class="text-center padding-20 mb-0">3</p>
+  <p class="text-center padding-20 mb-0">4</p>
+  <p class="text-center padding-20 mb-0">5</p>
+  <p class="text-center padding-20 mb-0">6</p>
+</div>
+
+<p class="mt-40">(To be continued)</p>
 
 <div class="custom-hairline mt-40"></div>
 <p class="fl mb-0 mr-5">
