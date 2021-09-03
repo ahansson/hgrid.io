@@ -633,8 +633,8 @@ meta: {
   <li>When you run <code>npm run start</code> in your terminal, 11ty will spin up a development server with hot browser reloading. This is 
   the <code>eleventy --serve</code> part.</li>
   <li>It will watch for changes in files in the <code>src</code> (input) directory.</li> 
-  <li>If code is changed, it will compile everything over again and spit overwrite old files in <code>_public</code>.</li>
-  <li>When the build command is ran, PostCSS' Autoprefixer plugin will do its thing and the final CSS will be minified.</li>
+  <li>If code is changed, 11ty will recompile everything and output the files to <code>_public</code>.</li>
+  <li>When the build command is ran, PostCSS' Autoprefixer plugin will do its thing before the final CSS will be minified.</li>
 </ol>
 
 <p>
