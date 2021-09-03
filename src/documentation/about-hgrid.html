@@ -7,30 +7,46 @@ description: Information about hgrid, a lightweight, laptop-first CSS utility ki
 title: About hgrid
 tags: [about]
 ---
+<img class="mb-40" src="/assets/img/code.png" alt="hgrid code screenshot" title="hgrid code">
+
 <p class="intro">
   A lightweight, laptop-first CSS utility kit. The Swiss Army knife of CSS,
   with a mostly flat learning curve.
 </p>
 
+
 <p>
   <strong>Hgrid</strong> is a starting point intended to make HTML work
-  out of the box. It's not a UI framework. It provides some defaults so you can 
-  start prototyping without having to deal with browser quirks, unstyled elements and basic responsivity.
+  out of the box. It's built with Sass and integrates smoothly into any Node.js driven project. It's not a UI framework, 
+  but provides some defaults so you can start prototyping without having to deal with browser quirks, unstyled elements and 
+  basic responsivity.
 </p>
 
 <h4 class="mt-50">Raison d'être</h4>
 
 <p>
-  Recent CSS/Sass/framework development has brought great technical progress to the the CSS world, but at a significant cost. 
+  Recent CSS/framework development has brought great technical progress to the the CSS world, but at a significant cost. 
   Setting everything up is often unnecessary complicated, with lots of configuration and involved learning. With <strong>hgrid</strong> 
   there's no configuration at all, unless you want and need it. Integrating it into your projects is 
   <a href="/documentation/integrate/">easy peasy</a> and you'll very soon be doing the stuff you love (building things!) instead of 
   figuring out how to get directives and plugin modules to work. 
 </p>
 
+<h4 class="mt-50">Background</h4>
+
+<p>
+  <strong>Hgrid</strong>'s precursor was born in an internal codebase for a company in Norway, from 2012 and onwards. 
+  It was still too early for flexbox in production. Floats were used. The layout system was made (and is still in use) for the 
+  accounting software <a href="https://app.conta.no/" target="_blank" rel="noopener">Conta</a>. It was 
+  almost certainly inspired by Bootstrap 2 that was released around that same time. A modernized and extended version in Sass was created 
+  years later. It powers many different websites, such as 
+  <a href="https://euronextvps.no" target="_blank" rel="noopener">euronextvps.no</a>, the Norwegian central security 
+  depository. Today's version is in fact the third, but the first as open source.
+</p>
+
 <h4 class="mt-50">How lightweight?</h4>
 <p>
-  <strong>Answer:</strong> The <a href="https://brotli.io/" target="_blank" title="Brotli Compression" rel="noopener noreferrer">
+  The <a href="https://brotli.io/" target="_blank" title="Brotli Compression" rel="noopener">
   Brotli compressed</a><!-- https://www.multiutil.com/text-to-brotli-compress/--> kit weighs in at just 13 kB. Less if you 
   switch off its animation utilities. 15 kB if you include the CSS grid utilities. 
   It can be slimmed down further in the proposed <a href="/documentation/production/">build process</a>.
@@ -39,12 +55,11 @@ tags: [about]
 <h4 class="mt-50">Why "laptop first"?</h4>
 
 <p>
-  <strong>Answer:</strong> Because it's practical. Most web design is produced on a desktop
-  or laptop screen. It's the center point between smaller and larger viewports. 
-  It can be mentally limiting to start building pages with styles that don't apply to most of your design elements or 
-  markup by default. It's practical to design and code for a laptop sized viewports and adjust for both smaller and larger 
+  It's practical. Most web design is produced on a desktop or laptop screen. It's the center point between smaller and larger 
+  viewports. It can be mentally limiting to start building pages with styles that don't apply to most of your design elements or 
+  markup by default. It's practical to both design and code for a laptop sized viewport and adjust for both smaller and larger 
   screens along the way, unless you create exclusively for mobile devices. A mobile-first version of 
-  <strong>hgrid</strong> is on the roadmap.
+  <strong>hgrid</strong> is on the <a href="https://github.com/ahansson/hgrid-css/projects/1" rel="noopener">roadmap</a>.
 </p>
 
 <h4 class="mt-50">Comments?</h4>
