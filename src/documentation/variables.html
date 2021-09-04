@@ -88,13 +88,12 @@ tags: [variables]
   <code>:root</code> pseudo-selector (equivalent to the <code>html</code> element).
 </p>
 <p>
-  The custom properties get their values from internal <strong>hgrid</strong> <code>$variables</code>, 
-  and their values will be based on your <code>@use</code> customization described above. In your 
-  <code>css</code>, <code>scss</code> or component files you can use them freely as is, overwrite them, 
-  and manipulate them with JS.
+  The custom properties get their values from internal <strong>hgrid</strong> <code>$variables</code>. Their values 
+  will reflect your <code>@use</code> customization described above. In your <code>css</code>, <code>scss</code> or 
+  component files you can use the custom properties as is, overwrite them, and manipulate them with JS.
 </p>
 
-<p>Here are a few of the custom properties available:</p>
+<p>Here are a few of the custom properties available, with their corresponding internal variable:</p>
 
 <pre class="language-scss filename" data-file="main.scss">
   <code>:root {
@@ -131,7 +130,7 @@ tags: [variables]
 </p>
 
 <p>
-  As mentioned previously, a use for custom properties is color theming for your site. Add a <code>data</code> 
+  One use for custom properties is color theming for your site. Add a <code>data</code> 
   property and you can use JavaScript to swap the initial colors with an alternate set of values:
 </p>
 
