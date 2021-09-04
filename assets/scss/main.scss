@@ -147,6 +147,52 @@ main.container-max {
   opacity: 0.1;
 }
 
+@keyframes slide-rotate-up {
+  0% {
+    opacity: 0;
+    transform: rotate(300deg) scale(0.1) translateY(40rem) translateX(-80rem)
+  }
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0) translateX(0)
+  }
+}
+
+@keyframes slide-scale-up {
+  0% {
+    opacity: 0;
+    transform: scale(0.6) translateY(3rem)
+  }
+  60% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0)
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(2rem)
+  }
+  60% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0)
+  }
+}
+
+.slide-up {
+  animation: 1s slide-up;
+}
+
 .frameworks {
   a {
     display: block;
@@ -155,6 +201,7 @@ main.container-max {
   a img,
   a svg {
     width: 4rem;
+    animation: 1s 0.6s both slide-rotate-up;
 
     &.increase {
       width: 5.4rem;
@@ -190,6 +237,7 @@ button.outline-l {
   padding: 0;
   letter-spacing: 4px;
   transition: all var(--transition-duration) ease;
+  animation: 0.8s 0.3s both slide-scale-up;
   a {
     line-height: 6.4rem;
     padding: 2.2rem 6rem;
