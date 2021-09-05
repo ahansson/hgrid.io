@@ -22,24 +22,21 @@ sitemapPriority: 1.0
 
 <p class="small"><em>These recipes are tested with Vue v3.0.4 and NuxtJS v2.15</em></p>
 
-<h4 class="push20v">Prerequisites</h4>
+<h3 class="h5 mt-60 mb-30">Method 1 <small>(recommended)</small></h3>
 
-<ol>
-  <li>Install two packages: <code>npm i sass sass-loader --save-dev</code></li>
-  <li>Install <strong>hgrid</strong>: <code>npm install hgrid-css --save-dev</code></li>
-  <li>Create your main <code>scss</code> file, for example <code>assets/scss/main.scss</code></li>
-  <li>Initiate <code>main.scss</code> in your <code>main.js</code> file, respecting your local folder structure:</li>
-</ol>
+<h4>Include with <code>@use</code></h4>
+
+<p>1. Install two packages: <code>npm i sass sass-loader --save-dev</code></p>
+<p>2. Install <strong>hgrid</strong>: <code>npm install hgrid-css --save-dev</code></p>
+<p>3. Create your main <code>scss</code> file, for example <code>assets/scss/main.scss</code></p>
+<p>4. Import <code>main.scss</code> into <code>main.js</code>, respecting your local folder structure:</p>
 
 <pre class="language-js filename" data-file="main.js">
   <code>import './assets/scss/main.scss'</code>
 </pre>
 
-<h5 class="mt-60">Method 1 <small>(recommended)</small></h5>
-<h4>Include with <code>@use</code></h4>
-<br>
 <p>
-  In <code>main.scss</code>, import <strong>hgrid</strong> from <code>node_modules</code>.
+  5. In <code>main.scss</code>, initialize <strong>hgrid</strong> from <code>node_modules</code> with @use:
 </p>
 
 <pre class="language-scss filename" data-file="main.scss">
@@ -56,12 +53,31 @@ sitemapPriority: 1.0
   rel="noopener" target="_blank">partial</a> to include.
 </p>
 
+<pre class="push20v language-scss filename" data-file="index.scss">
+  <code>@use '~hgrid-css/sass/variables/variables'; // Required*
+@use '~hgrid-css/sass/mixins/mixins'; // Required*
+@use '~hgrid-css/sass/base/base'; // Required*
+
+@use '~hgrid-css/sass/base/a11y';
+@use '~hgrid-css/sass/layout/flex';
+@use '~hgrid-css/sass/layout/containers';
+// etc.
+</code>
+</pre>
+
+<p class="note mb-40">
+  <strong>Important:</strong> See the recommended 
+  <a href="/documentation/production/">production build steps</a> for our tips on optimizing the final output.
+</p>
+
+<h5>Customization <small>(optional)</small></h5>
+
 <p>
-  Configuration is optional. You can set your own theme colors and more by adding your own values to the  
+  You can set your own theme colors and more by adding your own values to the 
   <strong>hgrid</strong> <a href="/documentation/variables/">variables</a> (see the <a 
     href="https://github.com/ahansson/hgrid-css/blob/main/sass/variables/_variables.scss" 
     rel="noopener" 
-    target="_blank">full list of options</a>). Note that we use commas after the declarations, not semicolons:
+    target="_blank">full list of options</a>). Note that we use commas after the declarations instead of semicolons:
 </p>
 
 <pre class="language-scss filename" data-file="main.scss">
@@ -90,13 +106,17 @@ sitemapPriority: 1.0
   over at sass-lang.com.
 </p>
 
+<h5>Access to Variables</h5>
+
 <p>
-  If you need access to any <code>$hgrid-variables</code> you have to include them with 
-  <code>@use 'hgrid-css/sass/variables/variables'</code> at the top of each file (or at the start of each style tag).
+  If you need access to any <code>$hgrid-variables</code> in your project files you have to include them with 
+  <code>@use 'hgrid-css/sass/variables/variables' as *</code> at the top of each file/style section.
+  However, this may be redundant because the most important variables are available as --custom-properties everywhere.
 </p>
 
 <p>
-  Read more about <strong>hgrid</strong> <a href="/documentation/variables/">variables and custom properties</a>.
+  Read more about <strong>hgrid</strong> <a href="/documentation/variables/">variables and custom properties</a>. See also the 
+  <a href="#alternative-method-global-variables">alternative variable access method</a>.
 </p>
 
 <h5 class="mt-60">Method 2</h5>
@@ -119,7 +139,7 @@ sitemapPriority: 1.0
 
 <p>
   Set up a style tag for <code>scss</code> in <code>App.vue</code>. Then use the description from Method 1 to 
-  @use <strong>hgrid</strong>. Remember the <a href="/documentation/integrate/#vue">prerequisites</a>.
+  @use <strong>hgrid</strong>.
 </p>
 
 <pre class="language-html filename" data-file="App.vue">
@@ -150,14 +170,17 @@ sitemapPriority: 1.0
   <code>@import '~hgrid-css/dist/hgrid.min.css';</code>
 </pre>
 
-<h4 class="mt-60">Alternative method for global variables</h4>
+<h4 class="mt-60">
+  <span id="alternative-method-global-variables" class="sublink"></span>
+  Alternative method for global variables
+</h4>
 
 <p>
   Previously we learned that <strong>hgrid</strong> $variables can be accessed in component files with the <code>@use</code> rule. 
   Another way to access them is to make them available from <code>vue.config.js</code> like so:
 </p>
 
-  <pre class="language-js filename" data-file="vue.config.js">
+<pre class="language-js filename" data-file="vue.config.js">
 <code>module.exports = {
    css: {
      loaderOptions: {
@@ -168,60 +191,68 @@ sitemapPriority: 1.0
       }
     }
   }
-}</code></pre>
+}</code>
+</pre>
 
-  <p>Restart the dev server with <code>npm run serve</code> for config changes to take effect.</p>
+<p>Restart the dev server with <code>npm run serve</code> for config changes to take effect.</p>
 
-  <p><strong>Note:</strong> Using global Sass variables may be redundant as you automatically have access to all of <strong>hgrid</strong>'s
-  custom properties that reflect the same variables.</p>
+<p>
+  <strong>Note:</strong> Using global Sass variables may be redundant as you automatically have access to all of <strong>hgrid</strong>'s 
+  custom properties that reflect the same variables. Read more about that <a href="/documentation/variables/#custom-properties">here</a>.
+</p>
 
-  <p class="note">
-    ⚠️ Don't import anything here that won't be abstracted away in the build process. If you do,
-    performance will be affected. The same styles will be included multiple times – once for every component and view.
-  </p>
+<p class="note">
+  ⚠️ Don't import anything here that won't be abstracted away in the build process. If you do,
+  performance will be affected. The same styles will be included multiple times – once for every component and view.
+</p>
 
-  <div class="custom-hairline mt-60"></div>
+<div class="custom-hairline mt-60"></div>
 
-  <h2 class="mt-60">
-    <span id="react" class="sublink"></span>
-    React <img class="inline-block translate-push6v" src="/assets/img/logo-react.svg" width="62" alt="React logo">
-  </h2>
+<h2 class="mt-60">
+  <span id="react" class="sublink"></span>
+  React <img class="inline-block translate-push6v" src="/assets/img/logo-react.svg" width="62" alt="React logo">
+</h2>
 
-  <p class="small"><em>This recipe is verified with React 17.0.1 and <a href="https://github.com/facebook/create-react-app" target="_blank"
-        rel="noopener">create-react-app 4.0.2</a>.</em></p>
+<p class="small"><em>This recipe is verified with React 17.0.1 and <a href="https://github.com/facebook/create-react-app" target="_blank"
+      rel="noopener">create-react-app 4.0.2</a>.</em></p>
 
-  <h4 class="mt-40">Demo Project</h4>
+<h4 class="mt-40">Demo Project</h4>
 
-  <p>
-    Check out the <a href="https://github.com/ahansson/hgrid-css-react-app" target="_blank" rel="noopener">starter 
-    project</a> on GitHub.
-  </p>
+<p>
+  Check out the <a href="https://github.com/ahansson/hgrid-css-react-app" target="_blank" rel="noopener">starter 
+  project</a> on GitHub.
+</p>
 
-  <h4 class="mt-40">Prerequisites</h4>
+<h4 class="mt-40">Prerequisites</h4>
 
-  <ol>
-    <li>Install the Dart Sass package: <code>npm i sass --save-dev</code></li>
-    <li>Install <strong>hgrid</strong>: <code>npm i hgrid-css --save-dev</code></li>
-    <li>Rename <code>index.css</code> to <code>index.scss</code> (or create it in <code>src/</code> if it doesn't exist.)</li>
-    <li>Rename <code>App.css</code> and other component files to use the file ending <code>.scss</code>.</li>
-    <li>Import your <code>.scss</code> files in <code>index.js</code> and the relevant component files:</li>
-  </ol>
+<ol>
+  <li>Install the Dart Sass package: <code>npm i sass --save-dev</code></li>
+  <li>Install <strong>hgrid</strong>: <code>npm i hgrid-css --save-dev</code></li>
+  <li>Rename <code>index.css</code> to <code>index.scss</code> (or create it in <code>src/</code> if it doesn't exist.)</li>
+  <li>Rename <code>App.css</code> and other component files to use the file ending <code>.scss</code>.</li>
+  <li>Import your <code>.scss</code> files in <code>index.js</code> and the relevant component files:</li>
+</ol>
 
-  <pre class="language-js filename" data-file="index.js">
-    <code>import './index.scss';</code>
-  </pre>
+<pre class="language-js filename" data-file="index.js">
+  <code>import './index.scss';</code>
+</pre>
 
-  <pre class="language-js filename" data-file="App.js">
-    <code>import './App.scss';</code>
-  </pre>
+<pre class="language-js filename" data-file="App.js">
+  <code>import './App.scss';</code>
+</pre>
 
-  <p>
-    Any files with the <code>.scss</code> extension imported in <code>App.js</code> will now be automatically compiled to CSS.
-    Autoprefixer is a part of the <strong>hgrid</strong> project for broader browser compatibility, but in a React app from scratch
-    you have to configure it yourself. Create-react-app and the starter project we link to above has Autoprefixer working out of the box.
-  </p>
+<p>
+  Any files with the <code>.scss</code> extension imported in <code>App.js</code> will now be automatically compiled to CSS.
+  Autoprefixer is a part of the <strong>hgrid</strong> project for broader browser compatibility, but in a React app from scratch
+  you have to configure it yourself. Create-react-app and the starter project we link to above has Autoprefixer working out of the box.
+</p>
 
-  <h4 class="mt-40">Initialization in index.scss</h4>
+<p class="note mb-40">
+  <strong>Important:</strong> See the recommended 
+  <a href="/documentation/production/">production build steps</a> for how to optimize the final output.
+</p>
+
+<h4 class="mt-40">Initialization in index.scss</h4>
 
 <pre class="push20v language-scss filename" data-file="index.scss">
   <code>@use '~hgrid-css/sass/hgrid'</code>
@@ -242,10 +273,8 @@ sitemapPriority: 1.0
 @use '~hgrid-css/sass/layout/flex';
 @use '~hgrid-css/sass/layout/containers';
 @use '~hgrid-css/sass/layout/auto-columns';
-@use '~hgrid-css/sass/layout/helpers/background';
-</code>
+@use '~hgrid-css/sass/layout/helpers/background';</code>
 </pre>
-
 
 <p>
   Configuration is optional. You can set your own theme colors and more by adding your own values to the  
@@ -340,7 +369,8 @@ export default App;
   Our <a href="https://github.com/ahansson/hgrid-css-react-app" rel="noopener" target="_blank">React
   starter project</a> which is based on <a href="https://create-react-app.dev/" target="_blank" rel="noopener">
   create-react-app</a> automatically minifies and autoprefixes the CSS output. <a href="https://create-react-app.dev/docs/post-processing-css"
-  rel="noopener" target="_blank">Read more in the docs</a>.
+  rel="noopener" target="_blank">Read more in the docs</a>. Remember <strong>hgrid</strong>'s own recommendations for further 
+  optimalization of the <a href="/documentation/production/">production build</a>.
 </p>
 
 <div class="custom-hairline mt-60"></div>
@@ -407,6 +437,11 @@ export default config</code></pre></li>
   While <code>scss</code> from <strong>hgrid</strong> will compile without any further configuration, adding 
   <code>&lt;style lang="scss"></code> to your style tags is needed if you wish to write custom <code>scss</code> in 
   Svelte components.
+</p>
+
+<p class="note mb-40">
+  <strong>Important:</strong> See the recommended 
+  <a href="/documentation/production/">production build steps</a> for our tips on optimizing the final CSS output.
 </p>
 
 <div class="custom-hairline mt-60"></div>
@@ -685,6 +720,11 @@ meta: {
   sized viewports.
 </p>
 
+<p class="note mb-40">
+  <strong>Important:</strong> See the recommended 
+  <a href="/documentation/production/">production build steps</a> for our tips on optimizing the final output.
+</p>
+
 <h5>Step 9</h5>
 
 <p>
@@ -780,6 +820,12 @@ meta: {
   adding a <code>&lt;style lang="scss"></code> anywhere. Multiple style tags per file are permitted. By default, all Astro component styles 
   are scoped, meaning they only apply to the current component. To create global styles from a locally scoped context, add the 
   <code>:global()</code> wrapper, e.g. <code>:global(.my-style) { ... }</code>. Styles are automatically extracted and optimized in the final build.
+</p>
+
+<p class="note mb-40">
+  <strong>Important:</strong> See the recommended 
+  <a href="/documentation/production/">production build steps</a> for tips on additional optimization.
+</p>
 
 <p>
   As always, access to internal <code>$hgrid-variables</code> in components requires you to first include them with 
