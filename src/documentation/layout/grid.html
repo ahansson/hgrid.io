@@ -14,31 +14,32 @@ tags: [layout, grid]
 
 <p>File location: <code class="loc">sass/layout/_grid.scss</code></p>
 
+<p class="note">
+  Grid utilities are excluded from the precompiled CSS (<code>hgrid.min.css</code>) in order to reduce the file size.
+  For a full kit with grid included, use <code>dist/hgrid.grid.min.css</code> 
+  (<a href="https://unpkg.com/hgrid-css@latest/dist/hgrid.grid.min.css" target="_blank" rel="nofollow noopener">CDN</a>).
+</p>
+
 <h2 class="h3 mt-40 mb-20">Setup</h2>
 
 <ul>
   <li>
-    The grid utilities can be switched on and off with Sass <code>@use</code> or directly in <code>_variables.scss</code>, 
-    by modifying the <code>$include-grid</code> variable (default: <code>true</code>).
+    The grid utilities can be switched off with Sass <code>@use</code> or directly in <code>_variables.scss</code>, 
+    by setting <code>$include-grid</code> to <code>false</code>.
   </li>
   <li>
-    Responsive grid utilities can be excluded by changing <code>$include-grid-responsiveness</code> to <code>false</code>.
+    Responsive utilities can be switched off independently by setting <code>$include-grid-responsiveness</code> to <code>false</code>.
   </li>
   <li>
-    Max columns per grid parent is controlled with <code>$grid-columns</code> (default: <code>12</code>).
+    Control how many columns (max) you need per grid parent with <code>$grid-columns</code> (default: <code>12</code>).
   </li>
   <li>
-    Max rows per grid parent is controlled with <code>$grid-rows</code> (default: <code>6</code>).
-  </li>
-  <li>
-    In order to keep the file size low, grid utilities are excluded from the precompiled CSS 
-    (<code>hgrid.min.css</code>). If you want grid included, use <code>dist/hgrid.grid.min.css</code> (
-    <a href="https://unpkg.com/hgrid-css@latest/dist/hgrid.grid.min.css" target="_blank" rel="nofollow noopener">CDN</a>).
+    Control how many rows (max) you need per grid parent with <code>$grid-rows</code> (default: <code>6</code>).
   </li>
 </ul>
 
 <p class="note">
-  <strong>Note:</strong> Turning off CSS grid utilities is unnecessary if you plan to 
+  <strong>Note:</strong> Turning off the grid utilities is unnecessary if you plan to 
   <a href="/documentation/production/">purge unused CSS</a> with the proposed build process.
 </p>
 
@@ -102,7 +103,7 @@ tags: [layout, grid]
 </p>
 
 <p class="note"> 
-  <code>.gap-{*}</code> applies equal margin to all sides of child elements. If you want a different gap between columns and rows, 
+  <strong>Note:</strong> <code>.gap-{*}</code> applies equal margin to all sides of child elements. If you want a different gap between columns and rows, 
   use <code>.column-gap-{*}</code> and <code>.row-gap-{*}</code> respectively.
 </p>
 
