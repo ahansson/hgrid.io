@@ -1,4 +1,4 @@
-@use './../../node_modules/hgrid-css/sass/hgrid.scss' with (
+@use '../../node_modules/hgrid-css/sass/hgrid.scss' with (
   $turn-off-link-decoration: true,
   $use-article-link-underlines: true,
   $link-underline-color: #c788e0,
@@ -6,6 +6,8 @@
   $focus-border-color: #9139b4,
   $focus-border-weight: 0.3rem,
   $font-family: 'Wotfard',
+  $grid-columns: 6,
+  $grid-rows: 4
 );
 
 :root {
