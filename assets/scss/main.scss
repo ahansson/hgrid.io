@@ -94,7 +94,8 @@ ul li a,
 table td a,
 article ul li a,
 article ol li a,
-article p a {
+article p a,
+a.jump-to-content {
   color: var(--link-color);
   text-decoration-color:  var(--link-underline-color)
 }
