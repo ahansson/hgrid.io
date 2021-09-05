@@ -10,7 +10,7 @@
     "watch:css": "sass --no-source-map --watch assets/scss/main.scss:_public/assets/css/style.min.css",
     "watch:eleventy": "eleventy --serve",
     "prefix:css": "postcss --use autoprefixer --no-map -b 'last 4 versions' _public/assets/css/style.min.css -o _public/assets/css/style.min.css",
-    "purge:css": "purgecss --css ./_public/assets/css/style.min.css --content ./_public/**/*.html ./_public/assets/js/scripts.min.js --output ./_public/assets/css/style.min.css",
+    "purge:css": "purgecss --css ./_public/assets/css/style.min.css --content ./_public/**/*.html ./_public/assets/js/scripts.min.js --output ./_public/assets/css/style.min.css --config ./purgecss.config.js",
     "build:_public": "rm -rf _public && mkdir _public",
     "build:css": "sass --no-source-map --style=compressed assets/scss/main.scss:_public/assets/css/style.min.css",
     "build:eleventy": "eleventy",
