@@ -58,16 +58,18 @@ tags: [production]
 </h3>
 
 <p>
-  Time for a final cleanup. Let's remove every class from both <code>hgrid</code> and any custom CSS which isn't being used by our HTML or JS. 
-  First, install <a href="https://purgecss.com/" target="_blank" rel="noopener">PurgeCSS</a>:
+  Time for a final cleanup. Let's remove every class from both <code>hgrid</code> and any custom CSS which isn't being used by our HTML 
+  or JS.
 </p>
+
+<p><strong>3a.</strong> Install <a href="https://purgecss.com/" target="_blank" rel="noopener">PurgeCSS</a>:</p>
 
 <pre class="language-bash filename" data-file="terminal">
   <code>$ <strong>npm</strong> <span class="hljs-built_in">i -D</span> purgecss</code>
 </pre>
 
 <p>
-  Tell it to scan the compiled CSS and compare the class names with what it finds in our HTML and JS files. All unused 
+  <strong>3b.</strong> Tell it to scan the compiled CSS and compare the class names with what it finds in our HTML and JS files. All unused 
   CSS will be removed.
 </p>
 
@@ -86,11 +88,41 @@ tags: [production]
 }</code></pre>
 
 <p>
-  If you need to protect certain CSS rules from being purged, add <code>/* purgecss ignore */</code> right above them 
-  in your (S)CSS file(s). There are a few other ways to do this, read more about 
-  <a href="https://purgecss.com/safelisting.html#specific-selectors" target="_blank" rel="noopener">safelisting</a> in the PurgeCSS 
-  documentation.
+  <strong>3c.</strong> PurgeCSS wants to remove standalone pseudo classes from <strong>hgrid</strong>, so we have to tell it not to. Create 
+  <code>purgecss.config.js</code> at the root of your project. Add this regex to preserve selectors starting with <code>:</code>
 </p>
+
+<pre class="language-js filename" data-file="purgecss.config.json">
+  <code>module.exports = {
+  safelist: [/^:/]
+}</code></pre>
+
+<p>
+  <strong>3d.</strong> If you need to protect other CSS rules from the purgatory, add them to the safelist like this:
+</p>
+
+<pre class="language-js filename" data-file="purgecss.config.json">
+  <code>module.exports = {
+  safelist: ['some-class-name', 'hello' ]
+
+  // Only names, no . or #
+
+}</code></pre>
+
+<p class="note">
+  Another method is to add <code>/* purgecss ignore */</code> right above the rule you want to preserve, in your (S)CSS file(s). 
+  There are a couple of other ways to do this, read more about <a href="https://purgecss.com/safelisting.html#specific-selectors" target="_blank" rel="noopener">safelisting</a> 
+  in the PurgeCSS docs.
+</p>
+
+<p>
+  <strong>3e.</strong> Tell your purge script to look for the config file. Append this at the end of <code>purge:css</code> 
+  in <code>package.json</code>:
+</p>
+
+<pre class="language-json filename" data-file="package.json">
+  <code><span class="codeline-add hljs-string">--config ./purgecss.config.js</span>
+</code></pre>
 
 <h3 class="mt-60">
   Step 4: Build
@@ -105,7 +137,7 @@ tags: [production]
   "scripts": {
     "build:css": "sass --no-source-map --style=compressed assets/scss/main.scss:dist/css/style.min.css",
     "prefix:css": "postcss --use autoprefixer --no-map -b 'last X versions' dist/css/style.min.css -o dist/css/style.min.css",
-    "purge:css": "purgecss --css ./dist/css/style.min.css --content ./dist/**/*.html ./dist/assets/js/*.js --output ./dist/css/style.min.css",
+    "purge:css": "purgecss --css ./dist/css/style.min.css --content ./dist/**/*.html ./dist/assets/js/*.js --output ./dist/css/style.min.css --config ./purgecss.config.js",
     <span class="codeline-add">"build": "npm run build:css && npm run prefix:css && npm run purge:css"</span>
   }
 }</code></pre>
