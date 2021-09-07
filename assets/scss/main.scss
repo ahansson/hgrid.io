@@ -521,6 +521,11 @@ article.demo {
       border: var(--border-light-dotted);
     }
   }
+
+  // TODO remove
+  .g-flow-column {
+    grid-auto-flow: column;
+  }
 }
 
 .demo-title {

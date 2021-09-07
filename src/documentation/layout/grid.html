@@ -69,13 +69,16 @@ tags: [layout, grid]
 &lt;/div></code>
 </pre>
 
-<p>It's now the grid <em>parent</em>.</p>
+<p>
+  It's now the grid <em>parent</em>. We use <code>&lt;p></code> elements as grid children in these examples. 
+  You can use any element you like.
+</p>
 
-<h5>Grid Row and Grid Column</h5>
+<h3 class="mt-60">Grid Row and Grid Column</h3>
 
 <p>
- Let's add 3 columns (horizontal) and 2 rows (vertical). It doesn't matter how many child elements we have. Invisible grid 
- <em>tracks</em> will be created no matter what.
+  Let's add 3 columns (horizontal) and 2 rows (vertical). It doesn't matter how many child elements we have. Invisible grid 
+  <em>tracks</em> will be created no matter what.
 </p>
 
 <pre class="language-html mt-20 mb-30 filename" data-file="html">
@@ -94,7 +97,7 @@ tags: [layout, grid]
   <span class="child text-gray small f-center">6</span>
 </div>
 
-<h5>Gap</h5>
+<h3>Gap</h3>
 
 <p>
   We need some spacing between our grid children. Let's add <code>.gap-5</code> to the parent element. This corresponds 
@@ -119,7 +122,7 @@ $gaps:
 
 <p>Let's also add enough child items to fill the 3 x 2 tracks:</p>
 
-<pre class="language-html mt-20 mb-30 filename" data-file="html">
+<pre class="language-html mt-20 mb-20 filename" data-file="html">
 <code>&lt;div class="grid g-column-3 g-row-2 gap-5">
   &lt;p>1&lt;/p>
   &lt;p>2&lt;/p>
@@ -130,7 +133,7 @@ $gaps:
 &lt;/div></code>
 </pre>
 
-<h5>Result:</h5>
+<h6>Result:</h6>
 
 <div class="grid g-column-3 g-row-2 gap-5 radius grid-demo">
   <p class="text-center padding-20 mb-0">1</p>
@@ -139,6 +142,161 @@ $gaps:
   <p class="text-center padding-20 mb-0">4</p>
   <p class="text-center padding-20 mb-0">5</p>
   <p class="text-center padding-20 mb-0">6</p>
+</div>
+
+<h3 class="mt-60">Grid Column Span</h3>
+
+<p>
+  <code>.g-column-span-{*}</code> defines the width of a grid child, counted by how many columns it spans.
+</p>
+
+<pre class="language-html mt-20 mb-30 filename" data-file="html">
+<code>&lt;div class="grid g-column-3 g-row-2 gap-5">
+  &lt;p>1&lt;/p>
+  &lt;p class="g-column-span-2">2&lt;/p>
+  &lt;p class="g-column-span-3">3&lt;/p>
+  &lt;p>4&lt;/p>
+  &lt;p>5&lt;/p>
+  &lt;p>6&lt;/p>
+&lt;/div></code>
+</pre>
+
+<div class="grid g-column-3 g-row-2 gap-5 radius grid-demo">
+  <p class="text-center padding-20 mb-0">1</p>
+  <p class="text-center padding-20 mb-0 g-column-span-2">2</p>
+  <p class="text-center padding-20 mb-0 g-column-span-3">3</p>
+  <p class="text-center padding-20 mb-0">4</p>
+  <p class="text-center padding-20 mb-0">5</p>
+  <p class="text-center padding-20 mb-0">6</p>
+</div>
+
+<h3 class="mt-60">Grid Column Start/End</h3>
+
+<p class="mt-20">
+  The grid pattern above could also be achieved with <code>.g-column-start-{*}</code> and <code>.g-column-end-{*}</code> (although 
+  this is not their main purpose – more about that later).
+</p>
+
+<p>
+  In order to make a column span the two last columns of a three column grid track, we start with <code>.g-column-start-2</code> 
+  and end it with <code>.g-column-end-4</code>. The column ends when it hits the fourth vertical <em>grid line</em> from the left, 
+  hence the value <code>4</code> and not <code>3</code>.
+</p>
+
+<pre class="language-html mt-20 mb-30 filename" data-file="html">
+<code>&lt;div class="grid g-column-3 g-row-2 gap-5">
+  &lt;p>1&lt;/p>
+  &lt;p class="g-column-start-2 g-column-end-4">2&lt;/p>
+  &lt;p class="g-column-start-1 g-column-end-4">3&lt;/p>
+&lt;/div></code>
+</pre>
+
+<div class="grid mb-60 g-column-3 g-row-2 gap-5 radius grid-demo">
+  <p class="text-center padding-20 mb-0">1</p>
+  <p class="text-center padding-20 mb-0 g-column-start-2 g-column-end-4">2</p>
+  <p class="text-center padding-20 mb-0 g-column-start-1 g-column-end-4">3</p>
+</div>
+
+<h5>Push Columns Along the Grid Track</h5>
+<p>
+  The main purpose of <code>.g-column-start-{*}</code> and <code>.g-column-end-{*}</code> is to push columns to another position 
+  along their tracks. This leaves empty spaces:
+</p>
+
+<pre class="language-html mt-20 mb-30 filename" data-file="html">
+<code>&lt;div class="grid g-column-2 g-row-2 gap-5">
+  &lt;p class="g-column-start-2 g-column-span-2">1&lt;/p>
+  &lt;p>2&lt;/p>
+  &lt;p class="g-column-start-3">3&lt;/p>
+&lt;/div></code>
+</pre>
+
+<div class="grid g-column-3 g-row-2 gap-5 radius grid-demo">
+  <span class="child border-dotted radius"></span>
+  <p class="text-center padding-20 mb-0 g-column-start-2 g-column-span-2">1</p>
+  <p class="text-center padding-20 mb-0">2</p>
+  <span class="child border-dotted radius"></span>
+  <p class="text-center padding-20 mb-0 g-column-start-3">3</p>
+</div>
+
+<h3 class="mt-40">Row Span</h3>
+
+<p>
+  <code>.g-row-span-{*}</code> defines the height of a grid child, counted in rows.
+</p>
+
+<pre class="language-html mt-20 mb-30 filename" data-file="html">
+<code>&lt;div class="grid g-column-3 g-row-3 gap-5">
+  &lt;p class="g-row-span-3">1&lt;/p>
+  &lt;p>2&lt;/p>
+  &lt;p class="g-row-span-2">3&lt;/p>
+  &lt;p>4&lt;/p>
+  &lt;p>5&lt;/p>
+  &lt;p>6&lt;/p>
+&lt;/div></code>
+</pre>
+
+<div class="grid mb-60 g-column-3 g-row-3 gap-5 radius grid-demo">
+  <p class="flex f-center padding-20 mb-0 g-row-span-3">1</p>
+  <p class="text-center padding-20 mb-0">2</p>
+  <p class="flex f-center padding-20 mb-0 g-row-span-2">3</p>
+  <p class="text-center padding-20 mb-0">4</p>
+  <p class="text-center padding-20 mb-0">5</p>
+  <p class="text-center padding-20 mb-0">6</p>
+</div>
+
+<h3>Grid Row Start/End</h3>
+
+<p>
+  The purpose of <code>.g-row-start-{*}</code> and <code>.g-row-end-{*}</code> is to pull rows from their natural grid position and 
+  force them into a new position along their vertical tracks.
+</p>
+<p>
+  As for grid columns, start and end positions of rows relate to grid lines. A row starts at the grid line at 
+  its top and runs to the line at its bottom. If we want to span the full height of two rows, we start with <code>.g-row-start-1</code> 
+  and end with <code>.g-row-end-3</code>. This is when the row hits the end of the grid, which is on the third horizontal grid line 
+  from the top.
+</p>
+
+<p>C
+  SS grid will by default pack the elements as tight as possible and try to avoid empty spaces. The default flow algorithm is 
+  horizontal, from left to right.
+</p>
+
+<pre class="language-html mt-20 mb-30 filename" data-file="html">
+<code>&lt;div class="grid g-column-3 g-row-3 gap-5">
+  &lt;p class="g-row-start-1 g-row-end-3">1&lt;/p>
+  &lt;p class="g-row-start-2 g-row-end-4">2&lt;/p>
+  &lt;p class="g-row-start-3">3&lt;/p>
+  &lt;p>4&lt;/p>
+  &lt;p>5&lt;/p>
+  &lt;p>6&lt;/p>
+&lt;/div></code>
+</pre>
+
+<div class="grid mb-40 g-column-3 g-row-3 gap-5 radius grid-demo">
+  <p class="flex f-center padding-20 mb-0 g-row-start-1 g-row-end-3">1</p>
+  <p class="flex f-center mb-0 g-row-start-2 g-row-end-4">2</p>
+  <p class="text-center padding-20 mb-0 g-row-start-3">3</p>
+  <p>4</p>
+  <p>5</p>
+  <p>6</p>
+</div>
+
+<h5>Grid Auto Flow</h5>
+
+<p>
+  We can change the flow direction from horizontal to vertical by adding 
+  <code>.g-flow-column</code> to the grid parent. The same code as above now looks like this:
+</p>
+
+<div class="grid g-column-3 g-row-3 gap-5 g-flow-column radius grid-demo">
+  <p class="flex f-center align-items-center padding-20 mb-0 g-row-start-1 g-row-end-3">1</p>
+  <p class="flex f-center padding-20 mb-0 g-row-start-2 g-row-end-4">2</p>
+  <p class="text-center padding-20 mb-0 g-row-start-3">3</p>
+  <p>4</p>
+  <p>5</p>
+  <p>6</p>
 </div>
 
 <p class="mt-40">(To be continued)</p>
