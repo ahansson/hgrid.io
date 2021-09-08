@@ -147,7 +147,7 @@ $gaps:
 <h3 class="mt-60">Grid Column Span</h3>
 
 <p>
-  <code>.g-column-span-{*}</code> defines the width of a grid child, counted by how many columns it spans.
+  <code>.g-column-span-{*}</code> defines the width of a grid child, counted by how many tracks it spans.
 </p>
 
 <pre class="language-html mt-20 mb-30 filename" data-file="html">
@@ -178,9 +178,13 @@ $gaps:
 </p>
 
 <p>
-  In order to make a column span the two last columns of a three column grid track, we start with <code>.g-column-start-2</code> 
+  In order to make a column span the two last tracks of a three track grid, we start with <code>.g-column-start-2</code> 
   and end it with <code>.g-column-end-4</code>. The column ends when it hits the fourth vertical <em>grid line</em> from the left, 
   hence the value <code>4</code> and not <code>3</code>.
+</p>
+
+<p class="note">
+  If no end position is declared, the column will span a single track.
 </p>
 
 <pre class="language-html mt-20 mb-30 filename" data-file="html">
@@ -252,15 +256,14 @@ $gaps:
   force them into a new position along their vertical tracks.
 </p>
 <p>
-  As for grid columns, start and end positions of rows relate to grid lines. A row starts at the grid line at 
-  its top and runs to the line at its bottom. If we want to span the full height of two rows, we start with <code>.g-row-start-1</code> 
-  and end with <code>.g-row-end-3</code>. This is when the row hits the end of the grid, which is on the third horizontal grid line 
-  from the top.
+  Just as for grid columns, start and end positions for rows relate to grid lines. A row starts at the grid line at 
+  its top and runs to the line at its bottom. If we want to span the full height of two grid tracks, we start with 
+  <code>.g-row-start-1</code> and end with <code>.g-row-end-3</code>. The row hits the end of its allocated span on the 
+  third horizontal grid line from the top.
 </p>
 
-<p>C
-  SS grid will by default pack the elements as tight as possible and try to avoid empty spaces. The default flow algorithm is 
-  horizontal, from left to right.
+<p>
+  A CSS grid will by default pack the elements as tight as possible from left to right and try to avoid empty spaces.
 </p>
 
 <pre class="language-html mt-20 mb-30 filename" data-file="html">
@@ -286,7 +289,7 @@ $gaps:
 <h5>Grid Auto Flow</h5>
 
 <p>
-  We can change the flow direction from horizontal to vertical by adding 
+  We can change the flow direction from horizontal (<code>.g-flow-row</code>, the default) to vertical by adding 
   <code>.g-flow-column</code> to the grid parent. The same code as above now looks like this:
 </p>
 
@@ -298,6 +301,12 @@ $gaps:
   <p>5</p>
   <p>6</p>
 </div>
+
+<p class="mt-40 note">
+  This grid is only three tracks wide. An extra, <em>implicit</em> grid track is automatically created to the right, 
+  in order to arrange the three items it couldn't otherwise place. Grid children will never be hidden or deleted, space will 
+  always be created for them in the form of an <em>implicit grid</em> if need be.
+</p>
 
 <p class="mt-40">(To be continued)</p>
 
