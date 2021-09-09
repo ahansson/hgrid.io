@@ -31,10 +31,10 @@ sitemapPriority: 1.0
 
 <h4>Include with <code>@use</code></h4>
 
-<p>1. Install two packages: <code>npm i sass sass-loader --save-dev</code></p>
-<p>2. Install <strong>hgrid</strong>: <code>npm install hgrid-css --save-dev</code></p>
-<p>3. Create your main <code>scss</code> file, for example <code>assets/scss/main.scss</code></p>
-<p>4. Import <code>main.scss</code> into <code>main.js</code>, respecting your local folder structure:</p>
+<p>1. For Vue + Webpack, install two packages: <code>npm i sass sass-loader -D</code>. For Vue + Vite, install only <code>sass</code></p>
+<p>2. Install <strong>hgrid</strong>: <code>npm install hgrid-css -D</code></p>
+<p>3. Create <code>main.scss</code>, for example in <code>assets/scss/</code></p>
+<p>4. Import <code>main.scss</code> into <code>main.js</code>:</p>
 
 <pre class="language-js filename" data-file="main.js">
   <code>import './assets/scss/main.scss'</code>
