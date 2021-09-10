@@ -14,7 +14,7 @@ tags: [utilities]
     >GitHub</a>)
 </p>
 
-<h3 class="h4 mt-40">Horizontal Separators</h3>
+<h3 class="mt-40">Horizontal Separators</h3>
 
 <code>&lt;hr></code>
 <hr class="push10v margin-right-150 phone-landscape-mr-0">
@@ -25,9 +25,20 @@ tags: [utilities]
 <code>.hairline-darker</code>
 <div class="hairline-darker push10v margin-right-150 phone-landscape-mr-0"></div>
 
-<h4 class="mt-50">Borders</h4>
-
+<h3 class="mt-50">Borders</h3>
 <div class="row mt-40">
+  <div class="column-2 border-light" style="border: 1px solid #fff;"> <!-- TODO remove style tag-->
+    <small class="block mb-0 text-center padding-20">
+      <code>.border-light</code>
+    </small>
+  </div>
+  <div class="column-2 border-white" style="border: 1px solid #fff;"> <!-- TODO remove style tag-->
+    <small class="block mb-0 text-center padding-20">
+      <code>.border-white</code>
+    </small>
+  </div>
+</div>
+<div class="row">
   <div class="column-2 border-gray-lighter">
     <small class="block mb-0 text-center padding-20">
       <code>.border-gray-lighter</code>
@@ -56,12 +67,30 @@ tags: [utilities]
     <small class="block mb-0 text-center padding-20">
       <code>.border-gray-darker</code>
     </small>
+  </div>  
+  <div class="column-2 border-dark" style="border: 1px solid #000;"> <!-- TODO remove style tag-->
+    <small class="block mb-0 text-center padding-20">
+      <code>.border-dark</code>
+    </small>
+  </div>
+</div>
+<div class="row mb-40">
+  <div class="column-2 border-black" style="border: 1px solid #000;"> <!-- TODO remove style tag-->
+    <small class="block mb-0 text-center padding-20">
+      <code>.border-black</code>
+    </small>
   </div>
 </div>
 
 <p>Additionally: <code>.border-transparent</code> and <code>.border-none</code></p>
 
-<h5 class="mt-60">Individual Borders</h5>
+<p>
+  Colors for <code>border-dark</code> and <code>border-light</code> can be customized with the <strong>hgrid</strong> variables 
+  <code>$color-light</code> and <code>$color-dark</code> in the <a href="/documentation/integrate"> <code>@use</code> rule</a> during 
+  initialization.
+</p>
+
+<h4 class="mt-60">Individual Borders</h4>
 
 <div class="row mt-40 individual-border-demo">
   <div class="column-5 bg-gray-lighter border-top-gray">
@@ -127,24 +156,24 @@ tags: [utilities]
   (gray-dark) and <code>-darker</code> (gray-darker).
 </p>
 
-<p>Code example:</p>
+<h6>Code example</h6>
 
 <pre class="push20v language-html filename" data-file="html">
 <code>&lt;div class="border-right-darker">
-&lt;!-- element content -->
+  &lt;!-- element content -->
 &lt;/div>
 
 &lt;div class="border-top-dark-dotted">
-&lt;!-- element content -->
+  &lt;!-- element content -->
 &lt;/div>
 
 &lt;div class="border-gray border-left-none">
-&lt;!-- element content -->
+  &lt;!-- element content -->
 &lt;/div>
 </code>
 </pre>
 
-<h5 class="mt-40">Border Modifiers</h5>
+<h4 class="mt-40">Border Modifiers</h4>
 
 <p>
   The border modifiers require that the element has a border. For example by the help of one of <strong>hgrid's</strong> 
@@ -262,7 +291,7 @@ tags: [utilities]
   </div>
 </div>
 
-<h5 class="mt-40">Text Column Separators</h5>
+<h4 class="mt-40">Text Column Separators</h4>
 
 <p>
   Add the CSS class <code>.col-rule-gray-light</code> to a multi-column text container and light gray lines will show up 
@@ -292,9 +321,10 @@ tags: [utilities]
 </div>
 
 <p>
-  Our usual shades of gray can be used, with the naming pattern <code>.col-rule-{ color-name }</code>: <code>gray-lighter</code>, 
-  <code>gray-light</code>, <code>gray</code>, <code>gray-dark</code>, <code>gray-darker</code>, in addition to 
-  <code>color-light</code> and <code>color-dark</code> (customizable with white and black as defaults)
+  The naming pattern is <code>.col-rule-{ color-name }</code> with these values: <code>light</code>, <code>white</code>, 
+  <code>gray-lighter</code>, <code>gray-light</code>, <code>gray</code>, <code>gray-dark</code>, <code>gray-darker</code>, 
+  <code>dark</code> and <code>black</code>. (<code>dark</code> and <code>light</code> can be customized with the variables 
+  <code>$color-light</code> and <code>$color-dark</code>.)
 </p>
 
 <h5 class="mt-60">Responsive Border Overrides</h5>
@@ -312,27 +342,27 @@ tags: [utilities]
     </thead>
     <tbody>
       <tr>
-        <td><code>.{ viewport-name }-bn-0</code></td>
+        <td><code>.{ viewport }-b-0</code></td>
         <td>border: none;</td>
-        <td>Example: <code>tablet-portrait-bn-0</code></td>
+        <td>Example: <code>tablet-portrait-b-0</code></td>
       </tr>
       <tr>
-        <td><code>.{ viewport-name }-bt-0</code></td>
+        <td><code>.{ viewport }-bt-0</code></td>
         <td>border-top: none;</td>
         <td>Example: <code>desktop-large-bt-0</code></td>
       </tr>
       <tr>
-        <td><code>.{ viewport-name }-bb-0</code></td>
+        <td><code>.{ viewport }-bb-0</code></td>
         <td>border-bottom: none;</td>
         <td>Example: <code>phone-bb-0</code></td>
       </tr>
       <tr>
-        <td><code>.{ viewport-name }-br-0</code></td>
+        <td><code>.{ viewport }-br-0</code></td>
         <td>border-right: none;</td>
         <td>Example: <code>laptop-br-0</code></td>
       </tr>
       <tr>
-        <td><code>.{ viewport-name }-bl-0</code></td>
+        <td><code>.{ viewport }-bl-0</code></td>
         <td>border-left: none;</td>
         <td>Example: <code>phone-landscape-bl-0</code></td>
       </tr>
