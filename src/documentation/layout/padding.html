@@ -18,42 +18,67 @@ tags: [layout, padding]
   <h2 class="h3">General Padding</h2>
 
   <p>
-    The general padding utilities have 5 and 10 pixels incrementations, going from 0 to 150 pixels. They use <code>rem</code> units internally, 
+    The padding utilities have 5 and 10 pixels incrementations from 0 to 150 pixels. They use <code>rem</code> units, 
     but their names reflect the pixel value they correspond to in a default <strong>hgrid</strong> setup. Applying 
-    <code>padding-60</code> to an elements gives it 6rem of visually adjusted padding on all sides, which corresponds to 60px.
+    <code>.padding-60</code> to an element gives it 6rem of visually adjusted padding on all sides, which corresponds to 60px.
   </p>
 
   <p>
-    By «visually adjusted» we mean that <strong>hgrid</strong> by default uses slightly reduced top and bottom padding in an attempt to make 
-    up for line height, margin etc. that is often found around text content. If you don't want any of this adjustment, 
-    go for the <a href="/documentation/layout/padding/#individual-padding">individual padding</a> utilities instead.</p>
+    By «visually adjusted» we mean that <strong>hgrid</strong> adds a slightly reduced top and bottom padding in an attempt to compensate
+    for line height and other that is often found around text content.</p>
 
-  <ul>
-    <li><code>padding-0</code></li>
-    <li><code>padding-5</code></li>
-    <li><code>padding-10</code></li>
-    <li><code>padding-20</code></li>
-    <li><code>padding-30</code></li>
-    <li>...</li>
-    <li><code>padding-150</code></li>
-  </ul>
+  <div class="scrollable-y mt-40 mb-40">
+    <table style="min-width: 600px;">
+      <thead>
+        <tr>
+          <th>Utility Name</th>
+          <th>CSS Property</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>.p-0</code> / <code>.padding-0</code></td>
+          <td>padding: 0;</td>
+        </tr>
+        <tr>
+          <td><code>.p-5</code> / <code>.padding-5</code></td>
+          <td>padding: 0.4rem 0.5rem; <span class="text-gray-dark small">&nbsp;/* visual adjustment top/bottom */</span></td>
+        </tr>
+        <tr>
+          <td><code>.p-10</code> / <code>.padding-10</code></td>
+          <td>padding: 0.8rem 1rem; <span class="text-gray-dark small">&nbsp;/* visual adjustment top/bottom */</span></td>
+        </tr>
+        <tr>
+          <td><code>.p-20</code> / <code>.padding-10</code></td>
+          <td>padding: 1.6rem 2rem; <span class="text-gray-dark small">&nbsp;/* visual adjustment top/bottom */</span></td>
+        </tr>
+          <td>etc. ...</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><code>.p-150</code> / <code>.padding-150</code></td>
+          <td>padding: 12rem 15rem; <span class="text-gray-dark small">&nbsp;/* visual adjustment top/bottom */</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
 
   <p>Code example:</p>
 
 <pre class="language-html mt-30 mb-20 filename" data-file="html">
 <code>&lt;div class="bg-gray padding-60 max-content-max">
-  &lt;div class="bg-gray-dark border-gray-lighter border-dashed text-white">
+  &lt;p class="bg-gray-dark border-gray-lighter border-dashed text-white">
     The ecommerce site had an average conversion rate of 2.1%.
-  &lt;/div>
+  &lt;/p>
 &lt;/div></code>
 </pre>
 
   <p>Result:</p>
 
   <div class="bg-gray padding-60 max-content-max">
-    <div class="bg-gray-dark border-gray-lighter border-dashed text-white">
+    <p class="mb-0 bg-gray-dark border-gray-lighter border-dashed text-white">
       The ecommerce site had an average conversion rate of 2.1%.
-    </div>
+    </p>
   </div>
 
 </div>
@@ -66,39 +91,43 @@ tags: [layout, padding]
 
   <pre class="language-html mt-30 mb-20 filename" data-file="html">
   <code>&lt;div class="bg-gray pt-20 pr-90 pb-100 pl-30 max-content-max">
-  &lt;div class="bg-gray-dark border-gray-lighter border-dashed">
+  &lt;p class="bg-gray-dark border-gray-lighter border-dashed">
     Starting small is always a great way to start with freelancing.
-  &lt;/div>
+  &lt;/p>
 &lt;/div></code>
   </pre>
 
   <p>Result:</p>
 
   <div class="bg-gray pt-20 pr-90 pb-100 pl-30 max-content-max">
-    <div class="bg-gray-dark border-gray-lighter border-dashed text-white">
+    <p class="mb-0 bg-gray-dark border-gray-lighter border-dashed text-white">
       Starting small is always a great way to start with freelancing.
-    </div>
+    </p>
   </div>
 
   <div class="scrollable-y mt-40">
     <table>
       <thead>
         <tr>
-          <th>Class Name</th>
+          <th>Utility Name</th>
           <th>CSS Property</th>
         </tr>
       </thead>
       <tbody>
         <tr>
-          <td><code>.pt-0</code><br><code>.padding-top-0</code></td>
+          <td><code>.pt-0</code> / <code>.padding-top-0</code></td>
           <td>padding-top: 0;</td>
         </tr>
         <tr>
-          <td><code>.pt-10</code><br><code>.padding-top-10</code></td>
+          <td><code>.pt-5</code> / <code>.padding-top-5</code></td>
+          <td>padding-top: 0.4rem; <span class="text-gray-dark small">&nbsp;/* 1px visual adjustment */</span></td>
+        </tr>
+        <tr>
+          <td><code>.pt-10</code> / <code>.padding-top-10</code></td>
           <td>padding-top: 1rem;</td>
         </tr>
         <tr>
-          <td><code>.pt-20</code><br><code>.padding-top-20</code></td>
+          <td><code>.pt-20</code> / <code>.padding-top-20</code></td>
           <td>padding-top: 2rem;</td>
         </tr>
         <tr>
@@ -106,11 +135,11 @@ tags: [layout, padding]
           <td></td>
         </tr>
         <tr>
-          <td><code>.pt-140</code><br><code>.padding-top-140</code></td>
+          <td><code>.pt-140</code> / <code>.padding-top-140</code></td>
           <td>padding-top: 14rem;</td>
         </tr>
         <tr>
-          <td><code>.pt-150</code><br><code>.padding-top-150</code></td>
+          <td><code>.pt-150</code> / <code>.padding-top-150</code></td>
           <td>padding-top: 15rem;</td>
         </tr>
       </tbody>
@@ -118,9 +147,16 @@ tags: [layout, padding]
   </div>
 
   <p class="push40v">
-    Following the pattern above, you can add the class names <code>.pr-{*} / .padding-right-{*}</code>, 
-    <code>.pb-{*} / .padding-bottom-{*}</code> or <code>.pl-{*} / .padding-left-{*}</code>. Values from 0 to 150 incremented by 10.
+    These utility names are available by following the pattern above:
   </p>
+
+  <ul>
+    <li><code>.pr-{*}</code> / <code>.padding-right-{*}</code></li>
+    <li><code>.pb-{*}</code> / <code>.padding-bottom-{*}</code></li>
+    <li><code>.pl-{*}</code> / <code>.padding-left-{*}</code></li>
+  </ul>
+
+  <p>Values: 0, 5, 10, 20 ... up to 150.</p>
 </div>
 
 <div class="group">
@@ -134,18 +170,18 @@ tags: [layout, padding]
 
   <pre class="language-html mt-30 mb-20 filename" data-file="html">
   <code>&lt;div class="bg-gray pt-50 pr-90 pb-80 pl-40 tablet-landscape-pt-0 max-content-max">
-  &lt;div class="bg-gray-dark border-gray-lighter border-dashed">
+  &lt;p class="bg-gray-dark border-gray-lighter border-dashed">
     Starting small is always a great way to start with freelancing.
-  &lt;/div>
+  &lt;/p>
 &lt;/div></code>
   </pre>
 
-  <p>The result can now be seen by scaling your viewport down to less than 1024 pixels:</p>
+  <p>The result can now be seen by scaling your viewport down to 1024 pixels or less:</p>
 
   <div class="bg-gray pt-50 pr-90 pb-80 pl-40 tablet-landscape-pt-0 max-content-max">
-    <div class="bg-gray-dark border-gray-lighter border-dashed text-white">
+    <p class="mb-0 bg-gray-dark border-gray-lighter border-dashed text-white">
       Starting small is always a great way to start with freelancing.
-    </div>
+    </p>
   </div>
 
   <p class="mt-20">Use the override utilities along this pattern:</p>
@@ -177,14 +213,15 @@ tags: [layout, padding]
   </ul>
 
   <p>
-    The default viewport <code>laptop</code> (&lt;1280px) is excluded from the list of viewports you can use to construct these overrides.
+    The default viewport <code>laptop</code> <small>(&lt;=1280px)</small> is excluded from the screen names you can use to construct these overrides.
   </p>
   <p>
-    Here are your alternatives: <code>.desktop-large</code> (>1680px), <code>.desktop</code> (&lt;1680px), <code>.tablet-landscape</code> (&lt;1024px), 
-    <code>.tablet-portrait</code> (&lt;900px), <code>.phone-landscape</code> (&lt;768px) and <code>.phone</code> (&lt;600px).
+    Your alternatives are: <code>.desktop-large</code> <small>(>1680px)</small>, <code>.desktop</code> <small>(>1280px)</small>, 
+    <code>.tablet-landscape</code> <small>(&lt;=1024px)</small>, <code>.tablet-portrait</code> <small>(&lt;=900px)</small>, 
+    <code>.phone-landscape</code> <small>(&lt;=768px)</small> and <code>.phone</code> <small>(&lt;=600px)</small>.
   </p>
 
-  <p>Each group of overrides goes from -0 to -150, incremented in steps of 10.</p>
+  <p>Each group of overrides goes up to 150.</p>
 
 </div>
 

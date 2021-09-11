@@ -18,37 +18,37 @@ tags: [layout, margin]
   <h2 class="h3">General Margin</h2>
 
   <p>
-    The general margin utilities have 5 and 10 pixels incrementations, going from 0 to 150 pixels. They use <code>rem</code> units internally, 
-    but their names reflect the pixel value they correspond to in a default <strong>hgrid</strong> setup. Applying 
-    <code>margin-60</code> to an elements gives it 6rem of margin on all sides, which corresponds to 60px.
+    The margin utilities have 5 and 10 pixels incrementations from 0 to 150 pixels. They have <code>rem</code> units internally, 
+    but their names reflect the pixel value they correspond to with the default <strong>hgrid</strong> setup. Applying 
+    <code>.m-60</code> or <code>.margin-60</code> to an element gives it 6rem of margin on all sides, which corresponds to 60px.
   </p>
 
   <ul>
-    <li><code>margin-0</code></li>
-    <li><code>margin-5</code></li>
-    <li><code>margin-10</code></li>
-    <li><code>margin-20</code></li>
-    <li><code>margin-30</code></li>
+    <li><code>.margin-0</code>&nbsp;&nbsp; <code>.m-0</code></li>
+    <li><code>.margin-5</code>&nbsp;&nbsp; <code>.m-5</code></li>
+    <li><code>.margin-10</code>&nbsp;&nbsp; <code>.m-10</code></li>
+    <li><code>.margin-20</code>&nbsp;&nbsp; <code>.m-20</code></li>
+    <li><code>.margin-30</code>&nbsp;&nbsp; <code>.m-20</code></li>
     <li>...</li>
-    <li><code>margin-150</code></li>
+    <li><code>.margin-150</code></li>
   </ul>
 
   <p>Code example:</p>
 
 <pre class="language-html mt-30 mb-20 filename" data-file="html">
 <code>&lt;div class="border-gray border-dashed max-content-max">
-  &lt;div class="margin-60 bg-gray-dark text-white">
+  &lt;p class="m-60 bg-gray-dark text-white">
     Tell me and I forget. Teach me and I remember. Involve me and I learn.
-  &lt;/div>
+  &lt;/p>
 &lt;/div></code>
 </pre>
 
   <p>Result:</p>
 
   <div class="border-gray border-dashed max-content-max">
-    <div class="margin-60 bg-gray-dark text-white">
+    <p class="m-60 bg-gray-dark text-white">
       Tell me and I forget. Teach me and I remember. Involve me and I learn.
-    </div>
+    </p>
   </div>
 
 </div>
@@ -58,18 +58,18 @@ tags: [layout, margin]
 
   <pre class="language-html mt-30 mb-20 filename" data-file="html">
   <code>&lt;div class="border-gray border-dashed max-content-max">
-  &lt;div class="bg-gray-dark mt-20 mr-90 mb-100 ml-30 text-white">
+  &lt;p class="bg-gray-dark mt-20 mr-90 mb-100 ml-30 text-white">
     The way to get started is to quit talking and begin doing.
-  &lt;/div>
+  &lt;/p>
 &lt;/div></code>
   </pre>
 
   <p>Result:</p>
 
   <div class="border-gray border-dashed max-content-max">
-    <div class="bg-gray-dark mt-20 mr-90 mb-100 ml-30 text-white">
+    <p class="bg-gray-dark mt-20 mr-90 mb-100 ml-30 text-white">
       The way to get started is to quit talking and begin doing.
-    </div>
+    </p>
   </div>
 
   <div class="scrollable-y mt-40">
@@ -84,6 +84,10 @@ tags: [layout, margin]
         <tr>
           <td><code>.mt-0</code><br><code>.margin-top-0</code></td>
           <td>margin-top: 0;</td>
+        </tr>
+        <tr>
+          <td><code>.mt-5</code><br><code>.margin-top-5</code></td>
+          <td>margin-top: 0.5rem;</td>
         </tr>
         <tr>
           <td><code>.mt-10</code><br><code>.margin-top-10</code></td>
@@ -119,25 +123,25 @@ tags: [layout, margin]
   <h3>Responsive Overrides</h3>
 
   <p>
-    Let's revisit the example above and add a responsive modification. On screens smaller than tablets in 
-    landscape mode we want to remove the margin-bottom completely. We'll use 
+    Let's revisit the example above and add a responsive modification. On tablets in 
+    landscape mode and smaller we want to remove the margin-bottom completely. We'll use 
     the <code>.tablet-landscape-mb-0</code> utility:
   </p>
 
   <pre class="language-html mt-30 mb-20 filename" data-file="html">
   <code>&lt;div class="border-gray border-dashed max-content-max">
-  &lt;div class="bg-gray-dark mt-20 mr-90 mb-100 ml-30 tablet-landscape-mb-0 text-white">
+  &lt;p class="bg-gray-dark mt-20 mr-90 mb-100 ml-30 tablet-landscape-mb-0 text-white">
     The way to get started is to quit talking and begin doing.
   &lt;/div>
 &lt;/div></code>
   </pre>
 
-  <p>The result can now be seen by scaling your viewport down to less than 1024 pixels:</p>
+  <p>The result can now be seen by scaling your viewport down to 1024 pixels or less:</p>
 
   <div class="border-gray border-dashed max-content-max">
-    <div class="bg-gray-dark mt-20 mr-90 mb-100 ml-30 tablet-landscape-mb-0 text-white">
+    <p class="bg-gray-dark mt-20 mr-90 mb-100 ml-30 tablet-landscape-mb-0 text-white">
       The way to get started is to quit talking and begin doing.
-    </div>
+    </p>
   </div>
 
   <p class="mt-20">Use the override utilities along this pattern:</p>
@@ -169,14 +173,12 @@ tags: [layout, margin]
   </ul>
 
   <p>
-    The default viewport <code>laptop</code> (&lt;1280px) is excluded from the list of viewports you can use to construct these overrides.
+    The default viewport <code>laptop</code> (&lt;=1280px) is excluded from the list of viewports you can use to construct these overrides.
   </p>
   <p>
-    Here are your alternatives: <code>.desktop-large</code> (>1680px), <code>.desktop</code> (&lt;1680px), <code>.tablet-landscape</code> 
+    Here are your alternatives: <code>.desktop-large</code> (>1680px), <code>.desktop</code> (>1280px), <code>.tablet-landscape</code> 
     (&lt;1024px), <code>.tablet-portrait</code> (&lt;900px), <code>.phone-landscape</code> (&lt;768px) and <code>.phone</code> (&lt;600px).
   </p>
-
-  <p>Each group of overrides goes from -0 to -150.</p>
 
 </div>
 <div class="group">
@@ -184,16 +186,18 @@ tags: [layout, margin]
 
   <pre class="language-html mt-30 mb-20 filename" data-file="html">
   <code>&lt;div class="border-gray border-dashed">
-  &lt;div class="width-50pct bg-gray-darker margin-0-auto pt-20 pb-20 text-center text-light">
-    This box has automatic margin left and right.
-  &lt;/div>
+  &lt;p class="width-50pct bg-gray-darker margin-0-auto pt-20 pb-20 text-center text-light">
+    This element has automatic margin left and right.
+  &lt;/p>
 &lt;/div></code>
   </pre>
 
   <p>Result:</p>
 
   <div class="border-gray border-dashed">
-    <div class="width-50pct bg-gray-darker margin-0-auto pt-20 pb-20 text-center text-light">This box has automatic margin left and right.</div>
+    <p class="width-50pct bg-gray-darker margin-0-auto pt-20 pb-20 text-center text-light">
+      This element has automatic margin left and right.
+    </p>
   </div>
 
   <p class="mt-30">You can use <code>.margin-left-auto</code> and <code>.margin-right-auto</code> to achieve the same effect.</p>

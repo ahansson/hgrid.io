@@ -29,12 +29,12 @@ tags: [utilities]
       </thead>
       <tbody>
         <tr>
-          <td><code>.hide</code><br><code>.display-none</code></td>
+          <td><code>.hide</code> / <code>.display-none</code></td>
           <td>display: none;</td>
           <td></td>
         </tr>
         <tr>
-          <td><code>.show</code><br><code>.block</code><br><code>.display-block</code></td>
+          <td><code>.show</code> / <code>.block</code> / <code>.display-block</code></td>
           <td>display: block;</td>
           <td></td>
         </tr>
@@ -59,7 +59,7 @@ tags: [utilities]
           <td></td>
         </tr>
         <tr>
-          <td><code>.invisible</code><br><code>.hidden</code></td>
+          <td><code>.invisible</code> / <code>.hidden</code></td>
           <td>visibility: hidden;</td>
           <td>The element is invisible (also to screen readers), but layout is affected as normal.</td>
         </tr>
@@ -84,16 +84,16 @@ tags: [utilities]
 </div>
 
 <div class="group">
-  <h4 class="mt-60 mb-30">Responsive Overrides</h4>
+  <h3 class="mt-60 mb-30">Responsive Overrides</h3>
 
-  <h5>1. Hide elements from certain viewports</h5>
+  <h4>1. Hide elements from certain viewports</h4>
 
   <div class="scrollable-y mt-40 mb-30">
-    <table class="striped" style="min-width: 600px;">
+    <table style="min-width: 600px;">
       <thead>
         <tr>
-          <th class="width-40pct">Utility Name</th>
-          <th class="width-20pct">CSS Property</th>
+          <th class="width-30pct">Utility Name</th>
+          <th class="width-25pct">CSS Property</th>
           <th>Comment</th>
         </tr>
       </thead>
@@ -104,7 +104,7 @@ tags: [utilities]
           <td>Hide element from breakpoint and up (wider)</td>
         </tr>
         <tr>
-          <td><code>.hide-laptop</code><br><code>.hide-tablet-landscape</code><br><code>.hide-tablet-portrait</code><br>
+          <td><code>.hide-tablet-landscape</code><br><code>.hide-tablet-portrait</code><br>
           <code>.hide-phone-landscape</code><br><code>.hide-phone</code></td>
           <td>display: none;</td>
           <td>Hide element from breakpoint and down (narrower)</td>
@@ -115,7 +115,7 @@ tags: [utilities]
           <td>Hide element from breakpoint and up (wider)</td>
         </tr>
         <tr>
-          <td><code>.invisible-laptop</code><br><code>.invisible-tablet-landscape</code><br><code>.invisible-tablet-portrait</code><br>
+          <td><code>.invisible-tablet-landscape</code><br><code>.invisible-tablet-portrait</code><br>
           <code>.invisible-phone-landscape</code><br><code>.invisible-phone</code></td>
           <td>visibility: hidden;</td>
           <td>Hide element from breakpoint and down (narrower)</td>
@@ -124,14 +124,14 @@ tags: [utilities]
     </table>
   </div>
 
-  <h5 class="mt-40">2. Show elements on certain viewports</h5>
+  <h4 class="mt-40">2. Show elements on certain viewports</h4>
 
   <div class="scrollable-y mt-40 mb-30">
-    <table class="striped" style="min-width: 600px;">
+    <table style="min-width: 600px;">
       <thead>
         <tr>
-          <th class="width-40pct">Utility Name</th>
-          <th class="width-20pct">CSS Property</th>
+          <th class="width-30pct">Utility Name</th>
+          <th class="width-25pct">CSS Property</th>
           <th>Comment</th>
         </tr>
       </thead>
@@ -142,7 +142,7 @@ tags: [utilities]
           <td>Show element from breakpoint and up (wider)</td>
         </tr>
         <tr>
-          <td><code>.show-laptop</code><br><code>.show-tablet-landscape</code><br><code>.show-tablet-portrait</code><br>
+          <td><code>.show-tablet-landscape</code><br><code>.show-tablet-portrait</code><br>
           <code>.show-phone-landscape</code><br><code>.show-phone</code></td>
           <td>display: block;</td>
           <td>Show element from breakpoint and down (narrower)</td>
@@ -153,36 +153,41 @@ tags: [utilities]
           <td>Show element from breakpoint and up (wider)</td>
         </tr>
         <tr>
-          <td><code>.visible-laptop</code><br><code>.visible-tablet-landscape</code><br><code>.visible-tablet-portrait</code><br>
+          <td><code>.visible-tablet-landscape</code><br><code>.visible-tablet-portrait</code><br>
           <code>.visible-phone-landscape</code><br><code>.visible-phone</code></td>
           <td>visibility: visible;</td>
           <td>Show element from breakpoint and down (narrower)</td>
         </tr>
         <tr>
-          <td><code>.flex-show-desktop</code><br><code>.flex-show-desktop-large</code></td>
+          <td><code>.f-show-desktop</code><br><code>.f-show-desktop-large</code><br></td>
           <td>display: flex;</td>
-          <td>Show non-stacked flex containers (like <code>.row</code>) from the breakpoint and up 
+          <td>Show flex containers (like unstacked <code>.row</code>) from the breakpoint and up 
           if they have been hidden with <code>display:none;</code></td>
         </tr>
         <tr>
-          <td><code>.flex-show-laptop</code><br><code>.flex-show-tablet-landscape</code><br><code>.flex-show-tablet-portrait</code><br>
-          <code>.flex-show-phone-landscape</code><br><code>.flex-show-phone</code></td>
+          <td><code>.f-show-tablet-landscape</code><br><code>.f-show-tablet-portrait</code><br>
+          <code>.f-show-phone-landscape</code><br><code>.f-show-phone</code></td>
           <td>display: flex;</td>
-          <td>Show non-stacked flex containers (like <code>.row</code>) from the breakpoint and down 
+          <td>Show flex containers (like unstacked <code>.row</code>) from the breakpoint and down 
           if they have been hidden with <code>display:none;</code></td>
         </tr>
       </tbody>
     </table>
   </div>
 
-  <h5>3. Hide elements from a specific viewport</h5>
+  <h4>3. Hide elements from one specific viewport</h4>
+
+  <p class="note mt-20">
+    <code>phone</code> and <code>desktop-large</code> are excluded. Specific hide utilities for these 
+    are covered by #1 and #2 above.
+  </p>
 
   <div class="scrollable-y mt-40 mb-10">
-    <table class="striped" style="min-width: 600px;">
+    <table style="min-width: 600px;">
       <thead>
         <tr>
-          <th class="width-40pct">Utility Name</th>
-          <th class="width-20pct">CSS Property</th>
+          <th class="width-30pct">Utility Name</th>
+          <th class="width-25pct">CSS Property</th>
           <th>Comment</th>
         </tr>
       </thead>
@@ -194,8 +199,8 @@ tags: [utilities]
           <td>Hide element from this viewport only</td>
         </tr>
         <tr>
-          <td><code>.invisible-desktop-only</code><br><code>.invisible-laptop-only</code><br><code>.invisible-tablet-landscape-only</code><br><code>.invisible-tablet-portrait-only</code><br>
-          <code>.invisible-phone-landscape-only</code></td>
+          <td><code>.invisible-desktop-only</code><br><code>.invisible-laptop-only</code><br><code>.invisible-tablet-landscape-only</code><br>
+          <code>.invisible-tablet-portrait-only</code><br><code>.invisible-phone-landscape-only</code></td>
           <td>visibility: hidden;</td>
           <td>Hide element from this viewport only</td>
         </tr>
@@ -203,19 +208,19 @@ tags: [utilities]
     </table>
   </div>
 
-  <p class="note">
-    As we can see, the viewports <code>phone</code> and <code>desktop-large</code> are excluded from these utilities. Show/hide for these two  
-    is covered by the general utilities (#1 and #2 above).
+  <h4 class="mt-40">4. Show elements on one specific viewport</h4>
+
+  <p class="note mt-20">
+    <code>phone</code> and <code>desktop-large</code> are excluded. Specific show utilities for these 
+    are covered by #1 and #2 above.
   </p>
 
-  <h5 class="mt-40">4. Show elements on a specific viewport</h5>
-
   <div class="scrollable-y mt-40">
-    <table class="striped" style="min-width: 600px;">
+    <table style="min-width: 600px;">
       <thead>
         <tr>
-          <th class="width-40pct">Utility Name</th>
-          <th class="width-20pct">CSS Property</th>
+          <th class="width-30pct">Utility Name</th>
+          <th class="width-25pct">CSS Property</th>
           <th>Comment</th>
         </tr>
       </thead>
@@ -234,27 +239,22 @@ tags: [utilities]
           <td>Show element on this viewport only</td>
         </tr>
         <tr>
-          <td><code>.flex-show-desktop-only</code><br><code>.flex-show-laptop-only</code><br><code>.flex-show-tablet-landscape-only</code><br>
-          <code>.flex-show-tablet-portrait-only</code><br><code>.flex-show-phone-landscape-only</code></td>
+          <td><code>.f-show-desktop-only</code><br><code>.f-show-laptop-only</code><br><code>.f-show-tablet-landscape-only</code><br>
+          <code>.f-show-tablet-portrait-only</code><br><code>.f-show-phone-landscape-only</code></td>
           <td>display: flex;</td>
-          <td>Show non-stacked flex containers (like <code>.row</code>) on this viewport only, if they have been 
+          <td>Show flex containers (like unstacked <code>.row</code>) on this viewport only, if they have been 
           hidden with <code>display:none;</code></td>
         </tr>
       </tbody>
     </table>
   </div>
-
-  <p class="note mb-60">
-    As we can see, the viewports <code>phone</code> and <code>desktop-large</code> are excluded from these utilities. Show/hide for these two  
-    is covered by the general utilities (#1 and #2 above).
-  </p>
 </div>
 
 <div class="group">
   <h3>Opacity</h3>
 
   <p>
-    Control element opacity with utility classes from <code>.opacity-0</code> to <code>.opacity-100</code>, with intervals of <code>-5</code>. 
+    Control element opacity with utilities from <code>.opacity-0</code> to <code>.opacity-100</code>, with intervals of <code>-5</code>. 
     Here's a red rectangle with 40% opacity:
   </p>
 
@@ -276,8 +276,8 @@ tags: [utilities]
     <table style="min-width: 600px;">
       <thead>
         <tr>
-          <th class="width-40pct">Utility Name</th>
-          <th class="width-20pct">CSS Property</th>
+          <th class="width-30pct">Utility Name</th>
+          <th class="width-25pct">CSS Property</th>
           <th>Comment</th>
         </tr>
       </thead>
@@ -371,7 +371,7 @@ tags: [utilities]
 
   <pre class="language-html filename" data-file="html">
     <code>&lt;div class="overflow-scroll border-gray" style="max-width:40rem; height: 10rem;">
-    &lt;!-- content ... -->
+    &lt;!-- content can be scrolled both directions -->
   &lt;/div></code>
   </pre>
 
@@ -390,7 +390,7 @@ tags: [utilities]
 
   <pre class="language-html filename" data-file="html">
     <code>&lt;div class="overflow-visible-hidden border-gray" style="max-width:40rem; height: 10rem;">
-    &lt;!-- content ... -->
+    &lt;!-- content can be scrolled horizontally ... -->
   &lt;/div></code>
   </pre>
 
