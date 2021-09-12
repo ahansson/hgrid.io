@@ -208,3 +208,68 @@ if (versionTags && versionTags.length >= 1) {
   
   })(url)
 }
+
+// Expand content containers
+const toggleExpandingContainer = (trigger = null, container = null) => {
+  trigger && container && 
+    (container.classList.contains('expanded')) ? 
+    (container.classList.remove('expanded'), trigger.innerText = 'Expand List') : 
+    (container.classList.add('expanded'), trigger.innerText = 'Collapse')
+}
+
+const flexUtilsTrigger = document.querySelector('.a-expansion-btn')
+const flexUtilsContainer = document.querySelector('.flex-utilities')
+const widthUtilsTrigger = document.querySelector('.b-expansion-btn')
+const widthUtilsContainer = document.querySelector('.width-utilities')
+const hideUtilsTrigger = document.querySelector('.c-expansion-btn')
+const hideUtilsContainer = document.querySelector('.hide-utilities')
+const showUtilsTrigger = document.querySelector('.d-expansion-btn')
+const showUtilsContainer = document.querySelector('.show-utilities')
+const specificHideUtilsTrigger = document.querySelector('.e-expansion-btn')
+const specificHideUtilsContainer = document.querySelector('.specific-hide-utilities')
+const specificShowUtilsTrigger = document.querySelector('.f-expansion-btn')
+const specificShowUtilsContainer = document.querySelector('.specific-show-utilities')
+const overflowUtilsTrigger = document.querySelector('.g-expansion-btn')
+const overflowUtilsContainer = document.querySelector('.overflow-utilities')
+const generalVisibilityUtilsTrigger = document.querySelector('.h-expansion-btn')
+const generalVisibilityUtilsContainer = document.querySelector('.general-visibility-utilities')
+
+// Toggle flex utilities
+flexUtilsTrigger && flexUtilsTrigger.addEventListener(
+  'click', () => toggleExpandingContainer(flexUtilsTrigger, flexUtilsContainer)
+)
+
+// Toggle width utilities
+widthUtilsTrigger && widthUtilsTrigger.addEventListener(
+  'click', () => toggleExpandingContainer(widthUtilsTrigger, widthUtilsContainer)
+)
+
+// Toggle hide utilities
+hideUtilsTrigger && hideUtilsTrigger.addEventListener(
+  'click', () => toggleExpandingContainer(hideUtilsTrigger, hideUtilsContainer)
+)
+
+// Toggle show utilities
+showUtilsTrigger && showUtilsTrigger.addEventListener(
+  'click', () => toggleExpandingContainer(showUtilsTrigger, showUtilsContainer)
+)
+
+// Toggle specific hide utilities
+specificHideUtilsTrigger && specificHideUtilsTrigger.addEventListener(
+  'click', () => toggleExpandingContainer(specificHideUtilsTrigger, specificHideUtilsContainer)
+)
+
+// Toggle specific show utilities
+specificShowUtilsTrigger && specificShowUtilsTrigger.addEventListener(
+  'click', () => toggleExpandingContainer(specificShowUtilsTrigger, specificShowUtilsContainer)
+)
+
+// Toggle overflow utilities
+overflowUtilsTrigger && overflowUtilsTrigger.addEventListener(
+  'click', () => toggleExpandingContainer(overflowUtilsTrigger, overflowUtilsContainer)
+)
+
+// Toggle general visibility utilities
+generalVisibilityUtilsTrigger && generalVisibilityUtilsTrigger.addEventListener(
+  'click', () => toggleExpandingContainer(generalVisibilityUtilsTrigger, generalVisibilityUtilsContainer)
+)

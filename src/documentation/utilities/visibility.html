@@ -18,161 +18,171 @@ tags: [utilities]
 
   <h2 class="h3">General Utilities</h2>
 
-  <div class="scrollable-y mt-40 mb-30">
-    <table class="striped" style="min-width: 600px;">
-      <thead>
-        <tr>
-          <th class="width-30pct">Utility Name</th>
-          <th class="width-25pct">CSS Property</th>
-          <th>Comment</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><code>.hide</code> / <code>.display-none</code></td>
-          <td>display: none;</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td><code>.show</code> / <code>.block</code> / <code>.display-block</code></td>
-          <td>display: block;</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td><code>.inline</code></td>
-          <td>display: inline;</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td><code>.inline-block</code></td>
-          <td>display: inline-block;</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td><code>.flow-root</code></td>
-          <td>display: flow-root;</td>
-          <td>Creates a new block formatting context for the element. Can replace clearfix hacks for floated elements.</td>
-        </tr>
-        <tr>
-          <td><code>.contents</code></td>
-          <td>display: contents;</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td><code>.invisible</code> / <code>.hidden</code></td>
-          <td>visibility: hidden;</td>
-          <td>The element is invisible (also to screen readers), but layout is affected as normal.</td>
-        </tr>
-        <tr>
-          <td><code>.visible</code></td>
-          <td>visibility: visible;</td>
-          <td></td>
-        </tr>
-        <tr>
-          <td><code>.pointer-events-all</code></td>
-          <td>pointer-events: all;</td>
-          <td>Clicks/taps will be registered even for invisible elements</td>
-        </tr>
-        <tr>
-          <td><code>.pointer-events-none</code></td>
-          <td>pointer-events: none;</td>
-          <td>No clicks/taps will be registered</td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="flex f-direction-column align-items-center mb-60">
+    <div class="scrollable-y scrollable-x mt-40 border-bottom-gray-dotted width-100pct expansion-container general-visibility-utilities">
+      <table class="striped mb-40" style="min-width: 600px;">
+        <thead>
+          <tr>
+            <th class="width-30pct">Utility Name</th>
+            <th class="width-25pct">CSS Property</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>.hide</code> / <code>.display-none</code></td>
+            <td>display: none;</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>.show</code> / <code>.block</code> / <code>.display-block</code></td>
+            <td>display: block;</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>.inline</code></td>
+            <td>display: inline;</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>.inline-block</code></td>
+            <td>display: inline-block;</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>.flow-root</code></td>
+            <td>display: flow-root;</td>
+            <td>Creates a new block formatting context for the element. Can replace clearfix hacks for floated elements.</td>
+          </tr>
+          <tr>
+            <td><code>.contents</code></td>
+            <td>display: contents;</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>.invisible</code> / <code>.hidden</code></td>
+            <td>visibility: hidden;</td>
+            <td>The element is invisible (also to screen readers), but layout is affected as normal.</td>
+          </tr>
+          <tr>
+            <td><code>.visible</code></td>
+            <td>visibility: visible;</td>
+            <td></td>
+          </tr>
+          <tr>
+            <td><code>.pointer-events-all</code></td>
+            <td>pointer-events: all;</td>
+            <td>Clicks/taps will be registered even for invisible elements</td>
+          </tr>
+          <tr>
+            <td><code>.pointer-events-none</code></td>
+            <td>pointer-events: none;</td>
+            <td>No clicks/taps will be registered</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <span class="small max-content pl-20 pr-20 pointer border-gray rounded translate-pull12v expansion-btn h-expansion-btn">Expand List</span>
   </div>
+
 </div>
 
 <div class="group">
-  <h3 class="mt-60 mb-30">Responsive Overrides</h3>
+  <h3 class="mt-60">Responsive Overrides</h3>
 
   <h4>1. Hide elements from certain viewports</h4>
 
-  <div class="scrollable-y mt-40 mb-30">
-    <table style="min-width: 600px;">
-      <thead>
-        <tr>
-          <th class="width-30pct">Utility Name</th>
-          <th class="width-25pct">CSS Property</th>
-          <th>Comment</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><code>.hide-desktop</code><br><code>.hide-desktop-large</code></td>
-          <td>display: none;</td>
-          <td>Hide element from breakpoint and up (wider)</td>
-        </tr>
-        <tr>
-          <td><code>.hide-tablet-landscape</code><br><code>.hide-tablet-portrait</code><br>
-          <code>.hide-phone-landscape</code><br><code>.hide-phone</code></td>
-          <td>display: none;</td>
-          <td>Hide element from breakpoint and down (narrower)</td>
-        </tr>
-        <tr>
-          <td><code>.invisible-desktop</code><br><code>.invisible-desktop-large</code></td>
-          <td>visibility: hidden;</td>
-          <td>Hide element from breakpoint and up (wider)</td>
-        </tr>
-        <tr>
-          <td><code>.invisible-tablet-landscape</code><br><code>.invisible-tablet-portrait</code><br>
-          <code>.invisible-phone-landscape</code><br><code>.invisible-phone</code></td>
-          <td>visibility: hidden;</td>
-          <td>Hide element from breakpoint and down (narrower)</td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="flex f-direction-column align-items-center mb-60">
+    <div class="scrollable-y scrollable-x mt-40 border-bottom-gray-dotted width-100pct expansion-container hide-utilities">
+      <table class="mb-40" style="min-width: 60rem;">
+        <thead>
+          <tr>
+            <th class="width-30pct">Utility Name</th>
+            <th class="width-25pct">CSS Property</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>.hide-desktop</code><br><code>.hide-desktop-large</code></td>
+            <td>display: none;</td>
+            <td>Hide element from breakpoint and up (wider)</td>
+          </tr>
+          <tr>
+            <td><code>.hide-tablet-landscape</code><br><code>.hide-tablet-portrait</code><br>
+            <code>.hide-phone-landscape</code><br><code>.hide-phone</code></td>
+            <td>display: none;</td>
+            <td>Hide element from breakpoint and down (narrower)</td>
+          </tr>
+          <tr>
+            <td><code>.invisible-desktop</code><br><code>.invisible-desktop-large</code></td>
+            <td>visibility: hidden;</td>
+            <td>Hide element from breakpoint and up (wider)</td>
+          </tr>
+          <tr>
+            <td><code>.invisible-tablet-landscape</code><br><code>.invisible-tablet-portrait</code><br>
+            <code>.invisible-phone-landscape</code><br><code>.invisible-phone</code></td>
+            <td>visibility: hidden;</td>
+            <td>Hide element from breakpoint and down (narrower)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <span class="small max-content pl-20 pr-20 pointer border-gray rounded translate-pull12v expansion-btn c-expansion-btn">Expand List</span>
   </div>
 
-  <h4 class="mt-40">2. Show elements on certain viewports</h4>
+  <h4>2. Show elements on certain viewports</h4>
 
-  <div class="scrollable-y mt-40 mb-30">
-    <table style="min-width: 600px;">
-      <thead>
-        <tr>
-          <th class="width-30pct">Utility Name</th>
-          <th class="width-25pct">CSS Property</th>
-          <th>Comment</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><code>.show-desktop</code><br><code>.show-desktop-large</code></td>
-          <td>display: block;</td>
-          <td>Show element from breakpoint and up (wider)</td>
-        </tr>
-        <tr>
-          <td><code>.show-tablet-landscape</code><br><code>.show-tablet-portrait</code><br>
-          <code>.show-phone-landscape</code><br><code>.show-phone</code></td>
-          <td>display: block;</td>
-          <td>Show element from breakpoint and down (narrower)</td>
-        </tr>
-        <tr>
-          <td><code>.visible-desktop</code><br><code>.visible-desktop-large</code></td>
-          <td>visibility: visible;</td>
-          <td>Show element from breakpoint and up (wider)</td>
-        </tr>
-        <tr>
-          <td><code>.visible-tablet-landscape</code><br><code>.visible-tablet-portrait</code><br>
-          <code>.visible-phone-landscape</code><br><code>.visible-phone</code></td>
-          <td>visibility: visible;</td>
-          <td>Show element from breakpoint and down (narrower)</td>
-        </tr>
-        <tr>
-          <td><code>.f-show-desktop</code><br><code>.f-show-desktop-large</code><br></td>
-          <td>display: flex;</td>
-          <td>Show flex containers (like unstacked <code>.row</code>) from the breakpoint and up 
-          if they have been hidden with <code>display:none;</code></td>
-        </tr>
-        <tr>
-          <td><code>.f-show-tablet-landscape</code><br><code>.f-show-tablet-portrait</code><br>
-          <code>.f-show-phone-landscape</code><br><code>.f-show-phone</code></td>
-          <td>display: flex;</td>
-          <td>Show flex containers (like unstacked <code>.row</code>) from the breakpoint and down 
-          if they have been hidden with <code>display:none;</code></td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="flex f-direction-column align-items-center mb-60">
+    <div class="scrollable-y scrollable-x mt-40 border-bottom-gray-dotted width-100pct expansion-container show-utilities">
+      <table class="mb-40" style="min-width: 60rem;">
+        <thead>
+          <tr>
+            <th class="width-30pct">Utility Name</th>
+            <th class="width-25pct">CSS Property</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>.show-desktop</code><br><code>.show-desktop-large</code></td>
+            <td>display: block;</td>
+            <td>Show element from breakpoint and up (wider)</td>
+          </tr>
+          <tr>
+            <td><code>.show-tablet-landscape</code><br><code>.show-tablet-portrait</code><br>
+            <code>.show-phone-landscape</code><br><code>.show-phone</code></td>
+            <td>display: block;</td>
+            <td>Show element from breakpoint and down (narrower)</td>
+          </tr>
+          <tr>
+            <td><code>.visible-desktop</code><br><code>.visible-desktop-large</code></td>
+            <td>visibility: visible;</td>
+            <td>Show element from breakpoint and up (wider)</td>
+          </tr>
+          <tr>
+            <td><code>.visible-tablet-landscape</code><br><code>.visible-tablet-portrait</code><br>
+            <code>.visible-phone-landscape</code><br><code>.visible-phone</code></td>
+            <td>visibility: visible;</td>
+            <td>Show element from breakpoint and down (narrower)</td>
+          </tr>
+          <tr>
+            <td><code>.f-show-desktop</code><br><code>.f-show-desktop-large</code><br></td>
+            <td>display: flex;</td>
+            <td>Show flex containers (like unstacked <code>.row</code>) from the breakpoint and up 
+            if they have been hidden with <code>display:none;</code></td>
+          </tr>
+          <tr>
+            <td><code>.f-show-tablet-landscape</code><br><code>.f-show-tablet-portrait</code><br>
+            <code>.f-show-phone-landscape</code><br><code>.f-show-phone</code></td>
+            <td>display: flex;</td>
+            <td>Show flex containers (like unstacked <code>.row</code>) from the breakpoint and down 
+            if they have been hidden with <code>display:none;</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <span class="small max-content pl-20 pr-20 pointer border-gray rounded translate-pull12v expansion-btn d-expansion-btn">Expand List</span>
   </div>
 
   <h4>3. Hide elements from one specific viewport</h4>
@@ -182,8 +192,9 @@ tags: [utilities]
     are covered by #1 and #2 above.
   </p>
 
-  <div class="scrollable-y mt-40 mb-10">
-    <table style="min-width: 600px;">
+  <div class="flex f-direction-column align-items-center mb-60">
+    <div class="scrollable-y scrollable-x mt-40 border-bottom-gray-dotted width-100pct expansion-container specific-hide-utilities">
+      <table class="mb-40" style="min-width: 60rem;">
       <thead>
         <tr>
           <th class="width-30pct">Utility Name</th>
@@ -207,6 +218,8 @@ tags: [utilities]
       </tbody>
     </table>
   </div>
+  <span class="small max-content pl-20 pr-20 pointer border-gray rounded translate-pull12v expansion-btn e-expansion-btn">Expand List</span>
+</div>
 
   <h4 class="mt-40">4. Show elements on one specific viewport</h4>
 
@@ -215,39 +228,43 @@ tags: [utilities]
     are covered by #1 and #2 above.
   </p>
 
-  <div class="scrollable-y mt-40">
-    <table style="min-width: 600px;">
-      <thead>
-        <tr>
-          <th class="width-30pct">Utility Name</th>
-          <th class="width-25pct">CSS Property</th>
-          <th>Comment</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><code>.show-desktop-only</code><br><code>.show-laptop-only</code><br><code>.show-tablet-landscape-only</code>
-          <br><code>.show-tablet-portrait-only</code><br>
-          <code>.show-phone-landscape-only</code></td>
-          <td>display: block;</td>
-          <td>Show element on this viewport only</td>
-        </tr>
-        <tr>
-          <td><code>.visible-desktop-only</code><br><code>.visible-laptop-only</code><br><code>.visible-tablet-landscape-only</code><br>
-          <code>.visible-tablet-portrait-only</code><br><code>.visible-phone-landscape-only</code></td>
-          <td>visibility: visible;</td>
-          <td>Show element on this viewport only</td>
-        </tr>
-        <tr>
-          <td><code>.f-show-desktop-only</code><br><code>.f-show-laptop-only</code><br><code>.f-show-tablet-landscape-only</code><br>
-          <code>.f-show-tablet-portrait-only</code><br><code>.f-show-phone-landscape-only</code></td>
-          <td>display: flex;</td>
-          <td>Show flex containers (like unstacked <code>.row</code>) on this viewport only, if they have been 
-          hidden with <code>display:none;</code></td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="flex f-direction-column align-items-center mb-60">
+    <div class="scrollable-y scrollable-x mt-40 border-bottom-gray-dotted width-100pct expansion-container specific-show-utilities">
+      <table class="mb-40" style="min-width: 60rem;">
+        <thead>
+          <tr>
+            <th class="width-30pct">Utility Name</th>
+            <th class="width-25pct">CSS Property</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>.show-desktop-only</code><br><code>.show-laptop-only</code><br><code>.show-tablet-landscape-only</code>
+            <br><code>.show-tablet-portrait-only</code><br>
+            <code>.show-phone-landscape-only</code></td>
+            <td>display: block;</td>
+            <td>Show element on this viewport only</td>
+          </tr>
+          <tr>
+            <td><code>.visible-desktop-only</code><br><code>.visible-laptop-only</code><br><code>.visible-tablet-landscape-only</code><br>
+            <code>.visible-tablet-portrait-only</code><br><code>.visible-phone-landscape-only</code></td>
+            <td>visibility: visible;</td>
+            <td>Show element on this viewport only</td>
+          </tr>
+          <tr>
+            <td><code>.f-show-desktop-only</code><br><code>.f-show-laptop-only</code><br><code>.f-show-tablet-landscape-only</code><br>
+            <code>.f-show-tablet-portrait-only</code><br><code>.f-show-phone-landscape-only</code></td>
+            <td>display: flex;</td>
+            <td>Show flex containers (like unstacked <code>.row</code>) on this viewport only, if they have been 
+            hidden with <code>display:none;</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <span class="small max-content pl-20 pr-20 pointer border-gray rounded translate-pull12v expansion-btn f-expansion-btn">Expand List</span>
   </div>
+
 </div>
 
 <div class="group">
@@ -272,79 +289,107 @@ tags: [utilities]
 <div class="group">
   <h3 class="mt-50">Overflow</h3>
 
-  <div class="scrollable-y mt-20">
-    <table style="min-width: 600px;">
-      <thead>
-        <tr>
-          <th class="width-30pct">Utility Name</th>
-          <th class="width-25pct">CSS Property</th>
-          <th>Comment</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><code>.overflow-hidden</code></td>
-          <td>overflow: hidden;</td>
-          <td>No scrollbars</td>
-        </tr>
-        <tr>
-          <td><code>.overflow-scroll</code></td>
-          <td>overflow: scroll;</td>
-          <td>Always scrollbars, both directions</td>
-        </tr>
-        <tr>
-          <td><code>.overflow-auto</code></td>
-          <td>overflow: auto;</td>
-          <td>Scrollbars if needed, both directions</td>
-        </tr>
-        <tr>
-          <td><code>.overflow-hidden-visible</code></td>
-          <td>overflow: hidden visible;</td>
-          <td>Vertical scrollbar only, clip content at the bottom</td>
-        </tr>
-        <tr>
-          <td><code>.overflow-visible-hidden</code></td>
-          <td>overflow: visible hidden;</td>
-          <td>Horizontal scrollbar only, clip content on the right side and at the bottom if it overflows available height/width.</td>
-        </tr>
-        <tr>
-          <td><code>.overflow-x-hidden</code></td>
-          <td>overflow-x: hidden;</td>
-          <td>Clip horizontal content if needed, no scrollbar.</td>
-        </tr>
-        <tr>
-          <td><code>.overflow-x-scroll</code></td>
-          <td>overflow-x: hidden;</td>
-          <td>Clip horizontal content if needed, with horizontal scrollbar.</td>
-        </tr>
-        <tr>
-          <td><code>.overflow-x-auto</code></td>
-          <td>overflow-x: auto;</td>
-          <td>Horizontal scrollbar if element is too narrow for the content</td>
-        </tr>
-        <tr>
-          <td><code>.overflow-y-hidden</code></td>
-          <td>overflow-y: hidden;</td>
-          <td>Clip vertical content if needed, no scrollbar.</td>
-        </tr>
-        <tr>
-          <td><code>.overflow-y-scroll</code></td>
-          <td>overflow-y: scroll;</td>
-          <td>Vertical scrollbar if content needs to be clipped.</td>
-        </tr>
-        <tr>
-          <td><code>.overflow-y-auto</code></td>
-          <td>overflow-y: scroll;</td>
-          <td>Vertical scrollbar if element is too short for the content</td>
-        </tr>
-      </tbody>
-    </table>
+  <div class="flex f-direction-column align-items-center mb-60">
+    <div class="scrollable-y scrollable-x mt-40 border-bottom-gray-dotted width-100pct expansion-container overflow-utilities">
+      <table class="mb-40" style="min-width: 60rem;">
+        <thead>
+          <tr>
+            <th class="width-30pct">Utility Name</th>
+            <th class="width-25pct">CSS Property</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><code>.overflow-hidden</code></td>
+            <td>overflow: hidden;</td>
+            <td>No scrollbars</td>
+          </tr>
+          <tr>
+            <td><code>.overflow-scroll</code></td>
+            <td>overflow: scroll;</td>
+            <td>Always scrollbars, both directions</td>
+          </tr>
+          <tr>
+            <td><code>.overflow-auto</code></td>
+            <td>overflow: auto;</td>
+            <td>Scrollbars if needed, both directions</td>
+          </tr>
+          <tr>
+            <td><code>.overflow-visible</code></td>
+            <td>overflow: visible;</td>
+            <td>Content can be rendered outside the container if too high/wide</td>
+          </tr>
+          <tr>
+            <td><code>.overflow-hidden-visible</code></td>
+            <td>overflow: hidden visible;</td>
+            <td>Vertical scrollbar only, clip content at the bottom</td>
+          </tr>
+          <tr>
+            <td><code>.overflow-visible-hidden</code></td>
+            <td>overflow: visible hidden;</td>
+            <td>Horizontal scrollbar only, clip content on the right side and at the bottom if it overflows available height/width</td>
+          </tr>
+          <tr>
+            <td><code>.overflow-unset</code></td>
+            <td>overflow: unset;</td>
+            <td>Unsets the overflow property</td>
+          </tr>
+          <tr>
+            <td><code>.overflow-x-hidden</code></td>
+            <td>overflow-x: hidden;</td>
+            <td>Clip horizontal content if needed, no scrollbar</td>
+          </tr>
+          <tr>
+            <td><code>.overflow-x-scroll</code></td>
+            <td>overflow-x: scroll;</td>
+            <td>Clip horizontal content if needed, allow horizontal scroll</td>
+          </tr>
+          <tr>
+            <td><code>.overflow-x-auto</code></td>
+            <td>overflow-x: auto;</td>
+            <td>Horizontal scrollbar if element is too narrow for the content</td>
+          </tr>
+          <tr>
+            <td><code>.overflow-x-visible</code></td>
+            <td>overflow-x: visible;</td>
+            <td>Content allowed to be rendered outside the container if too wide</td>
+          </tr>
+          <tr>
+            <td><code>.overflow-x-unset</code></td>
+            <td>overflow-x: unset;</td>
+            <td>Unsets the horizontal overflow property</td>
+          </tr>
+          <tr>
+            <td><code>.overflow-y-hidden</code></td>
+            <td>overflow-y: hidden;</td>
+            <td>Clip vertical content if needed, no scrollbar</td>
+          </tr>
+          <tr>
+            <td><code>.overflow-y-scroll</code></td>
+            <td>overflow-y: scroll;</td>
+            <td>Vertical scrollbar if content needs to be clipped</td>
+          </tr>
+          <tr>
+            <td><code>.overflow-y-auto</code></td>
+            <td>overflow-y: scroll;</td>
+            <td>Vertical scrollbar if element is too short for the content</td>
+          </tr>
+          <tr>
+            <td><code>.overflow-y-visible</code></td>
+            <td>overflow-y: visible;</td>
+            <td>Content allowed to be rendered outside the container if too high</td>
+          </tr>
+          <tr>
+            <td><code>.overflow-y-unset</code></td>
+            <td>overflow-y: unset;</td>
+            <td>Unsets the vertical overflow property</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <span class="small max-content pl-20 pr-20 pointer border-gray rounded translate-pull12v expansion-btn g-expansion-btn">Expand List</span>
   </div>
-
-  <small>
-    In addition we have these variants: <code>visible</code>, <code>unset</code> for these utilities: 
-    <code>.overflow-{*}</code>, <code>.overflow-x-{*}</code> and <code>.overflow-y-{*}</code>
-  </small>
 
   <h4 class="mt-40 mb-20">Overflow Examples</h4>
 
