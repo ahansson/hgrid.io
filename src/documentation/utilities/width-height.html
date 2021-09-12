@@ -14,38 +14,41 @@ tags: [utilities]
     >GitHub</a>)
 </p>
 
-<h3 class="mt-60">Width Utilities</h3>
+<h2 class="h3 mt-60">Width Utilities</h2>
 
 <p>
-  The majority of the width and max-width utilities follow the naming pattern <code>.[max-]width-[n]pct</code>. The array of numbers 
-  replacing the <code>n</code> variable is like this by default: 
-  <code><small>[100, 90, 80, 75, 70, 66.666666, 60, 50, 40, 33.333333, 30, 25, 20, 10, 5]</small></code>.
+  The majority of the width and max-width utilities follow the naming pattern <code>.[max-]width-{n}pct</code>. 
+</p>
+
+<h3 class="h6">Examples:</h3>
+
+<ul>
+  <li><code>.width-33pct</code></li>
+  <li><code>.max-width-90pct</code></li>
+</ul>
+
+<p>
+  The array from which you can pick a value for <code>n</code> is by default
 </p>
 
 <p>
-  You can customize <strong>hgrid</strong>'s CSS output by overriding the array <code>$fractions</code> from _variables.scss
-  in your own scss entry point file. Read more about <a href="/documentation/integrate/">how to customize it</a>.
+  <code><small>[100, 90, 80, 75, 70, 66.666666, 60, 50, 40, 33.333333, 30, 25, 20, 10, 5]</small></code>
+</p>
+
+<p>
+  You can modify the array by overriding <code>$fractions</code> when initializing <strong>hgrid</strong>. Read more about  
+  <a href="/documentation/integrate/">how to do this</a> (will influence any other utilities using the same values).
 </p>
 
 <p class="note">
-  <strong>Note:</strong> The class names omit the decimals in the numbers array, using the integer values only. 
-  The CSS property uses the exact floating point value internally, for example <code>width: 66.666666%;</code>
+  <strong>Note:</strong> The utility names use only integer number values. Internally, the generated CSS properties use floating point numbers, 
+  e.g. <code>width: 66.666666%;</code>
 </p>
 
-<h6 class="push40v">Examples:</h6>
-<ul>
-  <li><code>.width-5pct</code></li>
-  <li><code>.width-10pct</code></li>
-  <li><code>.width-33pct</code></li>
-  <li class="push40v"><code>.max-width-90pct</code></li>
-  <li><code>.max-width-66pct</code></li>
-  <li><code>.max-width-50pct</code></li>
-</ul>
+<h4 class="h5 push40v">Additional Width Utilities</h4>
 
-<p class="push40v">In addition we have these utilities for widths:</p>
-
-<div class="group flex f-direction-column align-items-center">
-  <div class="scrollable-x scrollable-y mt-40 border-bottom-gray-dotted width-100pct expansion-container width-utilities">
+<div class="group flex mt-20 f-direction-column align-items-center">
+  <div class="scrollable-x scrollable-y border-bottom-gray-dotted width-100pct expansion-container width-utilities">
     <table class="mb-60" style="min-width: 60rem;">
       <thead>
         <tr>
