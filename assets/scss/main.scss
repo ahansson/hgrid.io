@@ -45,10 +45,11 @@
   --menutitle: #e9dac5;
   --menulink-hover: #ffffff;
   --link-color: #ffc9a2;
-  --t-text: #ffefda;
-  --t-bg: #000;
+  --link-color-hover: #ff8b38;
   --active-link: #d09255;
   --link-underline-color: #9248a0;
+  --t-text: #ffefda;
+  --t-bg: #000;
   --color-orange: #ff9900;
   --transition-bg: var(--bg);
   --transition-duration: 0.2s;
@@ -60,8 +61,8 @@
   --table-row-hover: #f5f0e345;
   --tfoot-bg: #201d3f;
   --menu-border: #171244;
-  --note-border: #31278f;
-  --note-bg: #130f40;
+  --note-border: #314bb2;
+  --note-bg: #15204f;
   --icon-filter: invert(70%);
   --bg-light: #e8e9f7;
   --bg-gray-lighter: #0e0c33;
@@ -97,7 +98,11 @@ article ol li a,
 article p a,
 a.jump-to-content {
   color: var(--link-color);
-  text-decoration-color:  var(--link-underline-color)
+  text-decoration-color:  var(--link-underline-color);
+
+  &:hover {
+    color: var(--link-color-hover);
+  }
 }
 
 a.no-underline:hover,
