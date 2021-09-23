@@ -248,16 +248,20 @@ button.outline-l {
   transition: all var(--transition-duration) ease;
   animation: 0.8s 0.3s both slide-scale-up;
   a {
-    line-height: 6.4rem;
-    padding: 2.2rem 6rem;
+    line-height: 6.6rem;
+    padding: 2rem 6rem;
     text-decoration: none;
+    font-size: 2.4rem;
+
+    &:hover {
+      color: #fff;
+    }
   }
   &:hover,
   &:focus,
   &:active {
     background: #ffffff38;
-    border: 2px solid #fff;
-    transform: scale(1.08)
+    padding: 0rem 1rem;
   }
 }
 
