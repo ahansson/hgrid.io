@@ -19,7 +19,7 @@ tags: [layout, flex]
   rel="noopener">GitHub</a>)
 </p>
 
-<h2 class="h4 mt-40 mb-20">Code Examples</h2>
+<h2 class="h3 mt-40 mb-20">Code Examples</h2>
 
 <h5>1. Responsive Masonry with <code>flex-wrap</code></h5>
 
@@ -52,7 +52,7 @@ tags: [layout, flex]
   </div>
 </div>
 
-<h5 class="mt-40">2. Horizontal Bar Chart</h5>
+<h5 class="mt-40">2. Bar Chart</h5>
 
 <pre class="language-html mt-20 filename" data-file="html">
 <code>&lt;div class="flex padding-20 radius-6 border-gray-light box-shadow-1 text-right demo-barchart">
@@ -148,7 +148,7 @@ tags: [layout, flex]
 &lt;/div></code>
 </pre>
 
-<p>Result:</p>
+<p><small>Result:</small></p>
 
 <div class="flex justify-content-space-between p-20 border-gray-light radius">
   <div>
@@ -160,7 +160,7 @@ tags: [layout, flex]
   </div>
 </div>
 
-<h4 class="mt-60">Complete List of Flex Utilities</h4>
+<h3 class="mt-60">Complete List of Flex Utilities</h3>
 
 <div class="group flex f-direction-column align-items-flex-end">
   <div class="scrollable-x scrollable-y mt-20 border-bottom-gray-dotted expansion-container flex-utilities">
@@ -381,16 +381,14 @@ tags: [layout, flex]
   <span class="small max-content pl-20 pr-20 pointer border-gray rounded translate-pull12v expansion-btn a-expansion-btn">Expand List</span>
 </div>
 
-<h4>Responsive Overrides</h4>
+<h3>Responsive Overrides for Parent Elements</h3>
 
 <p>
   Each responsive utility is available for every 
   <a href="xhttps://github.com/ahansson/hgrid-css/blob/main/sass/variables/" target="_blank" rel="noopener">breakpoint</a>.
 </p>
 
-<h5 class="mt-40">For Parent Elements</h5>
-
-<h6 class="push40v">Flex Unset</h6>
+<h5 class="push40v">Flex Unset</h5>
 
 <table class="mb-30">
   <thead>
@@ -409,7 +407,7 @@ tags: [layout, flex]
   </tbody>
 </table>
 
-<h6 class="push40v">Flex Wrap Reverse</h6>
+<h5 class="push40v">Flex Wrap Reverse</h5>
 
 <table class="mb-30">
   <thead>
@@ -451,7 +449,7 @@ tags: [layout, flex]
 
 <p>Scale down your browser window to <code>tablet-portrait</code> <small>(&lt;= 900px)</small> in order to see the effect.</p>
 
-<h6 class="push40v">Flex Wrap Unset</h6>
+<h5 class="push40v">Flex Wrap Unset</h5>
 
 <table class="mb-30">
   <thead>
@@ -470,7 +468,7 @@ tags: [layout, flex]
   </tbody>
 </table>
 
-<h6 class="push40v">Change Flex Direction</h6>
+<h5 class="push40v">Change Flex Direction</h5>
 
 <table class="mb-30">
   <thead>
@@ -533,22 +531,22 @@ tags: [layout, flex]
   </div>
 </div>
 
-<h5 class="mt-80">Responsiveness for Child Elements</h5>
+<h3 class="mt-80">Responsive Overrides for Child Elements</h3>
 
-<h6 class="mt-40">Proportions in a Flex Wrap Context</h6>
+<h5 class="push40v">Internal proportions in a <code>flex-wrap</code> context</h5>
 
 <p>
-  For these utilities we use two variables, <em>breakpoints</em> and <em>fractions</em>. We follow this pattern: 
+  For these utilities we use two variables, <em>breakpoints</em> and <em>fractions</em>. The naming pattern is  
   <code>.f-{breakpoint}-{fraction}</code>.
 </p>
 
 <p>
-  They set a fractional minimum width in percent from a certain breakpoint and up/down 
-  (depending on which breakpoint it is). This influences the element's behavior when used in a flex container with <code>.f-wrap</code>.
+  What these do is to set a fractional minimum width in percent from a certain breakpoint and up/down, 
+  depending on which breakpoint it is. This influences the element's behavior in a flex container with <code>.f-wrap</code>.
 </p>
 
 <p>
-  Breakpoints are, as we now know, values such as <code>desktop-large</code>, <code>desktop</code>, <code>laptop</code>, etc.
+  Breakpoints are values such as <code>desktop-large</code>, <code>desktop</code>, <code>laptop</code>, etc.
 </p>
 <p>
   Fractions can be seen in the example below. These are default values you can modify when initializing <strong>hgrid</strong> as Sass. 
@@ -623,7 +621,7 @@ tags: [layout, flex]
 
 <p>Scale your browser to <code>tablet-landscape</code> or smaller and see the internal proportions change:</p>
 
-<div class="flex f-wrap p-10 pt-20 pb-10 border-gray border-dashed radius-14">
+<div class="flex f-wrap radius-14 border-gray border-dotted f-responsive-demo">
     <div class="column f-tablet-landscape-75">
       <p>1</p>
     </div>
@@ -638,20 +636,14 @@ tags: [layout, flex]
     </div>
 </div>
 
+<p>The code:</p>
+
 <pre class="language-html filename" data-file="html">
-<code>&lt;div class="flex f-wrap p-5 pt-10 pb-0 border-gray border-dashed radius-14">
-    &lt;div class="f-tablet-landscape-75">
-      1
-    &lt;/div>
-    &lt;div class="f-tablet-landscape-5">
-      2
-    &lt;/div>
-    &lt;div class="f-tablet-landscape-25">
-      3
-    &lt;/div>
-    &lt;div class="f-tablet-landscape-5">
-      4
-    &lt;/div>
+<code>&lt;div class="flex f-wrap padding-10 radius-14 border-gray border-dotted">
+  &lt;div class="f-tablet-landscape-75">1&lt;/div>
+  &lt;div class="f-tablet-landscape-5">2&lt;/div>
+  &lt;div class="f-tablet-landscape-25">3&lt;/div>
+  &lt;div class="f-tablet-landscape-5">4&lt;/div>
 &lt;/div></code>
 </pre>
 
