@@ -400,6 +400,10 @@ nav.mobile-menu {
   left: -50rem
 }
 
+.f-wrap > [class^=column] {
+  margin-bottom: 1.6%;
+}
+
 article h1,
 article h2 {
   letter-spacing: -1px;
@@ -532,13 +536,13 @@ article.demo {
   }
 
   .f-reverse-demo {
+    padding: .8rem 0.1rem 0.1rem 0.1rem;
+
     .column {
       min-width: 12rem;
       margin-bottom: 0.8rem;
     }
   }
-
-
 }
 
 .demo-title {

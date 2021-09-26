@@ -381,7 +381,7 @@ tags: [layout, flex]
   <span class="small max-content pl-20 pr-20 pointer border-gray rounded translate-pull12v expansion-btn a-expansion-btn">Expand List</span>
 </div>
 
-<h4>Responsiveness</h4>
+<h4>Responsive Overrides</h4>
 
 <p>
   Each responsive utility is available for every 
@@ -428,24 +428,24 @@ tags: [layout, flex]
   </tbody>
 </table>
 
-<div class="row no-stack f-wrap f-wrap-reverse-tablet-portrait f-reverse-demo">
+<div class="flex radius-14 f-wrap mb-20 f-wrap-reverse-tablet-portrait border-gray border-dashed f-reverse-demo">
   <div class="column">
-    <p>Column 1</p>
+    <p>Child 1</p>
   </div>
   <div class="column">
-    <p>Column 2</p>
+    <p>Child 2</p>
   </div>
   <div class="column">
-    <p>Column 3</p>
+    <p>Child 3</p>
   </div>
   <div class="column">
-    <p>Column 4</p>
+    <p>Child 4</p>
   </div>
   <div class="column">
-    <p>Column 5</p>
+    <p>Child 5</p>
   </div>
   <div class="column">
-    <p>Column 6</p>
+    <p>Child 6</p>
   </div>
 </div>
 
@@ -504,7 +504,7 @@ tags: [layout, flex]
   </tbody>
 </table>
 
-<p>Example where we reverse the flex-direction on smaller viewports:</p>
+<p>Let's try to reverse the flex-direction on smaller viewports:</p>
 
 <pre class="language-html filename" data-file="html">
 <code>&lt;div class="flex f-direction-row-reverse-phone-landscape">
@@ -515,29 +515,145 @@ tags: [layout, flex]
 
 <p>
   Scale down your browser window to <code>phone-landscape</code> <small>(&lt;= 768px)</small> and you'll see the responsive 
-  change of conatent direction:
+  change:
 </p>
 
-<div class="row no-stack f-direction-row-reverse-phone-landscape">
+<div class="flex f-direction-row-reverse-phone-landscape p-5 pt-10 pb-10 radius-14 border-gray border-dashed">
   <div class="column">
-    <p>Column 1</p>
+    <p>Child 1</p>
   </div>
   <div class="column">
-    <p>Column 2</p>
+    <p>Child 2</p>
   </div>
   <div class="column">
-    <p>Column 3</p>
+    <p>Child 3</p>
   </div>
   <div class="column">
-    <p>Column 4</p>
-  </div>
-  <div class="column">
-    <p>Column 5</p>
-  </div>
-  <div class="column">
-    <p>Column 6</p>
+    <p>Child 4</p>
   </div>
 </div>
+
+<h5 class="mt-80">Responsiveness for Child Elements</h5>
+
+<h6 class="mt-40">Proportions in a Flex Wrap Context</h6>
+
+<p>
+  For these utilities we use two variables, <em>breakpoints</em> and <em>fractions</em>. We follow this pattern: 
+  <code>.f-{breakpoint}-{fraction}</code>.
+</p>
+
+<p>
+  They set a fractional minimum width in percent from a certain breakpoint and up/down 
+  (depending on which breakpoint it is). This influences the element's behavior when used in a flex container with <code>.f-wrap</code>.
+</p>
+
+<p>
+  Breakpoints are, as we now know, values such as <code>desktop-large</code>, <code>desktop</code>, <code>laptop</code>, etc.
+</p>
+<p>
+  Fractions can be seen in the example below. These are default values you can modify when initializing <strong>hgrid</strong> as Sass. 
+  This is the standard output for the <code>phone</code> media query:
+</p>
+
+<pre class="language-css filename" data-file="css">
+<code>@media (max-width: 600px) {
+  .f-phone-100 {
+    flex: 1 0 100%;
+  }
+
+  .f-phone-90 {
+    flex: 1 0 90%;
+  }
+
+  .f-phone-80 {
+    flex: 1 0 80%;
+  }
+
+  .f-phone-75 {
+    flex: 1 0 75%;
+  }
+
+  .f-phone-70 {
+    flex: 1 0 70%;
+  }
+
+  .f-phone-66 {
+    flex: 1 0 66.666666%;
+  }
+
+  .f-phone-60 {
+    flex: 1 0 60%;
+  }
+
+  .f-phone-50 {
+    flex: 1 0 50%;
+  }
+
+  .f-phone-40 {
+    flex: 1 0 40%;
+  }
+
+  .f-phone-33 {
+    flex: 1 0 33.333333%;
+  }
+
+  .f-phone-30 {
+    flex: 1 0 30%;
+  }
+
+  .f-phone-25 {
+    flex: 1 0 25%;
+  }
+
+  .f-phone-20 {
+    flex: 1 0 20%;
+  }
+
+  .f-phone-10 {
+    flex: 1 0 10%;
+  }
+
+  .f-phone-5 {
+    flex: 1 0 5%;
+  }
+}</code>
+</pre>
+
+<h5 class="mt-40">Example</h5>
+
+<p>Scale your browser to <code>tablet-landscape</code> or smaller and see the internal proportions change:</p>
+
+<div class="flex f-wrap p-10 pt-20 pb-10 border-gray border-dashed radius-14">
+    <div class="column f-tablet-landscape-75">
+      <p>1</p>
+    </div>
+    <div class="column f-tablet-landscape-5">
+      <p>2</p>
+    </div>
+    <div class="column f-tablet-landscape-25">
+      <p>3</p>
+    </div>
+    <div class="column f-tablet-landscape-5">
+      <p>4</p>
+    </div>
+</div>
+
+<pre class="language-html filename" data-file="html">
+<code>&lt;div class="flex f-wrap p-5 pt-10 pb-0 border-gray border-dashed radius-14">
+    &lt;div class="f-tablet-landscape-75">
+      1
+    &lt;/div>
+    &lt;div class="f-tablet-landscape-5">
+      2
+    &lt;/div>
+    &lt;div class="f-tablet-landscape-25">
+      3
+    &lt;/div>
+    &lt;div class="f-tablet-landscape-5">
+      4
+    &lt;/div>
+&lt;/div></code>
+</pre>
 
 <div class="custom-hairline mt-40"></div>
 <p class="fl mb-0 mr-5">
