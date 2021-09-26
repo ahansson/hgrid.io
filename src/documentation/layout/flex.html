@@ -383,9 +383,161 @@ tags: [layout, flex]
 
 <h4>Responsiveness</h4>
 
-<!-- <p>(Coming)</p> -->
+<p>
+  Each responsive utility is available for every 
+  <a href="xhttps://github.com/ahansson/hgrid-css/blob/main/sass/variables/" target="_blank" rel="noopener">breakpoint</a>.
+</p>
 
+<h5 class="mt-40">For Parent Elements</h5>
 
+<h6 class="push40v">Flex Unset</h6>
+
+<table class="mb-30">
+  <thead>
+    <tr>
+      <th style="width: 37%">Utility Name</th>
+      <th style="width: 30%">CSS Property</th>
+      <th style="width: 33%">Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>.f-unset-{breakpoint}</code></td>
+      <td>display: unset;</td>
+      <td><code>.f-unset-phone-landscape</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h6 class="push40v">Flex Wrap Reverse</h6>
+
+<table class="mb-30">
+  <thead>
+    <tr>
+      <th style="width: 37%">Utility Name</th>
+      <th style="width: 30%">CSS Property</th>
+      <th style="width: 33%">Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>.f-wrap-reverse-{breakpoint}</code></td>
+      <td>flex-wrap: reverse;</td>
+      <td><code>.f-wrap-reverse-tablet-portrait</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="row no-stack f-wrap f-wrap-reverse-tablet-portrait f-reverse-demo">
+  <div class="column">
+    <p>Column 1</p>
+  </div>
+  <div class="column">
+    <p>Column 2</p>
+  </div>
+  <div class="column">
+    <p>Column 3</p>
+  </div>
+  <div class="column">
+    <p>Column 4</p>
+  </div>
+  <div class="column">
+    <p>Column 5</p>
+  </div>
+  <div class="column">
+    <p>Column 6</p>
+  </div>
+</div>
+
+<p>Scale down your browser window to <code>tablet-portrait</code> <small>(&lt;= 900px)</small> in order to see the effect.</p>
+
+<h6 class="push40v">Flex Wrap Unset</h6>
+
+<table class="mb-30">
+  <thead>
+    <tr>
+      <th style="width: 37%">Utility Name</th>
+      <th style="width: 30%">CSS Property</th>
+      <th style="width: 33%">Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>.f-wrap-unset-{breakpoint}</code></td>
+      <td>flex-wrap: unset;</td>
+      <td><code>.f-wrap-unset-phone</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<h6 class="push40v">Change Flex Direction</h6>
+
+<table class="mb-30">
+  <thead>
+    <tr>
+      <th style="width: 37%">Utility Name</th>
+      <th style="width: 30%">CSS Property</th>
+      <th style="width: 33%">Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>.f-direction-row-{breakpoint}</code></td>
+      <td>flex-direction: row;</td>
+      <td><code>.f-direction-row-phone</code></td>
+    </tr>
+    <tr>
+      <td><code>.f-direction-row-reverse-{breakpoint}</code></td>
+      <td>flex-direction: row-reverse;</td>
+      <td><code>.f-direction-row-reverse-desktop</code></td>
+    </tr>
+    <tr>
+      <td><code>.f-direction-column-{breakpoint}</code></td>
+      <td>flex-direction: column;</td>
+      <td><code>.f-direction-column-phone</code></td>
+    </tr>
+    <tr>
+      <td><code>.f-direction-column-reverse-{breakpoint}</code></td>
+      <td>flex-direction: column-reverse;</td>
+      <td><code>.f-direction-column-reverse-desktop</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Example where we reverse the flex-direction on smaller viewports:</p>
+
+<pre class="language-html filename" data-file="html">
+<code>&lt;div class="flex f-direction-row-reverse-phone-landscape">
+  ...
+&lt;/div>
+</code>
+</pre>
+
+<p>
+  Scale down your browser window to <code>phone-landscape</code> <small>(&lt;= 768px)</small> and you'll see the responsive 
+  change of conatent direction:
+</p>
+
+<div class="row no-stack f-direction-row-reverse-phone-landscape">
+  <div class="column">
+    <p>Column 1</p>
+  </div>
+  <div class="column">
+    <p>Column 2</p>
+  </div>
+  <div class="column">
+    <p>Column 3</p>
+  </div>
+  <div class="column">
+    <p>Column 4</p>
+  </div>
+  <div class="column">
+    <p>Column 5</p>
+  </div>
+  <div class="column">
+    <p>Column 6</p>
+  </div>
+</div>
 
 <div class="custom-hairline mt-40"></div>
 <p class="fl mb-0 mr-5">

@@ -530,6 +530,15 @@ article.demo {
       border: var(--border-light-dotted);
     }
   }
+
+  .f-reverse-demo {
+    .column {
+      min-width: 12rem;
+      margin-bottom: 0.8rem;
+    }
+  }
+
+
 }
 
 .demo-title {
