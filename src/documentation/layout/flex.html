@@ -385,10 +385,104 @@ tags: [layout, flex]
 
 <p>
   Each responsive utility is available for every 
-  <a href="xhttps://github.com/ahansson/hgrid-css/blob/main/sass/variables/" target="_blank" rel="noopener">breakpoint</a>.
+  <a href="https://github.com/ahansson/hgrid-css/blob/main/sass/variables/_variables.scss" target="_blank" rel="noopener">responsive breakpoint</a>:
 </p>
 
-<h5 class="push40v">Flex Unset</h5>
+<ul>
+  <li><code>desktop-large</code> and above
+  <li><code>desktop</code> and above</li>
+  <li><code>tablet-landscape</code> and below</li>
+  <li><code>tablet-portrait</code> and below</li>
+  <li><code>phone-landscape</code> and below</li>
+  <li><code>phone</code> only</li>
+</ul>
+
+<p><small>The default viewport <code>laptop</code> is intentionally omitted.</small></p>
+
+<h4 class="push40v">Change Flex to Block</h4>
+
+<p>
+  On certain viewports, either reveal a hidden flex container while converting it to a block element, or convert an already visible flex 
+  container to a block element.
+</p>
+
+<table class="mb-30">
+  <thead>
+    <tr>
+      <th style="width: 37%">Utility Name</th>
+      <th style="width: 30%">CSS Property</th>
+      <th style="width: 33%">Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>.show-{breakpoint}</code><br><code>.block-{breakpoint}</code></td>
+      <td>display: block;</td>
+      <td><code>.block-phone</code><br><code>.show-phone</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<pre class="language-html mt-20 filename" data-file="html">
+<code>&lt;div class="flex block-phone">
+  &lt;div class="column">
+    &lt;p>Child 1&lt;/p>
+  &lt;/div>
+  &lt;div class="column">
+    &lt;p>Child 2&lt;/span>
+  &lt;/div>
+&lt;/div></code>
+</pre>
+
+<p>Scale down your window to the <code>phone</code> viewport (&lt;= 600px) to see the responsive change:</p>
+
+<div class="flex radius-14 block-phone flex-demo f-reverse-demo mb-20">
+  <div class="column">
+    <p>Child 1</p>
+  </div>
+  <div class="column">
+    <p>Child 2</p>
+  </div>
+</div>
+
+<p>See more hide/show utilities for flex on the <a href="/documentation/utilities/visibility">visibility</a> page.</p>
+
+<h4 class="push40v">Reveal Hidden Elements as Flex</h4>
+
+<p>
+  Show elements as flex elements on certain viewports, if they are hidden with <code>display: none;</code>.
+</p>
+
+<table class="mb-30">
+  <thead>
+    <tr>
+      <th style="width: 37%">Utility Name</th>
+      <th style="width: 30%">CSS Property</th>
+      <th style="width: 33%">Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>.f-show-{breakpoint}</code></td>
+      <td>display: flex;</td>
+      <td><code>.f-show-desktop</code></td>
+    </tr>
+    <tr>
+      <td><code>.flex-{breakpoint}</code></td>
+      <td>display: flex;</td>
+      <td><code>.flex-tablet-landscape</code> <sup class="bold">*</sup></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>
+  <small><sup>*)</sup> These both do the same thing. The only difference is the naming, intended to make their function clearer for 
+  developers.</small>
+</p>
+
+<p>See more hide/show utilities for flex on the <a href="/documentation/utilities/visibility">visibility</a> page.</p>
+
+<h4 class="push40v">Flex Unset</h4>
 
 <table class="mb-30">
   <thead>
@@ -407,7 +501,7 @@ tags: [layout, flex]
   </tbody>
 </table>
 
-<h5 class="push40v">Flex Wrap Reverse</h5>
+<h4 class="push40v">Flex Wrap Reverse</h4>
 
 <table class="mb-30">
   <thead>
@@ -449,7 +543,7 @@ tags: [layout, flex]
 
 <p>Scale down your browser window to <code>tablet-portrait</code> <small>(&lt;= 900px)</small> in order to see the effect.</p>
 
-<h5 class="push40v">Flex Wrap Unset</h5>
+<h4 class="push40v">Flex Wrap Unset</h4>
 
 <table class="mb-30">
   <thead>
@@ -468,7 +562,7 @@ tags: [layout, flex]
   </tbody>
 </table>
 
-<h5 class="push40v">Change Flex Direction</h5>
+<h4 class="push40v">Change Flex Direction</h4>
 
 <table class="mb-30">
   <thead>
@@ -533,24 +627,25 @@ tags: [layout, flex]
 
 <h3 class="mt-80">Responsive Overrides for Child Elements</h3>
 
-<h5 class="push40v">Internal proportions in a <code>flex-wrap</code> context</h5>
+<h4 class="push40v">Internal proportions in a <code class="small">flex-wrap</code> context</h4>
 
 <p>
-  For these utilities we use two variables, <em>breakpoints</em> and <em>fractions</em>. The naming pattern is  
+  For each of these utilities we use two variables: <em>breakpoints</em> and <em>fractions</em>. The naming pattern is  
   <code>.f-{breakpoint}-{fraction}</code>.
 </p>
 
 <p>
-  What these do is to set a fractional minimum width in percent from a certain breakpoint and up/down, 
-  depending on which breakpoint it is. This influences the element's behavior in a flex container with <code>.f-wrap</code>.
+  What they do is setting a minimum width in percent from a certain breakpoint and up/down (depending on which breakpoint it is). 
+  This influences how the element behaves in a flex container with <code>.f-wrap</code>.
 </p>
 
 <p>
   Breakpoints are values such as <code>desktop-large</code>, <code>desktop</code>, <code>laptop</code>, etc.
 </p>
 <p>
-  Fractions can be seen in the example below. These are default values you can modify when initializing <strong>hgrid</strong> as Sass. 
-  This is the standard output for the <code>phone</code> media query:
+  The default fractions can be seen in the code example below. You can modify the default values when initializing <strong>hgrid</strong> 
+  as Sass. Look for the <a href="https://github.com/ahansson/hgrid-css/blob/main/sass/variables/_variables.scss" rel="noopener" target="_blank">
+  fractions</a> array in the <strong>hgrid</strong> variables. This is the compiled default output for the <code>phone</code> media query:
 </p>
 
 <pre class="language-css filename" data-file="css">
