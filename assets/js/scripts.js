@@ -10,7 +10,7 @@
         html          = document.querySelector('html'),
         hash          = window.location.hash
 
-  // Remove focus outline on clicks
+  // Remove focus outline if keyboard is used
   body.addEventListener('mousedown', () => { body.classList.add('no-outline')})
   body.addEventListener('keydown', () => { body.classList.remove('no-outline') })
   
