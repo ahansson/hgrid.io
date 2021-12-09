@@ -670,17 +670,6 @@ table {
   border: 1px solid var(--border-light-solid);
 }
 
-$border-values: top, right, bottom, left;
-
-@each $val in $border-values {
-  .border-#{$val}-none,
-  .border-#{$val}-none,
-  .border-#{$val}-none,
-  .border-#{$val}-none {
-    border-#{$val}: 0 !important;
-  }
-}
-
 .sublink {
   /* scroll-margin: 10rem; awaiting fix for Safari */
   position: relative;
