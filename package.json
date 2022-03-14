@@ -40,7 +40,7 @@
     "url": "https://github.com/ahansson/hgrid.io/issues"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^0.12.1",
+    "@11ty/eleventy": "^1.0.0",
     "autoprefixer": "^10.4.2",
     "babel-minify": "^0.5.1",
     "hgrid-css": "^0.7.0-beta",
