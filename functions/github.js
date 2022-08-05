@@ -17,7 +17,7 @@ const fetchHeaders = {
   'Accept-Encoding': 'gzip, deflate, br'
 }
 
-export default handler = async (event, context) => {
+export const handler = async (event, context) => {
   if (event.httpMethod === 'OPTIONS') {
     return {
       'statusCode': 204,
