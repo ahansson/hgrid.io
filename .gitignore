@@ -2,3 +2,4 @@ node_modules
 .vscode
 _public
 **/css/*
+.netlify/
