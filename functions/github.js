@@ -1,6 +1,7 @@
 // Proxy grab latest release number from GitHub API
 
-const fetch = require('node-fetch')
+import fetch from 'node-fetch'
+
 const url = 'https://api.github.com/repos/ahansson/hgrid-css/releases?per_page=1'
 
 const optionsHeaders = {
@@ -16,7 +17,7 @@ const fetchHeaders = {
   'Accept-Encoding': 'gzip, deflate, br'
 }
 
-exports.handler = async (event, context) => {
+export default handler = async (event, context) => {
   if (event.httpMethod === 'OPTIONS') {
     return {
       'statusCode': 204,
