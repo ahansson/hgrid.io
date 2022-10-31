@@ -45,7 +45,7 @@
   ],
   "devDependencies": {
     "@11ty/eleventy": "^1.0.1",
-    "autoprefixer": "^10.4.8",
+    "autoprefixer": "^10.4.13",
     "babel-minify": "^0.5.2",
     "hgrid-css": "^0.7.1-beta",
     "node-fetch": "^3.2.10",
