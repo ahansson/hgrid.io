@@ -44,7 +44,7 @@
     "> 1%"
   ],
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.1",
+    "@11ty/eleventy": "^2.0.0",
     "autoprefixer": "^10.4.8",
     "babel-minify": "^0.5.2",
     "hgrid-css": "^0.7.1-beta",
