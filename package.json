@@ -14,7 +14,8 @@
     "build:_public": "rm -rf _public && mkdir _public",
     "build:css": "sass --no-source-map --style=compressed assets/scss/main.scss:_public/assets/css/style.min.css",
     "build:eleventy": "eleventy",
-    "build:js": "mkdir _public/assets/js/ && cp assets/js/highlight.pack.js _public/assets/js/highlight.min.js && cp assets/js/scripts.js _public/assets/js/scripts.min.js && minify _public/assets/js/scripts.min.js --out-file _public/assets/js/scripts.min.js --mangle.keepClassName"
+    "build:js": "mkdir _public/assets/js/ && cp assets/js/highlight.pack.js _public/assets/js/highlight.min.js && cp assets/js/scripts.js _public/assets/js/scripts.min.js && minify _public/assets/js/scripts.min.js --out-file _public/assets/js/scripts.min.js --mangle.keepClassName",
+    "update": "npx npm-check-updates -u && npm install"
   },
   "repository": {
     "type": "git",
@@ -44,16 +45,16 @@
     "> 1%"
   ],
   "devDependencies": {
-    "@11ty/eleventy": "^1.0.1",
-    "autoprefixer": "^10.4.8",
+    "@11ty/eleventy": "^2.0.1",
+    "autoprefixer": "^10.4.14",
     "babel-minify": "^0.5.2",
     "hgrid-css": "^0.7.1-beta",
-    "node-fetch": "^3.2.10",
+    "node-fetch": "^3.3.1",
     "npm-run-all": "^4.1.5",
-    "postcss": "^8.4.14",
-    "postcss-cli": "^10.0.0",
-    "purgecss": "^4.1.3",
-    "sass": "^1.54.3",
-    "sass-loader": "^13.0.2"
+    "postcss": "^8.4.21",
+    "postcss-cli": "^10.1.0",
+    "purgecss": "^5.0.0",
+    "sass": "^1.61.0",
+    "sass-loader": "^13.2.2"
   }
 }
