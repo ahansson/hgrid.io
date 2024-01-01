@@ -54,7 +54,7 @@
     "postcss": "^8.4.21",
     "postcss-cli": "^10.1.0",
     "purgecss": "^5.0.0",
-    "sass": "^1.61.0",
+    "sass": "^1.69.6",
     "sass-loader": "^13.2.2"
   }
 }
